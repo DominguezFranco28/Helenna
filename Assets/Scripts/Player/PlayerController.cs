@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform _spawnPoint;
     private StateMachine _myStateMachine;
     private TelekinesisForce _telekinesisForce;
-//prueba commit github con unity
+//prueba commit github
     private void Start()
     {
         _telekinesisForce = GetComponent<TelekinesisForce>(); //Referencia para ejecutar la accion de inpacto del brazo.
