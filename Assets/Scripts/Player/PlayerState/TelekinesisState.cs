@@ -11,6 +11,9 @@ public class TelekinesisState : IState
     private GameObject _armShot;
     private Transform _spawnPoint;
     private TelekinesisForce _telekinesisForce;
+
+    private Collider2D _armCol;
+    private Collider2D _playerCol;
     public TelekinesisState(PlayerBehaviour player, StateMachine stateMachine, GameObject armShot, Transform spawnPoint, TelekinesisForce telekinesisForce)
     {
         _playerMovement = player;
@@ -28,6 +31,7 @@ public class TelekinesisState : IState
         _playerMovement.canMove = false;
         _playerMovement.StopMovement();
         _playerMovement._animator.SetTrigger("IsTelekinesis");
+        _playerCol = _playerMovement.GetComponent<Collider2D>();
     }
 
     public void Exit()
@@ -43,7 +47,7 @@ public class TelekinesisState : IState
         _timer -= Time.deltaTime;
         if (Input.GetMouseButtonDown(0))
         {
-                _playerMovement.PerformPush();
+            _playerMovement.PerformPush();
             _stateMachine.TransitionTo(_stateMachine.idleState);
         }
 
@@ -59,7 +63,7 @@ public class TelekinesisState : IState
         if (Input.GetKeyDown(KeyCode.Q))
         {
             _stateMachine.TransitionTo(_stateMachine.idleState); //Pasaje a estado de idle
-           _playerMovement.canMove = true;
+            _playerMovement.canMove = true;
         }
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -69,13 +73,19 @@ public class TelekinesisState : IState
     }
     private void ThrowArm() //Probar con un input.
     {
+
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = (mousePos - (Vector2)_spawnPoint.position).normalized;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        // Rotamos el proyectil para que apunte hacia la dirección
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        // Rotacion del proyectil apra que mire a donde apunta el mouse
         Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
         GameObject bullet = GameObject.Instantiate(_armShot, _spawnPoint.position, rotation);
+
+        //Ignorar colisiones para qeu el brazo no choque con el jugador
+        Collider2D bulletCol = bullet.GetComponent<Collider2D>();
+        Physics2D.IgnoreCollision(bulletCol, _playerCol);
+
 
         var armScript = bullet.GetComponent<ArmBullet>();
         armScript.SetDirection(direction);
