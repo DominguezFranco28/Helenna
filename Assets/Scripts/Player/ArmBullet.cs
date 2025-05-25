@@ -6,7 +6,8 @@ public class ArmBullet : MonoBehaviour
 {
     private Rigidbody2D _rb;
     public Vector2 _direction;
-
+    private Collider2D _armCol;
+    private Collider2D _playerCol;
     [SerializeField] float _shotSpeed;
     
     private TelekinesisForce telekinesisForce;
@@ -25,7 +26,7 @@ public class ArmBullet : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-
+        _armCol = GetComponent<Collider2D>();     
         Destroy(gameObject, 2f);
     }
     private void FixedUpdate()
@@ -46,9 +47,9 @@ public class ArmBullet : MonoBehaviour
             if (telekinesisForce != null)
             {
                     telekinesisForce.MouseGetPull(); //llamo al metodo pulico del force par aactivar el desplazamiento. Hay que retocar, afinar y refactorizar.
+             Destroy(gameObject);
             }
             // Aplicar mas logica? Minimo la animaicon del gancho
-             Destroy(gameObject);
         }
 
     }
