@@ -6,8 +6,8 @@ public class PlayerEnergy : MonoBehaviour
 
 {
     private StatsManager statsManager;
-    private int actualEnergy = 500;
-    private int maxEnergy = 500;
+    private int actualEnergy = 50000;
+    private int maxEnergy = 50000;
     //Variables ligadas al observer //son realmente necesarias aca? o solo en el telekinesis
     void Start()
     {

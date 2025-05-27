@@ -90,6 +90,12 @@ public class TelekinesisForce : MonoBehaviour
             {
                 activeable.Activeable();
             }
+            IMovable moveable = hit.collider.GetComponent<IMovable>();
+            if (moveable != null && playerEnergy.Energy > 0)
+            {
+                Debug.Log("Se acciono un objeto movible");
+                moveable.Move(direction, pushForce);
+            }
             //Importante el else if dsps, porque sino me lo toma como un objeto pushable por su layer, y el jugado se mueve, lo cual no quiero.
             //O es un objeto interactuable, que solo se activa, o funciona como un objeto con masa.
             else if (targetRB != null && playerEnergy.Energy > 0)
@@ -144,9 +150,15 @@ public class TelekinesisForce : MonoBehaviour
 
             Rigidbody2D targetRB = hit.collider.GetComponent<Rigidbody2D>();
             IActiveable activeable = hit.collider.GetComponent<IActiveable>();
+            IMovable moveable = hit.collider.GetComponent<IMovable>();
             if (activeable != null && playerEnergy.Energy > 0)
             {
                 activeable.Activeable();
+            }
+            if ( moveable != null && playerEnergy.Energy > 0)
+            {
+                Debug.Log("Se acciono un objeto movible");
+                moveable.Move(-direction, pushForce);
             }
             else if (targetRB != null && playerEnergy.Energy > 0)
             {
