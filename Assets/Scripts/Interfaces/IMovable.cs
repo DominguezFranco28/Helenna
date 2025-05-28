@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IMovable 
 {
-    public void Move (Vector2 direction, int distance);
+    public void MoveTo (Vector2 direction);
 }

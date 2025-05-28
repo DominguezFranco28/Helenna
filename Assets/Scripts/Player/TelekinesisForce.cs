@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class TelekinesisForce : MonoBehaviour
@@ -11,7 +12,9 @@ public class TelekinesisForce : MonoBehaviour
     [SerializeField] private float pullRange;
     [SerializeField] private float recoilSpeed;
     [SerializeField] private float recoilDuration;
+    [SerializeField] private float moveSmoothTime;
     [SerializeField] private LayerMask pushableLayer;
+    [SerializeField] private LayerMask ignoreLayer;
     
 
     //Variables ligadas al powerup
@@ -61,6 +64,10 @@ public class TelekinesisForce : MonoBehaviour
     {
         MousePull();
     }
+    public void MovePlayerToAnchor(Vector2 anchorPosition)
+    {
+        StartCoroutine(ApplyRecoil(anchorPosition));
+    }
     void Start()
     {
         statsManager = GetComponent<StatsManager>();
@@ -79,7 +86,10 @@ public class TelekinesisForce : MonoBehaviour
     {
         Vector2 direction = mousePosition.MouseWorlPos;  //Tomo del atributo publico del otro script, asi no se hacen multiples calculos para la pos del mouse.
         Debug.DrawRay(pushOrigin.position, direction * pushRange, Color.cyan, 1f);
-        RaycastHit2D hit = Physics2D.Raycast(pushOrigin.position, direction, pushRange, pushableLayer);
+        RaycastHit2D hit = Physics2D.Raycast(pushOrigin.position, direction, pushRange, pushableLayer, ~ignoreLayer);
+        //el ~ignoreLayer ignora la capa referenciada
+
+
 
         if (hit.collider != null)
         {
@@ -90,11 +100,16 @@ public class TelekinesisForce : MonoBehaviour
             {
                 activeable.Activeable();
             }
-            IMovable moveable = hit.collider.GetComponent<IMovable>();
-            if (moveable != null && playerEnergy.Energy > 0)
+            IMovable movable = hit.collider.GetComponent<IMovable>();
+            if (movable != null && playerEnergy.Energy > 0)
             {
-                Debug.Log("Se acciono un objeto movible");
-                moveable.Move(direction, pushForce);
+                Vector2 objectPosition = hit.collider.transform.position;
+                Vector2 directionToObject = (objectPosition - (Vector2)transform.position).normalized;
+
+                // PUSH: moverlo en la dirección opuesta al jugador
+                Vector2 targetPosition = objectPosition + directionToObject * pushForce;
+                movable.MoveTo(targetPosition);
+                statsManager.NewEnergy(-20);
             }
             //Importante el else if dsps, porque sino me lo toma como un objeto pushable por su layer, y el jugado se mueve, lo cual no quiero.
             //O es un objeto interactuable, que solo se activa, o funciona como un objeto con masa.
@@ -142,7 +157,7 @@ public class TelekinesisForce : MonoBehaviour
     private void MousePull()
     {
         Vector2 direction = mousePosition.MouseWorlPos;
-        RaycastHit2D hit = Physics2D.Raycast(pushOrigin.position, direction, pullRange, pushableLayer);
+        RaycastHit2D hit = Physics2D.Raycast(pushOrigin.position, direction, pullRange, pushableLayer, ~ignoreLayer);
 
         if (hit.collider != null)
         {
@@ -150,15 +165,20 @@ public class TelekinesisForce : MonoBehaviour
 
             Rigidbody2D targetRB = hit.collider.GetComponent<Rigidbody2D>();
             IActiveable activeable = hit.collider.GetComponent<IActiveable>();
-            IMovable moveable = hit.collider.GetComponent<IMovable>();
             if (activeable != null && playerEnergy.Energy > 0)
             {
                 activeable.Activeable();
             }
-            if ( moveable != null && playerEnergy.Energy > 0)
+            IMovable movable = hit.collider.GetComponent<IMovable>();
+            if (movable != null && playerEnergy.Energy > 0)
             {
-                Debug.Log("Se acciono un objeto movible");
-                moveable.Move(-direction, pushForce);
+                Vector2 objectPosition = hit.collider.transform.position;
+                Vector2 directionToPlayer = ((Vector2)transform.position - objectPosition).normalized;
+
+                // PULL: moverlo hacia el jugador
+                Vector2 targetPosition = objectPosition + directionToPlayer * pushForce;
+                movable.MoveTo(targetPosition);
+                statsManager.NewEnergy(-20);
             }
             else if (targetRB != null && playerEnergy.Energy > 0)
             {
@@ -195,15 +215,23 @@ public class TelekinesisForce : MonoBehaviour
         }
     }
 
-    private IEnumerator ApplyRecoil(Vector2 direction) // Es un metodo corutina, NO interfaz
+    private IEnumerator ApplyRecoil(Vector2 anchorPosition)
     {
         movementBehaviour.isRecoiling = true;
-        movementBehaviour.canMove = false; //Anulo temporalmente la toma de imputs mientras se esta en retroceso.
-        playerRB.velocity = direction.normalized * recoilSpeed;
-        yield return new WaitForSeconds(recoilDuration); //USO DE CORRUTINA yield return
-        // Esta es la parte clave: se espera un cierto tiempo (en segundos) sin detener el resto del juego
-        // Por eso termine usando una corrutina (IEnumerator): permite esperar tiempo real entre instrucciones sin necesidad de pausar el jeugo
-        //playerRB.velocity = Vector2.zero;
+        movementBehaviour.canMove = false;
+
+        Vector2 velocity = Vector2.zero;
+        float smoothTime = moveSmoothTime; // parámetro configurable como en la caja
+        float stopThreshold = 0.05f;
+
+        while (Vector2.Distance(transform.position, anchorPosition) > stopThreshold) //Muevo al jugador mientras exista distancia entre el y el punto de anclaje
+        {
+            transform.position = Vector2.SmoothDamp(transform.position, anchorPosition, ref velocity, smoothTime);
+            yield return null;
+        }
+
+        transform.position = anchorPosition; // asegura que termine exactamente en el punto
+
         movementBehaviour.isRecoiling = false;
         movementBehaviour.canMove = true;
     }

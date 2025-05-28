@@ -68,6 +68,7 @@ public class TelekinesisState : IState
         if (Input.GetKeyDown(KeyCode.E))
         {
             ThrowArm();
+            _stateMachine.TransitionTo(_stateMachine.idleState); //Pasaje a estado de idle
         }
         //Debug.Log(_playerMovement.canMove);
     }
@@ -90,5 +91,8 @@ public class TelekinesisState : IState
         var armScript = bullet.GetComponent<ArmBullet>();
         armScript.SetDirection(direction);
         armScript.SetTelekinesisForce(_telekinesisForce); // Pasaje de la referencia al telekinesis force para aplicar el Recoil.
+
+
+
     }
 }

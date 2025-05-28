@@ -5,58 +5,52 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(BoxCollider2D))]
 public class MovableObject : MonoBehaviour, IMovable
 {
-   
-    private Rigidbody2D rb;
-    private SlidableSurfaceDetector surfaceDetector;
-    private BoxCollider2D boxCollider;
+        [Header("Movimiento suave")]
+        public float moveSmoothTime = 0.2f;
+        public float stopThreshold = 0.05f;
 
-    [SerializeField] private LayerMask slidableLayer;
-    [SerializeField] private float checkDistanceMultiplier = 1.05f; // Un poco más grande por seguridad
+        [Header("Colisión")]
+        public LayerMask obstacleMask; // Capas con las que el objeto debe colisionar
 
-    private void Awake()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        surfaceDetector = GetComponent<SlidableSurfaceDetector>();
-        boxCollider = GetComponent<BoxCollider2D>();
-    }
+        private Vector2 targetPosition;
+        private Vector2 velocity = Vector2.zero;
+        private bool isBeingMoved = false;
 
-    public void Move(Vector2 direction, int distance)
-    {
-        if (surfaceDetector != null && surfaceDetector.IsOnSlidableSurface)
+        public void MoveTo(Vector2 position)
         {
-            Vector2 movement = direction.normalized * distance;
-            Vector2 targetPosition = rb.position + movement;
+            targetPosition = position;
+            isBeingMoved = true;
 
-            // Obtener el tamaño del box collider para el OverlapBox
-            Vector2 boxSize = boxCollider.bounds.size * checkDistanceMultiplier;
-            Vector2 boxCenter = targetPosition;
 
-        //    // Comprobar si la nueva posición aún toca una superficie deslizable
-        //    Collider2D hit = Physics2D.OverlapBox(boxCenter, boxSize, 0f, slidableLayer);
-
-        //    if (hit != null)
-        //    {
-        //        rb.MovePosition(targetPosition);
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("Movimiento cancelado: fuera de zona deslizable");
-        //    }
         }
+
+
+    void Update()
+        {
+            if (!isBeingMoved) return;
+
+            Vector2 currentPosition = transform.position;
+            Vector2 direction = targetPosition - currentPosition;
+            float distance = direction.magnitude;
+
+            // Verifica colisión en la trayectoria
+            if (Physics2D.Raycast(currentPosition, direction.normalized, distance, obstacleMask))
+            {
+                Debug.DrawRay(currentPosition, direction.normalized * distance, Color.red, 0.1f);
+                Debug.Log("Movimiento detenido por colisión");
+                isBeingMoved = false;
+                return;
+            }
+
+            // Movimiento suave hacia el destino
+            Vector2 newPosition = Vector2.SmoothDamp(currentPosition, targetPosition, ref velocity, moveSmoothTime);
+            transform.position = newPosition;
+
+            if (Vector2.Distance(newPosition, targetPosition) < stopThreshold)
+            {
+                isBeingMoved = false;
+            }
+        Debug.DrawRay(currentPosition, direction.normalized * distance, Color.red, 0.1f);
     }
 
-#if UNITY_EDITOR
-    // Para visualizar en la escena el área del OverlapBox (debug)
-    private void OnDrawGizmosSelected()
-    {
-        if (boxCollider == null) return;
-
-        Gizmos.color = Color.yellow;
-        Vector2 direction = Application.isPlaying ? rb.velocity.normalized : Vector2.right;
-        Vector2 futurePosition = Application.isPlaying ? rb.position + direction * 0.5f : (Vector2)transform.position + Vector2.right * 0.5f;
-        Vector2 boxSize = boxCollider.bounds.size* checkDistanceMultiplier;
-
-        Gizmos.DrawWireCube(futurePosition, boxSize);
     }
-#endif
-}
