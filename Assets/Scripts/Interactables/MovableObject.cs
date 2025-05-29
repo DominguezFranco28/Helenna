@@ -49,7 +49,8 @@ public class MovableObject : MonoBehaviour, IMovable
             if (Vector2.Distance(newPosition, targetPosition) < stopThreshold)
             {
                 isBeingMoved = false;
-            }
+                velocity = Vector2.zero;
+        }
         Debug.DrawRay(currentPosition, direction.normalized * distance, Color.red, 0.1f);
     }
 

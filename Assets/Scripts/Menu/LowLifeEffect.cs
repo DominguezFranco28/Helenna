@@ -7,7 +7,7 @@ public class LowLifeEffect : MonoBehaviour, IObserver
     //Interfaz de observador, porque quiero que este pendiente al StatsManager, para que haga efecto
     //de peligro cuando el jugador tenga poca vida
     public GameObject lowLife;
-    public void OnNotify(int energy, int health, int power)
+    public void OnNotify(int energy, int health)
     {
         var newEnergy = energy;
 
@@ -21,7 +21,7 @@ public class LowLifeEffect : MonoBehaviour, IObserver
 
             lowLife.SetActive(false);
         }
-        var newPower = power;
+
     }
      private void Start()
     {

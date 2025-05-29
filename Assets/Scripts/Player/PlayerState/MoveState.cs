@@ -33,7 +33,7 @@ public class MoveState :  IState
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            _stateMachine.TransitionTo(_stateMachine.telekinesisState); //Pasaje a estado de movimiento
+            _stateMachine.TransitionTo(_stateMachine.impulserState); //Pasaje a estado de impulso
         }
 
     }

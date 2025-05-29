@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IObserver
 {
-    void OnNotify(int energy, int health, int power); 
+    void OnNotify(int energy, int health); 
 
 }

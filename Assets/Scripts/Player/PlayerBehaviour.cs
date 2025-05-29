@@ -80,7 +80,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private float _speed;
     private Rigidbody2D _rb2D;
     public Animator _animator;
-    private TelekinesisForce _telekinesisPush;
+    private ArmImpulser _armImpulser;
     public bool canMove;
     public bool isRecoiling = false; //Bandera utilizada para indicar si va el jugador esta en "retroceso" despues de un impulso.
     private Vector2 _movementInput;
@@ -91,7 +91,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         _rb2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _telekinesisPush = GetComponent<TelekinesisForce>();
+        _armImpulser = GetComponent<ArmImpulser>();
 
     }
     public void SetMovementInput(Vector2 input)
@@ -118,19 +118,13 @@ public class PlayerBehaviour : MonoBehaviour
             _rb2D.velocity = _movementInput * _speed;
         }
     }
-    private void Update()
-    {
 
-    }
-    public void PerformPush()
+
+    public void PerformThrowArm(ImpulseType type)
     {
-        _telekinesisPush.MouseGetPush();
+        _armImpulser.GetThrowArm(type);
     }
 
-    public void PerformPull()
-    {
-        _telekinesisPush.MouseGetPull();
-    }
 }
 
 

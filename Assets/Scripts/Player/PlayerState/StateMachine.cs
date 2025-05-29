@@ -15,15 +15,15 @@ public class StateMachine
 {
     public MoveState moveState;
     public IdleState idleState;
-    public TelekinesisState telekinesisState;
-    public DashingState dashingState;
+    public ImpulseState impulserState;
+
     public IState CurrentState { get; private set; } //Solo lectura. Objeto externo puede setear el metodo Initialize para establecer un state default
-    public StateMachine(PlayerBehaviour player,GameObject armShot, Transform spawnPoint, TelekinesisForce telekinesisForce)
+    public StateMachine(PlayerBehaviour player)
     {
         this.moveState = new MoveState(player,this); 
         this.idleState = new IdleState(player,this);
-        this.telekinesisState = new TelekinesisState(player,this, armShot, spawnPoint,telekinesisForce);
-        this.dashingState = new DashingState(player,this);
+        this.impulserState = new ImpulseState(player,this);
+
 
         //Fue necesario agregar el player,this. Lo paso para que todos los estados conozca la UNICA StateMachina de estados existentes, y no me construyan nuevas en cada instanciacion.
     }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HookPoint
   - SlideFloor
+  - Pushable
   layers:
   - Default
   - TransparentFX

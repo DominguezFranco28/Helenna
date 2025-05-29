@@ -17,6 +17,7 @@ public class IdleState :  IState
     {
         Debug.Log("Entraste al estado: IDLE");
         _playerMovement.SetMovementInput(Vector2.zero); //Freezeamos al pj al entrar a este estado.
+        _playerMovement.canMove = true;
         //Podria setear un trigger de entrada a la animación de idle aca, por ejemplo exsconder el arma
     }
 
@@ -38,7 +39,7 @@ public class IdleState :  IState
         _playerMovement.SetMovementInput(Vector2.zero);
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            _stateMachine.TransitionTo(_stateMachine.telekinesisState); //Pasaje a estado de movimiento
+            _stateMachine.TransitionTo(_stateMachine.impulserState); //Pasaje a estado de movimiento
         }
     }
 }
