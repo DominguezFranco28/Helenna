@@ -31,7 +31,6 @@ public class ArmImpulser : MonoBehaviour
     private MousePosition mousePosition;
     private PlayerBehaviour movementBehaviour;
     private PlayerEnergy playerEnergy;
-    [SerializeField] private Transform pushOrigin;
     [SerializeField] private LineRenderer pushRenderer;
 
     //Variables ligadas al patron Observer
@@ -119,10 +118,10 @@ public class ArmImpulser : MonoBehaviour
     private void ShowRaycastLine()
     {
         Vector2 direction = mousePosition.MouseWorlPos;
-        Vector3 pushStart = pushOrigin.position;
+        Vector3 pushStart = _spawnPoint.position;
         Vector3 pushEnd = pushStart + (Vector3)direction * pushRange;
         //Mismo check del hit con las capas que me interesa de antes, pero ahora solo para modificar color.
-        RaycastHit2D hit = Physics2D.Raycast(pushOrigin.position, direction, pushRange, pushableLayer);
+        RaycastHit2D hit = Physics2D.Raycast(_spawnPoint.position, direction, pushRange, pushableLayer);
 
         if (hit.collider != null)
         {

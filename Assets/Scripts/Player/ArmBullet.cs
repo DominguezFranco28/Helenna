@@ -5,8 +5,7 @@ using static Cinemachine.CinemachineImpulseDefinition;
 
 public class ArmBullet : MonoBehaviour
 {
-    private PlayerBehaviour _playerMovement;
-    private StateMachine _stateMachine;
+    private PlayerBehaviour _playerBehaviour;
     private Rigidbody2D _rb;
     private MovableObject _movableObject; 
     
@@ -45,6 +44,7 @@ public class ArmBullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         if (collision.gameObject.CompareTag("HookPoint"))
         {
             Debug.Log("Impacto con un punto de anclaje!");

@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         _telekinesisForce = GetComponent<ArmImpulser>(); //Referencia para ejecutar la accion de inpacto del brazo.
-        _myStateMachine = new StateMachine(_playerBehaviour); //Le paso los 3 parametros ahora para tener en cuenta el brazo del viejo.
+        _myStateMachine = new StateMachine(_playerBehaviour); //Le paso los el parametro del player vehavbior
                                                                                      //Lo pason en el constructor por los State no heredan de monobehavoiur
 
         // Este ejemplo solo inicia en uno. Los estados pueden referenciar la StateMachine si querés hacer transiciones desde adentro.
@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+        if (_playerBehaviour.isInControll) //Tuve que agregarle la booleana aca tambien, porque sino me frenaba el movimiento del viejo pero me dejaba hacer el impulso apretando la q
+        {
         _myStateMachine?.Update();
+
+        }
     }
 }

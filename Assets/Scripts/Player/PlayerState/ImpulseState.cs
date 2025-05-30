@@ -6,7 +6,7 @@ public class ImpulseState : IState
 {
     private PlayerBehaviour _playerBehaviour;
     private StateMachine _stateMachine;
-    private float _duration = 0.5f;
+    private float _duration = 1f;
     private float _timer;
 
     public ImpulseState(PlayerBehaviour player, StateMachine stateMachine)
@@ -36,10 +36,11 @@ public class ImpulseState : IState
 
     public void Update()
     {
-        _timer -= Time.deltaTime;
+        _timer -= Time.deltaTime; //ver si puedo ajustar logica de cds
         if (Input.GetMouseButtonDown(0)) // Click izquierdo = empuje
         {
             _playerBehaviour.PerformThrowArm(ImpulseType.Push);
+
             _stateMachine.TransitionTo(_stateMachine.idleState);
         }
 

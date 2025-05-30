@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 221172413582834900}
   - component: {fileID: 2024762308430280431}
   - component: {fileID: 7369371912611827903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
