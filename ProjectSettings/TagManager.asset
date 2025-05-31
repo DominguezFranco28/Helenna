@@ -7,17 +7,18 @@ TagManager:
   - HookPoint
   - SlideFloor
   - Pushable
+  - PickableObject
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Pushable
+  - OnPositionObject
   - Water
   - UI
-  - Slide Floor
-  - Wall
+  - Bridge
+  - Void
   - Character
-  - 
+  - Bullet
   - 
   - 
   - 

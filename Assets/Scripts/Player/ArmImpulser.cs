@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ArmImpulser : MonoBehaviour
@@ -11,13 +12,13 @@ public class ArmImpulser : MonoBehaviour
     [SerializeField] private float recoilDuration;
     [SerializeField] private float moveSmoothTime;
     [SerializeField] private LayerMask pushableLayer;
-    [SerializeField] private LayerMask ignoreLayer;
+
 
     //Variable ligadas al Brazo
     [SerializeField] private GameObject _armShot;
     [SerializeField] private Transform _spawnPoint;
     private ArmImpulser _impulser;
-
+    private GameObject _currentArmBullet;
     private Collider2D _armCol;
     private Collider2D _playerCol;
 
@@ -31,7 +32,7 @@ public class ArmImpulser : MonoBehaviour
     private MousePosition mousePosition;
     private PlayerBehaviour movementBehaviour;
     private PlayerEnergy playerEnergy;
-    [SerializeField] private LineRenderer pushRenderer;
+    //[SerializeField] private LineRenderer pushRenderer;
 
     //Variables ligadas al patron Observer
     private StatsManager statsManager;
@@ -63,7 +64,7 @@ public class ArmImpulser : MonoBehaviour
     }
     private void Update()
     {
-        ShowRaycastLine();  //Para mostrar el Raycast al jugador, tal vez lo quite                           //Spoiler del futuro, no lo saque, lo use para dar fuerza a la mecanica principal.
+        /*ShowRaycastLine(); */ //Para mostrar el Raycast al jugador, tal vez lo quite                           //Spoiler del futuro, no lo saque, lo use para dar fuerza a la mecanica principal.
     }
 
 
@@ -93,15 +94,18 @@ public class ArmImpulser : MonoBehaviour
     }
     private void ThrowArm(ImpulseType type) 
     {
+  
+        if (_currentArmBullet != null) return; // Si hay un brazo activo, que retorne, solo quiero uno activado a la vez por coherencia.
 
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 direction = (mousePos - (Vector2)_spawnPoint.position).normalized;
-
+        Vector2 direction = mousePosition.MouseWorlPos; //Tomo la prop publica del MousePotition para no duplicar calculo.
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
         // Rotacion del proyectil apra que mire a donde apunta el mouse
         Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
         GameObject armBullet = GameObject.Instantiate(_armShot, _spawnPoint.position, rotation);
-
+        if (armBullet!= null)
+        {
+         _currentArmBullet = armBullet; //Guardo la refe del brazo actual
         //Ignorar colisiones para qeu el brazo no choque con el jugador
         Collider2D bulletCol = armBullet.GetComponent<Collider2D>();
         Physics2D.IgnoreCollision(bulletCol, _playerCol);
@@ -110,35 +114,35 @@ public class ArmImpulser : MonoBehaviour
         var armScript = armBullet.GetComponent<ArmBullet>();
         armScript.SetDirection(direction);
         armScript.SetImpulseForce(_impulser); 
-        armScript.SetImpulseType(type); 
+        armScript.SetImpulseType(type);
 
-
-
-    }
-    private void ShowRaycastLine()
-    {
-        Vector2 direction = mousePosition.MouseWorlPos;
-        Vector3 pushStart = _spawnPoint.position;
-        Vector3 pushEnd = pushStart + (Vector3)direction * pushRange;
-        //Mismo check del hit con las capas que me interesa de antes, pero ahora solo para modificar color.
-        RaycastHit2D hit = Physics2D.Raycast(_spawnPoint.position, direction, pushRange, pushableLayer);
-
-        if (hit.collider != null)
-        {
-            pushRenderer.startColor = new Color(0f, 1f, 1f, 1f);   // Cyan si el hit es Pushable.
-            pushRenderer.endColor = new Color(0f, 1f, 1f, 0f);
-            pushRenderer.SetPosition(0, pushStart);
-            pushRenderer.SetPosition(1, pushEnd);
+       
         }
-        else
-        {
-            pushRenderer.startColor = new Color(1f, 0f, 0f, 1f); // Rojo si no es Pushable.
-            pushRenderer.endColor = new Color(1f, 0f, 0f, 0f);
-
-            pushRenderer.SetPosition(0, pushStart);
-            pushRenderer.SetPosition(1, pushEnd);
-        } 
     }
+    //private void ShowRaycastLine()
+    //{
+    //    Vector2 direction = mousePosition.MouseWorlPos;
+    //    Vector3 pushStart = _spawnPoint.position;
+    //    Vector3 pushEnd = pushStart + (Vector3)direction * pushRange;
+    //    //Mismo check del hit con las capas que me interesa de antes, pero ahora solo para modificar color.
+    //    RaycastHit2D hit = Physics2D.Raycast(_spawnPoint.position, direction, pushRange, pushableLayer);
+
+    //    if (hit.collider != null)
+    //    {
+    //        pushRenderer.startColor = new Color(0f, 1f, 1f, 1f);   // Cyan si el hit es Pushable.
+    //        pushRenderer.endColor = new Color(0f, 1f, 1f, 0f);
+    //        pushRenderer.SetPosition(0, pushStart);
+    //        pushRenderer.SetPosition(1, pushEnd);
+    //    }
+    //    else
+    //    {
+    //        pushRenderer.startColor = new Color(1f, 0f, 0f, 1f); // Rojo si no es Pushable.
+    //        pushRenderer.endColor = new Color(1f, 0f, 0f, 0f);
+
+    //        pushRenderer.SetPosition(0, pushStart);
+    //        pushRenderer.SetPosition(1, pushEnd);
+    //    } 
+    //}
 }
 
 

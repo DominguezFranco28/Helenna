@@ -10,7 +10,7 @@ public class ArmBullet : MonoBehaviour
     private MovableObject _movableObject; 
     
     [SerializeField] private float _shotSpeed;
-    public Vector2 _direction;
+    private Vector2 _direction;
     private Collider2D _armCol;
     private Collider2D _playerCol;
     
@@ -33,7 +33,8 @@ public class ArmBullet : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _armCol = GetComponent<Collider2D>();;
+        _armCol = GetComponent<Collider2D>();
+
         Destroy(gameObject, 2f);
     }
     private void FixedUpdate()
@@ -61,7 +62,6 @@ public class ArmBullet : MonoBehaviour
         }
         else if ((collision.gameObject.CompareTag("Pushable")) && _impulseType == ImpulseType.Push)
         {
-
             Destroy(gameObject);            
             Debug.Log("Impactaste con un objeto movible");
             var collisionMove =collision.gameObject.GetComponent<MovableObject>();
@@ -74,10 +74,11 @@ public class ArmBullet : MonoBehaviour
                 Physics2D.IgnoreCollision(_armCol, targetCol);
             }
             collisionMove.MoveTo(pushTarget);
+
+
         }
         else if ((collision.gameObject.CompareTag("Pushable")) && _impulseType == ImpulseType.Pull)
         {
-
             Destroy(gameObject);
             Debug.Log("Impactaste con un objeto movible");
             var collisionMove = collision.gameObject.GetComponent<MovableObject>();
@@ -90,6 +91,7 @@ public class ArmBullet : MonoBehaviour
                 Physics2D.IgnoreCollision(_armCol, targetCol);
             }
             collisionMove.MoveTo(pushTarget); 
+
         }
 
         Destroy(gameObject);            

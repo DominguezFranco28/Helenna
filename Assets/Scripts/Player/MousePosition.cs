@@ -24,13 +24,13 @@ public class MousePosition : MonoBehaviour
     private void FlipSprite()
     {
 
-        //if (_mouseWorldPos.x < transform.position.x)
-        //{
-        //    _sprite.flipX = true; // Mirar a la izquierda
-        //}
-        //else
-        //{
-        //    _sprite.flipX = false; // Mirar a la derecha
-        //}
+        if (_mouseWorldPos.x < transform.position.x)
+        {
+            _sprite.flipX = true; // Mirar a la izquierda
+        }
+        else
+        {
+            _sprite.flipX = false; // Mirar a la derecha
+        }
     }
 }

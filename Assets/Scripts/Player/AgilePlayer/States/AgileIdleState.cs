@@ -14,6 +14,7 @@ public class AgileIdleState : IState
     public void Enter()
     {
         Debug.Log("Hola soy el pj2");
+        Debug.Log("Hola soy el pj2");
        
     }
 

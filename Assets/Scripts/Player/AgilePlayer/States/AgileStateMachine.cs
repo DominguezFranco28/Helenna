@@ -6,7 +6,7 @@ public class AgileStateMachine
 {
     public AgileMoveState moveState;
     public AgileIdleState idleState;
-    public ClimbingState climbingState;
+
 
     public IState CurrentState { get; private set; }
 
@@ -14,7 +14,6 @@ public class AgileStateMachine
     {
         this.moveState = new AgileMoveState(player, this);
         this.idleState = new AgileIdleState(player, this);
-        this.climbingState = new ClimbingState(player, this);
     }
 
     public void Initialize(IState startingState)

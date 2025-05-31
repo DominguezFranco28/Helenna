@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.8301887, g: 0.6564317, b: 0.14489143, a: 1}
   m_FlipX: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
   objectLayer:
     serializedVersion: 2
     m_Bits: 8
+  interact: {fileID: 0}
 --- !u!114 &-5718924664948994562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +160,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46912a9747615554da7dd88428c57933, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  franciscoPrefab: {fileID: 0}
   interact: {fileID: 0}
   spawnPoint: {fileID: 0}

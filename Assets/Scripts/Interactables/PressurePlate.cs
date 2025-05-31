@@ -19,13 +19,15 @@ public class PressurePlate : MonoBehaviour, IActiveable
     {
         if (((1 << other.gameObject.layer) & objectLayer) != 0)
         {
+
             Debug.Log("OBJETO SOBRE LA PLACA");
-            //Freno el movimiento del objeto que entre
+            Activeable();
+            //Freno el movimiento del objeto que entre, y desactivo su componente que lo hace movible para el caso del viejo.
             MovableObject movable = other.GetComponent<MovableObject>();
+
             if (movable != null)
             {
-                movable.enabled = false;  // Desactivo el componente para frenar el movimiento
-                Activeable();
+                movable.enabled = false;  
             }
         }
     }
