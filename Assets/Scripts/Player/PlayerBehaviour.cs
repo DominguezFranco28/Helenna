@@ -10,7 +10,7 @@ public class PlayerBehaviour : MonoBehaviour, IControllable
     private Rigidbody2D _rb2D;
     public Animator _animator;
     private ArmImpulser _armImpulser;
-    public bool isInControll = false;
+    public bool isInControll = true;
     public bool canMove;
     public bool isRecoiling = false; //Bandera utilizada para indicar si va el jugador esta en "retroceso" despues de un impulso.
     private Vector2 _movementInput;

@@ -1,0 +1,932 @@
+fileFormatVersion: 2
+guid: 0f0324513d9f34c459f57b9b5eacc092
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ImpulseArmPose_0
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 2080
+        width: 206
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef100ac661e404f478cd077c784f5e8e
+      internalID: 869171020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_1
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 2080
+        width: 206
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcca6cc53e87fb64b94936a362033e66
+      internalID: 541540067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_2
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 2080
+        width: 191
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd06bd296f716cf4882e74d7618339b8
+      internalID: 874327087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_3
+      rect:
+        serializedVersion: 2
+        x: 2154
+        y: 2080
+        width: 186
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef8eb7a4f208802488734b9eb1c75c98
+      internalID: -722232958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_4
+      rect:
+        serializedVersion: 2
+        x: 2344
+        y: 2230
+        width: 11
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb60f02728c770428f058d6f1e4bde5
+      internalID: -1597972813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_5
+      rect:
+        serializedVersion: 2
+        x: 2794
+        y: 2080
+        width: 191
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e38800493cda840bbd3ef4a361afd8
+      internalID: 932285681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_6
+      rect:
+        serializedVersion: 2
+        x: 2989
+        y: 2230
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1463ca60ccfd8b249ad8f2743f89ad43
+      internalID: -1445316057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_7
+      rect:
+        serializedVersion: 2
+        x: 3429
+        y: 2080
+        width: 197
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 792bf8d6cef5b0049bf39664d381dda8
+      internalID: -1271072633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_8
+      rect:
+        serializedVersion: 2
+        x: 2334
+        y: 2194
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a88dc2cbc48a2b408a8be830896ea36
+      internalID: 1849507002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_9
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 1440
+        width: 157
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b3945ed06ffdff418e37f963281166b
+      internalID: -985542362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_10
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 1440
+        width: 186
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf915f478dff5054b93e0204fe13897b
+      internalID: 1550937551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_11
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 1440
+        width: 232
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94bd0f6adc955684ea5d9c2cbbbad12b
+      internalID: 1831770117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_12
+      rect:
+        serializedVersion: 2
+        x: 2164
+        y: 1440
+        width: 197
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4fc88fb74bb7a546b165da72f16565b
+      internalID: 933408829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_13
+      rect:
+        serializedVersion: 2
+        x: 2814
+        y: 1440
+        width: 162
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b22230b95b8f684b9449cbce09d2be1
+      internalID: 643453369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_14
+      rect:
+        serializedVersion: 2
+        x: 2985
+        y: 1630
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0226f074cfd3fea4db1e24f40a0d6b7b
+      internalID: -6466563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_15
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1639
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5ed774689669a4a8f78761983494d5
+      internalID: -135198599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_16
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 1440
+        width: 161
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e29220702ec224428bc79667473fd74
+      internalID: 1366699664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_17
+      rect:
+        serializedVersion: 2
+        x: 2364
+        y: 1609
+        width: 32
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d2286e4fa611ac48be9ac30cc035f2b
+      internalID: 793794764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_18
+      rect:
+        serializedVersion: 2
+        x: 3030
+        y: 1615
+        width: 15
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382c7ae6e3655f04f8298d87480dd185
+      internalID: 203179334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_19
+      rect:
+        serializedVersion: 2
+        x: 2359
+        y: 1590
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1caafb9d329f9d4bb328955e676f980
+      internalID: 1665184749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_20
+      rect:
+        serializedVersion: 2
+        x: 3019
+        y: 1594
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ebf0e51b666aeb4081e8c684f50488b
+      internalID: 653765453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_21
+      rect:
+        serializedVersion: 2
+        x: 2329
+        y: 1570
+        width: 56
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 242232500de93cf4486cc2fc6d781684
+      internalID: -427899368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_22
+      rect:
+        serializedVersion: 2
+        x: 2994
+        y: 1575
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 259c24d62176f1046a10f76412c36540
+      internalID: -1464704185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_23
+      rect:
+        serializedVersion: 2
+        x: 3024
+        y: 1570
+        width: 12
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a476eb2672a477444974f68a06930119
+      internalID: -430431023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_24
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 799
+        width: 156
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac66d470d6cf4454e9efdf4eb648847a
+      internalID: 1540309682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_25
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 799
+        width: 162
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1bc35fc621eee408f3c96ed3e88614
+      internalID: -339616133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_26
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 799
+        width: 210
+        height: 311
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a551a7155724bc9469367fb8bae8df4e
+      internalID: 150602210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_27
+      rect:
+        serializedVersion: 2
+        x: 2134
+        y: 799
+        width: 197
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8b0d899a08c5643b751a64da0d5acd
+      internalID: -1055232914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_28
+      rect:
+        serializedVersion: 2
+        x: 2794
+        y: 799
+        width: 167
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d23f94f459d2134193d42c08818ad2d
+      internalID: -86028906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_29
+      rect:
+        serializedVersion: 2
+        x: 3450
+        y: 799
+        width: 156
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f1ab19dfe317e54e865482ca52bcdea
+      internalID: -90034168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_30
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 159
+        width: 201
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db342065c28deee47827dbb783aa787e
+      internalID: 381191174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_31
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 159
+        width: 197
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da6854b65699ffe4aa58e28ffa777ebd
+      internalID: -1397110479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_32
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 159
+        width: 191
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3489a352d3e9a9949840416596bfa2a9
+      internalID: 537523254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_33
+      rect:
+        serializedVersion: 2
+        x: 2145
+        y: 159
+        width: 191
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68c28eceaba02341a1c52c42aad327a
+      internalID: -2140625360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_34
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 159
+        width: 197
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c164969af7e63e4ea7cd92d7c6a3456
+      internalID: -148716155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ImpulseArmPose_35
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 159
+        width: 197
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce4a5a946c8532429928efd9e3c8420
+      internalID: 1834096170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ImpulseArmPose_0: 869171020
+      ImpulseArmPose_1: 541540067
+      ImpulseArmPose_10: 1550937551
+      ImpulseArmPose_11: 1831770117
+      ImpulseArmPose_12: 933408829
+      ImpulseArmPose_13: 643453369
+      ImpulseArmPose_14: -6466563
+      ImpulseArmPose_15: -135198599
+      ImpulseArmPose_16: 1366699664
+      ImpulseArmPose_17: 793794764
+      ImpulseArmPose_18: 203179334
+      ImpulseArmPose_19: 1665184749
+      ImpulseArmPose_2: 874327087
+      ImpulseArmPose_20: 653765453
+      ImpulseArmPose_21: -427899368
+      ImpulseArmPose_22: -1464704185
+      ImpulseArmPose_23: -430431023
+      ImpulseArmPose_24: 1540309682
+      ImpulseArmPose_25: -339616133
+      ImpulseArmPose_26: 150602210
+      ImpulseArmPose_27: -1055232914
+      ImpulseArmPose_28: -86028906
+      ImpulseArmPose_29: -90034168
+      ImpulseArmPose_3: -722232958
+      ImpulseArmPose_30: 381191174
+      ImpulseArmPose_31: -1397110479
+      ImpulseArmPose_32: 537523254
+      ImpulseArmPose_33: -2140625360
+      ImpulseArmPose_34: -148716155
+      ImpulseArmPose_35: 1834096170
+      ImpulseArmPose_4: -1597972813
+      ImpulseArmPose_5: 932285681
+      ImpulseArmPose_6: -1445316057
+      ImpulseArmPose_7: -1271072633
+      ImpulseArmPose_8: 1849507002
+      ImpulseArmPose_9: -985542362
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

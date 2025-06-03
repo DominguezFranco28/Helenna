@@ -13,16 +13,22 @@ public class AgileMoveState : IState
     }
     public void Enter()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Entraste al estado : movimiento");
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("saliste del estado: movimiento");
     }
 
     public void Update()
     {
-        throw new System.NotImplementedException();
+        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        _playerBehaviour.SetMovementInput(input);
+        if (input.magnitude <= 0.01f)
+        {
+            _agileStateMachine.TransitionTo(_agileStateMachine.idleState);
+        }
+
     }
 }

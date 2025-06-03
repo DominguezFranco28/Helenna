@@ -14,19 +14,25 @@ public class AgileIdleState : IState
     public void Enter()
     {
         Debug.Log("Hola soy el pj2");
-        Debug.Log("Hola soy el pj2");
-       
+        _agilePlayerBehaviour.SetMovementInput(Vector2.zero); //Freezeamos al pj al entrar a este estado.
+        _agilePlayerBehaviour.canMove = true;
+
     }
 
     public void Exit()
     {
-        throw new System.NotImplementedException();
+
+        Debug.Log("Saliste del estado: IDLE PERRO");
     }
 
     public void Update()
     {
         Debug.Log("Hola soy el pj2, UPDATE");
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        _agilePlayerBehaviour.SetMovementInput(input);
+        
+        if (input.magnitude > 0.01f)
+        {
+            _agileStateMachine.TransitionTo(_agileStateMachine.moveState); //Pasaje a estado de movimiento
+        }
     }
 }

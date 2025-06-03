@@ -78,7 +78,7 @@ public class ArmImpulser : MonoBehaviour
 
             Vector2 velocity = Vector2.zero;
             float smoothTime = moveSmoothTime; // parámetro configurable como en la caja
-            float stopThreshold = 0.05f;
+            float stopThreshold = 0.5f;
 
             while (Vector2.Distance(transform.position, anchorPosition) > stopThreshold) //Muevo al jugador mientras exista distancia entre el y el punto de anclaje
             {

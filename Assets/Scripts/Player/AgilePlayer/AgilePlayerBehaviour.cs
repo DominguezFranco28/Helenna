@@ -11,7 +11,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public bool isInControll = false;
     private Vector2 _movementInput;
 
-    public Vector2 MovementInput => _movementInput;
+    public Vector2 MovementInput { get { return _movementInput; } }
 
     void Awake()
     {
@@ -25,9 +25,9 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
         if (!isInControll || !canMove) return;
         {
             _movementInput = input.normalized;
-            //_animator.SetFloat("Horizontal", _movementInput.x);
-            //_animator.SetFloat("Vertical", _movementInput.y);
-            //_animator.SetFloat("Speed", _movementInput.magnitude);
+            _animator.SetFloat("Horizontal", _movementInput.x);
+            _animator.SetFloat("Vertical", _movementInput.y);
+            _animator.SetFloat("Speed", _movementInput.magnitude);
         }
     }
 

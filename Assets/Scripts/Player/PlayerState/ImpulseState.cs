@@ -23,7 +23,8 @@ public class ImpulseState : IState
         _timer = _duration;
         _playerBehaviour.canMove = false;
         _playerBehaviour.StopMovement();
-        _playerBehaviour._animator.SetTrigger("IsTelekinesis"); //Tengo que modificar el nombre de la anim.
+        _playerBehaviour._animator.SetTrigger("IsImpulsing"); //Tengo que modificar el nombre de la anim.
+
 
     }
 
@@ -32,6 +33,7 @@ public class ImpulseState : IState
         //Animacion de salida telekinetico. Tal vez una especie de explosion de vapor desde el brazo, o retraccion del mismo
         //_playerMovement.canMove = true;
         Debug.Log("Saliste del estado: IMPULSE");
+
     }
 
     public void Update()
