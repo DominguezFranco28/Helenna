@@ -30,7 +30,6 @@ public class ImpulseState : IState
 
     public void Exit()
     {
-        //Animacion de salida telekinetico. Tal vez una especie de explosion de vapor desde el brazo, o retraccion del mismo
         //_playerMovement.canMove = true;
         Debug.Log("Saliste del estado: IMPULSE");
 

@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine; //Importante esto para poder usar los metodos propios de la libreria de cinemachine
-
+using Cinemachine; //Libreria de Cinemachine
 public class CharacterManager : MonoBehaviour
 {
     public GameObject[] characters;

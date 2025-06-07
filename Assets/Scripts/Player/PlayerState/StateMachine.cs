@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable] //Expone el StateMachine y sus campos publicos en el inspector.
 public class StateMachine 
-    // en el libro aclara que el StateMachine no hereda de monobehavoir.
+    // en el libro aclara que el StateMachine no necesariamente hereda de monobehavoir.
     // Esto es asi porque es un patron de ddiseno no solo pensado para unity,
     // ademas de qwue responde a una buena practica en cuando a Separacion de responsabilidades,
-    // mejora la org y mantiene el aptron limpio y reutilizabler en diversos casos.
+    // mejora la org y mantiene el patrón limpio y reutilizable en diversos casos.
 
 
     //Como no hereda de MonoBehavoir, es necesario usar constructores para setear cada instancia de los estados deseados. No puede usarse el getcomponent

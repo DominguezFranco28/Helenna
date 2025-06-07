@@ -19,18 +19,18 @@ public class MousePosition : MonoBehaviour
     {
         Vector3 rawMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Metodo que devuelve un vector3
         _mouseWorldPos = new Vector2(rawMousePos.x, rawMousePos.y); //Pero para mi logica 2d, ignoro la z con esta conversion explicita.
-        FlipSprite();
+        //FlipSprite();
     }
-    private void FlipSprite()
-    {
+    //private void FlipSprite()
+    //{
 
-        //if (_mouseWorldPos.x < transform.position.x)
-        //{
-        //    _sprite.flipX = true; // Mirar a la izquierda
-        //}
-        //else
-        //{
-        //    _sprite.flipX = false; // Mirar a la derecha
-        //}
-    }
+    //    //if (_mouseWorldPos.x < transform.position.x)
+    //    //{
+    //    //    _sprite.flipX = true; // Mirar a la izquierda
+    //    //}
+    //    //else
+    //    //{
+    //    //    _sprite.flipX = false; // Mirar a la derecha
+    //    //}
+    //}
 }

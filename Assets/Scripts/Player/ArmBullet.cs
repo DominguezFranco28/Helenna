@@ -5,14 +5,11 @@ using static Cinemachine.CinemachineImpulseDefinition;
 
 public class ArmBullet : MonoBehaviour
 {
-    private PlayerBehaviour _playerBehaviour;
     private Rigidbody2D _rb;
-    private MovableObject _movableObject; 
     
     [SerializeField] private float _shotSpeed;
     private Vector2 _direction;
     private Collider2D _armCol;
-    private Collider2D _playerCol;
     
     private ArmImpulser _armImpulser;
     private ImpulseType _impulseType;
