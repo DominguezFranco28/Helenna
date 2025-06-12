@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6780872034322992257}
   - component: {fileID: 7659386802952987655}
   - component: {fileID: 6790850590906612256}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ArmShoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -6,7 +6,7 @@ public class SFXPlayerController : MonoBehaviour
 {
     [Header("Configuracion de Audio")]
     [SerializeField] private AudioClip _sfxClip;
-    [SerializeField] private KeyCode _playKey = KeyCode.Space; //Tecla que activa el sonido
+    [SerializeField] private KeyCode _playKey; //Tecla que activa el sonido
 
     [SerializeField] private AudioSource _audioSource;
 
@@ -39,8 +39,27 @@ public class SFXPlayerController : MonoBehaviour
     {
             if (_audioSource !=null && _sfxClip != null) //Validacion de referencias
             {
+                
                 _audioSource.PlayOneShot(_sfxClip); //REPRODUCE EL CLIP UNA SOLA VEZ
                 Debug.Log("Sfx reproducido: " + _sfxClip.name);
             }
+    }
+    public void PlayLoopSFX() //metodo para reproducir un loop de sfx
+    {
+        if (_audioSource != null && _sfxClip != null) //Validacion de referencias
+        {
+            _audioSource.clip = _sfxClip;     // asigno el clip al audiosource 
+            _audioSource.loop = true;         // activo el loop
+            _audioSource.Play();
+            Debug.Log("Sfx reproducido: " + _sfxClip.name);
+        }
+    }
+    public void StopSFXLoop() //metodo para apagar el loop
+    {
+        if (_audioSource != null && _audioSource.isPlaying)
+        {
+            _audioSource.Stop();
+            Debug.Log("SFX en loop detenido.");
+        }
     }
 }

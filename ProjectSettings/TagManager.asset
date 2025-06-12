@@ -9,6 +9,8 @@ TagManager:
   - Pushable
   - PickableObject
   - OldPlayer
+  - Climbable
+  - Hole
   layers:
   - Default
   - TransparentFX
