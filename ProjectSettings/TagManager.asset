@@ -11,6 +11,8 @@ TagManager:
   - OldPlayer
   - Climbable
   - Hole
+  - ChildPlayer
+  - DogPlayer
   layers:
   - Default
   - TransparentFX

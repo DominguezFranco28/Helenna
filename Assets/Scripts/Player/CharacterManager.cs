@@ -20,6 +20,10 @@ public class CharacterManager : MonoBehaviour
             _currentIndex = (_currentIndex + 1) % characters.Length;
             ActivateCharacter(_currentIndex);
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift) && (characters[_currentIndex].name == "OldPlayer")) // puedo limitar el tp solo al viejo, tengo que ver si lo dejo esto
+        {
+            TeleportAllToCurrent();
+        }
     }
 
     void ActivateCharacter(int index)
@@ -38,5 +42,19 @@ public class CharacterManager : MonoBehaviour
         }
 
     }
-    
+    void TeleportAllToCurrent()
+    {
+        Transform targetPosition = characters[_currentIndex].transform;
+
+        for (int i = 0; i < characters.Length; i++)
+        {
+            if (i != _currentIndex)
+            {
+                characters[i].transform.position = targetPosition.position;
+            }
+        }
+
+        Debug.Log("Todos los personajes han sido teletransportados al personaje activo.");
+    }
+
 }

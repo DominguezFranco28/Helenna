@@ -9,7 +9,7 @@ public abstract class PlayerDetector : MonoBehaviour  //CLASE ABSTRACTA. A modo 
      public virtual void OnTriggerEnter2D(Collider2D collision) //Establezco un ""llamado comun" para sus hijas, el entrar en contacto con el Player
     {
        
-        if (collision.gameObject.CompareTag("OldPlayer"))
+        if (collision.gameObject.CompareTag("Player"))
         {
 
             Effect(collision);

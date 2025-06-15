@@ -5,6 +5,10 @@ using UnityEngine;
 public class PressurePlate : MonoBehaviour
 {
     [SerializeField] private LayerMask objectLayer;
+    [SerializeField] private GameObject interact;
+
+
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (((1 << other.gameObject.layer) & objectLayer) != 0)
@@ -13,12 +17,11 @@ public class PressurePlate : MonoBehaviour
             Debug.Log("OBJETO SOBRE LA PLACA");
 
             //LOGICA PARA DETENER CAJA AA MODO DE "PLACA DE PRESION"
-            //Freno el movimiento del objeto que entre, y desactivo su componente que lo hace movible para el caso del viejo.
-            MovableObject movable = other.GetComponent<MovableObject>();
+            IActiveable activate = interact.GetComponent<IActiveable>();
 
-            if (movable != null)
+            if (activate != null)
             {
-                movable.enabled = false;
+                activate.Activeable();
             }
         }
     }

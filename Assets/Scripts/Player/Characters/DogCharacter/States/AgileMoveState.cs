@@ -22,7 +22,7 @@ public class AgileMoveState : IState
     {
         Debug.Log("saliste del estado: movimiento");
     }
-
+    
     public void Update()
     {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
