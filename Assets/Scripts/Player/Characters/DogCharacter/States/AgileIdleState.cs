@@ -27,7 +27,6 @@ public class AgileIdleState : IState
 
     public void Update()
     {
-        Debug.Log("Hola soy el pj2, UPDATE");
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         
         if (input.magnitude > 0.01f)

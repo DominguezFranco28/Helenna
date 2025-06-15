@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class DiaryNote : PlayerDetector, IActiveable
 {
-    [SerializeField] private GameObject interact;
-    [SerializeField] private Transform spawnPoint;
   public void Activeable()
     {
         SceneManager.LoadScene("MenuScreen");

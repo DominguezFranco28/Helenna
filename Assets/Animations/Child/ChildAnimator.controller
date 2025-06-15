@@ -46,10 +46,10 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0
+  m_TransitionDuration: 0.05
   m_TransitionOffset: 0
   m_ExitTime: 0.75
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 0
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -198,7 +198,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 907aa7c8043f65246b6f9e72db799883, type: 2}
+  m_Motion: {fileID: 7400000, guid: 423aca7130f0e424d8145e5a72c35a0f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -213,7 +213,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: c694dc919260dc64eb3cee211027779e, type: 2}
+    m_Motion: {fileID: 7400000, guid: 80b41119351935e47b21377113c82115, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -221,7 +221,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: c694dc919260dc64eb3cee211027779e, type: 2}
+    m_Motion: {fileID: 7400000, guid: 60c68fdf89d135247bb5976bf5ca397f, type: 2}
     m_Threshold: 0.14285715
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -229,7 +229,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 8131c92b8b916cb4f85a8628e46220de, type: 2}
+    m_Motion: {fileID: 7400000, guid: 40fded62d3e50394a89354883457b2db, type: 2}
     m_Threshold: 0.2857143
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -237,7 +237,7 @@ BlendTree:
     m_DirectBlendParameter: Horizontal
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: c694dc919260dc64eb3cee211027779e, type: 2}
+    m_Motion: {fileID: 7400000, guid: 14832a332a7a9e24ba1aaf1747de7af7, type: 2}
     m_Threshold: 0.42857143
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
@@ -317,7 +317,7 @@ AnimatorState:
   m_PrefabAsset: {fileID: 0}
   m_Name: Climb
   m_Speed: 1
-  m_CycleOffset: 0
+  m_CycleOffset: 1
   m_Transitions:
   - {fileID: -4402953583185294128}
   m_StateMachineBehaviours: []
@@ -329,7 +329,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b3e995560ede76f47840315c06904172, type: 2}
+  m_Motion: {fileID: 7400000, guid: 9ccc0e82e2575fe4399b1596618ee0b6, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

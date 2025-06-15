@@ -32,7 +32,7 @@ public class ArmBullet : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _armCol = GetComponent<Collider2D>();
 
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 0.8f);
     }
     private void FixedUpdate()
     {

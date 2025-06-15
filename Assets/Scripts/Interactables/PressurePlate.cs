@@ -2,32 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PressurePlate : MonoBehaviour, IActiveable
+public class PressurePlate : MonoBehaviour
 {
     [SerializeField] private LayerMask objectLayer;
-    [SerializeField] private GameObject interact; //Que efecto realiza la placa cuando se acciona, por ejemplo, romper una puerta o disparar cinematica
-    private BoxCollider2D _collider2D;
-
-    public void Activeable()
-    {
-        Debug.Log("ME ACTIVASTE!");
-        gameObject.transform.rotation = Quaternion.Euler(0, 0, 360);
-        Destroy(interact);
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (((1 << other.gameObject.layer) & objectLayer) != 0)
         {
 
             Debug.Log("OBJETO SOBRE LA PLACA");
-            Activeable();
+
+            //LOGICA PARA DETENER CAJA AA MODO DE "PLACA DE PRESION"
             //Freno el movimiento del objeto que entre, y desactivo su componente que lo hace movible para el caso del viejo.
             MovableObject movable = other.GetComponent<MovableObject>();
 
             if (movable != null)
             {
-                movable.enabled = false;  
+                movable.enabled = false;
             }
         }
     }

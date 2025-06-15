@@ -18,11 +18,10 @@ public class ChildClimbState : IState
     public void Enter()
     {
         Debug.Log("Entraste al modo CHILD CLIMB");
-        _childPlayerBehaviour.StopMovement();
+        //_childPlayerBehaviour.StopMovement();
         if (_climbDetector.Climbable != null)
         {
-            _ignoredClimbable = _climbDetector.Climbable; //referencia al objeto escalado para poder reactivarlo luego de escalarlo.
-            Physics2D.IgnoreCollision(_childPlayerBehaviour.PlayerCollider, _ignoredClimbable, true);
+            _childPlayerBehaviour.PlayerCollider.enabled = false;
             _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.ClimbSpeed);
             _childPlayerBehaviour._animator.SetBool("isClimbing", true);
             _childPlayerBehaviour._sfx.PlayLoopSFX();
@@ -36,12 +35,12 @@ public class ChildClimbState : IState
         if (_ignoredClimbable != null)
         {
             _childPlayerBehaviour.transform.position += Vector3.up * 0.05f; //desplazo un pcoo haacia arriba al jugador apra que de sensacion de salto despues de escalada
-            Physics2D.IgnoreCollision(_childPlayerBehaviour.PlayerCollider, _ignoredClimbable, false);
             _ignoredClimbable = null;
-            _childPlayerBehaviour._animator.SetBool("isClimbing", false);
-            _childPlayerBehaviour._sfx.StopSFXLoop();
         }
+        _childPlayerBehaviour._animator.SetBool("isClimbing", false);
+        _childPlayerBehaviour.PlayerCollider.enabled = true;
         _childPlayerBehaviour.StopMovement();
+        _childPlayerBehaviour._sfx.StopSFXLoop();
         _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.DefaultSpeed);
         //dsactivar animación: _childPlayerBehaviour.Animator.SetBool("isClimbing", false);
     }
