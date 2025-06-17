@@ -7,15 +7,17 @@ public class PlayerBehaviour : MonoBehaviour, IControllable
 {
     
     [SerializeField] private float _speed;
+    [SerializeField] private AudioClip _footstepsSFX;
     private Rigidbody2D _rb2D;
-    public Animator _animator;
+    private Animator _animator;
+    private Vector2 _movementInput;
     private ArmImpulser _armImpulser;
     public bool isInControll = true;
     public bool canMove;
     public bool isRecoiling = false; //Bandera utilizada para indicar si va el jugador esta en "retroceso" despues de un impulso.
-    private Vector2 _movementInput;
-
+    public Animator Animator { get { return _animator; } } 
     public Vector2 MovementInput { get { return _movementInput; } }
+    public AudioClip StepsSFX { get { return _footstepsSFX; } }
 
     void Awake()
     {
@@ -40,7 +42,7 @@ public class PlayerBehaviour : MonoBehaviour, IControllable
     {
         _movementInput = Vector2.zero;
         _rb2D.velocity = Vector2.zero;
-        _animator.SetFloat("Speed", 0f); // tal vez modiofique con otra animaicon.
+        _animator.SetFloat("Speed", 0f); 
     }
     private void FixedUpdate()
     {

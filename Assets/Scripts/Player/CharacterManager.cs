@@ -7,6 +7,7 @@ public class CharacterManager : MonoBehaviour
     public GameObject[] characters;
     private int _currentIndex = 0;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
+    [SerializeField] private AudioClip _changeSFX;
 
     void Start()
     {
@@ -17,10 +18,13 @@ public class CharacterManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            SFXManager.Instance.StopLoop();
+            SFXManager.Instance.PlaySFX(_changeSFX);
             _currentIndex = (_currentIndex + 1) % characters.Length;
             ActivateCharacter(_currentIndex);
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && (characters[_currentIndex].name == "OldPlayer")) // puedo limitar el tp solo al viejo, tengo que ver si lo dejo esto
+            // Puse un tp para hacer el testeo mas rapido, tal vez lo deje para la entrega final.
+        if (Input.GetKeyDown(KeyCode.LeftShift) && (characters[_currentIndex].name == "OldPlayer")) 
         {
             TeleportAllToCurrent();
         }
@@ -33,11 +37,12 @@ public class CharacterManager : MonoBehaviour
             IControllable control = characters[i].GetComponent<IControllable>();
             if (control != null)
             {
-                control.SetControl(i == index); //Esto es igual a true, solo para el personaje que esta en el index en este ciclo del for, todos los demas quedan en false
+                control.SetControl(i == index); //Esto es igual a true, solo para el personaje que esta en el index en este ciclo del for,
+                                                //todos los demas quedan en false asi que no se pueden mover por su Behaviour
             }
             if (_virtualCamera != null)
             {
-                _virtualCamera.Follow = characters[index].transform;
+                _virtualCamera.Follow = characters[index].transform; //Para que la VC siga al personaje que este en control dentro del ciclo
             }
         }
 

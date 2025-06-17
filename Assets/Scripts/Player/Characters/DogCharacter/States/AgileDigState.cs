@@ -21,10 +21,10 @@ public class AgileDigState : IState
     public void Enter()
     {
         Debug.Log("Entraste al estado : DIG");
-        _agilePlayerBehaviour._animator.SetBool("Dig", true); 
+        _agilePlayerBehaviour.Animator.SetBool("Dig", true); 
         _digTimer = 0f;
         _delayCompleted = false;
-        _agilePlayerBehaviour._sfx.PlaySFX(); 
+        SFXManager.Instance.PlaySFX(_agilePlayerBehaviour.DigSFXClip);
 
 
     }
@@ -36,7 +36,7 @@ public class AgileDigState : IState
 
         if (_holeDetector.canDig == false)
         {
-            _agilePlayerBehaviour._animator.SetBool("Dig", false);
+            _agilePlayerBehaviour.Animator.SetBool("Dig", false);
         }
 
     }

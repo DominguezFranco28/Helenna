@@ -15,6 +15,8 @@ public class ArmImpulser : MonoBehaviour
     //Variable ligadas al Brazo
     [SerializeField] private GameObject _armShot;
     [SerializeField] private Transform _spawnPoint;
+    [SerializeField] private AudioClip _dashSFX;
+    [SerializeField] private AudioClip _throwSFX;
     private ArmImpulser _impulser;
     private GameObject _currentArmBullet;
     private Collider2D _playerCol;
@@ -23,12 +25,11 @@ public class ArmImpulser : MonoBehaviour
     //Variables para obtener Componentes externos al brazo.
     private MousePosition _mousePosition;
     private PlayerBehaviour _movementBehaviour;
-    [SerializeField] private SFXPlayerController _sfx;
 
 
 
 
-    //Metodos publicos para que desde el script del behhavo (que gestiona imputs) y el de armbnullet (que gestiona la logica del brazo lanzado
+    //Metodos publicos para que desde el script del PlayerBehaviour (que gestiona imputs) y el de Armbnullet (que gestiona la logica del brazo lanzado
     //)se acceda a los metodos de esta mecanica principal (privada).
 
     public void MovePlayerToAnchor(Vector2 anchorPosition, ImpulseType type)
@@ -56,7 +57,7 @@ public class ArmImpulser : MonoBehaviour
         if (type != ImpulseType.Pull)
             yield break; //Esto aclara que si el impulso no es pull, se corta inmediatamente la corutina.
         {
-            _sfx.PlaySFX(); //ejecuta el script del sonido
+            SFXManager.Instance.PlaySFX(_dashSFX);          //ejecuta el script del sonido, llama al Singleton.
             _movementBehaviour.canMove = false;
             _movementBehaviour.isRecoiling = true;
 
@@ -71,6 +72,11 @@ public class ArmImpulser : MonoBehaviour
             }
 
             transform.position = anchorPosition; // asegura que termine exactamente en el punto
+                                                 //Separo al pj un poco del punto de anclaje porque se bugeaba
+            Vector2 directionAway = (transform.position - (Vector3)anchorPosition).normalized;
+            float separationDistance = 0.5f; 
+            transform.position += (Vector3)(directionAway * separationDistance);
+
             _movementBehaviour.canMove = true;
             _movementBehaviour.isRecoiling = false;
         }
@@ -80,7 +86,7 @@ public class ArmImpulser : MonoBehaviour
     {
   
         if (_currentArmBullet != null) return; // Si hay un brazo activo, que retorne, solo quiero uno activado a la vez por coherencia.
-
+        SFXManager.Instance.PlaySFX(_throwSFX); 
         Vector2 direction = _mousePosition.MouseWorlPos; //Tomo la prop publica del MousePotition para no duplicar calculo.
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
@@ -90,7 +96,7 @@ public class ArmImpulser : MonoBehaviour
         if (armBullet!= null)
         {
          _currentArmBullet = armBullet; //Guardo la refe del brazo actual
-        //Ignorar colisiones para qeu el brazo no choque con el jugador
+        //Ignorar colisiones para que el brazo no choque con el jugador
         Collider2D bulletCol = armBullet.GetComponent<Collider2D>();
         Physics2D.IgnoreCollision(bulletCol, _playerCol);
 

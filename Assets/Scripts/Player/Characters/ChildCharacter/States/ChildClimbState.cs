@@ -9,6 +9,7 @@ public class ChildClimbState : IState
     private ChildStateMachine _childStateMachine;
     private ClimbDetector _climbDetector;
     private Collider2D _ignoredClimbable;
+
     public ChildClimbState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine, ClimbDetector climbDetector)
     {
         this._childPlayerBehaviour = childPlayerBehaviour;
@@ -23,8 +24,10 @@ public class ChildClimbState : IState
         {
             _childPlayerBehaviour.PlayerCollider.enabled = false;
             _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.ClimbSpeed);
-            _childPlayerBehaviour._animator.SetBool("isClimbing", true);
-            _childPlayerBehaviour._sfx.PlayLoopSFX();
+            _childPlayerBehaviour.Animator.SetBool("isClimbing", true);
+            SFXManager.Instance.PlayLoop(_childPlayerBehaviour.ClimbSFX);
+
+
         }
     }
 
@@ -37,17 +40,18 @@ public class ChildClimbState : IState
             _childPlayerBehaviour.transform.position += Vector3.up * 0.05f; //desplazo un pcoo haacia arriba al jugador apra que de sensacion de salto despues de escalada
             _ignoredClimbable = null;
         }
-        _childPlayerBehaviour._animator.SetBool("isClimbing", false);
+        _childPlayerBehaviour.Animator.SetBool("isClimbing", false);
         _childPlayerBehaviour.PlayerCollider.enabled = true;
         _childPlayerBehaviour.StopMovement();
-        _childPlayerBehaviour._sfx.StopSFXLoop();
         _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.DefaultSpeed);
+        SFXManager.Instance.StopLoop();
         //dsactivar animación: _childPlayerBehaviour.Animator.SetBool("isClimbing", false);
     }
 
 
     public void Update()
     {
+
         float vertical = Input.GetAxisRaw("Vertical");
 
         Vector2 climbVelocity = new Vector2(0f, vertical * _childPlayerBehaviour.ClimbSpeed);

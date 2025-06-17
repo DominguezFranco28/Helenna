@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9036677026266805543}
-  - component: {fileID: 3545181778662331573}
-  - component: {fileID: 6756532244568799509}
+  - component: {fileID: 2711263906286127759}
+  - component: {fileID: 6998095391590244672}
   m_Layer: 0
   m_Name: SFXManager
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &3545181778662331573
+--- !u!82 &2711263906286127759
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,14 +44,14 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1836813282308664936, guid: c2c9b55a971e1a74e842dcc50643a2ab, type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 0.063
+  m_PlayOnAwake: 1
+  m_Volume: 0.551
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 87
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -129,7 +129,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6756532244568799509
+--- !u!114 &6998095391590244672
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +141,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4975ea1d00eb660408ed52ae3bf8e8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sfxClip: {fileID: 8300000, guid: 3d9d47fa997dbc74981a52e29dd14811, type: 3}
-  _playKey: 32
-  _audioSource: {fileID: 3545181778662331573}
+  _audioSource: {fileID: 2711263906286127759}

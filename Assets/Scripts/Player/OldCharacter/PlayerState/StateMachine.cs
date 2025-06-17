@@ -10,7 +10,8 @@ public class StateMachine
     // mejora la org y mantiene el patrón limpio y reutilizable en diversos casos.
 
 
-    //Como no hereda de MonoBehavoir, es necesario usar constructores para setear cada instancia de los estados deseados. No puede usarse el getcomponent
+    //Como no hereda de MonoBehavoir, es necesario usar constructores para setear cada instancia de los estados deseados.
+    //No puede usarse el getcomponent porque este es un metodo heredador de monobehaviour
 {
     public MoveState moveState;
     public IdleState idleState;

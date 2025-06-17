@@ -21,9 +21,9 @@ public class ImpulseState : IState
         //_playerMovement.canMove = false;
         Debug.Log("Entraste al estado: IMPULSE");
         _timer = _duration;
-        _playerBehaviour.canMove = false;
+        //_playerBehaviour.canMove = false;
         _playerBehaviour.StopMovement();
-        _playerBehaviour._animator.SetTrigger("IsImpulsing"); //Tengo que modificar el nombre de la anim.
+        _playerBehaviour.Animator.SetTrigger("IsImpulsing"); 
 
 
     }

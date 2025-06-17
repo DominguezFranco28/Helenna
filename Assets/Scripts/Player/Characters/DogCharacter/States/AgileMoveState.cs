@@ -16,11 +16,13 @@ public class AgileMoveState : IState
     public void Enter()
     {
         Debug.Log("Entraste al estado : movimiento");
+        SFXManager.Instance.PlayLoop(_playerBehaviour.StepsSFX);
     }
 
     public void Exit()
     {
         Debug.Log("saliste del estado: movimiento");
+        SFXManager.Instance.StopLoop();
     }
     
     public void Update()

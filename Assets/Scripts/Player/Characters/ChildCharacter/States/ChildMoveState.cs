@@ -16,13 +16,13 @@ public class ChildMoveState : IState
     {
         Debug.Log("Entraste al estado : Child Move");
         _childPlayerBehaviour.canMove = true;
-        _childPlayerBehaviour._sfx.PlaySteps();
+        SFXManager.Instance.PlayLoop(_childPlayerBehaviour.StepsSFX);
     }
 
     public void Exit()
     {
         Debug.Log("saliste del estado: movimiento");
-        _childPlayerBehaviour._sfx.StopSFXLoop();
+        SFXManager.Instance.StopLoop();
     }
 
     public void Update()

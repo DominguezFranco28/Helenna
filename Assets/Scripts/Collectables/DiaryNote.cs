@@ -8,6 +8,7 @@ public class DiaryNote : PlayerDetector, IActiveable
 {
   public void Activeable()
     {
+        SFXManager.Instance.StopLoop();
         SceneManager.LoadScene("MenuScreen");
     }
 

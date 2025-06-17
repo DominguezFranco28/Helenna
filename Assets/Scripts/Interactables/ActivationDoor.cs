@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ActivationDoor : MonoBehaviour, IActiveable
 {
-    [SerializeField] private LayerMask objectLayer;
+    [SerializeField] private LayerMask _objectLayer;
+    [SerializeField] private AudioClip _openSFX;
 /*    [SerializeField] private GameObject interact; *///Que efecto realiza la placa cuando se acciona, por ejemplo, romper una puerta o disparar cinematica
     private Animator animator;
     private Collider2D collider2D;
@@ -18,13 +19,14 @@ public class ActivationDoor : MonoBehaviour, IActiveable
     public void Activeable()
     {
         Debug.Log("ME ACTIVASTE!");
+        SFXManager.Instance.PlaySFX(_openSFX);
         animator.SetBool("Open", true);
         Destroy(collider2D);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (((1 << other.gameObject.layer) & objectLayer) != 0)
+        if (((1 << other.gameObject.layer) & _objectLayer) != 0)
         {
 
             Debug.Log("OBJETO SOBRE LA PLACA");

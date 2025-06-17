@@ -6,17 +6,20 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _climbSpeed;
+    [SerializeField] private AudioClip _climbingLoopSFX; 
+    [SerializeField] private AudioClip _footstepsSFX; 
     private float _currentSpeed; //Este fue necesario para establecer una velocidad dinamica, ya que tengo dos tipos de velocidades, con escalada y caminata.
     private Rigidbody2D _rb2D;
     private Collider2D _collider;
-    public Animator _animator;
-    public SFXPlayerController _sfx;
+    private Animator _animator;
     public bool canMove;
     public bool isInControll = false;
     private Vector2 _movementInput;
 
     //prop publicas para referenciar caracteristicas del jugador y poder integrarlo a la logica de estados.
-
+    public Animator Animator { get { return _animator; }} 
+    public AudioClip ClimbSFX  { get { return _climbingLoopSFX; }} 
+    public AudioClip StepsSFX { get { return _footstepsSFX; }} 
     public Vector2 MovementInput { get { return _movementInput; } }
     public float ClimbSpeed { get { return _climbSpeed; } }
     public Collider2D PlayerCollider { get { return _collider; } }
@@ -34,7 +37,6 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     {
         _rb2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        _sfx = GetComponent<SFXPlayerController>();
         _currentSpeed = _speed;
         _collider = GetComponent<Collider2D>();
         ClimbDetector = GetComponentInChildren<ClimbDetector>(); //lo puse en un childent asi que tengo que tenerlo en cuenta en el getocmponent.
