@@ -27,6 +27,7 @@ public class MoveState :  IState
 
     public void Update()
     {
+
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
        _playerBehaviour.SetMovementInput(input);
         if (input.magnitude <= 0.01f)

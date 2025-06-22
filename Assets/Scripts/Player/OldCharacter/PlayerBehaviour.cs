@@ -13,7 +13,7 @@ public class PlayerBehaviour : MonoBehaviour, IControllable
     private Vector2 _movementInput;
     private ArmImpulser _armImpulser;
     public bool isInControll = true;
-    public bool canMove;
+  [SerializeField] private bool _canMove;
     public bool isRecoiling = false; //Bandera utilizada para indicar si va el jugador esta en "retroceso" despues de un impulso.
     public Animator Animator { get { return _animator; } } 
     public Vector2 MovementInput { get { return _movementInput; } }
@@ -29,7 +29,7 @@ public class PlayerBehaviour : MonoBehaviour, IControllable
 
     public void SetMovementInput(Vector2 input)
     {
-        if (!isInControll || !canMove) return; //Con esto me aseguro de no manipular al personjae cuando hago el cambio desde el CharacterManager
+        if (!isInControll || !_canMove || GameStateManager.Instance.IsGamePaused()) return; //Con esto me aseguro de no manipular al personjae cuando hago el cambio desde el CharacterManager
         {
         _movementInput = input.normalized;
         _animator.SetFloat("Horizontal", _movementInput.x);
@@ -46,7 +46,7 @@ public class PlayerBehaviour : MonoBehaviour, IControllable
     }
     private void FixedUpdate()
     {
-        if (!isInControll || isRecoiling) return;
+        if (!isInControll || isRecoiling || GameStateManager.Instance.IsGamePaused()) return;
         {
             _rb2D.velocity = _movementInput * _speed;
         }
@@ -63,6 +63,11 @@ public class PlayerBehaviour : MonoBehaviour, IControllable
     {
         isInControll = isActive;
         if (!isActive) StopMovement();
+    }
+
+    public void SetMovementEnabled(bool isEnabled)
+    {
+        _canMove = isEnabled;
     }
 }
 

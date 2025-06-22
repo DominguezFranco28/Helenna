@@ -14,7 +14,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     private Collider2D _collider2D;
 
     //Queda pendiente encapsular bien estas variables.
-    public bool canMove;
+    private bool _canMove;
     public bool isInControll = false;
 
 
@@ -39,7 +39,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 
     public void SetMovementInput(Vector2 input)
     {
-        if (!isInControll || !canMove) return;
+        if (!isInControll || !_canMove || GameStateManager.Instance.IsGamePaused()) return;
         {
             _movementInput = input.normalized;
             _animator.SetFloat("Horizontal", _movementInput.x);
@@ -75,7 +75,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 
     private void FixedUpdate()
     {
-        if (!isInControll || !canMove) return;
+        if (!isInControll || !_canMove || GameStateManager.Instance.IsGamePaused()) return;
         _rb2D.velocity = _movementInput * _speed;
     }
 
@@ -83,6 +83,11 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     {
         isInControll = isActive;
         if (!isActive) StopMovement();
+    }
+
+    public void SetMovementEnabled(bool isEnabled)
+    {
+        _canMove = isEnabled;
     }
 }
 

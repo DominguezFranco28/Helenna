@@ -16,6 +16,7 @@ public class ChildPlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (GameStateManager.Instance.IsGamePaused()) return;
         if (_childBehaviour.isInControll)
         {
             _childStateMachine.Update();

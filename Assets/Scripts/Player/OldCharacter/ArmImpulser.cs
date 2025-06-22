@@ -58,7 +58,7 @@ public class ArmImpulser : MonoBehaviour
             yield break; //Esto aclara que si el impulso no es pull, se corta inmediatamente la corutina.
         {
             SFXManager.Instance.PlaySFX(_dashSFX);          //ejecuta el script del sonido, llama al Singleton.
-            _movementBehaviour.canMove = false;
+            _movementBehaviour.SetMovementEnabled(false);
             _movementBehaviour.isRecoiling = true;
 
             Vector2 velocity = Vector2.zero;
@@ -74,10 +74,10 @@ public class ArmImpulser : MonoBehaviour
             transform.position = anchorPosition; // asegura que termine exactamente en el punto
                                                  //Separo al pj un poco del punto de anclaje porque se bugeaba
             Vector2 directionAway = (transform.position - (Vector3)anchorPosition).normalized;
-            float separationDistance = 0.5f; 
+            float separationDistance = 5; 
             transform.position += (Vector3)(directionAway * separationDistance);
 
-            _movementBehaviour.canMove = true;
+            _movementBehaviour.SetMovementEnabled(true);
             _movementBehaviour.isRecoiling = false;
         }
 

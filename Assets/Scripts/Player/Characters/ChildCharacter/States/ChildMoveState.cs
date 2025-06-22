@@ -15,7 +15,7 @@ public class ChildMoveState : IState
     public void Enter()
     {
         Debug.Log("Entraste al estado : Child Move");
-        _childPlayerBehaviour.canMove = true;
+        _childPlayerBehaviour.SetMovementEnabled(true);
         SFXManager.Instance.PlayLoop(_childPlayerBehaviour.StepsSFX);
     }
 

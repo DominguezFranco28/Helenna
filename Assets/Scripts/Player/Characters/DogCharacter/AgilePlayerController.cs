@@ -15,6 +15,7 @@ public class AgilePlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (GameStateManager.Instance.IsGamePaused()) return;
         if (_agileBehaviour.isInControll)
             _agileStateMachine.Update();
     }

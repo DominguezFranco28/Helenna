@@ -15,7 +15,7 @@ public class AgileIdleState : IState
     {
         Debug.Log("Hola soy el pj2");
         _agilePlayerBehaviour.SetMovementInput(Vector2.zero); //Freezeamos al pj al entrar a este estado.
-        _agilePlayerBehaviour.canMove = true;
+        _agilePlayerBehaviour.SetMovementEnabled(true);
 
     }
 

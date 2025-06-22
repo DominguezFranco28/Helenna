@@ -12,7 +12,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     private Rigidbody2D _rb2D;
     private Collider2D _collider;
     private Animator _animator;
-    public bool canMove;
+    private bool _canMove;
     public bool isInControll = false;
     private Vector2 _movementInput;
 
@@ -44,7 +44,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
 
     public void SetMovementInput(Vector2 input)
     {
-        if (!isInControll || !canMove) return;
+        if (!isInControll || !_canMove || GameStateManager.Instance.IsGamePaused()) return; //Los metodos tienen que respetar que el jugador este bajo control, que se pueda moer, y que el juego no este en pausa
         {
             _movementInput = input.normalized;
             _animator.SetFloat("Horizontal", _movementInput.x);
@@ -63,7 +63,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
 
     private void FixedUpdate()
     {
-        if (!isInControll || !canMove) return;
+        if (!isInControll || !_canMove || GameStateManager.Instance.IsGamePaused()) return;
         _rb2D.velocity = _movementInput * _currentSpeed; //lo cambio al currentspeed para que el fixedupdate trabje tambien respetando la velocidad de escalñada cuando le toque escalar
     }
 
@@ -71,5 +71,10 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     {
         isInControll = isActive;
         if (!isActive) StopMovement();
+    }
+
+    public void SetMovementEnabled(bool isEnabled)
+    {
+        _canMove = isEnabled;
     }
 }

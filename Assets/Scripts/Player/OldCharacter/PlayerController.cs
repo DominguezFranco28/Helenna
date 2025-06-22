@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Update()
     {
+
         if (_playerBehaviour.isInControll) //Tuve que agregarle la booleana aca tambien, porque sino me frenaba el movimiento del viejo pero me dejaba hacer el impulso apretando la q
         {
         _myStateMachine?.Update();

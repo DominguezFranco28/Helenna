@@ -17,7 +17,7 @@ public class ChildIdleState : IState
     {
         Debug.Log("Entraste al estado: IDLE CHILD");
         _childPlayerBehaviour.StopMovement(); //Freezeamos al pj al entrar a este estado.
-        _childPlayerBehaviour.canMove = true;
+        _childPlayerBehaviour.SetMovementEnabled(true);
         //Podria setear un trigger de entrada a la animación de idle aca, por ejemplo exsconder el arma
     }
 
