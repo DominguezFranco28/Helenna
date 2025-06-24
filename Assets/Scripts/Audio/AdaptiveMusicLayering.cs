@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AdaptiveMusicLayering : MonoBehaviour
 {
-    [Header("Audio Sources (Asignar en Inspector)")]
+    
     [SerializeField] private AudioSource _baseLayerSource; // base de la musica
     [SerializeField] private AudioSource _resolutionSFXSource; // fuente de sonido para resolucion de puzzle
 

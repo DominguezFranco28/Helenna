@@ -21,7 +21,7 @@ public class PressurePlate : MonoBehaviour
 
             if (activate != null)
             {
-                activate.Activeable();
+                activate.Activate();
             }
         }
     }

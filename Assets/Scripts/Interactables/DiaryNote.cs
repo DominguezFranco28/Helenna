@@ -9,7 +9,7 @@ public class DiaryNote : PlayerDetector, IActiveable
     [TextArea]
     [SerializeField] private string _noteText;
     [SerializeField] private string _nextSceneName;
-    public void Activeable()
+    public void Activate()
     {
         SFXManager.Instance.StopLoop();
         NoteManager.Instance.ShowNote(_noteText, _nextSceneName); //Cada nota de diario tiene su propio texto asi, se la pasa al Manager desde su propio item
@@ -19,6 +19,6 @@ public class DiaryNote : PlayerDetector, IActiveable
 
     public override void Effect(Collider2D collision)
     {
-        Activeable();
+        Activate();
     }
 }
