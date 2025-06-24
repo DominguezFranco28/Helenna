@@ -5,30 +5,30 @@ using UnityEngine;
 public class AdaptiveMusicLayering : MonoBehaviour
 {
     [Header("Audio Sources (Asignar en Inspector)")]
-    [SerializeField] private AudioSource baseLayerSource; // 🔄 Antes había dos, ahora solo la base
-    [SerializeField] private AudioSource resolutionSFXSource; // ✅ NUEVO: fuente de sonido para el tono de resolución
+    [SerializeField] private AudioSource _baseLayerSource; // base de la musica
+    [SerializeField] private AudioSource _resolutionSFXSource; // fuente de sonido para resolucion de puzzle
 
     [Header("Parámetros de Fade")]
     [Range(0.1f, 5.0f)]
-    [SerializeField] private float fadeDuration = 1.5f;
+    [SerializeField] private float _fadeDuration = 1.5f;
 
-    private Coroutine activeFadeCoroutine; // 🔄 Se mantiene por si querés hacer fade en la base
+    private Coroutine _activeFadeCoroutine; 
 
     void Start()
     {
         //  Reproducir música base al iniciar (si playOnAwake está activado)
-        if (baseLayerSource != null && !baseLayerSource.isPlaying && baseLayerSource.playOnAwake)
+        if (_baseLayerSource != null && !_baseLayerSource.isPlaying && _baseLayerSource.playOnAwake)
         {
-            baseLayerSource.Play();
+            _baseLayerSource.Play();
         }
     }
 
     //  método para reproducir un tono de resolución
     public void PlayResolutionTone()
     {
-        if (resolutionSFXSource != null && resolutionSFXSource.clip != null)
+        if (_resolutionSFXSource != null && _resolutionSFXSource.clip != null)
         {
-            resolutionSFXSource.PlayOneShot(resolutionSFXSource.clip);
+            _resolutionSFXSource.PlayOneShot(_resolutionSFXSource.clip);
         }
         else
         {
@@ -36,17 +36,17 @@ public class AdaptiveMusicLayering : MonoBehaviour
         }
     }
 
-    // metodo apra hace run fade de la mnusica principal
+    // metodo apra hacer un fade de la mnusica principal
     public void FadeBaseMusicVolume(float targetVolume)
     {
-        if (baseLayerSource == null) return;
+        if (_baseLayerSource == null) return;
 
-        if (activeFadeCoroutine != null)
+        if (_activeFadeCoroutine != null)
         {
-            StopCoroutine(activeFadeCoroutine);
+            StopCoroutine(_activeFadeCoroutine);
         }
 
-        activeFadeCoroutine = StartCoroutine(FadeAudioSourceVolume(baseLayerSource, targetVolume, fadeDuration));
+        _activeFadeCoroutine = StartCoroutine(FadeAudioSourceVolume(_baseLayerSource, targetVolume, _fadeDuration));
     }
 
     //corrutina para cambiar el volumen suavemente
@@ -63,7 +63,7 @@ public class AdaptiveMusicLayering : MonoBehaviour
         }
 
         audioSourceToFade.volume = finalVolume;
-        activeFadeCoroutine = null;
+        _activeFadeCoroutine = null;
     }
 }
 

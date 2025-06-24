@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+[DefaultExecutionOrder(-10)]
 
 public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 {
@@ -8,7 +9,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     [SerializeField] private float _speed;
     [SerializeField] private AudioClip _footstepsSFX;
     [SerializeField] private AudioClip _digSFXClip;
-    [SerializeField] private Animator _animator;
+    private Animator _animator;
     private Rigidbody2D _rb2D;
     private Vector2 _movementInput;
     private Collider2D _collider2D;
@@ -39,7 +40,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 
     public void SetMovementInput(Vector2 input)
     {
-        if (!isInControll || !_canMove || GameStateManager.Instance.IsGamePaused()) return;
+        if (!isInControll || !_canMove) return;
         {
             _movementInput = input.normalized;
             _animator.SetFloat("Horizontal", _movementInput.x);
@@ -68,6 +69,12 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     }
     public void StopMovement()
     {
+        if (_rb2D == null)
+        {
+            Debug.LogError(gameObject.name + " no tiene Rigidbody2D asignado!");
+            return;
+        }
+
         _movementInput = Vector2.zero;
         _rb2D.velocity = Vector2.zero;
         _animator.SetFloat("Speed", 0f);
@@ -75,7 +82,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 
     private void FixedUpdate()
     {
-        if (!isInControll || !_canMove || GameStateManager.Instance.IsGamePaused()) return;
+        if (!isInControll || !_canMove) return;
         _rb2D.velocity = _movementInput * _speed;
     }
 

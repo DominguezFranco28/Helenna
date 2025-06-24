@@ -7,6 +7,7 @@ public class SFXManager : MonoBehaviour
     public static SFXManager Instance { get; private set; }
     //Singleton del SFX MANAGER
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioSource _sfxSource;
 
     private void Awake()
     {
@@ -30,9 +31,9 @@ public class SFXManager : MonoBehaviour
 
     public void PlaySFX(AudioClip clip)
     {
-        if (_audioSource != null && clip != null)
+        if (_sfxSource != null && clip != null)
         {
-            _audioSource.PlayOneShot(clip);
+            _sfxSource.PlayOneShot(clip);
         }
     }
 

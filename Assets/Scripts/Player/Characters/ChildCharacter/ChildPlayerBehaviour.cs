@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[DefaultExecutionOrder(-10)]
 public class ChildPlayerBehaviour : MonoBehaviour, IControllable
 {
     [SerializeField] private float _speed;
@@ -44,7 +44,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
 
     public void SetMovementInput(Vector2 input)
     {
-        if (!isInControll || !_canMove || GameStateManager.Instance.IsGamePaused()) return; //Los metodos tienen que respetar que el jugador este bajo control, que se pueda moer, y que el juego no este en pausa
+        if (!isInControll || !_canMove) return; //Los metodos tienen que respetar que el jugador este bajo control, que se pueda moer
         {
             _movementInput = input.normalized;
             _animator.SetFloat("Horizontal", _movementInput.x);
@@ -56,6 +56,12 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
 
     public void StopMovement()
     {
+        if (_rb2D == null)
+        {
+            Debug.LogError(gameObject.name + " no tiene Rigidbody2D asignado!");
+            return;
+        }
+
         _movementInput = Vector2.zero;
         _rb2D.velocity = Vector2.zero;
         _animator.SetFloat("Speed", 0f);
@@ -63,7 +69,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
 
     private void FixedUpdate()
     {
-        if (!isInControll || !_canMove || GameStateManager.Instance.IsGamePaused()) return;
+        if (!isInControll || !_canMove) return;
         _rb2D.velocity = _movementInput * _currentSpeed; //lo cambio al currentspeed para que el fixedupdate trabje tambien respetando la velocidad de escalñada cuando le toque escalar
     }
 

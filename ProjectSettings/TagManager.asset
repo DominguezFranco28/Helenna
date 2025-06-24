@@ -50,3 +50,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3506396851
+    locked: 0
+  - name: Environment
+    uniqueID: 3227113229
+    locked: 0
+  - name: Props
+    uniqueID: 1697216077
+    locked: 0
+  - name: Characters
+    uniqueID: 1929262187
+    locked: 0
+  - name: Foreground
+    uniqueID: 3143061505
+    locked: 0
+  - name: UI
+    uniqueID: 4006719075
+    locked: 0

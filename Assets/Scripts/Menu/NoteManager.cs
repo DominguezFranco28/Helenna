@@ -21,7 +21,7 @@ public class NoteManager : MonoBehaviour
 
         //Que comience siempre oculta la UI entre escenas.
         _noteUI.SetActive(false);
-        
+        DontDestroyOnLoad(Instance);
     }
     
     public void ShowNote(string text, string sceneName)
@@ -38,6 +38,6 @@ public class NoteManager : MonoBehaviour
         GameStateManager.Instance.SetState(GameState.Playing);
         Time.timeScale = 1f;
         _noteUI.SetActive(false);
-        //SceneManager.LoadScene(_nextSceneName);
+        SceneManager.LoadScene(_nextSceneName);
     }
 }

@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IActiveable 
 {
-    public void Activeable();
+    public void Activate();
 }

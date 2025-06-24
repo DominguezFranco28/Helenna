@@ -9,13 +9,15 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] private GameObject[] characters;
     private int _currentIndex = 0;
     //Prop publica con getter para tener accedo al personaje actual y controlador, sin acoplar todo en el ciclo for.
-    public GameObject CurrentCharacter => characters[_currentIndex];
+    //public GameObject CurrentCharacter => characters[_currentIndex];
 
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
     [SerializeField] private AudioClip _changeSFX;
 
     void Awake()
+
     {
+        Debug.Log("CharacterManager: Awake() ejecutado");
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject); // Evita duplicados, mantenemos logica singleton
@@ -23,16 +25,19 @@ public class CharacterManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject); // Para que persista entre scenas.
         ActivateCharacter(_currentIndex);
+        //DontDestroyOnLoad(gameObject); // Para que persista entre scenas.
     }
 
     void Update()
     {
+        //Debug.Log("Estado actual del juego: " + GameStateManager.Instance.CurrentState);
+        //if (GameStateManager.Instance.IsGamePaused()) return; //Hago tambienq ue este controlador respeta la pausa, sino te deja cambiar de pj mientras lees
+        //Debug.Log("Estado actual del juego: " + GameStateManager.Instance.CurrentState);
         //Evito que se pueda cambiar de pj mientras se esta en pausa
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            SFXManager.Instance.StopLoop();
+            
             SFXManager.Instance.PlaySFX(_changeSFX);
             _currentIndex = (_currentIndex + 1) % characters.Length;
             ActivateCharacter(_currentIndex);
@@ -76,8 +81,8 @@ public class CharacterManager : MonoBehaviour
         Debug.Log("Todos los personajes han sido teletransportados al personaje activo.");
     }
 
-    public IControllable GetCurrentControllable()
-    {
-        return CurrentCharacter.GetComponent<IControllable>();
-    }
+    //public IControllable GetCurrentControllable()
+    //{
+    //    return CurrentCharacter.GetComponent<IControllable>();
+    //}
 }
