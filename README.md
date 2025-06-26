@@ -1,8 +1,8 @@
 # Helenna
 
 **Helenna** es un juego de aventuras 2D, con vista top/down, basado en mecánicas cooperativas. Controlaras a tres personajes con habilidades únicas, alternando entre ellos para resolver puzzles y sortear obstáculos. El objetivo: recolectar las notas de Helenna, la mujer desaparecida del protagonista, Harold. A través de estas pistas, intentarás descubrir su paradero y desentrañar el misterio que rodea su desaparición.
-Este proyecto fue desarrollado como un prototipo integrador para la universidad. Convertido en un vertical slice funcional, orientado a portfolio, donde se aplican principios de diseño de juego, programación modular, arquitectura basada en estados, y control de versiones con Git.
-
+Este proyecto fue desarrollado como un prototipo integrador para la universidad. Convertido en un vertical slice funcional con el objetivo de aplicar principios de diseño de juegos, programación modular, arquitectura basada en estados y control de versiones con Git, como parte de mi desarrollo profesional y académico.
+> **Status**: 🚧 En desarrollo activo (vertical slice en progreso)
 ---
 
 ## Características principales
@@ -38,7 +38,11 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad.
 
 - **Motor**: Unity 2022.x (LTS)
 - **Lenguaje**: C# (Programación orientada a objetos y patrones de diseño)
-- **Herramientas**: Cinemachine, TextMeshPro, Audio Mixer, Git & GitHub
+- **Herramientas y paquetes utilizados**:
+  - Cinemachine (control de cámara)
+  - TextMeshPro (renderizado de texto)
+  - Audio Mixer (música adaptativa y efectos)
+  - Git & GitHub (control de versiones)
 
 ---
 
@@ -49,11 +53,11 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad.
 3. Iniciá desde la escena MenuScreen ubicada en Assets/Scenes
 ---
 
-## Autor
+## Autoría
 
 -Desarrollado por **Franco Dominguez**  
 -Pixel Art por **Tomas Sobrado**  
-[LinkedIn](https://www.linkedin.com/in/franco-dom%C3%ADnguez-a21101274/)
+[LinkedIn – Franco Dominguez](https://www.linkedin.com/in/franco-dom%C3%ADnguez-a21101274/)
 
 ---
 ```bash
