@@ -21,8 +21,8 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad.
 
 ## Capturas
 
-![Gameplay 1](Docs/screenshot1.png)
-![Gameplay 2](Docs/screenshot2.png)
+![Menu](Screenshots/Helenna-Menu.png)
+![Editor](Screenshots/Helenna-In-Editor.png)
 
 ---
 
