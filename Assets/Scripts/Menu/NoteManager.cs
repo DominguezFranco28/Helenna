@@ -26,6 +26,8 @@ public class NoteManager : MonoBehaviour
     
     public void ShowNote(string text, string sceneName)
     {
+
+        //Agregar funcionalidad para que baje el volumen de la musica adaptativa, como el script de ActivationDoor
         GameStateManager.Instance.SetState(GameState.ReadingNote); //Activamos estado de lectura del GameStateManager
         Time.timeScale = 0f;
         _noteUI.SetActive(true);
@@ -35,6 +37,7 @@ public class NoteManager : MonoBehaviour
 
     public void CloseNote()
     {
+        //Retornar el volumen de la musica adaptativa a su valor original
         GameStateManager.Instance.SetState(GameState.Playing);
         Time.timeScale = 1f;
         _noteUI.SetActive(false);

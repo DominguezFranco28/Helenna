@@ -12,7 +12,7 @@ public class PlayerBehaviour : MonoBehaviour, IControllable
     private Vector2 _movementInput;
     private ArmImpulser _armImpulser;
     public bool isInControll = true;
-  [SerializeField] private bool _canMove;
+   [SerializeField] private bool _canMove;
     public bool isRecoiling = false; //Bandera utilizada para indicar si va el jugador esta en "retroceso" despues de un impulso.
     public Animator Animator { get { return _animator; } } 
     public Vector2 MovementInput { get { return _movementInput; } }

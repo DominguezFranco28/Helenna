@@ -11,7 +11,7 @@ public class ArmImpulser : MonoBehaviour
     [SerializeField] private float _recoilDuration;
     [SerializeField] private float _moveSmoothTime;
 
-
+     
     //Variable ligadas al Brazo
     [SerializeField] private GameObject _armShot;
     [SerializeField] private Transform _spawnPoint;
