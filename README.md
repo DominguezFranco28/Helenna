@@ -29,8 +29,7 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad,
 ## Cómo jugar
 
 👉 Las instrucciones completas de jugabilidad y controles están disponibles en 
-
-[la página de Itch.io](https://franco-dominguez.itch.io/helenna-prototype)
+[Mi página de Itchio](https://franco-dominguez.itch.io/helenna-prototype)
 
 ---
 
