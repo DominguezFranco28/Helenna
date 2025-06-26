@@ -22,7 +22,7 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad.
 ## Capturas
 
 ![Menu](Screenshots/Helenna-Menu.png)
-![Editor](Screenshots/Helenna-In-Editor.png)
+![Editor](Screenshots/helenna-editor.png)
 
 ---
 
