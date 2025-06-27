@@ -1,7 +1,7 @@
 # Helenna
 
-**Helenna** es un juego de aventuras 2D, con vista top/down, basado en mecánicas cooperativas. Controlaras a tres personajes con habilidades únicas, alternando entre ellos para resolver puzzles y sortear obstáculos. El objetivo: recolectar las notas de Helenna, la mujer desaparecida del protagonista, Harold. A través de estas pistas, intentarás descubrir su paradero y desentrañar el misterio que rodea su desaparición.
-Este proyecto fue desarrollado como un prototipo integrador para la universidad. Convertido en un vertical slice funcional con el objetivo de aplicar principios de diseño de juegos, programación modular, arquitectura basada en estados y control de versiones con Git, como parte de mi desarrollo profesional y académico.
+**Helenna** es un juego de aventuras 2D, con vista top/down, basado en mecánicas cooperativas. Controlarás a tres personajes con habilidades únicas, alternando entre ellos para resolver puzzles y sortear obstáculos. El objetivo: recolectar las notas de Helenna, la mujer desaparecida del protagonista, Harold. A través de estas pistas, intentarás descubrir su paradero y desentrañar el misterio que rodea su desaparición.
+Este proyecto fue desarrollado como un prototipo integrador para la universidad, y posteriormente convertido en un vertical slice funcional, con el objetivo de aplicar principios de diseño de juegos, programación modular, arquitectura basada en estados y control de versiones con Git, como parte de mi desarrollo profesional y académico.
 > **Status**: 🚧 En desarrollo activo (vertical slice en progreso)
 ---
 
@@ -22,15 +22,14 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad.
 ## Capturas
 
 ![Menu](Screenshots/Helenna-Menu.png)
-![Editor](Screenshots/Helenna-In-Editor.png)
+![Editor](Screenshots/helenna-editor.png)
 
 ---
 
 ## Cómo jugar
 
 👉 Las instrucciones completas de jugabilidad y controles están disponibles en 
-
-[la página de Itch.io](https://franco-dominguez.itch.io/helenna-prototype)
+[Mi página de Itchio](https://franco-dominguez.itch.io/helenna-prototype)
 
 ---
 
