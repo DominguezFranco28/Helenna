@@ -8,22 +8,22 @@ public class AdaptiveMusicLayering : MonoBehaviour
     [SerializeField] private AudioSource _baseLayerSource; // base de la musica
     [SerializeField] private AudioSource _resolutionSFXSource; // fuente de sonido para resolucion de puzzle
 
-    [Header("Parámetros de Fade")]
+    [Header("Fade parameters")]
     [Range(0.1f, 5.0f)]
     [SerializeField] private float _fadeDuration = 1.5f;
-
     private Coroutine _activeFadeCoroutine; 
+
 
     void Start()
     {
-        //  Reproducir música base al iniciar (si playOnAwake está activado)
+        // Play background music on startup (if playOnAwake is enabled)
         if (_baseLayerSource != null && !_baseLayerSource.isPlaying && _baseLayerSource.playOnAwake)
         {
             _baseLayerSource.Play();
         }
     }
 
-    //  método para reproducir un tono de resolución
+    //  Method for reproducing a resolution tone
     public void PlayResolutionTone()
     {
         if (_resolutionSFXSource != null && _resolutionSFXSource.clip != null)
@@ -36,7 +36,7 @@ public class AdaptiveMusicLayering : MonoBehaviour
         }
     }
 
-    // metodo apra hacer un fade de la mnusica principal
+    // method to fade out the main music
     public void FadeBaseMusicVolume(float targetVolume)
     {
         if (_baseLayerSource == null) return;
@@ -49,7 +49,7 @@ public class AdaptiveMusicLayering : MonoBehaviour
         _activeFadeCoroutine = StartCoroutine(FadeAudioSourceVolume(_baseLayerSource, targetVolume, _fadeDuration));
     }
 
-    //corrutina para cambiar el volumen suavemente
+    //coroutine to change the volume smoothly
     private IEnumerator FadeAudioSourceVolume(AudioSource audioSourceToFade, float finalVolume, float duration)
     {
         float currentTime = 0;

@@ -23,20 +23,20 @@ public class ActivationDoor : MonoBehaviour, IActiveable
     public void Activate()
     {
         Debug.Log("ME ACTIVASTE!");
-        //Sonido y animacion de la peurta abriendose
+        //Sound & animation of door opening
         SFXManager.Instance.PlaySFX(_openSFX);
         _animator.SetBool("Open", true);
-        Destroy(_collider2D); //Destruccion del collider para que pase el PJ
+        Destroy(_collider2D);
 
-        //Manejo de las capaz de musica a modo de resolucion de puzzle
-        _musicLayering.FadeBaseMusicVolume(_targetVolume); // Baja a 30%
-        _musicLayering.PlayResolutionTone();//Reproduzco el tono de la resolucion
-        StartCoroutine(RestoreMusicAfterDelay(_musicLayering, _musicFadeDelay)); //llamo a corrutina para restaurar los niveles de musica despues de un tiempo
+        //Handling music layers as a puzzle-solving method.
+        _musicLayering.FadeBaseMusicVolume(_targetVolume); 
+        _musicLayering.PlayResolutionTone();
+        StartCoroutine(RestoreMusicAfterDelay(_musicLayering, _musicFadeDelay)); //// call coroutine to restore music levels after a delay 
     }
     private IEnumerator RestoreMusicAfterDelay(AdaptiveMusicLayering layering, float delay)
     {
         yield return new WaitForSeconds(delay);
-        layering.FadeBaseMusicVolume(1f); // Valor original o el que usabas antes
+        layering.FadeBaseMusicVolume(1f); // original value
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

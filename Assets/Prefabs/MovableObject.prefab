@@ -144,11 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 092f7bc1f73510d4fb7b4e632a22b58c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSmoothTime: 0.2
-  stopThreshold: 0.05
-  obstacleMask:
+  _moveSmoothTime: 0.2
+  _stopThreshold: 0.05
+  _obstacleMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 384
 --- !u!50 &3783961818787183741
 Rigidbody2D:
   serializedVersion: 4

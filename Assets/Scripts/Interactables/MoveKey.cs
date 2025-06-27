@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MoveKey : PlayerDetector
 {
-    [SerializeField] private Transform moveSpawn;
+    [SerializeField] private Transform _moveSpawn;
     public override void Effect(Collider2D collision)
     {
-        gameObject.transform.position = moveSpawn.transform.position;
+        gameObject.transform.position = _moveSpawn.transform.position;
     }
 }

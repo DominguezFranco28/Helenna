@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class NoteManager : MonoBehaviour
 {
-    //Singleton para gestion de notas
+    //singleton for note management
     public static NoteManager Instance { get; private set; }
 
     [SerializeField] private GameObject _noteUI;
@@ -19,7 +19,7 @@ public class NoteManager : MonoBehaviour
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
 
-        //Que comience siempre oculta la UI entre escenas.
+        // Always hide the UI at the start between scenes.
         _noteUI.SetActive(false);
         DontDestroyOnLoad(Instance);
     }
@@ -27,8 +27,8 @@ public class NoteManager : MonoBehaviour
     public void ShowNote(string text, string sceneName)
     {
 
-        //Agregar funcionalidad para que baje el volumen de la musica adaptativa, como el script de ActivationDoor
-        GameStateManager.Instance.SetState(GameState.ReadingNote); //Activamos estado de lectura del GameStateManager
+        //Need to add a function that turn down the volume of adaptive music, like ActivationDoor
+        GameStateManager.Instance.SetState(GameState.ReadingNote); // Turn on Reading enum from GameStateManager
         Time.timeScale = 0f;
         _noteUI.SetActive(true);
         _noteTextUI.text = text;
@@ -37,7 +37,7 @@ public class NoteManager : MonoBehaviour
 
     public void CloseNote()
     {
-        //Retornar el volumen de la musica adaptativa a su valor original
+        //idem
         GameStateManager.Instance.SetState(GameState.Playing);
         Time.timeScale = 1f;
         _noteUI.SetActive(false);

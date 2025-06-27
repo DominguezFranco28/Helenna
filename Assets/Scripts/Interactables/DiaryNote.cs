@@ -9,11 +9,11 @@ public class DiaryNote : PlayerDetector, IActiveable
     [TextArea]
     [SerializeField] private string _noteText;
     [SerializeField] private string _nextSceneName;
+    //Each journal note has its own text so it is passed to the Manager from its own item
     public void Activate()
     {
         SFXManager.Instance.StopLoop();
-        NoteManager.Instance.ShowNote(_noteText, _nextSceneName); //Cada nota de diario tiene su propio texto asi, se la pasa al Manager desde su propio item
-        //SceneManager.LoadScene("MenuScreen");
+        NoteManager.Instance.ShowNote(_noteText, _nextSceneName);
         Destroy(gameObject);
     }
 
