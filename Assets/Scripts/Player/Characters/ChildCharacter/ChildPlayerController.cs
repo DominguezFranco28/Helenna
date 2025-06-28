@@ -20,8 +20,8 @@ public class ChildPlayerController : MonoBehaviour
         if (_childBehaviour.isInControll)
         {
             _childStateMachine.Update();
-            // deteccion de la entrada para escalar
-            if (_climbDetector.canClimb && Input.GetKeyDown(KeyCode.E))
+            // Detect enter to climb
+            if (_climbDetector.CanClimb && Input.GetKeyDown(KeyCode.E))
             {
                 _childStateMachine.TransitionTo(_childStateMachine.climbState);
                 return;

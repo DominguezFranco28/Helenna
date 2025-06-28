@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class HoleDetector : MonoBehaviour
 {
-    public bool canDig;
+    private bool _canDig;
+    public bool CanDig => _canDig;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //I turn off the fence collider when the dog detects the hole
         if (collision.CompareTag("Hole"))
         {
             Transform parent = collision.transform.parent;
-
             if (parent != null)
             {
                 Collider2D parentCollider = parent.GetComponent<Collider2D>();
@@ -20,8 +21,7 @@ public class HoleDetector : MonoBehaviour
                     parentCollider.enabled = false;
                 }
             }
-
-            canDig = true;
+            _canDig = true;
         }
     }
 
@@ -30,7 +30,6 @@ public class HoleDetector : MonoBehaviour
         if (collision.CompareTag("Hole"))
         {
             Transform parent = collision.transform.parent;
-
             if (parent != null)
             {
                 Collider2D parentCollider = parent.GetComponent<Collider2D>();
@@ -39,8 +38,7 @@ public class HoleDetector : MonoBehaviour
                     parentCollider.enabled = true;
                 }
             }
-
-            canDig = false;
+            _canDig = false;
         }
     }
 }

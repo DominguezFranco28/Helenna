@@ -18,34 +18,30 @@ public class ChildClimbState : IState
     }
     public void Enter()
     {
-        Debug.Log("Entraste al modo CHILD CLIMB");
-        //_childPlayerBehaviour.StopMovement();
+        Debug.Log("You entered the state:  CHILD CLIMB");
         if (_climbDetector.Climbable != null)
         {
             _childPlayerBehaviour.PlayerCollider.enabled = false;
             _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.ClimbSpeed);
             _childPlayerBehaviour.Animator.SetBool("isClimbing", true);
             SFXManager.Instance.PlayLoop(_childPlayerBehaviour.ClimbSFX);
-
-
         }
     }
 
     public void Exit()
     {
-        Debug.Log("Saliendo de estado Climb");
-        // Restaurar colisiones al salir de la escalada
+        Debug.Log("You left the state: CHILD CLIMB");
+        // Restore colissions 
         if (_ignoredClimbable != null)
         {
-            _childPlayerBehaviour.transform.position += Vector3.up * 0.05f; //desplazo un pcoo haacia arriba al jugador apra que de sensacion de salto despues de escalada
-            _ignoredClimbable = null;
+            //move the player up a bit to give the sensation of jumping after climbing
+            _childPlayerBehaviour.transform.position += Vector3.up * 0.15f;
         }
         _childPlayerBehaviour.Animator.SetBool("isClimbing", false);
         _childPlayerBehaviour.PlayerCollider.enabled = true;
         _childPlayerBehaviour.StopMovement();
         _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.DefaultSpeed);
         SFXManager.Instance.StopLoop();
-        //dsactivar animación: _childPlayerBehaviour.Animator.SetBool("isClimbing", false);
     }
 
 
@@ -58,8 +54,7 @@ public class ChildClimbState : IState
         _childPlayerBehaviour.SetMovementInput(climbVelocity);
         _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.ClimbSpeed);
 
-        // Si ya no puede escalar (por colisión u otra cosa), volver a Idle, podria agregar una tecleada.
-        if (!_climbDetector.canClimb || Input.GetKeyDown(KeyCode.E))
+        if (!_climbDetector.CanClimb)
         {
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
         }

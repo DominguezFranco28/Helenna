@@ -2,27 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClimbDetector : CheckCollision
+public class ClimbDetector : MonoBehaviour
 {
-    public bool canClimb = false;
+    private bool _canClimb = false;
     private Collider2D _climbableCollider;
+    public bool CanClimb => _canClimb;
+    public Collider2D Climbable => _climbableCollider;
 
-    public Collider2D Climbable => _climbableCollider; //Prob Publica
-
-    public override void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Climbable") || collision.CompareTag("Pushable"))
         {
-            canClimb = true;
+            _canClimb = true;
             _climbableCollider = collision;
         }
     }
 
-    public override void OnTriggerExit2D(Collider2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Climbable") || collision.CompareTag("Pushable"))
         {
-            canClimb = false;
+            _canClimb = false;
             _climbableCollider = null;
         }
     }

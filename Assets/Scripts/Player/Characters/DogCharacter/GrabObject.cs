@@ -7,12 +7,11 @@ public class GrabObject : MonoBehaviour
     [SerializeField] private GameObject _mouth;
     private GameObject _pickedObject = null; 
 
-    // Tengo que integrarlo a la stateMachine
     void Update()
     {
         if (_pickedObject != null && Input.GetKey("r"))
         {
-            _pickedObject.gameObject.transform.SetParent(null); //Seteo el parent en null, asi que lo "suelta"
+            _pickedObject.gameObject.transform.SetParent(null); //I set the parent to null, so it "drops" it
             _pickedObject.GetComponent<Rigidbody2D>().simulated = true;
             _pickedObject = null;
         }
@@ -25,7 +24,7 @@ public class GrabObject : MonoBehaviour
             if (_pickedObject == null)
             {
                 collision.transform.position = _mouth.transform.position;
-                collision.gameObject.transform.SetParent(_mouth.gameObject.transform); //Lo seteo hijo de la Boca del perro.
+                collision.gameObject.transform.SetParent(_mouth.gameObject.transform); //set the parent so follow de mouth 
                 collision.GetComponent<Rigidbody2D>().simulated = false;
                 _pickedObject = collision.gameObject;
             }

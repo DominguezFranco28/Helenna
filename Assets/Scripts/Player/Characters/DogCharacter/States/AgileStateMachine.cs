@@ -7,8 +7,6 @@ public class AgileStateMachine
     public AgileMoveState moveState;
     public AgileIdleState idleState;
     public AgileDigState digState;
-
-
     public IState CurrentState { get; private set; }
 
     public AgileStateMachine(AgilePlayerBehaviour player)

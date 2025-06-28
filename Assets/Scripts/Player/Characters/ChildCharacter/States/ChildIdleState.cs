@@ -15,21 +15,20 @@ public class ChildIdleState : IState
 
     public void Enter()
     {
-        Debug.Log("Entraste al estado: IDLE CHILD");
-        _childPlayerBehaviour.StopMovement(); //Freezeamos al pj al entrar a este estado.
+        Debug.Log("You entered the state: CHILD IDLE");
+        _childPlayerBehaviour.StopMovement(); 
         _childPlayerBehaviour.SetMovementEnabled(true);
-        //Podria setear un trigger de entrada a la animación de idle aca, por ejemplo exsconder el arma
     }
 
     public void Exit()
     {
-        Debug.Log("Saliste del estado: IDLE");
-        //Frenar animación, o a lo mejor hacer una animacion de exit como que levanta polvillo o algo.
+        Debug.Log("You left the state: CHILD IDLE");
     }
 
     public void Update()
     {
-        //Conducta de movimiento ligeramente diferente al resto de players, ya que la niña implementa una "falsa_ verticalidad" con la escalada.
+        //Movement behavior slightly different from the rest of the players,
+        //since the girl implements a "false verticality" with climbing.
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
@@ -39,8 +38,8 @@ public class ChildIdleState : IState
             return;
         }
 
-        // Detectar si puede escalar
-        if (_childPlayerBehaviour.ClimbDetector.canClimb && Mathf.Abs(vertical) > 0.1f)
+        // Detect if it can climb
+        if (_childPlayerBehaviour.ClimbDetector.CanClimb && Mathf.Abs(vertical) > 0.1f)
         {
             _childStateMachine.TransitionTo(_childStateMachine.climbState);
             return;

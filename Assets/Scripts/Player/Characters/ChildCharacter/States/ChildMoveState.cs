@@ -14,14 +14,14 @@ public class ChildMoveState : IState
 
     public void Enter()
     {
-        Debug.Log("Entraste al estado : Child Move");
+        Debug.Log("You entered the state: CHILD MOVE");
         _childPlayerBehaviour.SetMovementEnabled(true);
         SFXManager.Instance.PlayLoop(_childPlayerBehaviour.StepsSFX);
     }
 
     public void Exit()
     {
-        Debug.Log("saliste del estado: movimiento");
+        Debug.Log("You left the state: CHILD MOVE");
         SFXManager.Instance.StopLoop();
     }
 
@@ -30,7 +30,6 @@ public class ChildMoveState : IState
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         _childPlayerBehaviour.SetMovementInput(input);
         if (input.magnitude <= 0.01f)
-        //_childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.DefaultSpeed);
         {
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
         }

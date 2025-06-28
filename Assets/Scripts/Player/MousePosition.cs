@@ -6,10 +6,13 @@ using UnityEngine.U2D;
 public class MousePosition : MonoBehaviour
 {
     private Vector2 _mouseWorldPos;
-    private SpriteRenderer _sprite;
+    private SpriteRenderer _sprite; // use in FlipSprite
+
+    
+    //Public property to access from other scripts that need to position the mouse on the screen.
     public Vector2 MouseWorlPos
     {
-        get { return (_mouseWorldPos - (Vector2)transform.position).normalized; }  //Propiedad publica para acceder desde otros scripts que necesiten ubicar el mouse en pantalla.
+        get { return (_mouseWorldPos - (Vector2)transform.position).normalized; }
     }
     private void Start()
     {
@@ -17,8 +20,8 @@ public class MousePosition : MonoBehaviour
     }
     private void Update()
     {
-        Vector3 rawMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Metodo que devuelve un vector3
-        _mouseWorldPos = new Vector2(rawMousePos.x, rawMousePos.y); //Pero para mi logica 2d, ignoro la z con esta conversion explicita.
+        Vector3 rawMousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition); //return a vector3
+        _mouseWorldPos = new Vector2(rawMousePos.x, rawMousePos.y); //But for my 2d logic, I ignore the z with this explicit conversion.
         //FlipSprite();
     }
     //private void FlipSprite()
