@@ -60,5 +60,5 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad,
 
 ---
 ```bash
-git clone https://github.com/TidusFD/Helenna.git
+git clone https://github.com/DominguezFranco28/Helenna.git
 
