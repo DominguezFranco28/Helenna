@@ -41,7 +41,7 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad,
   - Cinemachine (control de cámara)
   - TextMeshPro (renderizado de texto)
   - Audio Mixer (música adaptativa y efectos)
-  - Git & GitHub (control de versiones)
+  - GitHub (control de versiones)
 
 ---
 
