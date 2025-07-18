@@ -1,7 +1,7 @@
 # Helenna
 
 **Helenna** es un juego de aventuras 2D, con vista top/down, basado en mecánicas cooperativas. Controlarás a tres personajes con habilidades únicas, alternando entre ellos para resolver puzzles y sortear obstáculos. El objetivo: recolectar las notas de Helenna, la mujer desaparecida del protagonista, Harold. A través de estas pistas, intentarás descubrir su paradero y desentrañar el misterio que rodea su desaparición.
-Este proyecto fue desarrollado como un prototipo integrador para la universidad, y posteriormente convertido en un vertical slice funcional, con el objetivo de aplicar principios de diseño de juegos, programación modular, arquitectura basada en estados y control de versiones con Git, como parte de mi desarrollo profesional y académico.
+Este proyecto fue desarrollado como un prototipo integrador para la universidad, y posteriormente convertido en un vertical slice funcional, con el objetivo de aplicar principios de diseño de juegos, programación modular, arquitectura basada en estados y control de versiones con Github, como parte de mi desarrollo profesional y académico.
 > **Status**: 🚧 En desarrollo activo (vertical slice en progreso)
 ---
 
@@ -41,7 +41,7 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad,
   - Cinemachine (control de cámara)
   - TextMeshPro (renderizado de texto)
   - Audio Mixer (música adaptativa y efectos)
-  - Git & GitHub (control de versiones)
+  - GitHub (control de versiones)
 
 ---
 
@@ -60,5 +60,5 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad,
 
 ---
 ```bash
-git clone https://github.com/TidusFD/Helenna.git
+git clone https://github.com/DominguezFranco28/Helenna.git
 
