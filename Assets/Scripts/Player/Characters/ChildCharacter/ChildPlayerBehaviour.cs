@@ -6,17 +6,17 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
 {
     [SerializeField] private float _speed;
     [SerializeField] private float _climbSpeed;
+    private float _currentSpeed; 
     [SerializeField] private AudioClip _climbingLoopSFX; 
     [SerializeField] private AudioClip _footstepsSFX; 
-    private float _currentSpeed; //Este fue necesario para establecer una velocidad dinamica, ya que tengo dos tipos de velocidades, con escalada y caminata.
     private Rigidbody2D _rb2D;
     private Collider2D _collider;
     private Animator _animator;
-    private bool _canMove;
-    public bool isInControll = false;
     private Vector2 _movementInput;
+    private bool _canMove;
 
-    //prop publicas para referenciar caracteristicas del jugador y poder integrarlo a la logica de estados.
+    public bool isInControll = false;
+    //Public properties 
     public Animator Animator { get { return _animator; }} 
     public AudioClip ClimbSFX  { get { return _climbingLoopSFX; }} 
     public AudioClip StepsSFX { get { return _footstepsSFX; }} 
@@ -39,12 +39,14 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
         _animator = GetComponent<Animator>();
         _currentSpeed = _speed;
         _collider = GetComponent<Collider2D>();
-        ClimbDetector = GetComponentInChildren<ClimbDetector>(); //lo puse en un childent asi que tengo que tenerlo en cuenta en el getocmponent.
+        ClimbDetector = GetComponentInChildren<ClimbDetector>();
+        //Climbdetector in an child object
     }
 
     public void SetMovementInput(Vector2 input)
     {
-        if (!isInControll || !_canMove) return; //Los metodos tienen que respetar que el jugador este bajo control, que se pueda moer
+        //ask for control first
+        if (!isInControll || !_canMove) return;
         {
             _movementInput = input.normalized;
             _animator.SetFloat("Horizontal", _movementInput.x);
@@ -58,7 +60,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     {
         if (_rb2D == null)
         {
-            Debug.LogError(gameObject.name + " no tiene Rigidbody2D asignado!");
+            Debug.LogError(gameObject.name + "there is not rigidbody 2d!");
             return;
         }
 
@@ -70,7 +72,8 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     private void FixedUpdate()
     {
         if (!isInControll || !_canMove) return;
-        _rb2D.velocity = _movementInput * _currentSpeed; //lo cambio al currentspeed para que el fixedupdate trabje tambien respetando la velocidad de escalñada cuando le toque escalar
+        _rb2D.velocity = _movementInput * _currentSpeed; 
+        //Currentspeed because child have two velocitys, one for climbing and other to move.
     }
 
     public void SetControl(bool isActive)

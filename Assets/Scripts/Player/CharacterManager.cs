@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine; //Libreria de Cinemachine
+using Cinemachine; //Cinemachine Library
 public class CharacterManager : MonoBehaviour
 {
     public static CharacterManager Instance { get; private set; }
@@ -49,6 +49,7 @@ public class CharacterManager : MonoBehaviour
             if (control != null)
             {
                 control.SetControl(i == index);
+                control.SetMovementEnabled(i == index);
                 //This is equal to true, only for the character that is at the index in this for loop,
                 //all the others are set to false so they cannot move due to their Behavior
             }

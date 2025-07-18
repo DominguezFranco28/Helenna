@@ -11,22 +11,21 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     [SerializeField] private AudioClip _digSFXClip;
     private Animator _animator;
     private Rigidbody2D _rb2D;
-    private Vector2 _movementInput;
     private Collider2D _collider2D;
-
-    //Queda pendiente encapsular bien estas variables.
+    private Vector2 _movementInput;
     private bool _canMove;
+
+    //it remains to be encapsulated
     public bool isInControll = false;
 
 
-    //Exposición de variables con metodos publicos (para manipular desde la statemachine y otros)
-    public Animator Animator => _animator;
-    public AudioClip DigSFXClip => _digSFXClip;
-    public AudioClip StepsSFX { get { return _footstepsSFX; } }
-
+    //Public properties
     public Vector2 MovementInput { get { return _movementInput; } }
-    public HoleDetector HoleDetector { get; private set; }
     public Collider2D PlayerCollider { get { return _collider2D; } }
+    public HoleDetector HoleDetector { get; private set; }
+    public Animator Animator { get { return _animator; } }
+    public AudioClip DigSFXClip { get { return _digSFXClip; } }
+    public AudioClip StepsSFX { get { return _footstepsSFX; } }
 
     void Awake()
     {
@@ -34,8 +33,6 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
         _animator = GetComponent<Animator>();
         HoleDetector = GetComponentInChildren<HoleDetector>();
         _collider2D = GetComponent<Collider2D>();
-
-
     }
 
     public void SetMovementInput(Vector2 input)
@@ -46,22 +43,21 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
             _animator.SetFloat("Horizontal", _movementInput.x);
             _animator.SetFloat("Vertical", _movementInput.y);
             _animator.SetFloat("Speed", _movementInput.magnitude);
-            UpdateMouthDirection(_movementInput); //como el pj no rota,
-                                                  //+solo cambia su anim, tuve que hacer una rotacion manual a la boca para que funcione la logica de sujetar items
+            UpdateMouthDirection(_movementInput); 
         }
     }
-    private void UpdateMouthDirection(Vector2 dir) //Asistido con IA, desconozco mucho de la  utilizacion y metodos con vectores todaiva.
+    private void UpdateMouthDirection(Vector2 dir) 
     {
         Vector3 mouthPos = _mouth.localPosition;
 
         if (Mathf.Abs(dir.x) > 0.01f)
         {
-            // Si hay movimiento horizontal, lo seguimos
+            // if there is horizontal movemente, we follow it
             mouthPos.x = Mathf.Abs(mouthPos.x) * Mathf.Sign(dir.x);
         }
         else if (dir == Vector2.zero || dir.y > 0.01f)
         {
-            // Si no hay input, forzamos que quede a la derecha
+            //if there is no input, force to stay at right
             mouthPos.x = Mathf.Abs(mouthPos.x);
         }
 
@@ -71,7 +67,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     {
         if (_rb2D == null)
         {
-            Debug.LogError(gameObject.name + " no tiene Rigidbody2D asignado!");
+            Debug.LogError(gameObject.name + "there is not rigidbody 2d!");
             return;
         }
 

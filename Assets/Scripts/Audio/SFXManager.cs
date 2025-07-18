@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SFXManager : MonoBehaviour
 {
+    //Singleton
     public static SFXManager Instance { get; private set; }
-    //Singleton del SFX MANAGER
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioSource _sfxSource;
 
@@ -13,22 +13,21 @@ public class SFXManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Destroy(gameObject); // Evita duplicados, mantenemos logica singleton
+            Destroy(gameObject); // Prevents duplicate
             return;
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject); // Para que persista entre scenas.
+        DontDestroyOnLoad(gameObject); // Persist between scenes. 
 
         if (_audioSource == null)
         {
-            Debug.LogError("SFXPlayerController requiere un AudioSource asignado.");
+            Debug.LogError("SFXPlayerController needs an AudioSource.");
             enabled = false;
         }
     }
 
-    //Metodo para reproducir un SFX simple (no loop).
-
+    //Play SFX (no loop).
     public void PlaySFX(AudioClip clip)
     {
         if (_sfxSource != null && clip != null)
@@ -38,7 +37,7 @@ public class SFXManager : MonoBehaviour
     }
 
 
-    // Reproduce un SFX en loop (como pasos, escalada).
+    // PlaySFX loop (like steps, climb).
     public void PlayLoop(AudioClip clip)
     {
         if (_audioSource != null && clip != null)
@@ -49,7 +48,7 @@ public class SFXManager : MonoBehaviour
         }
     }
 
-    //Detiene el loop.
+    //Stop the loop.
     public void StopLoop()
     {
         if (_audioSource != null)

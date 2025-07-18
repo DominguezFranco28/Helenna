@@ -28,7 +28,7 @@ TagManager:
   - DogCharacter
   - ChildCharacter
   - Climbable
-  - 
+  - StopMovement
   - 
   - 
   - 

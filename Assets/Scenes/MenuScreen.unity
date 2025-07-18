@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TransitionSceneCanva
       objectReference: {fileID: 0}
+    - target: {fileID: 2046562105146730766, guid: 38f828732ae94c145bf9e698ec4447b9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4510332207050764021, guid: 38f828732ae94c145bf9e698ec4447b9, type: 3}
       propertyPath: _transitionTime
       value: 1

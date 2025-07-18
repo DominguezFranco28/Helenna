@@ -26,8 +26,6 @@ public class ChildPlayerController : MonoBehaviour
                 _childStateMachine.TransitionTo(_childStateMachine.climbState);
                 return;
             }
-
         }
     }
-
 }

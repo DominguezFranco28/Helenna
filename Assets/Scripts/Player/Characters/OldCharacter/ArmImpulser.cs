@@ -58,7 +58,7 @@ public class ArmImpulser : MonoBehaviour
         {
             SFXManager.Instance.PlaySFX(_dashSFX); 
             _movementBehaviour.SetMovementEnabled(false);
-            _movementBehaviour.isRecoiling = true;
+            _movementBehaviour.IsRecoiling = true;
 
             Vector2 velocity = Vector2.zero;
             float smoothTime = _moveSmoothTime;
@@ -80,7 +80,7 @@ public class ArmImpulser : MonoBehaviour
 
             //when finish, let the player move again
             _movementBehaviour.SetMovementEnabled(true);
-            _movementBehaviour.isRecoiling = false;
+            _movementBehaviour.IsRecoiling = false;
         }
 
     }

@@ -6,8 +6,8 @@ public class ClimbDetector : MonoBehaviour
 {
     private bool _canClimb = false;
     private Collider2D _climbableCollider;
-    public bool CanClimb => _canClimb;
-    public Collider2D Climbable => _climbableCollider;
+    public bool CanClimb { get { return _canClimb; } }
+    public Collider2D Climbable { get { return _climbableCollider; } }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {

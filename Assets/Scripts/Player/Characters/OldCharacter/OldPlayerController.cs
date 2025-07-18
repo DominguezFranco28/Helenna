@@ -10,18 +10,14 @@ public class OldPlayerController : MonoBehaviour
 
     private void Start()
     {
-        _myStateMachine = new OldStateMachine(_playerBehaviour); //Le paso los el parametro del player vehavbior
-                                                                                     //Lo pason en el constructor por los State no heredan de monobehavoiur
-
-        // Este ejemplo solo inicia en uno. Los estados pueden referenciar la StateMachine si querés hacer transiciones desde adentro.
+        _myStateMachine = new OldStateMachine(_playerBehaviour); 
         _myStateMachine.Initialize(_myStateMachine.idleState);
-        //Recordar, el StateMachine ya tiene los estados creados en su constructor, no hace falta volver a instanciarlos aca.
+        //Remember, the StateMachine already has the states created in the constructor, no need to instantiate it again here
     }
     private void Update()
     {
-        /*if (GameStateManager.Instance.IsGamePaused()) return;*/ //Respeto el State de pausa, si esta pausado que ni entre en la maquina de estado
-        //Me da problema con el trnaisison de escenas, revisar esto
-        if (_playerBehaviour.isInControll) //Tuve que agregarle la booleana aca tambien, porque sino me frenaba el movimiento del viejo pero me dejaba hacer el impulso apretando la q
+        //if (GameStateManager.Instance.IsGamePaused()) return;
+        if (_playerBehaviour.IsInControll) //Tuve que agregarle la booleana aca tambien, porque sino me frenaba el movimiento del viejo pero me dejaba hacer el impulso apretando la q
         {
         
             _myStateMachine?.Update();

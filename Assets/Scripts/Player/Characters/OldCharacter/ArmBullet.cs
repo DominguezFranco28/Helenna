@@ -6,6 +6,7 @@ using static Cinemachine.CinemachineImpulseDefinition;
 public class ArmBullet : MonoBehaviour
 {
     [SerializeField] private float _shotSpeed;
+    [SerializeField] private float _pushDistance = 5f;
     private Rigidbody2D _rb;
     private Vector2 _direction;
     private Collider2D _armCol;  
@@ -62,8 +63,20 @@ public class ArmBullet : MonoBehaviour
             Debug.Log("Impact whit movableObject");
             var collisionMove =collision.gameObject.GetComponent<MovableObject>();
             Vector2 impactPoint = collision.contacts[0].point;
-            float pushDistance = 5f;
-            Vector2 pushTarget = (Vector2)collision.transform.position + _direction * pushDistance;
+            // Determino la direccion en X e  Y, quiero evitar diagonales 
+            Vector2 pushDir = _direction; //a la direccion se le asigna un nuevo valor de tipo mvector 2, pero restringido para eivtar diagonales
+            if (Mathf.Abs(pushDir.x) > Mathf.Abs(pushDir.y))
+            {
+                pushDir = new Vector2(Mathf.Sign(pushDir.x), 0); // Solo eje X
+            }
+            else
+            {
+                pushDir = new Vector2(0, Mathf.Sign(pushDir.y)); // Solo eje Y
+            }
+
+
+
+            Vector2 pushTarget = (Vector2)collision.transform.position + pushDir * _pushDistance;
             Collider2D targetCol = collisionMove.GetComponent<Collider2D>();
             if (targetCol != null && _armCol != null)
             {
@@ -78,8 +91,19 @@ public class ArmBullet : MonoBehaviour
             Debug.Log("Impactaste con un objeto movible");
             var collisionMove = collision.gameObject.GetComponent<MovableObject>();
             Vector2 impactPoint = collision.contacts[0].point;
-            float pushDistance = 5f;
-            Vector2 pushTarget = (Vector2)collision.transform.position - _direction * pushDistance; //Lo mismo pero paso en negativo la direccion, para que vaya hacia el jugador
+            // // Determino la direccion en X e  Y, quiero evitar diagonales 
+            Vector2 pushDir = _direction; //a la direccion se le asigna un nuevo valor de tipo mvector 2, pero restringido para eivtar diagonales
+            if (Mathf.Abs(pushDir.x) > Mathf.Abs(pushDir.y))
+            {
+                pushDir = new Vector2(Mathf.Sign(pushDir.x), 0); // Solo eje X
+            }
+            else
+            {
+                pushDir = new Vector2(0, Mathf.Sign(pushDir.y)); // Solo eje Y
+            }
+
+
+            Vector2 pushTarget = (Vector2)collision.transform.position - pushDir * _pushDistance; //Lo mismo pero paso en negativo la direccion, para que vaya hacia el jugador
             Collider2D targetCol = collisionMove.GetComponent<Collider2D>();
             if (targetCol != null && _armCol != null)
             {

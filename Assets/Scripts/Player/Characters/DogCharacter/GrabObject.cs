@@ -20,7 +20,7 @@ public class GrabObject : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("PickableObject") && Input.GetKey("e"))
         {
-            Debug.Log("apretaste la E");
+            Debug.Log("You pressed E");
             if (_pickedObject == null)
             {
                 collision.transform.position = _mouth.transform.position;

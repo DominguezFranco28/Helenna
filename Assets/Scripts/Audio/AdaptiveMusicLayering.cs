@@ -5,8 +5,8 @@ using UnityEngine;
 public class AdaptiveMusicLayering : MonoBehaviour
 {
     
-    [SerializeField] private AudioSource _baseLayerSource; // base de la musica
-    [SerializeField] private AudioSource _resolutionSFXSource; // fuente de sonido para resolucion de puzzle
+    [SerializeField] private AudioSource _baseLayerSource; 
+    [SerializeField] private AudioSource _resolutionSFXSource; 
 
     [Header("Fade parameters")]
     [Range(0.1f, 5.0f)]

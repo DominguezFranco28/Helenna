@@ -5,7 +5,7 @@ using UnityEngine;
 public class HoleDetector : MonoBehaviour
 {
     private bool _canDig;
-    public bool CanDig => _canDig;
+    public bool CanDig { get { return _canDig; } }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
