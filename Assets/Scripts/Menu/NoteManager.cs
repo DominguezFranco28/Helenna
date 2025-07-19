@@ -42,5 +42,19 @@ public class NoteManager : MonoBehaviour
         Time.timeScale = 1f;
         _noteUI.SetActive(false);
         SceneManager.LoadScene(_nextSceneName);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

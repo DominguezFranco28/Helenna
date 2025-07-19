@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 8472559840246140729}
   - component: {fileID: 2926700017321951924}
   - component: {fileID: 143325955178102899}
-  m_Layer: 0
+  - component: {fileID: 5586880978201971933}
+  m_Layer: 3
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5930563753872240629}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -96.22, y: 100.29999, z: 0}
+  m_LocalPosition: {x: -42.41157, y: 104.24721, z: -8.218959}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -145,10 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33651f4b891743e4080da2f7223906ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  _openSFX: {fileID: 0}
+  _openSFX: {fileID: 8300000, guid: 53c7926d5b9a47e44b282d82651db817, type: 3}
+  _musicFadeDelay: 3.5
+  _targetVolume: 0.3
 --- !u!58 &2926700017321951924
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -205,3 +205,17 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5586880978201971933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5930563753872240629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0300a080ef5fc2648b8c1cd656fe58f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _requiredCount: 1
+  _puzzleManager: {fileID: 0}

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ActivationDoor : MonoBehaviour, IActiveable
 {
-    [SerializeField] private LayerMask _objectLayer;
     [SerializeField] private AudioClip _openSFX; 
     [SerializeField] private float _musicFadeDelay = 3.5f;
     [SerializeField] private float _targetVolume = 0.3f;
@@ -17,7 +16,7 @@ public class ActivationDoor : MonoBehaviour, IActiveable
         _animator = GetComponent<Animator>();
         _collider2D = GetComponent<Collider2D>();
         _musicLayering = FindAnyObjectByType<AdaptiveMusicLayering>();
-        
+      
     }
 
     public void Activate()
@@ -37,15 +36,5 @@ public class ActivationDoor : MonoBehaviour, IActiveable
     {
         yield return new WaitForSeconds(delay);
         layering.FadeBaseMusicVolume(1f); // original value
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (((1 << other.gameObject.layer) & _objectLayer) != 0)
-        {
-
-            Debug.Log("OBJETO SOBRE LA PLACA");
-            Activate();
-            Destroy(other.gameObject);
-        }
     }
 }
