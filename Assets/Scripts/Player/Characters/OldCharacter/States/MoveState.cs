@@ -6,10 +6,12 @@ public class MoveState :  IState
 {
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
-    public MoveState(OldPlayerBehaviour oldPlayerBehaviour, OldStateMachine oldStateMachine)
+    private JumpDetector _jumpDetector;
+    public MoveState(OldPlayerBehaviour oldPlayerBehaviour, OldStateMachine oldStateMachine, JumpDetector jumpDetector)
     {
         this._oldPlayerBehaviour = oldPlayerBehaviour;
         this._oldStateMachine = oldStateMachine;
+        this._jumpDetector = jumpDetector;
     }
 
     public void Enter()
@@ -37,6 +39,9 @@ public class MoveState :  IState
         {
             _oldStateMachine.TransitionTo(_oldStateMachine.impulseState); 
         }
-
+        if (_jumpDetector.CanJump)
+        {
+            _oldStateMachine.TransitionTo(_oldStateMachine.jumpState);
+        }
     }
 }

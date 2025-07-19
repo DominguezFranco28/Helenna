@@ -10,18 +10,17 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     private bool _canMove; //manage from CharacterManager
     private Rigidbody2D _rb2D;
     private Animator _animator;
+    private ArmImpulser _armImpulser;
     private Vector2 _movementInput;
     private bool _isInControll;
+    private bool _isRecoiling = false;
     public bool IsInControll{ get { return _isInControll; } set { _isInControll = value; } } 
     public Animator Animator { get { return _animator; } } 
     public Vector2 MovementInput { get { return _movementInput; } }
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
-
+    public bool IsRecoiling{ get { return _isRecoiling; } set { _isRecoiling = value; } } 
 
     //OLD BACKUP---- tengo que hacer la clase base
-    private bool _isRecoiling = false;
-    public bool IsRecoiling{ get { return _isRecoiling; } set { _isRecoiling = value; } } 
-    private ArmImpulser _armImpulser;
     //public void PerformThrowArm(ImpulseType type)
     //{
     //    if (!IsInControll) return;

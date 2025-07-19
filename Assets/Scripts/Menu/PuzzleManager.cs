@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
 {
-    private List<IPuzzleObserver> observers = new List<IPuzzleObserver>();// Lista de observadores pendientes de cambios en el Script. Es a quienes se les notifica de algun cambio 
+    private List<IPuzzleObserver> observers = new List<IPuzzleObserver>();
+    // Lista de observadores pendientes de cambios en el Script. Es a quienes se les notifica de algun cambio 
     private void Start()
     {
 

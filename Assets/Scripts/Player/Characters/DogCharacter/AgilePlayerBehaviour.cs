@@ -31,7 +31,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     {
         _rb2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        HoleDetector = GetComponentInChildren<HoleDetector>();
+        HoleDetector = GetComponentInChildren<HoleDetector>(); //rever esto, puedo integrarlo en el constructor del estado como el Jump
         _collider2D = GetComponent<Collider2D>();
     }
 

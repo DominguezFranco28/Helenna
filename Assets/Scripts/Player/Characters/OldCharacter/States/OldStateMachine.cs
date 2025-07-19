@@ -19,12 +19,14 @@ public class OldStateMachine
     public MoveState moveState;
     public IdleState idleState;
     public ImpulseState impulseState;
+    public JumpState jumpState;
     public IState CurrentState { get; private set; } //Read-only. External object can set the Initialize method to establish a default state
-    public OldStateMachine(OldPlayerBehaviour oldPlayer)
+    public OldStateMachine(OldPlayerBehaviour oldPlayer, JumpDetector jumpDetector)
     {
-        this.moveState = new MoveState(oldPlayer, this); 
+        this.moveState = new MoveState(oldPlayer, this, jumpDetector);
         this.idleState = new IdleState(oldPlayer, this);
         this.impulseState = new ImpulseState(oldPlayer, this);
+        this.jumpState = new JumpState(oldPlayer, this, jumpDetector);
 
         //It was necessary to add the "this".
         //I pass this instantiation of the StateMachine class as
@@ -33,7 +35,7 @@ public class OldStateMachine
     }
 
 
-        //Enter, Update and Exit methods of the Istate interface, to manage the entry and exit of states.
+    //Enter, Update and Exit methods of the Istate interface, to manage the entry and exit of states.
     public void Initialize(IState startingState)
     {
         CurrentState = startingState;
