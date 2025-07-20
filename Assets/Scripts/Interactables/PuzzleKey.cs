@@ -18,7 +18,7 @@ public class PuzzleKey : MonoBehaviour
             IActiveable activeable = other.GetComponent<IActiveable>();
             if (movable != null)
             {
-                movable.StopMove();
+                movable.StopMove(transform.position);
                 _puzzleManager.PuzzleCount();
             }
             else if (activeable != null)

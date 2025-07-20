@@ -33,8 +33,8 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
 
     private void PuzzleSolved()
     {
-        _activateDoor.Activate();
-       // Destroy(gameObject);
+        //_activateDoor.Activate();
+        Destroy(gameObject);
     }
     private void OnDestroy()
     {

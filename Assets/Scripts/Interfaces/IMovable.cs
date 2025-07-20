@@ -5,5 +5,6 @@ using UnityEngine;
 public interface IMovable 
 {
     public void MoveTo (Vector2 direction);
-    public void StopMove();
+    public void StopMove(Vector2 position);
+   
 }
