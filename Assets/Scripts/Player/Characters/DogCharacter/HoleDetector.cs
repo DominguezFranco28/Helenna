@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HoleDetector : MonoBehaviour
@@ -23,6 +24,7 @@ public class HoleDetector : MonoBehaviour
             }
             _canDig = true;
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -41,5 +43,6 @@ public class HoleDetector : MonoBehaviour
             _canDig = false;
         }
     }
+
 }
 

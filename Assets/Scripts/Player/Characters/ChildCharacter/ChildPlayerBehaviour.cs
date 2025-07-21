@@ -23,7 +23,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     public Vector2 MovementInput { get { return _movementInput; } }
     public float ClimbSpeed { get { return _climbSpeed; } }
     public Collider2D PlayerCollider { get { return _collider; } }
-    public ClimbDetector ClimbDetector { get; private set; } 
+    public ChildTriggerDetector ClimbDetector { get; private set; } 
     public void SetSpeed(float newSpeed)
     {
         _currentSpeed = newSpeed;
@@ -39,7 +39,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
         _animator = GetComponent<Animator>();
         _currentSpeed = _speed;
         _collider = GetComponent<Collider2D>();
-        ClimbDetector = GetComponentInChildren<ClimbDetector>();
+        ClimbDetector = GetComponentInChildren<ChildTriggerDetector>();
         //Climbdetector in an child object
     }
 

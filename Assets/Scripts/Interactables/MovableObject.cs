@@ -8,12 +8,12 @@ public class MovableObject : MonoBehaviour, IMovable
 {
     [Header("Soft Move")]
     [SerializeField] private float _moveSmoothTime = 0.2f;
+    private Vector2 _velocity = Vector2.zero;
     [SerializeField] private float _stopThreshold = 0.05f;
 
     [Header("Collision")]
     [SerializeField] private LayerMask _obstacleMask; // the layers with which the object has to collide
     private Vector2 _targetPosition;
-    private Vector2 _velocity = Vector2.zero;
     private bool _isBeingMoved = false;
     private BoxCollider2D _collider2D;
 
@@ -69,7 +69,7 @@ public class MovableObject : MonoBehaviour, IMovable
         {
             if (_isStopping)
             {
-                // Solo se detienne completamente si es frenada suave
+                // Solo se detienne completamente si es frenada suave 
                 _isBeingMoved = false;
                 _velocity = Vector2.zero;
                 _canMove = false;

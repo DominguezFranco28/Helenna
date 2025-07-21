@@ -7,12 +7,14 @@ public class ChildStateMachine
     public ChildMoveState moveState;
     public ChildIdleState idleState;
     public ChildClimbState climbState;
+    public ChildActionState actionState;
     public IState CurrentState { get; private set; }
-    public ChildStateMachine(ChildPlayerBehaviour player, ClimbDetector climbDetector)
+    public ChildStateMachine(ChildPlayerBehaviour player, ChildTriggerDetector actionDetector)
     {
         this.moveState = new ChildMoveState(player, this);
         this.idleState = new ChildIdleState(player, this);
-        this.climbState = new ChildClimbState(player, this, climbDetector);
+        this.climbState = new ChildClimbState(player, this, actionDetector);
+        this.actionState = new ChildActionState (player, this, actionDetector);
     }
     public void Initialize(IState startingState)
     {

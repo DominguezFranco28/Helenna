@@ -7,10 +7,10 @@ public class ChildClimbState : IState
 {
     private ChildPlayerBehaviour _childPlayerBehaviour;
     private ChildStateMachine _childStateMachine;
-    private ClimbDetector _climbDetector;
+    private ChildTriggerDetector _climbDetector;
     private Collider2D _ignoredClimbable;
 
-    public ChildClimbState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine, ClimbDetector climbDetector)
+    public ChildClimbState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine, ChildTriggerDetector climbDetector)
     {
         this._childPlayerBehaviour = childPlayerBehaviour;
         this._childStateMachine = childStateMachine;

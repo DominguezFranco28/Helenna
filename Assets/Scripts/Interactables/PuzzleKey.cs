@@ -14,7 +14,7 @@ public class PuzzleKey : MonoBehaviour
         {
             Debug.Log("OBJETO SOBRE RESOLUCION");
             // detect box &stop it /recoredar lo de activable
-            IMovable movable = other.GetComponent<IMovable>();
+            MovableObject movable = other.GetComponent<MovableObject>();
             IActiveable activeable = other.GetComponent<IActiveable>();
             if (movable != null)
             {

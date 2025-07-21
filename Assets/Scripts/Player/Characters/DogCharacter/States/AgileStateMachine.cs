@@ -7,13 +7,15 @@ public class AgileStateMachine
     public AgileMoveState moveState;
     public AgileIdleState idleState;
     public AgileDigState digState;
+    public AgileJumpState jumpState;
     public IState CurrentState { get; private set; }
 
-    public AgileStateMachine(AgilePlayerBehaviour player)
+    public AgileStateMachine(AgilePlayerBehaviour player , PlatformDetector platformDetector)
     {
-        this.moveState = new AgileMoveState(player, this);
+        this.moveState = new AgileMoveState(player, this, platformDetector);
         this.idleState = new AgileIdleState(player, this);
         this.digState = new AgileDigState(player, this);
+        this.jumpState = new AgileJumpState(player, this, platformDetector);
     }
 
     public void Initialize(IState startingState)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrabObject : MonoBehaviour
 {
-    [SerializeField] private GameObject _mouth;
+    [SerializeField] public GameObject _mouth;
     private GameObject _pickedObject = null; 
 
     void Update()
