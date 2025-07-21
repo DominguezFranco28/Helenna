@@ -23,7 +23,6 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public Vector2 MovementInput { get { return _movementInput; } }
     public Collider2D PlayerCollider { get { return _collider2D; } }
     public HoleDetector HoleDetector { get; private set; }
-    public PlatformDetector PlatformDetector { get; private set; }
     public Animator Animator { get { return _animator; } }
     public AudioClip DigSFXClip { get { return _digSFXClip; } }
     public AudioClip StepsSFX { get { return _footstepsSFX; } }

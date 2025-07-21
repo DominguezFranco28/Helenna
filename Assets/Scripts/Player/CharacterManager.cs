@@ -61,15 +61,21 @@ public class CharacterManager : MonoBehaviour
         }
 
     }
-    void TeleportAllToCurrent()
+   public void TeleportAllToCurrent()
     {
         Transform targetPosition = characters[_currentIndex].transform;
-
+        int changePosition = 0;
         for (int i = 0; i < characters.Length; i++)
         {
-            if (i != _currentIndex)
+            if (i != _currentIndex && changePosition < 1)
             {
-                characters[i].transform.position = targetPosition.position;
+              
+                characters[i].transform.position = targetPosition.position + Vector3.right;
+                changePosition++;
+            }
+            else if (i != _currentIndex)
+            {
+                characters[i].transform.position = targetPosition.position + Vector3.left;
             }
         }
 

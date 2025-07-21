@@ -31,4 +31,13 @@ public class TransitionManager : MonoBehaviour
         yield return new WaitForSeconds(_transitionTime);
         SceneManager.LoadScene(sceneIndex);// a index to always pass them in order
     }
+    public void FadeIn() //sobrecarga para que no me cambie de escena, solo quiero la pantalla en negro para los tps
+    {
+        _animator.SetTrigger("StartTransition");
+    }
+    public void PlayBlackScreen()
+    {
+
+        _animator.Play("FadeInanim");
+    }
 }

@@ -10,7 +10,7 @@ public abstract class PlayerDetector : MonoBehaviour
     //I establish a "common calling" for daughters, to come into contact with the Player
     {
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("OldPlayer"))
         {
             Effect(collision);            
         }

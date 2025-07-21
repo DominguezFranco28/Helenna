@@ -18,7 +18,8 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public Animator Animator { get { return _animator; } } 
     public Vector2 MovementInput { get { return _movementInput; } }
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
-    public bool IsRecoiling{ get { return _isRecoiling; } set { _isRecoiling = value; } } 
+    public bool IsRecoiling{ get { return _isRecoiling; } set { _isRecoiling = value; } }
+
 
     //OLD BACKUP---- tengo que hacer la clase base
     //public void PerformThrowArm(ImpulseType type)
@@ -26,7 +27,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     //    if (!IsInControll) return;
     //    _armImpulser.GetThrowArm(type);
     //}
-//END BACKUP ... tengo que hacer la clase base 
+    //END BACKUP ... tengo que hacer la clase base 
     void Start()
     {
         _rb2D = GetComponent<Rigidbody2D>();
