@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrabObject : MonoBehaviour
 {
-    [SerializeField] public GameObject _mouth;
+    [SerializeField] public GameObject _spawnPoint;
     private GameObject _pickedObject = null; 
 
     void Update()
@@ -23,8 +23,8 @@ public class GrabObject : MonoBehaviour
             Debug.Log("You pressed E");
             if (_pickedObject == null)
             {
-                collision.transform.position = _mouth.transform.position;
-                collision.gameObject.transform.SetParent(_mouth.gameObject.transform); //set the parent so follow de mouth 
+                collision.transform.position = _spawnPoint.transform.position;
+                collision.gameObject.transform.SetParent(_spawnPoint.gameObject.transform); //set the parent so follow de mouth 
                 collision.GetComponent<Rigidbody2D>().simulated = false;
                 _pickedObject = collision.gameObject;
             }

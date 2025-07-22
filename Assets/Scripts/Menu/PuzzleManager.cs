@@ -6,10 +6,6 @@ public class PuzzleManager : MonoBehaviour
 {
     private List<IPuzzleObserver> observers = new List<IPuzzleObserver>();
     // Lista de observadores pendientes de cambios en el Script. Es a quienes se les notifica de algun cambio 
-    private void Start()
-    {
-
-    }
     //Metódo para REGISTRAR un observador que lo solicite.
     public void RegisterObserver(IPuzzleObserver observer)
     {

@@ -39,6 +39,12 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     {
         if (!IsInControll || !_canMove) return; 
         {
+            // Evitar diagonales priorizando un uinico eje (misma logica que las cajs)
+            //if (Mathf.Abs(input.x) > 0.01f)
+            //    input.y = 0;
+            //else if (Mathf.Abs(input.y) > 0.01f)
+            //    input.x = 0;
+
             _movementInput = input.normalized;
             _animator.SetFloat("Horizontal", _movementInput.x);
             _animator.SetFloat("Vertical", _movementInput.y);
@@ -55,7 +61,9 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         }
         _movementInput = Vector2.zero;
         _rb2D.velocity = Vector2.zero;
-        _animator.SetFloat("Speed", 0f); 
+        _animator.SetFloat("Horizontal", 0f);
+        _animator.SetFloat("Vertical", 0f);
+        _animator.SetFloat("Speed", 0f);
     }
     private void FixedUpdate()
     {
@@ -81,6 +89,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public void SetMovementEnabled(bool isEnabled)
     {
         _canMove = isEnabled;
+
     }
 }
 

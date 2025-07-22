@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static TMPro.TMP_Compatibility;
 
-public class ImpulseState : IState
+public class ImpulseState :  IState
 {
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
-
+    private float _timer = 0f;
+    private float _waitDuration = 1f;
+    private bool _timerStarted = false;
     public ImpulseState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine)
     {
         _oldPlayerBehaviour = oldPlayer;
@@ -17,6 +20,9 @@ public class ImpulseState : IState
         Debug.Log("You entered the state: IMPULSE");
         _oldPlayerBehaviour.StopMovement();
         _oldPlayerBehaviour.Animator.SetTrigger("IsImpulsing"); 
+        _oldPlayerBehaviour.SetMovementEnabled(false); //tuve que llamar este metodo tambien desde la corutina par ael anclaje y cuando dejab de 
+        _timer = 0f;
+        _timerStarted = false; //mantenemos el timer apagado, quiero que se prenda solo con los imputs
     }
 
     public void Exit()
@@ -26,18 +32,31 @@ public class ImpulseState : IState
 
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0)) //Left click = push
+        if (!_timerStarted)
         {
-            _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Push);
+            if (Input.GetMouseButtonDown(0)) //Left click = push
+            {
+                _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Push);
+                _timerStarted = true;
 
-            _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
+            }
+
+            if (Input.GetMouseButtonDown(1)) // Right click = pull
+            {
+                _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Pull);
+                _timerStarted = true;
+
+            }
         }
-
-        if (Input.GetMouseButtonDown(1)) // Right click = pull
+        else
         {
-            _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Pull);
-            _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
+            _timer += Time.deltaTime; //gestiono el salto de estado dsps del timere par aque el pj no se pueda mvoer mientras vuela el brazo
+
+            if (_timer >= _waitDuration)
+            {
+                _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
+            }
         }
-    }
-  
+    }    
+
 }

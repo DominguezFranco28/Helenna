@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChildActionState : MonoBehaviour , IState
+public class ChildActionState : IState
 {
     private ChildPlayerBehaviour _childPlayerBehaviour;
     private ChildStateMachine _childStateMachine;

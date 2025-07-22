@@ -6,8 +6,9 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
 {
     [SerializeField] private int _requiredCount = 3;
     [SerializeField] private PuzzleManager _puzzleManager;
-    [SerializeField] private IActiveable _activateDoor;
-   
+    [SerializeField] private IActiveable _activateDoor; 
+    [SerializeField] private GameObject _child; // arrastrás el hijo desde el inspector
+
     private int _currentCount;
     //al final no lo hice instanciando el singleton porque no me dejaba reutilizarlo para otros puzzles.
 
@@ -22,6 +23,7 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
     }
     public void OnPuzzleEvent()
     {
+        
         _currentCount--;
         Debug.Log("resuelta una pieza del puzzle"); 
         Debug.Log(_currentCount);
@@ -33,8 +35,22 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
 
     private void PuzzleSolved()
     {
-        //_activateDoor.Activate();
+        Debug.Log("PUZZLE RESUELTO1"); 
+        //retocar tdoo esto para no tener parametros vacios con todos los puzzles
+        if (gameObject.CompareTag("HookPoint"))
+        {
+            Debug.Log("activaste el anclaje");
+            _child.SetActive(true);
+        }
+        else if (_activateDoor != null)
+        {
+            _activateDoor.Activate();
+        }
+        else
+        {
+
         Destroy(gameObject);
+        }
     }
     private void OnDestroy()
     {

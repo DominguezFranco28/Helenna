@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2309449911251037122}
   - component: {fileID: 7018156462153311998}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 971911035479733385}
   - component: {fileID: 8897391461319200139}
   - component: {fileID: 3265080076105430363}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: PressurePlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -57,7 +57,6 @@ public class ArmImpulser : MonoBehaviour
             yield break; //if not pull, break the coroutine
         {
             SFXManager.Instance.PlaySFX(_dashSFX); 
-            _movementBehaviour.SetMovementEnabled(false);
             _movementBehaviour.IsRecoiling = true;
 
             Vector2 velocity = Vector2.zero;
@@ -68,13 +67,21 @@ public class ArmImpulser : MonoBehaviour
             while (Vector2.Distance(transform.position, anchorPosition) > stopThreshold)
             {
                 transform.position = Vector2.SmoothDamp(transform.position, anchorPosition, ref velocity, smoothTime);
+                _movementBehaviour.StopMovement();
+                _movementBehaviour.SetMovementEnabled(false); //mientras siga existiendo distancia, bloqueo el mov
                 yield return null;
             }
             //make sure it ends exactly at the point
             //I moved the character away from the anchor point a bit because it was buggy
-            transform.position = anchorPosition; 
-            Vector2 directionAway = (transform.position - (Vector3)anchorPosition).normalized;
-            float separationDistance = 5; 
+            Vector2 lastPosition = transform.position;//ultima pos real del jugador
+            transform.position = anchorPosition; //guardo al jugador exactamente sobre el punto de anclaje
+            Vector2 directionAway = ((Vector2)anchorPosition - lastPosition).normalized * -1f; //calculo de la direccion desde el anclaje hacia donde venia harold
+                                                                                              
+            if (directionAway == Vector2.zero) // Si la dirección no puede calcularse por algun motivo (no se xq aveces se bugeaba),se le asigna una por defecto
+            {
+                directionAway = Vector2.up;
+            }
+            float separationDistance = 1f; 
             transform.position += (Vector3)(directionAway * separationDistance);
 
 
@@ -86,8 +93,13 @@ public class ArmImpulser : MonoBehaviour
     }
     private void ThrowArm(ImpulseType type) 
     {
+
+        if (_currentArmBullet != null)
+        {
   
-        if (_currentArmBullet != null) return; //only let be one active arm.
+            return; //only let be one active arm.
+        }
+
         SFXManager.Instance.PlaySFX(_throwSFX); 
         Vector2 direction = _mousePosition.MouseWorlPos;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -98,7 +110,8 @@ public class ArmImpulser : MonoBehaviour
 
         if (armBullet!= null)
         {
-             _currentArmBullet = armBullet; 
+            
+            _currentArmBullet = armBullet; 
             //Save the reference of the current arml
             //Ignore collisions so the arm doesn't collide with the player
             Collider2D bulletCol = armBullet.GetComponent<Collider2D>();

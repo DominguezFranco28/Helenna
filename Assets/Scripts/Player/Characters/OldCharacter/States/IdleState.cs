@@ -17,7 +17,8 @@ public class IdleState :  IState
     public void Enter()
     {
         Debug.Log("You entered the state: OLD IDLE");
-        _oldPlayerBehaviour.SetMovementInput(Vector2.zero); 
+        _oldPlayerBehaviour.SetMovementInput(Vector2.zero);
+        _oldPlayerBehaviour.SetMovementEnabled(true);
     }
 
     public void Exit()

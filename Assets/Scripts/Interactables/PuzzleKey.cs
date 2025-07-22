@@ -6,25 +6,29 @@ public class PuzzleKey : MonoBehaviour
 {
     [SerializeField] private LayerMask _objectLayer; //defino la layer del objeto que me interesa para detectar el trigger (OnPositionObject)
     [SerializeField] private PuzzleManager _puzzleManager; //Instancia del Manager asociada a un GameObject. El objeto del puzzle con el que interactue, debe tener la misma referencia a esta misma instancia para funcionar (agrupar)
+    private bool _platformUsed = false;
+
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (((1 << other.gameObject.layer) & _objectLayer) != 0)
+        if (((1 << other.gameObject.layer) & _objectLayer) != 0 && !_platformUsed)
         {
-            Debug.Log("OBJETO SOBRE RESOLUCION");
-            // detect box &stop it /recoredar lo de activable
+            Debug.Log("OBJETO SOBRE RESOLUCION, USADO");
+            _platformUsed = true;
+            _puzzleManager.PuzzleCount();
+            // detect box &stop it / activate lever
             MovableObject movable = other.GetComponent<MovableObject>();
             IActiveable activeable = other.GetComponent<IActiveable>();
+
             if (movable != null)
             {
                 movable.StopMove(transform.position);
-                _puzzleManager.PuzzleCount();
             }
-            else if (activeable != null)
-            {
-                _puzzleManager.PuzzleCount();
-            }
+            //else if (activeable != null)
+            //{
+            //    _puzzleManager.PuzzleCount();
+            //}
         }
     }
 

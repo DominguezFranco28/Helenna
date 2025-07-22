@@ -5,8 +5,9 @@ using UnityEngine;
 public class TeleportPlatform : PlayerDetector
 {
     private bool _playerOnPlatform = false;
+    private bool _isActive = false;
     private Collider2D _player;
-
+    private OldPlayerBehaviour _oldPlayerBehaviour;
     public override void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -14,6 +15,7 @@ public class TeleportPlatform : PlayerDetector
         {
             _playerOnPlatform = true;
             _player = collision;
+            _oldPlayerBehaviour = _player.GetComponent<OldPlayerBehaviour>();
         }
     }
 
@@ -37,7 +39,12 @@ public class TeleportPlatform : PlayerDetector
     // Opcional: puedes dejar este método como está, o quitar la llamada en OnTriggerEnter2D si solo quieres el input
     public override void Effect(Collider2D collision)
     {
+        if (_isActive)
+            return;
         TransitionManager.Instance.PlayBlackScreen();
+        _oldPlayerBehaviour.SetMovementEnabled(false);
+        _oldPlayerBehaviour.StopMovement();
+        _isActive = true;
         StartCoroutine(Teleport()); //corrutina para que no se vea el tp insta
        
 
@@ -47,6 +54,8 @@ public class TeleportPlatform : PlayerDetector
         yield return new WaitForSeconds(1.5f);
         TransitionManager.Instance.FadeIn();
         CharacterManager.Instance.TeleportAllToCurrent();
+        _oldPlayerBehaviour.SetMovementEnabled(true);
+        _isActive = false;
     }
 
 }

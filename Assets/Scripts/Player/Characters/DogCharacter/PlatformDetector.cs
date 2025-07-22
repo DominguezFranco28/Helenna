@@ -25,12 +25,12 @@ public class PlatformDetector : MonoBehaviour
         _origin = _mouth.gameObject.transform.position;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
-        _direction = new Vector2(horizontal, vertical).normalized;
+        _direction = new Vector2(horizontal, vertical);
 
         if (_direction != Vector2.zero) //validacion para que no dibuje la linea del raycast si no hay input, daba bugs
         {
             RaycastHit2D hit = Physics2D.Raycast((Vector2)_origin, _direction, _distance, _layer);
-            Debug.DrawLine(_origin, _origin + _direction.normalized * _distance, Color.red);
+            Debug.DrawLine(_origin, _origin + _direction * _distance, Color.red);
 
             if (hit.collider != null)
             {
