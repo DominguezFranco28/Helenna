@@ -47,7 +47,7 @@ public class ChildClimbState : IState
 
     public void Update()
     {
-
+        //no hace falta fixedupdate porque llama al metodo setmovement, que en su respectivo script se manexa con fixed
         float vertical = Input.GetAxisRaw("Vertical");
 
         Vector2 climbVelocity = new Vector2(0f, vertical * _childPlayerBehaviour.ClimbSpeed);

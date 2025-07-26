@@ -50,7 +50,7 @@ public class ImpulseState :  IState
         }
         else
         {
-            _timer += Time.deltaTime; //gestiono el salto de estado dsps del timere par aque el pj no se pueda mvoer mientras vuela el brazo
+            _timer += Time.deltaTime; //gestiono el salto de estado dsps del timer par aque el pj no se pueda mover mientras vuela el brazo
 
             if (_timer >= _waitDuration)
             {

@@ -19,4 +19,15 @@ public class AgilePlayerController : MonoBehaviour
         if (_agileBehaviour.isInControll)
             _agileStateMachine.Update();
     }
+    private void FixedUpdate() //Fue necesario poner el fixedUpdate aca por el salto. Necesito que use el fixedupdate para que no de problema con colisiones, y 
+       // como no hereda de monobehaviour lo tengo que agregar como una interfaz. Desde este metodo, se detecta si el perro esta en un estado que aplique esa interfaz, 
+       //y si lo esta, llama al metodo fixedUpdate, no la update como en el caso normal de el resto de estados. Tener presente para futuras aplicaciones de fisica
+    {
+        if (_agileBehaviour.isInControll)
+        {
+            if (_agileStateMachine.CurrentState is IFixedUpdate fixedState)
+                fixedState.FixedUpdate();
+        }
+    }
 }
+

@@ -8,7 +8,9 @@ public class ChildActionState : IState
     private ChildStateMachine _childStateMachine;
     private ChildTriggerDetector _actionDetector;
     private Collider2D _collider2D;
-
+    private float _digDelay =1f;
+    private float _digTimer;
+    private bool _delayCompleted;
 
     public ChildActionState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine, ChildTriggerDetector detector)
     {
@@ -19,31 +21,49 @@ public class ChildActionState : IState
 
     public void Enter()
     {
-        _childPlayerBehaviour.StopMovement();
+
         Debug.Log("Accionaste una palanca");
         //_USAR ANIMACION ACA
         // AGREGAR CLIP SFXManager.Instance.PlaySFX();
-        _collider2D = _actionDetector.LevelCollider;
-        IActiveable activate = _collider2D.gameObject.GetComponent<IActiveable>();
-        if (activate != null)
-        {
-            activate.Activate();
-            _actionDetector.CanActivate = false;
-            //_collider2D.enabled = false;  probar mejor a apagar el collider solo del item seleccionado 
-
-        }
+        ActivateLever();
     }
 
     public void Exit()
     {
         Debug.Log("Saliste del estado : ACTION");
     }
+    private void ActivateLever()
+    {
+        if (_actionDetector.LevelCollider)
+        {
+            _digTimer = 0f;
+            _delayCompleted = false;
+            _childPlayerBehaviour.StopMovement();
+            IActiveable activeable = _actionDetector.LevelCollider.GetComponent<IActiveable>();
+            activeable.Activate();
+            _actionDetector.CanActivate = false; //al final necesite volver a usar la palanca 
+            //animacion de cambio de lado con la palanca?
 
+        }
+    }
     public void Update()
     {
-        if (!_actionDetector.CanActivate)
+        // Wait for delay >> misma logica del dig del perro, pero le agrego el cd par amarcar el cambio de stado
+        if (!_delayCompleted)
         {
-            _childStateMachine.TransitionTo(_childStateMachine.moveState);
+            _digTimer += Time.deltaTime;
+            if (_digTimer >= _digDelay)
+            {
+                _delayCompleted = true;
+                Debug.Log("End of delay");
+            }
+            return; // skip the update until delay is over
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ActivateLever(); //resetea cada vez que apreta la e el ciclo de espera en la accion
+        }
+         if (Input.GetKeyDown(KeyCode.R)) //si el jugador apreta la r sale del estado
+            _childStateMachine.TransitionTo(_childStateMachine.idleState);
     }
 }

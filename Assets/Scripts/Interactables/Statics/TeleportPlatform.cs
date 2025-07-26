@@ -36,7 +36,6 @@ public class TeleportPlatform : PlayerDetector
         }
     }
 
-    // Opcional: puedes dejar este método como está, o quitar la llamada en OnTriggerEnter2D si solo quieres el input
     public override void Effect(Collider2D collision)
     {
         if (_isActive)

@@ -15,6 +15,9 @@ TagManager:
   - DogPlayer
   - Platform
   - Lever
+  - Activatable Anchor
+  - Slidable
+  - Movable Platform
   layers:
   - Default
   - TransparentFX

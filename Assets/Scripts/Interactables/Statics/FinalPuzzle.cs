@@ -23,8 +23,18 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
     }
     public void OnPuzzleEvent()
     {
-        
-        _currentCount--;
+        if (gameObject.CompareTag("Movable Platform"))
+        {
+            Debug.Log("PLATAFORMA ACTIVADA");
+            MovablePlatform platform = gameObject.GetComponent<MovablePlatform>();
+            if (platform != null)
+            {
+                platform.ChangePosition = !platform.ChangePosition; // esto invierte la boleana! de true a false y vicebersa
+                return;
+            }
+        }
+
+            _currentCount--;
         Debug.Log("resuelta una pieza del puzzle"); 
         Debug.Log(_currentCount);
         if (_currentCount == 0)
@@ -37,19 +47,22 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
     {
         Debug.Log("PUZZLE RESUELTO1"); 
         //retocar tdoo esto para no tener parametros vacios con todos los puzzles
-        if (gameObject.CompareTag("HookPoint"))
+        if (gameObject.CompareTag("Activatable Anchor"))
         {
             Debug.Log("activaste el anclaje");
             _child.SetActive(true);
+            OnDestroy();
         }
         else if (_activateDoor != null)
         {
             _activateDoor.Activate();
+            OnDestroy();
         }
-        else
-        {
 
-        Destroy(gameObject);
+        else
+         {
+
+            Destroy(gameObject);
         }
     }
     private void OnDestroy()

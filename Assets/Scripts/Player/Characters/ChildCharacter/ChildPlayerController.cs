@@ -28,7 +28,6 @@ public class ChildPlayerController : MonoBehaviour
             }
             else if (_childTriggerDetector.CanActivate && Input.GetKeyDown(KeyCode.E))
             {
-
                 _childStateMachine.TransitionTo(_childStateMachine.actionState);
                 return;
             }

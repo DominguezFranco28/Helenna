@@ -9,8 +9,11 @@ using UnityEngine;
 public class ArmImpulser : MonoBehaviour
 {
     //Variables to adjust parameters of the IMPULSE force
-    [SerializeField] private float _recoilDuration;
-    [SerializeField] private float _moveSmoothTime;
+    [SerializeField] private float _moveSmoothTime; 
+    [SerializeField] private bool _isRecoiling = false;
+    private Vector2 _recoilTarget;
+    private Vector2 _recoilVelocity;
+    private Rigidbody2D _rb2D;
 
 
     //Variables tied to the player's arm:
@@ -40,7 +43,27 @@ public class ArmImpulser : MonoBehaviour
     {
         ThrowArm(type);
     }
- 
+    private void FixedUpdate()
+    {
+        if (_isRecoiling)
+        {
+            float stopThreshold = 0.1f; //ojo con este valor porque si lo subia daba problemas
+            float smoothTime = _moveSmoothTime;
+
+            Vector2 currentPosition = _rb2D.position;
+            Vector2 newPosition = Vector2.SmoothDamp(currentPosition, _recoilTarget, ref _recoilVelocity, smoothTime);
+
+            _rb2D.MovePosition(newPosition); //este metodo mas efgectivo para el uso de fisicas que el SmoothDump q no usa fisicas
+
+            if (Vector2.Distance(newPosition, _recoilTarget) <= stopThreshold)
+            {
+                _rb2D.MovePosition(_recoilTarget); // Para corregir posicion final exacta
+                _isRecoiling = false;
+
+            }
+        }
+    }
+
     void Start()
     {
         //I'll ​​leave the link to the other script established. From here I can use other methods or properties.
@@ -49,58 +72,43 @@ public class ArmImpulser : MonoBehaviour
         _mousePosition = GetComponent<MousePosition>(); 
         _movementBehaviour = GetComponent<OldPlayerBehaviour>();
         _impulser = this;
+        _rb2D = GetComponent<Rigidbody2D>();
     }
 
     private IEnumerator ApplyRecoil(Vector2 anchorPosition, ImpulseType type) 
     {
+        //refactorizacion para que use sistemas de fisica (controla el fixed updte del behavour) para evitar bugs
         if (type != ImpulseType.Pull)
-            yield break; //if not pull, break the coroutine
-        {
-            SFXManager.Instance.PlaySFX(_dashSFX); 
-            _movementBehaviour.IsRecoiling = true;
+            yield break;
 
-            Vector2 velocity = Vector2.zero;
-            float smoothTime = _moveSmoothTime;
-            float stopThreshold = 0.5f;
+        SFXManager.Instance.PlaySFX(_dashSFX);
+        _movementBehaviour.IsRecoiling = true;
+        _movementBehaviour.SetMovementEnabled(false);
+        _playerCol.enabled = false; //vital agregarlo, me soluciono muchos bugs con las colisiones. Solucion sencilla
 
-            //Move the player as long as there is distance between him and the anchor point
-            while (Vector2.Distance(transform.position, anchorPosition) > stopThreshold)
-            {
-                transform.position = Vector2.SmoothDamp(transform.position, anchorPosition, ref velocity, smoothTime);
-                _movementBehaviour.StopMovement();
-                _movementBehaviour.SetMovementEnabled(false); //mientras siga existiendo distancia, bloqueo el mov
-                yield return null;
-            }
-            //make sure it ends exactly at the point
-            //I moved the character away from the anchor point a bit because it was buggy
-            Vector2 lastPosition = transform.position;//ultima pos real del jugador
-            transform.position = anchorPosition; //guardo al jugador exactamente sobre el punto de anclaje
-            Vector2 directionAway = ((Vector2)anchorPosition - lastPosition).normalized * -1f; //calculo de la direccion desde el anclaje hacia donde venia harold
-                                                                                              
-            if (directionAway == Vector2.zero) // Si la dirección no puede calcularse por algun motivo (no se xq aveces se bugeaba),se le asigna una por defecto
-            {
-                directionAway = Vector2.up;
-            }
-            float separationDistance = 1f; 
-            transform.position += (Vector3)(directionAway * separationDistance);
+        _recoilTarget = anchorPosition;
+        _recoilVelocity = Vector2.zero;
+        _isRecoiling = true;
 
+        // Espera hasta que termine el recoil
+        while (_isRecoiling)
+            yield return new WaitForFixedUpdate();
 
-            //when finish, let the player move again
-            _movementBehaviour.SetMovementEnabled(true);
-            _movementBehaviour.IsRecoiling = false;
-        }
+        _movementBehaviour.IsRecoiling = false;
+        _playerCol.enabled = true;
+        _movementBehaviour.SetMovementEnabled(true);
 
     }
-    private void ThrowArm(ImpulseType type) 
+    private void ThrowArm(ImpulseType type)
     {
 
         if (_currentArmBullet != null)
         {
-  
+
             return; //only let be one active arm.
         }
 
-        SFXManager.Instance.PlaySFX(_throwSFX); 
+        SFXManager.Instance.PlaySFX(_throwSFX);
         Vector2 direction = _mousePosition.MouseWorlPos;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
@@ -108,10 +116,11 @@ public class ArmImpulser : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
         GameObject armBullet = GameObject.Instantiate(_armShot, _spawnPoint.position, rotation);
 
-        if (armBullet!= null)
+
+        if (armBullet != null)
         {
-            
-            _currentArmBullet = armBullet; 
+
+            _currentArmBullet = armBullet;
             //Save the reference of the current arml
             //Ignore collisions so the arm doesn't collide with the player
             Collider2D bulletCol = armBullet.GetComponent<Collider2D>();
@@ -121,11 +130,12 @@ public class ArmImpulser : MonoBehaviour
             //I pass the parameters to the methods that manage the arm logic
             var armScript = armBullet.GetComponent<ArmBullet>();
             armScript.SetDirection(direction);
-            armScript.SetImpulseForce(_impulser); 
+            armScript.SetImpulseForce(_impulser);
             armScript.SetImpulseType(type);
-    
+
         }
     }
 }
+
 
 

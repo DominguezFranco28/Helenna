@@ -6,6 +6,7 @@ public class ChildTriggerDetector : MonoBehaviour
 {
     private bool _canClimb = false;
     private Collider2D _climbableCollider;
+    private bool _isCooldownActive = false;
 
     private bool _canActivateLever = false;
     private Collider2D _leverCollider;
@@ -13,6 +14,8 @@ public class ChildTriggerDetector : MonoBehaviour
     public bool CanActivate { get { return _canActivateLever;} set { _canActivateLever = value; } }
     public Collider2D Climbable { get { return _climbableCollider; } }
     public Collider2D LevelCollider { get { return _leverCollider; } }
+
+
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -25,10 +28,14 @@ public class ChildTriggerDetector : MonoBehaviour
         {
             Debug.Log("colisionaste con palanca");
             _canActivateLever = true;
-            _leverCollider = collision;           
+            _leverCollider = collision;
+            Debug.Log("en colision");
 
         }
+
     }
+
+
 
     public void OnTriggerExit2D(Collider2D collision)
     {
@@ -39,8 +46,10 @@ public class ChildTriggerDetector : MonoBehaviour
         }
         else if (collision.CompareTag("Lever"))
         {
+            Debug.Log("saliste de colision con palanca");
             _canActivateLever = false;
             _leverCollider = null;
+
         }
     }
 }

@@ -8,14 +8,14 @@ public class JumpDetector : MonoBehaviour
     public bool CanJump { get { return _canJump; } set { _canJump = value; } }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Slidable"))
         {
             CanJump = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Platform"))
+        if (collision.gameObject.CompareTag("Slidable"))
         {
             CanJump = false;
         }
