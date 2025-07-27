@@ -5,7 +5,9 @@ using UnityEngine;
 public class OldPlayerBehaviour : MonoBehaviour, IControllable
 {
 
-    [SerializeField] private float _speed;
+    [SerializeField] private float _normalSpeed;
+    [SerializeField] private float _lowSpeed;
+    private float _auxSpeed;
     [SerializeField] private AudioClip _footstepsSFX;
     private bool _canMove; //manage from CharacterManager
     private Rigidbody2D _rb2D;
@@ -21,6 +23,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public bool IsRecoiling{ get { return _isRecoiling; } set { _isRecoiling = value; } }
 
 
+
     //OLD BACKUP---- tengo que hacer la clase base
     //public void PerformThrowArm(ImpulseType type)
     //{
@@ -33,8 +36,19 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         _rb2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _armImpulser = GetComponent<ArmImpulser>();
+        _auxSpeed = _normalSpeed; 
+        //este me guarda el valor original al instanciarse, como no esta en update no se actualiza.
+        //dsps lo uso para recuperar la velocidad normal el ne fixed
     }
+    public void LowSpeed(bool change)
+    {
+        if (change)
+            _normalSpeed = _lowSpeed;
+        else if (!change)
+            _normalSpeed = _auxSpeed;
 
+
+    }
     public void SetMovementInput(Vector2 input)
     {
         if (!IsInControll || !_canMove) return; 
@@ -69,7 +83,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     {
         if (!IsInControll || IsRecoiling) return;
         {
-            _rb2D.velocity = _movementInput * _speed;
+            _rb2D.velocity = _movementInput * _normalSpeed;
         }
     }
 

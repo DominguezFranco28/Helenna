@@ -18,6 +18,7 @@ TagManager:
   - Activatable Anchor
   - Slidable
   - Movable Platform
+  - Ladder Position
   layers:
   - Default
   - TransparentFX

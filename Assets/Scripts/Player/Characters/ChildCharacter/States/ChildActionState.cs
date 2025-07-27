@@ -8,8 +8,8 @@ public class ChildActionState : IState
     private ChildStateMachine _childStateMachine;
     private ChildTriggerDetector _actionDetector;
     private Collider2D _collider2D;
-    private float _digDelay =1f;
-    private float _digTimer;
+    private float _actionDelay =1f;
+    private float _actionTimer;
     private bool _delayCompleted;
 
     public ChildActionState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine, ChildTriggerDetector detector)
@@ -36,11 +36,12 @@ public class ChildActionState : IState
     {
         if (_actionDetector.LevelCollider)
         {
-            _digTimer = 0f;
+            _actionTimer = 0f;
             _delayCompleted = false;
             _childPlayerBehaviour.StopMovement();
             IActiveable activeable = _actionDetector.LevelCollider.GetComponent<IActiveable>();
             activeable.Activate();
+            _actionDetector.CanActivate = true; //al final necesite volver a usar la palanca 
             _actionDetector.CanActivate = false; //al final necesite volver a usar la palanca 
             //animacion de cambio de lado con la palanca?
 
@@ -51,8 +52,8 @@ public class ChildActionState : IState
         // Wait for delay >> misma logica del dig del perro, pero le agrego el cd par amarcar el cambio de stado
         if (!_delayCompleted)
         {
-            _digTimer += Time.deltaTime;
-            if (_digTimer >= _digDelay)
+            _actionTimer += Time.deltaTime;
+            if (_actionTimer >= _actionDelay)
             {
                 _delayCompleted = true;
                 Debug.Log("End of delay");

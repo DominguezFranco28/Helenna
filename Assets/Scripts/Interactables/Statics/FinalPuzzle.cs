@@ -27,8 +27,10 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
         {
             Debug.Log("PLATAFORMA ACTIVADA");
             MovablePlatform platform = gameObject.GetComponent<MovablePlatform>();
+            //cada vez que termina el movimiento reestablese a false dentro del script.
             if (platform != null)
             {
+                platform.ActiveLever = true; //no solo era importante swicehar la direcion tambioen tenia que indicarle si se habia ejecutado la palanca
                 platform.ChangePosition = !platform.ChangePosition; // esto invierte la boleana! de true a false y vicebersa
                 return;
             }
