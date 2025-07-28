@@ -30,7 +30,7 @@ public class PuzzleKey : MonoBehaviour
                 movable.StopMove(transform.position);
             }
             _collider2D.enabled = false;
-            Destroy(gameObject);
+            //Destroy(gameObject);
             //else if (activeable != null)
             //{
             //    _puzzleManager.PuzzleCount();

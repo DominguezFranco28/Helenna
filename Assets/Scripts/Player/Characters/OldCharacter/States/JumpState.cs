@@ -22,7 +22,8 @@ public class JumpState : IState
         _oldPlayerBehaviour.StopMovement();
         _jumpTimer = 0f;
         _delayCompleted = false;
-        _oldPlayerBehaviour.Animator.SetTrigger("IsImpulsing"); //cambiar por animacion correspondiente cuando la tenga
+        _oldPlayerBehaviour.Animator.SetBool("IsSliding",true);
+         //cambiar por animacion correspondiente cuando la tenga
     }
 
     public void Exit()
@@ -32,19 +33,28 @@ public class JumpState : IState
         //{
         //    _agilePlayerBehaviour.Animator.SetBool("Dig", false);
         //}
+        _delayCompleted = true;
+        _oldPlayerBehaviour.Animator.SetBool("IsSliding",false);
     }
 
     public void Update()
     {
         if (!_delayCompleted)
         {
+            _jumpTimer += Time.deltaTime;
+            if (_jumpTimer >= _jumpDelay)
+            {
+                _delayCompleted = true;
+                Debug.Log("End of delay");
+
+            }
             return; // skip the update until delay is over
         }
         Vector2 input = new Vector2(0, -1); //set the horizontal move to 0
         _oldPlayerBehaviour.SetMovementInput(input);
-        _oldPlayerBehaviour.Animator.SetTrigger("IsImpulsing");//cambiar por animacion correspondiente cuando la tenga
+       //cambiar por animacion correspondiente cuando la tenga
 
-        if (!_jumpDetector.CanJump) //Left click = push
+        if (!_jumpDetector.CanJump) 
 
         {
 

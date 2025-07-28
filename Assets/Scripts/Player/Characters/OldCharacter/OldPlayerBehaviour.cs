@@ -14,11 +14,14 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     private Animator _animator;
     private ArmImpulser _armImpulser;
     private Vector2 _movementInput;
+
     private bool _isInControll;
     private bool _isRecoiling = false;
     public bool IsInControll{ get { return _isInControll; } set { _isInControll = value; } } 
     public Animator Animator { get { return _animator; } } 
+    public Rigidbody2D Rigidbody2D{ get { return _rb2D; } } 
     public Vector2 MovementInput { get { return _movementInput; } }
+    public Vector2 LastMovementInput { get;  set; } //necesite guardar el ultimo input para la anim del impulse
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
     public bool IsRecoiling{ get { return _isRecoiling; } set { _isRecoiling = value; } }
 
@@ -29,9 +32,10 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         _rb2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _armImpulser = GetComponent<ArmImpulser>();
-        _auxSpeed = _normalSpeed; 
+        _auxSpeed = _normalSpeed;
         //este me guarda el valor original al instanciarse, como no esta en update no se actualiza.
         //dsps lo uso para recuperar la velocidad normal el ne fixed
+        LastMovementInput = Vector2.down; //inicializo el input en una pos default
     }
     public void LowSpeed(bool change)
     {
@@ -46,11 +50,8 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     {
         if (!IsInControll || !_canMove) return; 
         {
-            // Evitar diagonales priorizando un uinico eje (misma logica que las cajs)
-            //if (Mathf.Abs(input.x) > 0.01f)
-            //    input.y = 0;
-            //else if (Mathf.Abs(input.y) > 0.01f)
-            //    input.x = 0;
+            if (_movementInput.magnitude > 0.01f) // aca guardo el ulktimo input para anim de impulse
+                LastMovementInput = _movementInput;
 
             _movementInput = input.normalized;
             _animator.SetFloat("Horizontal", _movementInput.x);

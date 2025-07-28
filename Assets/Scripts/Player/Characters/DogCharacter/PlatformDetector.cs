@@ -13,7 +13,7 @@ public class PlatformDetector : MonoBehaviour
     private Vector2 _origin;
 
     private Vector2 _platformPosition;
-
+    private Collider2D _lastPlatform;
     public Vector2 PlatFormPosition { get { return _platformPosition; } set { _platformPosition = value; } }
 
     private void Start()
@@ -37,14 +37,25 @@ public class PlatformDetector : MonoBehaviour
 
             if (hit.collider != null)
             {
-                _playerBehaviour.CanJump = true;
-                //Debug.Log("Detecte una plataforma de salto");
-                PlatFormPosition = hit.collider.transform.position;
+                // Si es una plataforma nueva
+                if (hit.collider != _lastPlatform)
+                {
+                    _playerBehaviour.CanJump = true;
+                    PlatFormPosition = hit.collider.transform.position;
+                    _lastPlatform = hit.collider;
+                    // Aquí puedes avisar que detectaste una nueva plataforma
+                }
+                else
+                {
+                    // Ya estás en esta plataforma, no la consideres nueva
+                    // Puedes poner un aviso aquí si quieres
+                }
             }
             else
             {
                 _playerBehaviour.CanJump = false;
                 PlatFormPosition = Vector2.zero;
+                _lastPlatform = null; // Ya no estás tocando ninguna plataforma
             }
         }
 

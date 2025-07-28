@@ -9,7 +9,7 @@ public class AgileJumpState : IState, IMovable, IFixedUpdate
     private AgilePlayerBehaviour _agilePlayerBehaviour;
     private AgileStateMachine _agileStateMachine;
     private PlatformDetector _platformDetector;
-    private float _moveSmoothTime = 0.07f; //ojo este valor, si es muy alto se bugea por el desplazamiento lento y colisiones
+    private float _moveSmoothTime = 0.1f; //ojo este valor, si es muy alto se bugea por el desplazamiento lento y colisiones
     private Vector2 _velocity = Vector2.zero;
     private Vector2 _targetPosition; // Guardamos solo una vez
 
@@ -32,15 +32,23 @@ public class AgileJumpState : IState, IMovable, IFixedUpdate
             Debug.LogWarning("PlatFormPosition inválido al saltar");
         }
         //"EJjecuta la anim y sonido de salto"
+        if (_agilePlayerBehaviour.IsGrounded)
+        {
         _agilePlayerBehaviour.Animator.SetBool("Jump", true);
         SFXManager.Instance.PlaySFX(_agilePlayerBehaviour.JumpSFXClip);
+
+        }
     }
 
     public void Exit()
     {
         Debug.Log("Saliste del estado de SALTO");
+        if (!_agilePlayerBehaviour.IsGrounded)
+        {
         _agilePlayerBehaviour.Animator.SetBool("Jump", false);
         _agilePlayerBehaviour.RestartCooldown(); //cada vez que sale del salto, resetea el delay y vuelve a correr (configurable desde el inspecto)
+
+        }
     }
 
     public void MoveTo(Vector2 direction) //tendria que revisar y refactorizar esto, no uso fixed update ni mov con rigidbody, como tuve que arreglar con Harold
@@ -74,7 +82,7 @@ public class AgileJumpState : IState, IMovable, IFixedUpdate
             return;
         UpdateAnimator(); //logica de animacion del salto
 
-        //Comienza logica FISICA de salto.
+        //Comienza logica FISICA de salto. Como dezplazo al pj dentro de esta funcion y no desde el update del behavour, tengo que gestionar el fixed update aca  tambien xq muevo su rigidpody
        
         //seteo la anim de salto segun inputs dentro del blend tree. Logica similar a la del moveState, pero necesite hacerlo de aca para que el jugador no pueda forzar la anim incorrecta
         MoveTo(_targetPosition);

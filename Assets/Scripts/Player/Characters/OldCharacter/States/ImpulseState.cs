@@ -8,7 +8,7 @@ public class ImpulseState :  IState
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
     private float _timer = 0f;
-    private float _waitDuration = 1f;
+    private float _waitDuration = 0.4f;
     private bool _timerStarted = false;
     public ImpulseState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine)
     {
@@ -19,15 +19,27 @@ public class ImpulseState :  IState
     {
         Debug.Log("You entered the state: IMPULSE");
         _oldPlayerBehaviour.StopMovement();
-        _oldPlayerBehaviour.Animator.SetTrigger("IsImpulsing"); 
-        _oldPlayerBehaviour.SetMovementEnabled(false); //tuve que llamar este metodo tambien desde la corutina par ael anclaje y cuando dejab de 
+        _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", true);
+        
+        //Logica similar al estaod de Jump del perro, pero ahora necesito guardar el ultimo input nomas, no pos de la plataforma.
+        Vector2 lastInput = _oldPlayerBehaviour.LastMovementInput;
+        _oldPlayerBehaviour.Animator.SetFloat("Horizontal", lastInput.x);
+        _oldPlayerBehaviour.Animator.SetFloat("Vertical", lastInput.y);
+        _oldPlayerBehaviour.Animator.SetFloat("Speed", lastInput.magnitude);
+        _oldPlayerBehaviour.SetMovementEnabled(false);
         _timer = 0f;
         _timerStarted = false; //mantenemos el timer apagado, quiero que se prenda solo con los imputs
+
+        Debug.Log(lastInput);
+
+
     }
 
     public void Exit()
     {
         Debug.Log("You left the state: IMPULSE");
+        _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", false);
+
     }
 
     public void Update()
@@ -36,13 +48,14 @@ public class ImpulseState :  IState
         {
             if (Input.GetMouseButtonDown(0)) //Left click = push
             {
+                _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
                 _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Push);
                 _timerStarted = true;
-
             }
 
             if (Input.GetMouseButtonDown(1)) // Right click = pull
             {
+                _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
                 _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Pull);
                 _timerStarted = true;
 

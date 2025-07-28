@@ -89,8 +89,8 @@ public class GrabObject : MonoBehaviour
             }
             _pickedObject.transform.SetParent(null); //I set the parent to null, so it "drops" it
             _pickedObject.GetComponent<Rigidbody2D>().simulated = true;
-            _pickedObject = null;
             _justDropped = true; //para que el trigger no hinche
+            _pickedObject = null;
         }
     }
     public void ChangeSprite()

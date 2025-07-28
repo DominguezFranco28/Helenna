@@ -6,6 +6,8 @@ using UnityEngine;
 public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 {
     [SerializeField] private Transform _mouth;
+    private Vector2 _mouthOriginalPos;
+
     [SerializeField] private float _speed;
     [SerializeField]private float _jumpDelay = 0.2f;
     [SerializeField] private AudioClip _footstepsSFX;
@@ -23,11 +25,12 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     //timer para cd salto
     private float _jumpTimer = 0;
     private bool _delayCompleted =false;
-
+    private bool _isGrounded;
     //Public properties para acceder desde los estados
     //muchos de ellos necesarios para hacer bien el salto
 
     public bool DelayCompleted { get { return _delayCompleted; } }
+    public bool IsGrounded { get { return _isGrounded; } }
     public bool CanJump { get { return _canJump; } set { _canJump = value; } }
     public bool CanDig { get { return _canDig; } set { _canDig = value; } }
     public Vector2 MovementInput { get { return _movementInput; } }
@@ -45,7 +48,9 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
         _animator = GetComponent<Animator>();
         HoleDetector = GetComponentInChildren<HoleDetector>(); //rever esto, puedo integrarlo en el constructor del estado como el Jump
         _collider2D = GetComponent<Collider2D>();
+        _mouthOriginalPos = _mouth.position;
     }
+ 
 
     public void SetMovementInput(Vector2 input)
     {
@@ -56,24 +61,55 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
             _animator.SetFloat("Vertical", _movementInput.y);
             _animator.SetFloat("Speed", _movementInput.magnitude);
             UpdateMouthDirection(_movementInput); 
+            if (_delayCompleted) //revisar esto
+            {
+                _animator.SetBool("GoIdle", true);
+            }
+            else
+            {
+                _animator.SetBool("GoIdle", false);
+            }
         }
     }
     private void UpdateMouthDirection(Vector2 dir) 
     {
-        Vector3 mouthPos = _mouth.localPosition;
-
-        if (Mathf.Abs(dir.x) > 0.01f)
+        if (dir == Vector2.zero)
         {
-            // if there is horizontal movemente, we follow it
-            mouthPos.x = Mathf.Abs(mouthPos.x) * Mathf.Sign(dir.x);
-        }
-        if (Mathf.Abs(dir.y) > 0.01f)
+            _mouth.position = _mouth.transform.position;
+             return;
+        } 
+        //revbisar esto, lo saque con ia xq desconozco el funcionamiento de estos metodos
+
+        // Calcula el ángulo en radianes y lo convierte a grados
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+
+        // Aplica la rotación al objeto de la boca
+        _mouth.rotation = Quaternion.Euler(0, 0, angle);
+
+        // Detecta si el input es principalmente vertical
+        bool isVertical = Mathf.Abs(dir.y) > Mathf.Abs(dir.x);
+
+        // Consigue el collider del personaje (no de la boca)
+        Collider2D parentCol = _mouth.transform.parent.GetComponent<Collider2D>();
+
+        // Calcula el punto en el borde
+        Vector2 targetPoint = parentCol.ClosestPoint(parentCol.transform.position + (Vector3)dir.normalized * 10f);
+
+        // Si el movimiento es vertical, ajusta la posición más centrada y hacia afuera
+        if (isVertical)
         {
-            mouthPos.y = Mathf.Abs(mouthPos.y) * Mathf.Sign(dir.y);
+            // Desplaza la boca un poco más afuera del borde en la dirección vertical
+            targetPoint += dir.normalized * 0.2f; // Prueba con valores como 0.2f, ajusta según el tamaño
+        }
+        else
+        {
+            // En horizontal, puedes ajustar menos o mantener el borde
+            targetPoint += dir.normalized * 0.1f;
         }
 
-        _mouth.localPosition = mouthPos;
-    }
+        _mouth.position = targetPoint;
+    
+}
     
 
     public void StopMovement()
@@ -93,18 +129,36 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     {
         if (!isInControll || !_canMove) return;
         _rb2D.velocity = _movementInput * _speed;
+        CheckGround();
+        Debug.Log(_isGrounded);
         
         _jumpTimer += Time.deltaTime;
         if (_jumpTimer >= _jumpDelay)
         {
             _delayCompleted = true;
-
+           
+            
         }
     }
     public void RestartCooldown() //cd para salto. Lo llamo en cada entrada del jumpState
     {
         _jumpTimer = 0;
         _delayCompleted = false;
+    }
+    public void CheckGround()
+    {
+        if (_collider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        {
+            _isGrounded = true;
+            _animator.SetBool("IsGrounded", true);
+
+        }
+        else
+        {
+            _isGrounded = false;
+            _animator.SetBool("IsGrounded", false);
+        }
+
     }
 
     public void SetControl(bool isActive)
