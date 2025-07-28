@@ -37,6 +37,7 @@ public class MoveState :  IState
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
             _oldStateMachine.TransitionTo(_oldStateMachine.impulseState); 
         }
         if (_jumpDetector.CanJump)

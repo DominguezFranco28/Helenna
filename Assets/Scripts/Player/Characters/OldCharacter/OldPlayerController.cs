@@ -18,7 +18,7 @@ public class OldPlayerController : MonoBehaviour
     }
     private void Update()
     {
-        //if (GameStateManager.Instance.IsGamePaused()) return;
+        if (GameStateManager.Instance.IsGamePaused()) return;
         if (_playerBehaviour.IsInControll) //Tuve que agregarle la booleana aca tambien, porque sino me frenaba el movimiento del viejo pero me dejaba hacer el impulso apretando la q
         {
         

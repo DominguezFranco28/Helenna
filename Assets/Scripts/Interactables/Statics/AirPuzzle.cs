@@ -11,6 +11,9 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver, IActiveable
     private int _currentCount;
 
 
+    public int CurrentCount { get { return _currentCount; } }
+
+
     void Start()
     {
          //detecta si el objeto que tiene este script tiene la interfaz de activable para llamar a su metodo con el solution puzzle (en las puertas x ej para activar la animacion)

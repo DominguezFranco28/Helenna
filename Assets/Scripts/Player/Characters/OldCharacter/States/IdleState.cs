@@ -38,6 +38,7 @@ public class IdleState :  IState
         _oldPlayerBehaviour.SetMovementInput(Vector2.zero);
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
             _oldStateMachine.TransitionTo(_oldStateMachine.impulseState); 
         }
     }
