@@ -53,7 +53,7 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
         {
             Debug.Log("activaste el anclaje");
             _child.SetActive(true);
-            OnDestroy();
+            //OnDestroy();
         }
         else if (_activateDoor != null)
         {
@@ -64,7 +64,7 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
         else
          {
 
-            Destroy(gameObject);
+            Destroy(_child);
         }
     }
     private void OnDestroy()

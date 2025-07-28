@@ -6,14 +6,11 @@ public class AgileMoveState : IState
 {
     private AgilePlayerBehaviour _agilePlayerBehaviour;
     private AgileStateMachine _agileStateMachine;
-    private HoleDetector _holeDetector;
-    private PlatformDetector _platformDetector;
-    public AgileMoveState(AgilePlayerBehaviour agilePlayerBehaviour, AgileStateMachine agileStateMachine, PlatformDetector platformDetector)
+    public AgileMoveState(AgilePlayerBehaviour agilePlayerBehaviour, AgileStateMachine agileStateMachine)
     {
         this._agilePlayerBehaviour = agilePlayerBehaviour;
         this._agileStateMachine = agileStateMachine;
-        this._platformDetector = platformDetector;
-        _holeDetector = agilePlayerBehaviour.HoleDetector;
+
     }
     public void Enter()
     {
@@ -31,17 +28,17 @@ public class AgileMoveState : IState
     {
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         _agilePlayerBehaviour.SetMovementInput(input);
-        if (input.magnitude <= 0.01f)
+        if (input.magnitude <= 0.1f)
         {
             _agileStateMachine.TransitionTo(_agileStateMachine.idleState);
             return; //return para evitar que siga evaluando el resto de condiciones.
         }
-        if (_holeDetector.CanDig == true)
+        if (_agilePlayerBehaviour.CanDig == true)
         {
             _agileStateMachine.TransitionTo(_agileStateMachine.digState); 
             return;
         }
-        if (_platformDetector.CanJump && Input.GetKeyDown(KeyCode.E))
+        if (_agilePlayerBehaviour.CanJump && _agilePlayerBehaviour.DelayCompleted && Input.GetKeyDown(KeyCode.Space))
         {
 
             _agilePlayerBehaviour.StopMovement();

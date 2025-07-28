@@ -23,15 +23,11 @@ public class OldPlayerController : MonoBehaviour
         {
         
             _myStateMachine?.Update();
-            if (_grabObject.PickedObject != null && Input.GetKeyDown(KeyCode.E))
+            if (_grabObject.PickedObject != null && _grabObject.InColision && Input.GetKeyDown(KeyCode.E))
             {
                 _myStateMachine.TransitionTo(_myStateMachine.holdItemState);
             }
-            else
-            {
-                return;
-            }
-
         }
+
     }
 }

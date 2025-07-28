@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class HoleDetector : MonoBehaviour
 {
-    private bool _canDig;
-    public bool CanDig { get { return _canDig; } }
+   [SerializeField] private AgilePlayerBehaviour _playerBehaviour;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -22,7 +21,7 @@ public class HoleDetector : MonoBehaviour
                     parentCollider.enabled = false;
                 }
             }
-            _canDig = true;
+            _playerBehaviour.CanDig = true;
         }
         
     }
@@ -40,7 +39,7 @@ public class HoleDetector : MonoBehaviour
                     parentCollider.enabled = true;
                 }
             }
-            _canDig = false;
+            _playerBehaviour.CanDig = false;
         }
     }
 

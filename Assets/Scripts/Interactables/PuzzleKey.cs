@@ -7,8 +7,12 @@ public class PuzzleKey : MonoBehaviour
     [SerializeField] private LayerMask _objectLayer; //defino la layer del objeto que me interesa para detectar el trigger (OnPositionObject)
     [SerializeField] private PuzzleManager _puzzleManager; //Instancia del Manager asociada a un GameObject. El objeto del puzzle con el que interactue, debe tener la misma referencia a esta misma instancia para funcionar (agrupar)
     private bool _platformUsed = false;
+    private Collider2D _collider2D;
 
-
+    private void Start()
+    {
+        _collider2D = GetComponent<Collider2D>();
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -25,6 +29,7 @@ public class PuzzleKey : MonoBehaviour
             {
                 movable.StopMove(transform.position);
             }
+            _collider2D.enabled = false;
             //else if (activeable != null)
             //{
             //    _puzzleManager.PuzzleCount();

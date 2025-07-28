@@ -14,7 +14,6 @@ public class AgileIdleState : IState
     public void Enter()
     {
         Debug.Log("You entered the state: AGILE IDLE");
-        _agilePlayerBehaviour.SetMovementInput(Vector2.zero); 
         _agilePlayerBehaviour.SetMovementEnabled(true);
 
     }

@@ -6,7 +6,6 @@ public class ChildTriggerDetector : MonoBehaviour
 {
     private bool _canClimb = false;
     private Collider2D _climbableCollider;
-    private bool _isCooldownActive = false;
 
     private bool _canActivateLever = false;
     private Collider2D _leverCollider;

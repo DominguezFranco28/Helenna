@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 633a391cf67c3894f81bbcdfdb6c4c95
+guid: ee39d1194fdc3e84eae400c72350f30c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -45,10 +45,10 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DogSheet_0
+      name: Rex-Sheet_0
       rect:
         serializedVersion: 2
-        x: 45
-        y: 1675
-        width: 195
-        height: 125
+        x: 12
+        y: 476
+        width: 42
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7311e8f3680c44478e139d238ddf243
-      internalID: -1092522894
+      spriteID: f273c71e1deb5484999289855db9a809
+      internalID: -399422558
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_1
+      name: Rex-Sheet_1
       rect:
         serializedVersion: 2
-        x: 365
-        y: 1675
-        width: 195
-        height: 120
+        x: 77
+        y: 476
+        width: 43
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e74bb2bffa9c9a745b5c5c6f8d9da9e3
-      internalID: -1814072872
+      spriteID: 845b76614ed978a46bf56f71cfc9191a
+      internalID: 771186078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_2
+      name: Rex-Sheet_2
       rect:
         serializedVersion: 2
-        x: 45
-        y: 1355
-        width: 195
-        height: 125
+        x: 142
+        y: 476
+        width: 44
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cebaef21c5082ff4fb4aeb3fce4b4b71
-      internalID: -1451883905
+      spriteID: 874e84f9b8921d944bd73076ce22775f
+      internalID: -2061808629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_3
+      name: Rex-Sheet_3
       rect:
         serializedVersion: 2
-        x: 365
-        y: 1355
-        width: 195
-        height: 120
+        x: 207
+        y: 476
+        width: 44
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6c85e7a596e5894198a0e182218adc4
-      internalID: 1563788865
+      spriteID: 9cd0ae0810032db438934ea198caca75
+      internalID: 1905075314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_4
+      name: Rex-Sheet_4
       rect:
         serializedVersion: 2
-        x: 10
-        y: 1040
-        width: 230
-        height: 120
+        x: 9
+        y: 421
+        width: 51
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 673c11edbfd0d7d4db35294b69b16478
-      internalID: -1464963110
+      spriteID: 1db61e7ca3db07445a3ac7e86caf8669
+      internalID: 1703513984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_5
+      name: Rex-Sheet_5
       rect:
         serializedVersion: 2
-        x: 330
-        y: 1040
-        width: 230
-        height: 125
+        x: 74
+        y: 421
+        width: 53
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a4d801c7e35cdc4eb743bf8f8dcaefe
-      internalID: -1291303698
+      spriteID: c593d5e422553c445a308601c9378ec4
+      internalID: 1728998251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_6
+      name: Rex-Sheet_6
       rect:
         serializedVersion: 2
-        x: 645
-        y: 1040
-        width: 235
-        height: 120
+        x: 139
+        y: 421
+        width: 51
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +263,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6218b45e6155f9409b157846879d1e7
-      internalID: -1106859223
+      spriteID: 7ea97fa7435a1b44fa2ad3f3fa5d7f48
+      internalID: 1992368723
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_7
+      name: Rex-Sheet_7
       rect:
         serializedVersion: 2
-        x: 970
-        y: 1040
-        width: 230
-        height: 125
+        x: 204
+        y: 421
+        width: 50
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62baf5b8f7ade784688c9092d77f140b
-      internalID: -890488990
+      spriteID: fbeddf337756fac478665c50906d30ae
+      internalID: -1758385954
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_8
+      name: Rex-Sheet_8
       rect:
         serializedVersion: 2
-        x: 70
-        y: 720
-        width: 230
-        height: 120
+        x: 5
+        y: 362
+        width: 51
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d67e69239ba4664499d5552303f4c2b7
-      internalID: 1803022053
+      spriteID: 1d52f44ef32a58043be102e5e2f2da94
+      internalID: 1361855963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_9
+      name: Rex-Sheet_9
       rect:
         serializedVersion: 2
-        x: 390
-        y: 720
-        width: 230
-        height: 125
+        x: 68
+        y: 362
+        width: 53
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d0634e6de9947d418cd54b53c653658
-      internalID: 1813482001
+      spriteID: 7c9a6807dae54a049a4c3d46f8c4c888
+      internalID: -1401071324
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_10
+      name: Rex-Sheet_10
       rect:
         serializedVersion: 2
-        x: 710
-        y: 720
-        width: 235
-        height: 120
+        x: 135
+        y: 362
+        width: 51
+        height: 27
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,40 +347,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9feee75e819cdc74cbf32c3815d34437
-      internalID: 1187516464
+      spriteID: 788956f395479c0439a7b74962a7ab60
+      internalID: -1590904749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_11
+      name: Rex-Sheet_11
       rect:
         serializedVersion: 2
-        x: 1030
-        y: 720
-        width: 230
-        height: 125
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0cf1f923719ef74bbec99c4ae8d22b0
-      internalID: 1585730943
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DogSheet_12
-      rect:
-        serializedVersion: 2
-        x: 765
-        y: 505
-        width: 40
+        x: 201
+        y: 363
+        width: 50
         height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -389,20 +368,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b0571e6ea5b98448a2da294e77d9c31
-      internalID: 631023324
+      spriteID: dc41a0fe7fbfcee44956a1db2fa05cbb
+      internalID: -385313256
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_13
+      name: Rex-Sheet_12
       rect:
         serializedVersion: 2
-        x: 1085
-        y: 520
-        width: 20
-        height: 10
+        x: 15
+        y: 296
+        width: 30
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -410,20 +389,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8160ab420aad9d4e8bd397f2e627745
-      internalID: -747562875
+      spriteID: 035885b4171910644abe924ef031d5aa
+      internalID: 1596097690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_14
+      name: Rex-Sheet_13
       rect:
         serializedVersion: 2
-        x: 805
-        y: 505
-        width: 20
-        height: 15
+        x: 80
+        y: 296
+        width: 30
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -431,20 +410,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba67e4815fe8e454690891ac70d35377
-      internalID: -1314923853
+      spriteID: 81300d5ed8cd84142afb08aea7b18a27
+      internalID: 564138765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_15
+      name: Rex-Sheet_14
       rect:
         serializedVersion: 2
-        x: 1125
-        y: 515
-        width: 10
-        height: 5
+        x: 145
+        y: 296
+        width: 30
+        height: 36
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,20 +431,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52fac8fae41f32b45a8f5965f3a3c7fd
-      internalID: -641287247
+      spriteID: a301c6b8769b3054f81acc0942dc4c68
+      internalID: 574053922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_16
+      name: Rex-Sheet_15
       rect:
         serializedVersion: 2
-        x: 745
-        y: 505
-        width: 20
-        height: 10
+        x: 210
+        y: 295
+        width: 30
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -473,20 +452,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bb807da21e757e4d9680caecea32b13
-      internalID: 1360940301
+      spriteID: 2cc78695a2d16f042bc8527cf50c9484
+      internalID: 433835717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_17
+      name: Rex-Sheet_16
       rect:
         serializedVersion: 2
-        x: 1070
-        y: 505
-        width: 15
-        height: 10
+        x: 15
+        y: 236
+        width: 30
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -494,20 +473,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b92b90e0d7d015d4cbb6a3afb830496e
-      internalID: 738152133
+      spriteID: e83581b1a830d7042a094cbae8f4a36e
+      internalID: -1156972072
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_18
+      name: Rex-Sheet_17
       rect:
         serializedVersion: 2
-        x: 1110
-        y: 505
-        width: 10
-        height: 10
+        x: 80
+        y: 237
+        width: 30
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -515,20 +494,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d16fb7c6e8293348988d1a48c9c2d1b
-      internalID: 295989384
+      spriteID: 6ffebbb26d683904296b73e882cc3509
+      internalID: -1118646150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_19
+      name: Rex-Sheet_18
       rect:
         serializedVersion: 2
-        x: 1140
-        y: 500
-        width: 5
-        height: 10
+        x: 145
+        y: 236
+        width: 30
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -536,20 +515,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c64915bce8853dd45ad79b9c2b68e88c
-      internalID: -1480093935
+      spriteID: 5231614071550ea46992f72b587cf06a
+      internalID: -1133756211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_20
+      name: Rex-Sheet_19
       rect:
         serializedVersion: 2
-        x: 40
-        y: 400
-        width: 215
-        height: 100
+        x: 210
+        y: 237
+        width: 30
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -557,20 +536,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c90ea1cead23164cb7708901f4ea649
-      internalID: 2029257334
+      spriteID: 4f71e1e3d9a64424486216101074996a
+      internalID: -1258027092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_21
+      name: Rex-Sheet_20
       rect:
         serializedVersion: 2
-        x: 765
-        y: 490
-        width: 10
-        height: 10
+        x: 12
+        y: 177
+        width: 36
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -578,20 +557,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0751439e210e9454aa00c53d03b2f57f
-      internalID: 1671792480
+      spriteID: 6db23cf1c01173a4f946ecbd819edd20
+      internalID: 899091241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_22
+      name: Rex-Sheet_21
       rect:
         serializedVersion: 2
-        x: 825
-        y: 485
-        width: 10
-        height: 15
+        x: 77
+        y: 178
+        width: 36
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -599,104 +578,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76adbe159b849c743959ebd290b7af4d
-      internalID: 1989383804
+      spriteID: 2c4f39323aef8f941b62a537e3527f8d
+      internalID: 1798606650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_23
+      name: Rex-Sheet_22
       rect:
         serializedVersion: 2
-        x: 1085
-        y: 485
-        width: 15
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edb04cd51383f904abe31304c8aaf9d0
-      internalID: 1334171249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DogSheet_24
-      rect:
-        serializedVersion: 2
-        x: 355
-        y: 400
-        width: 225
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8ae44b7b57173d640b16e2fc927c8be7
-      internalID: 152936572
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DogSheet_25
-      rect:
-        serializedVersion: 2
-        x: 675
-        y: 400
-        width: 165
-        height: 90
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e1041643515e3a419dae0be51e1f9ee
-      internalID: 272951613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DogSheet_26
-      rect:
-        serializedVersion: 2
-        x: 995
-        y: 400
-        width: 165
-        height: 85
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8b31d7968746e54693f087251c3811b
-      internalID: -1456180636
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DogSheet_27
-      rect:
-        serializedVersion: 2
-        x: 795
-        y: 185
+        x: 140
+        y: 177
         width: 40
-        height: 25
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -704,20 +599,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 954093ad9b9753f4c9547d53d497d75d
-      internalID: -2034487651
+      spriteID: 3c5f336f2e39e0249a8d97d11177cb3a
+      internalID: -1069250855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_28
+      name: Rex-Sheet_23
       rect:
         serializedVersion: 2
-        x: 1135
-        y: 200
-        width: 20
-        height: 10
+        x: 207
+        y: 178
+        width: 36
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -725,20 +620,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e7f914c243251e4a94a563fa5281d96
-      internalID: 1466750178
+      spriteID: 2c51b660eace5f741a264f4ae9943d02
+      internalID: 1290779807
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_29
+      name: Rex-Sheet_24
       rect:
         serializedVersion: 2
-        x: 775
-        y: 185
-        width: 20
-        height: 15
+        x: 6
+        y: 128
+        width: 47
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -746,20 +641,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 04e4c850115eca14dbb2cab705d5d530
-      internalID: 1674098416
+      spriteID: 2cb9ad7968b89dc4ba91ae47bc558f86
+      internalID: 1635409936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_30
+      name: Rex-Sheet_25
       rect:
         serializedVersion: 2
-        x: 1105
-        y: 195
-        width: 10
-        height: 5
+        x: 71
+        y: 128
+        width: 46
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -767,20 +662,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ebc45753a6562e41ad23a424df682d8
-      internalID: 1617825799
+      spriteID: 581fa74aebd13264ab226c433115c4ad
+      internalID: -368502874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_31
+      name: Rex-Sheet_26
       rect:
         serializedVersion: 2
-        x: 835
-        y: 185
-        width: 20
-        height: 10
+        x: 141
+        y: 142
+        width: 45
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -788,20 +683,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82b5def79d9406941a9711e09d5f0433
-      internalID: -1311713963
+      spriteID: d8d5d8b01507a01428e5ffb17575f8a1
+      internalID: -43943419
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_32
+      name: Rex-Sheet_27
       rect:
         serializedVersion: 2
-        x: 1095
-        y: 180
-        width: 5
-        height: 10
+        x: 209
+        y: 128
+        width: 44
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -809,20 +704,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 09c2e72ee9f115b48adf8b71697ecd14
-      internalID: -508139056
+      spriteID: f0f1528bf774595408a23970ca9c7e55
+      internalID: 931888304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_33
+      name: Rex-Sheet_28
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 185
-        width: 10
-        height: 10
+        x: 275
+        y: 128
+        width: 44
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -830,20 +725,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 448ac6d0aa61451488adef2a94ce2f33
-      internalID: 288462911
+      spriteID: b92f6218c7924ef4186ffd1528cad5ea
+      internalID: -2121531764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_34
+      name: Rex-Sheet_29
       rect:
         serializedVersion: 2
-        x: 1155
-        y: 185
-        width: 15
-        height: 10
+        x: 12
+        y: 69
+        width: 47
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -851,20 +746,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c159c225790f654494c3067cda7b5b4
-      internalID: -781587476
+      spriteID: ae5247d652b962c4a8d634106a2db53c
+      internalID: 1879473659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_35
+      name: Rex-Sheet_30
       rect:
         serializedVersion: 2
-        x: 65
-        y: 80
-        width: 215
-        height: 100
+        x: 78
+        y: 69
+        width: 46
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -872,20 +767,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3de1f2912f7ada246b4ce298199c33ed
-      internalID: -113866278
+      spriteID: ef63917e901edea489b8ce891d17c174
+      internalID: 1787771822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_36
+      name: Rex-Sheet_31
       rect:
         serializedVersion: 2
-        x: 765
-        y: 165
-        width: 10
-        height: 15
+        x: 139
+        y: 68
+        width: 45
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -893,20 +788,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50ac63e4650d3fd42a6490da68dccdf5
-      internalID: -1718721293
+      spriteID: 108a7757d101ca242ab8d5ad5a42d201
+      internalID: -1820983569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_37
+      name: Rex-Sheet_32
       rect:
         serializedVersion: 2
-        x: 825
-        y: 170
-        width: 10
-        height: 10
+        x: 202
+        y: 69
+        width: 44
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -914,20 +809,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21b578f9027059e42962156d05e28985
-      internalID: 1992853696
+      spriteID: f2b63ebfd5e872141b2862caca3c01ab
+      internalID: 1041783559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_38
+      name: Rex-Sheet_33
       rect:
         serializedVersion: 2
-        x: 1140
-        y: 165
-        width: 15
-        height: 15
+        x: 266
+        y: 69
+        width: 44
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -935,20 +830,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cd99a52c0d4e2d46acf629a6077ee68
-      internalID: 1971290593
+      spriteID: 4d687f4bfe77656459f0a4804943fc77
+      internalID: -831697562
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_39
+      name: Rex-Sheet_34
       rect:
         serializedVersion: 2
-        x: 380
-        y: 80
-        width: 225
-        height: 90
+        x: 18
+        y: 9
+        width: 28
+        height: 35
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -956,20 +851,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a96776b32c006841b327e41ac973de6
-      internalID: -2051086421
+      spriteID: 985ee28d5e1ed9e45adc35c553b6f962
+      internalID: 1408744132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_40
+      name: Rex-Sheet_35
       rect:
         serializedVersion: 2
-        x: 760
-        y: 80
-        width: 165
-        height: 90
+        x: 84
+        y: 12
+        width: 26
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -977,20 +872,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ddc0bd92e2b64a44bf8f0fa31ea8e7d
-      internalID: 1570259327
+      spriteID: 4e0bf92c5c42d824ca36e5a8895d9d66
+      internalID: -180870811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DogSheet_41
+      name: Rex-Sheet_36
       rect:
         serializedVersion: 2
-        x: 1080
-        y: 80
-        width: 165
-        height: 85
+        x: 146
+        y: 13
+        width: 32
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -998,8 +893,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf74e687cc6f22c48882c91c07c0bcd8
-      internalID: -808946397
+      spriteID: c3e42aa9b16b0d742abc91c6c34fe404
+      internalID: -369482551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 13
+        width: 42
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f4afcf1da15504f8f63aaed498ae48
+      internalID: 645064189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 11
+        width: 42
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6524c158b4067ff448e267ec13455bdb
+      internalID: -1300124256
       vertices: []
       indices: 
       edges: []
@@ -1015,48 +952,45 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DogSheet_0: -1092522894
-      DogSheet_1: -1814072872
-      DogSheet_10: 1187516464
-      DogSheet_11: 1585730943
-      DogSheet_12: 631023324
-      DogSheet_13: -747562875
-      DogSheet_14: -1314923853
-      DogSheet_15: -641287247
-      DogSheet_16: 1360940301
-      DogSheet_17: 738152133
-      DogSheet_18: 295989384
-      DogSheet_19: -1480093935
-      DogSheet_2: -1451883905
-      DogSheet_20: 2029257334
-      DogSheet_21: 1671792480
-      DogSheet_22: 1989383804
-      DogSheet_23: 1334171249
-      DogSheet_24: 152936572
-      DogSheet_25: 272951613
-      DogSheet_26: -1456180636
-      DogSheet_27: -2034487651
-      DogSheet_28: 1466750178
-      DogSheet_29: 1674098416
-      DogSheet_3: 1563788865
-      DogSheet_30: 1617825799
-      DogSheet_31: -1311713963
-      DogSheet_32: -508139056
-      DogSheet_33: 288462911
-      DogSheet_34: -781587476
-      DogSheet_35: -113866278
-      DogSheet_36: -1718721293
-      DogSheet_37: 1992853696
-      DogSheet_38: 1971290593
-      DogSheet_39: -2051086421
-      DogSheet_4: -1464963110
-      DogSheet_40: 1570259327
-      DogSheet_41: -808946397
-      DogSheet_5: -1291303698
-      DogSheet_6: -1106859223
-      DogSheet_7: -890488990
-      DogSheet_8: 1803022053
-      DogSheet_9: 1813482001
+      Rex-Sheet_0: -399422558
+      Rex-Sheet_1: 771186078
+      Rex-Sheet_10: -1590904749
+      Rex-Sheet_11: -385313256
+      Rex-Sheet_12: 1596097690
+      Rex-Sheet_13: 564138765
+      Rex-Sheet_14: 574053922
+      Rex-Sheet_15: 433835717
+      Rex-Sheet_16: -1156972072
+      Rex-Sheet_17: -1118646150
+      Rex-Sheet_18: -1133756211
+      Rex-Sheet_19: -1258027092
+      Rex-Sheet_2: -2061808629
+      Rex-Sheet_20: 899091241
+      Rex-Sheet_21: 1798606650
+      Rex-Sheet_22: -1069250855
+      Rex-Sheet_23: 1290779807
+      Rex-Sheet_24: 1635409936
+      Rex-Sheet_25: -368502874
+      Rex-Sheet_26: -43943419
+      Rex-Sheet_27: 931888304
+      Rex-Sheet_28: -2121531764
+      Rex-Sheet_29: 1879473659
+      Rex-Sheet_3: 1905075314
+      Rex-Sheet_30: 1787771822
+      Rex-Sheet_31: -1820983569
+      Rex-Sheet_32: 1041783559
+      Rex-Sheet_33: -831697562
+      Rex-Sheet_34: 1408744132
+      Rex-Sheet_35: -180870811
+      Rex-Sheet_36: -369482551
+      Rex-Sheet_37: 645064189
+      Rex-Sheet_38: -1300124256
+      Rex-Sheet_4: 1703513984
+      Rex-Sheet_5: 1728998251
+      Rex-Sheet_6: 1992368723
+      Rex-Sheet_7: -1758385954
+      Rex-Sheet_8: 1361855963
+      Rex-Sheet_9: -1401071324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

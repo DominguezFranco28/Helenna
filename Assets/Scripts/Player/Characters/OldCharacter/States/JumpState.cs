@@ -38,13 +38,6 @@ public class JumpState : IState
     {
         if (!_delayCompleted)
         {
-            _jumpTimer += Time.deltaTime;
-            if (_jumpTimer >= _jumpDelay)
-            {
-                _delayCompleted = true;
-                Debug.Log("End of delay");
-
-            }
             return; // skip the update until delay is over
         }
         Vector2 input = new Vector2(0, -1); //set the horizontal move to 0

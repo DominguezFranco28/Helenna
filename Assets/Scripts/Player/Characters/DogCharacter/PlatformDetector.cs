@@ -8,20 +8,23 @@ public class PlatformDetector : MonoBehaviour
     [SerializeField] private GameObject _mouth;
     [SerializeField] private LayerMask _layer;
     [SerializeField] float _distance = 3f;
+    private AgilePlayerBehaviour _playerBehaviour;
     private Vector2 _direction;
     private Vector2 _origin;
-    private bool _canJump = false;
+
     private Vector2 _platformPosition;
-    public bool CanJump { get { return _canJump; } set { _canJump = value; } }
+
     public Vector2 PlatFormPosition { get { return _platformPosition; } set { _platformPosition = value; } }
 
     private void Start()
     {
-
+        _playerBehaviour = GetComponent<AgilePlayerBehaviour>();
     }
 
     private void Update()
     {
+        if (!_playerBehaviour.isInControll)
+            return;
         _origin = _mouth.gameObject.transform.position;
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -34,19 +37,16 @@ public class PlatformDetector : MonoBehaviour
 
             if (hit.collider != null)
             {
-                CanJump = true;
+                _playerBehaviour.CanJump = true;
                 //Debug.Log("Detecte una plataforma de salto");
                 PlatFormPosition = hit.collider.transform.position;
             }
             else
             {
-                CanJump = false;
+                _playerBehaviour.CanJump = false;
+                PlatFormPosition = Vector2.zero;
             }
         }
 
-        else
-        {
-            CanJump = false;
-        }
     }
 }

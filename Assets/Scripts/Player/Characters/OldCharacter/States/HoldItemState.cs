@@ -31,21 +31,29 @@ public class HoldItemState : IState
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         _oldPlayerBehaviour.SetMovementInput(input);
         _oldPlayerBehaviour.LowSpeed(true);
-        if (_grabObject.PickedObject != null && Input.GetKeyDown(KeyCode.R)) // modif el input
+        Debug.Log(_grabObject.PickedObject);
+        if (_grabObject.PickedObject != null && Input.GetKey(KeyCode.R)) // modif el input
         {
-            _oldPlayerBehaviour.LowSpeed(false);
-            _grabObject.ChangeSprite();
-            _grabObject.PickedObject.transform.SetParent(null); //I set the parent to null, so it "drops" it
-            _grabObject.PickedObject.GetComponent<Rigidbody2D>().simulated = true;
-            if (_grabObject.OnPosition)
-            {
-                
-                _grabObject.PickedObject.tag = "Climbable"; //ESTO NECESARIO para que no te puedas trepar con la nena si la escalera esta en el pios
-                _grabObject.PickedObject.transform.position = _grabObject.OnPositionTransform;
-            }
-            _grabObject.PickedObject = null;
+            Debug.Log("aspretaste la R");
+        _oldPlayerBehaviour.LowSpeed(false);
+            _grabObject.DropItem();
             _stateMachine.TransitionTo(_stateMachine.idleState);
 
         }
     }
 }
+
+//Debug.Log("aspretaste la R");
+//_oldPlayerBehaviour.LowSpeed(false);
+//_grabObject.PickedObject.transform.SetParent(null); //I set the parent to null, so it "drops" it
+//_grabObject.PickedObject.GetComponent<Rigidbody2D>().simulated = true;
+//_grabObject.ChangeSprite();
+//if (_grabObject.OnPosition)
+//{
+
+//    _grabObject.PickedObject.tag = "Climbable"; //ESTO NECESARIO para que no te puedas trepar con la nena si la escalera esta en el pios
+//    _grabObject.PickedObject.transform.position = _grabObject.OnPositionTransform;
+
+//}
+//_grabObject.DropItem();
+//_stateMachine.TransitionTo(_stateMachine.idleState);

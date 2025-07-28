@@ -6,7 +6,6 @@ public class ActionLever : MonoBehaviour , IActiveable
 {
     private Animator _animator;
     private Collider2D _collider2D;
-    private bool _isCooldownActive = false;
     [SerializeField] private PuzzleManager _puzzleManager;
     [SerializeField] private AudioClip _SFX;
 

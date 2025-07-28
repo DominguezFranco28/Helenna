@@ -7,8 +7,8 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
 
     [SerializeField] private float _normalSpeed;
     [SerializeField] private float _lowSpeed;
-    private float _auxSpeed;
     [SerializeField] private AudioClip _footstepsSFX;
+    private float _auxSpeed;
     private bool _canMove; //manage from CharacterManager
     private Rigidbody2D _rb2D;
     private Animator _animator;
@@ -24,13 +24,6 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
 
 
 
-    //OLD BACKUP---- tengo que hacer la clase base
-    //public void PerformThrowArm(ImpulseType type)
-    //{
-    //    if (!IsInControll) return;
-    //    _armImpulser.GetThrowArm(type);
-    //}
-    //END BACKUP ... tengo que hacer la clase base 
     void Start()
     {
         _rb2D = GetComponent<Rigidbody2D>();
@@ -86,7 +79,6 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
             _rb2D.velocity = _movementInput * _normalSpeed;
         }
     }
-
 
     public void PerformThrowArm(ImpulseType type)
     {

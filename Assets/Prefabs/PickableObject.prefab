@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 883730631222628261}
   - component: {fileID: 509703311945219675}
   - component: {fileID: 2316509503847109528}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,9 +113,9 @@ GameObject:
   - component: {fileID: 3329747869450669581}
   - component: {fileID: 3278187890379394016}
   - component: {fileID: 220800917148148273}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: PickableObject
-  m_TagString: PickableObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ Transform:
   m_GameObject: {fileID: 1905768729798127521}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7025912, y: 9.856643, z: 0.20964296}
+  m_LocalPosition: {x: 230.36, y: 15.73, z: 0.20964296}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -218,7 +218,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.034986854}
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 8790558278120936786}
   - component: {fileID: 1768394979627624591}
   - component: {fileID: 232553530531832019}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

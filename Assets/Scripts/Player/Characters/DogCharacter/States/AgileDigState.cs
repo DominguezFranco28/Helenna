@@ -11,6 +11,7 @@ public class AgileDigState : IState
     private float _digDelay = 0.3f; 
     private float _digTimer;
     private bool _delayCompleted;
+    private GameObject _pickedObject;
     public AgileDigState(AgilePlayerBehaviour agilePlayerBehaviour, AgileStateMachine agileStateMachine)
     {
         this._agilePlayerBehaviour = agilePlayerBehaviour;
@@ -30,12 +31,15 @@ public class AgileDigState : IState
     public void Exit()
     {
         Debug.Log("You left the state: DIG");
-        if (_holeDetector.CanDig == false)
+        if (_agilePlayerBehaviour.CanDig == false)
         {
             _agilePlayerBehaviour.Animator.SetBool("Dig", false);
         }
     }
-
+    public void Object(GameObject gameObject)
+    {
+        _pickedObject = gameObject;
+    }
     public void Update()
     {
         // Wait for delay
@@ -54,9 +58,16 @@ public class AgileDigState : IState
         Vector2 input = new Vector2(0, Input.GetAxisRaw("Vertical")); //set the horizontal move to 0
         _agilePlayerBehaviour.SetMovementInput(input);
         // If we leave the gap we go to idle
-        if (!_holeDetector.CanDig)
+        if (!_agilePlayerBehaviour.CanDig)
         {
-            _agileStateMachine.TransitionTo(_agileStateMachine.idleState);
+            if (_pickedObject != null) //si desde item state recibe el objeto como parametro del metodo Object, devuelve a ese estado para poder agarrar y soltar objetos luego del salto
+            {
+                 //vacio el parametro despues de la transicion. Vuelve a renovarse desde el itemstate si corresponmde
+                _agileStateMachine.TransitionTo(_agileStateMachine.itemState);
+            }
+            else
+                _agileStateMachine.TransitionTo(_agileStateMachine.moveState);
+           
         }
     }
 }
