@@ -7,7 +7,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 {
     [SerializeField] private Transform _mouth;
     [SerializeField] private float _speed;
-    [SerializeField]private float _jumpDelay = 0.5f;
+    [SerializeField]private float _jumpDelay = 0.2f;
     [SerializeField] private AudioClip _footstepsSFX;
     [SerializeField] private AudioClip _digSFXClip;
     [SerializeField] private AudioClip _jumpSFXClip;

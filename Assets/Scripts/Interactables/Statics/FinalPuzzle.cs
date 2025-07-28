@@ -36,7 +36,7 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
             }
         }
 
-            _currentCount--;
+        _currentCount--;
         Debug.Log("resuelta una pieza del puzzle"); 
         Debug.Log(_currentCount);
         if (_currentCount == 0)
@@ -63,9 +63,10 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
 
         else
          {
-
+            //este es el del filtro del aire. Creo siwtch, hago condiconales, o separo scripts?
             Destroy(_child);
         }
+      
     }
     private void OnDestroy()
     {
