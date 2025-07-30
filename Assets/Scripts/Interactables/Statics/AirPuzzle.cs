@@ -7,8 +7,9 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver, IActiveable
     [SerializeField] private int _requiredCount = 3;
     [SerializeField] private PuzzleManager _puzzleManager;
     [SerializeField] private GameObject _child; // objeto a destruir, seguramente el g.o que tiene el trigger q no deja pasar al jugador
+    [SerializeField] private GameObject _nextChild; // objeto a destruir, seguramente el g.o que tiene el trigger q no deja pasar al jugador
 
-    private int _currentCount;
+    private int _currentCount = 0;
 
 
     public int CurrentCount { get { return _currentCount; } }
@@ -17,28 +18,30 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver, IActiveable
     void Start()
     {
          //detecta si el objeto que tiene este script tiene la interfaz de activable para llamar a su metodo con el solution puzzle (en las puertas x ej para activar la animacion)
-        _currentCount = _requiredCount; //Esta iniciacion en start me va a permitir instanciar diferentes clases y que no se activen con el mismo
+        ; //Esta iniciacion en start me va a permitir instanciar diferentes clases y que no se activen con el mismo
         if (_puzzleManager != null)
             _puzzleManager.RegisterObserver(this);
         else
             Debug.LogWarning("No se asignó un PuzzleManager a " + gameObject.name);
+
+        
     }
     public void OnPuzzleEvent()
     {
-        _currentCount--;
+        _currentCount+=1;
 
-        Debug.Log("resuelta una pieza del puzzle");
+        Debug.Log("resuelta una pieza del puzzle" + _currentCount) ;
         {
             Debug.Log("Me hara falta mis repuestos");
             
         }
-        if (_currentCount == 1)
+        if (_currentCount == 2)
         {
 
             Destroy(_child);
         }
 
-        if (_currentCount == 0)
+        if (_currentCount == _requiredCount)
         {
             Debug.Log("puedes avanzar a la siguiente zona");
             PuzzleSolved();
@@ -47,9 +50,10 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver, IActiveable
 
     private void PuzzleSolved()
     {
+        Debug.Log("Arreglaste el filtro de aire, ahor apodes acceder a la tercer zona");
+        //ahora si le prendo el script a la palacan del nviel 2 para que se pueda seguir luego del puzzle nivel 1
+        _nextChild.GetComponent<Collider2D>().enabled = true; 
 
-        Debug.Log("Arreglaste el filtro de aire");
-        //aca supongo que iria el llamado a activate
 
     }
     private void OnDestroy()

@@ -9,7 +9,7 @@ public class Dialogue : MonoBehaviour
     private bool collisionWithPlayer;
     private bool dialogueStarted;
     private int lineIndex;
-    private AirPuzzle airPuzzle;
+    [SerializeField]private AirPuzzle airPuzzle;
     [SerializeField ]private float typingSpeed = 0.1f;   
     [SerializeField]private OldPlayerBehaviour playerBehaviour;
     [SerializeField] private GameObject _player;
@@ -23,7 +23,7 @@ public class Dialogue : MonoBehaviour
         // Inicializar las variables de estado necesarias
         collisionWithPlayer = false;
         dialogueStarted = false;
-        airPuzzle = GetComponent<AirPuzzle>();
+
 }
 
     // Update is called once per frame
@@ -32,47 +32,31 @@ public class Dialogue : MonoBehaviour
         //Debug.Log($"dialogueText.text={dialogueText.text}");
         if (collisionWithPlayer && Input.GetButtonDown("Fire1"))
         {
+                lineIndex = airPuzzle.CurrentCount; //seteo con el contador del puzzle
 
-            //if (lineIndex < dialogueLines.Length)
-            //{
-            // Acá se abre todo
-            if (airPuzzle.CurrentCount < 1)
-                return;
-            switch (airPuzzle.CurrentCount)
+            if (lineIndex >= 0 && lineIndex < dialogueLines.Length)
             {
-                //ajustar bien esto
+                if (!dialogueStarted && !dialoguePanel.activeSelf) //activeSelf par aque un objeto puedar iniciar dialogo siempre, porque par ala palanca si le daba me borraba el dialogo del filtro del aire
+                    StartDialogue(lineIndex);
 
-                case 3:
-                    StartDialogue();
-                    GameStateManager.Instance.SetState(GameState.Playing);
 
-                   // dialoguePanel.SetActive(false);
-                   
-                    //gugar con el gamestate aca arreglar lo del set active, el resot funciona
-                    break;
-                case 2:
-                    StartDialogue();
-                    GameStateManager.Instance.SetState(GameState.Playing);
-
-                 //   dialoguePanel.SetActive(false);
-
-                    break;
-                case 1:
-                    StartDialogue();
-             
-                    break;
-                case 0:
-                    StartDialogue();
-                
-                    break;
-                default:
+                else if (dialogueText.text == dialogueLines[lineIndex])
+                {
+                    // Dentro de la función hay una corrutina, por eso solo se ejecuta si la línea se completó
+                    EndDialogue();
+                }
+                else
+                {
+                    // Acá se llega si se busca "omitir" el completado de la corrutina dentro de NextDialogueLine
                     StopAllCoroutines();
                     dialogueText.text = dialogueLines[lineIndex];
-                    lineIndex = 0;
-                    dialogueStarted = false;
-                    break;
-            }
 
+                }
+            }
+            else
+            {
+                EndDialogue();//que me lo cierre siempre si ya no hay mas dialogos
+            }
         }
 
     }
@@ -94,18 +78,22 @@ public class Dialogue : MonoBehaviour
     }
 
     // Se inicia todo
-    private void StartDialogue()
+    private void StartDialogue(int index)
     {
         dialogueStarted = true;
         dialoguePanel.SetActive(true);
-        StartCoroutine(ShowLine());
-
+        StartCoroutine(ShowLine(index));
+        
     }
-            
+    private void EndDialogue()
+    {
+        dialogueStarted = false;
+        dialogueText.text = ""; //limpio el texto para poder ussar diferentes textos de otros scripts
+        dialoguePanel.SetActive(false);
+    }
 
 
-
-    private IEnumerator ShowLine()
+    private IEnumerator ShowLine(int index)
     {
         dialogueText.text = "";
         foreach (char ch in dialogueLines[lineIndex])

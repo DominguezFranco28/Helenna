@@ -28,7 +28,6 @@ public class PuzzleManager : MonoBehaviour
         NotifyObservers();
     }
 
-
     // Notificar a todos los observadores
     private void NotifyObservers()
     {

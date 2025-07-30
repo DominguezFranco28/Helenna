@@ -6,7 +6,7 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
 {
     [SerializeField] private int _requiredCount = 3;
     [SerializeField] private PuzzleManager _puzzleManager;
-    [SerializeField] private IActiveable _activateDoor; 
+    [SerializeField] private IActiveable _activateDoor;
     [SerializeField] private GameObject _child; // arrastrás el hijo desde el inspector
 
     private int _currentCount;
@@ -37,7 +37,7 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
         }
 
         _currentCount--;
-        Debug.Log("resuelta una pieza del puzzle"); 
+        Debug.Log("resuelta una pieza del puzzle");
         Debug.Log(_currentCount);
         if (_currentCount == 0)
         {
@@ -58,7 +58,7 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
         else if (_activateDoor != null)
         {
             _activateDoor.Activate();
-            OnDestroy();
+         
         }
 
         else

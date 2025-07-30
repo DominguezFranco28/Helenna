@@ -7,8 +7,8 @@ public class GrabObject : MonoBehaviour
     [Header(" Layer que debe tener el objeto para ser agarrable ")]
     [SerializeField] private LayerMask _objectLayer;
     [SerializeField] public GameObject _grabSpawnPoint;
-    [SerializeField] private Sprite _originalSprite;
     [SerializeField] private Sprite _bubbleSprite;
+    private Sprite _originalSprite;
     private SpriteRenderer _sprite;
     private GameObject _pickedObject = null;
     private Vector2 _onPositionTransform;
@@ -35,6 +35,7 @@ public class GrabObject : MonoBehaviour
             {
                 _pickedObject = collision.gameObject;
                 _sprite = collision.GetComponent<SpriteRenderer>();
+                _originalSprite = _sprite.sprite;
             }
           
                 
@@ -80,13 +81,16 @@ public class GrabObject : MonoBehaviour
         if (_pickedObject != null )
         {
             ChangeSprite();
+            if (!_onPosition)
+                _pickedObject.tag = "Untagged";
             if (_onPosition)
             {
 
                 _pickedObject.tag = "Climbable"; //ESTO NECESARIO para que no te puedas trepar con la nena si la escalera esta en el pios
                 _pickedObject.transform.position = _onPositionTransform;
-
+                
             }
+             //para que le saque la tag a la escalera y la nena nio pueda escalar en el piso
             _pickedObject.transform.SetParent(null); //I set the parent to null, so it "drops" it
             _pickedObject.GetComponent<Rigidbody2D>().simulated = true;
             _justDropped = true; //para que el trigger no hinche
