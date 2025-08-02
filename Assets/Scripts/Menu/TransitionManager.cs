@@ -25,6 +25,10 @@ public class TransitionManager : MonoBehaviour
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1; 
         StartCoroutine(SceneLoad(nextSceneIndex));        
     }
+    public void ChangeLevel(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
     public IEnumerator SceneLoad( int sceneIndex)
     {
         _animator.SetTrigger("StartTransition");

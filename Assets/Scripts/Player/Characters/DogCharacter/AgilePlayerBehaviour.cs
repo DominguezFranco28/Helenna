@@ -130,7 +130,6 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
         if (!isInControll || !_canMove) return;
         _rb2D.velocity = _movementInput * _speed;
         CheckGround();
-        Debug.Log(_isGrounded);
         
         _jumpTimer += Time.deltaTime;
         if (_jumpTimer >= _jumpDelay)

@@ -6,7 +6,11 @@ public class MovablePlatform : MonoBehaviour , IMovable
 {
     [SerializeField] private GameObject _posA;
     [SerializeField] private GameObject _posB;
-    [SerializeField] private GameObject _barrier;
+    [Header ("En esta lista, todas las barreras que tienen que esta activas durante el desplazamiento")]
+    [SerializeField] private List<GameObject> _activeBarriers;
+    [Header ("En esta lista, todas las barreras que tienen que tienen que desactivarse llegado a destino")]
+    [SerializeField] private List<GameObject> _desactiveBarriers;
+    
     [SerializeField] private float _moveSmoothTime;
     private GameObject _player;
     private Vector2 _previousPosition;
@@ -32,19 +36,17 @@ public class MovablePlatform : MonoBehaviour , IMovable
 
     {
         if (ActiveLever)
-        {
-            
+        {          
 
             if (ChangePosition)
             {
                 _target = _posB.transform.position;
-                _barrier.SetActive(true);
-
+              
+               
             }
-           if (!ChangePosition)
+            else
             {
                 _target = _posA.transform.position;
-                _barrier.SetActive(false);
             }
             MoveTo(_target);
 
@@ -62,12 +64,27 @@ public class MovablePlatform : MonoBehaviour , IMovable
         {
             Rigidbody2D playerRb = _player.GetComponent<Rigidbody2D>();
             playerRb.MovePosition(smoothPos);
+            foreach (GameObject barrier in _activeBarriers)
+            {
+                barrier.SetActive(true);
+            }
         }
 
         //esto tuve que agregarlo por la prop que se gestiona desde el FinalPuzzle. Ademas de que se activa la palanca y a su vez cambia la pos. Cuando finaliza el traslado, vuelvo a poner la palanca es false
         if (Vector2.Distance(_rb2D.position, _target) < 0.5f)
         {
             ActiveLever = false;
+            foreach (GameObject barrier in _desactiveBarriers)
+            {
+                barrier.SetActive(false);
+            }
+            if (!ChangePosition) //si se queda en a, que me apague todas las barreras
+            {
+                foreach (GameObject barrier in _activeBarriers)
+                {
+                    barrier.SetActive(false);
+                }
+            }
         }
     }
 

@@ -21,7 +21,7 @@ public class NoteManager : MonoBehaviour
 
         // Always hide the UI at the start between scenes.
         _noteUI.SetActive(false);
-        DontDestroyOnLoad(Instance);
+       // DontDestroyOnLoad(Instance);
     }
     
     public void ShowNote(string text, string sceneName)

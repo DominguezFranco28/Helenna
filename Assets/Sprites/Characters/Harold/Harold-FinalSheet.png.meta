@@ -1,0 +1,1262 @@
+fileFormatVersion: 2
+guid: 1b2c8588dab6cc94eae9ce2f8ad1d718
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Harold-FinalSheet_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 791
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b49046024600b14ca5d26ba89e17c9c
+      internalID: -1401800532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 791
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7844436328272ef4688630b56ba9b98b
+      internalID: -930201327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 791
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1441d58927bfc6c4286ebc75b7c822c3
+      internalID: 771734278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 791
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4336514f80ab6145ac97d1ef6da702a
+      internalID: -1119896114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_4
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 731
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d611c0944007804db181491df2b6ff7
+      internalID: -737924159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_5
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 731
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31678d50f5c96ae4190c8a4b251d4d6d
+      internalID: 1576280855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_6
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 731
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e063a17e608511143969680519ee8102
+      internalID: -363306986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_7
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 731
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151ee05705975944ea2c18bf1932111b
+      internalID: -1999548534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 671
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11ed5604feda724cad3a94c781f111f
+      internalID: -1196932003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_9
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 671
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c239184618b890f48aa2d871abae8394
+      internalID: 384118727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_10
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 671
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d64ba300e142a7d48b18966b4ef57dfa
+      internalID: 1832918419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_11
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 671
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a78de1a52bd6c5d43a515c9dd0575afc
+      internalID: -986509238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_12
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 611
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea855662e62173149a5adb6ef6c0cd99
+      internalID: -1716915502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_13
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 611
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a3ca02aae3e0be4ea418215980232bb
+      internalID: -1071604686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_14
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 611
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8dd48a65dc6b140bcb157eb21b0f5e
+      internalID: 648313080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_15
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 611
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c67e02cdb100947934e02e364b14e7
+      internalID: 1915985430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_16
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 551
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a52fa359293ba7459f3b8a8ad5da1ea
+      internalID: 330616838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_17
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 551
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1ae67246e8920409d6da50f47c7b83
+      internalID: 308244186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_18
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 551
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555a3a74820a9c54780b30e978cf7ef7
+      internalID: 3143101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_19
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 551
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3997c3248b19da744ad7597affa191d3
+      internalID: 1116114052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_20
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 491
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef861967250306b42a773761380929dc
+      internalID: 123713101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_21
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 491
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40f8806f519ba6479e8c78295a291a3
+      internalID: 635754409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_22
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 491
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c293f3824ba8a3244a49da16c38418a1
+      internalID: 94459616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_23
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 491
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3523a1d8d4ac0414badbe26e5a96ba65
+      internalID: -1782553248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_24
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 431
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e36b50f0cecb048b5a9520fabda236
+      internalID: -1157677757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_25
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 431
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbbb74479c78a9479ec0caa4e795bd2
+      internalID: -1544808287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_26
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 431
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7563e9b983ac4e645bc5342939dcc1a8
+      internalID: -621855991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_27
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 431
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ec276d93be97a46950f43368ec222f
+      internalID: 2031065887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_28
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 364
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b33a7c331c4f87488b0512031ee39a2
+      internalID: -568301799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_29
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 364
+        width: 29
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb10ba986c74a8345b42a3f63cda01cd
+      internalID: 2095976520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_30
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 364
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b957512c934c3e40a65a003ca830efb
+      internalID: 1163437194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_31
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 311
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec71822abd49b4e49a60435bb30f6384
+      internalID: -1405956261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_32
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 311
+        width: 29
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: babd9ddd791e06d4b84693896073b1d1
+      internalID: -101699023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_33
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 311
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01565e3fafc8a374cb7601f32a1f664d
+      internalID: -497256540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_34
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 311
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e676d8a5adfcb44aa5bc7246184e673
+      internalID: 103948176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_35
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 248
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70b984c5cd8d205468c0f833529bc41d
+      internalID: -1869896164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_36
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 248
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ba3c3940af8164ab729e898482e690
+      internalID: 1265910342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_37
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 251
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f313684fc5b94e4a8911e72bd91f0fa
+      internalID: -977068099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_38
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 251
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c106f2001bbc0234aa335b789314d638
+      internalID: -1120256178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_39
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 198
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6be0612f0675b40ac5114a5a042fe9
+      internalID: -1076812924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_40
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 198
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636756d4d33d1ab428011bb7db308f97
+      internalID: -1685818532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_41
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 188
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e73eee0ed720a943bdbda3bce1ce9f8
+      internalID: 1237785303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_42
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 188
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397bd5b0aaefdf5499538c0d434c34f7
+      internalID: -1006121708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_43
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 139
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c015aed06a31a4e428fc8c0c8d2162a0
+      internalID: -1649681048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_44
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 139
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5d3805193dafb34a9e5d946ceaf11c0
+      internalID: -911924216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_45
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 128
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3e72ba27769c340b3007ad62466c35
+      internalID: 762633563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_46
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 128
+        width: 12
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 438434b36bd6a9640a8704f060a989cc
+      internalID: -357487420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_47
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 68
+        width: 13
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8eeb4943a0c5740a3f97c5201a6e79
+      internalID: 1136512828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_48
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 68
+        width: 10
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c4389c39a01854bbcb8e7c962a07be
+      internalID: -26237325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_49
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 8
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea10e77f8c761dc478105bd90f0d469b
+      internalID: 1940070269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_50
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 8
+        width: 11
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2822c65380919694ca43b24016c78ac3
+      internalID: 2039205743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Harold-FinalSheet_0: -1401800532
+      Harold-FinalSheet_1: -930201327
+      Harold-FinalSheet_10: 1832918419
+      Harold-FinalSheet_11: -986509238
+      Harold-FinalSheet_12: -1716915502
+      Harold-FinalSheet_13: -1071604686
+      Harold-FinalSheet_14: 648313080
+      Harold-FinalSheet_15: 1915985430
+      Harold-FinalSheet_16: 330616838
+      Harold-FinalSheet_17: 308244186
+      Harold-FinalSheet_18: 3143101
+      Harold-FinalSheet_19: 1116114052
+      Harold-FinalSheet_2: 771734278
+      Harold-FinalSheet_20: 123713101
+      Harold-FinalSheet_21: 635754409
+      Harold-FinalSheet_22: 94459616
+      Harold-FinalSheet_23: -1782553248
+      Harold-FinalSheet_24: -1157677757
+      Harold-FinalSheet_25: -1544808287
+      Harold-FinalSheet_26: -621855991
+      Harold-FinalSheet_27: 2031065887
+      Harold-FinalSheet_28: -568301799
+      Harold-FinalSheet_29: 2095976520
+      Harold-FinalSheet_3: -1119896114
+      Harold-FinalSheet_30: 1163437194
+      Harold-FinalSheet_31: -1405956261
+      Harold-FinalSheet_32: -101699023
+      Harold-FinalSheet_33: -497256540
+      Harold-FinalSheet_34: 103948176
+      Harold-FinalSheet_35: -1869896164
+      Harold-FinalSheet_36: 1265910342
+      Harold-FinalSheet_37: -977068099
+      Harold-FinalSheet_38: -1120256178
+      Harold-FinalSheet_39: -1076812924
+      Harold-FinalSheet_4: -737924159
+      Harold-FinalSheet_40: -1685818532
+      Harold-FinalSheet_41: 1237785303
+      Harold-FinalSheet_42: -1006121708
+      Harold-FinalSheet_43: -1649681048
+      Harold-FinalSheet_44: -911924216
+      Harold-FinalSheet_45: 762633563
+      Harold-FinalSheet_46: -357487420
+      Harold-FinalSheet_47: 1136512828
+      Harold-FinalSheet_48: -26237325
+      Harold-FinalSheet_49: 1940070269
+      Harold-FinalSheet_5: 1576280855
+      Harold-FinalSheet_50: 2039205743
+      Harold-FinalSheet_6: -363306986
+      Harold-FinalSheet_7: -1999548534
+      Harold-FinalSheet_8: -1196932003
+      Harold-FinalSheet_9: 384118727
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

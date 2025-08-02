@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4573775017932175692}
   - component: {fileID: 5548965912938295542}
   - component: {fileID: 369674611557983654}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ClimbDetector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 267335225036222111}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: -1.53, z: 0}
+  m_LocalPosition: {x: -0.09, y: -1.184, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -80,7 +80,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dafa3a64f5a9314439cb7c03f3c0019d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canClimb: 0
 --- !u!1 &4325059657574243158
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,10 +95,10 @@ GameObject:
   - component: {fileID: 2705350988784893939}
   - component: {fileID: 2540616221314238289}
   - component: {fileID: 447372214511955916}
-  - component: {fileID: 5923569099379701578}
-  m_Layer: 0
+  - component: {fileID: 2556244275432499121}
+  m_Layer: 12
   m_Name: ChildPlayer
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,8 +111,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4325059657574243158}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.63952, y: -11.178009, z: -47.788902}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.03, y: 65.47, z: -0.36064106}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -206,10 +205,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 86474bd5e15d5254aa178263b2649e5a, type: 3}
+  m_SortingLayerID: 1929262187
+  m_SortingLayer: 4
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 120215711, guid: f274c4b1d5f68244c8a57fd8f6d07b1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -256,7 +255,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.4, y: 6.4}
+    oldSize: {x: 2, y: 2.625}
     newSize: {x: 0.7, y: 1.1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -277,11 +276,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2412914810faf7c4ab65191dfa3a219c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 20
+  _speed: 11
   _climbSpeed: 5
-  _animator: {fileID: 4639656890127876935}
-  _sfx: {fileID: 0}
-  canMove: 0
+  _climbingLoopSFX: {fileID: 8300000, guid: 00e1e3be6c78b744db80ec201ecef63f, type: 3}
+  _footstepsSFX: {fileID: 8300000, guid: 5113611678da121458f1e387bccbd14d, type: 3}
   isInControll: 0
 --- !u!114 &447372214511955916
 MonoBehaviour:
@@ -296,8 +294,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _childBehaviour: {fileID: 2540616221314238289}
-  _climbDetector: {fileID: 369674611557983654}
---- !u!114 &5923569099379701578
+  _childTriggerDetector: {fileID: 369674611557983654}
+--- !u!114 &2556244275432499121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,9 +304,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4325059657574243158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4975ea1d00eb660408ed52ae3bf8e8cc, type: 3}
+  m_Script: {fileID: 11500000, guid: dafa3a64f5a9314439cb7c03f3c0019d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sfxClip: {fileID: 8300000, guid: 00e1e3be6c78b744db80ec201ecef63f, type: 3}
-  _playKey: 0
-  _audioSource: {fileID: 0}

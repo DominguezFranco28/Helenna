@@ -6,9 +6,7 @@ using Unity.VisualScripting;
 
 public class Dialogue : MonoBehaviour
 {
-    private bool collisionWithPlayer;
-    private bool dialogueStarted;
-    private int lineIndex;
+    [SerializeField] private GameObject _dialogBubbleUI;
     [SerializeField]private AirPuzzle airPuzzle;
     [SerializeField ]private float typingSpeed = 0.1f;   
     [SerializeField]private OldPlayerBehaviour playerBehaviour;
@@ -16,6 +14,10 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField, TextArea(3, 5)] private string[] dialogueLines;
+    private bool collisionWithPlayer;
+    private bool dialogueStarted;
+    private int lineIndex;
+
 
 
     private void Start()
@@ -23,14 +25,15 @@ public class Dialogue : MonoBehaviour
         // Inicializar las variables de estado necesarias
         collisionWithPlayer = false;
         dialogueStarted = false;
+        _dialogBubbleUI.SetActive(false);
 
-}
+    }
 
     // Update is called once per frame
     void Update()
     {
         //Debug.Log($"dialogueText.text={dialogueText.text}");
-        if (collisionWithPlayer && Input.GetButtonDown("Fire1"))
+        if (collisionWithPlayer && Input.GetKeyDown(KeyCode.E))
         {
                 lineIndex = airPuzzle.CurrentCount; //seteo con el contador del puzzle
 
@@ -65,6 +68,7 @@ public class Dialogue : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("OldPlayer"))
         {
+            _dialogBubbleUI.SetActive(true);
             collisionWithPlayer = true;
         }
     }
@@ -73,6 +77,8 @@ public class Dialogue : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("OldPlayer"))
         {
+            _dialogBubbleUI.SetActive(false);
+            dialoguePanel.SetActive(false);
             collisionWithPlayer = false;
         }
     }

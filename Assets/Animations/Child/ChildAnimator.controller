@@ -17,7 +17,7 @@ AnimatorStateMachine:
     m_Position: {x: 20, y: 290, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8256980243703504263}
-    m_Position: {x: 440, y: 240, z: 0}
+    m_Position: {x: 430, y: 240, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -157,7 +157,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Blend Tree
-  m_Speed: 0.8
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 7305480060673116572}
@@ -185,7 +185,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Idle
-  m_Speed: 0.2
+  m_Speed: 0.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 497024107860807263}
@@ -317,7 +317,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Climb
-  m_Speed: 0.4
+  m_Speed: 1
   m_CycleOffset: 1
   m_Transitions:
   - {fileID: -4402953583185294128}

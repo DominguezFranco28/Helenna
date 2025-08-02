@@ -113,7 +113,9 @@ public class ArmImpulser : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         //Rotate the projectile so that it looks where the mouse points
-        Quaternion rotation = Quaternion.Euler(0f, 0f, angle);
+
+        //termine seteando la rotacion en 0 porque ajuste con animaciones direccionales
+        Quaternion rotation = Quaternion.Euler(0f, 0f, 0f);
         GameObject armBullet = GameObject.Instantiate(_armShot, _spawnPoint.position, rotation);
 
 
@@ -121,6 +123,7 @@ public class ArmImpulser : MonoBehaviour
         {
 
             _currentArmBullet = armBullet;
+
             //Save the reference of the current arml
             //Ignore collisions so the arm doesn't collide with the player
             Collider2D bulletCol = armBullet.GetComponent<Collider2D>();

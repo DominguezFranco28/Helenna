@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class NextZone : PlayerDetector
 {
+    [SerializeField] private string _changeLevel;
     public override void Effect(Collider2D collision)
     {
         Debug.Log("saliendo de la zona");
-        TransitionManager.Instance.LoadNextScene();        
+        TransitionManager.Instance.ChangeLevel(_changeLevel);
+
     }
 }

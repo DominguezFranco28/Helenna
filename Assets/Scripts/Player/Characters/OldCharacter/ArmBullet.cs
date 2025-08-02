@@ -8,6 +8,7 @@ public class ArmBullet : MonoBehaviour
     [SerializeField] private float _shotSpeed;
     [SerializeField] private float _pushDistance = 5f;
     private Rigidbody2D _rb;
+    private Animator _animator;
     private Vector2 _direction;
     private Collider2D _armCol;  
     private ArmImpulser _armImpulser;
@@ -31,12 +32,23 @@ public class ArmBullet : MonoBehaviour
     {
         _rb = GetComponent<Rigidbody2D>();
         _armCol = GetComponent<Collider2D>();
-
+        _animator = GetComponent<Animator>();
         Destroy(gameObject, 0.8f);
     }
     private void FixedUpdate()
     {
         _rb.velocity = _direction * _shotSpeed;
+
+        //parametro de direccion tomado de la pos de mouse, no de inputs
+        
+        _animator.SetTrigger("IsShooting");
+        _animator.SetFloat("Horizontal", _direction.x);
+        _animator.SetFloat("Vertical", _direction.y);
+
+
+
+
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
