@@ -44,11 +44,6 @@ public class ArmBullet : MonoBehaviour
         _animator.SetTrigger("IsShooting");
         _animator.SetFloat("Horizontal", _direction.x);
         _animator.SetFloat("Vertical", _direction.y);
-
-
-
-
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -57,23 +52,32 @@ public class ArmBullet : MonoBehaviour
         if (collision.gameObject.CompareTag("HookPoint"))
         {
             Debug.Log("Impact whit hook point!");
-             Destroy(gameObject);
+            Destroy(gameObject);
             if (_armImpulser != null)
             {
                 //Distance before the 0 point of intact, so that it brakes a little earlier and the collisions do not overlap
                 Vector2 impactPoint = collision.contacts[0].point;
-                float stopDistance = 0.5f; 
+                float stopDistance = 0.5f;
                 Vector2 stopPoint = impactPoint - _direction.normalized * stopDistance;
                 _armImpulser.MovePlayerToAnchor(stopPoint, _impulseType);
                 //I call the public armimpulser method to activate the movement. 
                 //With the stoppoint parameter I make sure that it brakes a little before reaching the anchor
             }
         }
+
+
         else if ((collision.gameObject.CompareTag("Pushable")) && _impulseType == ImpulseType.Push)
         {
-            Destroy(gameObject);            
+            IActiveable action = collision.gameObject.GetComponent<IActiveable>();
+            if (action != null) //si tiene el active no quiero que haga nada mas, que retorne aca.
+            {
+                action.Activate();
+                Destroy(gameObject);
+                return;
+            }
+            Destroy(gameObject);
             Debug.Log("Impact whit movableObject");
-            var collisionMove =collision.gameObject.GetComponent<MovableObject>();
+            var collisionMove = collision.gameObject.GetComponent<MovableObject>();
             Vector2 impactPoint = collision.contacts[0].point;
             // Determino la direccion en X e  Y, quiero evitar diagonales 
             Vector2 pushDir = _direction; //a la direccion se le asigna un nuevo valor de tipo mvector 2, pero restringido para eivtar diagonales
@@ -86,8 +90,6 @@ public class ArmBullet : MonoBehaviour
                 pushDir = new Vector2(0, Mathf.Sign(pushDir.y)); // Solo eje Y
             }
 
-
-
             Vector2 pushTarget = (Vector2)collision.transform.position + pushDir * _pushDistance;
             Collider2D targetCol = collisionMove.GetComponent<Collider2D>();
             if (targetCol != null && _armCol != null)
@@ -95,6 +97,9 @@ public class ArmBullet : MonoBehaviour
                 Physics2D.IgnoreCollision(_armCol, targetCol);
             }
             collisionMove.MoveTo(pushTarget);
+          
+
+
         }
 
         else if ((collision.gameObject.CompareTag("Pushable")) && _impulseType == ImpulseType.Pull)
@@ -121,9 +126,9 @@ public class ArmBullet : MonoBehaviour
             {
                 Physics2D.IgnoreCollision(_armCol, targetCol);
             }
-            collisionMove.MoveTo(pushTarget); 
+            collisionMove.MoveTo(pushTarget);
 
         }
-        Destroy(gameObject);            
+            Destroy(gameObject);            
     }
  }
