@@ -82,4 +82,17 @@ public class CharacterManager : MonoBehaviour
         Debug.Log("All characters have been teleported to the active character.");
     }
 
+    public void JoinToTeam (GameObject newPlayer)
+    {
+        // Convertimos el array a una lista para poder agregar elementos
+        List<GameObject> characterList = new List<GameObject>(characters);
+
+        // Agregamos el nuevo personaje
+        characterList.Add(newPlayer);
+
+        // Volvemos a convertirlo en array
+        characters = characterList.ToArray();
+
+        Debug.Log($"{newPlayer.name} se ha unido al equipo. Total de personajes: {characters.Length}");
+    }
 }

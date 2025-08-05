@@ -8,6 +8,7 @@ public class GrabObject : MonoBehaviour
     [SerializeField] private LayerMask _objectLayer;
     [SerializeField] public GameObject _grabSpawnPoint;
     [SerializeField] private Sprite _bubbleSprite;
+    [SerializeField] private AudioClip _pickSFX;
     private Sprite _originalSprite;
     private SpriteRenderer _sprite;
     private GameObject _pickedObject = null;
@@ -67,7 +68,7 @@ public class GrabObject : MonoBehaviour
             return;
 
         }
-      
+             PlaySFX();
             _pickedObject.transform.position = _grabSpawnPoint.transform.position;
             _pickedObject.gameObject.transform.SetParent(_grabSpawnPoint.gameObject.transform); //set the parent so follow de mouth 
             _pickedObject.GetComponent<Rigidbody2D>().simulated = false;
@@ -101,6 +102,10 @@ public class GrabObject : MonoBehaviour
     {
         _sprite.sprite = _originalSprite;
     }
+    public void PlaySFX()
+     {
+        SFXManager.Instance.PlaySFX(_pickSFX);
+     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Ladder Position"))

@@ -68,13 +68,6 @@ public class ArmBullet : MonoBehaviour
 
         else if ((collision.gameObject.CompareTag("Pushable")) && _impulseType == ImpulseType.Push)
         {
-            IActiveable action = collision.gameObject.GetComponent<IActiveable>();
-            if (action != null) //si tiene el active no quiero que haga nada mas, que retorne aca.
-            {
-                action.Activate();
-                Destroy(gameObject);
-                return;
-            }
             Destroy(gameObject);
             Debug.Log("Impact whit movableObject");
             var collisionMove = collision.gameObject.GetComponent<MovableObject>();

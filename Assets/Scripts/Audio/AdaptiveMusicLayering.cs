@@ -6,14 +6,30 @@ public class AdaptiveMusicLayering : MonoBehaviour
 {
     
     [SerializeField] private AudioSource _baseLayerSource; 
-    [SerializeField] private AudioSource _resolutionSFXSource; 
-
+    [SerializeField] private AudioSource _resolutionSFXSource;
+    public static AdaptiveMusicLayering Instance { get; private set; }
     [Header("Fade parameters")]
     [Range(0.1f, 5.0f)]
     [SerializeField] private float _fadeDuration = 1.5f;
-    private Coroutine _activeFadeCoroutine; 
+    private Coroutine _activeFadeCoroutine;
 
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject); // Prevents duplicate
+            return;
+        }
 
+        Instance = this;
+        DontDestroyOnLoad(gameObject); // Persist between scenes. 
+
+        if (_baseLayerSource == null)
+        {
+            Debug.LogError("Se encesita un tema principal");
+            enabled = false;
+        }
+    }
     void Start()
     {
         // Play background music on startup (if playOnAwake is enabled)

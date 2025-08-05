@@ -16,8 +16,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField, TextArea(3, 5)] private string[] dialogueLines;
     private bool collisionWithPlayer;
     private bool dialogueStarted;
-    private int lineIndex;
-
+    private int lineIndex = 0;
 
 
     private void Start()
@@ -25,17 +24,43 @@ public class Dialogue : MonoBehaviour
         // Inicializar las variables de estado necesarias
         collisionWithPlayer = false;
         dialogueStarted = false;
-        _dialogBubbleUI.SetActive(false);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (GameStateManager.Instance.IsGamePaused())
+            return;
         //Debug.Log($"dialogueText.text={dialogueText.text}");
         if (collisionWithPlayer && Input.GetKeyDown(KeyCode.E))
         {
-                lineIndex = airPuzzle.CurrentCount; //seteo con el contador del puzzle
+            //if (lineIndex == 0 || lineIndex == 1) //Primero, los dialogos determinados antes de vincularse al contador del puzzle
+            //{
+            //    if (!dialogueStarted && !dialoguePanel.activeSelf)
+            //    {
+            //        StartDialogue(lineIndex);
+            //        return;
+            //    }
+            //    else if (dialogueText.text == dialogueLines[lineIndex])
+            //    {
+            //        // Dentro de la función hay una corrutina, por eso solo se ejecuta si la línea se completó
+            //        EndDialogue();
+            //        lineIndex++; // Pasar a la siguiente línea fija (0 -> 1)
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        StopAllCoroutines();
+            //        dialogueText.text = dialogueLines[lineIndex];
+            //        return;
+            //    }
+            //} REVISAR ESTO, UN SOLO TEXTO INICIAL QUEDA FEO
+            
+            
+            
+            
+            lineIndex = airPuzzle.CurrentCount; //seteo con el contador del puzzle, despues de usar el contador para el dialogo default
 
             if (lineIndex >= 0 && lineIndex < dialogueLines.Length)
             {

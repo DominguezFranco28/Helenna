@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AirPuzzle : MonoBehaviour, IPuzzleObserver, IActiveable
+public class AirPuzzle : MonoBehaviour, IPuzzleObserver
 {
     [SerializeField] private int _requiredCount = 3;
     [SerializeField] private PuzzleManager _puzzleManager;
     [SerializeField] private GameObject _child; // objeto a destruir, seguramente el g.o que tiene el trigger q no deja pasar al jugador
     [SerializeField] private GameObject _nextChild; // objeto a destruir, seguramente el g.o que tiene el trigger q no deja pasar al jugador
-
+    private PlayCinematic _cinematic;
     private int _currentCount = 0;
 
 
@@ -23,17 +23,20 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver, IActiveable
             _puzzleManager.RegisterObserver(this);
         else
             Debug.LogWarning("No se asignó un PuzzleManager a " + gameObject.name);
+        _cinematic = GetComponent<PlayCinematic>();
 
-        
+
     }
     public void OnPuzzleEvent()
     {
         _currentCount+=1;
 
-        Debug.Log("resuelta una pieza del puzzle" + _currentCount) ;
+        if (_currentCount == 1)
         {
-            Debug.Log("Me hara falta mis repuestos");
-            
+            Debug.Log("resuelta una pieza del puzzle" + _currentCount);
+            {
+                Debug.Log("Me hara falta mis repuestos");
+            }
         }
         if (_currentCount == 2)
         {
@@ -41,7 +44,7 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver, IActiveable
             Destroy(_child);
         }
 
-        if (_currentCount == _requiredCount)
+        if (_currentCount == 3)
         {
             Debug.Log("puedes avanzar a la siguiente zona");
             PuzzleSolved();
@@ -51,9 +54,10 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver, IActiveable
     private void PuzzleSolved()
     {
         Debug.Log("Arreglaste el filtro de aire, ahor apodes acceder a la tercer zona");
+        _cinematic.Play();
+        //    Destroy(gameObject);
         //ahora si le prendo el script a la palacan del nviel 2 para que se pueda seguir luego del puzzle nivel 1
-        _nextChild.GetComponent<Collider2D>().enabled = true; 
-
+        StartCoroutine(ActivateDoorCooldown());
 
     }
     private void OnDestroy()
@@ -63,9 +67,19 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver, IActiveable
                                                      //Lei que puede dar problemas a futuro (temas memoria o bugs)asi que ya lo arreglo de entrada
     }
 
-    public void Activate()
+    public void AddNewPlayer() 
     {
-        Debug.Log("activada la maquina del aire en su totalidad!");
-       //anim del filtro de aire andando. Y casa?
+        ChildPlayerBehaviour child = FindAnyObjectByType<ChildPlayerBehaviour>();
+        if (child != null)
+            CharacterManager.Instance.JoinToTeam(child.gameObject);
+        else
+            Debug.LogWarning("No se encontró ningún objeto del tipo PlayerJoin en la escena.");
+    }
+    private IEnumerator ActivateDoorCooldown()
+    {
+        yield return new WaitForSeconds(3f);
+        IActiveable action = _nextChild.GetComponent<IActiveable>();
+        action.Activate();
+        AddNewPlayer(); //esto deberia llamarlo desde un trigger
     }
 }

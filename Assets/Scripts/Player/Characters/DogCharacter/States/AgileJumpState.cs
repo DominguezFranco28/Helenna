@@ -9,8 +9,8 @@ public class AgileJumpState : IState, IMovable, IFixedUpdate
     private AgilePlayerBehaviour _agilePlayerBehaviour;
     private AgileStateMachine _agileStateMachine;
     private PlatformDetector _platformDetector;
-    private float _moveSmoothTime = 0.1f; //ojo este valor, si es muy alto se bugea por el desplazamiento lento y colisiones
-    private Vector2 _velocity = Vector2.zero;
+    private float _moveSmoothTime = 0.2f; //ojo este valor, si es muy alto se bugea por el desplazamiento lento y colisiones
+    private Vector2 _velocity = new Vector2 (1,1);
     private Vector2 _targetPosition; // Guardamos solo una vez
 
     private GameObject _pickedObject = null;

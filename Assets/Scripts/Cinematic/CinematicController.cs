@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CinematicController : MonoBehaviour
@@ -11,6 +12,7 @@ public class CinematicController : MonoBehaviour
     {
         letterboxUI.ShowBorders();
         cameraZoom.StartZoom();
+        GameStateManager.Instance.SetState(GameState.Paused);
         // El Timeline se dispara desde CameraZoom cuando termina el zoom.
     }
 
@@ -18,5 +20,6 @@ public class CinematicController : MonoBehaviour
     {
         letterboxUI.HideBorders();
         cameraZoom.ResetZoom();
+        GameStateManager.Instance.SetState(GameState.Playing);
     }
 }

@@ -36,7 +36,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 6.2, y: 76, z: -0.53118}
-  m_LocalScale: {x: 0.8064463, y: 0.8064463, z: 0.8064463}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2216917969187451632}
@@ -277,6 +277,7 @@ MonoBehaviour:
     m_Bits: 73728
   _grabSpawnPoint: {fileID: 7410522951165885712}
   _bubbleSprite: {fileID: 1953642809, guid: fc09c30103b1d4b49b613592764bdcfe, type: 3}
+  _pickSFX: {fileID: 0}
 --- !u!1 &7410522951165885712
 GameObject:
   m_ObjectHideFlags: 0

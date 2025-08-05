@@ -44,7 +44,9 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
             PuzzleSolved();
         }
     }
-
+    // a futuro tengo que refactorizar y discrimanr bien los puzzles. Me gusta la logica ys eguro la mantenga.,
+    // pero tengo que hacer los scripts correspondientes para trabajar cada uno de manera distinta
+    // 
     private void PuzzleSolved()
     {
         Debug.Log("PUZZLE RESUELTO1"); 
@@ -55,12 +57,6 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
             _child.SetActive(true);
             //OnDestroy();
         }
-        else if (_activateDoor != null)
-        {
-            _activateDoor.Activate();
-         
-        }
-
         else
          {
             //este es el del filtro del aire. Creo siwtch, hago condiconales, o separo scripts?
