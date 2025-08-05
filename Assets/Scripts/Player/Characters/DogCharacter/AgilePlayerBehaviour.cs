@@ -34,6 +34,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public bool CanJump { get { return _canJump; } set { _canJump = value; } }
     public bool CanDig { get { return _canDig; } set { _canDig = value; } }
     public Vector2 MovementInput { get { return _movementInput; } }
+    public Vector2 LastMovementInput { get; set; }
     public Collider2D PlayerCollider { get { return _collider2D; } set { _collider2D = value; } }
     public Rigidbody2D Rigidbody2D { get { return _rb2D; } set { _rb2D = value; } }
     public HoleDetector HoleDetector { get; private set; }
@@ -56,7 +57,10 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     {
         if (!isInControll || !_canMove) return;
         {
+
             _movementInput = input.normalized;
+            if (_movementInput.magnitude > 0.01f) // aca guardo el ulktimo input para anim de impulse
+                LastMovementInput = _movementInput;
             _animator.SetFloat("Horizontal", _movementInput.x);
             _animator.SetFloat("Vertical", _movementInput.y);
             _animator.SetFloat("Speed", _movementInput.magnitude);

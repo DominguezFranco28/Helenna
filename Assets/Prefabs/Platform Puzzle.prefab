@@ -727,7 +727,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _posA: {fileID: 3463027501570875175}
   _posB: {fileID: 1758438729366361236}
-  _barrier: {fileID: 7974045885350712839}
+  _activeBarriers: []
+  _desactiveBarriers: []
   _moveSmoothTime: 0.5
 --- !u!114 &4677130787138894070
 MonoBehaviour:
@@ -744,6 +745,8 @@ MonoBehaviour:
   _requiredCount: 1
   _puzzleManager: {fileID: 429171096356483701}
   _child: {fileID: 0}
+  _anchorSFX: {fileID: 8300000, guid: bd2c11f50aad35d46b856686d9c52f2e, type: 3}
+  _platformSFX: {fileID: 8300000, guid: 8feb134ed6f9f694b8463214189ecbf7, type: 3}
 --- !u!1 &7178038062311606084
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,7 +914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _puzzleManager: {fileID: 429171096356483701}
-  _SFX: {fileID: 8300000, guid: 07a0b4af2a7d24c46acc908ce207fc6f, type: 3}
+  _SFX: {fileID: 8300000, guid: bd451e1757382454d8226cc40bcb2331, type: 3}
 --- !u!70 &1480107269639135020
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

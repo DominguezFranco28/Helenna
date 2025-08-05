@@ -43,12 +43,11 @@ public class PlatformDetector : MonoBehaviour
                     _playerBehaviour.CanJump = true;
                     PlatFormPosition = hit.collider.transform.position;
                     _lastPlatform = hit.collider;
-                    // Aquí puedes avisar que detectaste una nueva plataforma
+                 //aviso que se detecto nueva plataforma
                 }
                 else
                 {
-                    // Ya estás en esta plataforma, no la consideres nueva
-                    // Puedes poner un aviso aquí si quieres
+                    // Ya esta en esta plataforma
                 }
             }
             else

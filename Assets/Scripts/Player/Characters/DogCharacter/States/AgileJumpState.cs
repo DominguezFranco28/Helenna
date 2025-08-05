@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class AgileJumpState : IState, IMovable, IFixedUpdate
@@ -10,9 +11,9 @@ public class AgileJumpState : IState, IMovable, IFixedUpdate
     private AgileStateMachine _agileStateMachine;
     private PlatformDetector _platformDetector;
     private float _moveSmoothTime = 0.2f; //ojo este valor, si es muy alto se bugea por el desplazamiento lento y colisiones
-    private Vector2 _velocity = new Vector2 (1,1);
+    private Vector2 _velocity = new Vector2 (1.5f,1.5f);
     private Vector2 _targetPosition; // Guardamos solo una vez
-
+    private Vector2 _lastInput;
     private GameObject _pickedObject = null;
 
     public AgileJumpState (AgilePlayerBehaviour agilePlayerBehaviour,  AgileStateMachine agileStateMachine, PlatformDetector platformDetector)
@@ -34,10 +35,15 @@ public class AgileJumpState : IState, IMovable, IFixedUpdate
         //"EJjecuta la anim y sonido de salto"
         if (_agilePlayerBehaviour.IsGrounded)
         {
-        _agilePlayerBehaviour.Animator.SetBool("Jump", true);
-        SFXManager.Instance.PlaySFX(_agilePlayerBehaviour.JumpSFXClip);
+             _agilePlayerBehaviour.Animator.SetBool("Jump", true);
+            SFXManager.Instance.PlaySFX(_agilePlayerBehaviour.JumpSFXClip);
 
         }
+        // _lastInput = _agilePlayerBehaviour.LastMovementInput;
+        //_agilePlayerBehaviour.Animator.SetFloat("Horizontal", _lastInput.x);
+        //_agilePlayerBehaviour.Animator.SetFloat("Vertical", _lastInput.y);
+        //_agilePlayerBehaviour.Animator.SetFloat("Speed", _lastInput.magnitude);
+        //_agilePlayerBehaviour.SetMovementEnabled(false);
     }
 
     public void Exit()

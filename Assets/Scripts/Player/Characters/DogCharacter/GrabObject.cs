@@ -13,7 +13,10 @@ public class GrabObject : MonoBehaviour
     private SpriteRenderer _sprite;
     private GameObject _pickedObject = null;
     private Vector2 _onPositionTransform;
-    private bool _onPosition = false;
+    private bool _onPosition = false;    
+    // Lista de objetos en colision, para evitar el tp de objetos mal referenciados desde lejos.
+    // Lo meto en triggfer enter, y lo saco en el exit para aseugrarme de no pcikear ese objeto por ams que este lejos
+    private List<GameObject> _collidingObjects = new List<GameObject>();
 
 
     //prop lectura y escritura porque se modifica desde el state
@@ -25,34 +28,30 @@ public class GrabObject : MonoBehaviour
     public bool InColision { get { return _inColision; } }
 
     private bool _justDropped = false;// necesario xq sino me agarraba el primer item de todos cuando queria agarrar otro item, tiene que ver con el triggerstay, al soltarlo es como que volvio a colisionar con el y lo seteaba denuevo al mimsom
-    private void OnTriggerStay2D(Collider2D collision)
+  
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_justDropped) return; //no dejamos que setee un gameobject si lo acaba de soltar, para que no se quede permanente
-        //lo pase a deteccion de layer para poder hacerlo mas customizable con harold y el perro
-        if (((1 << collision.gameObject.layer) & _objectLayer) !=0)
+        if (((1 << collision.gameObject.layer) & _objectLayer) != 0)
         {
-                _inColision = true;
-            if (_pickedObject == null /*&& Input.GetKey(KeyCode.E)*/)
-            {
-                _pickedObject = collision.gameObject;
-                _sprite = collision.GetComponent<SpriteRenderer>();
-                _originalSprite = _sprite.sprite;
-            }
-          
-                
+            if (!_collidingObjects.Contains(collision.gameObject)) //agrego el item a la lista cuando colisiona con el
+                _collidingObjects.Add(collision.gameObject);
+            _inColision = true;
         }
         if (collision.gameObject.CompareTag("Ladder Position"))
         {
+            _collidingObjects.Remove(collision.gameObject);
             _onPosition = true;
             _onPositionTransform = collision.gameObject.transform.position;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (((1 << collision.gameObject.layer) & _objectLayer) != 0)
         {
+            if (_collidingObjects.Contains(collision.gameObject)) //lo saco de la lista cuando deja la colision, evito problemas de agarrar un item cuando estoy sonbre otro por problemas de ref
+                _collidingObjects.Remove(collision.gameObject);
             _inColision = false;
-            _justDropped = false;
 
 
         }
@@ -61,18 +60,25 @@ public class GrabObject : MonoBehaviour
             _onPosition = false;
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ladder Position"))
+        {
+            _onPosition = true;
+            _onPositionTransform = collision.gameObject.transform.position;
+        }
+    }
     public void GrabItem()
     {
-        if (_pickedObject == null)
-        {
-            return;
-
-        }
-             PlaySFX();
-            _pickedObject.transform.position = _grabSpawnPoint.transform.position;
-            _pickedObject.gameObject.transform.SetParent(_grabSpawnPoint.gameObject.transform); //set the parent so follow de mouth 
-            _pickedObject.GetComponent<Rigidbody2D>().simulated = false;
-            _sprite.sprite = _bubbleSprite;          
+        if (_collidingObjects.Count == 0) return;
+        _pickedObject = _collidingObjects[0]; // agarro el primer objeto de la lista siempre
+        _sprite = _pickedObject.GetComponent<SpriteRenderer>();
+        _originalSprite = _sprite.sprite;
+        PlaySFX();
+        _pickedObject.transform.position = _grabSpawnPoint.transform.position;
+        _pickedObject.gameObject.transform.SetParent(_grabSpawnPoint.gameObject.transform); //set the parent so follow de mouth 
+        _pickedObject.GetComponent<Rigidbody2D>().simulated = false;
+        _sprite.sprite = _bubbleSprite;          
         
             //como apago el rigidbody mientras lo muevo, no deberia tener problemas de fisicas. No hace falta el Fixed
 
@@ -106,12 +112,4 @@ public class GrabObject : MonoBehaviour
      {
         SFXManager.Instance.PlaySFX(_pickSFX);
      }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ladder Position"))
-        {
-            _onPosition = true;
-            _onPositionTransform = collision.gameObject.transform.position;
-        }
-    }
 }

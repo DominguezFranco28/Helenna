@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 8897391461319200139}
   - component: {fileID: 3265080076105430363}
   - component: {fileID: 7673268181757289225}
+  - component: {fileID: 1670828316946206387}
   m_Layer: 0
   m_Name: PressurePlate
   m_TagString: Untagged
@@ -232,3 +233,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _puzzleManager: {fileID: 0}
+  _audioClip: {fileID: 8300000, guid: bd9600329aad14d4db6064c118dd72b3, type: 3}
+--- !u!95 &1670828316946206387
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4025159523980785052}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

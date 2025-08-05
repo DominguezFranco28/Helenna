@@ -10,6 +10,7 @@ public class MovableObject : MonoBehaviour, IMovable
     [SerializeField] private float _moveSmoothTime = 0.2f;
     private Vector2 _velocity = Vector2.zero;
     [SerializeField] private float _stopThreshold = 0.05f;
+    [SerializeField] private AudioClip _moovingSFX;
 
     [Header("Collision")]
     [SerializeField] private LayerMask _obstacleMask; // the layers with which the object has to collide
@@ -33,6 +34,7 @@ public class MovableObject : MonoBehaviour, IMovable
         {
             _targetPosition = position;
             _isBeingMoved = true;
+            SFXManager.Instance.PlaySFX(_moovingSFX);
         }
     }
 

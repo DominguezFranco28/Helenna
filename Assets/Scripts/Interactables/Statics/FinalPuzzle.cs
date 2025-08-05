@@ -8,6 +8,8 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
     [SerializeField] private PuzzleManager _puzzleManager;
     [SerializeField] private IActiveable _activateDoor;
     [SerializeField] private GameObject _child; // arrastrás el hijo desde el inspector
+    [SerializeField] private AudioClip _anchorSFX; // arrastrás el hijo desde el inspector
+    [SerializeField] private AudioClip _platformSFX; // arrastrás el hijo desde el inspector
 
     private int _currentCount;
     //al final no lo hice instanciando el singleton porque no me dejaba reutilizarlo para otros puzzles.
@@ -27,11 +29,13 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
         {
             Debug.Log("PLATAFORMA ACTIVADA");
             MovablePlatform platform = gameObject.GetComponent<MovablePlatform>();
+            SFXManager.Instance.PlayLoop(_platformSFX);
             //cada vez que termina el movimiento reestablese a false dentro del script.
             if (platform != null)
             {
                 platform.ActiveLever = true; //no solo era importante swicehar la direcion tambioen tenia que indicarle si se habia ejecutado la palanca
                 platform.ChangePosition = !platform.ChangePosition; // esto invierte la boleana! de true a false y vicebersa
+                //SFXManager.Instance.StopLoop();
                 return;
             }
         }
@@ -54,6 +58,7 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
         if (gameObject.CompareTag("Activatable Anchor"))
         {
             Debug.Log("activaste el anclaje");
+            SFXManager.Instance.PlaySFX(_anchorSFX);
             _child.SetActive(true);
             //OnDestroy();
         }

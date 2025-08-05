@@ -20,7 +20,7 @@ public class AgilePlayerController : MonoBehaviour
         if (_agileBehaviour.isInControll)
         {
             _agileStateMachine?.Update();
-            if (_grabObject.PickedObject != null && _grabObject.InColision && Input.GetKeyDown(KeyCode.E))
+            if (_grabObject.PickedObject == null && _grabObject.InColision && Input.GetKeyDown(KeyCode.E))
             {
                 _agileStateMachine.TransitionTo(_agileStateMachine.itemState);
             }

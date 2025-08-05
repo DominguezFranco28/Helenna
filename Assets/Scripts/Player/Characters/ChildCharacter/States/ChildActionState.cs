@@ -24,7 +24,6 @@ public class ChildActionState : IState
 
         Debug.Log("Accionaste una palanca");
         //_USAR ANIMACION ACA
-        // AGREGAR CLIP SFXManager.Instance.PlaySFX();
         ActivateLever();
     }
 
@@ -63,8 +62,8 @@ public class ChildActionState : IState
         if (Input.GetKeyDown(KeyCode.E))
         {
             ActivateLever(); //resetea cada vez que apreta la e el ciclo de espera en la accion
-        }
-         if (Input.GetKeyDown(KeyCode.R)) //si el jugador apreta la r sale del estado
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
+        }
+
     }
 }

@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSmoothTime: 0.2
   _stopThreshold: 0.05
+  _moovingSFX: {fileID: 8300000, guid: 748b2d2925c8b284bae4e23f9e78b7aa, type: 3}
   _obstacleMask:
     serializedVersion: 2
     m_Bits: 22784

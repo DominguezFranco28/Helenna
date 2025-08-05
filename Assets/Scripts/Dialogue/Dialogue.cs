@@ -14,11 +14,14 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField, TextArea(3, 5)] private string[] dialogueLines;
+
+    [Header("Diálogo único, sin relación con el puzzle")]
+    [SerializeField, TextArea(2, 5)] private string oneShotLine;
     private bool collisionWithPlayer;
     private bool dialogueStarted;
     private int lineIndex = 0;
-
-
+    private bool oneShotDialogueShown = false;
+    private Coroutine currentCoroutine;
     private void Start()
     {
         // Inicializar las variables de estado necesarias
@@ -32,62 +35,46 @@ public class Dialogue : MonoBehaviour
     {
         if (GameStateManager.Instance.IsGamePaused())
             return;
-        //Debug.Log($"dialogueText.text={dialogueText.text}");
-        if (collisionWithPlayer && Input.GetKeyDown(KeyCode.E))
+        if (!collisionWithPlayer)
+            return;
+        // No permitimos input si un diálogo (de cualquier tipo) está en curso
+        if (dialogueStarted)
+            return;
+        // Si no hay puzzle asociado, no debe intentar usar lineindex ni dialgoos multiples.
+        if (airPuzzle == null)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.E) && airPuzzle !=null)
         {
-            //if (lineIndex == 0 || lineIndex == 1) //Primero, los dialogos determinados antes de vincularse al contador del puzzle
-            //{
-            //    if (!dialogueStarted && !dialoguePanel.activeSelf)
-            //    {
-            //        StartDialogue(lineIndex);
-            //        return;
-            //    }
-            //    else if (dialogueText.text == dialogueLines[lineIndex])
-            //    {
-            //        // Dentro de la función hay una corrutina, por eso solo se ejecuta si la línea se completó
-            //        EndDialogue();
-            //        lineIndex++; // Pasar a la siguiente línea fija (0 -> 1)
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        StopAllCoroutines();
-            //        dialogueText.text = dialogueLines[lineIndex];
-            //        return;
-            //    }
-            //} REVISAR ESTO, UN SOLO TEXTO INICIAL QUEDA FEO
-            
-            
-            
-            
-            lineIndex = airPuzzle.CurrentCount; //seteo con el contador del puzzle, despues de usar el contador para el dialogo default
 
-            if (lineIndex >= 0 && lineIndex < dialogueLines.Length)
+            int puzzleIndex = airPuzzle.CurrentCount;
+
+            if (puzzleIndex >= 0 && puzzleIndex < dialogueLines.Length)
             {
-                if (!dialogueStarted && !dialoguePanel.activeSelf) //activeSelf par aque un objeto puedar iniciar dialogo siempre, porque par ala palanca si le daba me borraba el dialogo del filtro del aire
-                    StartDialogue(lineIndex);
-
-
-                else if (dialogueText.text == dialogueLines[lineIndex])
+               //cerrar si ya se esta mostrando el texto completo, para eso el activeself
+                if (dialoguePanel.activeSelf && dialogueText.text == dialogueLines[puzzleIndex])
                 {
-                    // Dentro de la función hay una corrutina, por eso solo se ejecuta si la línea se completó
                     EndDialogue();
                 }
+                // si se esta tipeando el dialogo, omite la animaicon al volver a detectar el input
+                else if (dialogueStarted)
+                {
+                    if (currentCoroutine != null)
+                        StopCoroutine(currentCoroutine);
+
+                    dialogueText.text = dialogueLines[puzzleIndex];
+                    dialogueStarted = false; 
+                }
+                // Si no esta tipeando ni iniciado, iniciar dialogo
                 else
                 {
-                    // Acá se llega si se busca "omitir" el completado de la corrutina dentro de NextDialogueLine
-                    StopAllCoroutines();
-                    dialogueText.text = dialogueLines[lineIndex];
-
+                    StartDialogue(puzzleIndex);
                 }
             }
-            else
-            {
-                EndDialogue();//que me lo cierre siempre si ya no hay mas dialogos
-            }
         }
+    
 
-    }
+}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -95,6 +82,12 @@ public class Dialogue : MonoBehaviour
         {
             _dialogBubbleUI.SetActive(true);
             collisionWithPlayer = true;
+            //mostrar el oneshot si aplica (no tenga ningun puzzle asignado)
+            if (!oneShotDialogueShown && airPuzzle == null && !dialogueStarted)
+            {
+                ShowOneShotDialogue(oneShotLine);
+            }
+
         }
     }
 
@@ -108,12 +101,13 @@ public class Dialogue : MonoBehaviour
         }
     }
 
+
     // Se inicia todo
     private void StartDialogue(int index)
     {
         dialogueStarted = true;
         dialoguePanel.SetActive(true);
-        StartCoroutine(ShowLine(index));
+        currentCoroutine = StartCoroutine(ShowLine(index));
         
     }
     private void EndDialogue()
@@ -127,11 +121,35 @@ public class Dialogue : MonoBehaviour
     private IEnumerator ShowLine(int index)
     {
         dialogueText.text = "";
-        foreach (char ch in dialogueLines[lineIndex])
+        foreach (char ch in dialogueLines[index])
         {
             dialogueText.text += ch;
             yield return new WaitForSeconds(typingSpeed);
         }
+        dialogueStarted = false; // Permite cerrar con proxima E
     }
 
+    //Metodos para mostrar solo un dialogo, llamado a modo de trigger desde otro script.
+    public void ShowOneShotDialogue(string line)
+    {
+        if (oneShotDialogueShown) return;
+
+        oneShotDialogueShown = true;
+        dialogueStarted = true;
+        dialoguePanel.SetActive(true);
+        StartCoroutine(ShowSingleLine(line));
+    }
+
+    private IEnumerator ShowSingleLine(string line)
+    {
+        dialogueText.text = "";
+        foreach (char ch in line)
+        {
+            dialogueText.text += ch;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        yield return new WaitForSeconds(3f); // timer para que espere un poco antes de cerrarse solo, no quiero que dependa de imputs
+        EndDialogue();
+    }
 }
