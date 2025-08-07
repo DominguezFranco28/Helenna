@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9037851553793497553}
   - component: {fileID: 7364058690186325030}
   - component: {fileID: 4630486217782726812}
-  m_Layer: 14
+  m_Layer: 0
   m_Name: SlideFloor
   m_TagString: SlideFloor
   m_Icon: {fileID: 0}
