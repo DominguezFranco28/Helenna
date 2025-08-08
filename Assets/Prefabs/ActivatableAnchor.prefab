@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 8957703610652057765}
   - component: {fileID: 3136819059120925668}
   - component: {fileID: 5088114621754242158}
-  m_Layer: 18
+  m_Layer: 3
   m_Name: AnchorPoint
   m_TagString: HookPoint
   m_Icon: {fileID: 0}
@@ -217,7 +217,6 @@ GameObject:
   - component: {fileID: 2675755443745479731}
   - component: {fileID: 6252204169101388669}
   - component: {fileID: 3369280530140061152}
-  - component: {fileID: 5537954670860504911}
   m_Layer: 0
   m_Name: ActivatableAnchor
   m_TagString: Activatable Anchor
@@ -428,27 +427,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1522112, y: 1.3514557}
   m_EdgeRadius: 0
---- !u!95 &5537954670860504911
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8210587772762726286}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2f2488f12a83cc94a8db008eacbec3b9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &8516283020750537403
 PrefabInstance:
   m_ObjectHideFlags: 0

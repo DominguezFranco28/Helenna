@@ -1,0 +1,1020 @@
+fileFormatVersion: 2
+guid: 81bf6d39e47f21641bf1e5722648b80e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 361
+        width: 72
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0828a299e9dd2c64f9d7fcfa9407a144
+      internalID: 1449420940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 368
+        width: 58
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66862a9e955619845a3bfb5d3b4fc462
+      internalID: -1837287451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_2
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 377
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d530382c0510042acda91278ce1507
+      internalID: -240884846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_3
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 365
+        width: 82
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d9ad1333fd3194e8ded827b53985ae
+      internalID: 1766384445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_4
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 373
+        width: 46
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cadcdb75f3032b5478e8ef4aa1d07cfd
+      internalID: 1966967098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_5
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 380
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd57377599ddf742955814400e95267
+      internalID: -194756631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_6
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 365
+        width: 74
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b5c7003ec368c9499b4836a02093a1e
+      internalID: -969270021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_7
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 376
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c57a784f59dffff4dac8704d57996445
+      internalID: -1173962915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_8
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 383
+        width: 28
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f44507b0e3cdaed4b906250959ba33c1
+      internalID: -836823281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_9
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 259
+        width: 79
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ede241955392642bfce04cb90bd727
+      internalID: -484582642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_10
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 267
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ff49f74219b034797a0d2d79ae4be2
+      internalID: -1109450304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_11
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 274
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a0221a9270e16449bcd6125c2e62c2
+      internalID: 1975551679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_12
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 261
+        width: 72
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c67595bb259ad348bd0c86f843663d6
+      internalID: 451929436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_13
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 265
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c4776efda9621418a9e1b5a98f0f26
+      internalID: -277562175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_14
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 277
+        width: 34
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daeca5e17ecd1374db8c96ab69eac89b
+      internalID: -1160369543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_15
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 266
+        width: 61
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12da9f4b6caf60c4ab02265ddc26c350
+      internalID: -1766588772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_16
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 272
+        width: 49
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc825e765404d24e9ef33b1a0f66a03
+      internalID: 1901473047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_17
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 277
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1404d897548da44805e11911490e97
+      internalID: -109825754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_18
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 159
+        width: 56
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d987c02196976e45a6afe3765608f41
+      internalID: -1416941134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_19
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 164
+        width: 44
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c34adff1b4468c14cbaedae7c52d9c07
+      internalID: 1425867175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_20
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 169
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfd3be3f12ae3845b4e2ba07e17744d
+      internalID: -317011661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_21
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 156
+        width: 64
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cec5688c2cfd02c43ad7f0ac000f102d
+      internalID: 1891480897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_22
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 159
+        width: 51
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2bdd7907bb9ada4aae59dccb544b970
+      internalID: 667228480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_23
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 165
+        width: 34
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef8cc6599a464a4f958f219f24269d7
+      internalID: 2039776436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_24
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 160
+        width: 67
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fd1a541a5cc6b247ac4aa36050bb941
+      internalID: -534828104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_25
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 165
+        width: 51
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 464184b518ba940479ebc30e5af655cf
+      internalID: -804819093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_26
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 168
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f558eaf72e74d64f976a2e48b4dcbba
+      internalID: -376503012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_27
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 165
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d212aa8fa701b5b42840d669f9b90e9e
+      internalID: 1353430030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_28
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 164
+        width: 33
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5cef320189ea7a4d9381774a038724d
+      internalID: 287362389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_29
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 54
+        width: 64
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a50774f2112ae748974ea752922a111
+      internalID: 1862489976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_30
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 57
+        width: 54
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952e5787abaf76a46ad167b7516ed708
+      internalID: 1405335556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_31
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 62
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4cd2a41fc7b6d428b071b49070839c
+      internalID: -1783439859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_32
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 57
+        width: 60
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00a010b6b58c7e44b9aa0096d7adf6c
+      internalID: -515064846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_33
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 57
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ada50fb8ea4654d9a174ec7fa0aaf8
+      internalID: 817512415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_34
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 63
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0fe366b9d055cd4a9d7d2d9281071a8
+      internalID: 955622134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_35
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 56
+        width: 65
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b586396fef519054ba4abf8afbcab893
+      internalID: 1400858673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_36
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 64
+        width: 50
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff0ca80f38c0b64bbdadd2decaa361d
+      internalID: 279035953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_37
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 67
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32bd2fda32cd7241b63666b770d3719
+      internalID: -561451383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_38
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 57
+        width: 42
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7539aaa45c01b564ab1649a8c18db8ca
+      internalID: 239121120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Free-Top-Down-Bushes-Pixel-Art2-720x480_39
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 60
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a20ce60ae896ffd4d9340497a5d4c886
+      internalID: 1026022775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_0: 1449420940
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_1: -1837287451
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_10: -1109450304
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_11: 1975551679
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_12: 451929436
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_13: -277562175
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_14: -1160369543
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_15: -1766588772
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_16: 1901473047
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_17: -109825754
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_18: -1416941134
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_19: 1425867175
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_2: -240884846
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_20: -317011661
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_21: 1891480897
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_22: 667228480
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_23: 2039776436
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_24: -534828104
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_25: -804819093
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_26: -376503012
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_27: 1353430030
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_28: 287362389
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_29: 1862489976
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_3: 1766384445
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_30: 1405335556
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_31: -1783439859
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_32: -515064846
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_33: 817512415
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_34: 955622134
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_35: 1400858673
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_36: 279035953
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_37: -561451383
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_38: 239121120
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_39: 1026022775
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_4: 1966967098
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_5: -194756631
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_6: -969270021
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_7: -1173962915
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_8: -836823281
+      Free-Top-Down-Bushes-Pixel-Art2-720x480_9: -484582642
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
