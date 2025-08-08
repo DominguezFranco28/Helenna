@@ -71,6 +71,9 @@ TagManager:
   - name: Foreground
     uniqueID: 3143061505
     locked: 0
+  - name: DinamicLayers
+    uniqueID: 4165787677
+    locked: 0
   - name: UI
     uniqueID: 4006719075
     locked: 0

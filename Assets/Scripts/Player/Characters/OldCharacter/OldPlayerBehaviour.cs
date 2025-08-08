@@ -17,6 +17,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
 
     private bool _isInControll;
     private bool _isRecoiling = false;
+
     public bool IsInControll{ get { return _isInControll; } set { _isInControll = value; } } 
     public Animator Animator { get { return _animator; } }
     public Rigidbody2D Rigidbody2D{ get { return _rb2D; } } 

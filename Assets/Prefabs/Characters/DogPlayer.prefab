@@ -300,8 +300,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1929262187
-  m_SortingLayer: 4
+  m_SortingLayerID: -129179619
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 601666545, guid: 96469be80ca1aef4e8f36be700a9ebed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -311,7 +311,7 @@ SpriteRenderer:
   m_Size: {x: 2.625, y: 1.9375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1636411840943826631
@@ -458,6 +458,7 @@ MonoBehaviour:
     m_Bits: 65536
   _grabSpawnPoint: {fileID: 6997560079558672609}
   _bubbleSprite: {fileID: 21300000, guid: c99d1db0d21a9a44eaad291420ea52d5, type: 3}
+  _pickSFX: {fileID: 0}
 --- !u!114 &7724204352293867581
 MonoBehaviour:
   m_ObjectHideFlags: 0
