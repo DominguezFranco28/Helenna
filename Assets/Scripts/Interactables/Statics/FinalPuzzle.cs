@@ -30,12 +30,12 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
             Debug.Log("PLATAFORMA ACTIVADA");
             MovablePlatform platform = gameObject.GetComponent<MovablePlatform>();
             SFXManager.Instance.PlayLoop(_platformSFX);
+            StartCoroutine(WaitStopLoop());
             //cada vez que termina el movimiento reestablese a false dentro del script.
             if (platform != null)
             {
                 platform.ActiveLever = true; //no solo era importante swicehar la direcion tambioen tenia que indicarle si se habia ejecutado la palanca
                 platform.ChangePosition = !platform.ChangePosition; // esto invierte la boleana! de true a false y vicebersa
-                //SFXManager.Instance.StopLoop();
                 return;
             }
         }
@@ -59,6 +59,11 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
         {
             Debug.Log("activaste el anclaje");
             SFXManager.Instance.PlaySFX(_anchorSFX);
+            Animator animator = GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.SetBool("IsActive", true);
+            }
             _child.SetActive(true);
             //OnDestroy();
         }
@@ -74,6 +79,11 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
         if (_puzzleManager != null)
             _puzzleManager.UnregisterObserver(this); //esto es para dejar de observar una vez resuelto el puzzle.
                                                      //Lei que puede dar problemas a futuro (temas memoria o bugs)asi que ya lo arreglo de entrada
+    }
+    private IEnumerator WaitStopLoop()
+    {
+        yield return new WaitForSeconds(4);
+        SFXManager.Instance.StopLoop();
     }
 
 }

@@ -19,6 +19,7 @@ public class ActionLever : MonoBehaviour , IActiveable
     public void Activate()
     {
         SFXManager.Instance.PlaySFX(_SFX);
+        _animator.SetTrigger("Change");
         _puzzleManager.PuzzleCount();
     }
 

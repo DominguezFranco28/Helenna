@@ -78,7 +78,12 @@ public class GrabObject : MonoBehaviour
         _pickedObject.transform.position = _grabSpawnPoint.transform.position;
         _pickedObject.gameObject.transform.SetParent(_grabSpawnPoint.gameObject.transform); //set the parent so follow de mouth 
         _pickedObject.GetComponent<Rigidbody2D>().simulated = false;
-        _sprite.sprite = _bubbleSprite;          
+
+        if (_bubbleSprite != null)
+        {
+
+            _sprite.sprite = _bubbleSprite;
+        } 
         
             //como apago el rigidbody mientras lo muevo, no deberia tener problemas de fisicas. No hace falta el Fixed
 
