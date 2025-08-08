@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aba8a17141c14494cabbb5c95b00401f
+guid: aa67b85ce07a75849b7e6ccf0c024e81
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -93,43 +93,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Varios-Sheet_0
+      name: TierraCajaMov_0
       rect:
         serializedVersion: 2
-        x: 62
-        y: 377
-        width: 81
-        height: 119
+        x: 0
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e47276d1dcea34748aa90a3351850e01
-      internalID: -1258595458
+      spriteID: 35fab1db1933be243a790023c2d2d015
+      internalID: 138059077
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Varios-Sheet_1
+      name: TierraCajaMov_1
       rect:
         serializedVersion: 2
-        x: 179
-        y: 378
-        width: 184
-        height: 113
+        x: 16
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b9da0c41ef232c74d8ce64da578f1bab
-      internalID: 1365851605
+      spriteID: fc76eaf77cf889a4da8c588cbe9debf2
+      internalID: -236234258
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Varios-Sheet_2
+      name: TierraCajaMov_2
       rect:
         serializedVersion: 2
-        x: 390
-        y: 450
-        width: 50
-        height: 48
+        x: 48
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73bb577d64b27c74eb7aae12398fdb8c
-      internalID: 2042491576
+      spriteID: 169dfe4d54b4cab47b87791b2df8a303
+      internalID: 182544865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Varios-Sheet_3
+      name: TierraCajaMov_3
       rect:
         serializedVersion: 2
-        x: 390
-        y: 386
-        width: 50
-        height: 48
+        x: 64
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67db1d6d04246934a8ade62638af297f
-      internalID: 860827583
+      spriteID: 67ded5c7b8a8a3246b7bcafbb62efb83
+      internalID: -2022788112
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Varios-Sheet_4
+      name: TierraCajaMov_4
       rect:
         serializedVersion: 2
-        x: 56
-        y: 315
-        width: 32
-        height: 32
+        x: 80
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +195,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b6cf5735f90dc1408bdbabdd58d16fe
-      internalID: -801018001
+      spriteID: 8133f57274917b64ab93297b39347717
+      internalID: 206020262
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Varios-Sheet_5
+      name: TierraCajaMov_5
       rect:
         serializedVersion: 2
-        x: 114
-        y: 293
-        width: 59
-        height: 59
+        x: 0
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +216,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10edcf5805c03144ab43ee9e531b54e5
-      internalID: -1384951662
+      spriteID: 426a8ea2ba90c344183403faec82ded3
+      internalID: 1264992004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Varios-Sheet_6
+      name: TierraCajaMov_6
       rect:
         serializedVersion: 2
-        x: 216
-        y: 331
-        width: 33
-        height: 26
+        x: 16
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,20 +237,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41f7de852c641ca4297fc96a39b622db
-      internalID: 1174084223
+      spriteID: acd916873fe8771418b1cb8377eb891e
+      internalID: -934151749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Varios-Sheet_7
+      name: TierraCajaMov_7
       rect:
         serializedVersion: 2
-        x: 263
-        y: 331
-        width: 33
-        height: 26
+        x: 48
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e746d2de4ef19e64db92a3aaf2d5dd01
-      internalID: 112027988
+      spriteID: d28c79798366ac84baa44d4ba95ebff0
+      internalID: -1465156220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Varios-Sheet_8
+      name: TierraCajaMov_8
       rect:
         serializedVersion: 2
-        x: 334
-        y: 317
-        width: 52
-        height: 29
+        x: 64
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -305,20 +279,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a6a6dd44ebbc094f889374a8350d080
-      internalID: 172059119
+      spriteID: 1faf663462bf73e4ca2d4096c585680a
+      internalID: 158381707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Varios-Sheet_9
+      name: TierraCajaMov_9
       rect:
         serializedVersion: 2
-        x: 398
-        y: 317
-        width: 52
-        height: 27
+        x: 80
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -326,20 +300,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3321c4c4d87503e49ad8d60efa93ead8
-      internalID: -1239774704
+      spriteID: d592adefac7bd5b4f8d8def1cf8503d5
+      internalID: -1236536444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Varios-Sheet_10
+      name: TierraCajaMov_10
       rect:
         serializedVersion: 2
-        x: 40
-        y: 263
-        width: 48
-        height: 32
+        x: 48
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -347,20 +321,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1335c338ec735b4f806f1ffde5af236
-      internalID: -464787788
+      spriteID: 84babc5b922110a4cb8d25e00f8abd7f
+      internalID: 2015475341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Varios-Sheet_11
+      name: TierraCajaMov_11
       rect:
         serializedVersion: 2
-        x: 217
-        y: 283
-        width: 32
-        height: 20
+        x: 64
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,20 +342,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ed556f333770f2148bc3ccd4d720aa41
-      internalID: 1757633032
+      spriteID: e350ab65c8ce3da40b9bceeba08b7b51
+      internalID: -1407981344
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Varios-Sheet_12
+      name: TierraCajaMov_12
       rect:
         serializedVersion: 2
-        x: 266
-        y: 284
-        width: 30
-        height: 17
+        x: 80
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -389,134 +363,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69feac1fd8ab58b4a926129f7c35e6fc
-      internalID: 408605774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Varios-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 318
-        y: 283
-        width: 22
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5cc042fe7c1aaad43a5b9a797c1ed038
-      internalID: 1081646862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Varios-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 172
-        width: 65
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d845586ed1aaf9846a059c1e14b3a9f2
-      internalID: -300514341
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Varios-Sheet_15
-      rect:
-        serializedVersion: 2
-        x: 107
-        y: 168
-        width: 54
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2815428bc57276b40a50f14a6034675c
-      internalID: 1720094160
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Varios-Sheet_16
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 169
-        width: 74
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c3d1ed949bd4ce340972931a80aa8b29
-      internalID: 609118501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Varios-Sheet_17
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 25
-        width: 108
-        height: 95
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a918543e67cda724ca2a0cf8562056e1
-      internalID: -1136910851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Varios-Sheet_18
-      rect:
-        serializedVersion: 2
-        x: 252
-        y: 89
-        width: 74
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 03a2cee4e9e492849b7e4ae6a23fd3db
-      internalID: -1702979511
+      spriteID: eb04c863ccd899749adcb19b82584ce3
+      internalID: -215349785
       vertices: []
       indices: 
       edges: []
@@ -532,25 +380,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Varios-Sheet_0: -1258595458
-      Varios-Sheet_1: 1365851605
-      Varios-Sheet_10: -464787788
-      Varios-Sheet_11: 1757633032
-      Varios-Sheet_12: 408605774
-      Varios-Sheet_13: 1081646862
-      Varios-Sheet_14: -300514341
-      Varios-Sheet_15: 1720094160
-      Varios-Sheet_16: 609118501
-      Varios-Sheet_17: -1136910851
-      Varios-Sheet_18: -1702979511
-      Varios-Sheet_2: 2042491576
-      Varios-Sheet_3: 860827583
-      Varios-Sheet_4: -801018001
-      Varios-Sheet_5: -1384951662
-      Varios-Sheet_6: 1174084223
-      Varios-Sheet_7: 112027988
-      Varios-Sheet_8: 172059119
-      Varios-Sheet_9: -1239774704
+      TierraCajaMov_0: 138059077
+      TierraCajaMov_1: -236234258
+      TierraCajaMov_10: 2015475341
+      TierraCajaMov_11: -1407981344
+      TierraCajaMov_12: -215349785
+      TierraCajaMov_2: 182544865
+      TierraCajaMov_3: -2022788112
+      TierraCajaMov_4: 206020262
+      TierraCajaMov_5: 1264992004
+      TierraCajaMov_6: -934151749
+      TierraCajaMov_7: -1465156220
+      TierraCajaMov_8: 158381707
+      TierraCajaMov_9: -1236536444
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
