@@ -132,7 +132,7 @@ Transform:
   m_GameObject: {fileID: 3009480530083837600}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.004, y: 0.537, z: 0}
+  m_LocalPosition: {x: -0.004, y: 0.262, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -235,8 +235,8 @@ Transform:
   m_GameObject: {fileID: 3788921316580080689}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.002, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0070964, y: -0.1145, z: 0}
+  m_LocalScale: {x: 3.3866, y: 3.3866, z: 3.3866}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4659339698646878189}
@@ -381,7 +381,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -296.37, y: -261.06, z: 0}
-  m_LocalScale: {x: 3.93295, y: 2.644, z: 2.644}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3965485893707899431}
@@ -428,8 +428,8 @@ SpriteRenderer:
   m_SortingLayerID: 1697216077
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.8490566, g: 0.01201493, b: 0.01201493, a: 1}
+  m_Sprite: {fileID: -300514341, guid: aba8a17141c14494cabbb5c95b00401f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -502,7 +502,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 4.0625, y: 2.5625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -525,7 +525,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _posA: {fileID: 0}
   _posB: {fileID: 0}
-  _barrier: {fileID: 7062479793212578217}
+  _activeBarriers: []
+  _desactiveBarriers: []
   _moveSmoothTime: 0.5
 --- !u!114 &5495506603027543896
 MonoBehaviour:
@@ -542,6 +543,8 @@ MonoBehaviour:
   _requiredCount: 1
   _puzzleManager: {fileID: 0}
   _child: {fileID: 0}
+  _anchorSFX: {fileID: 0}
+  _platformSFX: {fileID: 0}
 --- !u!1 &7062479793212578217
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +572,7 @@ Transform:
   m_GameObject: {fileID: 7062479793212578217}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.004, y: -0.586, z: 0}
+  m_LocalPosition: {x: -0.004, y: -0.299, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

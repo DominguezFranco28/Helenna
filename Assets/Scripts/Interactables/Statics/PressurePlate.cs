@@ -23,8 +23,9 @@ public class PressurePlate : MonoBehaviour
         {
             Debug.Log("Placa de presion activada");
             _platformUsed = true;
+
             SFXManager.Instance.PlaySFX(_audioClip);
-            _animator.SetTrigger("Pressed");
+            _animator.SetBool("IsPressed", true);
             _puzzleManager.PuzzleCount();
             // detect box &stop it / activate lever
             MovableObject movable = other.GetComponent<MovableObject>();
