@@ -81,7 +81,6 @@ public class GrabObject : MonoBehaviour
 
         if (_bubbleSprite != null)
         {
-
             _sprite.sprite = _bubbleSprite;
         } 
         
@@ -107,6 +106,7 @@ public class GrabObject : MonoBehaviour
             _pickedObject.GetComponent<Rigidbody2D>().simulated = true;
             _justDropped = true; //para que el trigger no hinche
             _pickedObject = null;
+  
         }
     }
     public void ChangeSprite()
