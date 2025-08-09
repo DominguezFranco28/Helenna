@@ -7,11 +7,14 @@ public class ArmBullet : MonoBehaviour
 {
     [SerializeField] private float _shotSpeed;
     [SerializeField] private float _pushDistance = 5f;
+
+    private LayerMask _collisionMask;//este guarda la mascara activa 
     private Rigidbody2D _rb;
     private Animator _animator;
     private Vector2 _direction;
     private Collider2D _armCol;  
     private ArmImpulser _armImpulser;
+    private OldPlayerBehaviour _oldPlayerBehaviour;
     private ImpulseType _impulseType;
     // Methods to set the reference from outside the script,
     // from the armImpulser when instantiating the arm.
@@ -28,11 +31,21 @@ public class ArmBullet : MonoBehaviour
     {
         _impulseType = type;
     }
+    public void DetectVerticality(bool isHighGround)
+    {
+        if (isHighGround)
+            gameObject.layer = LayerMask.NameToLayer("BulletHigh");
+        else
+            gameObject.layer = LayerMask.NameToLayer("BulletGround");
+        // Cambiar layer segun la pos del jugador para detectar "veerticalidad", ajustado desde la matrix de unity gestiono las colisiones a gusto
+    }
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
         _armCol = GetComponent<Collider2D>();
+        _oldPlayerBehaviour = FindObjectOfType<OldPlayerBehaviour>(); //podria pasarlo por parametro como el impulseforce
         _animator = GetComponent<Animator>();
+
         Destroy(gameObject, 0.8f);
     }
     private void FixedUpdate()

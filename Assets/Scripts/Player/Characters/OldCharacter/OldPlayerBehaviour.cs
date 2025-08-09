@@ -18,6 +18,8 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     private bool _isInControll;
     private bool _isRecoiling = false;
 
+    private bool _isOnHighGround;
+
     public bool IsInControll{ get { return _isInControll; } set { _isInControll = value; } } 
     public Animator Animator { get { return _animator; } }
     public Rigidbody2D Rigidbody2D{ get { return _rb2D; } } 
@@ -80,6 +82,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         {
             _rb2D.velocity = _movementInput * _normalSpeed;
         }
+        Debug.Log(_isOnHighGround);
     }
 
     public void PerformThrowArm(ImpulseType type)
@@ -98,6 +101,26 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     {
         _canMove = isEnabled;
 
+    }
+    private void OnTriggerEnter2D(Collider2D collision) // detecto si esta en zona elevada para jugar ocn las llayers con la que peude chcoar el disparo
+    {
+        if (collision.CompareTag("HighGround"))
+        {
+            _isOnHighGround = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("HighGround"))
+        {
+            _isOnHighGround = false;
+        }
+    }
+
+    public bool IsOnHighGround()
+    {
+        return _isOnHighGround;
     }
 }
 

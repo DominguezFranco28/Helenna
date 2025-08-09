@@ -135,6 +135,8 @@ public class ArmImpulser : MonoBehaviour
             armScript.SetDirection(direction);
             armScript.SetImpulseForce(_impulser);
             armScript.SetImpulseType(type);
+            armScript.DetectVerticality(_movementBehaviour.IsOnHighGround()); //paso la altura del jugador al metodo que instancia la bala para que modifique su layer
+            
 
         }
     }

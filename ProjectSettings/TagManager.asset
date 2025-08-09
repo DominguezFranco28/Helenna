@@ -19,6 +19,7 @@ TagManager:
   - Slidable
   - Movable Platform
   - Ladder Position
+  - HighGround
   layers:
   - Default
   - TransparentFX
@@ -38,11 +39,11 @@ TagManager:
   - JumpPlatform
   - Key Item
   - Ground
-  - 
-  - 
-  - 
-  - 
-  - 
+  - TowerWalls
+  - BulletHigh
+  - BulletGround
+  - Air Machine
+  - Air Filter
   - 
   - 
   - 
