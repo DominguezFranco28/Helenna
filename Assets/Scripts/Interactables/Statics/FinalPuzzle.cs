@@ -7,9 +7,9 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
     [SerializeField] private int _requiredCount = 3;
     [SerializeField] private PuzzleManager _puzzleManager;
     [SerializeField] private IActiveable _activateDoor;
-    [SerializeField] private GameObject _child; // arrastrás el hijo desde el inspector
-    [SerializeField] private AudioClip _anchorSFX; // arrastrás el hijo desde el inspector
-    [SerializeField] private AudioClip _platformSFX; // arrastrás el hijo desde el inspector
+    [SerializeField] private GameObject _child;
+    [SerializeField] private AudioClip _anchorSFX; 
+    [SerializeField] private AudioClip _platformSFX; 
 
     private int _currentCount;
     //al final no lo hice instanciando el singleton porque no me dejaba reutilizarlo para otros puzzles.
@@ -67,10 +67,12 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
             _child.SetActive(true);
             //OnDestroy();
         }
-        else
+        else //puzzle general level 3
          {
-            //este es el del filtro del aire. Creo siwtch, hago condiconales, o separo scripts?
-            Destroy(_child);
+            Animator animator = _child.GetComponent<Animator>();
+            Collider2D collider2D = _child.GetComponent<Collider2D>();
+            animator.SetBool("Open", true);
+            collider2D.enabled = false;
         }
       
     }

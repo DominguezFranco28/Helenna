@@ -7,7 +7,8 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver
     [SerializeField] private int _requiredCount = 3;
     [SerializeField] private PuzzleManager _puzzleManager;
     [SerializeField] private GameObject _child; // objeto a destruir, seguramente el g.o que tiene el trigger q no deja pasar al jugador
-    [SerializeField] private GameObject _nextChild; // objeto a destruir, seguramente el g.o que tiene el trigger q no deja pasar al jugador
+    [SerializeField] private GameObject _interruptor; // objeto a destruir, seguramente el g.o que tiene el trigger q no deja pasar al jugador
+    [SerializeField] private GameObject _door; // objeto a destruir, seguramente el g.o que tiene el trigger q no deja pasar al jugador
     private PlayCinematic _cinematic;
     private int _currentCount = 0;
 
@@ -47,6 +48,9 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver
         if (_currentCount == 3)
         {
             _cinematic.Play();
+            _interruptor.tag = "Lever";
+       
+
         }
         if (_currentCount == 4)
         {
@@ -60,7 +64,7 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver
         Debug.Log("Arreglaste el filtro de aire, ahor apodes acceder a la tercer zona");
         //    Destroy(gameObject);
         //ahora si le prendo el script a la palacan del nviel 2 para que se pueda seguir luego del puzzle nivel 1
-        IActiveable action = _nextChild.GetComponent<IActiveable>();
+        IActiveable action = _door.GetComponent<IActiveable>();
         action.Activate();
         AddNewPlayer(); //esto deberia llamarlo desde un trigger
 

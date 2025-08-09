@@ -117,7 +117,17 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
             _isOnHighGround = false;
         }
     }
-
+    private void OnTriggerStay2D(Collider2D collision) //parche rapido par apuzzle 1. Integrar a state
+    {
+        if (collision.CompareTag("Lever") && Input.GetKeyDown(KeyCode.E))
+        {
+            ActionLever activeable = collision.GetComponent<ActionLever>();
+            if (activeable != null)
+            {
+                activeable.Activate();
+            }
+        }
+    }
     public bool IsOnHighGround()
     {
         return _isOnHighGround;
