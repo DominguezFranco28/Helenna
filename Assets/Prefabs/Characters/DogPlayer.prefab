@@ -458,7 +458,7 @@ MonoBehaviour:
     m_Bits: 65536
   _grabSpawnPoint: {fileID: 6997560079558672609}
   _bubbleSprite: {fileID: 21300000, guid: c99d1db0d21a9a44eaad291420ea52d5, type: 3}
-  _pickSFX: {fileID: 0}
+  _pickSFX: {fileID: 8300000, guid: 687c0352ddfad5974ad4c44873580e73, type: 3}
 --- !u!114 &7724204352293867581
 MonoBehaviour:
   m_ObjectHideFlags: 0
