@@ -374,7 +374,7 @@ MonoBehaviour:
   _mouth: {fileID: 8509397170982658359}
   _speed: 12
   _jumpDelay: 0.2
-  _footstepsSFX: {fileID: 8300000, guid: 5113611678da121458f1e387bccbd14d, type: 3}
+  _footstepsSFX: {fileID: 8300000, guid: cd93f9b000a076c3bbc056a005fe8358, type: 3}
   _digSFXClip: {fileID: 8300000, guid: 07a0b4af2a7d24c46acc908ce207fc6f, type: 3}
   _jumpSFXClip: {fileID: 8300000, guid: 00e1e3be6c78b744db80ec201ecef63f, type: 3}
   isInControll: 0

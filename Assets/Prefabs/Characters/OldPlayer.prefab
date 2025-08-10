@@ -84,7 +84,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _normalSpeed: 13
   _lowSpeed: 8
-  _footstepsSFX: {fileID: 8300000, guid: 5113611678da121458f1e387bccbd14d, type: 3}
+  _footstepsSFX: {fileID: 8300000, guid: cd93f9b000a076c3bbc056a005fe8358, type: 3}
 --- !u!114 &1781645198128025142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   _armShot: {fileID: 407622333644509480, guid: bc51ce119604fc6499a67ef2674380cd, type: 3}
   _spawnPoint: {fileID: 2216917969187451632}
   _dashSFX: {fileID: 8300000, guid: 81ec307f0c8576847a409f3584424b6a, type: 3}
-  _throwSFX: {fileID: 8300000, guid: 832480a67b90ef440b989dec56f817f5, type: 3}
+  _throwSFX: {fileID: 8300000, guid: e2b8951652b421d4d8dbd19bcf740fe0, type: 3}
 --- !u!212 &8427001394516932874
 SpriteRenderer:
   m_ObjectHideFlags: 0

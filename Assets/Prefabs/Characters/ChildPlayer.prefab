@@ -279,7 +279,7 @@ MonoBehaviour:
   _speed: 11
   _climbSpeed: 5
   _climbingLoopSFX: {fileID: 8300000, guid: 00e1e3be6c78b744db80ec201ecef63f, type: 3}
-  _footstepsSFX: {fileID: 8300000, guid: 5113611678da121458f1e387bccbd14d, type: 3}
+  _footstepsSFX: {fileID: 8300000, guid: cd93f9b000a076c3bbc056a005fe8358, type: 3}
   isInControll: 0
 --- !u!114 &447372214511955916
 MonoBehaviour:
