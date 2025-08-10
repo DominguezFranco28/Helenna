@@ -525,7 +525,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _posA: {fileID: 0}
   _posB: {fileID: 0}
-  _barrier: {fileID: 7062479793212578217}
+  _activeBarriers: []
+  _desactiveBarriers: []
   _moveSmoothTime: 0.5
 --- !u!114 &5495506603027543896
 MonoBehaviour:
@@ -542,6 +543,8 @@ MonoBehaviour:
   _requiredCount: 1
   _puzzleManager: {fileID: 0}
   _child: {fileID: 0}
+  _anchorSFX: {fileID: 8300000, guid: bd2c11f50aad35d46b856686d9c52f2e, type: 3}
+  _platformSFX: {fileID: 8300000, guid: e2802f65a4849a788986357d063f72d7, type: 3}
 --- !u!1 &7062479793212578217
 GameObject:
   m_ObjectHideFlags: 0
