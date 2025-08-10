@@ -82,7 +82,6 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         {
             _rb2D.velocity = _movementInput * _normalSpeed;
         }
-        Debug.Log(_isOnHighGround);
     }
 
     public void PerformThrowArm(ImpulseType type)

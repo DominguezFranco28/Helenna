@@ -35,6 +35,6 @@ public class ActivationDoor : MonoBehaviour, IActiveable
     private IEnumerator RestoreMusicAfterDelay(AdaptiveMusicLayering layering, float delay)
     {
         yield return new WaitForSeconds(delay);
-        layering.FadeBaseMusicVolume(1f); // original value
+        layering.FadeBaseMusicVolume(0.5f); // original value
     }
 }
