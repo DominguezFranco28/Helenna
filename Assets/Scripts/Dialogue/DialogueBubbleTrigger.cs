@@ -15,7 +15,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("OldPlayer")|| other.CompareTag("ChildPlayer"))
         {
             _dialogBubbleUI.SetActive(true); // Muestra la burbuja
             _playerColision = true;
@@ -24,7 +24,7 @@ public class DialogueBubbleTrigger : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("OldPlayer") || other.CompareTag("ChildPlayer"))
         {
             _dialogBubbleUI.SetActive(false); // Oculta la burbuja
             _playerColision = false;
