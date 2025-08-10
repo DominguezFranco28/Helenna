@@ -58,16 +58,16 @@ public class MovablePlatform : MonoBehaviour , IMovable
         
         Vector2 smoothPos = Vector2.SmoothDamp(_rb2D.position, direction, ref _velocity, _moveSmoothTime);
         _rb2D.MovePosition(smoothPos);
-
+        foreach (GameObject barrier in _activeBarriers)
+        {
+            barrier.SetActive(true);
+        }
         // si harold esta encima de la paltaforma, lo movemos manual
         if (_player != null && _isOnPlatform)
         {
             Rigidbody2D playerRb = _player.GetComponent<Rigidbody2D>();
             playerRb.MovePosition(smoothPos);
-            foreach (GameObject barrier in _activeBarriers)
-            {
-                barrier.SetActive(true);
-            }
+
         }
 
         //esto tuve que agregarlo por la prop que se gestiona desde el FinalPuzzle. Ademas de que se activa la palanca y a su vez cambia la pos. Cuando finaliza el traslado, vuelvo a poner la palanca es false
@@ -78,9 +78,13 @@ public class MovablePlatform : MonoBehaviour , IMovable
             {
                 barrier.SetActive(false);
             }
-            if (!ChangePosition) //si se queda en a, que me apague todas las barreras
+            if (!ChangePosition) //si se queda en a, que me prenda todas las barreras desactivadas
             {
-                foreach (GameObject barrier in _activeBarriers)
+                foreach (GameObject barrier in _desactiveBarriers)
+                {
+                    barrier.SetActive(true);
+                }
+                foreach (GameObject barrier in _activeBarriers) // y que me apague todas las barreras que estaban activadas rdurante el dezplazamiento
                 {
                     barrier.SetActive(false);
                 }

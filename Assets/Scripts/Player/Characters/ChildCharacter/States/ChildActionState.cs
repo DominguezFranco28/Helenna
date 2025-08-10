@@ -23,13 +23,14 @@ public class ChildActionState : IState
     {
 
         Debug.Log("Accionaste una palanca");
-        //_USAR ANIMACION ACA
+        _childPlayerBehaviour.Animator.SetBool("IsHolding", true);
         ActivateLever();
     }
 
     public void Exit()
     {
         Debug.Log("Saliste del estado : ACTION");
+        _childPlayerBehaviour.Animator.SetBool("IsHolding", false);
     }
     private void ActivateLever()
     {
@@ -59,9 +60,9 @@ public class ChildActionState : IState
             }
             return; // skip the update until delay is over
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            ActivateLever(); //resetea cada vez que apreta la e el ciclo de espera en la accion
+            //ActivateLever(); //resetea cada vez que apreta la e el ciclo de espera en la accion
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
         }
 
