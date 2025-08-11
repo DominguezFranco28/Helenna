@@ -7,7 +7,8 @@ public class GrabObject : MonoBehaviour
     [Header(" Layer que debe tener el objeto para ser agarrable ")]
     [SerializeField] private LayerMask _objectLayer;
     [SerializeField] public GameObject _grabSpawnPoint;
-    [SerializeField] private Sprite _bubbleSprite;
+    // [SerializeField] private Sprite _bubbleSprite;
+    private PuzzleKey _puzzleKey;
     [SerializeField] private AudioClip _pickSFX;
     private Sprite _originalSprite;
     private SpriteRenderer _sprite;
@@ -36,6 +37,7 @@ public class GrabObject : MonoBehaviour
             if (!_collidingObjects.Contains(collision.gameObject)) //agrego el item a la lista cuando colisiona con el
                 _collidingObjects.Add(collision.gameObject);
             _inColision = true;
+            _puzzleKey = collision.GetComponent<PuzzleKey>();
         }
         if (collision.gameObject.CompareTag("Ladder Position"))
         {
@@ -52,6 +54,7 @@ public class GrabObject : MonoBehaviour
             if (_collidingObjects.Contains(collision.gameObject)) //lo saco de la lista cuando deja la colision, evito problemas de agarrar un item cuando estoy sonbre otro por problemas de ref
                 _collidingObjects.Remove(collision.gameObject);
             _inColision = false;
+            _puzzleKey = null;
 
 
         }
@@ -79,9 +82,9 @@ public class GrabObject : MonoBehaviour
         _pickedObject.gameObject.transform.SetParent(_grabSpawnPoint.gameObject.transform); //set the parent so follow de mouth 
         _pickedObject.GetComponent<Rigidbody2D>().simulated = false;
 
-        if (_bubbleSprite != null)
+        if (_puzzleKey != null)
         {
-            _sprite.sprite = _bubbleSprite;
+            _sprite.sprite = _puzzleKey.BubbleSprite;
         } 
         
             //como apago el rigidbody mientras lo muevo, no deberia tener problemas de fisicas. No hace falta el Fixed

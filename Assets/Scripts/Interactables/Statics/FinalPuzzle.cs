@@ -29,7 +29,7 @@ public class FinalPuzzle : MonoBehaviour, IPuzzleObserver
         {
             Debug.Log("PLATAFORMA ACTIVADA");
             MovablePlatform platform = gameObject.GetComponent<MovablePlatform>();
-            SFXManager.Instance.PlayLoop(_platformSFX);
+            SFXManager.Instance.PlaySFX(_platformSFX);
             StartCoroutine(WaitStopLoop());
             //cada vez que termina el movimiento reestablese a false dentro del script.
             if (platform != null)

@@ -6,7 +6,11 @@ public class PuzzleKey : MonoBehaviour
 {
     [SerializeField] private LayerMask _objectLayer; //defino la layer del objeto que me interesa para detectar el trigger (OnPositionObject)
     [SerializeField] private PuzzleManager _puzzleManager; //Instancia del Manager asociada a un GameObject. El objeto del puzzle con el que interactue, debe tener la misma referencia a esta misma instancia para funcionar (agrupar)
+    [SerializeField] private Sprite _bubbleSprite;
+         //Instancia del Manager asociada a un GameObject. El objeto del puzzle con el que interactue, debe tener la misma referencia a esta misma instancia para funcionar (agrupar)
     private Collider2D _collider2D;
+    public Sprite BubbleSprite { get { return _bubbleSprite; } }
+
 
     private void Start()
     {

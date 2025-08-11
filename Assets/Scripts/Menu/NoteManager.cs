@@ -43,18 +43,13 @@ public class NoteManager : MonoBehaviour
         _noteUI.SetActive(false);
         SceneManager.LoadScene(_nextSceneName);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
+    public void EndScene(string sceneName)
+    {
+        //GameStateManager.Instance.SetState(GameState.Playing);
+        //Time.timeScale = 1f;
+        //_noteUI.SetActive(false);
+        _nextSceneName = sceneName;
+        SceneManager.LoadScene(_nextSceneName);
     }
 }

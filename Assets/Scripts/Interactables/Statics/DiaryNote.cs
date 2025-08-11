@@ -13,8 +13,8 @@ public class DiaryNote : PlayerDetector, IActiveable
     public void Activate()
     {
         SFXManager.Instance.StopLoop();
-        NoteManager.Instance.ShowNote(_noteText, _nextSceneName);
-        Destroy(gameObject);
+        NoteManager.Instance.EndScene(_nextSceneName);
+        //Destroy(gameObject);
     }
 
     public override void Effect(Collider2D collision)
