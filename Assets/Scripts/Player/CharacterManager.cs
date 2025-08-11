@@ -35,10 +35,10 @@ public class CharacterManager : MonoBehaviour
             ActivateCharacter(_currentIndex);
         }
         // i put a tp to make testing faster, maybe I'll leave it for the final delivery.
-        if (Input.GetKeyDown(KeyCode.LeftShift) && (characters[_currentIndex].name == "OldPlayer"))
-        {
-            TeleportAllToCurrent();
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftShift) && (characters[_currentIndex].name == "OldPlayer"))
+        //{
+        //    TeleportAllToCurrent();
+        //}
     }
 
     void ActivateCharacter(int index)
