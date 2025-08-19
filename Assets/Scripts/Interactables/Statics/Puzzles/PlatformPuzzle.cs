@@ -13,7 +13,7 @@ public class PlatformPuzzle : Puzzle, IPuzzleObserver
         else
             Debug.LogWarning("No se asignó un PuzzleManager a " + gameObject.name);
     }
-    public void OnPuzzleEvent()
+    public void OnPuzzleEvent(int delta)
     {
         Debug.Log("PLATAFORMA ACTIVADA");
         SFXManager.Instance.PlaySFX(_SFX);

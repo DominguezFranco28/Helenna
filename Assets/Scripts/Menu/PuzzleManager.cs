@@ -23,17 +23,17 @@ public class PuzzleManager : MonoBehaviour
         }
     }
     //  para actualizar info y notificar a los observadores
-    public void PuzzleCount()
+    public void PuzzleCount( int delta )
     {
-        NotifyObservers();
+        NotifyObservers(delta);
     }
 
     // Notificar a todos los observadores
-    private void NotifyObservers()
+    private void NotifyObservers(int delta)
     {
         foreach (IPuzzleObserver observer in observers)
         {
-            observer.OnPuzzleEvent();
+            observer.OnPuzzleEvent(delta);
         }
     }
 }

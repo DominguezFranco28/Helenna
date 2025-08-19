@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5477005298743429187
 Transform:
   m_ObjectHideFlags: 0
@@ -208,7 +208,7 @@ Transform:
   m_GameObject: {fileID: 1782341344318912653}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -402.88, y: 6.93, z: 0.7773597}
+  m_LocalPosition: {x: -381.39215, y: 10.14788, z: 1.5547321}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -464,7 +464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2159443554706759138
 Transform:
   m_ObjectHideFlags: 0
@@ -565,7 +565,7 @@ GameObject:
   - component: {fileID: 8946752439404439519}
   - component: {fileID: 1252193733890990921}
   - component: {fileID: 7868662527720825701}
-  - component: {fileID: 4677130787138894070}
+  - component: {fileID: 4184460959886364161}
   m_Layer: 0
   m_Name: MovablePlatform
   m_TagString: Movable Platform
@@ -629,7 +629,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -129179619
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -300514341, guid: aba8a17141c14494cabbb5c95b00401f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -730,12 +730,12 @@ MonoBehaviour:
   _activeBarriers:
   - {fileID: 1727778523630078624}
   - {fileID: 4234355425685342799}
-  - {fileID: 2695585869064583438}
   - {fileID: 7974045885350712839}
   _desactiveBarriers:
-  - {fileID: 1727778523630078624}
+  - {fileID: 0}
+  - {fileID: 4234355425685342799}
   _moveSmoothTime: 0.5
---- !u!114 &4677130787138894070
+--- !u!114 &4184460959886364161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -744,14 +744,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6523403712186135867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0300a080ef5fc2648b8c1cd656fe58f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e31b3359d7095f4d8b3610366789295, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _requiredCount: 1
   _puzzleManager: {fileID: 429171096356483701}
-  _child: {fileID: 0}
-  _anchorSFX: {fileID: 8300000, guid: bd2c11f50aad35d46b856686d9c52f2e, type: 3}
-  _platformSFX: {fileID: 8300000, guid: 8feb134ed6f9f694b8463214189ecbf7, type: 3}
+  _SFX: {fileID: 8300000, guid: e2802f65a4849a788986357d063f72d7, type: 3}
+  _movablePlatform: {fileID: 7868662527720825701}
 --- !u!1 &7178038062311606084
 GameObject:
   m_ObjectHideFlags: 0
@@ -767,7 +766,7 @@ GameObject:
   - component: {fileID: 5273072438000176942}
   - component: {fileID: 1480107269639135020}
   m_Layer: 0
-  m_Name: Lever plataforma
+  m_Name: Lever platform
   m_TagString: Lever
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -782,7 +781,7 @@ Transform:
   m_GameObject: {fileID: 7178038062311606084}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.986, y: 3.765, z: 0}
+  m_LocalPosition: {x: -7.02, y: 2.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -828,7 +827,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -129179619
   m_SortingLayer: 6
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1174084223, guid: aba8a17141c14494cabbb5c95b00401f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -876,7 +875,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 1.625}
+    oldSize: {x: 2.0625, y: 1.625}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -895,7 +894,7 @@ Animator:
   m_GameObject: {fileID: 7178038062311606084}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 798426ee9fdebfb419c10380a8f1f75a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -972,7 +971,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2746043242935008888
 Transform:
   m_ObjectHideFlags: 0

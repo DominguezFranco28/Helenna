@@ -20,10 +20,10 @@ public class FinalPuzzle : Puzzle, IPuzzleObserver
         else
             Debug.LogWarning("No se asignó un PuzzleManager a " + gameObject.name);
     }
-    public void OnPuzzleEvent()
+    public void OnPuzzleEvent(int delta)
     {
 
-        _currentCount--;
+        _currentCount+= delta;
         Debug.Log("resuelta una pieza del puzzle");
         Debug.Log(_currentCount);
         if (_currentCount == 0)

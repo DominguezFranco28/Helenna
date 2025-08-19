@@ -22,7 +22,7 @@ public class PuzzleKey : MonoBehaviour
         if (((1 << other.gameObject.layer) & _objectLayer) != 0)
         {
             Debug.Log("OBJETO SOBRE RESOLUCION, USADO");
-            _puzzleManager.PuzzleCount();
+            _puzzleManager.PuzzleCount(1);
             _collider2D.enabled = false;
             Destroy(gameObject);
         }

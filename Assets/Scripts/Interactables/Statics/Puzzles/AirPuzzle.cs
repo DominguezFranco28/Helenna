@@ -28,9 +28,9 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver
 
 
     }
-    public void OnPuzzleEvent()
+    public void OnPuzzleEvent(int delta)
     {
-        _currentCount+=1;
+        _currentCount+=delta;
 
         if (_currentCount == 1)
         {
@@ -48,7 +48,7 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver
         if (_currentCount == 3)
         {
             _cinematic.Play();
-            _interruptor.tag = "Lever";
+            _interruptor.tag = "Lever"; //le pongo la tag de lever a estar altura del puzzle para que harold pueda ioneractuar con ella.
        
 
         }

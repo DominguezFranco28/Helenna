@@ -84,8 +84,11 @@ public class MovableObject : MonoBehaviour, IMovable
     {
         _targetPosition = target;
         _isBeingMoved = true; // Habilita el suavizado
-        _canMove = false;
-        _isStopping = true;
+
+
+        //si quisiera detenner la caja en la placa de presion descomentar esto.
+        //_canMove = false; 
+        //_isStopping = true;
 
     }
 }

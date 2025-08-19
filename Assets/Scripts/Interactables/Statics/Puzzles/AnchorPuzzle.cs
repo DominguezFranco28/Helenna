@@ -5,10 +5,11 @@ using UnityEngine;
 public class AnchorPuzzle : Puzzle , IPuzzleObserver
 {
     [SerializeField] GameObject _anchorChild;
+    [SerializeField]  PressurePlate[] _pressurePlates;
     Animator _animator;
-    public void OnPuzzleEvent()
+    public void OnPuzzleEvent(int delta)
     {
-        _currentCount--;
+        _currentCount +=delta;
         Debug.Log("resuelta una pieza del puzzle");
         Debug.Log(_currentCount);
         if (_currentCount == 0)
@@ -25,12 +26,20 @@ public class AnchorPuzzle : Puzzle , IPuzzleObserver
         _animator.SetBool("IsActive", true);
         
         _anchorChild.SetActive(true);
+        foreach (PressurePlate pressurePlate in _pressurePlates)
+        {
+            if (pressurePlate.NeedHold)
+            {
+                pressurePlate.DeactivatePlate(); ; //desactivo las placas de presion que necesitan mantenerse activas
+            }
+        }
     }
 
     // Start is called before the first frame update
     protected override void Start() //overrida necesario para sobreeescribir el start
     {
         base.Start(); //seteo el required count heredado de la clase abstracta, y luego agrego logica ind
+        Debug.Log("Iniciando AnchorPuzzle" + _currentCount);
         _animator = GetComponent<Animator>();
         if (_puzzleManager != null)
             _puzzleManager.RegisterObserver(this);

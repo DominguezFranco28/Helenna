@@ -41,9 +41,7 @@ public class ChildActionState : IState
             _childPlayerBehaviour.StopMovement();
             IActiveable activeable = _actionDetector.LevelCollider.GetComponent<IActiveable>();
             activeable.Activate();
-            _actionDetector.CanActivate = true; //al final necesite volver a usar la palanca 
-            _actionDetector.CanActivate = false; //al final necesite volver a usar la palanca 
-            //animacion de cambio de lado con la palanca?
+            _actionDetector.CanActivate = false; 
 
         }
     }
@@ -58,13 +56,9 @@ public class ChildActionState : IState
                 _delayCompleted = true;
                 Debug.Log("End of delay");
             }
-            return; // skip the update until delay is over
-        }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            //ActivateLever(); //resetea cada vez que apreta la e el ciclo de espera en la accion
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
         }
+
 
     }
 }

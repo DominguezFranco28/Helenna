@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IPuzzleObserver 
 {
-    void OnPuzzleEvent();
+    void OnPuzzleEvent(int delta);
     void PuzzleSolved();
 }
