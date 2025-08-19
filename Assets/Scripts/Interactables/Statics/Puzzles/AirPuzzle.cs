@@ -59,16 +59,6 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver
         }
     } 
 
-    private void PuzzleSolved()
-    {
-        Debug.Log("Arreglaste el filtro de aire, ahor apodes acceder a la tercer zona");
-        //    Destroy(gameObject);
-        //ahora si le prendo el script a la palacan del nviel 2 para que se pueda seguir luego del puzzle nivel 1
-        IActiveable action = _door.GetComponent<IActiveable>();
-        action.Activate();
-        AddNewPlayer(); //esto deberia llamarlo desde un trigger
-
-    }
     private void OnDestroy()
     {
         if (_puzzleManager != null)
@@ -83,5 +73,20 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver
             CharacterManager.Instance.JoinToTeam(child.gameObject);
         else
             Debug.LogWarning("No se encontró ningún objeto del tipo PlayerJoin en la escena.");
+    }
+
+    void PuzzleSolved()
+    {
+                Debug.Log("Arreglaste el filtro de aire, ahor apodes acceder a la tercer zona");
+        //    Destroy(gameObject);
+        //ahora si le prendo el script a la palacan del nviel 2 para que se pueda seguir luego del puzzle nivel 1
+        IActiveable action = _door.GetComponent<IActiveable>();
+        action.Activate();
+        AddNewPlayer(); //esto deberia llamarlo desde un trigger
+    }
+
+    void IPuzzleObserver.PuzzleSolved()
+    {
+        PuzzleSolved();
     }
 }

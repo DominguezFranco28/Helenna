@@ -213,11 +213,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4637069715853428866}
   - component: {fileID: 7193405643530712009}
-  - component: {fileID: 1930219599864377852}
   - component: {fileID: 2675755443745479731}
   - component: {fileID: 6252204169101388669}
   - component: {fileID: 3369280530140061152}
   - component: {fileID: 6497312196448122928}
+  - component: {fileID: 7957720379665946646}
   m_Layer: 0
   m_Name: ActivatableAnchor
   m_TagString: Activatable Anchor
@@ -294,23 +294,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1930219599864377852
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8210587772762726286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0300a080ef5fc2648b8c1cd656fe58f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _requiredCount: 1
-  _puzzleManager: {fileID: 4013813516773898893}
-  _child: {fileID: 3130376866169195471}
-  _anchorSFX: {fileID: 8300000, guid: bd2c11f50aad35d46b856686d9c52f2e, type: 3}
-  _platformSFX: {fileID: 8300000, guid: bd451e1757382454d8226cc40bcb2331, type: 3}
 --- !u!61 &2675755443745479731
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -449,6 +432,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7957720379665946646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8210587772762726286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52fe8d1941945b04eba5638cc130877b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _requiredCount: 1
+  _puzzleManager: {fileID: 4013813516773898893}
+  _SFX: {fileID: 8300000, guid: bd2c11f50aad35d46b856686d9c52f2e, type: 3}
+  _anchorChild: {fileID: 3130376866169195471}
 --- !u!1001 &8516283020750537403
 PrefabInstance:
   m_ObjectHideFlags: 0

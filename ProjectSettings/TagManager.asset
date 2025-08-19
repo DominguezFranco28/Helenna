@@ -20,6 +20,7 @@ TagManager:
   - Movable Platform
   - Ladder Position
   - HighGround
+  - FollowCamera
   layers:
   - Default
   - TransparentFX

@@ -7,9 +7,11 @@ public class CinematicController : MonoBehaviour
 {
     public CameraZoom cameraZoom;
     public LetterboxUI letterboxUI;
+    public GameObject cameraFollow;
 
     public void PlayCinematic()
     {
+        cameraFollow.SetActive(true);
         letterboxUI.ShowBorders();
         cameraZoom.StartZoom();
         GameStateManager.Instance.SetState(GameState.Paused);
@@ -20,6 +22,7 @@ public class CinematicController : MonoBehaviour
     {
         letterboxUI.HideBorders();
         cameraZoom.ResetZoom();
+        cameraFollow.SetActive(false);
         GameStateManager.Instance.SetState(GameState.Playing);
     }
 }

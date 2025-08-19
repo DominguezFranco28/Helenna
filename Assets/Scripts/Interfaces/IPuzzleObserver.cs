@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IPuzzleObserver 
 {
     void OnPuzzleEvent();
+    void PuzzleSolved();
 }
