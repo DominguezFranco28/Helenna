@@ -27,6 +27,7 @@ public class CharacterManager : MonoBehaviour
 
     void Update()
     {
+        if (GameStateManager.Instance.IsGamePaused()) return; //si el juego esta en pausa, que no me deje cambiar de personaje
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             
