@@ -23,6 +23,8 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad,
 
 ![Menu](Screenshots/first-prototype/Helenna-Menu.png)
 ![Editor](Screenshots/vertical-slice/editor.png)
+![Levels](Screenshots/vertical-slice/puzlle-trio.jpeg)
+![Levels](Screenshots/vertical-slice/rex-jumping.jpeg)
 
 ---
 
