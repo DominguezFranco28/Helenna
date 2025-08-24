@@ -17,10 +17,13 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
 
     private bool _isInControll;
     private bool _isRecoiling = false;
-
+    private bool _armReleased = false; //para saber si el brazo fue liberado, para no repetir la animacion de recoil con el throw
+    private bool _armPulled = false; //para saber si el brazo fue liberado, para no repetir la animacion de recoil con el throw
     private bool _isOnHighGround;
 
     public bool IsInControll{ get { return _isInControll; } set { _isInControll = value; } } 
+    public bool ArmPulled{ get { return _armPulled; } set { _armPulled = value; } } 
+    public bool ArmRelease { get { return _armReleased; } set { _armReleased = value; } } 
     public Animator Animator { get { return _animator; } }
     public Rigidbody2D Rigidbody2D{ get { return _rb2D; } } 
     public Vector2 MovementInput { get { return _movementInput; } }
@@ -82,6 +85,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         {
             _rb2D.velocity = _movementInput * _normalSpeed;
         }
+        Debug.Log(_armPulled);
     }
 
     public void PerformThrowArm(ImpulseType type)
@@ -89,6 +93,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         if (!IsInControll) return;
         _armImpulser.GetThrowArm(type);
     }
+
 
     public void SetControl(bool isActive)
     {

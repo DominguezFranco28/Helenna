@@ -88,7 +88,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
         // Aplica la rotación al objeto de la boca
-        _mouth.rotation = Quaternion.Euler(0, 0, angle);
+       // _mouth.rotation = Quaternion.Euler(0, 0, angle);
 
         // Detecta si el input es principalmente vertical
         bool isVertical = Mathf.Abs(dir.y) > Mathf.Abs(dir.x);
@@ -134,7 +134,8 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
         if (!isInControll || !_canMove) return;
         _rb2D.velocity = _movementInput * _speed;
         CheckGround();
-        
+        UpdateMouthDirection(_movementInput); // Actualiza la dirección de la boca en cada FixedUpdate
+
         _jumpTimer += Time.deltaTime;
         if (_jumpTimer >= _jumpDelay)
         {

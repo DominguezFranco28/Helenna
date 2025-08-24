@@ -39,6 +39,7 @@ public class ImpulseState :  IState
     {
         Debug.Log("You left the state: IMPULSE");
         _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", false);
+        //me daba problemas al no resetear nunca el released del brazo
 
     }
 
@@ -49,17 +50,27 @@ public class ImpulseState :  IState
             if (Input.GetMouseButtonDown(0)) //Left click = push
             {
                 _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
+                _oldPlayerBehaviour.ArmRelease = true; // Set the flag to true to prevent multiple arm releases
                 _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Push);
                 _timerStarted = true;
             }
 
-            if (Input.GetMouseButtonDown(1)) // Right click = pull
+            if (Input.GetMouseButtonDown(1)) // 
             {
-                _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
+                if (_oldPlayerBehaviour.ArmRelease)
+                {
+                    _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");// Set the flag to true to prevent multiple arm releases
+                    _oldPlayerBehaviour.ArmPulled = true; //si uso el click derecho y el brazo fue previamente liberado, acciono el tiron del brazo
+                                                          //desde el script del armbullet, se gestiona la atraccion si esta bandera del behaviour esta activada.
+                    _timerStarted = true;
+                }
+                _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");// Set the flag to true to prevent multiple arm releases
+                _oldPlayerBehaviour.ArmRelease = true; // Set the flag to true to prevent multiple arm releases
                 _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Pull);
                 _timerStarted = true;
-
             }
+
+
         }
         else
         {

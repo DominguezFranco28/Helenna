@@ -13,6 +13,7 @@ public class GrabObject : MonoBehaviour
     private Sprite _originalSprite;
     private SpriteRenderer _sprite;
     private GameObject _pickedObject = null;
+    private string _originalTag;
     private Vector2 _onPositionTransform;
     private bool _onPosition = false;    
     // Lista de objetos en colision, para evitar el tp de objetos mal referenciados desde lejos.
@@ -77,6 +78,7 @@ public class GrabObject : MonoBehaviour
         _pickedObject = _collidingObjects[0]; // agarro el primer objeto de la lista siempre
         _sprite = _pickedObject.GetComponent<SpriteRenderer>();
         _originalSprite = _sprite.sprite;
+        _originalTag = _pickedObject.tag;
         PlaySFX();
         _pickedObject.transform.position = _grabSpawnPoint.transform.position;
         _pickedObject.gameObject.transform.SetParent(_grabSpawnPoint.gameObject.transform); //set the parent so follow de mouth 
@@ -96,7 +98,7 @@ public class GrabObject : MonoBehaviour
         {
             ChangeSprite();
             if (!_onPosition)
-                _pickedObject.tag = "Untagged";
+                _pickedObject.tag = _originalTag;
             if (_onPosition)
             {
 

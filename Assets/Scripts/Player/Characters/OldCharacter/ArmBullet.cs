@@ -7,6 +7,7 @@ public class ArmBullet : MonoBehaviour
 {
     [SerializeField] private float _shotSpeed;
     [SerializeField] private float _pushDistance = 5f;
+    [SerializeField] private float _lifeTime = 1f;
 
     private LayerMask _collisionMask;//este guarda la mascara activa 
     private Rigidbody2D _rb;
@@ -16,6 +17,12 @@ public class ArmBullet : MonoBehaviour
     private ArmImpulser _armImpulser;
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private ImpulseType _impulseType;
+
+
+    private Transform _parentMovable; //para hacer padre a los puntos de anclajemovibles
+    private bool _isInHook = false; // bandera para saber si quedo enganchada
+    private Vector2 _stopPoint;
+
     // Methods to set the reference from outside the script,
     // from the armImpulser when instantiating the arm.
     // I bring the direction and strength of the impulse to the ArmBUllet instantiation.
@@ -46,10 +53,32 @@ public class ArmBullet : MonoBehaviour
         _oldPlayerBehaviour = FindObjectOfType<OldPlayerBehaviour>(); //podria pasarlo por parametro como el impulseforce
         _animator = GetComponent<Animator>();
 
-        Destroy(gameObject, 0.8f);
+        StartCoroutine(AutoDestroy());
+    }
+
+    private IEnumerator AutoDestroy()
+    {
+        yield return new WaitForSeconds(_lifeTime);
+
+        if (!_isInHook) // solo destruir si no esta enganchado
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        //reseteo todas las banderas relacionadas al brazo lanzado UNA VEZ DESTRUIDO. Este se destruye automaticamente si no queda anclado
+        //tiempo de vida del disparo ajustable desde inspector  
+        _isInHook = false; // Reset the flag to allow future hook impacts
+        _stopPoint = Vector2.zero;
+        _oldPlayerBehaviour.ArmPulled = false;
+        _oldPlayerBehaviour.ArmRelease = false;
+        _parentMovable = null;
     }
     private void FixedUpdate()
     {
+       // Debug.Log(_isInHook);
         _rb.velocity = _direction * _shotSpeed;
 
         //parametro de direccion tomado de la pos de mouse, no de inputs
@@ -57,36 +86,39 @@ public class ArmBullet : MonoBehaviour
         _animator.SetTrigger("IsShooting");
         _animator.SetFloat("Horizontal", _direction.x);
         _animator.SetFloat("Vertical", _direction.y);
+        if (_isInHook && _oldPlayerBehaviour.ArmPulled)
+            {
+               Debug.Log("THE ATTRACTION IS ACTIVATED");
+            //stopPoint dinamico, para tener en cuenta la posiconm actual del HookPoint si se mueve.
+            _stopPoint = (Vector2)_parentMovable.position - _direction.normalized * 0.5f;
+            _armImpulser.MovePlayerToAnchor(_stopPoint, ImpulseType.Pull); //activo el reposicionamiento del jugador
+               Destroy(gameObject); // Destroy the bullet after pulling the player
+            }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // maybe I should make a switch, since there is no more than 3 posible scenarios for the armbullet colission
-        if (collision.gameObject.CompareTag("HookPoint"))
+        if (collision.gameObject.CompareTag("HookPoint") && !_isInHook) 
         {
+            _isInHook = true; // Set the flag to true to prevent multiple hook impacts
+            _parentMovable = collision.transform; // Get the parent transform of the hook point
+            transform.SetParent(_parentMovable,true); //true para mantener la pos globan en el momento del enganche 
             Debug.Log("Impact whit hook point!");
-            Destroy(gameObject);
-            if (_armImpulser != null)
-            {
-                //Distance before the 0 point of intact, so that it brakes a little earlier and the collisions do not overlap
-                Vector2 impactPoint = collision.contacts[0].point;
-                float stopDistance = 0.5f;
-                Vector2 stopPoint = impactPoint - _direction.normalized * stopDistance;
-                _armImpulser.MovePlayerToAnchor(stopPoint, _impulseType);
-                //I call the public armimpulser method to activate the movement. 
-                //With the stoppoint parameter I make sure that it brakes a little before reaching the anchor
-            }
+
+                _shotSpeed = 0f; // Stop the bullet's movement
+                _armCol.enabled = false; // Disable the collider to prevent further collisions
+
         }
-
-
+        // maybe I should make a switch
         else if ((collision.gameObject.CompareTag("Pushable")) && _impulseType == ImpulseType.Push)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Destroy the bullet if it collides with a pushable object
             Debug.Log("Impact whit movableObject");
             var collisionMove = collision.gameObject.GetComponent<MovableObject>();
             Vector2 impactPoint = collision.contacts[0].point;
-            // Determino la direccion en X e  Y, quiero evitar diagonales 
-            Vector2 pushDir = _direction; //a la direccion se le asigna un nuevo valor de tipo mvector 2, pero restringido para eivtar diagonales
+            // Si el objeto es movible, lo empujo en la direccion del disparo
+            // Determino la direccion en X e  Y, a la direccion se le asigna un nuevo valor de tipo vector 2, pero restringido para evitar diagonales
+            Vector2 pushDir = _direction; 
             if (Mathf.Abs(pushDir.x) > Mathf.Abs(pushDir.y))
             {
                 pushDir = new Vector2(Mathf.Sign(pushDir.x), 0); // Solo eje X
@@ -110,7 +142,7 @@ public class ArmBullet : MonoBehaviour
 
         else if ((collision.gameObject.CompareTag("Pushable")) && _impulseType == ImpulseType.Pull)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); // Destroy the bullet if it collides with a pushable object
             Debug.Log("Impactaste con un objeto movible");
             var collisionMove = collision.gameObject.GetComponent<MovableObject>();
             Vector2 impactPoint = collision.contacts[0].point;
@@ -135,6 +167,9 @@ public class ArmBullet : MonoBehaviour
             collisionMove.MoveTo(pushTarget);
 
         }
-            Destroy(gameObject);            
+        else
+        {
+            Destroy(gameObject); // Destroy the bullet if it collides with anything else
+        }
     }
  }

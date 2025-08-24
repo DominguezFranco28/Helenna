@@ -43,27 +43,6 @@ public class ArmImpulser : MonoBehaviour
     {
         ThrowArm(type);
     }
-    private void FixedUpdate()
-    {
-        if (_isRecoiling)
-        {
-            float stopThreshold = 0.1f; //ojo con este valor porque si lo subia daba problemas
-            float smoothTime = _moveSmoothTime;
-
-            Vector2 currentPosition = _rb2D.position;
-            Vector2 newPosition = Vector2.SmoothDamp(currentPosition, _recoilTarget, ref _recoilVelocity, smoothTime);
-
-            _rb2D.MovePosition(newPosition); //este metodo mas efgectivo para el uso de fisicas que el SmoothDump q no usa fisicas
-
-            if (Vector2.Distance(newPosition, _recoilTarget) <= stopThreshold)
-            {
-                _rb2D.MovePosition(_recoilTarget); // Para corregir posicion final exacta
-                _isRecoiling = false;
-
-            }
-        }
-    }
-
     void Start()
     {
         //I'll ​​leave the link to the other script established. From here I can use other methods or properties.
@@ -74,6 +53,30 @@ public class ArmImpulser : MonoBehaviour
         _impulser = this;
         _rb2D = GetComponent<Rigidbody2D>();
     }
+    private void FixedUpdate()
+    {
+        if (_isRecoiling)
+        {
+            float stopThreshold = 0.1f; //ojo con este valor porque si lo subia daba problemas
+            float smoothTime = _moveSmoothTime;
+
+            Vector2 currentPosition = _rb2D.position;
+            Vector2 newPosition = Vector2.SmoothDamp(currentPosition, _recoilTarget, ref _recoilVelocity, smoothTime);
+
+           
+            //buscar forma de detectar colisiones para frenar movimiento 
+            
+            _rb2D.MovePosition(newPosition); //este metodo mas efgectivo para el uso de fisicas con rb que el SmoothDump q no usa fisicas
+
+            if (Vector2.Distance(newPosition, _recoilTarget) <= stopThreshold)
+            {
+                _rb2D.MovePosition(_recoilTarget); // Para corregir posicion final exacta
+                _isRecoiling = false;
+
+            }
+        }
+    }
+
 
     private IEnumerator ApplyRecoil(Vector2 anchorPosition, ImpulseType type) 
     {
@@ -107,7 +110,6 @@ public class ArmImpulser : MonoBehaviour
 
             return; //only let be one active arm.
         }
-
         SFXManager.Instance.PlaySFX(_throwSFX);
         Vector2 direction = _mousePosition.MouseWorlPos;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
