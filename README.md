@@ -21,8 +21,10 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad,
 
 ## Capturas
 
-![Menu](Screenshots/Helenna-Menu.png)
-![Editor](Screenshots/helenna-editor.png)
+![Menu](Screenshots/first-prototype/Helenna-Menu.png)
+![Editor](Screenshots/vertical-slice/editor.png)
+![Levels](Screenshots/vertical-slice/puzlle-trio.jpeg)
+![Levels](Screenshots/vertical-slice/rex-jumping.jpeg)
 
 ---
 
@@ -56,6 +58,7 @@ Este proyecto fue desarrollado como un prototipo integrador para la universidad,
 
 -Desarrollado por **Franco Dominguez**  
 -Pixel Art por **Tomas Sobrado**  
+-Música y SFX por **Mauricio Sebastian Gamon Valdez**  
 [LinkedIn – Franco Dominguez](https://www.linkedin.com/in/franco-dom%C3%ADnguez-a21101274/)
 
 ---
