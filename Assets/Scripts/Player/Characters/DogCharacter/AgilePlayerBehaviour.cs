@@ -45,11 +45,13 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 
     void Awake()
     {
+        Debug.Log("Z ANTES DEL NORMALIZE: " + transform.position.z);
         _rb2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         HoleDetector = GetComponentInChildren<HoleDetector>(); //rever esto, puedo integrarlo en el constructor del estado como el Jump
         _collider2D = GetComponent<Collider2D>();
         _mouthOriginalPos = _mouth.position;
+        NormalizeZ(transform);
     }
  
 
@@ -64,6 +66,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
             _animator.SetFloat("Horizontal", _movementInput.x);
             _animator.SetFloat("Vertical", _movementInput.y);
             _animator.SetFloat("Speed", _movementInput.magnitude);
+            NormalizeZ(transform);
             UpdateMouthDirection(_movementInput); 
             if (_delayCompleted) //revisar esto
             {
@@ -81,7 +84,8 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
         {
             _mouth.position = _mouth.transform.position;
              return;
-        } 
+        }
+        
         //revbisar esto, lo saque con ia xq desconozco el funcionamiento de estos metodos
 
         // Calcula el ángulo en radianes y lo convierte a grados
@@ -174,6 +178,17 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public void SetMovementEnabled(bool isEnabled)
     {
         _canMove = isEnabled;
+    }
+
+    public  void NormalizeZ(Transform trans, float z = 0f) //metood apra normalizar z en todos los hijos del perro, me daban bugs algunos con la boca
+    {
+        Vector3 pos = trans.position;
+        pos.z = z;
+        trans.position = pos;
+        foreach (Transform child in trans)
+        {
+            NormalizeZ(child, z);
+        }
     }
 }
 

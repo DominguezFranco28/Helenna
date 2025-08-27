@@ -100,13 +100,25 @@ public class ArmBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("HookPoint") && !_isInHook) 
         {
+            Debug.Log("Impact whit hook point!");
             _isInHook = true; // Set the flag to true to prevent multiple hook impacts
             _parentMovable = collision.transform; // Get the parent transform of the hook point
             transform.SetParent(_parentMovable,true); //true para mantener la pos globan en el momento del enganche 
-            Debug.Log("Impact whit hook point!");
+                                                  
+        // fuerzo el eje Z a 0 xq a veces se me iba a 58 (idk) y generaba problemas de visibilidad
+            Vector3 fixedPosition = transform.position;
+            fixedPosition.z = 0f;
+            transform.position = fixedPosition;
+            if (_rb != null)  
+            {
 
-                _shotSpeed = 0f; // Stop the bullet's movement
-                _armCol.enabled = false; // Disable the collider to prevent further collisions
+                // freno el Rigidbody por completo
+                _rb.velocity = Vector2.zero;
+                _rb.isKinematic = true; // tuve que desactivar el rb porque interferia con el mov del padre (bug visual si el Hook se movia x codigo)}
+
+            }
+            _shotSpeed = 0f; // Stop the bullet's movement
+            _armCol.enabled = false; // Disable the collider to prevent further collisions
 
         }
         // maybe I should make a switch
