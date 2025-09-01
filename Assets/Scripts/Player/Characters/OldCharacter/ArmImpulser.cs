@@ -5,12 +5,15 @@ using TMPro;
 using Unity.Burst.Intrinsics;
 using Unity.VisualScripting;
 using UnityEngine;
+using static System.TimeZoneInfo;
+using UnityEngine.SceneManagement;
 
 public class ArmImpulser : MonoBehaviour
 {
     //Variables to adjust parameters of the IMPULSE force
     [SerializeField] private float _moveSmoothTime; 
     [SerializeField] private bool _isRecoiling = false;
+    [SerializeField] private float _spawnTimer;
     private Vector2 _recoilTarget;
     private Vector2 _recoilVelocity;
     private Rigidbody2D _rb2D;
@@ -27,7 +30,6 @@ public class ArmImpulser : MonoBehaviour
 
 
     //Variables to obtain components external to the arm.
-    private MousePosition _mousePosition;
     private OldPlayerBehaviour _movementBehaviour;
 
 
@@ -48,7 +50,6 @@ public class ArmImpulser : MonoBehaviour
         //I'll ​​leave the link to the other script established. From here I can use other methods or properties.
         //Mainly used to get the mouse position, which caused problems when calculating it in both scripts
         _playerCol = GetComponent<Collider2D>();
-        _mousePosition = GetComponent<MousePosition>(); 
         _movementBehaviour = GetComponent<OldPlayerBehaviour>();
         _impulser = this;
         _rb2D = GetComponent<Rigidbody2D>();
@@ -104,15 +105,21 @@ public class ArmImpulser : MonoBehaviour
     }
     private void ThrowArm(ImpulseType type)
     {
-
         if (_currentArmBullet != null)
         {
 
             return; //only let be one active arm.
         }
+        StartCoroutine(SpawnArmBullet(type));
+
+       
+    }
+    public IEnumerator SpawnArmBullet(ImpulseType type)
+    {
+      
+        yield return new WaitForSeconds(_spawnTimer);
         SFXManager.Instance.PlaySFX(_throwSFX);
-        Vector2 direction = _mousePosition.MouseWorlPos;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Vector2 direction = _movementBehaviour.LastMovementInput; //obtengo el ultimo input de movimiento del jugador para disparar el brazo en esa direccion
 
         //Rotate the projectile so that it looks where the mouse points
 
@@ -138,7 +145,7 @@ public class ArmImpulser : MonoBehaviour
             armScript.SetImpulseForce(_impulser);
             armScript.SetImpulseType(type);
             armScript.DetectVerticality(_movementBehaviour.IsOnHighGround()); //paso la altura del jugador al metodo que instancia la bala para que modifique su layer
-            
+
 
         }
     }

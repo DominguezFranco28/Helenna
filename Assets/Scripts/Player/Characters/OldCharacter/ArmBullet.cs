@@ -75,6 +75,8 @@ public class ArmBullet : MonoBehaviour
         _oldPlayerBehaviour.ArmPulled = false;
         _oldPlayerBehaviour.ArmRelease = false;
         _parentMovable = null;
+        _oldPlayerBehaviour.SetMovementEnabled(true); //habilito el movimiento del jugador cuando se destruye elb razo
+
     }
     private void FixedUpdate()
     {
@@ -104,8 +106,8 @@ public class ArmBullet : MonoBehaviour
             _isInHook = true; // Set the flag to true to prevent multiple hook impacts
             _parentMovable = collision.transform; // Get the parent transform of the hook point
             transform.SetParent(_parentMovable,true); //true para mantener la pos globan en el momento del enganche 
-                                                  
-        // fuerzo el eje Z a 0 xq a veces se me iba a 58 (idk) y generaba problemas de visibilidad
+
+            // fuerzo el eje Z a 0 xq a veces se me iba a 58 (idk) y generaba problemas de visibilidad
             Vector3 fixedPosition = transform.position;
             fixedPosition.z = 0f;
             transform.position = fixedPosition;

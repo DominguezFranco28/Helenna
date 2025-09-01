@@ -280,6 +280,10 @@ PrefabInstance:
       propertyPath: _throwSFX
       value: 
       objectReference: {fileID: 8300000, guid: e2b8951652b421d4d8dbd19bcf740fe0, type: 3}
+    - target: {fileID: 1781645198128025142, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
+      propertyPath: _spawnTimer
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2216917969187451632, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.017
@@ -310,11 +314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6170821206192857187, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -314
+      value: -239.64
       objectReference: {fileID: 0}
     - target: {fileID: 6170821206192857187, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.1
+      value: 50.97
       objectReference: {fileID: 0}
     - target: {fileID: 6170821206192857187, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -356,6 +360,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 2.5625
       objectReference: {fileID: 0}
+    - target: {fileID: 7208055977537637858, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
+      propertyPath: _anchorDetector
+      value: 
+      objectReference: {fileID: 24309883}
     - target: {fileID: 7391976909620452916, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: _normalSpeed
       value: 9
@@ -395,7 +403,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5295842411811346157, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 24309883}
   m_SourcePrefab: {fileID: 100100000, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
 --- !u!1 &24309836 stripped
 GameObject:
@@ -423,6 +434,22 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 1472011548113095729, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
   m_PrefabInstance: {fileID: 24309835}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &24309883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24309836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb741cf970321e43ba9357102c4958b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lockOnRadius: 7
+  _anchorLayer:
+    serializedVersion: 2
+    m_Bits: 8388608
 --- !u!1 &25841390
 GameObject:
   m_ObjectHideFlags: 0
@@ -136664,7 +136691,7 @@ Transform:
   m_GameObject: {fileID: 318954088}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -314, y: 16.1, z: -10}
+  m_LocalPosition: {x: -239.64, y: 50.97, z: -10}
   m_LocalScale: {x: 0.80645, y: 0.80645, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -136942,7 +136969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2046562105146730766, guid: 38f828732ae94c145bf9e698ec4447b9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3888068865860057948, guid: 38f828732ae94c145bf9e698ec4447b9, type: 3}
       propertyPath: m_IsActive
@@ -199778,7 +199805,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &614554997
 Transform:
   m_ObjectHideFlags: 0
@@ -200118,7 +200145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3130376866169195471, guid: 01db62ebb5dada64b9ce932cc7146e56, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 3130376866169195471, guid: 01db62ebb5dada64b9ce932cc7146e56, type: 3}
       propertyPath: m_IsActive
@@ -219842,7 +219869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2250556531054755063, guid: 7faa31f0cfea0dc4d8a7f6494f9f3f85, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3279105380555845824, guid: 7faa31f0cfea0dc4d8a7f6494f9f3f85, type: 3}
       propertyPath: m_AnchorMax.x
@@ -225748,9 +225775,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ActivatableAnchor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2675755443745479731, guid: 01db62ebb5dada64b9ce932cc7146e56, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.1875
+      objectReference: {fileID: 0}
     - target: {fileID: 3130376866169195471, guid: 01db62ebb5dada64b9ce932cc7146e56, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369280530140061152, guid: 01db62ebb5dada64b9ce932cc7146e56, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 2.1875
       objectReference: {fileID: 0}
     - target: {fileID: 4637069715853428866, guid: 01db62ebb5dada64b9ce932cc7146e56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -261670,7 +261705,7 @@ Transform:
   m_GameObject: {fileID: 1099452463}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: -1}
-  m_LocalPosition: {x: -314, y: 16.1, z: -10}
+  m_LocalPosition: {x: -239.64, y: 50.97, z: -10}
   m_LocalScale: {x: 0.8064463, y: 0.8064463, z: 0.8064463}
   m_ConstrainProportionsScale: 0
   m_Children:

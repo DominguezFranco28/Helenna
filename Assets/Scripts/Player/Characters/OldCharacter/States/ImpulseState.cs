@@ -7,13 +7,12 @@ public class ImpulseState :  IState
 {
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
-    private float _timer = 0f;
-    private float _waitDuration = 0.4f;
-    private bool _timerStarted = false;
-    public ImpulseState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine)
+    private AnchorDetector _anchorDetector;
+    public ImpulseState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine, AnchorDetector anchorDetector)
     {
         _oldPlayerBehaviour = oldPlayer;
         _oldStateMachine = oldStateMachine;
+        _anchorDetector = anchorDetector;
     }
     public void Enter()
     {
@@ -27,8 +26,7 @@ public class ImpulseState :  IState
         _oldPlayerBehaviour.Animator.SetFloat("Vertical", lastInput.y);
         _oldPlayerBehaviour.Animator.SetFloat("Speed", lastInput.magnitude);
         _oldPlayerBehaviour.SetMovementEnabled(false);
-        _timer = 0f;
-        _timerStarted = false; //mantenemos el timer apagado, quiero que se prenda solo con los imputs
+
 
         Debug.Log(lastInput);
 
@@ -45,42 +43,37 @@ public class ImpulseState :  IState
 
     public void Update()
     {
-        if (!_timerStarted)
+        if (!_oldPlayerBehaviour.CanMove)  //El CanMove del player va a estar condicionado por el lifetime de la bala del brazo (ArmBullet.cs)
+
         {
-            if (Input.GetMouseButtonDown(0)) //Left click = push
-            {
-                _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
-                _oldPlayerBehaviour.ArmRelease = true; // Set the flag to true to prevent multiple arm releases
-                _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Push);
-                _timerStarted = true;
+            if (_anchorDetector.ClosestAnchor != null)
+               {
+                 Debug.Log("LOGICA DE DEZPLAZAMIENTO EJECUTADA");
+               
+               //return; //si hay un punto de anclaje cercano, no hago nada dsps, espero a que el jugador se desplace o lance el brazo
             }
-
-            if (Input.GetMouseButtonDown(1)) // 
-            {
-                if (_oldPlayerBehaviour.ArmRelease)
-                {
-                    _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");// Set the flag to true to prevent multiple arm releases
-                    _oldPlayerBehaviour.ArmPulled = true; //si uso el click derecho y el brazo fue previamente liberado, acciono el tiron del brazo
-                                                          //desde el script del armbullet, se gestiona la atraccion si esta bandera del behaviour esta activada.
-                    _timerStarted = true;
-                }
-                _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");// Set the flag to true to prevent multiple arm releases
-                _oldPlayerBehaviour.ArmRelease = true; // Set the flag to true to prevent multiple arm releases
-                _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Pull);
-                _timerStarted = true;
-            }
-
-
+            if (_oldPlayerBehaviour.ArmRelease)   //desde el script del armbullet, se gestiona la atraccion si esta bandera del behaviour esta activada.
+              {//HOOKS CON APUNTADO, Atraccion a puntos de anclaje
+                //esta condicion puede llegar a borrarse si pasamos a depender siempre del lock on, de momento lo dejo a modo de Hooks que necesiten Aim
+                 _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");// Set the flag to true to prevent multiple arm releases
+                 _oldPlayerBehaviour.ArmPulled = true; //si  el brazo fue previamente liberado, acciono el tiron del brazo
+              }
+           else //solo arrojar el brazo 
+             {
+               _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
+               _oldPlayerBehaviour.ArmRelease = true; // 
+               _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Push);    
+             }  
+               
+            
+            //recordar implementar nueva logica para la atraccion del brazo. Saltos a diferentes states segun el tipo de anclaje
+            //
+            //Tengo que poder switchear el enum entre push y pull con un unico input
         }
         else
         {
-            _timer += Time.deltaTime; //gestiono el salto de estado dsps del timer par aque el pj no se pueda mover mientras vuela el brazo
-
-            if (_timer >= _waitDuration)
-            {
                 _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
-            }
         }
-    }    
+    }
 
 }

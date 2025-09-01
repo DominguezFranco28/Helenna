@@ -22,6 +22,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     private bool _isOnHighGround;
 
     public bool IsInControll{ get { return _isInControll; } set { _isInControll = value; } } 
+    public bool CanMove{ get { return _canMove; } } 
     public bool ArmPulled{ get { return _armPulled; } set { _armPulled = value; } } 
     public bool ArmRelease { get { return _armReleased; } set { _armReleased = value; } } 
     public Animator Animator { get { return _animator; } }
@@ -81,7 +82,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     }
     private void FixedUpdate()
     {
-        if (!IsInControll || IsRecoiling) return;
+        if (!IsInControll || IsRecoiling || !_canMove) return;
         {
             _rb2D.velocity = _movementInput * _normalSpeed;
         }
@@ -92,6 +93,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     {
         if (!IsInControll) return;
         _armImpulser.GetThrowArm(type);
+        //SetControl(false);
     }
 
 

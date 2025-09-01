@@ -22,11 +22,11 @@ public class OldStateMachine
     public JumpState jumpState;
     public HoldItemState holdItemState;
     public IState CurrentState { get; private set; } //Read-only. External object can set the Initialize method to establish a default state
-    public OldStateMachine(OldPlayerBehaviour oldPlayer, JumpDetector jumpDetector, GrabObject grabObject)
+    public OldStateMachine(OldPlayerBehaviour oldPlayer, JumpDetector jumpDetector, GrabObject grabObject, AnchorDetector anchorDetector)
     {
         this.moveState = new MoveState(oldPlayer, this, jumpDetector);
         this.idleState = new IdleState(oldPlayer, this);
-        this.impulseState = new ImpulseState(oldPlayer, this);
+        this.impulseState = new ImpulseState(oldPlayer, this, anchorDetector);
         this.jumpState = new JumpState(oldPlayer, this, jumpDetector);
         this.holdItemState = new HoldItemState(oldPlayer, this, grabObject);
 

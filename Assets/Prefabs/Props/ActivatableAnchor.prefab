@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 3908346430297183395}
   - component: {fileID: 3136819059120925668}
   - component: {fileID: 5088114621754242158}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: AnchorPoint
   m_TagString: HookPoint
   m_Icon: {fileID: 0}
