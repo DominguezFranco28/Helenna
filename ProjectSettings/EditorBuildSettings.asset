@@ -20,4 +20,5 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ExteriorProto.unity
     guid: c690a56bbac6f2f408e4c8288a23d2ed
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

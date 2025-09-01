@@ -32,7 +32,6 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public bool IsRecoiling{ get { return _isRecoiling; } set { _isRecoiling = value; } }
 
 
-
     void Start()
     {
         _rb2D = GetComponent<Rigidbody2D>();

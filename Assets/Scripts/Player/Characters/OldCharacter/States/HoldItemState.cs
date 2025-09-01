@@ -3,11 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HoldItemState : IState
-
 {
     private OldStateMachine _stateMachine;
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private GrabObject _grabObject;
+
+    private bool subbed = false;
+
+    private void InteractPressed()
+    {
+        _oldPlayerBehaviour.StopMovement();
+        
+        if (_grabObject.PickedObject != null) // modif el input
+        {
+            //Drop/use object
+            Debug.Log(_grabObject.PickedObject);
+            _oldPlayerBehaviour.LowSpeed(false);
+            _grabObject.DropItem();
+            _stateMachine.TransitionTo(_stateMachine.idleState);
+
+        }
+        else
+        {
+            //Pickup
+            _grabObject.GrabItem();
+        }
+    }
+    private void OnMove(Vector2 movement)
+    {
+        _oldPlayerBehaviour.SetMovementInput(movement);
+        _oldPlayerBehaviour.LowSpeed(true);
+    }
+
     public HoldItemState(OldPlayerBehaviour oldPlayerBehaviour, OldStateMachine oldStateMachine, GrabObject grabObject)
     {
         this._stateMachine = oldStateMachine;
@@ -16,30 +43,31 @@ public class HoldItemState : IState
     }
     public void Enter()
     {
+        if (!subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                InputManager.Instance.InteractPressed += InteractPressed;
+                InputManager.Instance.Move += OnMove;
+            }
+        }
+        
         Debug.Log("Entraste al estado ; HOLDITEM");
-        _oldPlayerBehaviour.StopMovement();
-        _grabObject.GrabItem();
+        
     }
 
     public void Exit()
     {
+        
         Debug.Log("Saliste del estado ; HOLDITEM");
     }
 
     public void Update()
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        _oldPlayerBehaviour.SetMovementInput(input);
-        _oldPlayerBehaviour.LowSpeed(true);
-        Debug.Log(_grabObject.PickedObject);
-        if (_grabObject.PickedObject != null && Input.GetKey(KeyCode.R)) // modif el input
-        {
-            Debug.Log("aspretaste la R");
-        _oldPlayerBehaviour.LowSpeed(false);
-            _grabObject.DropItem();
-            _stateMachine.TransitionTo(_stateMachine.idleState);
-
-        }
+        //Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        //_oldPlayerBehaviour.SetMovementInput(input);
+        //_oldPlayerBehaviour.LowSpeed(true);
+        
     }
 }
 

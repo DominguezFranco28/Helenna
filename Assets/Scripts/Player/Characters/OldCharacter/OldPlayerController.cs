@@ -9,6 +9,29 @@ public class OldPlayerController : MonoBehaviour
     [SerializeField] private GrabObject _grabObject;
     private OldStateMachine _myStateMachine;
 
+    private bool interacting = false;
+    private void InteractPressed()
+    {
+        interacting = true;
+        Debug.Log("Interacting: " + interacting);
+        if (InputManager.Instance != null)
+            InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
+    }
+    private void OnEnable()
+    {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.InteractPressed += InteractPressed;
+        }
+
+    }
+    private void OnDisable()
+    {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.InteractPressed -= InteractPressed;
+        }
+    }
 
     private void Start()
     {
@@ -23,7 +46,7 @@ public class OldPlayerController : MonoBehaviour
         {
         
             _myStateMachine?.Update();
-            if (_grabObject.PickedObject == null && _grabObject.InColision && Input.GetKeyDown(KeyCode.E))
+            if (_grabObject.PickedObject == null && _grabObject.InColision && interacting)
             {
                 _myStateMachine.TransitionTo(_myStateMachine.holdItemState);
             }

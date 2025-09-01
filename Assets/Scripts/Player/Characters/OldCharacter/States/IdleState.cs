@@ -8,6 +8,23 @@ public class IdleState :  IState
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
 
+    private bool subbed = false;
+
+    private void OnSpecialAction()
+    {
+        _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
+        _oldStateMachine.TransitionTo(_oldStateMachine.impulseState);
+    }
+    private void OnMove(Vector2 movement)
+    {
+        Debug.Log("IdleState - Move: " + movement +" - mag: "+ movement.magnitude);
+
+        if (movement.magnitude > 0.01f)
+        {
+            _oldStateMachine.TransitionTo(_oldStateMachine.moveState);
+        }
+    }
+
     //Constructor, because it does not inherit from monobehaviour
     public IdleState(OldPlayerBehaviour oldPlayerBehaviour, OldStateMachine oldStateMachine) 
     {
@@ -16,6 +33,17 @@ public class IdleState :  IState
     }
     public void Enter()
     {
+        if (!subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = true;
+
+                InputManager.Instance.SpecialActionPressed += OnSpecialAction;
+                InputManager.Instance.Move += OnMove;
+            }
+        }
+        
         Debug.Log("You entered the state: OLD IDLE");
         _oldPlayerBehaviour.SetMovementInput(Vector2.zero);
         _oldPlayerBehaviour.SetMovementEnabled(true);
@@ -28,19 +56,17 @@ public class IdleState :  IState
 
     public void Update()
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        //Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
+        /*
         if (input.magnitude > 0.01f)
         {
             _oldStateMachine.TransitionTo(_oldStateMachine.moveState); 
-        }
+        }*/
 
-        _oldPlayerBehaviour.SetMovementInput(Vector2.zero);
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
-            _oldStateMachine.TransitionTo(_oldStateMachine.impulseState); 
-        }
+        //_oldPlayerBehaviour.SetMovementInput(Vector2.zero);
     }
+
+    
 }
 

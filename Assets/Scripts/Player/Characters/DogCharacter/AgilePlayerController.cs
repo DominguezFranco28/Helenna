@@ -8,6 +8,31 @@ public class AgilePlayerController : MonoBehaviour
     [SerializeField]private PlatformDetector _platformDetector;
     [SerializeField]private GrabObject _grabObject;
     private AgileStateMachine _agileStateMachine;
+
+    private bool interacting = false;
+    private void OnEnable()
+    {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.InteractPressed += InteractPressed;
+        }
+            
+    }
+    private void OnDisable()
+    {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.InteractPressed -= InteractPressed;
+        }
+            
+    }
+    private void InteractPressed()
+    {
+        interacting = true;
+        if (InputManager.Instance != null)
+            InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
+    }
+
     private void Start()
     {
         _agileStateMachine = new AgileStateMachine(_agileBehaviour, _platformDetector, _grabObject);
@@ -20,14 +45,14 @@ public class AgilePlayerController : MonoBehaviour
         if (_agileBehaviour.isInControll)
         {
             _agileStateMachine?.Update();
-            if (_grabObject.PickedObject == null && _grabObject.InColision && Input.GetKeyDown(KeyCode.E))
+            if (_grabObject.PickedObject == null && _grabObject.InColision && interacting)
             {
                 _agileStateMachine.TransitionTo(_agileStateMachine.itemState);
             }
         }
 
-
     }
+
     private void FixedUpdate() //Fue necesario poner el fixedUpdate aca por el salto. Necesito que use el fixedupdate para que no de problema con colisiones, y 
        // como no hereda de monobehaviour lo tengo que agregar como una interfaz. Desde este metodo, se detecta si el perro esta en un estado que aplique esa interfaz, 
        //y si lo esta, llama al metodo fixedUpdate, no la update como en el caso normal de el resto de estados. Tener presente para futuras aplicaciones de fisica

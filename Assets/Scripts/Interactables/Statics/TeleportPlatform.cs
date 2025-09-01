@@ -8,6 +8,28 @@ public class TeleportPlatform : PlayerDetector
     private bool _isActive = false;
     private Collider2D _player;
     private OldPlayerBehaviour _oldPlayerBehaviour;
+
+
+    private void OnInteract()
+    {
+        if (_playerOnPlatform)
+        {
+            Effect(_player);
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (InputManager.Instance != null)
+            InputManager.Instance.InteractPressed += OnInteract;
+    }
+
+    private void OnDisable()
+    {
+        if (InputManager.Instance != null)
+            InputManager.Instance.InteractPressed -= OnInteract;
+    }
+
     public override void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -28,13 +50,6 @@ public class TeleportPlatform : PlayerDetector
         }
     }
 
-    private void Update()
-    {
-        if (_playerOnPlatform && Input.GetKeyDown(KeyCode.E))
-        {
-            Effect(_player);
-        }
-    }
 
     public override void Effect(Collider2D collision)
     {

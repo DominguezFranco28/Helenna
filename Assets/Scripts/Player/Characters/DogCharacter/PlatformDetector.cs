@@ -16,6 +16,23 @@ public class PlatformDetector : MonoBehaviour
     private Collider2D _lastPlatform;
     public Vector2 PlatFormPosition { get { return _platformPosition; } set { _platformPosition = value; } }
 
+    private void OnMove(Vector2 movement)
+    {
+        _direction = movement;
+    }
+
+    private void OnEnable()
+    {
+        if (InputManager.Instance != null)
+            InputManager.Instance.Move += OnMove;
+    }
+
+    private void OnDisable()
+    {
+        if (InputManager.Instance != null)
+            InputManager.Instance.Move -= OnMove;
+    }
+
     private void Start()
     {
         _playerBehaviour = GetComponent<AgilePlayerBehaviour>();
@@ -26,9 +43,9 @@ public class PlatformDetector : MonoBehaviour
         if (!_playerBehaviour.isInControll)
             return;
         _origin = _mouth.gameObject.transform.position;
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        _direction = new Vector2(horizontal, vertical);
+        //float horizontal = Input.GetAxisRaw("Horizontal");
+        //float vertical = Input.GetAxisRaw("Vertical");
+        //_direction = new Vector2(horizontal, vertical);
 
         if (_direction != Vector2.zero) //validacion para que no dibuje la linea del raycast si no hay input, daba bugs
         {

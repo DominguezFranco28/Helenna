@@ -12,6 +12,9 @@ public class AgileDigState : IState
     private float _digTimer;
     private bool _delayCompleted;
     private GameObject _pickedObject;
+
+    private bool subbed = false;
+
     public AgileDigState(AgilePlayerBehaviour agilePlayerBehaviour, AgileStateMachine agileStateMachine)
     {
         this._agilePlayerBehaviour = agilePlayerBehaviour;
@@ -19,9 +22,23 @@ public class AgileDigState : IState
         this._holeDetector = agilePlayerBehaviour.HoleDetector;
 
     }
+    private void OnMove(Vector2 movement)
+    {
+        _agilePlayerBehaviour.SetMovementInput(new Vector2(0, movement.y));
+    }
+
     public void Enter()
     {
         Debug.Log("You entered the state: DIG");
+        if (!subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = false;
+                InputManager.Instance.Move += OnMove;
+            }
+        }
+        
         _agilePlayerBehaviour.Animator.SetBool("Dig", true); 
         _digTimer = 0f;
         _delayCompleted = false;
@@ -31,6 +48,7 @@ public class AgileDigState : IState
     public void Exit()
     {
         Debug.Log("You left the state: DIG");
+
         if (_agilePlayerBehaviour.CanDig == false)
         {
             _agilePlayerBehaviour.Animator.SetBool("Dig", false);
@@ -55,8 +73,9 @@ public class AgileDigState : IState
             return; // skip the update until delay is over
         }
 
-        Vector2 input = new Vector2(0, Input.GetAxisRaw("Vertical")); //set the horizontal move to 0
-        _agilePlayerBehaviour.SetMovementInput(input);
+        /*Vector2 input = new Vector2(0, Input.GetAxisRaw("Vertical")); //set the horizontal move to 0
+        _agilePlayerBehaviour.SetMovementInput(input);*/
+
         // If we leave the gap we go to idle
         if (!_agilePlayerBehaviour.CanDig)
         {

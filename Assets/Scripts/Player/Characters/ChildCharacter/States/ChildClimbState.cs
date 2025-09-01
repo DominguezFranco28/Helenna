@@ -9,6 +9,7 @@ public class ChildClimbState : IState
     private ChildStateMachine _childStateMachine;
     private ChildTriggerDetector _climbDetector;
     private Collider2D _ignoredClimbable;
+    private bool subbed = false;
 
     public ChildClimbState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine, ChildTriggerDetector climbDetector)
     {
@@ -16,9 +17,25 @@ public class ChildClimbState : IState
         this._childStateMachine = childStateMachine;
         this._climbDetector = climbDetector;
     }
+
+    private void OnMove(Vector2 movement)
+    {
+        Vector2 climbVelocity = new Vector2(0f, movement.y * _childPlayerBehaviour.ClimbSpeed);
+        _childPlayerBehaviour.SetMovementInput(climbVelocity);
+    }
+
     public void Enter()
     {
         Debug.Log("You entered the state:  CHILD CLIMB");
+        if (!subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = false;
+                InputManager.Instance.Move += OnMove;
+            }
+        }
+        
         if (_climbDetector.Climbable != null)
         {
             _childPlayerBehaviour.PlayerCollider.enabled = false;
@@ -31,6 +48,7 @@ public class ChildClimbState : IState
     public void Exit()
     {
         Debug.Log("You left the state: CHILD CLIMB");
+
         // Restore colissions 
         if (_ignoredClimbable != null)
         {
@@ -48,10 +66,10 @@ public class ChildClimbState : IState
     public void Update()
     {
         //no hace falta fixedupdate porque llama al metodo setmovement, que en su respectivo script se manexa con fixed
-        float vertical = Input.GetAxisRaw("Vertical");
+        //float vertical = Input.GetAxisRaw("Vertical");
 
-        Vector2 climbVelocity = new Vector2(0f, vertical * _childPlayerBehaviour.ClimbSpeed);
-        _childPlayerBehaviour.SetMovementInput(climbVelocity);
+        //Vector2 climbVelocity = new Vector2(0f, vertical * _childPlayerBehaviour.ClimbSpeed);
+        //_childPlayerBehaviour.SetMovementInput(climbVelocity);
         _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.ClimbSpeed);
 
         if (!_climbDetector.CanClimb)

@@ -6,15 +6,34 @@ public class ChildMoveState : IState
 {
     private ChildPlayerBehaviour _childPlayerBehaviour;
     private ChildStateMachine _childStateMachine;
+    private bool subbed = false;
     public ChildMoveState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine)
     {
         this._childPlayerBehaviour = childPlayerBehaviour;
         this._childStateMachine = childStateMachine;
     }
 
+    private void OnMove(Vector2 movement)
+    {
+        _childPlayerBehaviour.SetMovementInput(movement);
+        if (movement.magnitude <= 0.01f)
+        {
+            _childStateMachine.TransitionTo(_childStateMachine.idleState);
+        }
+    }
+
     public void Enter()
     {
         Debug.Log("You entered the state: CHILD MOVE");
+        if (!subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = true;
+                InputManager.Instance.Move += OnMove;
+            }
+        }
+            
         _childPlayerBehaviour.SetMovementEnabled(true);
         SFXManager.Instance.PlayLoop(_childPlayerBehaviour.StepsSFX);
     }
@@ -27,11 +46,11 @@ public class ChildMoveState : IState
 
     public void Update()
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        _childPlayerBehaviour.SetMovementInput(input);
+        //Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        /*_childPlayerBehaviour.SetMovementInput(input);
         if (input.magnitude <= 0.01f)
         {
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
-        }
+        }*/
     }
 }

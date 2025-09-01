@@ -22,16 +22,21 @@ public class Dialogue : MonoBehaviour
     private int lineIndex = 0;
     private bool oneShotDialogueShown = false;
     private Coroutine currentCoroutine;
-    private void Start()
-    {
-        // Inicializar las variables de estado necesarias
-        collisionWithPlayer = false;
-        dialogueStarted = false;
 
+    private void OnEnable()
+    {
+        if (InputManager.Instance != null)
+            InputManager.Instance.InteractPressed += OnInteract;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
+    {
+        if (InputManager.Instance != null)
+            InputManager.Instance.InteractPressed -= OnInteract;
+    }
+
+    
+    private void OnInteract()
     {
         if (GameStateManager.Instance.IsGamePaused())
             return;
@@ -40,18 +45,17 @@ public class Dialogue : MonoBehaviour
         // No permitimos input si un diálogo (de cualquier tipo) está en curso
         if (dialogueStarted)
             return;
+
         // Si no hay puzzle asociado, no debe intentar usar lineindex ni dialgoos multiples.
         if (airPuzzle == null)
             return;
-
-        if (Input.GetKeyDown(KeyCode.E) && airPuzzle !=null)
+        else
         {
-
             int puzzleIndex = airPuzzle.CurrentCount;
 
             if (puzzleIndex >= 0 && puzzleIndex < dialogueLines.Length)
             {
-               //cerrar si ya se esta mostrando el texto completo, para eso el activeself
+                //cerrar si ya se esta mostrando el texto completo, para eso el activeself
                 if (dialoguePanel.activeSelf && dialogueText.text == dialogueLines[puzzleIndex])
                 {
                     EndDialogue();
@@ -63,7 +67,7 @@ public class Dialogue : MonoBehaviour
                         StopCoroutine(currentCoroutine);
 
                     dialogueText.text = dialogueLines[puzzleIndex];
-                    dialogueStarted = false; 
+                    dialogueStarted = false;
                 }
                 // Si no esta tipeando ni iniciado, iniciar dialogo
                 else
@@ -72,9 +76,15 @@ public class Dialogue : MonoBehaviour
                 }
             }
         }
-    
+    }
 
-}
+    private void Start()
+    {
+        // Inicializar las variables de estado necesarias
+        collisionWithPlayer = false;
+        dialogueStarted = false;
+
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
