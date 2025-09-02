@@ -59,7 +59,7 @@ public class CharacterManager : MonoBehaviour
             {
                 Debug.Log("ActivateCharacter: " + characters[i].name);
                 control.SetControl(i == index);
-                control.SetMovementEnabled(i == index);
+               control.SetMovementEnabled(i == index);
                 //This is equal to true, only for the character that is at the index in this for loop,
                 //all the others are set to false so they cannot move due to their Behavior
             }

@@ -68,7 +68,7 @@ public class MoveState :  IState
         
         if (_jumpDetector.CanJump)
         {
-            _oldStateMachine.TransitionTo(_oldStateMachine.jumpState);
+            _oldStateMachine.TransitionTo(_oldStateMachine.slideState);
         }
     }
 }
