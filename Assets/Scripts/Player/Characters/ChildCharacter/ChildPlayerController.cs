@@ -45,12 +45,13 @@ public class ChildPlayerController : MonoBehaviour
         {
             _childStateMachine.Update();
             // Detect enter to climb
-            if (_childTriggerDetector.CanClimb && interacting)
+            if (_childTriggerDetector.CanClimb)
             {
                 _childStateMachine.TransitionTo(_childStateMachine.climbState);
                 return;
             }
-            else if (_childTriggerDetector.CanActivate && interacting)
+            
+            if (_childTriggerDetector.CanActivate && interacting)
             {
                 _childStateMachine.TransitionTo(_childStateMachine.actionState);
                 return;

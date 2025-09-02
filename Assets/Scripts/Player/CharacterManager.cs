@@ -29,6 +29,8 @@ public class CharacterManager : MonoBehaviour
     {
         if (InputManager.Instance != null)
             InputManager.Instance.ChangeCharacterPressed += OnChangeCharacter;
+        else
+            Debug.LogError("No InputManager found");
     }
 
     private void OnDisable()
@@ -39,6 +41,7 @@ public class CharacterManager : MonoBehaviour
 
     private void OnChangeCharacter()
     {
+        Debug.Log("Change Character");
         if (GameStateManager.Instance.IsGamePaused()) return;
 
         SFXManager.Instance.PlaySFX(_changeSFX);

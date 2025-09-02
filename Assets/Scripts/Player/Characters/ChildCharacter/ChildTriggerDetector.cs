@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChildTriggerDetector : MonoBehaviour
 {
-    private bool _canClimb = false;
+    [SerializeField] private bool _canClimb = false;
     private Collider2D _climbableCollider;
 
     private bool _canActivateLever = false;
@@ -14,7 +14,7 @@ public class ChildTriggerDetector : MonoBehaviour
     public Collider2D Climbable { get { return _climbableCollider; } }
     public Collider2D LevelCollider { get { return _leverCollider; } }
 
-
+    
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,7 +23,8 @@ public class ChildTriggerDetector : MonoBehaviour
             _canClimb = true;
             _climbableCollider = collision;
         }
-        else if (collision.CompareTag("Lever"))
+        
+        if (collision.CompareTag("Lever"))
         {
             Debug.Log("colisionaste con palanca");
             _canActivateLever = true;
@@ -43,7 +44,8 @@ public class ChildTriggerDetector : MonoBehaviour
             _canClimb = false;
             _climbableCollider = null;
         }
-        else if (collision.CompareTag("Lever"))
+        
+        if (collision.CompareTag("Lever"))
         {
             Debug.Log("saliste de colision con palanca");
             _canActivateLever = false;

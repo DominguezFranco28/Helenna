@@ -40,21 +40,36 @@ public class OldStateMachine
     //Enter, Update and Exit methods of the Istate interface, to manage the entry and exit of states.
     public void Initialize(IState startingState)
     {
+        InitStates(startingState);
         CurrentState = startingState;
-        startingState.Enter();
     }
     public void TransitionTo (IState nextState)
     {
-        CurrentState.Exit(); 
-        CurrentState= nextState;
-        nextState.Enter();
+        if (nextState != CurrentState)
+        {
+            if (CurrentState != null) CurrentState.Exit();
+            CurrentState = nextState;
+            nextState.Enter();
+        }
 
     }
+
     public void Update()
     {
         if (CurrentState != null)
         {
             CurrentState.Update();
         }
+    }
+
+    public void InitStates(IState startingState)
+    {
+        //cicla por todos los estados para subscribir todos los inputs
+        IState[] states = {idleState, moveState, impulseState, jumpState, holdItemState};
+        foreach(IState state in states)
+        {
+            TransitionTo(state);
+        }
+        TransitionTo(startingState);
     }
 }

@@ -22,19 +22,33 @@ public class AgileStateMachine
 
     public void Initialize(IState startingState)
     {
+        InitStates(startingState);
         CurrentState = startingState;
-        startingState.Enter();
     }
 
     public void TransitionTo(IState nextState)
     {
-        CurrentState.Exit();
-        CurrentState = nextState;
-        nextState.Enter();
+        if (nextState != CurrentState)
+        {
+            if (CurrentState != null) CurrentState.Exit();
+            CurrentState = nextState;
+            nextState.Enter();
+        }
     }
 
     public void Update()
     {
         CurrentState?.Update();
+    }
+
+    public void InitStates(IState startingState)
+    {
+        //cicla por todos los estados para subscribir todos los inputs
+        IState[] states = { idleState, moveState, digState, jumpState, itemState };
+        foreach (IState state in states)
+        {
+            TransitionTo(state);
+        }
+        TransitionTo(startingState);
     }
 }

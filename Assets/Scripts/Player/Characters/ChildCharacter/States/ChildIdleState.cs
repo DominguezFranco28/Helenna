@@ -41,6 +41,10 @@ public class ChildIdleState : IState
                 subbed = true;
                 InputManager.Instance.Move += OnMove;
             }
+            else
+            {
+                Debug.LogError("Input manager not found");
+            }
         }
         
         _childPlayerBehaviour.StopMovement(); 

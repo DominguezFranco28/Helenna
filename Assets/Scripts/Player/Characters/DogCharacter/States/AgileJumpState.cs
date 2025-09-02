@@ -83,29 +83,29 @@ public class AgileJumpState : IState, IMovable, IFixedUpdate
     }
     public void FixedUpdate()
     {
-
         if (!_agilePlayerBehaviour.DelayCompleted) //si no termino el delay, que no ejecute el resto de la secuencia
             return;
+
         UpdateAnimator(); //logica de animacion del salto
 
         //Comienza logica FISICA de salto. Como dezplazo al pj dentro de esta funcion y no desde el update del behavour, tengo que gestionar el fixed update aca  tambien xq muevo su rigidpody
-       
         //seteo la anim de salto segun inputs dentro del blend tree. Logica similar a la del moveState, pero necesite hacerlo de aca para que el jugador no pueda forzar la anim incorrecta
         MoveTo(_targetPosition);
-        _agilePlayerBehaviour.PlayerCollider.enabled = false; 
-        //al igual que harold, tuve que apagar el collider para que no haga cosas extranas con las colisiones. No tengo enemigos dinamicos ni objetos de dano asi que no hayd rmaa
+        _agilePlayerBehaviour.PlayerCollider.isTrigger = true; 
 
         float distance = Vector2.Distance(_agilePlayerBehaviour.Rigidbody2D.position, _targetPosition);
-        if (distance < 0.1f)
+        Debug.Log("dog jump distance: " + distance);
+        
+            
+        if (distance <= 0.3f)
         {
+            Debug.Log("dog reached destination");
             _agilePlayerBehaviour.Rigidbody2D.position = _targetPosition; // fuerza la posición final exacta
             _agilePlayerBehaviour.StopMovement();
-            _agilePlayerBehaviour.PlayerCollider.enabled = true;//vuelve a prender el colider
+            _agilePlayerBehaviour.PlayerCollider.isTrigger = false;//vuelve a prender el colider
+            
             if (_pickedObject != null) //si desde item state recibe el objeto como parametro del metodo Object, devuelve a ese estado para poder agarrar y soltar objetos luego del salto
-            {
-                
                 _agileStateMachine.TransitionTo(_agileStateMachine.itemState);
-            }
             else
                 _agileStateMachine.TransitionTo(_agileStateMachine.moveState);
         }

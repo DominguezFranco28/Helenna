@@ -13,6 +13,7 @@ public class AgileMoveState : IState
 
     private void ActionPressed()
     {
+        Debug.Log("walking - dog action pressed");
         doingAction = true;
         if (InputManager.Instance != null)
             InputManager.Instance.InvokeAction(() => doingAction = false, 0.1f);
