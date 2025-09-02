@@ -11,7 +11,7 @@ public class AgilePlayerController : MonoBehaviour
     private void Start()
     {
         _agileStateMachine = new AgileStateMachine(_agileBehaviour, _platformDetector, _grabObject);
-        _agileStateMachine.Initialize(_agileStateMachine.idleState);
+       _agileStateMachine.Initialize(_agileStateMachine.idleState);
     }
 
     private void Update()

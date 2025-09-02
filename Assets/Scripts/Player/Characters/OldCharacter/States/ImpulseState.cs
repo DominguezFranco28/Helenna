@@ -47,12 +47,33 @@ public class ImpulseState :  IState
 
         {
             if (_anchorDetector.ClosestAnchor != null)
-               {
-                 Debug.Log("LOGICA DE DEZPLAZAMIENTO EJECUTADA");
-               
-               //return; //si hay un punto de anclaje cercano, no hago nada dsps, espero a que el jugador se desplace o lance el brazo
+            {
+                switch (_anchorDetector.CurrentAnchor)
+                {
+                    case AnchorType.Zypline:
+                        Debug.Log("Cambio a zypline ");
+                        _oldStateMachine.TransitionTo(_oldStateMachine.ziplineState);
+                        
+                        break;
+                    case AnchorType.HookPipe:
+                        // lógica de desplazamiento por Pipe
+                        Debug.Log("Cambio a PIPE ");
+                        _oldStateMachine.TransitionTo(_oldStateMachine.hookPipeState);
+                        break;
+                    case AnchorType.HookPoint:
+                        Debug.Log("Cambio a hookpoint ");
+                        // lógica para HookPoint
+                        break;
+                    default:
+                        // lógica por defecto o para None
+                        break;
+                }
+                Debug.Log("LOGICA DE DEZPLAZAMIENTO EJECUTADA");
+                return;
             }
-            if (_oldPlayerBehaviour.ArmRelease)   //desde el script del armbullet, se gestiona la atraccion si esta bandera del behaviour esta activada.
+
+
+            else if (_oldPlayerBehaviour.ArmRelease)   //desde el script del armbullet, se gestiona la atraccion si esta bandera del behaviour esta activada.
               {//HOOKS CON APUNTADO, Atraccion a puntos de anclaje
                 //esta condicion puede llegar a borrarse si pasamos a depender siempre del lock on, de momento lo dejo a modo de Hooks que necesiten Aim
                  _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");// Set the flag to true to prevent multiple arm releases

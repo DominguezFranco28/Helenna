@@ -8,8 +8,6 @@ public class TimeLineTrigger : MonoBehaviour
     [SerializeField] private PlayableDirector _director;
     [SerializeField] private CinematicController _cinematicController;
 
-    private bool _hasActivate = false;
-
     private void Start()
     {
         // esto es para suscribirse al evento cuando termina la timeline, sino no detecta el stopped

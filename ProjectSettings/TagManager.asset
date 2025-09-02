@@ -21,6 +21,8 @@ TagManager:
   - Ladder Position
   - HighGround
   - FollowCamera
+  - Zipline
+  - Pipe
   layers:
   - Default
   - TransparentFX
