@@ -32,6 +32,29 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
     public bool IsRecoiling{ get { return _isRecoiling; } set { _isRecoiling = value; } }
 
+    private bool interacting = false;
+    private void InteractPressed()
+    {
+        interacting = true;
+        Debug.Log("Interacting: " + interacting);
+        if (InputManager.Instance != null)
+            InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
+    }
+    private void OnEnable()
+    {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.InteractPressed += InteractPressed;
+        }
+
+    }
+    private void OnDisable()
+    {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.InteractPressed -= InteractPressed;
+        }
+    }
 
     void Start()
     {
@@ -124,7 +147,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     }
     private void OnTriggerStay2D(Collider2D collision) //parche rapido par apuzzle 1. Integrar a state
     {
-        if (collision.CompareTag("Lever") && Input.GetKeyDown(KeyCode.E))
+        if (collision.CompareTag("Lever") && interacting)
         {
             ActionLever activeable = collision.GetComponent<ActionLever>();
             if (activeable != null)

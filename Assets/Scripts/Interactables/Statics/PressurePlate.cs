@@ -28,7 +28,10 @@ public class PressurePlate : MonoBehaviour
 
             SFXManager.Instance.PlaySFX(_audioClip);
             _animator.SetBool("IsPressed", true);
-            _puzzleManager.PuzzleCount(-1); //resto uno al contador si se presiona
+            
+            if(_puzzleManager)
+                _puzzleManager.PuzzleCount(-1); //resto uno al contador si se presiona
+
             // detect box &stop it / activate lever
             MovableObject movable = other.GetComponent<MovableObject>();
 

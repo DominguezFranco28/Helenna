@@ -69,7 +69,7 @@ public class OldStateMachine
     public void InitStates(IState startingState)
     {
         //cicla por todos los estados para subscribir todos los inputs
-        IState[] states = {idleState, moveState, impulseState, jumpState, holdItemState};
+        IState[] states = {idleState, moveState, holdItemState};
         foreach(IState state in states)
         {
             TransitionTo(state);

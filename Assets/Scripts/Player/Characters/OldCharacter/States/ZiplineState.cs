@@ -8,6 +8,8 @@ public class ZiplineState : IState
     private AnchorDetector _anchorDetector;
     private OldStateMachine _oldStateMachine;
 
+    private bool subbed = false;
+
     public ZiplineState(OldPlayerBehaviour player,OldStateMachine oldStateMachine, AnchorDetector anchorDetector)
     {
         _oldPlayerBehaviour = player;
@@ -15,9 +17,34 @@ public class ZiplineState : IState
         _oldStateMachine = oldStateMachine;
     }
 
+    private void OnSpecialAction()
+    {
+        _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
+        _oldStateMachine.TransitionTo(_oldStateMachine.impulseState);
+    }
+
+    private void OnMove(Vector2 movement)
+    {
+        _oldPlayerBehaviour.SetMovementInput(movement);
+        if (movement.magnitude <= 0.01f)
+        {
+            _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
+        }
+    }
+
     public void Enter()
     {
-       Debug.Log("You entered the state: ZIPLINE");
+        if (!subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = true;
+
+                InputManager.Instance.SpecialActionPressed += OnSpecialAction;
+                InputManager.Instance.Move += OnMove;
+            }
+        }
+        Debug.Log("You entered the state: ZIPLINE");
     }
 
     public void Exit()
@@ -27,16 +54,6 @@ public class ZiplineState : IState
 
     public void Update()
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        _oldPlayerBehaviour.SetMovementInput(input);
-        if (input.magnitude <= 0.01f)
-        {
-            _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
-            _oldStateMachine.TransitionTo(_oldStateMachine.impulseState);
-        }
+        
     }
 }

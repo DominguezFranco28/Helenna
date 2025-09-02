@@ -38,7 +38,7 @@ public class ChildStateMachine
     public void InitStates(IState startingState)
     {
         //cicla por todos los estados para subscribir todos los inputs
-        IState[] states = { idleState, moveState, climbState, actionState};
+        IState[] states = {idleState, moveState, climbState};
         foreach (IState state in states)
         {
             TransitionTo(state);
