@@ -76,11 +76,12 @@ public class ArmBullet : MonoBehaviour
         _oldPlayerBehaviour.ArmRelease = false;
         _parentMovable = null;
         _oldPlayerBehaviour.SetMovementEnabled(true); //habilito el movimiento del jugador cuando se destruye elb razo
+        Debug.Log("ArmRelease " + _oldPlayerBehaviour.ArmRelease);
 
     }
     private void FixedUpdate()
     {
-       // Debug.Log(_isInHook);
+        Debug.Log("ArmRelease " + _oldPlayerBehaviour.ArmRelease);
         _rb.velocity = _direction * _shotSpeed;
 
         //parametro de direccion tomado de la pos de mouse, no de inputs

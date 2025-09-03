@@ -49,6 +49,7 @@ public class ChildMoveState : IState
         Debug.Log("You left the state: CHILD MOVE");
         SFXManager.Instance.StopLoop();
 
+
     }
 
     public void Update()

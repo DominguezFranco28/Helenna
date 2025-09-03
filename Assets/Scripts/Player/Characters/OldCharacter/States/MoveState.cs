@@ -55,6 +55,15 @@ public class MoveState :  IState
     {
         Debug.Log("You left the state: OLD MOVE");
         SFXManager.Instance.StopLoop();
+
+        //desuscripcion del estado move porque daba problema con el impulse. Seguia interceptando inputs cuando no le corresponida por mas que harold haya ejecutado la accion de disparo, buigeaba anims
+        //Seguia interceptando inputs cuando no le corresponida por mas que harold haya ejecutado la accion de disparo, buigeaba anims
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.SpecialActionPressed -= OnSpecialAction;
+            InputManager.Instance.Move -= OnMove;
+         subbed = false;
+        }
     }
 
     public void Update()

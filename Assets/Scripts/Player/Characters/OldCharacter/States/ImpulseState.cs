@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static TMPro.TMP_Compatibility;
 
-public class ImpulseState :  IState
+public class ImpulseState : IState
 {
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
@@ -17,22 +17,48 @@ public class ImpulseState :  IState
     public void Enter()
     {
         Debug.Log("You entered the state: IMPULSE");
-        _oldPlayerBehaviour.StopMovement();
-        _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", true);
-        
-        //Logica similar al estaod de Jump del perro, pero ahora necesito guardar el ultimo input nomas, no pos de la plataforma.
+
         Vector2 lastInput = _oldPlayerBehaviour.LastMovementInput;
+
+        _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", true);
         _oldPlayerBehaviour.Animator.SetFloat("Horizontal", lastInput.x);
         _oldPlayerBehaviour.Animator.SetFloat("Vertical", lastInput.y);
         _oldPlayerBehaviour.Animator.SetFloat("Speed", lastInput.magnitude);
-        _oldPlayerBehaviour.SetMovementEnabled(false);
 
+        if (_anchorDetector.ClosestAnchor != null)
+        {
+            switch (_anchorDetector.CurrentAnchor)
+            {
+                case AnchorType.Zypline:
+                    Debug.Log("Cambio a zypline ");
+                    _oldStateMachine.TransitionTo(_oldStateMachine.ziplineState);
 
-        Debug.Log(lastInput);
+                    break;
+                case AnchorType.HookPipe:
+                    // lógica de desplazamiento por Pipe
+                    Debug.Log("Cambio a PIPE ");
+                    _oldStateMachine.TransitionTo(_oldStateMachine.hookPipeState);
+                    break;
+                case AnchorType.HookPoint:
+                    Debug.Log("Cambio a hookpoint ");
+                    // lógica para HookPoint
+                    break;
+                default:
+                    // lógica por defecto o para None
+                    break;
+            }
+            Debug.Log("LOGICA DE DEZPLAZAMIENTO EJECUTADA");
+            return;
+        }
 
-
+        else //Tengo que poder switchear el enum entre push y pull con un unico input  
+        {
+            _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
+            _oldPlayerBehaviour.ArmRelease = true;
+            _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Push);
+            // _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
+        }
     }
-
     public void Exit()
     {
         Debug.Log("You left the state: IMPULSE");
@@ -43,58 +69,13 @@ public class ImpulseState :  IState
 
     public void Update()
     {
-        if (!_oldPlayerBehaviour.CanMove)  //El CanMove del player va a estar condicionado por el lifetime de la bala del brazo (ArmBullet.cs)
-
+        if (!_oldPlayerBehaviour.ArmRelease) //El ArmReleased va a estar condicionado por el lifetime de la bala del brazo (ArmBullet.cs)
         {
-            if (_anchorDetector.ClosestAnchor != null)
-            {
-                switch (_anchorDetector.CurrentAnchor)
-                {
-                    case AnchorType.Zypline:
-                        Debug.Log("Cambio a zypline ");
-                        _oldStateMachine.TransitionTo(_oldStateMachine.ziplineState);
-                        
-                        break;
-                    case AnchorType.HookPipe:
-                        // lógica de desplazamiento por Pipe
-                        Debug.Log("Cambio a PIPE ");
-                        _oldStateMachine.TransitionTo(_oldStateMachine.hookPipeState);
-                        break;
-                    case AnchorType.HookPoint:
-                        Debug.Log("Cambio a hookpoint ");
-                        // lógica para HookPoint
-                        break;
-                    default:
-                        // lógica por defecto o para None
-                        break;
-                }
-                Debug.Log("LOGICA DE DEZPLAZAMIENTO EJECUTADA");
-                return;
-            }
-
-
-            else if (_oldPlayerBehaviour.ArmRelease)   //desde el script del armbullet, se gestiona la atraccion si esta bandera del behaviour esta activada.
-              {//HOOKS CON APUNTADO, Atraccion a puntos de anclaje
-                //esta condicion puede llegar a borrarse si pasamos a depender siempre del lock on, de momento lo dejo a modo de Hooks que necesiten Aim
-                 _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");// Set the flag to true to prevent multiple arm releases
-                 _oldPlayerBehaviour.ArmPulled = true; //si  el brazo fue previamente liberado, acciono el tiron del brazo
-              }
-           else //solo arrojar el brazo 
-             {
-               _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
-               _oldPlayerBehaviour.ArmRelease = true; // 
-               _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Push);    
-             }  
-               
-            
-            //recordar implementar nueva logica para la atraccion del brazo. Saltos a diferentes states segun el tipo de anclaje
-            //
-            //Tengo que poder switchear el enum entre push y pull con un unico input
-        }
-        else
-        {
-                _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
+            _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
         }
     }
 
 }
+              
+           
+

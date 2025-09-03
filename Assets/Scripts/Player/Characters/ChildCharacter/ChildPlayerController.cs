@@ -32,30 +32,30 @@ public class ChildPlayerController : MonoBehaviour
             InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
     }
 
-    private void Start()
-    {
-        _childStateMachine = new ChildStateMachine(_childBehaviour, _childTriggerDetector);
-        _childStateMachine.Initialize(_childStateMachine.idleState);
-    }
+    //private void Start()
+    //{
+    //    _childStateMachine = new ChildStateMachine(_childBehaviour, _childTriggerDetector);
+    //    _childStateMachine.Initialize(_childStateMachine.idleState);
+    //}
 
-    private void Update()
-    {
-        if (GameStateManager.Instance.IsGamePaused()) return;
-        if (_childBehaviour.isInControll)
-        {
-            _childStateMachine.Update();
-            // Detect enter to climb
-            if (_childTriggerDetector.CanClimb)
-            {
-                _childStateMachine.TransitionTo(_childStateMachine.climbState);
-                return;
-            }
-            
-            if (_childTriggerDetector.CanActivate && interacting)
-            {
-                _childStateMachine.TransitionTo(_childStateMachine.actionState);
-                return;
-            }
-        }
-    }
+    //private void Update()
+    //{
+    //    if (GameStateManager.Instance.IsGamePaused()) return;
+    //    if (_childBehaviour.isInControll)
+    //    {
+    //        _childStateMachine.Update();
+    //        // Detect enter to climb
+    //        if (_childTriggerDetector.CanClimb)
+    //        {
+    //            _childStateMachine.TransitionTo(_childStateMachine.climbState);
+    //            return;
+    //        }
+
+    //        if (_childTriggerDetector.CanActivate && interacting)
+    //        {
+    //            _childStateMachine.TransitionTo(_childStateMachine.actionState);
+    //            return;
+    //        }
+    //    }
+    //}
 }

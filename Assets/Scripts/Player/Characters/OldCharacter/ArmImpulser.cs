@@ -111,15 +111,16 @@ public class ArmImpulser : MonoBehaviour
             return; //only let be one active arm.
         }
         StartCoroutine(SpawnArmBullet(type));
-
-       
     }
     public IEnumerator SpawnArmBullet(ImpulseType type)
     {
       
-        yield return new WaitForSeconds(_spawnTimer);
-        SFXManager.Instance.PlaySFX(_throwSFX);
         Vector2 direction = _movementBehaviour.LastMovementInput; //obtengo el ultimo input de movimiento del jugador para disparar el brazo en esa direccion
+        _movementBehaviour.SetMovementEnabled(false); //deshabilito el movimiento del jugador mientras se lanza el brazo
+        _movementBehaviour.StopMovement();//freno al tirar el brazo ACA, no en el impulse state porque me rompia la direccionalidad del brazo
+        yield return new WaitForSeconds(_spawnTimer);
+        //Un timer para retrasar el disparo, asi me da tiempo a que se ejecute la animacion de recoil del brazo
+        SFXManager.Instance.PlaySFX(_throwSFX);
 
         //Rotate the projectile so that it looks where the mouse points
 

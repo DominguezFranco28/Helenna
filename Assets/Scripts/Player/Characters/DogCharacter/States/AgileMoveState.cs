@@ -54,6 +54,7 @@ public class AgileMoveState : IState
     {
         Debug.Log("You left the state: AGILE MOVE");
         SFXManager.Instance.StopLoop();
+
     }
     
     public void Update()
