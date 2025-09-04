@@ -116,10 +116,12 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         if (!IsInControll) return;
         _armImpulser.GetThrowArm(type);
     }
-    public void PerformThrowArmToAnchor(Transform closestAnchor)
+    public void PerformArmToAnchor(Transform closestAnchor, bool isHoldingAnchor)
     {
         if (!IsInControll) return;
-        _armImpulser.GetThrowArmToAnchor(closestAnchor);
+        _armImpulser.GetArmToAnchor(closestAnchor, isHoldingAnchor);
+
+            //no puede impulsarse a un anclaje si esta sosteniendo un objeto
     }
 
 

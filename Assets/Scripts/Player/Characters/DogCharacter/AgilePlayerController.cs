@@ -12,7 +12,7 @@ public class AgilePlayerController : MonoBehaviour
     private bool interacting = false;
     private void OnEnable()
     {
-        if (InputManager.Instance != null)
+        if (InputManager.Instance != null && _agileBehaviour.IsInControll)
         {
             InputManager.Instance.InteractPressed += InteractPressed;
         }
@@ -20,7 +20,7 @@ public class AgilePlayerController : MonoBehaviour
     }
     private void OnDisable()
     {
-        if (InputManager.Instance != null)
+        if (InputManager.Instance != null && _agileBehaviour.IsInControll)
         {
             InputManager.Instance.InteractPressed -= InteractPressed;
         }
@@ -29,7 +29,7 @@ public class AgilePlayerController : MonoBehaviour
     private void InteractPressed()
     {
         interacting = true;
-        if (InputManager.Instance != null)
+        if (InputManager.Instance != null && _agileBehaviour.IsInControll)
             InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
     }
 
@@ -42,7 +42,7 @@ public class AgilePlayerController : MonoBehaviour
     private void Update()
     {
         if (GameStateManager.Instance.IsGamePaused()) return;
-        if (_agileBehaviour.isInControll)
+        if (_agileBehaviour.IsInControll )
         {
             _agileStateMachine?.Update();
             if (_grabObject.PickedObject == null && _grabObject.InColision && interacting)
@@ -57,7 +57,7 @@ public class AgilePlayerController : MonoBehaviour
                                // como no hereda de monobehaviour lo tengo que agregar como una interfaz. Desde este metodo, se detecta si el perro esta en un estado que aplique esa interfaz, 
                                //y si lo esta, llama al metodo fixedUpdate, no la update como en el caso normal de el resto de estados. Tener presente para futuras aplicaciones de fisica
     {
-        if (_agileBehaviour.isInControll)
+        if (_agileBehaviour.IsInControll)
         {
             if (_agileStateMachine.CurrentState is IFixedUpdate fixedState)
             {

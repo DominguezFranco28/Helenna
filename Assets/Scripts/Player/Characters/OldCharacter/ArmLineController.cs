@@ -6,6 +6,7 @@ public class ArmLineController : MonoBehaviour
 {
     [SerializeField] private Texture[] _textures;
     [SerializeField] private GameObject _endSpritePrefab;
+    private EdgeCollider2D _edgeCollider;
     private LineRenderer _lineRenderer;
     private GameObject _endInstance;
     private Transform _target;
@@ -17,6 +18,7 @@ public class ArmLineController : MonoBehaviour
     private void Awake()
     {
         _lineRenderer = GetComponent<LineRenderer>();
+        _edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
     }
     public void AssignTarget (Vector3 startPosition, Transform newTarget)
     {
@@ -27,7 +29,7 @@ public class ArmLineController : MonoBehaviour
         if (_endSpritePrefab != null)
         {
             Vector3 direction = (_target.position - startPosition).normalized;
-            GameObject endInstance = Instantiate
+            _endInstance = Instantiate
             ( 
             _endSpritePrefab,
             _target.position,
@@ -37,32 +39,66 @@ public class ArmLineController : MonoBehaviour
     }
    public void CancelLine() //para apagarlo desde el armimpulser y que no me quede mas de una tirolesa puesta en simultaneo
     {
-        _lineRenderer.positionCount = 0; // Oculta la línea
-        _target = null;
 
+        // Destruyo el sprite de la punta si existe
         if (_endInstance != null)
         {
             Destroy(_endInstance);
             _endInstance = null;
         }
+
+        // Destruyo el LineRenderer (el mismo GameObject)
+        Destroy(gameObject);
+
+        Debug.Log("Linea destruida");
     }
 
     // Update is called once per frame
     void Update()
     {
-        _lineRenderer.SetPosition(1, _target.position); //actualiza la posicion del linerenderer en cada frame
+        if (_target != null)
+        {
+            // si hay objetivo asignado que actualice la posicion final del linerenderer
+            _lineRenderer.SetPosition(1, _target.position);
 
-        if (_endInstance != null) //actualiza la posicion del prefab de la mano en el punto de anclaje
-            _endInstance.transform.position = _target.position;
+            // actualiza el sprite del final brazo()
+            if (_endInstance != null)
+                _endInstance.transform.position = _target.position;
 
+            // actualiza el collider, SOLO si hay objetivo asignado (daba bug). Revisar, hecho con IA porque desconocia los edge colliders.
+            Vector3[] positions = new Vector3[2]; // array temporal para guardar las 2 posiciones del linerenderer
+            _lineRenderer.GetPositions(positions);
+            Vector2[] colliderPoints = new Vector2[2];
+            for (int i = 0; i < positions.Length; i++)
+                colliderPoints[i] = transform.InverseTransformPoint(positions[i]);
+            _edgeCollider.points = colliderPoints;
+        }
+
+        // Manejo de la animacion del linerenderer (probablemente se borre en version final)
         _fpsCounter += Time.deltaTime;
-        if (_fpsCounter >=1f / _fps)
+        if (_fpsCounter >= 1f / _fps)
         {
             _animationStep++;
-            if ( _animationStep == _textures.Length)
-                _animationStep = 0; 
-            _lineRenderer.material.SetTexture("_MainTex", _textures[_animationStep % _textures.Length]);
+            if (_animationStep >= _textures.Length) _animationStep = 0;
+
+            // Usar un MaterialPropertyBlock para no reiniciar el LineRenderer
+            MaterialPropertyBlock mpb = new MaterialPropertyBlock();
+            _lineRenderer.GetPropertyBlock(mpb);
+            mpb.SetTexture("_MainTex", _textures[_animationStep]);
+            _lineRenderer.SetPropertyBlock(mpb);
+
             _fpsCounter = 0f;
         }
+
+        //version anterior del tuto
+        //_fpsCounter += Time.deltaTime;
+        //if (_fpsCounter >= 1f / _fps) 
+        //{ 
+        //    _animationStep++;
+        //    if (_animationStep == _textures.Length)
+        //        _animationStep = 0; 
+        //    _lineRenderer.material.SetTexture("_MainTex", _textures[_animationStep % _textures.Length]);
+        //    _fpsCounter = 0f; 
+        //}
     }
 }

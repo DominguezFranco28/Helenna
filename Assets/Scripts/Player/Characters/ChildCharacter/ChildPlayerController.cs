@@ -11,7 +11,7 @@ public class ChildPlayerController : MonoBehaviour
     private bool interacting = false;
     private void OnEnable()
     {
-        if (InputManager.Instance != null)
+        if (InputManager.Instance != null && _childBehaviour.isInControll)
         {
             InputManager.Instance.InteractPressed += InteractPressed;
         }
@@ -19,7 +19,7 @@ public class ChildPlayerController : MonoBehaviour
     }
     private void OnDisable()
     {
-        if (InputManager.Instance != null)
+        if (InputManager.Instance != null && _childBehaviour.isInControll)
         {
             InputManager.Instance.InteractPressed -= InteractPressed;
         }
@@ -28,7 +28,7 @@ public class ChildPlayerController : MonoBehaviour
     private void InteractPressed()
     {
         interacting = true;
-        if (InputManager.Instance != null)
+        if (InputManager.Instance != null && _childBehaviour.isInControll)
             InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
     }
 

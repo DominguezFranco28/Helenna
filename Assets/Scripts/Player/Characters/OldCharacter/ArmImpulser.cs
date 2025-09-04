@@ -27,6 +27,7 @@ public class ArmImpulser : MonoBehaviour
     [SerializeField] private AudioClip _throwSFX;
     private ArmImpulser _impulser;
     private GameObject _currentArmBullet;
+    private ArmLineController _currentArmLine;
     private Collider2D _playerCol;
 
 
@@ -46,9 +47,9 @@ public class ArmImpulser : MonoBehaviour
     {
         ThrowArm(type);
     }
-    public void GetThrowArmToAnchor(Transform closestAnchor)
+    public void GetArmToAnchor(Transform closestAnchor , bool IsHoldingAnchor)
     {
-        ThrowArmToAnchor(closestAnchor);
+        ArmToAnchor(closestAnchor, IsHoldingAnchor);
     }
     void Start()
     {
@@ -116,10 +117,24 @@ public class ArmImpulser : MonoBehaviour
         }
         StartCoroutine(SpawnArmBullet(type));
     }
-    private void ThrowArmToAnchor(Transform closestAnchor)
+    private void ArmToAnchor(Transform closestAnchor, bool IsHoldingAnchor)
     {
-        ArmLineController armLineController = Instantiate(_armLinePrefab);
-        armLineController.AssignTarget(_spawnPoint.position, closestAnchor); //asigno las posiiones de la linea, desde el spawn del player al anclaje 
+        if (!IsHoldingAnchor)
+        {
+            if (_currentArmLine != null)
+                _currentArmLine.CancelLine(); // destruyo la anterior línea si existe
+
+            _currentArmLine = Instantiate(_armLinePrefab);
+            _currentArmLine.AssignTarget(_spawnPoint.position, closestAnchor);
+        }
+        else
+        {
+            if (_currentArmLine != null)
+            {
+                _currentArmLine.CancelLine();
+                _currentArmLine = null;
+            }
+        }
     }
     public IEnumerator SpawnArmBullet(ImpulseType type)
     {     

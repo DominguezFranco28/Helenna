@@ -20,11 +20,11 @@ public class ZiplineState : IState
 
     private void OnSpecialAction()
     {
-        _oldStateMachine.TransitionTo(_oldStateMachine.slideState);
+        _oldPlayerBehaviour.PerformArmToAnchor(_anchorDetector.ClosestAnchor, true);
+        _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
     }
     public void Enter()
     {
-        _oldPlayerBehaviour.PerformThrowArmToAnchor(_anchorDetector.ClosestAnchor);
         if (!subbed)
         {
             if (InputManager.Instance != null)
@@ -36,7 +36,14 @@ public class ZiplineState : IState
             }
         }
 
-
+        Vector2 lastInput = _oldPlayerBehaviour.LastMovementInput;
+        _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", true);
+        _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
+        _oldPlayerBehaviour.Animator.SetFloat("Horizontal", lastInput.x);
+        _oldPlayerBehaviour.Animator.SetFloat("Vertical", lastInput.y);
+        _oldPlayerBehaviour.Animator.SetFloat("Speed", lastInput.magnitude);
+        _oldPlayerBehaviour.SetMovementEnabled(false);
+        _oldPlayerBehaviour.PerformArmToAnchor(_anchorDetector.ClosestAnchor, false);
         Debug.Log("You entered the state: ZIPLINE");
     }
 
@@ -44,17 +51,17 @@ public class ZiplineState : IState
     {
             if (InputManager.Instance != null)
             {
-                subbed = true;
-
+                subbed = false;
                 InputManager.Instance.SpecialActionPressed -= OnSpecialAction;
-
             }
-        
+        _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", false); 
+        _oldPlayerBehaviour.SetMovementEnabled(true);
         Debug.Log("You left the state: ZIPLINE");
     }
 
     public void Update()
     {
-        Debug.Log("You are in the state: ZIPLINE");
+        _oldPlayerBehaviour.SetMovementEnabled(false);
+        //sin setear esto aca, harold podia moverse si quedaba clavado con tirolesa, cambiabas de pj, y molvias a moverte.
     }
 }

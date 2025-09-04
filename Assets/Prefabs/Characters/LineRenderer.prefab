@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7931795677100889605}
   - component: {fileID: 7763971900413786264}
   - component: {fileID: 1661899399463800747}
+  - component: {fileID: -7710051371830330727}
   m_Layer: 0
   m_Name: LineRenderer
   m_TagString: Untagged
@@ -155,4 +156,45 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 0776383bdd37b7642a0a8827c1f14825, type: 3}
   - {fileID: 2800000, guid: 7293bc8c3a1eba24fa745d5a4feee037, type: 3}
   _endSpritePrefab: {fileID: 5696536833661753488, guid: f25cda8cececdeb409debc54e06b4ada, type: 3}
-  _fps: 30
+  _fps: 10
+--- !u!68 &-7710051371830330727
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114109491228385230}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 2.3, y: 2.4}
+  - {x: 3.3, y: 2.4}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0

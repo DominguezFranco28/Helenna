@@ -31,6 +31,7 @@ public class ImpulseState : IState
             {
                 case AnchorType.Zypline:
                     Debug.Log("Cambio a zypline ");
+                    _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", true);
                     _oldStateMachine.TransitionTo(_oldStateMachine.ziplineState);
 
                     break;
@@ -66,6 +67,7 @@ public class ImpulseState : IState
     {
         Debug.Log("You left the state: IMPULSE");
         _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", false);
+        _oldPlayerBehaviour.StopMovement();
     }
 
     public void Update()

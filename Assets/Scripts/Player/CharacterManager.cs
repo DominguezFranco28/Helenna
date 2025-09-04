@@ -57,7 +57,7 @@ public class CharacterManager : MonoBehaviour
             IControllable control = characters[i].GetComponent<IControllable>();
             if (control != null)
             {
-                Debug.Log("ActivateCharacter: " + characters[i].name);
+               // Debug.Log("ActivateCharacter: " + characters[i].name);
                 control.SetControl(i == index);
                control.SetMovementEnabled(i == index);
                 //This is equal to true, only for the character that is at the index in this for loop,
