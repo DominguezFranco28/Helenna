@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: _spawnTimer
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1781645198128025142, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
+      propertyPath: _armLinePrefab
+      value: 
+      objectReference: {fileID: 1661899399463800747, guid: 7d54d9afaf3d1ca408f99eff9fbe5ded, type: 3}
     - target: {fileID: 2216917969187451632, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.017
@@ -180,11 +184,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6170821206192857187, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -248.59
+      value: -246.31
       objectReference: {fileID: 0}
     - target: {fileID: 6170821206192857187, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40.71
+      value: 41.97
       objectReference: {fileID: 0}
     - target: {fileID: 6170821206192857187, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -936,7 +940,7 @@ Transform:
   m_GameObject: {fileID: 318954088}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -248.59, y: 40.71, z: -10}
+  m_LocalPosition: {x: -246.31, y: 41.97, z: -10}
   m_LocalScale: {x: 0.80645, y: 0.80645, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1241,6 +1245,10 @@ PrefabInstance:
     - target: {fileID: 1117326477163914232, guid: 01db62ebb5dada64b9ce932cc7146e56, type: 3}
       propertyPath: m_Name
       value: ActivatableAnchor
+      objectReference: {fileID: 0}
+    - target: {fileID: 3130376866169195471, guid: 01db62ebb5dada64b9ce932cc7146e56, type: 3}
+      propertyPath: m_TagString
+      value: Zipline
       objectReference: {fileID: 0}
     - target: {fileID: 5238964221213259700, guid: 01db62ebb5dada64b9ce932cc7146e56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1728,7 +1736,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6cc7fe2ede009a64e8fe40ee223a6f95, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -44348,7 +44356,7 @@ Transform:
   m_GameObject: {fileID: 1099452463}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: -1}
-  m_LocalPosition: {x: -248.59, y: 40.71, z: -10}
+  m_LocalPosition: {x: -246.31, y: 41.97, z: -10}
   m_LocalScale: {x: 0.8064463, y: 0.8064463, z: 0.8064463}
   m_ConstrainProportionsScale: 0
   m_Children:

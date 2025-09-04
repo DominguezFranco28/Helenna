@@ -115,7 +115,11 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     {
         if (!IsInControll) return;
         _armImpulser.GetThrowArm(type);
-        //SetControl(false);
+    }
+    public void PerformThrowArmToAnchor(Transform closestAnchor)
+    {
+        if (!IsInControll) return;
+        _armImpulser.GetThrowArmToAnchor(closestAnchor);
     }
 
 

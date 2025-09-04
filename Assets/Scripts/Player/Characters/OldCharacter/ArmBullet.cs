@@ -184,7 +184,7 @@ public class ArmBullet : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); // Destroy the bullet if it collides with anything else
+           // Destroy(gameObject); // Destroy the bullet if it collides with anything else
         }
     }
  }

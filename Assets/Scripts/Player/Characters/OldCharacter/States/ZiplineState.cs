@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ZiplineState : IState
@@ -19,21 +20,11 @@ public class ZiplineState : IState
 
     private void OnSpecialAction()
     {
-        _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
-        _oldStateMachine.TransitionTo(_oldStateMachine.impulseState);
+        _oldStateMachine.TransitionTo(_oldStateMachine.slideState);
     }
-
-    private void OnMove(Vector2 movement)
-    {
-        _oldPlayerBehaviour.SetMovementInput(movement);
-        if (movement.magnitude <= 0.01f)
-        {
-            _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
-        }
-    }
-
     public void Enter()
     {
+        _oldPlayerBehaviour.PerformThrowArmToAnchor(_anchorDetector.ClosestAnchor);
         if (!subbed)
         {
             if (InputManager.Instance != null)
@@ -41,19 +32,29 @@ public class ZiplineState : IState
                 subbed = true;
 
                 InputManager.Instance.SpecialActionPressed += OnSpecialAction;
-                InputManager.Instance.Move += OnMove;
+
             }
         }
+
+
         Debug.Log("You entered the state: ZIPLINE");
     }
 
     public void Exit()
     {
+            if (InputManager.Instance != null)
+            {
+                subbed = true;
+
+                InputManager.Instance.SpecialActionPressed -= OnSpecialAction;
+
+            }
+        
         Debug.Log("You left the state: ZIPLINE");
     }
 
     public void Update()
     {
-        
+        Debug.Log("You are in the state: ZIPLINE");
     }
 }

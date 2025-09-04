@@ -41,7 +41,10 @@ public class ImpulseState : IState
                 case AnchorType.HookPoint:
                     Debug.Log("Cambio a hookpoint ");
                     // lógica para HookPoint
-                    break;
+                    _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
+                    _oldPlayerBehaviour.ArmRelease = true;
+                    _oldPlayerBehaviour.ArmPulled = true;
+                    _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Pull); break;
                 default:
                     // lógica por defecto o para None
                     break;

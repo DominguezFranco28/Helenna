@@ -322,11 +322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6170821206192857187, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -264.79
+      value: -228.24
       objectReference: {fileID: 0}
     - target: {fileID: 6170821206192857187, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.1
+      value: 57.41
       objectReference: {fileID: 0}
     - target: {fileID: 6170821206192857187, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -136733,7 +136733,7 @@ Transform:
   m_GameObject: {fileID: 318954088}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -264.79, y: 57.1, z: -10}
+  m_LocalPosition: {x: -228.24, y: 57.41, z: -10}
   m_LocalScale: {x: 0.80645, y: 0.80645, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -242495,7 +242495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 12866822880979033, guid: 7faa31f0cfea0dc4d8a7f6494f9f3f85, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 3
+      value: 2.999939
       objectReference: {fileID: 0}
     - target: {fileID: 296723489436859147, guid: 7faa31f0cfea0dc4d8a7f6494f9f3f85, type: 3}
       propertyPath: m_Color.a
@@ -261928,7 +261928,7 @@ Transform:
   m_GameObject: {fileID: 1099452463}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: -1}
-  m_LocalPosition: {x: -264.79, y: 57.1, z: -10}
+  m_LocalPosition: {x: -228.24, y: 57.41, z: -10}
   m_LocalScale: {x: 0.8064463, y: 0.8064463, z: 0.8064463}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -563827,7 +563827,7 @@ GameObject:
   - component: {fileID: 1593246605}
   - component: {fileID: 1593246608}
   - component: {fileID: 1593246607}
-  m_Layer: 16
+  m_Layer: 23
   m_Name: PRUEBA ANCHOR
   m_TagString: HookPoint
   m_Icon: {fileID: 0}
