@@ -13,6 +13,8 @@ public class MoveState :  IState
     private void OnSpecialAction()
     {
         _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
+        _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
+        _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo
         _oldStateMachine.TransitionTo(_oldStateMachine.impulseState);
     }
 
@@ -46,8 +48,8 @@ public class MoveState :  IState
                 InputManager.Instance.Move += OnMove;
             }
         }
-        
         Debug.Log("You entered the state: OLD MOVE");
+        _oldPlayerBehaviour.SetMovementEnabled(true); //deshabilito el movimiento al tirar el brazo
         SFXManager.Instance.PlayLoop(_oldPlayerBehaviour.StepsSFX);
     }
 
@@ -62,7 +64,7 @@ public class MoveState :  IState
         {
             InputManager.Instance.SpecialActionPressed -= OnSpecialAction;
             InputManager.Instance.Move -= OnMove;
-         subbed = false;
+            subbed = false;
         }
     }
 

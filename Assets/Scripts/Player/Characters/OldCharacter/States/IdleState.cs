@@ -52,21 +52,18 @@ public class IdleState :  IState
     public void Exit()
     {
         Debug.Log("You left the state: OLD IDLE");
+        //desuscripcion del estado move porque daba problema con el impulse.
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.SpecialActionPressed -= OnSpecialAction;
+            InputManager.Instance.Move -= OnMove;
+            subbed = false;
+        }
     }
 
     public void Update()
     {
-        //Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-        /*
-        if (input.magnitude > 0.01f)
-        {
-            _oldStateMachine.TransitionTo(_oldStateMachine.moveState); 
-        }*/
-
-        //_oldPlayerBehaviour.SetMovementInput(Vector2.zero);
     }
-
-    
 }
 

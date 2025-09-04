@@ -35,7 +35,6 @@ public class ImpulseState : IState
 
                     break;
                 case AnchorType.HookPipe:
-                    // lógica de desplazamiento por Pipe
                     Debug.Log("Cambio a PIPE ");
                     _oldStateMachine.TransitionTo(_oldStateMachine.hookPipeState);
                     break;
@@ -50,21 +49,20 @@ public class ImpulseState : IState
             Debug.Log("LOGICA DE DEZPLAZAMIENTO EJECUTADA");
             return;
         }
+        //Si no esta focuseando ningun anclaje, que solo dispare el brazo.
 
-        else //Tengo que poder switchear el enum entre push y pull con un unico input  
+        //Tengo que poder switchear el enum entre push y pull con un unico input y mejorar esta logica 
+        else
         {
             _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
             _oldPlayerBehaviour.ArmRelease = true;
             _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Push);
-            // _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
         }
     }
     public void Exit()
     {
         Debug.Log("You left the state: IMPULSE");
         _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", false);
-        //me daba problemas al no resetear nunca el released del brazo
-
     }
 
     public void Update()
@@ -74,8 +72,4 @@ public class ImpulseState : IState
             _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
         }
     }
-
 }
-              
-           
-

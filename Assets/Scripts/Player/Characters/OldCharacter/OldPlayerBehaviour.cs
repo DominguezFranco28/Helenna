@@ -98,9 +98,9 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         }
         _movementInput = Vector2.zero;
         _rb2D.velocity = Vector2.zero;
-        _animator.SetFloat("Horizontal", 0f);
-        _animator.SetFloat("Vertical", 0f);
-        _animator.SetFloat("Speed", 0f);
+        //_animator.SetFloat("Horizontal", 0f);
+        //_animator.SetFloat("Vertical", 0f);
+        //_animator.SetFloat("Speed", 0f);
     }
     private void FixedUpdate()
     {

@@ -48,7 +48,6 @@ public class ArmImpulser : MonoBehaviour
     void Start()
     {
         //I'll ​​leave the link to the other script established. From here I can use other methods or properties.
-        //Mainly used to get the mouse position, which caused problems when calculating it in both scripts
         _playerCol = GetComponent<Collider2D>();
         _movementBehaviour = GetComponent<OldPlayerBehaviour>();
         _impulser = this;
@@ -79,7 +78,7 @@ public class ArmImpulser : MonoBehaviour
     }
 
 
-    private IEnumerator ApplyRecoil(Vector2 anchorPosition, ImpulseType type) 
+    private IEnumerator ApplyRecoil(Vector2 anchorPosition, ImpulseType type) //pasar a maquina de estados
     {
         //refactorizacion para que use sistemas de fisica (controla el fixed updte del behavour) para evitar bugs
         if (type != ImpulseType.Pull)
@@ -107,22 +106,16 @@ public class ArmImpulser : MonoBehaviour
     {
         if (_currentArmBullet != null)
         {
-
             return; //only let be one active arm.
         }
         StartCoroutine(SpawnArmBullet(type));
     }
     public IEnumerator SpawnArmBullet(ImpulseType type)
-    {
-      
+    {     
         Vector2 direction = _movementBehaviour.LastMovementInput; //obtengo el ultimo input de movimiento del jugador para disparar el brazo en esa direccion
-        _movementBehaviour.SetMovementEnabled(false); //deshabilito el movimiento del jugador mientras se lanza el brazo
-        _movementBehaviour.StopMovement();//freno al tirar el brazo ACA, no en el impulse state porque me rompia la direccionalidad del brazo
         yield return new WaitForSeconds(_spawnTimer);
         //Un timer para retrasar el disparo, asi me da tiempo a que se ejecute la animacion de recoil del brazo
         SFXManager.Instance.PlaySFX(_throwSFX);
-
-        //Rotate the projectile so that it looks where the mouse points
 
         //termine seteando la rotacion en 0 porque ajuste con animaciones direccionales
         Quaternion rotation = Quaternion.Euler(0f, 0f, 0f);
@@ -131,14 +124,12 @@ public class ArmImpulser : MonoBehaviour
 
         if (armBullet != null)
         {
-
+            //Save the reference of the current arml
             _currentArmBullet = armBullet;
 
-            //Save the reference of the current arml
             //Ignore collisions so the arm doesn't collide with the player
             Collider2D bulletCol = armBullet.GetComponent<Collider2D>();
             Physics2D.IgnoreCollision(bulletCol, _playerCol);
-
 
             //I pass the parameters to the methods that manage the arm logic
             var armScript = armBullet.GetComponent<ArmBullet>();
@@ -146,8 +137,6 @@ public class ArmImpulser : MonoBehaviour
             armScript.SetImpulseForce(_impulser);
             armScript.SetImpulseType(type);
             armScript.DetectVerticality(_movementBehaviour.IsOnHighGround()); //paso la altura del jugador al metodo que instancia la bala para que modifique su layer
-
-
         }
     }
 }
