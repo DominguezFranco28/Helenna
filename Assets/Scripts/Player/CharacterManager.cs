@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine; //Cinemachine Library
+
 public class CharacterManager : MonoBehaviour
 {
     public static CharacterManager Instance { get; private set; }
@@ -12,7 +13,6 @@ public class CharacterManager : MonoBehaviour
     private int _currentIndex = 0;
 
     void Awake()
-
     {
         Debug.Log("CharacterManager: Awake() ejecutado");
         if (Instance != null && Instance != this)
@@ -25,22 +25,30 @@ public class CharacterManager : MonoBehaviour
         ActivateCharacter(_currentIndex);
     }
 
-    void Update()
+    private void OnEnable()
     {
-        if (GameStateManager.Instance.IsGamePaused()) return; //si el juego esta en pausa, que no me deje cambiar de personaje
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            
-            SFXManager.Instance.PlaySFX(_changeSFX);
-            _currentIndex = (_currentIndex + 1) % characters.Length;
-            ActivateCharacter(_currentIndex);
-        }
-        // i put a tp to make testing faster, maybe I'll leave it for the final delivery.
-        //if (Input.GetKeyDown(KeyCode.LeftShift) && (characters[_currentIndex].name == "OldPlayer"))
-        //{
-        //    TeleportAllToCurrent();
-        //}
+        if (InputManager.Instance != null)
+            InputManager.Instance.ChangeCharacterPressed += OnChangeCharacter;
+        else
+            Debug.LogError("No InputManager found");
     }
+
+    private void OnDisable()
+    {
+        if (InputManager.Instance != null)
+            InputManager.Instance.ChangeCharacterPressed -= OnChangeCharacter;
+    }
+
+    private void OnChangeCharacter()
+    {
+        Debug.Log("Change Character");
+        if (GameStateManager.Instance.IsGamePaused()) return;
+
+        SFXManager.Instance.PlaySFX(_changeSFX);
+        _currentIndex = (_currentIndex + 1) % characters.Length;
+        ActivateCharacter(_currentIndex);
+    }
+
 
     void ActivateCharacter(int index)
     {
@@ -49,8 +57,9 @@ public class CharacterManager : MonoBehaviour
             IControllable control = characters[i].GetComponent<IControllable>();
             if (control != null)
             {
+                Debug.Log("ActivateCharacter: " + characters[i].name);
                 control.SetControl(i == index);
-                control.SetMovementEnabled(i == index);
+               control.SetMovementEnabled(i == index);
                 //This is equal to true, only for the character that is at the index in this for loop,
                 //all the others are set to false so they cannot move due to their Behavior
             }

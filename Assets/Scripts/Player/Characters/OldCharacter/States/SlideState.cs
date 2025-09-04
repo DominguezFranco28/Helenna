@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpState : IState
+public class SlideState : IState
 {
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
@@ -10,7 +10,7 @@ public class JumpState : IState
     private float _jumpDelay = 0.2f;
     private float _jumpTimer;
     private bool _delayCompleted;
-    public JumpState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine, JumpDetector jumpDetector)
+    public SlideState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine, JumpDetector jumpDetector)
     {
         _oldPlayerBehaviour = oldPlayer;
         _oldStateMachine = oldStateMachine;
@@ -18,7 +18,7 @@ public class JumpState : IState
     }
     public void Enter()
     {
-        Debug.Log("You entered the state: JUMP");
+        Debug.Log("You entered the state: SLIDE");
         _oldPlayerBehaviour.StopMovement();
         _jumpTimer = 0f;
         _delayCompleted = false;
@@ -28,7 +28,7 @@ public class JumpState : IState
 
     public void Exit()
     {
-        Debug.Log("You left the state: JUMP");
+        Debug.Log("You left the state: SLIDE");
         //if (_holeDetector.CanDig == false) //misma logic aque la animaicon del eprro
         //{
         //    _agilePlayerBehaviour.Animator.SetBool("Dig", false);

@@ -11,6 +11,7 @@ public class CameraZoom : MonoBehaviour
     public float zoomSpeed = 2f;
     private float originalZoom;
     private bool zooming = false;
+    private bool zoomingObject = false;
     private bool resetting = false;
     void Start()
     {
@@ -22,6 +23,7 @@ public class CameraZoom : MonoBehaviour
     {
         zooming = true;
         resetting = false;
+        zoomingObject = false;
     }
 
     void Update()

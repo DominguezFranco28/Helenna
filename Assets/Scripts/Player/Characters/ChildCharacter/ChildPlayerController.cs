@@ -7,6 +7,30 @@ public class ChildPlayerController : MonoBehaviour
     [SerializeField] private ChildPlayerBehaviour _childBehaviour;
     [SerializeField] private ChildTriggerDetector _childTriggerDetector;
     private ChildStateMachine _childStateMachine;
+    
+    private bool interacting = false;
+    private void OnEnable()
+    {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.InteractPressed += InteractPressed;
+        }
+
+    }
+    private void OnDisable()
+    {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.InteractPressed -= InteractPressed;
+        }
+
+    }
+    private void InteractPressed()
+    {
+        interacting = true;
+        if (InputManager.Instance != null)
+            InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
+    }
 
     private void Start()
     {
@@ -21,12 +45,13 @@ public class ChildPlayerController : MonoBehaviour
         {
             _childStateMachine.Update();
             // Detect enter to climb
-            if (_childTriggerDetector.CanClimb && Input.GetKeyDown(KeyCode.E))
+            if (_childTriggerDetector.CanClimb)
             {
                 _childStateMachine.TransitionTo(_childStateMachine.climbState);
                 return;
             }
-            else if (_childTriggerDetector.CanActivate && Input.GetKeyDown(KeyCode.E))
+
+            if (_childTriggerDetector.CanActivate && interacting)
             {
                 _childStateMachine.TransitionTo(_childStateMachine.actionState);
                 return;

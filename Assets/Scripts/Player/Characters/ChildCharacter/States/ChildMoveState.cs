@@ -6,15 +6,40 @@ public class ChildMoveState : IState
 {
     private ChildPlayerBehaviour _childPlayerBehaviour;
     private ChildStateMachine _childStateMachine;
-    public ChildMoveState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine)
+    private ChildTriggerDetector _climbDetector;
+    private bool subbed = false;
+    public ChildMoveState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine, ChildTriggerDetector climbDetector)
     {
         this._childPlayerBehaviour = childPlayerBehaviour;
         this._childStateMachine = childStateMachine;
+        this._climbDetector = climbDetector;
+    }
+
+    private void OnMove(Vector2 movement)
+    {
+        _childPlayerBehaviour.SetMovementInput(movement);
+        if (movement.magnitude <= 0.01f)
+        {
+            if (!_climbDetector.CanClimb)
+                _childStateMachine.TransitionTo(_childStateMachine.idleState);
+            else
+                _childStateMachine.TransitionTo(_childStateMachine.climbState);
+        }
     }
 
     public void Enter()
     {
         Debug.Log("You entered the state: CHILD MOVE");
+        if (!subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = true;
+                InputManager.Instance.Move += OnMove;
+            }
+        }
+        
+        _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.DefaultSpeed);
         _childPlayerBehaviour.SetMovementEnabled(true);
         SFXManager.Instance.PlayLoop(_childPlayerBehaviour.StepsSFX);
     }
@@ -23,15 +48,17 @@ public class ChildMoveState : IState
     {
         Debug.Log("You left the state: CHILD MOVE");
         SFXManager.Instance.StopLoop();
+
+
     }
 
     public void Update()
     {
-        Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        _childPlayerBehaviour.SetMovementInput(input);
+        //Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        /*_childPlayerBehaviour.SetMovementInput(input);
         if (input.magnitude <= 0.01f)
         {
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
-        }
+        }*/
     }
 }

@@ -31,13 +31,5 @@ public class DialogueBubbleTrigger : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (_playerColision && Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Diálogo activado");
-
-        }
-    }
 } 
 

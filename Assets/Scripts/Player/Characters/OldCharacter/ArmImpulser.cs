@@ -5,12 +5,15 @@ using TMPro;
 using Unity.Burst.Intrinsics;
 using Unity.VisualScripting;
 using UnityEngine;
+using static System.TimeZoneInfo;
+using UnityEngine.SceneManagement;
 
 public class ArmImpulser : MonoBehaviour
 {
     //Variables to adjust parameters of the IMPULSE force
     [SerializeField] private float _moveSmoothTime; 
     [SerializeField] private bool _isRecoiling = false;
+    [SerializeField] private float _spawnTimer;
     private Vector2 _recoilTarget;
     private Vector2 _recoilVelocity;
     private Rigidbody2D _rb2D;
@@ -27,7 +30,6 @@ public class ArmImpulser : MonoBehaviour
 
 
     //Variables to obtain components external to the arm.
-    private MousePosition _mousePosition;
     private OldPlayerBehaviour _movementBehaviour;
 
 
@@ -46,9 +48,7 @@ public class ArmImpulser : MonoBehaviour
     void Start()
     {
         //I'll ​​leave the link to the other script established. From here I can use other methods or properties.
-        //Mainly used to get the mouse position, which caused problems when calculating it in both scripts
         _playerCol = GetComponent<Collider2D>();
-        _mousePosition = GetComponent<MousePosition>(); 
         _movementBehaviour = GetComponent<OldPlayerBehaviour>();
         _impulser = this;
         _rb2D = GetComponent<Rigidbody2D>();
@@ -78,7 +78,7 @@ public class ArmImpulser : MonoBehaviour
     }
 
 
-    private IEnumerator ApplyRecoil(Vector2 anchorPosition, ImpulseType type) 
+    private IEnumerator ApplyRecoil(Vector2 anchorPosition, ImpulseType type) //pasar a maquina de estados
     {
         //refactorizacion para que use sistemas de fisica (controla el fixed updte del behavour) para evitar bugs
         if (type != ImpulseType.Pull)
@@ -104,17 +104,18 @@ public class ArmImpulser : MonoBehaviour
     }
     private void ThrowArm(ImpulseType type)
     {
-
         if (_currentArmBullet != null)
         {
-
             return; //only let be one active arm.
         }
+        StartCoroutine(SpawnArmBullet(type));
+    }
+    public IEnumerator SpawnArmBullet(ImpulseType type)
+    {     
+        Vector2 direction = _movementBehaviour.LastMovementInput; //obtengo el ultimo input de movimiento del jugador para disparar el brazo en esa direccion
+        yield return new WaitForSeconds(_spawnTimer);
+        //Un timer para retrasar el disparo, asi me da tiempo a que se ejecute la animacion de recoil del brazo
         SFXManager.Instance.PlaySFX(_throwSFX);
-        Vector2 direction = _mousePosition.MouseWorlPos;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        //Rotate the projectile so that it looks where the mouse points
 
         //termine seteando la rotacion en 0 porque ajuste con animaciones direccionales
         Quaternion rotation = Quaternion.Euler(0f, 0f, 0f);
@@ -123,14 +124,12 @@ public class ArmImpulser : MonoBehaviour
 
         if (armBullet != null)
         {
-
+            //Save the reference of the current arml
             _currentArmBullet = armBullet;
 
-            //Save the reference of the current arml
             //Ignore collisions so the arm doesn't collide with the player
             Collider2D bulletCol = armBullet.GetComponent<Collider2D>();
             Physics2D.IgnoreCollision(bulletCol, _playerCol);
-
 
             //I pass the parameters to the methods that manage the arm logic
             var armScript = armBullet.GetComponent<ArmBullet>();
@@ -138,8 +137,6 @@ public class ArmImpulser : MonoBehaviour
             armScript.SetImpulseForce(_impulser);
             armScript.SetImpulseType(type);
             armScript.DetectVerticality(_movementBehaviour.IsOnHighGround()); //paso la altura del jugador al metodo que instancia la bala para que modifique su layer
-            
-
         }
     }
 }

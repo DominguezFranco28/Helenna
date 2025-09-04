@@ -3,84 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 using static TMPro.TMP_Compatibility;
 
-public class ImpulseState :  IState
+public class ImpulseState : IState
 {
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
-    private float _timer = 0f;
-    private float _waitDuration = 0.4f;
-    private bool _timerStarted = false;
-    public ImpulseState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine)
+    private AnchorDetector _anchorDetector;
+    public ImpulseState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine, AnchorDetector anchorDetector)
     {
         _oldPlayerBehaviour = oldPlayer;
         _oldStateMachine = oldStateMachine;
+        _anchorDetector = anchorDetector;
     }
     public void Enter()
     {
         Debug.Log("You entered the state: IMPULSE");
-        _oldPlayerBehaviour.StopMovement();
-        _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", true);
-        
-        //Logica similar al estaod de Jump del perro, pero ahora necesito guardar el ultimo input nomas, no pos de la plataforma.
+
         Vector2 lastInput = _oldPlayerBehaviour.LastMovementInput;
+
+        _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", true);
         _oldPlayerBehaviour.Animator.SetFloat("Horizontal", lastInput.x);
         _oldPlayerBehaviour.Animator.SetFloat("Vertical", lastInput.y);
         _oldPlayerBehaviour.Animator.SetFloat("Speed", lastInput.magnitude);
-        _oldPlayerBehaviour.SetMovementEnabled(false);
-        _timer = 0f;
-        _timerStarted = false; //mantenemos el timer apagado, quiero que se prenda solo con los imputs
 
-        Debug.Log(lastInput);
+        if (_anchorDetector.ClosestAnchor != null)
+        {
+            switch (_anchorDetector.CurrentAnchor)
+            {
+                case AnchorType.Zypline:
+                    Debug.Log("Cambio a zypline ");
+                    _oldStateMachine.TransitionTo(_oldStateMachine.ziplineState);
 
+                    break;
+                case AnchorType.HookPipe:
+                    Debug.Log("Cambio a PIPE ");
+                    _oldStateMachine.TransitionTo(_oldStateMachine.hookPipeState);
+                    break;
+                case AnchorType.HookPoint:
+                    Debug.Log("Cambio a hookpoint ");
+                    // lógica para HookPoint
+                    break;
+                default:
+                    // lógica por defecto o para None
+                    break;
+            }
+            Debug.Log("LOGICA DE DEZPLAZAMIENTO EJECUTADA");
+            return;
+        }
+        //Si no esta focuseando ningun anclaje, que solo dispare el brazo.
 
+        //Tengo que poder switchear el enum entre push y pull con un unico input y mejorar esta logica 
+        else
+        {
+            _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
+            _oldPlayerBehaviour.ArmRelease = true;
+            _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Push);
+        }
     }
-
     public void Exit()
     {
         Debug.Log("You left the state: IMPULSE");
         _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", false);
-        //me daba problemas al no resetear nunca el released del brazo
-
     }
 
     public void Update()
     {
-        if (!_timerStarted)
+        if (!_oldPlayerBehaviour.ArmRelease) //El ArmReleased va a estar condicionado por el lifetime de la bala del brazo (ArmBullet.cs)
         {
-            if (Input.GetMouseButtonDown(0)) //Left click = push
-            {
-                _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
-                _oldPlayerBehaviour.ArmRelease = true; // Set the flag to true to prevent multiple arm releases
-                _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Push);
-                _timerStarted = true;
-            }
-
-            if (Input.GetMouseButtonDown(1)) // 
-            {
-                if (_oldPlayerBehaviour.ArmRelease)
-                {
-                    _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");// Set the flag to true to prevent multiple arm releases
-                    _oldPlayerBehaviour.ArmPulled = true; //si uso el click derecho y el brazo fue previamente liberado, acciono el tiron del brazo
-                                                          //desde el script del armbullet, se gestiona la atraccion si esta bandera del behaviour esta activada.
-                    _timerStarted = true;
-                }
-                _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");// Set the flag to true to prevent multiple arm releases
-                _oldPlayerBehaviour.ArmRelease = true; // Set the flag to true to prevent multiple arm releases
-                _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Pull);
-                _timerStarted = true;
-            }
-
-
+            _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
         }
-        else
-        {
-            _timer += Time.deltaTime; //gestiono el salto de estado dsps del timer par aque el pj no se pueda mover mientras vuela el brazo
-
-            if (_timer >= _waitDuration)
-            {
-                _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
-            }
-        }
-    }    
-
+    }
 }

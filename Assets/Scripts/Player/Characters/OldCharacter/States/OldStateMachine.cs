@@ -19,16 +19,20 @@ public class OldStateMachine
     public MoveState moveState;
     public IdleState idleState;
     public ImpulseState impulseState;
-    public JumpState jumpState;
+    public SlideState slideState;
     public HoldItemState holdItemState;
+    public ZiplineState ziplineState; 
+    public HookPipe hookPipeState;
     public IState CurrentState { get; private set; } //Read-only. External object can set the Initialize method to establish a default state
-    public OldStateMachine(OldPlayerBehaviour oldPlayer, JumpDetector jumpDetector, GrabObject grabObject)
+    public OldStateMachine(OldPlayerBehaviour oldPlayer, JumpDetector jumpDetector, GrabObject grabObject, AnchorDetector anchorDetector)
     {
         this.moveState = new MoveState(oldPlayer, this, jumpDetector);
         this.idleState = new IdleState(oldPlayer, this);
-        this.impulseState = new ImpulseState(oldPlayer, this);
-        this.jumpState = new JumpState(oldPlayer, this, jumpDetector);
+        this.slideState = new SlideState(oldPlayer, this, jumpDetector);
         this.holdItemState = new HoldItemState(oldPlayer, this, grabObject);
+        this.impulseState = new ImpulseState(oldPlayer, this, anchorDetector);
+        this.ziplineState = new ZiplineState(oldPlayer, this, anchorDetector);
+        this.hookPipeState = new HookPipe(oldPlayer, this, anchorDetector);
 
         //It was necessary to add the "this".
         //I pass this instantiation of the StateMachine class as
@@ -40,21 +44,36 @@ public class OldStateMachine
     //Enter, Update and Exit methods of the Istate interface, to manage the entry and exit of states.
     public void Initialize(IState startingState)
     {
+        InitStates(startingState);
         CurrentState = startingState;
-        startingState.Enter();
     }
     public void TransitionTo (IState nextState)
     {
-        CurrentState.Exit(); 
-        CurrentState= nextState;
-        nextState.Enter();
+        if (nextState != CurrentState)
+        {
+            if (CurrentState != null) CurrentState.Exit();
+            CurrentState = nextState;
+            nextState.Enter();
+        }
 
     }
+
     public void Update()
     {
         if (CurrentState != null)
         {
             CurrentState.Update();
         }
+    }
+
+    public void InitStates(IState startingState)
+    {
+        //cicla por todos los estados para subscribir todos los inputs
+        IState[] states = {idleState, moveState, holdItemState};
+        foreach(IState state in states)
+        {
+            TransitionTo(state);
+        }
+        TransitionTo(startingState);
     }
 }

@@ -49,6 +49,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
         if (!isInControll || !_canMove) return;
         {
             _movementInput = input.normalized;
+
             _animator.SetFloat("Horizontal", _movementInput.x);
             _animator.SetFloat("Vertical", _movementInput.y);
             _animator.SetFloat("Speed", _movementInput.magnitude);
@@ -72,6 +73,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     private void FixedUpdate()
     {
         if (!isInControll || !_canMove) return;
+
         _rb2D.velocity = _movementInput * _currentSpeed; 
         //Currentspeed because child have two velocitys, one for climbing and other to move.
     }

@@ -124,7 +124,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     {
         if (_rb2D == null)
         {
-            Debug.LogError(gameObject.name + "there is not rigidbody 2d!");
+            Debug.Log(gameObject.name + "there is no rigidbody 2d for agileCharacter");
             return;
         }
 
