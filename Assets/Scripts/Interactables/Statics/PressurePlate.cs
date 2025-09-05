@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
 {
-    [SerializeField] private LayerMask _objectLayer; //defino la layer del objeto que me interesa para detectar el trigger (OnPositionObject)
-    [SerializeField] private PuzzleManager _puzzleManager; //Instancia del Manager asociada a un GameObject. El objeto del puzzle con el que interactue, debe tener la misma referencia a esta misma instancia para funcionar (agrupar)
-    [SerializeField] private AudioClip _audioClip;
-    [SerializeField] private bool _needHold;
+    [Header("Weight Settings")]
+    [SerializeField] private float triggerWeight = 0f;
+    [SerializeField] private float totalWeight = 0f;
+    [SerializeField] private bool _needHold = false;
 
+    [SerializeField] private AudioClip _audioClip;
     private Collider2D _collider2D;
     private Animator _animator;
+
     public bool NeedHold { get { return _needHold; } } //prop solo lectura, la uso para detectar en el puzzle que use placa de presion en conjunto.
                                                        //Cuando se resuelve el puzzle, las apaga a todas las relacionadas llamando al metodo publico
+
+    public event System.Action OnPadPressed;
+    public event System.Action OnPadReleased;
+
+    private bool isPressed = false;
 
     private void Start()
     {
@@ -22,52 +29,55 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (((1 << other.gameObject.layer) & _objectLayer) != 0 )
+        WeightedObject weighted = other.GetComponent<WeightedObject>();
+        if (weighted)
         {
-            Debug.Log("Placa de presion activada");
+            totalWeight += weighted.weight;
 
-            SFXManager.Instance.PlaySFX(_audioClip);
-            _animator.SetBool("IsPressed", true);
-            
-            if(_puzzleManager)
-                _puzzleManager.PuzzleCount(-1); //resto uno al contador si se presiona
-
-            // detect box &stop it / activate lever
-            MovableObject movable = other.GetComponent<MovableObject>();
-
-            if (movable != null)
-            {
-                movable.StopMove(transform.position);
-            }
-            if (!_needHold)
-            {
-
-              _collider2D.enabled = false;
-                //como una no necesita ser mantenida, la "apago" por mas que ya no tenga un objeto encima.
-            }
-          
-            //aca agregaria anims o cambios de sprite, si tan solo los tuviera ;c
+            if (totalWeight >= triggerWeight)
+                ActivatePlate();
         }
+        
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-       // if (!_needHold) return; // si no necesita mantenerse, ignoro el exit para que no me rompa la animacion
-        if (((1 << other.gameObject.layer) & _objectLayer) != 0 && _needHold)
+        WeightedObject weighted = other.GetComponent<WeightedObject>();
+        if (weighted)
         {
-            Debug.Log("Placa de presion desactivada");
+            totalWeight -= weighted.weight;
+            if (totalWeight < 0f) totalWeight = 0f;
 
-            _animator.SetBool("IsPressed", false);
-          //  _collider2D.enabled = true;
-            _puzzleManager.PuzzleCount(+1); // De ser de las placas de presion que requieren estar apretadas en simultaneo,
-                                           // SUMO uno al count si se sale de la placa, para obligar al jugador a pulsarla en simultaneo con otra para alcanzar la cuenta requerida dle puzzle.
+            if (totalWeight < triggerWeight)
+            {
+                if (_needHold)
+                    DeactivatePlate();
+            }
             
-            //aca agregaria anims o cambios de sprite, si tan solo los tuviera ;c
         }
+            
     }
+
+    private void ActivatePlate()
+    {
+        isPressed = true;
+
+        Debug.Log("Placa de presion activada");
+        _animator.SetBool("IsPressed", true);
+        SFXManager.Instance.PlaySFX(_audioClip);
+
+        OnPadPressed?.Invoke();
+    }
+
     public void DeactivatePlate()
     {
+        isPressed = false;
+
         //Metodo publico para que el puzzle pueda apagar la placa de presion, por ejemplo si se resuelve el puzzle y se quiere apagar todas las placas de presion
-        _needHold = false; //desactivo la necesidad de mantener presionada la placa
+        Debug.Log("Placa de presion desactivada");
+        _animator.SetBool("IsPressed", false);
+        SFXManager.Instance.PlaySFX(_audioClip);
+
+        OnPadReleased?.Invoke();
     }
 
 
