@@ -22,73 +22,55 @@ public class MovableObject : MonoBehaviour, IMovable
 
     private bool _canMove = true;
     private bool _isStopping = false;
+
+    private WeightedObject weighted;
+    
     private void Start()
     {
         this._collider2D = GetComponent<BoxCollider2D>();
-
-        
+        weighted = GetComponent<WeightedObject>();
     }
+
     public void MoveTo(Vector2 position) // parameter comes from ArmBullet
     {
         if (_canMove)
         {
-            _targetPosition = position;
+            if (weighted)
+            {
+                float pushFactor = 1f / (1f + weighted.GetWeight() * 0.1f);
+                _targetPosition = Vector2.Lerp(transform.position, position, pushFactor);
+            }
+            else
+                _targetPosition = position;
+            _canMove = false;
             _isBeingMoved = true;
             SFXManager.Instance.PlaySFX(_moovingSFX);
         }
     }
 
-
     void Update()
     {
-        //revisar y ajustar
-        if (!_isBeingMoved) return;
-
-        _currentPosition = transform.position;
-        Vector2 direction = _targetPosition - _currentPosition;
-        float distance = direction.magnitude;
-
-        if (!_isStopping) //solo check de colision si no esta frenada la caja
+        if (_isBeingMoved)
         {
-            RaycastHit2D hit = Physics2D.BoxCast(_currentPosition, _collider2D.bounds.size, 0, direction.normalized, distance, _obstacleMask);
+            Vector2 direction = _targetPosition - _currentPosition;
+            float distance = direction.magnitude;
 
+            _currentPosition = transform.position;
 
-            if (hit.collider != null)
+            //Suavizado del desplazamiento normal de la caja
+            Vector2 smoothPosition = Vector2.SmoothDamp(_currentPosition, _targetPosition, ref _velocity, _moveSmoothTime);
+
+            if (Vector2.Distance(smoothPosition, _targetPosition) < _stopThreshold)
             {
-                float moveDistance = hit.distance - 0.05f; //para que no se pegue a la colision 
-                if (moveDistance < 0) moveDistance = 0f;
-                Vector2 collisionPoint = _currentPosition + direction.normalized * moveDistance;
-                _targetPosition = collisionPoint;
-            }
-        }
-
-        //Suavizado del desplazamiento normal de la caja
-
-        Vector2 smoothPosition = Vector2.SmoothDamp(_currentPosition, _targetPosition, ref _velocity, _moveSmoothTime);
-        transform.position = smoothPosition;
-
-        if (Vector2.Distance(smoothPosition, _targetPosition) < _stopThreshold) //el threshold editable desde inspector para ajustar a gusto
-        {
-            if (_isStopping)
-            {
-                // Solo se detienne completamente si es frenada suave 
-                _isBeingMoved = false;
                 _velocity = Vector2.zero;
-                _canMove = false;
-                _isStopping = false;
+                _canMove = true;
+                _isBeingMoved = false;
+
+                smoothPosition = Vector2.SmoothDamp(_currentPosition, _targetPosition, ref _velocity, _moveSmoothTime);
             }
+
+            transform.position = smoothPosition;
         }
-    }
-    public void StopMove (Vector2 target) //parametro viene del transform position de la placa de presion o quien frene el mov
-   
-    {
-        _targetPosition = target;
-        _isBeingMoved = true; // Habilita el suavizado
-
-
-        //si quisiera detenner la caja en la placa de presion descomentar esto.
-        //_canMove = false; 
-        //_isStopping = true;
-
+        
     }
 }

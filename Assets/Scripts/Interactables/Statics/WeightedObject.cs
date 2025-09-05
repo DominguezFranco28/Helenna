@@ -4,5 +4,14 @@ using UnityEngine;
 
 public class WeightedObject : MonoBehaviour
 {
-    public float weight = 5f;
+    [SerializeField] private float baseWeight = 5f;
+    public bool autoCalculateWeight = false;
+
+    public float GetWeight()
+    {
+        if (autoCalculateWeight)
+            return baseWeight * transform.localScale.x * transform.localScale.y * transform.localScale.z;
+        else
+            return baseWeight;
+    }
 }

@@ -32,7 +32,7 @@ public class PressurePlate : MonoBehaviour
         WeightedObject weighted = other.GetComponent<WeightedObject>();
         if (weighted)
         {
-            totalWeight += weighted.weight;
+            totalWeight += weighted.GetWeight();
 
             if (totalWeight >= triggerWeight)
                 ActivatePlate();
@@ -44,7 +44,7 @@ public class PressurePlate : MonoBehaviour
         WeightedObject weighted = other.GetComponent<WeightedObject>();
         if (weighted)
         {
-            totalWeight -= weighted.weight;
+            totalWeight -= weighted.GetWeight();
             if (totalWeight < 0f) totalWeight = 0f;
 
             if (totalWeight < triggerWeight)
