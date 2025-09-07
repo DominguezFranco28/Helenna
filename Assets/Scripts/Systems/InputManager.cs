@@ -100,4 +100,8 @@ public class InputManager : MonoBehaviour
         action?.Invoke();
     }
 
+    public InputSystem_Actions GetInputSystem()
+    {
+        return inputActions;
+}
 }
