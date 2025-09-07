@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4573775017932175692}
-  - component: {fileID: 5548965912938295542}
   - component: {fileID: 369674611557983654}
+  - component: {fileID: 1866590628272214741}
   m_Layer: 12
   m_Name: ClimbDetector
   m_TagString: Untagged
@@ -33,8 +33,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 345783047961574929}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &5548965912938295542
-CircleCollider2D:
+--- !u!114 &369674611557983654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267335225036222111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafa3a64f5a9314439cb7c03f3c0019d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canClimb: 0
+  _canUseZipline: 0
+--- !u!61 &1866590628272214741
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -65,21 +79,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.24352509}
+  m_Offset: {x: 0, y: 0.40877914}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.6180497
---- !u!114 &369674611557983654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 267335225036222111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dafa3a64f5a9314439cb7c03f3c0019d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Size: {x: 0.6967222, y: 1.8175583}
+  m_EdgeRadius: 0
 --- !u!1 &4325059657574243158
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4325059657574243158}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.03, y: 65.47, z: -0.36064106}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -205,9 +217,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1929262187
-  m_SortingLayer: 4
-  m_SortingOrder: 1
+  m_SortingLayerID: -129179619
+  m_SortingLayer: 6
+  m_SortingOrder: 0
   m_Sprite: {fileID: 120215711, guid: f274c4b1d5f68244c8a57fd8f6d07b1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -276,11 +288,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2412914810faf7c4ab65191dfa3a219c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 11
+  _speed: 10
   _climbSpeed: 5
+  _ziplineSpeed: 12
   _climbingLoopSFX: {fileID: 8300000, guid: 00e1e3be6c78b744db80ec201ecef63f, type: 3}
   _footstepsSFX: {fileID: 8300000, guid: cd93f9b000a076c3bbc056a005fe8358, type: 3}
-  isInControll: 0
+  _isInControll: 0
 --- !u!114 &447372214511955916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,3 +320,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dafa3a64f5a9314439cb7c03f3c0019d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canClimb: 0
+  _canUseZipline: 0
