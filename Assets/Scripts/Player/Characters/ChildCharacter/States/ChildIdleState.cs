@@ -54,6 +54,14 @@ public class ChildIdleState : IState
     public void Exit()
     {
         Debug.Log("You left the state: CHILD IDLE");
+        if (subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = false;
+                InputManager.Instance.Move -= OnMove;
+            }
+        }
     }
 
     public void Update()

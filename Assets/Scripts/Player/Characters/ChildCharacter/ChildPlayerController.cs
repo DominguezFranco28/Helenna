@@ -11,7 +11,7 @@ public class ChildPlayerController : MonoBehaviour
     private bool interacting = false;
     private void OnEnable()
     {
-        if (InputManager.Instance != null && _childBehaviour.isInControll)
+        if (InputManager.Instance != null)
         {
             InputManager.Instance.InteractPressed += InteractPressed;
         }
@@ -19,7 +19,7 @@ public class ChildPlayerController : MonoBehaviour
     }
     private void OnDisable()
     {
-        if (InputManager.Instance != null && _childBehaviour.isInControll)
+        if (InputManager.Instance != null)
         {
             InputManager.Instance.InteractPressed -= InteractPressed;
         }
@@ -27,8 +27,9 @@ public class ChildPlayerController : MonoBehaviour
     }
     private void InteractPressed()
     {
+        if (!_childBehaviour.IsInControll) return;
         interacting = true;
-        if (InputManager.Instance != null && _childBehaviour.isInControll)
+        if (InputManager.Instance != null)
             InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
     }
 
@@ -41,7 +42,7 @@ public class ChildPlayerController : MonoBehaviour
     private void Update()
     {
         if (GameStateManager.Instance.IsGamePaused()) return;
-        if (_childBehaviour.isInControll)
+        if (_childBehaviour.IsInControll)
         {
             _childStateMachine.Update();
             // Detect enter to climb
@@ -54,6 +55,12 @@ public class ChildPlayerController : MonoBehaviour
             if (_childTriggerDetector.CanActivate && interacting)
             {
                 _childStateMachine.TransitionTo(_childStateMachine.actionState);
+                return;
+            }
+
+            if (_childTriggerDetector.CanUseZipline)
+            {
+                _childStateMachine.TransitionTo(_childStateMachine.ziplineState);
                 return;
             }
         }

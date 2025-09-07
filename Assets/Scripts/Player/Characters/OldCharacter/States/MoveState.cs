@@ -12,6 +12,7 @@ public class MoveState :  IState
 
     private void OnSpecialAction()
     {
+        if (!_oldPlayerBehaviour.IsInControll) return;
         _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
         _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
         _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo

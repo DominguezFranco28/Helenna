@@ -126,6 +126,8 @@ public class ArmImpulser : MonoBehaviour
 
             _currentArmLine = Instantiate(_armLinePrefab);
             _currentArmLine.AssignTarget(_spawnPoint.position, closestAnchor);
+            // aviso al CharacterManager que hay una nueva tirolesa disponible , para que nina pueda buscar la referencia desde ahi
+            CharacterManager.Instance.SetActiveZipline(_currentArmLine);
         }
         else
         {
@@ -139,6 +141,8 @@ public class ArmImpulser : MonoBehaviour
     public IEnumerator SpawnArmBullet(ImpulseType type)
     {     
         Vector2 direction = _movementBehaviour.LastMovementInput; //obtengo el ultimo input de movimiento del jugador para disparar el brazo en esa direccion
+        if (direction == Vector2.zero)
+            direction = Vector2.down; //si no hay input, disparo abajo por defecto  
         yield return new WaitForSeconds(_spawnTimer);
         //Un timer para retrasar el disparo, asi me da tiempo a que se ejecute la animacion de recoil del brazo
         SFXManager.Instance.PlaySFX(_throwSFX);

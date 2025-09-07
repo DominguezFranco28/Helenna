@@ -28,6 +28,7 @@ public class AgilePlayerController : MonoBehaviour
     }
     private void InteractPressed()
     {
+        if (!_agileBehaviour.IsInControll) return;
         interacting = true;
         if (InputManager.Instance != null && _agileBehaviour.IsInControll)
             InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);

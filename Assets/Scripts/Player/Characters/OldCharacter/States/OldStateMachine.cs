@@ -60,7 +60,7 @@ public class OldStateMachine
 
     public void Update()
     {
-        if (CurrentState != null)
+        if (CurrentState != null )
         {
             CurrentState.Update();
         }
@@ -75,5 +75,11 @@ public class OldStateMachine
             TransitionTo(state);
         }
         TransitionTo(startingState);
+    }
+    public bool IsActive { get; private set; }
+
+    public void SetActive(bool value)
+    {
+        IsActive = value;
     }
 }

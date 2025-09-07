@@ -15,6 +15,14 @@ public class ArmLineController : MonoBehaviour
     private int _animationStep;
     private float _fpsCounter;
     //control del linerenderer
+
+    //propiedades para acceder desde el el state de nina a las posiciones de la zipline
+    public Vector3 StartPoint => _lineRenderer.GetPosition(0);
+    public Vector3 EndPoint => _lineRenderer.GetPosition(1);
+
+
+
+
     private void Awake()
     {
         _lineRenderer = GetComponent<LineRenderer>();
@@ -101,4 +109,5 @@ public class ArmLineController : MonoBehaviour
         //    _fpsCounter = 0f; 
         //}
     }
+
 }

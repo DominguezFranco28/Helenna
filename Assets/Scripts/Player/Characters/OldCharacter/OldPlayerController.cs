@@ -13,14 +13,16 @@ public class OldPlayerController : MonoBehaviour
     private bool interacting = false;
     private void InteractPressed()
     {
+        if (!_playerBehaviour.IsInControll) return;
+
         interacting = true;
         Debug.Log("Interacting: " + interacting);
-        if (InputManager.Instance != null && _playerBehaviour.IsInControll)
+        if (InputManager.Instance != null)
             InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
     }
     private void OnEnable()
     {
-        if (InputManager.Instance != null && _playerBehaviour.IsInControll)
+        if (InputManager.Instance != null)
         {
             InputManager.Instance.InteractPressed += InteractPressed;
         }
@@ -28,7 +30,7 @@ public class OldPlayerController : MonoBehaviour
     }
     private void OnDisable()
     {
-        if (InputManager.Instance != null && _playerBehaviour.IsInControll)
+        if (InputManager.Instance != null)
         {
             InputManager.Instance.InteractPressed -= InteractPressed;
         }

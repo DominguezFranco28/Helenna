@@ -54,7 +54,15 @@ public class AgileMoveState : IState
     {
         Debug.Log("You left the state: AGILE MOVE");
         SFXManager.Instance.StopLoop();
-
+        if (subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = true;
+                InputManager.Instance.ActionPressed -= ActionPressed;
+                InputManager.Instance.Move -= OnMove;
+            }
+        }
     }
     
     public void Update()
