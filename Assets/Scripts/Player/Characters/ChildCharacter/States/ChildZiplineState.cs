@@ -33,7 +33,7 @@ public class ChildZiplineState : IState
 
         if (_ziplineDetector.CanUseZipline)
         {
-           // _childPlayerBehaviour.PlayerCollider.isTrigger = true;
+            _childPlayerBehaviour.PlayerCollider.isTrigger = true;
             _childPlayerBehaviour.Animator.SetBool("isClimbing", true);
             SFXManager.Instance.PlayLoop(_childPlayerBehaviour.ClimbSFX);
         }
@@ -45,7 +45,7 @@ public class ChildZiplineState : IState
 
 
         // desactivo colisiones?
-        //_childPlayerBehaviour.PlayerCollider.isTrigger = false;
+        _childPlayerBehaviour.PlayerCollider.isTrigger = false;
         _childPlayerBehaviour.Animator.SetBool("isClimbing", false);
         _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.DefaultSpeed);
         SFXManager.Instance.StopLoop();

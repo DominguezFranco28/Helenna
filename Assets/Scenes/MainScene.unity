@@ -322,11 +322,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6170821206192857187, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -228.24
+      value: -331.21
       objectReference: {fileID: 0}
     - target: {fileID: 6170821206192857187, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 57.41
+      value: 51.9
       objectReference: {fileID: 0}
     - target: {fileID: 6170821206192857187, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -136733,7 +136733,7 @@ Transform:
   m_GameObject: {fileID: 318954088}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -228.24, y: 57.41, z: -10}
+  m_LocalPosition: {x: -331.21, y: 51.9, z: -10}
   m_LocalScale: {x: 0.80645, y: 0.80645, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -261928,7 +261928,7 @@ Transform:
   m_GameObject: {fileID: 1099452463}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: -1}
-  m_LocalPosition: {x: -228.24, y: 57.41, z: -10}
+  m_LocalPosition: {x: -331.21, y: 51.9, z: -10}
   m_LocalScale: {x: 0.8064463, y: 0.8064463, z: 0.8064463}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -289804,12 +289804,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0764680abdfc3154aa90889b8a51e472, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectLayer:
-    serializedVersion: 2
-    m_Bits: 264
-  _puzzleManager: {fileID: 1256726044}
-  _audioClip: {fileID: 8300000, guid: bd9600329aad14d4db6064c118dd72b3, type: 3}
+  triggerWeight: 0
+  totalWeight: 0
   _needHold: 1
+  _audioClip: {fileID: 8300000, guid: bd9600329aad14d4db6064c118dd72b3, type: 3}
 --- !u!212 &1442066586
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -565262,6 +565260,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 600030604}
     m_Modifications:
+    - target: {fileID: 748283137025926783, guid: 4d0dddb38cbb4f74296ceb01c84f9b36, type: 3}
+      propertyPath: _obstacleMask.m_Bits
+      value: 16384
+      objectReference: {fileID: 0}
     - target: {fileID: 1885525747835525236, guid: 4d0dddb38cbb4f74296ceb01c84f9b36, type: 3}
       propertyPath: m_LocalPosition.x
       value: -255.31

@@ -139,37 +139,48 @@ public class ArmImpulser : MonoBehaviour
         }
     }
     public IEnumerator SpawnArmBullet(ImpulseType type)
-    {     
-        Vector2 direction = _movementBehaviour.LastMovementInput; //obtengo el ultimo input de movimiento del jugador para disparar el brazo en esa direccion
+    {
+        Vector2 direction = _movementBehaviour.LastMovementInput;
         if (direction == Vector2.zero)
-            direction = Vector2.down; //si no hay input, disparo abajo por defecto  
+            direction = Vector2.down;
+
         yield return new WaitForSeconds(_spawnTimer);
-        //Un timer para retrasar el disparo, asi me da tiempo a que se ejecute la animacion de recoil del brazo
         SFXManager.Instance.PlaySFX(_throwSFX);
 
-        //termine seteando la rotacion en 0 porque ajuste con animaciones direccionales
-        Quaternion rotation = Quaternion.Euler(0f, 0f, 0f);
-        GameObject armBullet = GameObject.Instantiate(_armShot, _spawnPoint.position, rotation);
+        // ajuste de spawnpoint en base a la direccion 
+        Vector3 spawnOffset = Vector3.zero;
 
+        if (direction.x > 0) // mirando derecha
+            spawnOffset = new Vector3(0.5f, 0f, 0f);
+        else if (direction.x < 0) // mirando izquierda
+            spawnOffset = new Vector3(0f, -0.3f, 0f);
+        else if (direction.y > 0) // mirando arriba
+            spawnOffset = new Vector3(-0.3f, 0.2f, 0f);
+        else if (direction.y < 0) // mirando abajo
+            spawnOffset = new Vector3(0.3f, -0.2f, 0f);
+
+        Vector3 finalSpawnPos = transform.position + spawnOffset;
+
+   
+        Quaternion rotation = Quaternion.Euler(0f, 0f, 0f);
+
+        GameObject armBullet = Instantiate(_armShot, finalSpawnPos, rotation);
 
         if (armBullet != null)
         {
-            //Save the reference of the current arml
             _currentArmBullet = armBullet;
 
-            //Ignore collisions so the arm doesn't collide with the player
             Collider2D bulletCol = armBullet.GetComponent<Collider2D>();
             Physics2D.IgnoreCollision(bulletCol, _playerCol);
 
-            //I pass the parameters to the methods that manage the arm logic
             var armScript = armBullet.GetComponent<ArmBullet>();
             armScript.SetDirection(direction);
             armScript.SetImpulseForce(_impulser);
             armScript.SetImpulseType(type);
-            armScript.DetectVerticality(_movementBehaviour.IsOnHighGround()); //paso la altura del jugador al metodo que instancia la bala para que modifique su layer
+            armScript.DetectVerticality(_movementBehaviour.IsOnHighGround());
         }
     }
-}
+    }
 
 
 
