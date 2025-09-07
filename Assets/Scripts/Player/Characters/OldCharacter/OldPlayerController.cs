@@ -13,6 +13,8 @@ public class OldPlayerController : MonoBehaviour
     private bool interacting = false;
     private void InteractPressed()
     {
+        if (!_playerBehaviour.IsInControll) return;
+
         interacting = true;
         Debug.Log("Interacting: " + interacting);
         if (InputManager.Instance != null)

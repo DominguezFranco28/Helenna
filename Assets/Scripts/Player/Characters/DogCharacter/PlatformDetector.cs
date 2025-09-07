@@ -18,7 +18,6 @@ public class PlatformDetector : MonoBehaviour
 
     private void OnMove(Vector2 movement)
     {
-        Debug.Log("dog - OnMove");
         _direction = movement;
     }
 
@@ -41,7 +40,7 @@ public class PlatformDetector : MonoBehaviour
 
     private void Update()
     {
-        if (!_playerBehaviour.isInControll)
+        if (!_playerBehaviour.IsInControll)
             return;
         _origin = _mouth.gameObject.transform.position;
 

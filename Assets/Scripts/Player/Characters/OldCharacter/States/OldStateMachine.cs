@@ -16,6 +16,8 @@ public class OldStateMachine
 // GetComponent cannot be used because it's a method inherited from MonoBehaviour.
 
 {
+    private CharacterManager characterManager;
+
     public MoveState moveState;
     public IdleState idleState;
     public ImpulseState impulseState;
@@ -46,9 +48,17 @@ public class OldStateMachine
     {
         InitStates(startingState);
         CurrentState = startingState;
+
+        characterManager = CharacterManager.Instance;
     }
     public void TransitionTo (IState nextState)
     {
+        if (characterManager)
+        {
+            string characterName = "OldPlayer";
+            if (characterManager.GetActiveCharacter() != characterName) return;
+        }
+
         if (nextState != CurrentState)
         {
             if (CurrentState != null) CurrentState.Exit();
@@ -60,7 +70,7 @@ public class OldStateMachine
 
     public void Update()
     {
-        if (CurrentState != null)
+        if (CurrentState != null )
         {
             CurrentState.Update();
         }
@@ -75,5 +85,11 @@ public class OldStateMachine
             TransitionTo(state);
         }
         TransitionTo(startingState);
+    }
+    public bool IsActive { get; private set; }
+
+    public void SetActive(bool value)
+    {
+        IsActive = value;
     }
 }

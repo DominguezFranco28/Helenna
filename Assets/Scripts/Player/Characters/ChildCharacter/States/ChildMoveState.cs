@@ -18,29 +18,29 @@ public class ChildMoveState : IState
     private void OnMove(Vector2 movement)
     {
         _childPlayerBehaviour.SetMovementInput(movement);
-        if (movement.magnitude <= 0.01f)
+
+
+        if (movement.magnitude <= 0.01f && !_climbDetector.CanClimb)
         {
-            if (!_climbDetector.CanClimb)
-                _childStateMachine.TransitionTo(_childStateMachine.idleState);
-            else
-                _childStateMachine.TransitionTo(_childStateMachine.climbState);
+            _childStateMachine.TransitionTo(_childStateMachine.idleState);
         }
     }
 
     public void Enter()
     {
         Debug.Log("You entered the state: CHILD MOVE");
+
         if (!subbed)
         {
             if (InputManager.Instance != null)
             {
                 subbed = true;
+
                 InputManager.Instance.Move += OnMove;
             }
         }
-        
+
         _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.DefaultSpeed);
-        _childPlayerBehaviour.SetMovementEnabled(true);
         SFXManager.Instance.PlayLoop(_childPlayerBehaviour.StepsSFX);
     }
 
@@ -48,6 +48,16 @@ public class ChildMoveState : IState
     {
         Debug.Log("You left the state: CHILD MOVE");
         SFXManager.Instance.StopLoop();
+
+        if (subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = false;
+
+                InputManager.Instance.Move -= OnMove;
+            }
+        }
 
 
     }

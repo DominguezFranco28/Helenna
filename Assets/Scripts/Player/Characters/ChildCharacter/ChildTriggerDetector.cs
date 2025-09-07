@@ -5,11 +5,13 @@ using UnityEngine;
 public class ChildTriggerDetector : MonoBehaviour
 {
     [SerializeField] private bool _canClimb = false;
+    [SerializeField] private bool _canUseZipline = false;
     private Collider2D _climbableCollider;
 
     private bool _canActivateLever = false;
     private Collider2D _leverCollider;
     public bool CanClimb { get { return _canClimb; } }
+    public bool CanUseZipline { get { return _canUseZipline; }set { _canUseZipline = value; } }
     public bool CanActivate { get { return _canActivateLever;} set { _canActivateLever = value; } }
     public Collider2D Climbable { get { return _climbableCollider; } }
     public Collider2D LevelCollider { get { return _leverCollider; } }
@@ -52,5 +54,22 @@ public class ChildTriggerDetector : MonoBehaviour
             _leverCollider = null;
 
         }
+        if (collision.CompareTag("Zipline"))
+        {
+            Debug.Log("saliste de colision con tirolesa");
+            _canUseZipline = false;
+        }
+    }
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Zipline"))
+        {
+            Debug.Log("Entraste en colision con tirolesa");
+            _canUseZipline = true;
+        }
+    }
+    public void ResetZipline()
+    {
+        _canUseZipline = false;
     }
 }

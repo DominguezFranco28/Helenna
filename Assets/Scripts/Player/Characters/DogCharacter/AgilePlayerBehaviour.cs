@@ -20,8 +20,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     private bool _canMove;
     private bool _canJump = false;
     private bool _canDig = false;
-    //it remains to be encapsulated
-    public bool isInControll = false;
+    private bool _isInControll = false;
     //timer para cd salto
     private float _jumpTimer = 0;
     private bool _delayCompleted =false;
@@ -31,6 +30,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 
     public bool DelayCompleted { get { return _delayCompleted; } }
     public bool IsGrounded { get { return _isGrounded; } }
+    public bool IsInControll { get { return _isInControll; } }
     public bool CanJump { get { return _canJump; } set { _canJump = value; } }
     public bool CanDig { get { return _canDig; } set { _canDig = value; } }
     public Vector2 MovementInput { get { return _movementInput; } }
@@ -57,7 +57,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 
     public void SetMovementInput(Vector2 input)
     {
-        if (!isInControll || !_canMove) return;
+        if (!IsInControll || !_canMove) return;
         {
 
             _movementInput = input.normalized;
@@ -135,7 +135,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 
     private void FixedUpdate()
     {
-        if (!isInControll || !_canMove) return;
+        if (!IsInControll || !_canMove) return;
         _rb2D.velocity = _movementInput * _speed;
         CheckGround();
         UpdateMouthDirection(_movementInput); // Actualiza la dirección de la boca en cada FixedUpdate
@@ -171,7 +171,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 
     public void SetControl(bool isActive)
     {
-        isInControll = isActive;
+        _isInControll = isActive;
         if (!isActive) StopMovement();
     }
 

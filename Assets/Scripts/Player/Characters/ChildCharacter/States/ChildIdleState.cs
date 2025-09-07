@@ -20,6 +20,7 @@ public class ChildIdleState : IState
         if (Mathf.Abs(movement.x) > 0.1f || Mathf.Abs(movement.y) > 0.1f)
         {
             _childStateMachine.TransitionTo(_childStateMachine.moveState);
+            _childPlayerBehaviour.SetMovementInput(movement);
             return;
         }
 
@@ -54,6 +55,14 @@ public class ChildIdleState : IState
     public void Exit()
     {
         Debug.Log("You left the state: CHILD IDLE");
+        if (subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = false;
+                InputManager.Instance.Move -= OnMove;
+            }
+        }
     }
 
     public void Update()

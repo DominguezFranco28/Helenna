@@ -19,6 +19,7 @@ public class AgileIdleState : IState
         if (movement.magnitude > 0.01f)
         {
             _agileStateMachine.TransitionTo(_agileStateMachine.moveState); //Pasaje a estado de movimiento
+            _agilePlayerBehaviour.SetMovementInput(movement);
         }
     }
 

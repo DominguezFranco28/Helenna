@@ -12,6 +12,7 @@ public class MoveState :  IState
 
     private void OnSpecialAction()
     {
+        if (!_oldPlayerBehaviour.IsInControll) return;
         _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
         _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
         _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo
@@ -20,8 +21,6 @@ public class MoveState :  IState
 
     private void OnMove(Vector2 movement)
     {
-        Debug.Log("MoveState - Move: " + movement + " - mag: " + movement.magnitude);
-
         _oldPlayerBehaviour.SetMovementInput(movement);
         if (movement.magnitude <= 0.01f)
         {

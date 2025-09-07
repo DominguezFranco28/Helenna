@@ -31,6 +31,7 @@ public class ImpulseState : IState
             {
                 case AnchorType.Zypline:
                     Debug.Log("Cambio a zypline ");
+                   
                     _oldStateMachine.TransitionTo(_oldStateMachine.ziplineState);
 
                     break;
@@ -41,7 +42,10 @@ public class ImpulseState : IState
                 case AnchorType.HookPoint:
                     Debug.Log("Cambio a hookpoint ");
                     // lógica para HookPoint
-                    break;
+                    _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
+                    _oldPlayerBehaviour.ArmRelease = true;
+                    _oldPlayerBehaviour.ArmPulled = true;
+                    _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Pull); break;
                 default:
                     // lógica por defecto o para None
                     break;
@@ -63,6 +67,7 @@ public class ImpulseState : IState
     {
         Debug.Log("You left the state: IMPULSE");
         _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", false);
+        _oldPlayerBehaviour.StopMovement();
     }
 
     public void Update()

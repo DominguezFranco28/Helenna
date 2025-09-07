@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class ChildStateMachine
 {
+    private CharacterManager characterManager;
+
     public ChildMoveState moveState;
     public ChildIdleState idleState;
     public ChildClimbState climbState;
     public ChildActionState actionState;
+    public ChildZiplineState ziplineState;
     public IState CurrentState { get; private set; }
     public ChildStateMachine(ChildPlayerBehaviour player, ChildTriggerDetector actionDetector)
     {
@@ -15,21 +18,31 @@ public class ChildStateMachine
         this.idleState = new ChildIdleState(player, this);
         this.climbState = new ChildClimbState(player, this, actionDetector);
         this.actionState = new ChildActionState (player, this, actionDetector);
+        this.ziplineState = new ChildZiplineState(player, this, actionDetector);
     }
     public void Initialize(IState startingState)
     {
         InitStates(startingState);
         CurrentState = startingState;
+
+        characterManager = CharacterManager.Instance;
     }
     public void TransitionTo(IState nextState)
     {
-        if(nextState != CurrentState)
+        if (characterManager)
+        {
+            string characterName = "ChildPlayer";
+            if (characterManager.GetActiveCharacter() != characterName) return;
+        }
+
+        if (nextState != CurrentState)
         {
             if (CurrentState != null) CurrentState.Exit();
             CurrentState = nextState;
             nextState.Enter();
         }
     }
+
     public void Update()
     {
         CurrentState?.Update();

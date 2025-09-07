@@ -21,11 +21,13 @@ public class ArmImpulser : MonoBehaviour
 
     //Variables tied to the player's arm:
     [SerializeField] private GameObject _armShot;
+    [SerializeField] private ArmLineController _armLinePrefab;
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private AudioClip _dashSFX;
     [SerializeField] private AudioClip _throwSFX;
     private ArmImpulser _impulser;
     private GameObject _currentArmBullet;
+    private ArmLineController _currentArmLine;
     private Collider2D _playerCol;
 
 
@@ -34,7 +36,7 @@ public class ArmImpulser : MonoBehaviour
 
 
     //Public methods so that the methods of this main mechanic (private)
-    //can be accessed from the OldPlayerBehaviour script (which manages inputs)
+    //can be accessed from the OldPlayerBehaviour int the states machine constructor 
     //and the Armbullet script (which manages the logic of the thrown arm).
 
     public void MovePlayerToAnchor(Vector2 anchorPosition, ImpulseType type)
@@ -45,6 +47,10 @@ public class ArmImpulser : MonoBehaviour
     {
         ThrowArm(type);
     }
+    public void GetArmToAnchor(Transform closestAnchor , bool IsHoldingAnchor)
+    {
+        ArmToAnchor(closestAnchor, IsHoldingAnchor);
+    }
     void Start()
     {
         //I'll ​​leave the link to the other script established. From here I can use other methods or properties.
@@ -52,6 +58,7 @@ public class ArmImpulser : MonoBehaviour
         _movementBehaviour = GetComponent<OldPlayerBehaviour>();
         _impulser = this;
         _rb2D = GetComponent<Rigidbody2D>();
+ 
     }
     private void FixedUpdate()
     {
@@ -110,9 +117,32 @@ public class ArmImpulser : MonoBehaviour
         }
         StartCoroutine(SpawnArmBullet(type));
     }
+    private void ArmToAnchor(Transform closestAnchor, bool IsHoldingAnchor)
+    {
+        if (!IsHoldingAnchor)
+        {
+            if (_currentArmLine != null)
+                _currentArmLine.CancelLine(); // destruyo la anterior línea si existe
+
+            _currentArmLine = Instantiate(_armLinePrefab);
+            _currentArmLine.AssignTarget(_spawnPoint.position, closestAnchor);
+            // aviso al CharacterManager que hay una nueva tirolesa disponible , para que nina pueda buscar la referencia desde ahi
+            CharacterManager.Instance.SetActiveZipline(_currentArmLine);
+        }
+        else
+        {
+            if (_currentArmLine != null)
+            {
+                _currentArmLine.CancelLine();
+                _currentArmLine = null;
+            }
+        }
+    }
     public IEnumerator SpawnArmBullet(ImpulseType type)
     {     
         Vector2 direction = _movementBehaviour.LastMovementInput; //obtengo el ultimo input de movimiento del jugador para disparar el brazo en esa direccion
+        if (direction == Vector2.zero)
+            direction = Vector2.down; //si no hay input, disparo abajo por defecto  
         yield return new WaitForSeconds(_spawnTimer);
         //Un timer para retrasar el disparo, asi me da tiempo a que se ejecute la animacion de recoil del brazo
         SFXManager.Instance.PlaySFX(_throwSFX);

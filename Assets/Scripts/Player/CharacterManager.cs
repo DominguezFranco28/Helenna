@@ -6,6 +6,7 @@ using Cinemachine; //Cinemachine Library
 public class CharacterManager : MonoBehaviour
 {
     public static CharacterManager Instance { get; private set; }
+    private ArmLineController _activeZipline; //referencia global a la zipline activa, para que el state de Nina pueda acceder a ella
 
     [SerializeField] private GameObject[] characters;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
@@ -57,8 +58,8 @@ public class CharacterManager : MonoBehaviour
             IControllable control = characters[i].GetComponent<IControllable>();
             if (control != null)
             {
-                Debug.Log("ActivateCharacter: " + characters[i].name);
-                control.SetControl(i == index);
+               // Debug.Log("ActivateCharacter: " + characters[i].name);
+               control.SetControl(i == index);
                control.SetMovementEnabled(i == index);
                 //This is equal to true, only for the character that is at the index in this for loop,
                 //all the others are set to false so they cannot move due to their Behavior
@@ -92,17 +93,20 @@ public class CharacterManager : MonoBehaviour
         Debug.Log("All characters have been teleported to the active character.");
     }
 
-    public void JoinToTeam (GameObject newPlayer)
+
+
+    public void SetActiveZipline(ArmLineController zipline)
     {
-        // Convertimos el array a una lista para poder agregar elementos
-        List<GameObject> characterList = new List<GameObject>(characters);
+        _activeZipline = zipline;
+    }
 
-        // Agregamos el nuevo personaje
-        characterList.Add(newPlayer);
+    public ArmLineController GetActiveZipline()
+    {
+        return _activeZipline;
+    }
 
-        // Volvemos a convertirlo en array
-        characters = characterList.ToArray();
-
-        Debug.Log($"{newPlayer.name} se ha unido al equipo. Total de personajes: {characters.Length}");
+    public string GetActiveCharacter()
+    {
+        return characters[_currentIndex].name;
     }
 }

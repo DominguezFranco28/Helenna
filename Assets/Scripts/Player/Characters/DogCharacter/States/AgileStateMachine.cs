@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AgileStateMachine
 {
+    private CharacterManager characterManager;
+
     public AgileMoveState moveState;
     public AgileIdleState idleState;
     public AgileDigState digState;
@@ -24,10 +26,18 @@ public class AgileStateMachine
     {
         InitStates(startingState);
         CurrentState = startingState;
+
+        characterManager = CharacterManager.Instance;
     }
 
     public void TransitionTo(IState nextState)
     {
+        if (characterManager)
+        {
+            string characterName = "DogPlayer";
+            if (characterManager.GetActiveCharacter() != characterName) return;
+        }
+
         if (nextState != CurrentState)
         {
             if (CurrentState != null) CurrentState.Exit();

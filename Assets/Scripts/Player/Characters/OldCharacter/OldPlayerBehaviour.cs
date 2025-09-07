@@ -21,7 +21,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     private bool _armPulled = false; //para saber si el brazo fue liberado, para no repetir la animacion de recoil con el throw
     private bool _isOnHighGround;
 
-    public bool IsInControll{ get { return _isInControll; } set { _isInControll = value; } } 
+    public bool IsInControll{ get { return _isInControll; } } 
     public bool CanMove{ get { return _canMove; } } 
     public bool ArmPulled{ get { return _armPulled; } set { _armPulled = value; } } 
     public bool ArmRelease { get { return _armReleased; } set { _armReleased = value; } } 
@@ -115,13 +115,19 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     {
         if (!IsInControll) return;
         _armImpulser.GetThrowArm(type);
-        //SetControl(false);
+    }
+    public void PerformArmToAnchor(Transform closestAnchor, bool isHoldingAnchor)
+    {
+        if (!IsInControll) return;
+        _armImpulser.GetArmToAnchor(closestAnchor, isHoldingAnchor);
+
+            //no puede impulsarse a un anclaje si esta sosteniendo un objeto
     }
 
 
     public void SetControl(bool isActive)
     {
-        IsInControll = isActive;
+        _isInControll = isActive;
         if (!isActive) StopMovement();
     }
 

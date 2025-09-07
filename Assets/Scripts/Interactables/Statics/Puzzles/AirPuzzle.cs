@@ -66,14 +66,14 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver
                                                      //Lei que puede dar problemas a futuro (temas memoria o bugs)asi que ya lo arreglo de entrada
     }
 
-    public void AddNewPlayer() 
-    {
-        ChildPlayerBehaviour child = FindAnyObjectByType<ChildPlayerBehaviour>();
-        if (child != null)
-            CharacterManager.Instance.JoinToTeam(child.gameObject);
-        else
-            Debug.LogWarning("No se encontró ningún objeto del tipo PlayerJoin en la escena.");
-    }
+    //public void AddNewPlayer() 
+    //{
+    //    ChildPlayerBehaviour child = FindAnyObjectByType<ChildPlayerBehaviour>();
+    //    if (child != null)
+    //    //    CharacterManager.Instance.JoinToTeam(child.gameObject);
+    //    else
+    //        Debug.LogWarning("No se encontró ningún objeto del tipo PlayerJoin en la escena.");
+    //}
 
     void PuzzleSolved()
     {
@@ -82,7 +82,7 @@ public class AirPuzzle : MonoBehaviour, IPuzzleObserver
         //ahora si le prendo el script a la palacan del nviel 2 para que se pueda seguir luego del puzzle nivel 1
         IActiveable action = _door.GetComponent<IActiveable>();
         action.Activate();
-        AddNewPlayer(); //esto deberia llamarlo desde un trigger
+        //AddNewPlayer(); //esto deberia llamarlo desde un trigger
     }
 
     void IPuzzleObserver.PuzzleSolved()

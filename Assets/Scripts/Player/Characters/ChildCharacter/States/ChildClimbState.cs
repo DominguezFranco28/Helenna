@@ -29,12 +29,10 @@ public class ChildClimbState : IState
         {
             if(movement.magnitude <= 0.1f)
             {
-                Debug.Log("exit to idle from climb");
                 _childStateMachine.TransitionTo(_childStateMachine.idleState);
             }
             else
             {
-                Debug.Log("exit to move from climb");
                 _childStateMachine.TransitionTo(_childStateMachine.moveState);
             }
                 
