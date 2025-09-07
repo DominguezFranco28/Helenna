@@ -20,6 +20,7 @@ public class ChildIdleState : IState
         if (Mathf.Abs(movement.x) > 0.1f || Mathf.Abs(movement.y) > 0.1f)
         {
             _childStateMachine.TransitionTo(_childStateMachine.moveState);
+            _childPlayerBehaviour.SetMovementInput(movement);
             return;
         }
 

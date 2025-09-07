@@ -17,11 +17,10 @@ public class IdleState :  IState
     }
     private void OnMove(Vector2 movement)
     {
-        Debug.Log("IdleState - Move: " + movement +" - mag: "+ movement.magnitude);
-
         if (movement.magnitude > 0.01f)
         {
             _oldStateMachine.TransitionTo(_oldStateMachine.moveState);
+            _oldPlayerBehaviour.SetMovementInput(movement);
         }
     }
 

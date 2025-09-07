@@ -104,4 +104,9 @@ public class CharacterManager : MonoBehaviour
     {
         return _activeZipline;
     }
+
+    public string GetActiveCharacter()
+    {
+        return characters[_currentIndex].name;
+    }
 }

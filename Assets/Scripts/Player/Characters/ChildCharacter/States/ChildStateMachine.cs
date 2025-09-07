@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ChildStateMachine
 {
+    private CharacterManager characterManager;
+
     public ChildMoveState moveState;
     public ChildIdleState idleState;
     public ChildClimbState climbState;
@@ -22,16 +24,25 @@ public class ChildStateMachine
     {
         InitStates(startingState);
         CurrentState = startingState;
+
+        characterManager = CharacterManager.Instance;
     }
     public void TransitionTo(IState nextState)
     {
-        if(nextState != CurrentState)
+        if (characterManager)
+        {
+            string characterName = "ChildPlayer";
+            if (characterManager.GetActiveCharacter() != characterName) return;
+        }
+
+        if (nextState != CurrentState)
         {
             if (CurrentState != null) CurrentState.Exit();
             CurrentState = nextState;
             nextState.Enter();
         }
     }
+
     public void Update()
     {
         CurrentState?.Update();

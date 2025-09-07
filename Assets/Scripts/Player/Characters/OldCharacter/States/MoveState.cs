@@ -21,8 +21,6 @@ public class MoveState :  IState
 
     private void OnMove(Vector2 movement)
     {
-        Debug.Log("MoveState - Move: " + movement + " - mag: " + movement.magnitude);
-
         _oldPlayerBehaviour.SetMovementInput(movement);
         if (movement.magnitude <= 0.01f)
         {
