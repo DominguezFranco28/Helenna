@@ -117,6 +117,8 @@ public class AnchorDetector : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         //todo ia papa este gizmo
+        if (_oldPlayerBehaviour == null) return;
+
         if (_oldPlayerBehaviour.LastMovementInput == Vector2.zero) return;
 
         Vector2 direction = _oldPlayerBehaviour.LastMovementInput;
