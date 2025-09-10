@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1114109491228385230}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8, y: -0.4, z: 0.021532802}
+  m_LocalPosition: {x: -2.8, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -57,7 +57,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 279d039f07b626d479cdf70ed3461478, type: 2}
+  - {fileID: 2100000, guid: 2e9a60a8dd9abf54d9233aa5e305a695, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,21 +75,21 @@ LineRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1151905791
+  m_SortingLayer: 5
   m_SortingOrder: 2
   m_Positions:
   - {x: 0, y: 4, z: 0}
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.9701005
     widthCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
+        time: 0.0028419495
+        value: 0.5192299
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -153,12 +153,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textures:
-  - {fileID: 2800000, guid: a165df45e88a8014285cf2a7b1a9e220, type: 3}
-  - {fileID: 2800000, guid: 55208719c55eb1c4e9c33ea6d5894635, type: 3}
-  - {fileID: 2800000, guid: 0776383bdd37b7642a0a8827c1f14825, type: 3}
-  - {fileID: 2800000, guid: 7293bc8c3a1eba24fa745d5a4feee037, type: 3}
+  - {fileID: 2800000, guid: e5651f65e76393844b8b270152b8e821, type: 3}
   _endSpritePrefab: {fileID: 5696536833661753488, guid: f25cda8cececdeb409debc54e06b4ada, type: 3}
-  _fps: 10
+  _offsetArm: 0
+  _fps: 30
 --- !u!68 &-7710051371830330727
 EdgeCollider2D:
   m_ObjectHideFlags: 0

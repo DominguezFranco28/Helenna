@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Arbustos_4
+  m_Name: BordeTierra_3 1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 943105860, guid: fe9c0dd07f493994e9a84096124e7a58, type: 3}
+  m_Sprite: {fileID: -1171627477, guid: 68c63e17dfb34514da73cf6190506631, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

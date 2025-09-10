@@ -6,6 +6,7 @@ public class ArmLineController : MonoBehaviour
 {
     [SerializeField] private Texture[] _textures;
     [SerializeField] private GameObject _endSpritePrefab;
+    [SerializeField] private float _offsetArm;
     private EdgeCollider2D _edgeCollider;
     private LineRenderer _lineRenderer;
     private GameObject _endInstance;
@@ -27,6 +28,7 @@ public class ArmLineController : MonoBehaviour
     {
         _lineRenderer = GetComponent<LineRenderer>();
         _edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
+
     }
     public void AssignTarget (Vector3 startPosition, Transform newTarget)
     {
@@ -43,6 +45,8 @@ public class ArmLineController : MonoBehaviour
             _target.position,
             Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg)
             ); //formula para rotar el prefab de la mano en la direccion del anclaje
+            _endInstance.transform.position = _lineRenderer.GetPosition(_lineRenderer.positionCount - 1) - direction * _offsetArm;
+            //direction es el vector unitario de la linea,  si lo multiplico por offsetAmount lo aleja de la posicion final
         }
     }
    public void CancelLine() //para apagarlo desde el armimpulser y que no me quede mas de una tirolesa puesta en simultaneo
@@ -71,7 +75,10 @@ public class ArmLineController : MonoBehaviour
 
             // actualiza el sprite del final brazo()
             if (_endInstance != null)
-                _endInstance.transform.position = _target.position;
+            {
+                Vector3 direction = (_target.position - _lineRenderer.GetPosition(0)).normalized;
+                _endInstance.transform.position = _target.position - direction * _offsetArm;
+            }
 
             // actualiza el collider, SOLO si hay objetivo asignado (daba bug). Revisar, hecho con IA porque desconocia los edge colliders.
             Vector3[] positions = new Vector3[2]; // array temporal para guardar las 2 posiciones del linerenderer
@@ -82,21 +89,21 @@ public class ArmLineController : MonoBehaviour
             _edgeCollider.points = colliderPoints;
         }
 
-        // Manejo de la animacion del linerenderer (probablemente se borre en version final)
-        _fpsCounter += Time.deltaTime;
-        if (_fpsCounter >= 1f / _fps)
-        {
-            _animationStep++;
-            if (_animationStep >= _textures.Length) _animationStep = 0;
+        // manejo de la animacion del linerenderer (probablemente se borre en version final)
+        //_fpsCounter += Time.deltaTime;
+        //if (_fpsCounter >= 1f / _fps)
+        //{
+        //    _animationStep++;
+        //    if (_animationStep >= _textures.Length) _animationStep = 0;
 
-            // Usar un MaterialPropertyBlock para no reiniciar el LineRenderer
-            MaterialPropertyBlock mpb = new MaterialPropertyBlock();
-            _lineRenderer.GetPropertyBlock(mpb);
-            mpb.SetTexture("_MainTex", _textures[_animationStep]);
-            _lineRenderer.SetPropertyBlock(mpb);
+        //    // Usar un MaterialPropertyBlock para no reiniciar el LineRenderer
+        //    MaterialPropertyBlock mpb = new MaterialPropertyBlock();
+        //    _lineRenderer.GetPropertyBlock(mpb);
+        //    mpb.SetTexture("_MainTex", _textures[_animationStep]);
+        //    _lineRenderer.SetPropertyBlock(mpb);
 
-            _fpsCounter = 0f;
-        }
+        //    _fpsCounter = 0f;
+        //}
 
         //version anterior del tuto
         //_fpsCounter += Time.deltaTime;

@@ -57,12 +57,6 @@ public class ChildPlayerController : MonoBehaviour
                 _childStateMachine.TransitionTo(_childStateMachine.actionState);
                 return;
             }
-
-            if (_childTriggerDetector.CanUseZipline)
-            {
-                _childStateMachine.TransitionTo(_childStateMachine.ziplineState);
-                return;
-            }
         }
     }
 }

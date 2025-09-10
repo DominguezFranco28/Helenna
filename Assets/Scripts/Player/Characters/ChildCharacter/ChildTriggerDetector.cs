@@ -64,7 +64,6 @@ public class ChildTriggerDetector : MonoBehaviour
     {
         if (collision.CompareTag("Zipline"))
         {
-            Debug.Log("Entraste en colision con tirolesa");
             _canUseZipline = true;
         }
     }

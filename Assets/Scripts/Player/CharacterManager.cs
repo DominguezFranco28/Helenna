@@ -6,12 +6,13 @@ using Cinemachine; //Cinemachine Library
 public class CharacterManager : MonoBehaviour
 {
     public static CharacterManager Instance { get; private set; }
-    private ArmLineController _activeZipline; //referencia global a la zipline activa, para que el state de Nina pueda acceder a ella
+    private ArmLineController _activeZipline = null; //referencia global a la zipline activa, para que el state de Nina pueda acceder a ella
 
     [SerializeField] private GameObject[] characters;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
     [SerializeField] private AudioClip _changeSFX;
     private int _currentIndex = 0;
+    public bool IsOnZipline { get; set; } = false; //para que el inputManager no permita cambiar de personaje si alguno esta en una zipline
 
     void Awake()
     {
@@ -28,7 +29,7 @@ public class CharacterManager : MonoBehaviour
 
     private void OnEnable()
     {
-        if (InputManager.Instance != null)
+        if (InputManager.Instance != null )
             InputManager.Instance.ChangeCharacterPressed += OnChangeCharacter;
         else
             Debug.LogError("No InputManager found");
@@ -45,6 +46,11 @@ public class CharacterManager : MonoBehaviour
         Debug.Log("Change Character");
         if (GameStateManager.Instance.IsGamePaused()) return;
 
+       if (IsOnZipline)
+        {
+            Debug.Log("Cannot change character while on a zipline.");
+            return;
+        }
         SFXManager.Instance.PlaySFX(_changeSFX);
         _currentIndex = (_currentIndex + 1) % characters.Length;
         ActivateCharacter(_currentIndex);

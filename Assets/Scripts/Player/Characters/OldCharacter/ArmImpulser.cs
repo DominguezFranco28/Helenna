@@ -124,10 +124,7 @@ public class ArmImpulser : MonoBehaviour
             if (_currentArmLine != null)
                 _currentArmLine.CancelLine(); // destruyo la anterior línea si existe
 
-            _currentArmLine = Instantiate(_armLinePrefab);
-            _currentArmLine.AssignTarget(_spawnPoint.position, closestAnchor);
-            // aviso al CharacterManager que hay una nueva tirolesa disponible , para que nina pueda buscar la referencia desde ahi
-            CharacterManager.Instance.SetActiveZipline(_currentArmLine);
+            StartCoroutine(WaitToSpawn(closestAnchor));
         }
         else
         {
@@ -137,6 +134,14 @@ public class ArmImpulser : MonoBehaviour
                 _currentArmLine = null;
             }
         }
+    }
+    public IEnumerator WaitToSpawn(Transform anchor)
+    {
+        yield return new WaitForSeconds(_spawnTimer);
+        _currentArmLine = Instantiate(_armLinePrefab);
+        _currentArmLine.AssignTarget(_spawnPoint.position, anchor);
+        // aviso al CharacterManager que hay una nueva tirolesa disponible , para que nina pueda buscar la referencia desde ahi
+        CharacterManager.Instance.SetActiveZipline(_currentArmLine);
     }
     public IEnumerator SpawnArmBullet(ImpulseType type)
     {

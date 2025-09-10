@@ -19,11 +19,24 @@ public class ChildMoveState : IState
     {
         _childPlayerBehaviour.SetMovementInput(movement);
 
+        if (_climbDetector.CanUseZipline)
+        {
+            _childStateMachine.TransitionTo(_childStateMachine.ziplineState);
+            if (subbed)
+            {
+                if (InputManager.Instance != null)
+                {
+                    subbed = false;
 
-        if (movement.magnitude <= 0.01f && !_climbDetector.CanClimb)
+                    InputManager.Instance.Move -= OnMove;
+                }
+            }
+        }
+        else if (movement.magnitude <= 0.01f && !_climbDetector.CanClimb)
         {
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
         }
+
     }
 
     public void Enter()
@@ -64,11 +77,6 @@ public class ChildMoveState : IState
 
     public void Update()
     {
-        //Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        /*_childPlayerBehaviour.SetMovementInput(input);
-        if (input.magnitude <= 0.01f)
-        {
-            _childStateMachine.TransitionTo(_childStateMachine.idleState);
-        }*/
+
     }
 }

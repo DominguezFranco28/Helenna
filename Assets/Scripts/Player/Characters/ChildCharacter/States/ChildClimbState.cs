@@ -76,6 +76,14 @@ public class ChildClimbState : IState
         _childPlayerBehaviour.StopMovement();
         _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.DefaultSpeed);
         SFXManager.Instance.StopLoop();
+        if (subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = false;
+                InputManager.Instance.Move -= OnMove;
+            }
+        }
     }
 
 
