@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+
 [RequireComponent(typeof(BoxCollider2D))]
 public class MovableObject : MonoBehaviour, IMovable
 {
@@ -13,7 +14,7 @@ public class MovableObject : MonoBehaviour, IMovable
     [SerializeField] private AudioClip _moovingSFX;
 
     [Header("Collision")]
-    [SerializeField] private LayerMask _obstacleMask; // the layers with which the object has to collide
+    [SerializeField] private LayerMask _obstacleMask;
     private Vector2 _targetPosition;
     private bool _isBeingMoved = false;
     private BoxCollider2D _collider2D;
@@ -24,14 +25,14 @@ public class MovableObject : MonoBehaviour, IMovable
     private bool _isStopping = false;
 
     private WeightedObject weighted;
-    
+
     private void Start()
     {
-        this._collider2D = GetComponent<BoxCollider2D>();
+        _collider2D = GetComponent<BoxCollider2D>();
         weighted = GetComponent<WeightedObject>();
     }
 
-    public void MoveTo(Vector2 position) // parameter comes from ArmBullet
+    public void MoveTo(Vector2 position)
     {
         if (_canMove)
         {
@@ -42,6 +43,7 @@ public class MovableObject : MonoBehaviour, IMovable
             }
             else
                 _targetPosition = position;
+
             _canMove = false;
             _isBeingMoved = true;
             SFXManager.Instance.PlaySFX(_moovingSFX);
@@ -52,12 +54,28 @@ public class MovableObject : MonoBehaviour, IMovable
     {
         if (_isBeingMoved)
         {
+            _currentPosition = transform.position;
             Vector2 direction = _targetPosition - _currentPosition;
             float distance = direction.magnitude;
 
-            _currentPosition = transform.position;
+            if (distance > 0f)
+            {
+                Vector2 dirNormalized = direction / distance;
 
-            //Suavizado del desplazamiento normal de la caja
+                // Check for obstacles directly in the path
+                RaycastHit2D hit = Physics2D.BoxCast(_currentPosition, _collider2D.size, 0f, dirNormalized, distance, _obstacleMask);
+
+                if (hit.collider != null)
+                {
+                    // Obstacle detected — stop movement immediately
+                    _velocity = Vector2.zero;
+                    _canMove = true;
+                    _isBeingMoved = false;
+                    return; // exit Update to avoid moving into the obstacle
+                }
+            }
+
+            // Smooth movement
             Vector2 smoothPosition = Vector2.SmoothDamp(_currentPosition, _targetPosition, ref _velocity, _moveSmoothTime);
 
             if (Vector2.Distance(smoothPosition, _targetPosition) < _stopThreshold)
@@ -65,12 +83,9 @@ public class MovableObject : MonoBehaviour, IMovable
                 _velocity = Vector2.zero;
                 _canMove = true;
                 _isBeingMoved = false;
-
-                smoothPosition = Vector2.SmoothDamp(_currentPosition, _targetPosition, ref _velocity, _moveSmoothTime);
             }
 
             transform.position = smoothPosition;
         }
-        
     }
 }

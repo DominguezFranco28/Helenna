@@ -78,4 +78,9 @@ public class LevelTimer : MonoBehaviour
         }
 
     }
+
+    public float GetInitialTimeSeconds()
+    {
+        return startMinutes * 60f + startSeconds;
+    }
 }

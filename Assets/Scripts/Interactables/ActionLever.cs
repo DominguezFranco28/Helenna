@@ -6,8 +6,10 @@ public class ActionLever : MonoBehaviour , IActiveable
 {
     private Animator _animator;
     private Collider2D _collider2D;
-    [SerializeField] private PuzzleManager _puzzleManager;
     [SerializeField] private AudioClip _SFX;
+
+    public event System.Action<int> OnLeverActioned;
+    public int manualID;
 
     void Start()
     {
@@ -20,7 +22,7 @@ public class ActionLever : MonoBehaviour , IActiveable
     {
         SFXManager.Instance.PlaySFX(_SFX);
         _animator.SetTrigger("Change");
-        _puzzleManager.PuzzleCount(1);
+        OnLeverActioned?.Invoke(manualID);
     }
 
 }

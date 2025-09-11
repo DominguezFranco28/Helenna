@@ -20,8 +20,8 @@ public class PlatformPuzzle : Puzzle, IPuzzleObserver
         //cada vez que termina el movimiento reestablese a false dentro del script.
         if (_movablePlatform != null)
         {
-            _movablePlatform.ActiveLever = true; //no solo era importante swicehar la direcion tambioen tenia que indicarle si se habia ejecutado la palanca
-            _movablePlatform.ChangePosition = !_movablePlatform.ChangePosition; // esto invierte la boleana! de true a false y vicebersa
+            //_movablePlatform.ActiveLever = true; //no solo era importante swicehar la direcion tambioen tenia que indicarle si se habia ejecutado la palanca
+            //_movablePlatform.ChangePosition = !_movablePlatform.ChangePosition; // esto invierte la boleana! de true a false y vicebersa
         }
     }
 

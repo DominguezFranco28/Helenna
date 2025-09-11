@@ -40,8 +40,8 @@ public class FinalPuzzle : Puzzle, IPuzzleObserver
         if (_movablePlatform) //esto es para el puzzle del bridge, tengo que ver de individualizarlo despues si hace falta
         {
              _collider2D.enabled = true;
-            _movablePlatform.ActiveLever = true;
-            _movablePlatform.ChangePosition = !_movablePlatform.ChangePosition;
+            //_movablePlatform.ActiveLever = true;
+            //_movablePlatform.ChangePosition = !_movablePlatform.ChangePosition;
         }
 
     }
