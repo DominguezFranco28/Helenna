@@ -145,7 +145,7 @@ GameObject:
   - component: {fileID: 7383796733464643918}
   - component: {fileID: 2728943615429190227}
   - component: {fileID: 6611532685037830205}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ButtonPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,6 +219,7 @@ MonoBehaviour:
   popupSprite: {fileID: 4948688372126015398}
   amplitude: 0.25
   frequency: 2
+  searchOnTag: player
 --- !u!1 &4948688372126015398
 GameObject:
   m_ObjectHideFlags: 0

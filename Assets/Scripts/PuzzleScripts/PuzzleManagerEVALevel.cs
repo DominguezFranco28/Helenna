@@ -9,8 +9,7 @@ public class PuzzleManagerEVALevel : MonoBehaviour
     
     public Bridge bridgeEast;
     public Bridge bridgeNorth;
-    public MovablePlatform elevatorWest;
-    public MovablePlatform elevatorEast;
+    public MultiElevatorCircuit elevators;
     public ActionLever lever;
 
     public List<PressurePlate> pressurePlates;
@@ -33,8 +32,8 @@ public class PuzzleManagerEVALevel : MonoBehaviour
             {
                 pressurePlate.OnPadPressed += HandlePadPressed;
                 pressurePlate.OnPadReleased += HandlePadReleased;
-                lever.OnLeverActioned += HandleLever;
             }
+            lever.OnLeverActioned += HandleLever;
 
         }
     }
@@ -69,7 +68,7 @@ public class PuzzleManagerEVALevel : MonoBehaviour
         }
         else if (manualID == 3)
         {
-
+            elevators.TiggerAllElevators();
         }
         else
         {
@@ -84,7 +83,7 @@ public class PuzzleManagerEVALevel : MonoBehaviour
         }
         else if (manualID == 3)
         {
-
+            elevators.TiggerAllElevators();
         }
         else
         {

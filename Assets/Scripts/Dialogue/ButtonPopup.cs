@@ -15,6 +15,8 @@ public class ButtonPopup : MonoBehaviour
     [SerializeField] private float frequency = 2f;   
     private Vector3 startPos;
 
+    public string searchOnTag = "player";
+
     private void Start()
     {
         popupText = GetComponentInChildren<TextMeshProUGUI>();
@@ -62,12 +64,14 @@ public class ButtonPopup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        popupSprite.SetActive(true);
+        if(other.tag.ToLower().Contains(searchOnTag))
+            popupSprite.SetActive(true);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        popupSprite.SetActive(false);
+        if (collision.tag.ToLower().Contains(searchOnTag))
+            popupSprite.SetActive(false);
     }
 
     private void Update()
