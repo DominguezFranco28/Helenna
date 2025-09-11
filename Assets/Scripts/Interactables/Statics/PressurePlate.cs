@@ -16,10 +16,12 @@ public class PressurePlate : MonoBehaviour
     public bool NeedHold { get { return _needHold; } } //prop solo lectura, la uso para detectar en el puzzle que use placa de presion en conjunto.
                                                        //Cuando se resuelve el puzzle, las apaga a todas las relacionadas llamando al metodo publico
 
-    public event System.Action OnPadPressed;
-    public event System.Action OnPadReleased;
+    public event System.Action<int> OnPadPressed;
+    public event System.Action<int> OnPadReleased;
 
     private bool isPressed = false;
+
+    public int manualID = 0;
 
     private void Start()
     {
@@ -65,7 +67,7 @@ public class PressurePlate : MonoBehaviour
         _animator.SetBool("IsPressed", true);
         SFXManager.Instance.PlaySFX(_audioClip);
 
-        OnPadPressed?.Invoke();
+        OnPadPressed?.Invoke(manualID);
     }
 
     public void DeactivatePlate()
@@ -77,7 +79,7 @@ public class PressurePlate : MonoBehaviour
         _animator.SetBool("IsPressed", false);
         SFXManager.Instance.PlaySFX(_audioClip);
 
-        OnPadReleased?.Invoke();
+        OnPadReleased?.Invoke(manualID);
     }
 
 
