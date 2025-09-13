@@ -5,7 +5,13 @@ using UnityEngine;
 public class WeightedObject : MonoBehaviour
 {
     [SerializeField] private float baseWeight = 5f;
+    [SerializeField] private float weight = 0f;
     public bool autoCalculateWeight = false;
+
+    private void Start()
+    {
+        weight = GetWeight();
+    }
 
     public float GetWeight()
     {

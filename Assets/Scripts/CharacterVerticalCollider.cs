@@ -11,6 +11,9 @@ public class CharacterVerticalCollider : MonoBehaviour
     public bool toggle = false;
     private bool elevated = false;
 
+    public int groundSpriteLayer = 3;
+    public int elevatedSpriteLayer = 6;
+
     private void Start()
     {
         SetToGroundColliders();
@@ -30,6 +33,8 @@ public class CharacterVerticalCollider : MonoBehaviour
 
     public void SetToGroundColliders()
     {
+        GetComponent<SpriteRenderer>().sortingOrder = groundSpriteLayer;
+
         elevated = false;
 
         int layerIndex;
@@ -43,6 +48,8 @@ public class CharacterVerticalCollider : MonoBehaviour
 
     public void SetToElevatedColliders()
     {
+        GetComponent<SpriteRenderer>().sortingOrder = elevatedSpriteLayer;
+
         elevated = true;
 
         int layerIndex;

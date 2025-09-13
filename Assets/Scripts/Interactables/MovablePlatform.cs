@@ -19,6 +19,9 @@ public class MovablePlatform : MonoBehaviour , IMovable
     private bool onGround = true;
     private bool elevatorMoving = false;
 
+    public int groundSpriteLayer = 2;
+    public int elevatedSpriteLayer = 5;
+
     private void Start()
     {
         groundPosition = transform.position;
@@ -63,7 +66,11 @@ public class MovablePlatform : MonoBehaviour , IMovable
         {
             elevatorMoving = false;
             transform.position = targetPoint;
-
+            if (onGround)
+                GetComponent<SpriteRenderer>().sortingOrder = groundSpriteLayer;
+            else
+                GetComponent<SpriteRenderer>().sortingOrder = elevatedSpriteLayer;
+                
             foreach (CharacterVerticalCollider character in characters)
             {
                 if (onGround)

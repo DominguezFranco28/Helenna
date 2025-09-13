@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PuzzleManagerEVALevel : MonoBehaviour
 {
+    public VictoryTrigger victory;
     public LevelTimer timer;
     public ClosingGate gate;
     
@@ -16,7 +17,7 @@ public class PuzzleManagerEVALevel : MonoBehaviour
 
     private int padsPressed = 0;
 
-    //Agregar Semaforos
+    public List<GameObject> padLightPairs = new List<GameObject>();
 
     private void Start()
     {
@@ -33,9 +34,10 @@ public class PuzzleManagerEVALevel : MonoBehaviour
                 pressurePlate.OnPadPressed += HandlePadPressed;
                 pressurePlate.OnPadReleased += HandlePadReleased;
             }
-            lever.OnLeverActioned += HandleLever;
-
         }
+        lever.OnLeverActioned += HandleLever;
+        timer.OnTimerFinished += GameOver;
+        victory.VictoryReached += Victory;
     }
 
     private void OnDisable()
@@ -46,17 +48,24 @@ public class PuzzleManagerEVALevel : MonoBehaviour
             {
                 pressurePlate.OnPadPressed -= HandlePadPressed;
                 pressurePlate.OnPadReleased -= HandlePadReleased;
-                lever.OnLeverActioned -= HandleLever;
             }
-                
         }
+        lever.OnLeverActioned -= HandleLever;
+        timer.OnTimerFinished -= GameOver;
+        victory.VictoryReached -= Victory;
     }
 
     private void Update()
     {
         if(padsPressed >= 3)
         {
-            bridgeNorth.BridgeOpen();
+            if(!bridgeNorth.bridge)
+                bridgeNorth.BridgeOpen();
+        }
+        else
+        {
+            if (bridgeNorth.bridge)
+                bridgeNorth.BridgeClose();
         }
     }
 
@@ -74,6 +83,15 @@ public class PuzzleManagerEVALevel : MonoBehaviour
         {
             Debug.Log("Unconfigured Pressure Pad Pressed");
         }
+
+        if (padLightPairs.Count > 0)
+        {
+            if (manualID >= 0 && manualID < 3)
+            {
+                CircuitLight[] lights = padLightPairs[manualID].GetComponentsInChildren<CircuitLight>();
+                foreach (CircuitLight light in lights) light.TurnOn();
+            }
+        }
     }
     private void HandlePadReleased(int manualID)
     {
@@ -89,10 +107,30 @@ public class PuzzleManagerEVALevel : MonoBehaviour
         {
             Debug.Log("Unconfigured Pressure Pad Released");
         }
+
+        if (padLightPairs.Count > 0)
+        {
+            if (manualID >= 0 && manualID < 3)
+            {
+                CircuitLight[] lights = padLightPairs[manualID].GetComponentsInChildren<CircuitLight>();
+                foreach (CircuitLight light in lights) light.TurnOff();
+            }
+        }
+
     }
 
     private void HandleLever(int manualID)
     {
         bridgeEast.BridgeOpen();
+    }
+
+    private void GameOver()
+    {
+        Debug.Log("GAME OVER");
+    }
+
+    private void Victory()
+    {
+        Debug.Log("VICTORY");
     }
 }
