@@ -126,6 +126,10 @@ public class MovablePlatform : MonoBehaviour , IMovable
 
     public void TriggerElevator()
     {
-        elevatorTriggered = true;
+        if (!elevatorMoving)
+        {
+            elevatorTriggered = true;
+        }
+        
     }
 }

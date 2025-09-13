@@ -132,5 +132,6 @@ public class PuzzleManagerEVALevel : MonoBehaviour
     private void Victory()
     {
         Debug.Log("VICTORY");
+        timer.PauseTimer();
     }
 }
