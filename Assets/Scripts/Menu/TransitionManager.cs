@@ -22,6 +22,7 @@ public class TransitionManager : MonoBehaviour
     public void LoadNextScene()
     {
         //is called from the next zone script
+        _animator.SetTrigger("StartTransition");
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1; 
         StartCoroutine(SceneLoad(nextSceneIndex));        
     }
@@ -31,7 +32,7 @@ public class TransitionManager : MonoBehaviour
     }
     public IEnumerator SceneLoad( int sceneIndex)
     {
-        _animator.SetTrigger("StartTransition");
+        
         yield return new WaitForSeconds(_transitionTime);
         SceneManager.LoadScene(sceneIndex);// a index to always pass them in order
     }

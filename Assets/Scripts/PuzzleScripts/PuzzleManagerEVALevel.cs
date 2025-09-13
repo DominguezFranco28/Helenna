@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PuzzleManagerEVALevel : MonoBehaviour
 {
     public VictoryTrigger victory;
     public LevelTimer timer;
     public ClosingGate gate;
-    
+    public TMP_Text endScreen;
     public Bridge bridgeEast;
     public Bridge bridgeNorth;
     public MultiElevatorCircuit elevators;
@@ -127,11 +129,24 @@ public class PuzzleManagerEVALevel : MonoBehaviour
     private void GameOver()
     {
         Debug.Log("GAME OVER");
+        if (endScreen)
+        {
+            endScreen.text = "TIME'S UP!\nGAME OVER";
+            endScreen.gameObject.SetActive(true);
+            TransitionManager.Instance.LoadNextScene();
+        }
+
     }
 
     private void Victory()
     {
         Debug.Log("VICTORY");
         timer.PauseTimer();
+        if (endScreen)
+        {
+            endScreen.text = "VICTORY!\nYOU ESCAPED!";
+            endScreen.gameObject.SetActive(true);
+            TransitionManager.Instance.LoadNextScene();
+        }
     }
 }
