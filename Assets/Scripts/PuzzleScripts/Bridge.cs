@@ -6,6 +6,7 @@ public class Bridge : MonoBehaviour
 {
     private SpriteRenderer sprite;
     private Collider2D barrier;
+    private Animator animator;
 
     public bool bridge = false;
     public bool toggleBridge = false;
@@ -14,6 +15,7 @@ public class Bridge : MonoBehaviour
     {
         sprite = GetComponent<SpriteRenderer>();
         barrier = GetComponentInChildren<Collider2D>();
+        animator = GetComponent<Animator>();
 
         if (bridge)
             BridgeOpen();
@@ -24,9 +26,8 @@ public class Bridge : MonoBehaviour
     public void BridgeOpen()
     {
         bridge = true;
-
-        if (sprite)
-            sprite.enabled = true;
+        if (animator)
+            animator.SetBool("Open", true);
         if(barrier)
             barrier.enabled = false;
     }
@@ -34,9 +35,6 @@ public class Bridge : MonoBehaviour
     public void BridgeClose()
     {
         bridge = false;
-
-        if (sprite)
-            sprite.enabled = false;
         if (barrier)
             barrier.enabled = true;
     }

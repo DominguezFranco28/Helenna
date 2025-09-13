@@ -78,7 +78,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public void SetMovementInput(Vector2 input)
     {
         if (!IsInControll || !_canMove) return; 
-        {
+        
             if (_movementInput.magnitude > 0.01f) // aca guardo el ulktimo input para anim de impulse
                 LastMovementInput = _movementInput;
 
@@ -87,7 +87,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
             _animator.SetFloat("Vertical", _movementInput.y);
             _animator.SetFloat("Speed", _movementInput.magnitude);
      
-        }
+        
     }
     public void StopMovement()
     {

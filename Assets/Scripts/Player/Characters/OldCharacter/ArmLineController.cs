@@ -27,7 +27,7 @@ public class ArmLineController : MonoBehaviour
     private void Awake()
     {
         _lineRenderer = GetComponent<LineRenderer>();
-        _edgeCollider = gameObject.AddComponent<EdgeCollider2D>();
+        _edgeCollider = GetComponent<EdgeCollider2D>();
 
     }
     public void AssignTarget (Vector3 startPosition, Transform newTarget)

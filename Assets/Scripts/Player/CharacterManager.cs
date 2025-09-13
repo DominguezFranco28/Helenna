@@ -6,12 +6,14 @@ using Cinemachine; //Cinemachine Library
 public class CharacterManager : MonoBehaviour
 {
     public static CharacterManager Instance { get; private set; }
-    private ArmLineController _activeZipline = null; //referencia global a la zipline activa, para que el state de Nina pueda acceder a ella
 
     [SerializeField] private GameObject[] characters;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
     [SerializeField] private AudioClip _changeSFX;
     private int _currentIndex = 0;
+
+    //Referencias a la zipline
+    private ArmLineController _activeZipline = null; //referencia global a la zipline activa, para que el state de Nina pueda acceder a ella
     public bool IsOnZipline { get; set; } = false; //para que el inputManager no permita cambiar de personaje si alguno esta en una zipline
 
     void Awake()

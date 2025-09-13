@@ -61,9 +61,9 @@ public class MoveState :  IState
         //Seguia interceptando inputs cuando no le corresponida por mas que harold haya ejecutado la accion de disparo, buigeaba anims
         if (InputManager.Instance != null)
         {
+            subbed = false;
             InputManager.Instance.SpecialActionPressed -= OnSpecialAction;
             InputManager.Instance.Move -= OnMove;
-            subbed = false;
         }
     }
 

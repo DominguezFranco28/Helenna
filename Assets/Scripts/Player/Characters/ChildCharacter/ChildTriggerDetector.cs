@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class ChildTriggerDetector : MonoBehaviour
 {
@@ -63,9 +64,32 @@ public class ChildTriggerDetector : MonoBehaviour
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Zipline"))
+
         {
-            _canUseZipline = true;
+            ArmLineController zipline = collision.gameObject.GetComponent<ArmLineController>();
+            if (zipline == null) return;
+
+            Collider2D edge = collision.GetComponent<Collider2D>();
+            //clossespoint para obtener el punto del collider mas cercano al jugador
+            Vector2 closest = edge.ClosestPoint(transform.position);
+            //closest es entonces la pos real mas cercana del collider al jugador
+            float distanceToStart = Vector2.Distance(closest, zipline.StartPoint);
+            //se mide la distancia entre el punto mas cercano del collider al pj y el punto de inicio de la zipline
+            // nos permite saber si el jugador esta suficientemente cerca del inicio para poder usarla
+
+            // Solo si el pj esta dentro de la tolerancia al rededor del starpoint se activa la zipline (cosa de no poder usarla desde el medio)
+            //evita que cualquier otra parte de la zipline active la accion
+            if (distanceToStart <= 1.5f) // tolerancia agregada para quye no sea un punto tan exacto de colission
+            {
+                // Solo si el pj esta dentro de la tolerancia al rededor del starpoint se activa la zipline (cosa de no poder usarla desde el medio)
+                //evita que cualquier otra parte de la zipline active la accion
+                OnUseZipline(); 
+            }
         }
+    }
+    public void OnUseZipline()
+    {
+        _canUseZipline = true;
     }
     public void ResetZipline()
     {
