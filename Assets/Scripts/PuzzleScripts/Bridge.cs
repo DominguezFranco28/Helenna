@@ -26,10 +26,12 @@ public class Bridge : MonoBehaviour
     public void BridgeOpen()
     {
         bridge = true;
-        if (animator)
-            animator.SetBool("Open", true);
         if(barrier)
             barrier.enabled = false;
+        if (animator) 
+            animator.SetBool("Open", true);
+        if (sprite)
+            sprite.enabled = true;
     }
 
     public void BridgeClose()
