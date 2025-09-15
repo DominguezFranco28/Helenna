@@ -23,7 +23,7 @@ public class TransitionManager : MonoBehaviour
     {
         //is called from the next zone script
         _animator.SetTrigger("StartTransition");
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1; 
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex - 1; 
         StartCoroutine(SceneLoad(nextSceneIndex));        
     }
     public void ChangeLevel(string name)

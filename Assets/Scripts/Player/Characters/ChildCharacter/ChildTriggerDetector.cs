@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
+
 
 public class ChildTriggerDetector : MonoBehaviour
 {
@@ -21,11 +21,6 @@ public class ChildTriggerDetector : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Climbable")) 
-        {
-            _canClimb = true;
-            _climbableCollider = collision;
-        }
         
         if (collision.CompareTag("Lever"))
         {
@@ -85,6 +80,11 @@ public class ChildTriggerDetector : MonoBehaviour
                 //evita que cualquier otra parte de la zipline active la accion
                 OnUseZipline(); 
             }
+        }
+        if (collision.CompareTag("Climbable"))
+        {
+            _canClimb = true;
+            _climbableCollider = collision;
         }
     }
     public void OnUseZipline()

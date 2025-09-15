@@ -86,10 +86,10 @@ public class OldStateMachine
         }
         TransitionTo(startingState);
     }
-    public bool IsActive { get; private set; }
+    //public bool IsActive { get; private set; }
 
-    public void SetActive(bool value)
-    {
-        IsActive = value;
-    }
+    //public void SetActive(bool value)
+    //{
+    //    IsActive = value;
+    //}
 }

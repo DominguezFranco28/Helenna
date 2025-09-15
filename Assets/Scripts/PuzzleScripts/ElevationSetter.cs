@@ -11,7 +11,7 @@ public class ElevationSetter : MonoBehaviour
     {
         if (canTrigger)
         {
-            if (collision.tag.ToLower().Contains("player"))
+            if (collision.tag.ToLower().Contains("childplayer"))
             {
                 CharacterVerticalCollider character = collision.gameObject.GetComponent<CharacterVerticalCollider>();
                 if (character)

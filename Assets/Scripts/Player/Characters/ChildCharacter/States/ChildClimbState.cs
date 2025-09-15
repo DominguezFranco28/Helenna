@@ -21,20 +21,16 @@ public class ChildClimbState : IState
     private void OnMove(Vector2 movement)
     {
         if (_climbDetector.CanClimb)
-        {
-            Vector2 climbVelocity = new Vector2(0f, movement.y * _childPlayerBehaviour.ClimbSpeed);
+        { // Solo movimiento vertical
+            float verticalInput = Mathf.Abs(movement.y) > 0.1f ? movement.y : 0f;
+            Vector2 climbVelocity = new Vector2(0f, verticalInput * _childPlayerBehaviour.ClimbSpeed);
             _childPlayerBehaviour.SetMovementInput(climbVelocity);
         }
         else
         {
-            if(movement.magnitude <= 0.1f)
-            {
-                _childStateMachine.TransitionTo(_childStateMachine.idleState);
-            }
-            else
-            {
+
                 _childStateMachine.TransitionTo(_childStateMachine.moveState);
-            }
+            
                 
         }
     }
@@ -53,6 +49,7 @@ public class ChildClimbState : IState
         
         if (_climbDetector.Climbable != null)
         {
+            _childPlayerBehaviour.SetMovementInput(Vector2.zero);
             _childPlayerBehaviour.PlayerCollider.isTrigger = true;
             _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.ClimbSpeed);
             _childPlayerBehaviour.Animator.SetBool("isClimbing", true);
@@ -89,16 +86,10 @@ public class ChildClimbState : IState
 
     public void Update()
     {
-        //no hace falta fixedupdate porque llama al metodo setmovement, que en su respectivo script se manexa con fixed
-        //float vertical = Input.GetAxisRaw("Vertical");
 
-        //Vector2 climbVelocity = new Vector2(0f, vertical * _childPlayerBehaviour.ClimbSpeed);
-        //_childPlayerBehaviour.SetMovementInput(climbVelocity);
-        //_childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.ClimbSpeed);
-        /*
         if (!_climbDetector.CanClimb)
         {
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
-        }*/
+        }
     }
 }
