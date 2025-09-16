@@ -2,53 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bridge : MonoBehaviour
+public class Door : MonoBehaviour
 {
     private Collider2D barrier;
     private Animator animator;
 
-    public bool bridge = false;
-    public bool toggleBridge = false;
+    public bool door = false;
+    public bool toggleDoor = false;
 
     void Start()
     {
         barrier = GetComponentInChildren<Collider2D>();
         animator = GetComponent<Animator>();
 
-        if (bridge)
-            BridgeOpen();
+        if (door)
+            DoorOpen();
         else
-            BridgeClose();
+            DoorClose();
     }
 
-    public void BridgeOpen()
+    public void DoorOpen()
     {
-        bridge = true;
+        door = true;
         if(barrier)
             barrier.enabled = false;
         if (animator) 
-            animator.SetBool("Open", true);
+            animator.SetBool("IsOpen", true);
     }
 
-    public void BridgeClose()
+    public void DoorClose()
     {
-        bridge = false;
+        door = false;
         if (barrier)
             barrier.enabled = true;
+        if (animator)
+            animator.SetBool("IsOpen", false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (toggleBridge)
+        if (toggleDoor)
         {
-            toggleBridge = false;
-            bridge = !bridge;
+            toggleDoor = false;
+            door = !door;
 
-            if (bridge)
-                BridgeOpen();
+            if (door)
+                DoorOpen();
             else
-                BridgeClose();
+                DoorClose();
         }
 
     }
