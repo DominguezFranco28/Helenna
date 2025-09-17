@@ -2446,6 +2446,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7208055977537637858, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
+      propertyPath: _rexController
+      value: 
+      objectReference: {fileID: 50151175}
     - target: {fileID: 7779331290517866420, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: _UI
       value: 
@@ -2554,6 +2558,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 850801710}
     m_Modifications:
+    - target: {fileID: 1636411840943826631, guid: 259e4eaf2c8bc84438ab0f9806869b2a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5152247950695963205, guid: 259e4eaf2c8bc84438ab0f9806869b2a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -275.6
@@ -2594,6 +2602,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5579913855111816637, guid: 259e4eaf2c8bc84438ab0f9806869b2a, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579913855111816637, guid: 259e4eaf2c8bc84438ab0f9806869b2a, type: 3}
+      propertyPath: m_TagString
+      value: DogPlayer
+      objectReference: {fileID: 0}
     - target: {fileID: 7108371623039749710, guid: 259e4eaf2c8bc84438ab0f9806869b2a, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -2604,6 +2620,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7108371623039749710, guid: 259e4eaf2c8bc84438ab0f9806869b2a, type: 3}
       propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7935474877353245916, guid: 259e4eaf2c8bc84438ab0f9806869b2a, type: 3}
+      propertyPath: m_BodyType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7967544799847044696, guid: 259e4eaf2c8bc84438ab0f9806869b2a, type: 3}
@@ -2681,6 +2701,17 @@ MonoBehaviour:
   toggle: 0
   groundSpriteLayer: 5
   elevatedSpriteLayer: 9
+--- !u!114 &50151175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 875415275784082387, guid: 259e4eaf2c8bc84438ab0f9806869b2a, type: 3}
+  m_PrefabInstance: {fileID: 50151141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50151142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d20a418004219249b50b75d7767bb64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &53436521
 GameObject:
   m_ObjectHideFlags: 0
@@ -148650,7 +148681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &614554997
 Transform:
   m_ObjectHideFlags: 0

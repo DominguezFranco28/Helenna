@@ -11,15 +11,17 @@ public class AgileStateMachine
     public AgileDigState digState;
     public AgileJumpState jumpState;
     public AgileHoldItemState itemState;
+    public AgileThrownState thrownState;
     public IState CurrentState { get; private set; }
 
-    public AgileStateMachine(AgilePlayerBehaviour player , PlatformDetector platformDetector , GrabObject grabObject)
+    public AgileStateMachine(AgilePlayerBehaviour player , PlatformDetector platformDetector , GrabObject grabObject, AgilePlayerController agilePlayerController)
     {
         this.moveState = new AgileMoveState(player, this);
         this.idleState = new AgileIdleState(player, this);
         this.digState = new AgileDigState(player, this);
         this.jumpState = new AgileJumpState(player, this, platformDetector);
         this.itemState = new AgileHoldItemState (player, this, grabObject);
+        this.thrownState = new AgileThrownState(player, this, agilePlayerController);
     }
 
     public void Initialize(IState startingState)
@@ -30,13 +32,14 @@ public class AgileStateMachine
         characterManager = CharacterManager.Instance;
     }
 
-    public void TransitionTo(IState nextState)
+    public void TransitionTo(IState nextState, bool forceTransition = false)
     {
-        if (characterManager)
+        //forceTransition = true ignora la comprobacion de si rex esta activo
+        if (!forceTransition && characterManager != null)
         {
             string characterName = "DogPlayer";
             if (characterManager.GetActiveCharacter() != characterName) return;
-        }
+        }//aca se bloquea el debug de todos los estados, no deja actuar a la maquina de estados
 
         if (nextState != CurrentState)
         {
@@ -54,7 +57,7 @@ public class AgileStateMachine
     public void InitStates(IState startingState)
     {
         //cicla por todos los estados para subscribir todos los inputs
-        IState[] states = { idleState, moveState, digState, jumpState, itemState};
+        IState[] states = { idleState, moveState, digState, jumpState, itemState, thrownState };
         foreach (IState state in states)
         {
             TransitionTo(state);

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,6 +43,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public AudioClip DigSFXClip { get { return _digSFXClip; } }
     public AudioClip JumpSFXClip { get { return _jumpSFXClip; } }
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
+    public Vector2 PendingThrowDirection { get; set; } //direccion que sera obtenida cuando harold lo lance
 
     void Awake()
     {
@@ -190,5 +192,6 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
             NormalizeZ(child, z);
         }
     }
+
 }
 
