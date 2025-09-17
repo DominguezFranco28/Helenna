@@ -81,7 +81,6 @@ public class ArmBullet : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        Debug.Log("ArmRelease " + _oldPlayerBehaviour.ArmRelease);
         _rb.velocity = _direction * _shotSpeed;
 
         //parametro de direccion tomado de la pos de mouse, no de inputs
@@ -182,9 +181,35 @@ public class ArmBullet : MonoBehaviour
             collisionMove.MoveTo(pushTarget);
 
         }
+
         else
         {
-           // Destroy(gameObject); // Destroy the bullet if it collides with anything else
+            // Destroy(gameObject); // Destroy the bullet if it collides with anything else
         }
     }
- }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       if (collision.gameObject.tag.ToLower().Contains("dogplayer"))
+        {
+            Debug.Log("Impact whit player REX");
+            Destroy(gameObject); // Destroy the bullet if it collides with the player
+            
+            // mover el target (rex)hacia el jugador (harold)
+
+            //INTEGRAR ESTADO ACA///
+
+            Transform parentTransform = collision.transform.parent; //PARENT porque la tag la tiene el objeto trigger de rex, no rex en si
+            if (parentTransform != null)
+            {
+                Rigidbody2D rb = parentTransform.GetComponent<Rigidbody2D>();
+                Collider2D col = parentTransform.GetComponent<Collider2D>();
+                if (rb != null)
+                {
+                    col.enabled = false; // Desactivo el collider para evitar problemas de colision
+                    rb.MovePosition(_oldPlayerBehaviour.transform.position);
+                }
+                col.enabled = true; // activo el collider para evitar problemas de colision
+            }
+        }
+    }
+}
