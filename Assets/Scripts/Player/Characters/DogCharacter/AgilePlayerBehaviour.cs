@@ -190,5 +190,10 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
             NormalizeZ(child, z);
         }
     }
+
+    public bool GetControl()
+    {
+        return IsInControll;
+    }
 }
 

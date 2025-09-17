@@ -9,13 +9,18 @@ public class TeleportPlatform : PlayerDetector
     private Collider2D _player;
     private OldPlayerBehaviour _oldPlayerBehaviour;
 
+    public bool canBeUsed = true;
 
     private void OnInteract()
     {
-        if (_playerOnPlatform)
+        if (canBeUsed)
         {
-            Effect(_player);
+            if (_playerOnPlatform)
+            {
+                Effect(_player);
+            }
         }
+        
     }
 
     private void OnEnable()
@@ -63,7 +68,7 @@ public class TeleportPlatform : PlayerDetector
        
 
     }
-         public IEnumerator Teleport()
+    public IEnumerator Teleport()
     {
         yield return new WaitForSeconds(1.5f);
         TransitionManager.Instance.FadeIn();

@@ -28,6 +28,15 @@ public class ButtonPopup : MonoBehaviour
         }
     }
 
+    private void OnEnable()
+    {
+        InputManager.Instance.ChangeCharacterPressed += CheckIfNear;
+    }
+    private void OnDisable()
+    {
+        InputManager.Instance.ChangeCharacterPressed -= CheckIfNear;
+    }
+
     public string GetBindingDisplayName()
     {
         if (actionReference == null || actionReference.action == null)
@@ -64,14 +73,24 @@ public class ButtonPopup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag.ToLower().Contains(searchOnTag))
-            popupSprite.SetActive(true);
+        if (other.tag.ToLower().Contains(searchOnTag))
+        {
+            if (other.GetComponent<IControllable>().GetControl())
+            {
+                popupSprite.SetActive(true);
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag.ToLower().Contains(searchOnTag))
-            popupSprite.SetActive(false);
+        {
+            if (collision.GetComponent<IControllable>().GetControl())
+            {
+                popupSprite.SetActive(false);
+            }
+        }
     }
 
     private void Update()
@@ -82,5 +101,12 @@ public class ButtonPopup : MonoBehaviour
             popupSprite.transform.localPosition = new Vector3(startPos.x, newY, startPos.z);
         }
         
+    }
+
+    private void CheckIfNear()
+    {
+        popupSprite.SetActive(false);
+        GetComponent<Collider2D>().enabled = false;
+        GetComponent<Collider2D>().enabled = true;
     }
 }

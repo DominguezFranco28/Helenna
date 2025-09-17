@@ -95,4 +95,9 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     {
         _canMove = isEnabled;
     }
+
+    public bool GetControl()
+    {
+        return IsInControll;
+    }
 }

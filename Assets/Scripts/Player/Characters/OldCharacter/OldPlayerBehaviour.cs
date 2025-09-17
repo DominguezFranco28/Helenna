@@ -166,6 +166,11 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     {
         return _isOnHighGround;
     }
+
+    public bool GetControl()
+    {
+        return IsInControll;
+    }
 }
 
 

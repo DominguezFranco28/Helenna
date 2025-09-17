@@ -19,6 +19,8 @@ public class PuzzleManagerEVALevel : MonoBehaviour
     [Header("Puzzle 2")]
     public PressurePlate pressurePlateP2;
     public Door doorP2;
+    public TeleportPlatform teleportP2;
+    public GameObject teleportPopupP2;
     [Header("Puzzle 3")]
     public ClosingGate gate;
     public Bridge bridgeEast;
@@ -158,6 +160,9 @@ public class PuzzleManagerEVALevel : MonoBehaviour
             case 7:
                 if (!doorP2.door)
                     doorP2.DoorOpen();
+                if (teleportP2)
+                    teleportP2.canBeUsed = true;
+                teleportPopupP2.SetActive(true);
                 break;
             default:
                 break;
