@@ -7,7 +7,8 @@ public class CharacterVerticalCollider : MonoBehaviour
     [SerializeField] private LayerMask groundLayers;
     [SerializeField] private LayerMask elevatedLayers;
     [SerializeField] private BoxCollider2D boxCollider;
-    
+    public bool IsGrounded { get; private set; }
+
     public bool toggle = false;
     private bool elevated = false;
 
@@ -70,4 +71,5 @@ public class CharacterVerticalCollider : MonoBehaviour
     {
         boxCollider.excludeLayers &= ~(1 << layerIndex);
     }
+
 }

@@ -7,6 +7,7 @@ using UnityEngine;
 public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 {
     [SerializeField] private Transform _mouth;
+    [SerializeField] private Transform _triggerDetector;
     private Vector2 _mouthOriginalPos;
 
     [SerializeField] private float _speed;
@@ -149,6 +150,16 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
            
             
         }
+    }
+    private void LateUpdate()
+    {
+        // fuerzo al ciruclo trigger a estar siempre en la posicion del perro, q se me rompia con los hole o el agua
+        _triggerDetector.localPosition = Vector3.zero;
+        //buscarle la vuelt a al boca x aca tambien
+        NormalizeZ(transform);
+        NormalizeZ(_triggerDetector);
+        NormalizeZ(_mouth); //mantengo la z original de la boca para que no me de problemas con la animacion de esta
+
     }
     public void RestartCooldown() //cd para salto. Lo llamo en cada entrada del jumpState
     {

@@ -47,11 +47,35 @@ public class AgileThrownState : IState, IFixedUpdate
         // Cuando llega al destino
         if (Vector2.Distance(_agilePlayerBehaviour.transform.position, _targetPosition) < 0.01f)
         {
-            _playerController.FinishThrow();
+            if (_agilePlayerBehaviour.IsGrounded)
+            {
+                // Está en suelo/plataforma según el modo
+                 _playerController.FinishThrow();
+              
+            }
+            else
+            {
+                // seguir avanzando en la misma direccion hasta encontrar suelo 
+                _agilePlayerBehaviour.transform.position += (Vector3)_targetPosition * throwSpeed;
+
+                if (_agilePlayerBehaviour.IsGrounded)
+                {
+                    _playerController.FinishThrow();
+                }
+            }
         }
     }
 
     public void Update()
     {
+        if (_agilePlayerBehaviour.IsGrounded)
+        {
+            // Está en suelo/plataforma según el modo
+            // Hacés lo que corresponda en tu lógica de throw
+        }
+        else
+        {
+            // Está en el aire
+        }
     }
 }
