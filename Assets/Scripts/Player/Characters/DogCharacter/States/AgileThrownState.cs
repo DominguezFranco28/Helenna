@@ -10,7 +10,7 @@ public class AgileThrownState : IState, IFixedUpdate
     private AgilePlayerController _playerController;
     private Vector2 _startPosition;
     private Vector2 _targetPosition;
-    public float throwSpeed = 10f; // unidades por segundo
+    public float throwSpeed = 20f; // unidades por segundo
     public AgileThrownState(AgilePlayerBehaviour player, AgileStateMachine agileStateMachine, AgilePlayerController playerController)
     {
         this._agilePlayerBehaviour = player;
@@ -35,6 +35,7 @@ public class AgileThrownState : IState, IFixedUpdate
     public void FixedUpdate()
     {
 
+        //podria poner un delay aca antes de empezar a mover al perro, para que de la sensacion de que lo lanzan y despues vuela
 
         // Movimiento suave de A a B
         _agilePlayerBehaviour.transform.position = Vector2.MoveTowards(

@@ -25,7 +25,7 @@ public class OldStateMachine
     public HoldItemState holdItemState;
     public ZiplineState ziplineState; 
     public HookPipe hookPipeState;
-    public GrabState grabState;
+    public ThrowState throwState;
     public IState CurrentState { get; private set; } //Read-only. External object can set the Initialize method to establish a default state
     public OldStateMachine(OldPlayerBehaviour oldPlayer, JumpDetector jumpDetector, GrabObject grabObject, AnchorDetector anchorDetector, AgilePlayerController rexController)
     {
@@ -36,7 +36,7 @@ public class OldStateMachine
         this.impulseState = new ImpulseState(oldPlayer, this, anchorDetector);
         this.ziplineState = new ZiplineState(oldPlayer, this, anchorDetector);
         this.hookPipeState = new HookPipe(oldPlayer, this, anchorDetector);
-        this.grabState = new GrabState(oldPlayer, this, rexController); //necesite pasarle por constructor el controlador del perro para activar su maquina de estados desde el lanzamiento de harold
+        this.throwState = new ThrowState(oldPlayer, this, rexController); //necesite pasarle por constructor el controlador del perro para activar su maquina de estados desde el lanzamiento de harold
         //It was necessary to add the "this".
         //I pass this instantiation of the StateMachine class as
         //a parameter so that all states know the ONLY StateMachine of existing states,

@@ -36,7 +36,7 @@ public class MoveState :  IState
         }
         if (_grabObject.CanGrabDog && interacting)
         {
-            _oldStateMachine.TransitionTo(_oldStateMachine.grabState);
+            _oldStateMachine.TransitionTo(_oldStateMachine.throwState);
         }
     }
     private void InteractPressed()
@@ -44,7 +44,7 @@ public class MoveState :  IState
 
         interacting = true;
         Debug.Log("Interacting: " + interacting);
-        InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
+        InputManager.Instance.InvokeAction(() => interacting = false, 0.5f);
     }
 
 

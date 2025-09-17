@@ -5,7 +5,7 @@ using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Windows;
 
-public class GrabState : IState
+public class ThrowState : IState
 {
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
@@ -15,7 +15,7 @@ public class GrabState : IState
     private float _throwTimer;
     private bool _delayCompleted;
     private bool subbed = false;
-    public GrabState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine, AgilePlayerController rex)
+    public ThrowState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine, AgilePlayerController rex)
     {
         this._oldPlayerBehaviour = oldPlayer;
         this._oldStateMachine = oldStateMachine;
@@ -24,7 +24,7 @@ public class GrabState : IState
 
     private void OnMove(Vector2 movement)
     {
-        _oldPlayerBehaviour.SetMovementInput(new Vector2(0, 0));
+        _oldPlayerBehaviour.SetMovementInput(Vector2.zero);
     }
 
     public void Enter()

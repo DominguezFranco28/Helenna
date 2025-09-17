@@ -12,30 +12,29 @@ public class OldPlayerController : MonoBehaviour
     private OldStateMachine _myStateMachine;
 
     private bool interacting = false;
-    private void InteractPressed()
-    {
-        if (!_playerBehaviour.IsInControll) return;
+    //private void InteractPressed()
+    //{
+    //    if (!_playerBehaviour.IsInControll) return;
 
-        interacting = true;
-        Debug.Log("Interacting: " + interacting);
-        if (InputManager.Instance != null)
-            InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
-    }
-    private void OnEnable()
-    {
-        if (InputManager.Instance != null)
-        {
-            InputManager.Instance.InteractPressed += InteractPressed;
-        }
+    //    interacting = true;
+    //    if (InputManager.Instance != null)
+    //        InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
+    //}
+    //private void OnEnable()
+    //{
+    //    if (InputManager.Instance != null)
+    //    {
+    //        InputManager.Instance.InteractPressed += InteractPressed;
+    //    }
 
-    }
-    private void OnDisable()
-    {
-        if (InputManager.Instance != null)
-        {
-            InputManager.Instance.InteractPressed -= InteractPressed;
-        }
-    }
+    //}
+    //private void OnDisable()
+    //{
+    //    if (InputManager.Instance != null)
+    //    {
+    //        InputManager.Instance.InteractPressed -= InteractPressed;
+    //    }
+    //}
 
     private void Start()
     {
@@ -53,10 +52,6 @@ public class OldPlayerController : MonoBehaviour
             if (_grabObject.PickedObject == null && _grabObject.InColision && interacting)
             {
                 _myStateMachine.TransitionTo(_myStateMachine.holdItemState);
-            }
-            if (_grabObject.CanGrabDog && interacting)
-            {
-                _myStateMachine.TransitionTo(_myStateMachine.grabState);
             }
         }
 
