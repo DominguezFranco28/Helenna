@@ -47,22 +47,27 @@ public class AgileThrownState : IState, IFixedUpdate
         // Cuando llega al destino
         if (Vector2.Distance(_agilePlayerBehaviour.transform.position, _targetPosition) < 0.01f)
         {
-            if (_agilePlayerBehaviour.IsGrounded)
-            {
-                // Está en suelo/plataforma según el modo
                  _playerController.FinishThrow();
-              
-            }
-            else
-            {
-                // seguir avanzando en la misma direccion hasta encontrar suelo 
-                _agilePlayerBehaviour.transform.position += (Vector3)_targetPosition * throwSpeed;
 
-                if (_agilePlayerBehaviour.IsGrounded)
-                {
-                    _playerController.FinishThrow();
-                }
-            }
+            //tengo q discriminar de alguna forma si esta en tierra o agua para que se siga movimiendo hasta que no pueda caer en el vacio
+            //lo de abajo fue un buen acercamiento
+
+
+            //if (_agilePlayerBehaviour.IsGrounded)
+            //{
+            //    // Está en suelo/plataforma según el modo
+              
+            //}
+            //else
+            //{
+            //    // seguir avanzando en la misma direccion hasta encontrar suelo 
+            //    //_agilePlayerBehaviour.transform.position += (Vector3)_targetPosition * throwSpeed;
+
+            //    //if (_agilePlayerBehaviour.IsGrounded)
+            //    //{
+            //    //    _playerController.FinishThrow();
+            //    //}
+            //}
         }
     }
 

@@ -11,7 +11,7 @@ public class ThrowState : IState
     private OldStateMachine _oldStateMachine;
     private AgilePlayerController _rexController;
 
-    private float _throwDelay = 2f;
+    private float _throwDelay = 1f;
     private float _throwTimer;
     private bool _delayCompleted;
     private bool subbed = false;
