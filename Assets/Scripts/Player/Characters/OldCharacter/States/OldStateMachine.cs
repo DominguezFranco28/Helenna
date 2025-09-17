@@ -25,17 +25,18 @@ public class OldStateMachine
     public HoldItemState holdItemState;
     public ZiplineState ziplineState; 
     public HookPipe hookPipeState;
+    public ThrowState throwState;
     public IState CurrentState { get; private set; } //Read-only. External object can set the Initialize method to establish a default state
-    public OldStateMachine(OldPlayerBehaviour oldPlayer, JumpDetector jumpDetector, GrabObject grabObject, AnchorDetector anchorDetector)
+    public OldStateMachine(OldPlayerBehaviour oldPlayer, JumpDetector jumpDetector, GrabObject grabObject, AnchorDetector anchorDetector, AgilePlayerController rexController)
     {
-        this.moveState = new MoveState(oldPlayer, this, jumpDetector);
+        this.moveState = new MoveState(oldPlayer, this, jumpDetector, grabObject);
         this.idleState = new IdleState(oldPlayer, this);
         this.slideState = new SlideState(oldPlayer, this, jumpDetector);
         this.holdItemState = new HoldItemState(oldPlayer, this, grabObject);
         this.impulseState = new ImpulseState(oldPlayer, this, anchorDetector);
         this.ziplineState = new ZiplineState(oldPlayer, this, anchorDetector);
         this.hookPipeState = new HookPipe(oldPlayer, this, anchorDetector);
-
+        this.throwState = new ThrowState(oldPlayer, this, rexController); //necesite pasarle por constructor el controlador del perro para activar su maquina de estados desde el lanzamiento de harold
         //It was necessary to add the "this".
         //I pass this instantiation of the StateMachine class as
         //a parameter so that all states know the ONLY StateMachine of existing states,
@@ -78,7 +79,7 @@ public class OldStateMachine
 
     public void InitStates(IState startingState)
     {
-        //cicla por todos los estados para subscribir todos los inputs
+        //cicla por  los estados para subscribir todos los inputs
         IState[] states = {idleState, moveState, holdItemState};
         foreach(IState state in states)
         {

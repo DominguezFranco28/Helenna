@@ -7,26 +7,30 @@ public class GrabObject : MonoBehaviour
     [Header(" Layer que debe tener el objeto para ser agarrable ")]
     [SerializeField] private LayerMask _objectLayer;
     [SerializeField] public GameObject _grabSpawnPoint;
+    [SerializeField] private AudioClip _pickSFX;
     // [SerializeField] private Sprite _bubbleSprite;
     private PuzzleKey _puzzleKey;
-    [SerializeField] private AudioClip _pickSFX;
     private Sprite _originalSprite;
     private SpriteRenderer _sprite;
     private GameObject _pickedObject = null;
-    private string _originalTag;
+    private GameObject _pickedRex = null;
     private Vector2 _onPositionTransform;
+    private string _originalTag;
     private bool _onPosition = false;    
+    private bool _inColision = false;
+    private bool _canGrabDog = false;
+
     // Lista de objetos en colision, para evitar el tp de objetos mal referenciados desde lejos.
-    // Lo meto en triggfer enter, y lo saco en el exit para aseugrarme de no pcikear ese objeto por ams que este lejos
+    // Lo meto en trigger enter, y lo saco en el exit para aseugrarme de no pcikear ese objeto por ams que este lejos
     private List<GameObject> _collidingObjects = new List<GameObject>();
 
 
-    //prop lectura y escritura porque se modifica desde el state
-    public GameObject PickedObject { get { return _pickedObject; }}
+
     //props solo lectura porque necesita estar informado el state, pero no modificar
+    public GameObject PickedObject { get { return _pickedObject; }}
+    public bool CanGrabDog { get { return _canGrabDog; }}
     public Vector2 OnPositionTransform{ get { return _onPositionTransform; } }
     public bool OnPosition { get { return _onPosition; }}
-    private bool _inColision = false;
     public bool InColision { get { return _inColision; } }
 
     private bool _justDropped = false;// necesario xq sino me agarraba el primer item de todos cuando queria agarrar otro item, tiene que ver con el triggerstay, al soltarlo es como que volvio a colisionar con el y lo seteaba denuevo al mimsom
@@ -45,6 +49,13 @@ public class GrabObject : MonoBehaviour
             _collidingObjects.Remove(collision.gameObject);
             _onPosition = true;
             _onPositionTransform = collision.gameObject.transform.position;
+
+        }
+        if (collision.gameObject.CompareTag("DogPlayer"))
+        {
+            _canGrabDog = true;
+            Debug.Log("Can grab dog " + CanGrabDog);
+            _pickedRex = collision.gameObject;
         }
     }
 
@@ -59,19 +70,25 @@ public class GrabObject : MonoBehaviour
 
 
         }
-            if (collision.gameObject.CompareTag("Ladder Position"))
+       if (collision.gameObject.CompareTag("Ladder Position"))
         {
             _onPosition = false;
         }
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ladder Position"))
+        if (collision.gameObject.CompareTag("DogPlayer"))
         {
-            _onPosition = true;
-            _onPositionTransform = collision.gameObject.transform.position;
+            _canGrabDog = false;
+            _pickedRex = null;
+
         }
     }
+    //private void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Ladder Position"))
+    //    {
+    //        _onPosition = true;
+    //        _onPositionTransform = collision.gameObject.transform.position;
+    //    }
+    //}
     public void GrabItem()
     {
         if (_collidingObjects.Count == 0) return;

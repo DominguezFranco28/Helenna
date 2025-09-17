@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ElevationSetter : MonoBehaviour
 {
+
     public bool canTrigger = true;
     public event System.Action<ElevationSetter> OnTriggered;
 
@@ -20,7 +21,18 @@ public class ElevationSetter : MonoBehaviour
                     character.toggle = true;
                 }
             }
+            if ( collision.tag.ToLower().Contains("dogplayer"))
+            {
+                CharacterVerticalCollider character = collision.gameObject.GetComponent<CharacterVerticalCollider>();
+                if (character)
+                {
+                    OnTriggered?.Invoke(this);
+                    character.toggle = true;
+                }
+            }
+
         }
+
 
     }
 

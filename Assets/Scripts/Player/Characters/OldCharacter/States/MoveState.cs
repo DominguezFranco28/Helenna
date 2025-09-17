@@ -7,8 +7,16 @@ public class MoveState :  IState
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
     private JumpDetector _jumpDetector;
-
+    private GrabObject _grabObject;
+    private bool interacting = false;
     private bool subbed = false;
+    public MoveState(OldPlayerBehaviour oldPlayerBehaviour, OldStateMachine oldStateMachine, JumpDetector jumpDetector, GrabObject grabObject)
+    {
+        this._oldPlayerBehaviour = oldPlayerBehaviour;
+        this._oldStateMachine = oldStateMachine;
+        this._jumpDetector = jumpDetector;
+       this._grabObject = grabObject;
+    }
 
     private void OnSpecialAction()
     {
@@ -26,14 +34,19 @@ public class MoveState :  IState
         {
             _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
         }
+        if (_grabObject.CanGrabDog && interacting)
+        {
+            _oldStateMachine.TransitionTo(_oldStateMachine.throwState);
+        }
+    }
+    private void InteractPressed()
+    {
+
+        interacting = true;
+        Debug.Log("Interacting: " + interacting);
+        InputManager.Instance.InvokeAction(() => interacting = false, 0.5f);
     }
 
-    public MoveState(OldPlayerBehaviour oldPlayerBehaviour, OldStateMachine oldStateMachine, JumpDetector jumpDetector)
-    {
-        this._oldPlayerBehaviour = oldPlayerBehaviour;
-        this._oldStateMachine = oldStateMachine;
-        this._jumpDetector = jumpDetector;
-    }
 
     public void Enter()
     {
@@ -44,6 +57,7 @@ public class MoveState :  IState
                 subbed = true;
 
                 InputManager.Instance.SpecialActionPressed += OnSpecialAction;
+                InputManager.Instance.InteractPressed += InteractPressed;
                 InputManager.Instance.Move += OnMove;
             }
         }
@@ -63,6 +77,7 @@ public class MoveState :  IState
         {
             subbed = false;
             InputManager.Instance.SpecialActionPressed -= OnSpecialAction;
+            InputManager.Instance.InteractPressed -= InteractPressed;
             InputManager.Instance.Move -= OnMove;
         }
     }
