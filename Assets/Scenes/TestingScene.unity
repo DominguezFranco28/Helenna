@@ -2608,7 +2608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5579913855111816637, guid: 259e4eaf2c8bc84438ab0f9806869b2a, type: 3}
       propertyPath: m_TagString
-      value: DogPlayer
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7108371623039749710, guid: 259e4eaf2c8bc84438ab0f9806869b2a, type: 3}
       propertyPath: m_SortingLayer

@@ -9,30 +9,39 @@ public class GrabState : IState
 {
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
-    private GrabObject grabObject;
     private AgilePlayerController _rexController;
 
-    private float _throwDelay = 5f;
+    private float _throwDelay = 2f;
     private float _throwTimer;
     private bool _delayCompleted;
-
-    public GrabState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine, GrabObject grabObject, AgilePlayerController rex)
+    private bool subbed = false;
+    public GrabState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine, AgilePlayerController rex)
     {
         this._oldPlayerBehaviour = oldPlayer;
         this._oldStateMachine = oldStateMachine;
-        this.grabObject = grabObject;
         _rexController = rex;
     }
 
-
+    private void OnMove(Vector2 movement)
+    {
+        _oldPlayerBehaviour.SetMovementInput(new Vector2(0, 0));
+    }
 
     public void Enter()
     {
         Debug.Log("You entered the state:  GRAB");
+        Vector2 throwDir = _oldPlayerBehaviour.LastMovementInput;
+        _oldPlayerBehaviour.StopMovement();
+        if (!subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = false;
+                InputManager.Instance.Move += OnMove;
+            }
+        }
         _throwTimer = 0f;
         _delayCompleted = false;
-        _oldPlayerBehaviour.StopMovement();
-        Vector2 throwDir = _oldPlayerBehaviour.LastMovementInput;
 
         _rexController.ThrowDirection(throwDir);
 
@@ -46,6 +55,14 @@ public class GrabState : IState
     public void Exit()
     {
         Debug.Log("You exited the state:  GRAB");
+        if (subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = true;
+                InputManager.Instance.Move -= OnMove;
+            }
+        }
     }
 
     public void Update()

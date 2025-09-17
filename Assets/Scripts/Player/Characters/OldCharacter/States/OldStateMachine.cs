@@ -36,7 +36,7 @@ public class OldStateMachine
         this.impulseState = new ImpulseState(oldPlayer, this, anchorDetector);
         this.ziplineState = new ZiplineState(oldPlayer, this, anchorDetector);
         this.hookPipeState = new HookPipe(oldPlayer, this, anchorDetector);
-        this.grabState = new GrabState(oldPlayer, this, grabObject, rexController); //necesite pasarle por constructor el controlador del perro para activar su maquina de estados desde el lanzamiento de harold
+        this.grabState = new GrabState(oldPlayer, this, rexController); //necesite pasarle por constructor el controlador del perro para activar su maquina de estados desde el lanzamiento de harold
         //It was necessary to add the "this".
         //I pass this instantiation of the StateMachine class as
         //a parameter so that all states know the ONLY StateMachine of existing states,
@@ -79,7 +79,7 @@ public class OldStateMachine
 
     public void InitStates(IState startingState)
     {
-        //cicla por todos los estados para subscribir todos los inputs
+        //cicla por  los estados para subscribir todos los inputs
         IState[] states = {idleState, moveState, holdItemState};
         foreach(IState state in states)
         {
