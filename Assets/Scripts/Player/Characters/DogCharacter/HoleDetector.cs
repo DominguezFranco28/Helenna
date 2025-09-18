@@ -1,12 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class HoleDetector : MonoBehaviour
 {
    [SerializeField] private AgilePlayerBehaviour _playerBehaviour;
+   [SerializeField] private AgilePlayerController _playerController;
+    [SerializeField] private string _waterLayerName = "Water";
+    private AgileStateMachine _stateMachine;
+    private int _waterLayer;
 
+    private void Awake()
+    {
+        if (_playerController != null)
+        {
+            _stateMachine = _playerController.StateMachine; //capto la misma referencia de la maquina de estados, no la inicio de nuevo
+        }
+        _waterLayer = LayerMask.NameToLayer(_waterLayerName);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //I turn off the fence collider when the dog detects the hole
@@ -22,12 +35,25 @@ public class HoleDetector : MonoBehaviour
                 }
             }
             _playerBehaviour.CanDig = true;
+
+            if (collision.gameObject.CompareTag("WaterZone") && _stateMachine.CurrentState == _stateMachine.thrownState)
+            {
+                Debug.Log("Entered water zone while thrown");
+                Collider2D waterCollider = collision.GetComponent<Collider2D>();
+                Collider2D rexCollider = GetComponent<Collider2D>();
+
+                if (waterCollider != null && rexCollider != null)
+                {
+                    // Ignoramos la colisión solo cuando Rex está lanzado
+                    Physics2D.IgnoreCollision(rexCollider, waterCollider, true);
+                }
+            }
         }
-        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+
         if (collision.CompareTag("Hole"))
         {
             Transform parent = collision.transform.parent;
@@ -41,7 +67,21 @@ public class HoleDetector : MonoBehaviour
             }
             _playerBehaviour.CanDig = false;
         }
-    }
 
+        if (collision.gameObject.CompareTag("WaterZone"))
+        {
+            Collider2D waterCollider = collision.GetComponent<Collider2D>();
+            Collider2D rexCollider = GetComponent<Collider2D>();
+
+            if (waterCollider != null && rexCollider != null)
+            {
+                // Ignoramos la colisión solo cuando Rex está lanzado
+                Physics2D.IgnoreCollision(rexCollider, waterCollider, true);
+            }
+        }
+    }
 }
+
+
+
 

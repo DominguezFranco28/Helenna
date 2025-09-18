@@ -23,6 +23,7 @@ TagManager:
   - FollowCamera
   - Zipline
   - Pipe
+  - WaterZone
   layers:
   - Default
   - TransparentFX

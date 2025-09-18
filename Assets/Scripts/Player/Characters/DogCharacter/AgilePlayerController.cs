@@ -14,7 +14,8 @@ public class AgilePlayerController : MonoBehaviour
     private bool isThrowed= false;
     private bool _isBeingThrown = false;
     public bool IsBeingThrown { get { return _isBeingThrown; } set { value = _isBeingThrown; }}
-
+    //expongo la instancia de la maquina de estados para poder acceder a ella desde el detector de colisiones (detectar si esta en estado throw)
+    public AgileStateMachine StateMachine { get { return _agileStateMachine; } }
     private bool interacting = false;
     private void OnEnable()
     {
