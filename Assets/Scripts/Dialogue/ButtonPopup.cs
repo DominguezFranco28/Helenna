@@ -90,6 +90,7 @@ public class ButtonPopup : MonoBehaviour
             {
                 popupSprite.SetActive(false);
             }
+
         }
     }
 
