@@ -11,6 +11,7 @@ public class HoleDetector : MonoBehaviour
     [SerializeField] private string _waterLayerName = "Water";
     private AgileStateMachine _stateMachine;
     private int _waterLayer;
+    public bool IsInWater { get; private set; } //esto para usar el el throw state y detecte si esta en el agua o no
 
     private void Awake()
     {
@@ -35,20 +36,8 @@ public class HoleDetector : MonoBehaviour
                 }
             }
             _playerBehaviour.CanDig = true;
-
-            if (collision.gameObject.CompareTag("WaterZone") && _stateMachine.CurrentState == _stateMachine.thrownState)
-            {
-                Debug.Log("Entered water zone while thrown");
-                Collider2D waterCollider = collision.GetComponent<Collider2D>();
-                Collider2D rexCollider = GetComponent<Collider2D>();
-
-                if (waterCollider != null && rexCollider != null)
-                {
-                    // Ignoramos la colisión solo cuando Rex está lanzado
-                    Physics2D.IgnoreCollision(rexCollider, waterCollider, true);
-                }
-            }
         }
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -68,16 +57,30 @@ public class HoleDetector : MonoBehaviour
             _playerBehaviour.CanDig = false;
         }
 
-        if (collision.gameObject.CompareTag("WaterZone"))
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == _waterLayer && _stateMachine.CurrentState == _stateMachine.thrownState)
         {
-            Collider2D waterCollider = collision.GetComponent<Collider2D>();
+            Debug.Log("Rex entered water while being thrown, ignoring collision.");
             Collider2D rexCollider = GetComponent<Collider2D>();
+            Collider2D waterCollider = collision.collider;
 
-            if (waterCollider != null && rexCollider != null)
-            {
-                // Ignoramos la colisión solo cuando Rex está lanzado
-                Physics2D.IgnoreCollision(rexCollider, waterCollider, true);
-            }
+            Physics2D.IgnoreCollision(rexCollider, waterCollider, true);
+            IsInWater = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == _waterLayer)
+        {
+            Debug.Log("Rex entered water while being thrown, ignoring collision.");
+            Collider2D rexCollider = GetComponent<Collider2D>();
+            Collider2D waterCollider = collision.collider;
+
+            Physics2D.IgnoreCollision(rexCollider, waterCollider, false);
+            IsInWater = false;
         }
     }
 }

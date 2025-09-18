@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Unity.Collections.AllocatorManager;
-[DefaultExecutionOrder(-10)]
+
 public class ChildPlayerBehaviour : MonoBehaviour, IControllable
 {
     [SerializeField] private float _speed;

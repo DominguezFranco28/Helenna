@@ -10,6 +10,7 @@ public class AgileThrownState : IState, IFixedUpdate
     private AgilePlayerController _playerController;
     private Vector2 _startPosition;
     private Vector2 _targetPosition;
+    private bool _throwCompleted = false;
     public float throwSpeed = 20f; // unidades por segundo
     public AgileThrownState(AgilePlayerBehaviour player, AgileStateMachine agileStateMachine, AgilePlayerController playerController)
     {
@@ -36,38 +37,19 @@ public class AgileThrownState : IState, IFixedUpdate
     {
 
         //podria poner un delay aca antes de empezar a mover al perro, para que de la sensacion de que lo lanzan y despues vuela
-
         // Movimiento suave de A a B
         _agilePlayerBehaviour.transform.position = Vector2.MoveTowards(
             _agilePlayerBehaviour.transform.position,
             _targetPosition,
             throwSpeed * Time.fixedDeltaTime
         );
+        Vector2 currentPos = _agilePlayerBehaviour.transform.position;
 
-        // Cuando llega al destino
-        if (Vector2.Distance(_agilePlayerBehaviour.transform.position, _targetPosition) < 0.01f)
+        // Cuando llega al destino. Ojo con el valor hardcodeado porque si es muy chico capaz no lo detecta en horizontales
+        if (Vector2.Distance(currentPos, _targetPosition) < 0.2f && !_throwCompleted && !_agilePlayerBehaviour.HoleDetector.IsInWater)
         {
-
-            //tengo q discriminar de alguna forma si esta en tierra o agua para que se siga movimiendo hasta que no pueda caer en el vacio
-            //lo de abajo fue un buen acercamiento
-
-
-            if (_agilePlayerBehaviour.IsGrounded)
-            {
-                // Está en suelo/plataforma según el modo
-                 _playerController.FinishThrow();
-
-            }
-            else
-            {
-               // seguir avanzando en la misma direccion hasta encontrar suelo
-                _agilePlayerBehaviour.transform.position += (Vector3)_targetPosition * throwSpeed;
-
-                if (_agilePlayerBehaviour.IsGrounded)
-                {
-                    _playerController.FinishThrow();
-                }
-            }
+            _throwCompleted = true;
+            _playerController.FinishThrow();
         }
     }
 
