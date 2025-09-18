@@ -11,7 +11,10 @@ public class AgileThrownState : IState, IFixedUpdate
     private Vector2 _startPosition;
     private Vector2 _targetPosition;
     private bool _throwCompleted = false;
-    public float throwSpeed = 20f; // unidades por segundo
+
+    public float throwSpeed = 20f;
+    public float maxThrowDistance = 15f;
+    public float targetRetreatOffset = 0.5f; // cuanto retrocedemos si hay agua parcial
     public AgileThrownState(AgilePlayerBehaviour player, AgileStateMachine agileStateMachine, AgilePlayerController playerController)
     {
         this._agilePlayerBehaviour = player;
@@ -25,7 +28,7 @@ public class AgileThrownState : IState, IFixedUpdate
         Debug.Log("You entered the state: AGILE THROW");
         _startPosition = _agilePlayerBehaviour.transform.position;
         //target posiicion harcodeada
-        _targetPosition = _startPosition + _agilePlayerBehaviour.PendingThrowDirection * 10f;
+        _targetPosition = _startPosition + _agilePlayerBehaviour.PendingThrowDirection * 15f;
     }
 
     public void Exit()
@@ -46,10 +49,18 @@ public class AgileThrownState : IState, IFixedUpdate
         Vector2 currentPos = _agilePlayerBehaviour.transform.position;
 
         // Cuando llega al destino. Ojo con el valor hardcodeado porque si es muy chico capaz no lo detecta en horizontales
-        if (Vector2.Distance(currentPos, _targetPosition) < 0.2f && !_throwCompleted && !_agilePlayerBehaviour.HoleDetector.IsInWater)
+        if (Vector2.Distance(currentPos, _targetPosition) < 1f)
         {
-            _throwCompleted = true;
-            _playerController.FinishThrow();
+            if (!_throwCompleted)
+            {
+                _throwCompleted = true; // Llegó al destino
+            }
+
+            // Solo finalizar throw si ya no está en el agua
+            if (!_agilePlayerBehaviour.HoleDetector.IsInWater)
+            {
+                _playerController.FinishThrow();
+            }
         }
     }
 

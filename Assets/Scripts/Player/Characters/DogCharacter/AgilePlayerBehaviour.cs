@@ -154,7 +154,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     private void LateUpdate()
     {
         // fuerzo al ciruclo trigger a estar siempre en la posicion del perro, q se me rompia con los hole o el agua
-        _triggerDetector.localPosition = Vector3.zero;
+        //_triggerDetector.localPosition = Vector3.zero;
         //buscarle la vuelt a al boca x aca tambien
         NormalizeZ(transform);
         NormalizeZ(_triggerDetector);
