@@ -6,7 +6,7 @@ public class AgileDigState : IState
 {
     private AgilePlayerBehaviour _agilePlayerBehaviour;
     private AgileStateMachine _agileStateMachine;
-    private HoleDetector _holeDetector;
+    private AgileTriggerDetector _holeDetector;
 
     private float _digDelay = 0.3f; 
     private float _digTimer;

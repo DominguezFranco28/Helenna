@@ -203,12 +203,13 @@ public class ArmBullet : MonoBehaviour
             {
                 Rigidbody2D rb = parentTransform.GetComponent<Rigidbody2D>();
                 Collider2D col = parentTransform.GetComponent<Collider2D>();
+                AgileTriggerDetector holeDetector = parentTransform.GetComponentInChildren<AgileTriggerDetector>();
                 if (rb != null)
                 {
-                    col.enabled = false; // Desactivo el collider para evitar problemas de colision
+                    holeDetector.IsBeeingPulled = true;
                     rb.MovePosition(_oldPlayerBehaviour.transform.position);
                 }
-                col.enabled = true; // activo el collider para evitar problemas de colision
+                    holeDetector.IsBeeingPulled = false;
             }
         }
     }
