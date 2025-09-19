@@ -14,12 +14,12 @@ public class AgileStateMachine
     public AgileThrownState thrownState;
     public IState CurrentState { get; private set; }
 
-    public AgileStateMachine(AgilePlayerBehaviour player , PlatformDetector platformDetector , GrabObject grabObject, AgilePlayerController agilePlayerController)
+    public AgileStateMachine(AgilePlayerBehaviour player , GrabObject grabObject, AgilePlayerController agilePlayerController)
     {
         this.moveState = new AgileMoveState(player, this);
         this.idleState = new AgileIdleState(player, this);
         this.digState = new AgileDigState(player, this);
-        this.jumpState = new AgileJumpState(player, this, platformDetector);
+        this.jumpState = new AgileJumpState(player, this);
         this.itemState = new AgileHoldItemState (player, this, grabObject);
         this.thrownState = new AgileThrownState(player, this, agilePlayerController);
     }

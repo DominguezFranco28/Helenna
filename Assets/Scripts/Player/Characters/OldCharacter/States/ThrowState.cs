@@ -80,5 +80,7 @@ public class ThrowState : IState
             return; // skip the update until delay is over
         }
         _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
+
+        //a cada uno le puse su timer porque quiero que als dos maquinas se disparen a la vez asi cad auno ejecuta sus animaciones y sonidos
     }     
 }

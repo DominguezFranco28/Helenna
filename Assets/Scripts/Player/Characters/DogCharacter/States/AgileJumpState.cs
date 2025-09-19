@@ -9,24 +9,23 @@ public class AgileJumpState : IState, IMovable, IFixedUpdate
 {
     private AgilePlayerBehaviour _agilePlayerBehaviour;
     private AgileStateMachine _agileStateMachine;
-    private PlatformDetector _platformDetector;
+   // private PlatformDetector _platformDetector;
     private float _moveSmoothTime = 0.2f; //ojo este valor, si es muy alto se bugea por el desplazamiento lento y colisiones
     private Vector2 _velocity = new Vector2 (1.5f,1.5f);
     private Vector2 _targetPosition; // Guardamos solo una vez
     private Vector2 _lastInput;
     private GameObject _pickedObject = null;
 
-    public AgileJumpState (AgilePlayerBehaviour agilePlayerBehaviour,  AgileStateMachine agileStateMachine, PlatformDetector platformDetector)
+    public AgileJumpState (AgilePlayerBehaviour agilePlayerBehaviour,  AgileStateMachine agileStateMachine)
     {
        this._agilePlayerBehaviour = agilePlayerBehaviour;
         this._agileStateMachine = agileStateMachine;
-        this._platformDetector = platformDetector;
         
     }
     public void Enter()
     {
         Debug.Log("Entraste al estaod de SALTO");
-        _targetPosition = _platformDetector.PlatFormPosition;
+       // _targetPosition = _platformDetector.PlatFormPosition;
         //_agilePlayerBehaviour.transform.position = _platformDetector.PlatFormPosition;
         if (_targetPosition == Vector2.zero)
         {//validacion porque empezo a hacer saltos raro si tenia item. Ahora si la paltaforma tiene un vector2 en zerio, cancela el salto.

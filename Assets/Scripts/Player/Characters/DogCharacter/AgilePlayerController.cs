@@ -7,7 +7,6 @@ using UnityEngine;
 public class AgilePlayerController : MonoBehaviour
 {
     [SerializeField] private AgilePlayerBehaviour _agileBehaviour;
-    [SerializeField]private PlatformDetector _platformDetector;
     [SerializeField]private GrabObject _grabObject;
     private AgileStateMachine _agileStateMachine;
     private Vector2 throwdirection = Vector2.zero;
@@ -43,7 +42,7 @@ public class AgilePlayerController : MonoBehaviour
 
     private void Start()
     {
-        _agileStateMachine = new AgileStateMachine(_agileBehaviour, _platformDetector, _grabObject, this);
+        _agileStateMachine = new AgileStateMachine(_agileBehaviour, _grabObject, this);
         _agileStateMachine.Initialize(_agileStateMachine.idleState);
     }
 
@@ -74,8 +73,7 @@ public class AgilePlayerController : MonoBehaviour
         _isBeingThrown = true;
         _agileBehaviour.PendingThrowDirection = throwDir; //le paso la direccion al behaviour de rex
         _agileStateMachine.TransitionTo(_agileStateMachine.thrownState, true);
- //el true para forzar la transicion por mas que rex no este activo. Puede llamar a r
- //ex sin necesidad de que este bajo control ni pasar por parametro a la maquina de estados
+         //el true para forzar la transicion por mas que rex no este activa su maquina de estados.
 
         Debug.Log("Throw direction set to: " + _agileBehaviour.PendingThrowDirection);
     }

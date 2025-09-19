@@ -69,7 +69,6 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
             _animator.SetFloat("Horizontal", _movementInput.x);
             _animator.SetFloat("Vertical", _movementInput.y);
             _animator.SetFloat("Speed", _movementInput.magnitude);
-            NormalizeZ(transform);
             UpdateMouthDirection(_movementInput); 
             if (_delayCompleted) //revisar esto
             {
@@ -160,7 +159,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
             _collider2D.enabled = true;
         //buscarle la vuelt a al boca x aca tambien
         _triggerDetector.localPosition = Vector3.zero;
-        NormalizeZ(transform);
+        NormalizeZ(gameObject.transform);
         NormalizeZ(_triggerDetector);
         NormalizeZ(_mouth); //mantengo la z original de la boca para que no me de problemas con la animacion de esta
 
