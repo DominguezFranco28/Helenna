@@ -10,7 +10,6 @@ public class AgileTriggerDetector : MonoBehaviour
 {
     [SerializeField] private AgilePlayerBehaviour _playerBehaviour;
     [SerializeField] private AgilePlayerController _playerController;
-    [SerializeField] private LayerMask _waterLayer;
     [SerializeField] private float _distance = 3f;
     [SerializeField] private Vector2 _origin;
     [SerializeField] private Vector2 _boxcastSize;
@@ -53,14 +52,12 @@ public class AgileTriggerDetector : MonoBehaviour
         }
             Collider2D overlap = Physics2D.OverlapBox(_origin, _boxcastSize, 0f, mask); //calcula pos actual de rex, funciona con tilemap collider solido, el triggerstay no
             IsInWater = overlap != null;
-        Debug.Log("Rex is in water: " + IsInWater + " Water ahead: " + WaterAhead);
+        //Debug.Log("Rex is in water: " + IsInWater + " Water ahead: " + WaterAhead);
     }
     public void IgnoreWater(bool enable)
     {
-
             Physics2D.IgnoreLayerCollision(_playerBehaviour.gameObject.layer, _waterLayerIndex, enable);
             Debug.Log("Ignoring water collision: " + enable);
-        //ignorar colision con el auga
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -100,7 +97,7 @@ public class AgileTriggerDetector : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected() //todo ia el Gizmo papa
     {
         if (_playerBehaviour == null) return;
         if (_playerBehaviour.PendingThrowDirection == Vector2.zero) return;

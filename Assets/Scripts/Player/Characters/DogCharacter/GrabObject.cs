@@ -51,7 +51,7 @@ public class GrabObject : MonoBehaviour
             _onPositionTransform = collision.gameObject.transform.position;
 
         }
-        if (collision.gameObject.CompareTag("DogPlayer"))
+        if (collision.gameObject.CompareTag("Throwable"))
         {
             _canGrabDog = true;
             Debug.Log("Can grab dog " + CanGrabDog);
@@ -74,21 +74,14 @@ public class GrabObject : MonoBehaviour
         {
             _onPosition = false;
         }
-        if (collision.gameObject.CompareTag("DogPlayer"))
+        if (collision.gameObject.CompareTag("Throwable"))
         {
             _canGrabDog = false;
             _pickedRex = null;
 
         }
     }
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Ladder Position"))
-    //    {
-    //        _onPosition = true;
-    //        _onPositionTransform = collision.gameObject.transform.position;
-    //    }
-    //}
+
     public void GrabItem()
     {
         if (_collidingObjects.Count == 0) return;

@@ -24,6 +24,7 @@ TagManager:
   - Zipline
   - Pipe
   - WaterZone
+  - Throwable
   layers:
   - Default
   - TransparentFX
