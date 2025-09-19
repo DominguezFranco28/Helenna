@@ -1,0 +1,135 @@
+{
+  "lines": [
+    {
+      "scene": "game-intro",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "Bien, ya falta poco hasta la estacion, una vez que subamos al tren el resto del camino sera mucho mas facil."
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Eso espero... ya estoy grande para hacer el camino hacia el norte a pie."
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "No puedo creer que alguien tan bueno en las maquinas como vos nunca se subiera a un tren."
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Harold",
+      "lineId": 2,
+      "text": "Si tuvieras mi ojo para estas cosas vos tampoco te subirias a uno, parece que los tienen atados con alambre."
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Nina",
+      "lineId": 3,
+      "text": "Claro, no como tus inventos..."
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Rex",
+      "lineId": 1,
+      "text": "Guau! Guau!"
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "Bah! Callense"
+    },
+
+    {
+      "scene": "puzzle0-intro",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "La puerta parece estar cerrada por alguna especie de mecanismo!"
+    },
+    {
+      "scene": "puzzle0-intro",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Nada que no podamos resolver."
+    },
+    {
+      "scene": "puzzle0-intro",
+      "speaker": "Rex",
+      "lineId": 1,
+      "text": "Guau!"
+    },
+
+    {
+      "scene": "puzzle0-tip1",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "Esa caja se ve pesada, Podras empujarla con tu brazo?."
+    },
+    {
+      "scene": "puzzle0-tip1",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Ps, claro que si."
+    },
+
+    {
+      "scene": "puzzle0-tip2",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Hm, parece que esta placa esta un poco oxidada, vamos a necesitar bastante peso para activarla."
+    },
+    {
+      "scene": "puzzle0-tip2",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "Seria mas facil con dos cajas..."
+    },
+    {
+      "scene": "puzzle0-tip2",
+      "speaker": "Harold",
+      "lineId": 2,
+      "text": "Lo podemos resolver si trabajamos juntos (Usa <key_changeCharacter> para cambiar de personaje)"
+    },
+
+    {
+      "scene": "puzzle0-done",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "Funciono!"
+    },
+    {
+      "scene": "puzzle0-done",
+      "speaker": "Rex",
+      "lineId": 1,
+      "text": "Guau!"
+    },
+
+    {
+      "scene": "puzzle1",
+      "speaker": "",
+      "lineId": 1,
+      "text": ""
+    },
+    {
+      "scene": "puzzle2",
+      "speaker": "",
+      "lineId": 1,
+      "text": ""
+    },
+    {
+      "scene": "puzzle3",
+      "speaker": "",
+      "lineId": 1,
+      "text": ""
+    },
+    {
+      "scene": "game-end",
+      "speaker": "",
+      "lineId": 1,
+      "text": ""
+    }
+  ]
+}

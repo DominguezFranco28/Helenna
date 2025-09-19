@@ -61,25 +61,34 @@ public class PressurePlate : MonoBehaviour
 
     private void ActivatePlate()
     {
-        isPressed = true;
+        if (!isPressed)
+        {
+            isPressed = true;
 
-        Debug.Log("Placa de presion activada");
-        _animator.SetBool("IsPressed", true);
-        SFXManager.Instance.PlaySFX(_audioClip);
+            Debug.Log("Placa de presion activada");
+            _animator.SetBool("IsPressed", true);
+            SFXManager.Instance.PlaySFX(_audioClip);
 
-        OnPadPressed?.Invoke(manualID);
+            OnPadPressed?.Invoke(manualID);
+        }
+        
     }
 
     public void DeactivatePlate()
     {
-        isPressed = false;
+        if (isPressed)
+        {
+            isPressed = false;
+            
+            //Metodo publico para que el puzzle pueda apagar la placa de presion, por ejemplo si se resuelve el puzzle y se quiere apagar todas las placas de presion
+            Debug.Log("Placa de presion desactivada");
+            _animator.SetBool("IsPressed", false);
+            SFXManager.Instance.PlaySFX(_audioClip);
 
-        //Metodo publico para que el puzzle pueda apagar la placa de presion, por ejemplo si se resuelve el puzzle y se quiere apagar todas las placas de presion
-        Debug.Log("Placa de presion desactivada");
-        _animator.SetBool("IsPressed", false);
-        SFXManager.Instance.PlaySFX(_audioClip);
+            OnPadReleased?.Invoke(manualID);
+        }
 
-        OnPadReleased?.Invoke(manualID);
+        
     }
 
 
