@@ -23,6 +23,12 @@ public class IdleState :  IState
             _oldPlayerBehaviour.SetMovementInput(movement);
         }
     }
+    private void InteractPressed()
+    {
+        //TEST FUNCIONANMIENTO SWITCH MANO
+        _oldPlayerBehaviour.SwitchArmType(); //swithceamos el type del disparo del viejo (entre pull y push)
+        Debug.Log("Switched Arm Type to: " + _oldPlayerBehaviour.GetCurrentArmType());
+    }
 
     //Constructor, because it does not inherit from monobehaviour
     public IdleState(OldPlayerBehaviour oldPlayerBehaviour, OldStateMachine oldStateMachine) 
@@ -39,6 +45,7 @@ public class IdleState :  IState
                 subbed = true;
 
                 InputManager.Instance.SpecialActionPressed += OnSpecialAction;
+                InputManager.Instance.InteractPressed += InteractPressed; 
                 InputManager.Instance.Move += OnMove;
             }
         }
@@ -55,6 +62,7 @@ public class IdleState :  IState
         if (InputManager.Instance != null)
         {
             InputManager.Instance.SpecialActionPressed -= OnSpecialAction;
+            InputManager.Instance.InteractPressed -= InteractPressed;
             InputManager.Instance.Move -= OnMove;
             subbed = false;
         }

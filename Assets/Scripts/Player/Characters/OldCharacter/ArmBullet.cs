@@ -52,7 +52,6 @@ public class ArmBullet : MonoBehaviour
         _armCol = GetComponent<Collider2D>();
         _oldPlayerBehaviour = FindObjectOfType<OldPlayerBehaviour>(); //podria pasarlo por parametro como el impulseforce
         _animator = GetComponent<Animator>();
-
         StartCoroutine(AutoDestroy());
     }
 
@@ -82,135 +81,118 @@ public class ArmBullet : MonoBehaviour
     private void FixedUpdate()
     {
         _rb.velocity = _direction * _shotSpeed;
-
-        //parametro de direccion tomado de la pos de mouse, no de inputs
         
         _animator.SetTrigger("IsShooting");
         _animator.SetFloat("Horizontal", _direction.x);
         _animator.SetFloat("Vertical", _direction.y);
-        if (_isInHook && _oldPlayerBehaviour.ArmPulled)
-            {
-               Debug.Log("THE ATTRACTION IS ACTIVATED");
-            //stopPoint dinamico, para tener en cuenta la posiconm actual del HookPoint si se mueve.
-            _stopPoint = (Vector2)_parentMovable.position - _direction.normalized * 0.5f;
-            _armImpulser.MovePlayerToAnchor(_stopPoint, ImpulseType.Pull); //activo el reposicionamiento del jugador
-               Destroy(gameObject); // Destroy the bullet after pulling the player
-            }
+        //if (_isInHook && _oldPlayerBehaviour.ArmPulled)
+        //    {
+        //       Debug.Log("THE ATTRACTION IS ACTIVATED");
+        //    //stopPoint dinamico, para tener en cuenta la posiconm actual del HookPoint si se mueve //creo que alfinal no va a ser necesario
+        //    _stopPoint = (Vector2)_parentMovable.position - _direction.normalized * 0.5f;
+        //    _armImpulser.MovePlayerToAnchor(_stopPoint, ImpulseType.Pull); //activo el reposicionamiento del jugador
+        //       Destroy(gameObject); // Destroy the bullet after pulling the player
+        //    }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("HookPoint") && !_isInHook) 
+        string tag = collision.gameObject.tag;
+        switch (tag)
         {
-            Debug.Log("Impact whit hook point!");
-            _isInHook = true; // Set the flag to true to prevent multiple hook impacts
-            _parentMovable = collision.transform; // Get the parent transform of the hook point
-            transform.SetParent(_parentMovable,true); //true para mantener la pos globan en el momento del enganche 
+            //case "HookPoint": //manejo de colision con puntos de anclaje, me quedo obsoleto conm el anchordetector
+            //    HandleHookPointCollision(collision);
+            //    break;
 
-            // fuerzo el eje Z a 0 xq a veces se me iba a 58 (idk) y generaba problemas de visibilidad
-            Vector3 fixedPosition = transform.position;
-            fixedPosition.z = 0f;
-            transform.position = fixedPosition;
-            if (_rb != null)  
-            {
+            case "Pushable": //manejo de colision con objetos empujables 
+                switch (_impulseType)
+                {
+                    case ImpulseType.Push:
+                        HandlePushableCollision(collision, true);
+                        break;
 
-                // freno el Rigidbody por completo
-                _rb.velocity = Vector2.zero;
-                _rb.isKinematic = true; // tuve que desactivar el rb porque interferia con el mov del padre (bug visual si el Hook se movia x codigo)}
+                    case ImpulseType.Pull: //si viene cn typePUll el objeto se atrae
+                        HandlePushableCollision(collision, false);
+                        break;
+                }
+                break;
 
-            }
-            _shotSpeed = 0f; // Stop the bullet's movement
-            _armCol.enabled = false; // Disable the collider to prevent further collisions
-
-        }
-        // maybe I should make a switch
-        else if ((collision.gameObject.CompareTag("Pushable")) && _impulseType == ImpulseType.Push)
-        {
-            Destroy(gameObject); // Destroy the bullet if it collides with a pushable object
-            Debug.Log("Impact whit movableObject");
-            var collisionMove = collision.gameObject.GetComponent<MovableObject>();
-            Vector2 impactPoint = collision.contacts[0].point;
-            // Si el objeto es movible, lo empujo en la direccion del disparo
-            // Determino la direccion en X e  Y, a la direccion se le asigna un nuevo valor de tipo vector 2, pero restringido para evitar diagonales
-            Vector2 pushDir = _direction; 
-            if (Mathf.Abs(pushDir.x) > Mathf.Abs(pushDir.y))
-            {
-                pushDir = new Vector2(Mathf.Sign(pushDir.x), 0); // Solo eje X
-            }
-            else
-            {
-                pushDir = new Vector2(0, Mathf.Sign(pushDir.y)); // Solo eje Y
-            }
-
-            Vector2 pushTarget = (Vector2)collision.transform.position + pushDir * _pushDistance;
-            Collider2D targetCol = collisionMove.GetComponent<Collider2D>();
-            if (targetCol != null && _armCol != null)
-            {
-                Physics2D.IgnoreCollision(_armCol, targetCol);
-            }
-            collisionMove.MoveTo(pushTarget);
-          
-
-
+             default:
+                //si colisiona con cualquier otra cosa, que se destruya.
+                 Destroy(gameObject);
+                break;
         }
 
-        else if ((collision.gameObject.CompareTag("Pushable")) && _impulseType == ImpulseType.Pull)
-        {
-            Destroy(gameObject); // Destroy the bullet if it collides with a pushable object
-            Debug.Log("Impactaste con un objeto movible");
-            var collisionMove = collision.gameObject.GetComponent<MovableObject>();
-            Vector2 impactPoint = collision.contacts[0].point;
-            // // Determino la direccion en X e  Y, quiero evitar diagonales 
-            Vector2 pushDir = _direction; //a la direccion se le asigna un nuevo valor de tipo mvector 2, pero restringido para eivtar diagonales
-            if (Mathf.Abs(pushDir.x) > Mathf.Abs(pushDir.y))
-            {
-                pushDir = new Vector2(Mathf.Sign(pushDir.x), 0); // Solo eje X
-            }
-            else
-            {
-                pushDir = new Vector2(0, Mathf.Sign(pushDir.y)); // Solo eje Y
-            }
-
-
-            Vector2 pushTarget = (Vector2)collision.transform.position - pushDir * _pushDistance; //Lo mismo pero paso en negativo la direccion, para que vaya hacia el jugador
-            Collider2D targetCol = collisionMove.GetComponent<Collider2D>();
-            if (targetCol != null && _armCol != null)
-            {
-                Physics2D.IgnoreCollision(_armCol, targetCol);
-            }
-            collisionMove.MoveTo(pushTarget);
-
-        }
-
-        else
-        {
-            // Destroy(gameObject); // Destroy the bullet if it collides with anything else
-        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if (collision.gameObject.tag.ToLower().Contains("dogplayer"))
+       if (collision.gameObject.tag.ToLower().Contains("throwable"))
         {
             Debug.Log("Impact whit player REX");
             Destroy(gameObject); // Destroy the bullet if it collides with the player
-            
-            // mover el target (rex)hacia el jugador (harold)
-
-            //INTEGRAR ESTADO ACA///
-
             Transform parentTransform = collision.transform.parent; //PARENT porque la tag la tiene el objeto trigger de rex, no rex en si
             if (parentTransform != null)
-            {
-                Rigidbody2D rb = parentTransform.GetComponent<Rigidbody2D>();
-                Collider2D col = parentTransform.GetComponent<Collider2D>();
-                AgileTriggerDetector holeDetector = parentTransform.GetComponentInChildren<AgileTriggerDetector>();
-                if (rb != null)
-                {
-                    holeDetector.IsBeeingPulled = true;
-                    rb.MovePosition(_oldPlayerBehaviour.transform.position);
-                }
-                    holeDetector.IsBeeingPulled = false;
+            {           
+                HandleDogThrow(parentTransform);
             }
         }
+    }
+    //private void HandleHookPointCollision(Collision2D collision)
+    //{
+    //    Debug.Log("Impact with hook point!");
+    //    _isInHook = true;
+    //    _parentMovable = collision.transform;
+    //    transform.SetParent(_parentMovable, true);
+
+    //    Vector3 fixedPosition = transform.position;
+    //    fixedPosition.z = 0f;
+    //    transform.position = fixedPosition;
+
+    //    if (_rb != null)
+    //    {
+    //        _rb.velocity = Vector2.zero;
+    //        _rb.isKinematic = true;
+    //    }
+
+    //    _shotSpeed = 0f;
+    //    _armCol.enabled = false;
+    //}
+    private void HandlePushableCollision(Collision2D collision, bool isPush)
+    {
+        Destroy(gameObject);
+        Debug.Log("Impact with movable object");
+
+        var collisionMove = collision.gameObject.GetComponent<MovableObject>();
+
+        // direccion solo en eje principal (sin diagonales)
+        Vector2 dir = _direction;
+        if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+            dir = new Vector2(Mathf.Sign(dir.x), 0);
+        else
+            dir = new Vector2(0, Mathf.Sign(dir.y));
+
+        //Operador ternario aca, si ispush es verdaderoo se mueve en la direccion del disparo, si es pull se mueve en sentido contrario
+        Vector2 pushTarget = (Vector2)collision.transform.position +
+                             (isPush ? dir : -dir) * _pushDistance;
+        
+
+        //Collider2D targetCol = collisionMove.GetComponent<Collider2D>();
+        //if (targetCol != null && _armCol != null)
+        //    Physics2D.IgnoreCollision(_armCol, targetCol);    //esata parte me quedo bosoleta porque ya destruyo el brazo nin bien colisiona, pero dejo de momento 
+
+        collisionMove.MoveTo(pushTarget);
+    }
+    private void HandleDogThrow(Transform transform)
+    {
+        //INTEGRAR ESTADO ACA///
+            Rigidbody2D rb = transform.GetComponent<Rigidbody2D>();
+            Collider2D col = transform.GetComponent<Collider2D>();
+            AgileTriggerDetector holeDetector = transform.GetComponentInChildren<AgileTriggerDetector>();
+            if (rb != null)
+            {
+                holeDetector.IsBeeingPulled = true;
+                rb.MovePosition(_oldPlayerBehaviour.transform.position);
+            }
+            holeDetector.IsBeeingPulled = false;       
     }
 }

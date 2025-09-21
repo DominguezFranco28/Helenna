@@ -7,6 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static System.TimeZoneInfo;
 using UnityEngine.SceneManagement;
+using System;
 
 public class ArmImpulser : MonoBehaviour
 {
@@ -27,22 +28,24 @@ public class ArmImpulser : MonoBehaviour
     [SerializeField] private AudioClip _throwSFX;
     private ArmImpulser _impulser;
     private GameObject _currentArmBullet;
+    private ImpulseType _curretType;
     private ArmLineController _currentArmLine;
     private Collider2D _playerCol;
 
 
     //Variables to obtain components external to the arm.
     private OldPlayerBehaviour _movementBehaviour;
-
+    public ImpulseType CurrentType => _curretType;
+    //expongo el current type para poder acceder desde la maquina de estados y cambiar la accion segun el tipo de impulso
 
     //Public methods so that the methods of this main mechanic (private)
     //can be accessed from the OldPlayerBehaviour int the states machine constructor 
     //and the Armbullet script (which manages the logic of the thrown arm).
 
-    public void MovePlayerToAnchor(Vector2 anchorPosition, ImpulseType type)
-    {
-        StartCoroutine(ApplyRecoil(anchorPosition, type));
-    }
+    //public void MovePlayerToAnchor(Vector2 anchorPosition, ImpulseType type)
+    //{
+    //    StartCoroutine(ApplyRecoil(anchorPosition, type));
+    //}
     public void GetThrowArm(ImpulseType type)
     {
         ThrowArm(type);
@@ -85,37 +88,38 @@ public class ArmImpulser : MonoBehaviour
     }
 
 
-    private IEnumerator ApplyRecoil(Vector2 anchorPosition, ImpulseType type) //pasar a maquina de estados
-    {
+/*    private IEnumerator ApplyRecoil(Vector2 anchorPosition, ImpulseType type)*/ //pasar a maquina de estados
+    //{
         //refactorizacion para que use sistemas de fisica (controla el fixed updte del behavour) para evitar bugs
-        if (type != ImpulseType.Pull)
-            yield break;
+    //    if (type != ImpulseType.Pull)
+    //        yield break;
 
-        SFXManager.Instance.PlaySFX(_dashSFX);
-        _movementBehaviour.IsRecoiling = true;
-        _movementBehaviour.SetMovementEnabled(false);
-        _playerCol.enabled = false; //vital agregarlo, me soluciono muchos bugs con las colisiones. Solucion sencilla
+    //    SFXManager.Instance.PlaySFX(_dashSFX);
+    //    _movementBehaviour.IsRecoiling = true;
+    //    _movementBehaviour.SetMovementEnabled(false);
+    //    _playerCol.enabled = false; //vital agregarlo, me soluciono muchos bugs con las colisiones. Solucion sencilla
 
-        _recoilTarget = anchorPosition;
-        _recoilVelocity = Vector2.zero;
-        _isRecoiling = true;
+    //    _recoilTarget = anchorPosition;
+    //    _recoilVelocity = Vector2.zero;
+    //    _isRecoiling = true;
 
-        // Espera hasta que termine el recoil
-        while (_isRecoiling)
-            yield return new WaitForFixedUpdate();
+    //    // Espera hasta que termine el recoil
+    //    while (_isRecoiling)
+    //        yield return new WaitForFixedUpdate();
 
-        _movementBehaviour.IsRecoiling = false;
-        _playerCol.enabled = true;
-        _movementBehaviour.SetMovementEnabled(true);
+    //    _movementBehaviour.IsRecoiling = false;
+    //    _playerCol.enabled = true;
+    //    _movementBehaviour.SetMovementEnabled(true);
 
-    }
+    //}
     private void ThrowArm(ImpulseType type)
     {
         if (_currentArmBullet != null)
         {
             return; //only let be one active arm.
         }
-        StartCoroutine(SpawnArmBullet(type));
+        _curretType = type;
+        StartCoroutine(SpawnArmBullet(_curretType));
     }
     private void ArmToAnchor(Transform closestAnchor, bool IsHoldingAnchor)
     {
@@ -185,7 +189,14 @@ public class ArmImpulser : MonoBehaviour
             armScript.DetectVerticality(_movementBehaviour.IsOnHighGround());
         }
     }
+
+    public void SwitchArmType()
+    {
+        _curretType = _curretType == ImpulseType.Push ? ImpulseType.Pull : ImpulseType.Push;
+        //si estaba en pussh pasa a pull y vicveversa
+        Debug.Log("Current Arm Type: " + _curretType);
     }
+}
 
 
 

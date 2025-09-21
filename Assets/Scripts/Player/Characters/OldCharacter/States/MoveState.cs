@@ -20,11 +20,18 @@ public class MoveState :  IState
 
     private void OnSpecialAction()
     {
-        if (!_oldPlayerBehaviour.IsInControll) return;
         _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
         _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
         _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo
         _oldStateMachine.TransitionTo(_oldStateMachine.impulseState);
+    }
+    private void OnSpecialActionHeld()
+    {
+        _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
+        _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
+        _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo
+        _oldPlayerBehaviour.SwitchArmType(); //swithceamos el type del disparo del viejo (entre pull y push)
+        Debug.Log("Switched Arm Type to: " + _oldPlayerBehaviour.GetCurrentArmType());
     }
 
     private void OnMove(Vector2 movement)
@@ -42,6 +49,12 @@ public class MoveState :  IState
     private void InteractPressed()
     {
 
+        //TEST FUNCIONANMIENTO SWITCH MANO
+        _oldPlayerBehaviour.SwitchArmType(); //swithceamos el type del disparo del viejo (entre pull y push)
+        Debug.Log("Switched Arm Type to: " + _oldPlayerBehaviour.GetCurrentArmType());
+
+
+
         interacting = true;
         Debug.Log("Interacting: " + interacting);
         InputManager.Instance.InvokeAction(() => interacting = false, 0.5f);
@@ -56,6 +69,7 @@ public class MoveState :  IState
             {
                 subbed = true;
 
+             //   InputManager.Instance.SpecialActionHeld += OnSpecialActionHeld; //no funciona como deberia
                 InputManager.Instance.SpecialActionPressed += OnSpecialAction;
                 InputManager.Instance.InteractPressed += InteractPressed;
                 InputManager.Instance.Move += OnMove;
@@ -76,6 +90,7 @@ public class MoveState :  IState
         if (InputManager.Instance != null)
         {
             subbed = false;
+           // InputManager.Instance.SpecialActionHeld -= OnSpecialActionHeld;
             InputManager.Instance.SpecialActionPressed -= OnSpecialAction;
             InputManager.Instance.InteractPressed -= InteractPressed;
             InputManager.Instance.Move -= OnMove;
@@ -84,13 +99,6 @@ public class MoveState :  IState
 
     public void Update()
     {
-        //Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        //_oldPlayerBehaviour.SetMovementInput(input);
-        /*if (input.magnitude <= 0.01f)
-        {
-            _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
-        }*/
-        
         if (_jumpDetector.CanJump)
         {
             _oldStateMachine.TransitionTo(_oldStateMachine.slideState);

@@ -35,11 +35,11 @@ public class ImpulseState : IState
                     _oldStateMachine.TransitionTo(_oldStateMachine.ziplineState);
 
                     break;
-                case AnchorType.HookPipe:
+                case AnchorType.HookPipe: //SIN INMPLEMENTAR
                     Debug.Log("Cambio a PIPE ");
                     _oldStateMachine.TransitionTo(_oldStateMachine.hookPipeState);
                     break;
-                case AnchorType.HookPoint:
+                case AnchorType.HookPoint: //REFACTORIZADO, de momento sin uso
                     Debug.Log("Cambio a hookpoint ");
                     // lógica para HookPoint
                     _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
@@ -55,12 +55,13 @@ public class ImpulseState : IState
         }
         //Si no esta focuseando ningun anclaje, que solo dispare el brazo.
 
-        //Tengo que poder switchear el enum entre push y pull con un unico input y mejorar esta logica 
+           //Si no es un punto de anclaje, que interactue como disparo normal del brazo 
         else
         {
             _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
             _oldPlayerBehaviour.ArmRelease = true;
-            _oldPlayerBehaviour.PerformThrowArm(ImpulseType.Push);
+            ImpulseType currentType = _oldPlayerBehaviour.GetCurrentArmType(); //paso por parametro el tipo de impulso que quiero obtenido desde la consulta en el player behaviour
+            _oldPlayerBehaviour.PerformThrowArm(currentType);
         }
     }
     public void Exit()

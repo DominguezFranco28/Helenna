@@ -66,6 +66,14 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         //dsps lo uso para recuperar la velocidad normal el ne fixed
         LastMovementInput = Vector2.down; //inicializo el input en una pos default
     }
+    private void FixedUpdate()
+    {
+        if (!IsInControll || IsRecoiling || !_canMove) return;
+        {
+            _rb2D.velocity = _movementInput * _normalSpeed;
+        }
+    //    Debug.Log(_armPulled);
+    }
     public void LowSpeed(bool change)
     {
         if (change)
@@ -102,13 +110,14 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         //_animator.SetFloat("Vertical", 0f);
         //_animator.SetFloat("Speed", 0f);
     }
-    private void FixedUpdate()
+    public void SwitchArmType()
     {
-        if (!IsInControll || IsRecoiling || !_canMove) return;
-        {
-            _rb2D.velocity = _movementInput * _normalSpeed;
-        }
-    //    Debug.Log(_armPulled);
+        if (!IsInControll) return;
+        _armImpulser.SwitchArmType();
+    }
+    public ImpulseType GetCurrentArmType()
+    {
+        return _armImpulser.CurrentType;
     }
 
     public void PerformThrowArm(ImpulseType type)
