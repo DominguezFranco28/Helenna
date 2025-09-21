@@ -11,6 +11,7 @@ public class AgileThrownState : IState, IFixedUpdate
     private AgilePlayerController _playerController;
     private Vector2 _startPosition;
     private Vector2 _targetPosition;
+  private Vector2 _direction;
     private bool _throwCompleted = false;
 
     public float throwSpeed = 20f;
@@ -32,6 +33,7 @@ public class AgileThrownState : IState, IFixedUpdate
     {
         Debug.Log("You entered the state: AGILE THROW");
         _startPosition = _agilePlayerBehaviour.transform.position;
+        _direction = _agilePlayerBehaviour.PendingThrowDirection.normalized;
         _targetPosition = _startPosition + _agilePlayerBehaviour.PendingThrowDirection.normalized * maxThrowDistance;
         _throwCompleted = false;
         _throwTimer = 0f;
@@ -39,12 +41,13 @@ public class AgileThrownState : IState, IFixedUpdate
         // LIMPIEZA DE VELOCIDAD PREVIA
         _agilePlayerBehaviour.Rigidbody2D.velocity = Vector2.zero;
 //        _agilePlayerBehaviour.Rigidbody2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-
+        _agilePlayerBehaviour.Animator.SetTrigger("IsBeingPicked");
     }
 
     public void Exit()
     {
         Debug.Log("You exited the state: AGILE THROW");
+        _agilePlayerBehaviour.Animator.SetBool("IsBeingThrowed", false);
         _agilePlayerBehaviour.TriggerDetector.IgnoreWater(false);
     }
 
@@ -55,9 +58,8 @@ public class AgileThrownState : IState, IFixedUpdate
 
         Rigidbody2D rb = _agilePlayerBehaviour.Rigidbody2D;
         // direccion normalizada hacia el target
-        Vector2 throwDir = _agilePlayerBehaviour.PendingThrowDirection.normalized;
         // Movimiento constante hacia la dirección de lanzamiento
-        rb.velocity = throwDir * throwSpeed;
+        rb.velocity = _direction * throwSpeed;
 
         bool inWater = _agilePlayerBehaviour.TriggerDetector.IsInWater;
         bool waterAhead = _agilePlayerBehaviour.TriggerDetector.WaterAhead;
@@ -68,7 +70,7 @@ public class AgileThrownState : IState, IFixedUpdate
         if (distanceToTarget < 0.5f && (inWater || waterAhead))
         {
             // leve extension de la pos del throw para salir del agua 
-            _targetPosition = rb.position + throwDir * 0.2f;
+            _targetPosition = rb.position + _direction * 0.2f;
         }
 
         // termina throw solo si no hay agua por delante, ni esta en el agua y llegó al target
@@ -92,10 +94,11 @@ public class AgileThrownState : IState, IFixedUpdate
         rb.velocity = Vector2.zero;
         _agilePlayerBehaviour.TriggerDetector.IgnoreWater(false);
         _playerController.FinishThrow();
+       
     }
     public void Update()
     {
-        //anims
+     
         if (!_delayCompleted)
         {
             _throwTimer += Time.deltaTime;
@@ -106,7 +109,11 @@ public class AgileThrownState : IState, IFixedUpdate
 
             }
             return; // skip the update until delay is over
+
         }
+        _agilePlayerBehaviour.Animator.SetBool("IsBeingThrowed", true);
+        _agilePlayerBehaviour.Animator.SetFloat("ThrowHorizontal", _direction.x);
+        _agilePlayerBehaviour.Animator.SetFloat("ThrowVertical", _direction.y);
     }
 }
 

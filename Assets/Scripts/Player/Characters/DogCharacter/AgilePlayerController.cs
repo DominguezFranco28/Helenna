@@ -77,7 +77,7 @@ public class AgilePlayerController : MonoBehaviour
         _agileStateMachine.TransitionTo(_agileStateMachine.thrownState, true);
          //el true para forzar la transicion por mas que rex no este activa su maquina de estados.
 
-        Debug.Log("Throw direction set to: " + _agileBehaviour.PendingThrowDirection);
+       // Debug.Log("Throw direction set to: " + _agileBehaviour.PendingThrowDirection);
     }
     public void PullDirection (Vector2 pullDirection) //no sigue la misma logica ecacta que el thrown, porque este metodo se llamada desde la colission del Armbullet no desde estado especifico de Harold
     {
@@ -85,21 +85,21 @@ public class AgilePlayerController : MonoBehaviour
         _isBeingPulled = true;
         _agileBehaviour.PendingPulledDirection = pullDirection;
         _agileStateMachine.TransitionTo(_agileStateMachine.pulledState, true);
-        Debug.Log("Pull direction set to: " + _agileBehaviour.PendingPulledDirection);
+        //Debug.Log("Pull direction set to: " + _agileBehaviour.PendingPulledDirection);
     }
     
     public void FinishThrow()
     {
         // llamado desde AgileThrownState 
         _isBeingThrown = false;
-        Debug.Log("Finished being thrown.");
+       // Debug.Log("Finished being thrown.");
         _agileStateMachine.TransitionTo(_agileStateMachine.idleState,true);
     }
     public void FinishPull()
     {
         // llamado desde AgilePulledState 
         _isBeingPulled = false;
-        Debug.Log("Finished being pulled.");
+      //  Debug.Log("Finished being pulled.");
         _agileStateMachine.TransitionTo(_agileStateMachine.idleState, true);
     }
 }

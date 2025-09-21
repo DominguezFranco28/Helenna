@@ -35,6 +35,7 @@ public class ArmLineController : MonoBehaviour
         _lineRenderer.positionCount = 2; //SEGUNDA POSICION DEL LINE RENDERER para el anclaje
         _lineRenderer.SetPosition(0, startPosition);
         _target = newTarget; //se guarda el transform del punto de anclaje
+        _lineRenderer.SetPosition(1, _target.position);
 
         if (_endSpritePrefab != null)
         {
@@ -45,7 +46,7 @@ public class ArmLineController : MonoBehaviour
             _target.position,
             Quaternion.Euler(0f, 0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg)
             ); //formula para rotar el prefab de la mano en la direccion del anclaje
-            _endInstance.transform.position = _lineRenderer.GetPosition(_lineRenderer.positionCount - 1) - direction * _offsetArm;
+            _endInstance.transform.position = _lineRenderer.GetPosition(_lineRenderer.positionCount - 1);
             //direction es el vector unitario de la linea,  si lo multiplico por offsetAmount lo aleja de la posicion final
         }
     }
@@ -61,8 +62,6 @@ public class ArmLineController : MonoBehaviour
 
         // Destruyo el LineRenderer (el mismo GameObject)
         Destroy(gameObject);
-
-        Debug.Log("Linea destruida");
     }
 
     // Update is called once per frame

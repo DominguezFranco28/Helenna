@@ -35,12 +35,6 @@ public class AgilePulledState : IState, IFixedUpdate
         _startPosition = _agilePlayerBehaviour.transform.position;
         _targetPosition = _agilePlayerBehaviour.PendingPulledDirection;
         _pullCompleted = false;
-        //_throwCompleted = false;
-        //_throwTimer = 0f;
-        //_delayCompleted = false;
-        Debug.Log("PendingPulledDirection: " + _agilePlayerBehaviour.PendingPulledDirection);
-
-
     }
 
     public void Exit()

@@ -41,7 +41,6 @@ public class AgileTriggerDetector : MonoBehaviour
             if (hit.collider != null)
             {
                 //tiene agua al frente, sigo desplazando
-                Debug.Log("Rex sees water ahead" + IsInWater);
                 WaterAhead = true;
 
             }
@@ -57,7 +56,6 @@ public class AgileTriggerDetector : MonoBehaviour
     public void IgnoreWater(bool enable)
     {
             Physics2D.IgnoreLayerCollision(_playerBehaviour.gameObject.layer, _waterLayerIndex, enable);
-            Debug.Log("Ignoring water collision: " + enable);
 
     }
     private void OnTriggerEnter2D(Collider2D collision)

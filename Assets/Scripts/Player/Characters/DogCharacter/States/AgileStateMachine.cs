@@ -58,8 +58,8 @@ public class AgileStateMachine
 
     public void InitStates(IState startingState)
     {
-        //cicla por todos los estados para subscribir todos los inputs
-        IState[] states = { idleState, moveState, digState, jumpState, itemState, thrownState };
+        //cicla por todos los estados necesarios para subscribir todos los inputs
+        IState[] states = { idleState, moveState, digState, itemState}; 
         foreach (IState state in states)
         {
             TransitionTo(state);

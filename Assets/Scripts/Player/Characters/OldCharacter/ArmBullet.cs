@@ -12,8 +12,6 @@ public class ArmBullet : MonoBehaviour
     private Rigidbody2D _rb;
     private Animator _animator;
     private Vector2 _direction;
-    private Collider2D _armCol;  
-    private ArmImpulser _armImpulser;
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private Transform _parentMovable; //para hacer padre a los puntos de anclajemovibles
     private ImpulseType _impulseType;
@@ -34,10 +32,6 @@ public class ArmBullet : MonoBehaviour
     {
         _direction = direction.normalized;
     }
-    public void SetImpulseForce(ArmImpulser impulser)
-    {
-        _armImpulser = impulser;
-    }
     public void SetImpulseType(ImpulseType type)
     {
         _impulseType = type;
@@ -57,7 +51,6 @@ public class ArmBullet : MonoBehaviour
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _armCol = GetComponent<Collider2D>();
         _oldPlayerBehaviour = FindObjectOfType<OldPlayerBehaviour>(); //podria pasarlo por parametro como el impulseforce
         _animator = GetComponent<Animator>();
         StartCoroutine(AutoDestroy());
@@ -149,11 +142,10 @@ public class ArmBullet : MonoBehaviour
 
              default:
                 //si colisiona con cualquier otra cosa, que se destruya.
-              //   Destroy(gameObject);
+                Destroy(gameObject);
                 
                 break;
         }
-
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -216,6 +208,5 @@ public class ArmBullet : MonoBehaviour
         _isRetracting = true;
         _rb.velocity = Vector2.zero;
         _rb.isKinematic = true; //Detener física para que no se atasque
-        _armCol.enabled = false;
     }
 }

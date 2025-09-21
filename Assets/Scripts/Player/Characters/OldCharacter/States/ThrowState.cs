@@ -30,6 +30,7 @@ public class ThrowState : IState
     public void Enter()
     {
         Debug.Log("You entered the state:  GRAB");
+        _oldPlayerBehaviour.Animator.SetBool("IsSliding", true);
         Vector2 throwDir = _oldPlayerBehaviour.LastMovementInput;
         _oldPlayerBehaviour.StopMovement();
         if (!subbed)
@@ -54,6 +55,7 @@ public class ThrowState : IState
 
     public void Exit()
     {
+        _oldPlayerBehaviour.Animator.SetBool("IsSliding", false);
         Debug.Log("You exited the state:  GRAB");
         if (subbed)
         {
