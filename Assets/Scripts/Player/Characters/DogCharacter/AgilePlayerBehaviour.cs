@@ -39,19 +39,20 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public Vector2 LastMovementInput { get; set; }
     public Collider2D PlayerCollider { get { return _collider2D; } set { _collider2D = value; } }
     public Rigidbody2D Rigidbody2D { get { return _rb2D; } set { _rb2D = value; } }
-    public AgileTriggerDetector HoleDetector { get; private set; }
+    public AgileTriggerDetector TriggerDetector { get; private set; }
     public Animator Animator { get { return _animator; } }
     public AudioClip DigSFXClip { get { return _digSFXClip; } }
     public AudioClip JumpSFXClip { get { return _jumpSFXClip; } }
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
     public Vector2 PendingThrowDirection { get; set; } //direccion que sera obtenida cuando harold lo lance
+    public Vector2 PendingPulledDirection { get; set; } //direccion que sera obtenida cuando harold lo atraiga
 
     void Awake()
     {
         Debug.Log("Z ANTES DEL NORMALIZE: " + transform.position.z);
         _rb2D = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        HoleDetector = GetComponentInChildren<AgileTriggerDetector>(); //rever esto, puedo integrarlo en el constructor del estado como el Jump
+        TriggerDetector = GetComponentInChildren<AgileTriggerDetector>(); //rever esto, puedo integrarlo en el constructor del estado como el Jump
         _collider2D = GetComponent<Collider2D>();
         _mouthOriginalPos = _mouth.position;
         NormalizeZ(transform);
@@ -138,8 +139,6 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     private void FixedUpdate()
     {
         if (!IsInControll || !_canMove) return;
-        if (HoleDetector.IsBeeingPulled)
-            _collider2D.enabled = false; //apago el collider cuando harold lo pulea
         _rb2D.velocity = _movementInput * _speed;
         CheckGround();
         UpdateMouthDirection(_movementInput); // Actualiza la dirección de la boca en cada FixedUpdate
@@ -155,8 +154,6 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     private void LateUpdate()
     {
         // fuerzo al ciruclo trigger a estar siempre en la posicion del perro, q se me rompia con los hole o el agua
-        if (!HoleDetector.IsBeeingPulled) // si no esta siendo ya agarrado por harold, que le vuelva a activar su collider al final
-            _collider2D.enabled = true;
         //buscarle la vuelt a al boca x aca tambien
         _triggerDetector.localPosition = Vector3.zero;
         NormalizeZ(gameObject.transform);

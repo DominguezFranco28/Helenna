@@ -19,7 +19,7 @@ public class AgileDigState : IState
     {
         this._agilePlayerBehaviour = agilePlayerBehaviour;
         this._agileStateMachine = agileStateMachine;
-        this._holeDetector = agilePlayerBehaviour.HoleDetector;
+        this._holeDetector = agilePlayerBehaviour.TriggerDetector;
 
     }
     private void OnMove(Vector2 movement)

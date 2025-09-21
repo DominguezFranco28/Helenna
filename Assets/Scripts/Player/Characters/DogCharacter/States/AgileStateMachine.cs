@@ -12,6 +12,7 @@ public class AgileStateMachine
     public AgileJumpState jumpState;
     public AgileHoldItemState itemState;
     public AgileThrownState thrownState;
+    public AgilePulledState pulledState;
     public IState CurrentState { get; private set; }
 
     public AgileStateMachine(AgilePlayerBehaviour player , GrabObject grabObject, AgilePlayerController agilePlayerController)
@@ -22,6 +23,7 @@ public class AgileStateMachine
         this.jumpState = new AgileJumpState(player, this);
         this.itemState = new AgileHoldItemState (player, this, grabObject);
         this.thrownState = new AgileThrownState(player, this, agilePlayerController);
+        this.pulledState = new AgilePulledState(player, this, agilePlayerController);
     }
 
     public void Initialize(IState startingState)
@@ -34,7 +36,7 @@ public class AgileStateMachine
 
     public void TransitionTo(IState nextState, bool forceTransition = false)
     {
-        //forceTransition = true ignora la comprobacion de si rex esta activo
+        //forceTransition = true ignora la comprobacion de si rex esta activo, PARA PODER forzarlo desde el controlador del perro cuando lo agarra harold
         if (!forceTransition && characterManager != null)
         {
             string characterName = "DogPlayer";

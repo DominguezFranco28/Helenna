@@ -187,6 +187,7 @@ public class ArmImpulser : MonoBehaviour
             armScript.SetImpulseForce(_impulser);
             armScript.SetImpulseType(type);
             armScript.DetectVerticality(_movementBehaviour.IsOnHighGround());
+            armScript.SetStartTransform(_spawnPoint);
         }
     }
 

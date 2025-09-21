@@ -9,19 +9,23 @@ public class ArmBullet : MonoBehaviour
     [SerializeField] private float _pushDistance = 5f;
     [SerializeField] private float _lifeTime = 1f;
 
-    private LayerMask _collisionMask;//este guarda la mascara activa 
     private Rigidbody2D _rb;
     private Animator _animator;
     private Vector2 _direction;
     private Collider2D _armCol;  
     private ArmImpulser _armImpulser;
     private OldPlayerBehaviour _oldPlayerBehaviour;
+    private Transform _parentMovable; //para hacer padre a los puntos de anclajemovibles
     private ImpulseType _impulseType;
 
+    [Header("Line Prefab")]
+    [SerializeField] private GameObject _armLinePrefab;
+    private ArmLineController _armLineInstance;
+    private Transform _startPoint;
+    private bool _isRetracting = false;
+    private Vector2 _retractTarget;
 
-    private Transform _parentMovable; //para hacer padre a los puntos de anclajemovibles
-    private bool _isInHook = false; // bandera para saber si quedo enganchada
-    private Vector2 _stopPoint;
+
 
     // Methods to set the reference from outside the script,
     // from the armImpulser when instantiating the arm.
@@ -46,6 +50,10 @@ public class ArmBullet : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("BulletGround");
         // Cambiar layer segun la pos del jugador para detectar "veerticalidad", ajustado desde la matrix de unity gestiono las colisiones a gusto
     }
+    public void SetStartTransform(Transform start)
+    {
+        _startPoint = start;
+    }
     void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -55,13 +63,29 @@ public class ArmBullet : MonoBehaviour
         StartCoroutine(AutoDestroy());
     }
 
+    private void Start() //EN STAR XQ EN AWAKE PUEDE INSTANCIARSE NULL 
+    {
+        
+        if (_armLinePrefab != null && _startPoint != null)
+        {
+            GameObject lineObj = Instantiate(_armLinePrefab);
+            _armLineInstance = lineObj.GetComponent<ArmLineController>();
+            _armLineInstance.AssignTarget(_startPoint.position, transform);
+        }
+    }
+
     private IEnumerator AutoDestroy()
     {
         yield return new WaitForSeconds(_lifeTime);
-
-        if (!_isInHook) // solo destruir si no esta enganchado
-        {
+        if (!_isRetracting)
             Destroy(gameObject);
+    }
+    private void DestroyLine()
+    {
+        if (_armLineInstance != null)
+        {
+            _armLineInstance.CancelLine();
+            _armLineInstance = null;
         }
     }
 
@@ -69,14 +93,28 @@ public class ArmBullet : MonoBehaviour
     {
         //reseteo todas las banderas relacionadas al brazo lanzado UNA VEZ DESTRUIDO. Este se destruye automaticamente si no queda anclado
         //tiempo de vida del disparo ajustable desde inspector  
-        _isInHook = false; // Reset the flag to allow future hook impacts
-        _stopPoint = Vector2.zero;
         _oldPlayerBehaviour.ArmPulled = false;
         _oldPlayerBehaviour.ArmRelease = false;
         _parentMovable = null;
         _oldPlayerBehaviour.SetMovementEnabled(true); //habilito el movimiento del jugador cuando se destruye elb razo
-        Debug.Log("ArmRelease " + _oldPlayerBehaviour.ArmRelease);
+        DestroyLine();
 
+    }
+
+    private void Update()
+    {
+        if (_isRetracting)
+        {
+            float step = _shotSpeed * 2 * Time.deltaTime; //en pull, la retraccion es mas rapida que el disparo para que no se bugeee cuando inpacte con algo
+            transform.position = Vector2.MoveTowards(transform.position, _retractTarget, step);
+
+            if (Vector2.Distance(transform.position, _retractTarget) < 0.1f)
+            {
+                _isRetracting = false;
+                DestroyLine();
+                Destroy(gameObject);
+            }
+        }
     }
     private void FixedUpdate()
     {
@@ -85,14 +123,6 @@ public class ArmBullet : MonoBehaviour
         _animator.SetTrigger("IsShooting");
         _animator.SetFloat("Horizontal", _direction.x);
         _animator.SetFloat("Vertical", _direction.y);
-        //if (_isInHook && _oldPlayerBehaviour.ArmPulled)
-        //    {
-        //       Debug.Log("THE ATTRACTION IS ACTIVATED");
-        //    //stopPoint dinamico, para tener en cuenta la posiconm actual del HookPoint si se mueve //creo que alfinal no va a ser necesario
-        //    _stopPoint = (Vector2)_parentMovable.position - _direction.normalized * 0.5f;
-        //    _armImpulser.MovePlayerToAnchor(_stopPoint, ImpulseType.Pull); //activo el reposicionamiento del jugador
-        //       Destroy(gameObject); // Destroy the bullet after pulling the player
-        //    }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -119,47 +149,28 @@ public class ArmBullet : MonoBehaviour
 
              default:
                 //si colisiona con cualquier otra cosa, que se destruya.
-                 Destroy(gameObject);
+              //   Destroy(gameObject);
+                
                 break;
         }
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if (collision.gameObject.tag.ToLower().Contains("throwable"))
+       if (collision.gameObject.tag.ToLower().Contains("throwable") && _impulseType == ImpulseType.Pull)
         {
             Debug.Log("Impact whit player REX");
-            Destroy(gameObject); // Destroy the bullet if it collides with the player
+            // Destroy the bullet if it collides with the player
             Transform parentTransform = collision.transform.parent; //PARENT porque la tag la tiene el objeto trigger de rex, no rex en si
             if (parentTransform != null)
             {           
-                HandleDogThrow(parentTransform);
+                HandleDogPull(parentTransform);
             }
+            StartRetract(_oldPlayerBehaviour.transform.position); // bullet VUELVE  a harold
         }
     }
-    //private void HandleHookPointCollision(Collision2D collision)
-    //{
-    //    Debug.Log("Impact with hook point!");
-    //    _isInHook = true;
-    //    _parentMovable = collision.transform;
-    //    transform.SetParent(_parentMovable, true);
-
-    //    Vector3 fixedPosition = transform.position;
-    //    fixedPosition.z = 0f;
-    //    transform.position = fixedPosition;
-
-    //    if (_rb != null)
-    //    {
-    //        _rb.velocity = Vector2.zero;
-    //        _rb.isKinematic = true;
-    //    }
-
-    //    _shotSpeed = 0f;
-    //    _armCol.enabled = false;
-    //}
     private void HandlePushableCollision(Collision2D collision, bool isPush)
     {
-        Destroy(gameObject);
         Debug.Log("Impact with movable object");
 
         var collisionMove = collision.gameObject.GetComponent<MovableObject>();
@@ -174,25 +185,37 @@ public class ArmBullet : MonoBehaviour
         //Operador ternario aca, si ispush es verdaderoo se mueve en la direccion del disparo, si es pull se mueve en sentido contrario
         Vector2 pushTarget = (Vector2)collision.transform.position +
                              (isPush ? dir : -dir) * _pushDistance;
-        
-
-        //Collider2D targetCol = collisionMove.GetComponent<Collider2D>();
-        //if (targetCol != null && _armCol != null)
-        //    Physics2D.IgnoreCollision(_armCol, targetCol);    //esata parte me quedo bosoleta porque ya destruyo el brazo nin bien colisiona, pero dejo de momento 
 
         collisionMove.MoveTo(pushTarget);
+        if (isPush)
+        {
+            // solo destruye para empuje
+            Destroy(gameObject);
+        }
+        else
+        {
+            // Pull: inicia retracción visual, no destruye todavia 
+            StartRetract(_oldPlayerBehaviour.transform.position);
+        }
     }
-    private void HandleDogThrow(Transform transform)
+    private void HandleDogPull(Transform dogTransform)
     {
         //INTEGRAR ESTADO ACA///
-            Rigidbody2D rb = transform.GetComponent<Rigidbody2D>();
-            Collider2D col = transform.GetComponent<Collider2D>();
-            AgileTriggerDetector holeDetector = transform.GetComponentInChildren<AgileTriggerDetector>();
-            if (rb != null)
+            Rigidbody2D rb = dogTransform.GetComponent<Rigidbody2D>();
+            AgilePlayerController controller = dogTransform.GetComponent<AgilePlayerController>();
+            AgileTriggerDetector triggerDetector = dogTransform.GetComponentInChildren<AgileTriggerDetector>();
+        if (rb != null)
             {
-                holeDetector.IsBeeingPulled = true;
-                rb.MovePosition(_oldPlayerBehaviour.transform.position);
+                controller.PullDirection(_oldPlayerBehaviour.transform.position); //la direccion de atraccion es hacia harold
             }
-            holeDetector.IsBeeingPulled = false;       
+        //ojo aca, el bullet me devuelve rapido el control de harold y se me bugea un poco la pos pasada a rex
+    }
+    private void StartRetract(Vector2 target)
+    {
+        _retractTarget = target;
+        _isRetracting = true;
+        _rb.velocity = Vector2.zero;
+        _rb.isKinematic = true; //Detener física para que no se atasque
+        _armCol.enabled = false;
     }
 }

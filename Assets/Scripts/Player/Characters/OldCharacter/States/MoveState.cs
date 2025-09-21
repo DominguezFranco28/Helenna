@@ -50,7 +50,7 @@ public class MoveState :  IState
     {
 
         //TEST FUNCIONANMIENTO SWITCH MANO
-        _oldPlayerBehaviour.SwitchArmType(); //swithceamos el type del disparo del viejo (entre pull y push)
+        //_oldPlayerBehaviour.SwitchArmType(); //swithceamos el type del disparo del viejo (entre pull y push)
         Debug.Log("Switched Arm Type to: " + _oldPlayerBehaviour.GetCurrentArmType());
 
 

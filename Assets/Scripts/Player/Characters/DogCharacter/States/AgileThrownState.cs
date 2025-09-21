@@ -38,14 +38,14 @@ public class AgileThrownState : IState, IFixedUpdate
         _delayCompleted = false;
         // LIMPIEZA DE VELOCIDAD PREVIA
         _agilePlayerBehaviour.Rigidbody2D.velocity = Vector2.zero;
-        _agilePlayerBehaviour.Rigidbody2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+//        _agilePlayerBehaviour.Rigidbody2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
     }
 
     public void Exit()
     {
         Debug.Log("You exited the state: AGILE THROW");
-        _agilePlayerBehaviour.HoleDetector.IgnoreWater(false);
+        _agilePlayerBehaviour.TriggerDetector.IgnoreWater(false);
     }
 
     public void FixedUpdate()
@@ -59,8 +59,8 @@ public class AgileThrownState : IState, IFixedUpdate
         // Movimiento constante hacia la dirección de lanzamiento
         rb.velocity = throwDir * throwSpeed;
 
-        bool inWater = _agilePlayerBehaviour.HoleDetector.IsInWater;
-        bool waterAhead = _agilePlayerBehaviour.HoleDetector.WaterAhead;
+        bool inWater = _agilePlayerBehaviour.TriggerDetector.IsInWater;
+        bool waterAhead = _agilePlayerBehaviour.TriggerDetector.WaterAhead;
         float distanceToTarget = Vector2.Distance(rb.position, _targetPosition);
 
 
@@ -82,15 +82,15 @@ public class AgileThrownState : IState, IFixedUpdate
         }
         // ignorar colision con la layer del agua mientras se esta en el throw
         if (inWater || waterAhead)
-            _agilePlayerBehaviour.HoleDetector.IgnoreWater(true);
+            _agilePlayerBehaviour.TriggerDetector.IgnoreWater(true);
         else
-            _agilePlayerBehaviour.HoleDetector.IgnoreWater(false);
+            _agilePlayerBehaviour.TriggerDetector.IgnoreWater(false);
 
     }
     private void EndThrow(Rigidbody2D rb)
     {
         rb.velocity = Vector2.zero;
-        _agilePlayerBehaviour.HoleDetector.IgnoreWater(false);
+        _agilePlayerBehaviour.TriggerDetector.IgnoreWater(false);
         _playerController.FinishThrow();
     }
     public void Update()
