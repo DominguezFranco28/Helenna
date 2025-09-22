@@ -9,18 +9,22 @@ public class PuzzleManagerEVALevel : MonoBehaviour
     public VictoryTrigger victory;
     public LevelTimer timer;
     public TMP_Text endScreen;
+    private DialogueManager dialogueManager;
 
     [Header("Puzzle 0")]
     public List<PressurePlate> pressurePlatesP0;
     public Door doorP0;
+    private bool p0solved = false;
     [Header("Puzzle 1")]
     public PressurePlate pressurePlateP1;
     public Bridge bridgeSouth;
+    private bool p1solved = false;
     [Header("Puzzle 2")]
     public PressurePlate pressurePlateP2;
     public Door doorP2;
     public TeleportPlatform teleportP2;
     public GameObject teleportPopupP2;
+    private bool p2solved = false;
     [Header("Puzzle 3")]
     public ClosingGate gate;
     public Bridge bridgeEast;
@@ -28,14 +32,19 @@ public class PuzzleManagerEVALevel : MonoBehaviour
     public MultiElevatorCircuit elevators;
     public ActionLever lever;
     public List<PressurePlate> pressurePlatesP3;
-    private int padsPressedP3 = 0;
-    private int padsPressedP0 = 0;
+    private bool p3solved = false;
+
+    public int padsPressedP0 = 0;
+    public int padsPressedP3 = 0;
+    
     public List<GameObject> padLightPairs = new List<GameObject>();
 
     private void Start()
     {
         if(gate && timer)
             gate.moveDuration = timer.GetInitialTimeSeconds();
+
+        dialogueManager = GameObject.FindFirstObjectByType<DialogueManager>();
     }
 
     private void OnEnable()
@@ -116,7 +125,22 @@ public class PuzzleManagerEVALevel : MonoBehaviour
         if (padsPressedP0 >= 2)
         {
             if (!doorP0.door)
+            {
                 doorP0.DoorOpen();
+                if (!p0solved)
+                {
+                    p0solved = true;
+                    dialogueManager.StartScene("puzzle0-done");
+                }
+                
+            }
+                
+        }
+        else
+        {
+            if (doorP0.door)
+                doorP0.DoorClose();
+
         }
 
         if (padsPressedP3 >= 3)

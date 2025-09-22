@@ -7,9 +7,9 @@ public class TeleportPlatform : PlayerDetector
     private bool _playerOnPlatform = false;
     private bool _isActive = false;
     private Collider2D _player;
-    private OldPlayerBehaviour _oldPlayerBehaviour;
 
     public bool canBeUsed = true;
+    public bool singleUse = true;
 
     private void OnInteract()
     {
@@ -18,6 +18,8 @@ public class TeleportPlatform : PlayerDetector
             if (_playerOnPlatform)
             {
                 Effect(_player);
+                if (singleUse)
+                    canBeUsed = false;
             }
         }
         
@@ -38,17 +40,17 @@ public class TeleportPlatform : PlayerDetector
     public override void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.CompareTag("OldPlayer")) //agregado de logica adicional a la base
+        if (collision.tag.ToLower().Contains("player"))
         {
             _playerOnPlatform = true;
             _player = collision;
-            _oldPlayerBehaviour = _player.GetComponent<OldPlayerBehaviour>();
+            //_oldPlayerBehaviour = _player.GetComponent<OldPlayerBehaviour>();
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("OldPlayer"))
+        if (collision.tag.ToLower().Contains("player"))
         {
             _playerOnPlatform = false;
             _player = null;
@@ -60,9 +62,11 @@ public class TeleportPlatform : PlayerDetector
     {
         if (_isActive)
             return;
-        TransitionManager.Instance.PlayBlackScreen();
-        _oldPlayerBehaviour.SetMovementEnabled(false);
-        _oldPlayerBehaviour.StopMovement();
+        if(TransitionManager.Instance)
+            TransitionManager.Instance.PlayBlackScreen();
+
+        InputManager.Instance.LockInputs();
+
         _isActive = true;
         StartCoroutine(Teleport()); //corrutina para que no se vea el tp insta
        
@@ -71,9 +75,12 @@ public class TeleportPlatform : PlayerDetector
     public IEnumerator Teleport()
     {
         yield return new WaitForSeconds(1.5f);
-        TransitionManager.Instance.FadeIn();
+        if (TransitionManager.Instance)
+            TransitionManager.Instance.FadeIn();
         CharacterManager.Instance.TeleportAllToCurrent();
-        _oldPlayerBehaviour.SetMovementEnabled(true);
+
+        InputManager.Instance.UnlockInputs();
+
         _isActive = false;
     }
 

@@ -33,6 +33,29 @@ public class InputManager : MonoBehaviour
     public event Action SpecialActionReleased;
     public event Action SpecialActionHeld;
 
+    public event Action SkipDialoguePressed;
+    public event Action SkipDialogueReleased;
+    public event Action SkipDialogueHeld;
+
+    private bool inputsLocked = false;
+
+    public void LockInputs()
+    {
+        inputsLocked = true;
+        Move?.Invoke(Vector2.zero);
+        Look?.Invoke(Vector2.zero);
+    }
+
+    public void UnlockInputs()
+    {
+        inputsLocked = false;
+    }
+
+    public bool AreInputsLocked()
+    {
+        return inputsLocked;
+    }
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -53,35 +76,40 @@ public class InputManager : MonoBehaviour
         inputActions.Enable();
 
         // --- Movement ---
-        inputActions.Player.Move.performed += ctx => Move?.Invoke(ctx.ReadValue<Vector2>());
-        inputActions.Player.Move.canceled += ctx => Move?.Invoke(Vector2.zero);
+        inputActions.Player.Move.performed += ctx => { if (!inputsLocked) Move?.Invoke(ctx.ReadValue<Vector2>()); };
+        inputActions.Player.Move.canceled += ctx => {  Move?.Invoke(Vector2.zero); };
 
         // --- Look ---
-        inputActions.Player.Look.performed += ctx => Look?.Invoke(ctx.ReadValue<Vector2>());
-        inputActions.Player.Look.canceled += ctx => Look?.Invoke(Vector2.zero);
+        inputActions.Player.Look.performed += ctx => { if (!inputsLocked) Look?.Invoke(ctx.ReadValue<Vector2>()); };
+        inputActions.Player.Look.canceled += ctx => {  Look?.Invoke(Vector2.zero); };
 
         // --- Pause ---
-        inputActions.Player.Pause.started += ctx => PausePressed?.Invoke();
-        inputActions.Player.Pause.canceled += ctx => PauseReleased?.Invoke();
+        inputActions.Player.Pause.started += ctx => { if (!inputsLocked) PausePressed?.Invoke(); };
+        inputActions.Player.Pause.canceled += ctx => {  PauseReleased?.Invoke(); };
+
+        // --- Skip Dialogue ---
+        inputActions.UI.Submit.started += ctx => SkipDialoguePressed?.Invoke();
+        inputActions.UI.Submit.performed += ctx => SkipDialogueHeld?.Invoke();
+        inputActions.UI.Submit.canceled += ctx => SkipDialogueReleased?.Invoke();
 
         // --- Interact ---
-        inputActions.Player.Interact.started += ctx => InteractPressed?.Invoke();
-        inputActions.Player.Interact.performed += ctx => InteractHeld?.Invoke();
-        inputActions.Player.Interact.canceled += ctx => InteractReleased?.Invoke();
+        inputActions.Player.Interact.started += ctx => { if (!inputsLocked) InteractPressed?.Invoke(); };
+        inputActions.Player.Interact.performed += ctx => { if (!inputsLocked) InteractHeld?.Invoke(); };
+        inputActions.Player.Interact.canceled += ctx => {  InteractReleased?.Invoke(); };
 
         // --- Change Character ---
-        inputActions.Player.ChangeCharacter.started += ctx => ChangeCharacterPressed?.Invoke();
-        inputActions.Player.ChangeCharacter.canceled += ctx => ChangeCharacterReleased?.Invoke();
+        inputActions.Player.ChangeCharacter.started += ctx => { if (!inputsLocked) ChangeCharacterPressed?.Invoke(); };
+        inputActions.Player.ChangeCharacter.canceled += ctx => {  ChangeCharacterReleased?.Invoke(); };
 
         // --- Action ---
-        inputActions.Player.Action.started += ctx => ActionPressed?.Invoke();
-        inputActions.Player.Action.performed += ctx => ActionHeld?.Invoke();
-        inputActions.Player.Action.canceled += ctx => ActionReleased?.Invoke();
+        inputActions.Player.Action.started += ctx => { if (!inputsLocked) ActionPressed?.Invoke(); };
+        inputActions.Player.Action.performed += ctx => { if (!inputsLocked) ActionHeld?.Invoke(); };
+        inputActions.Player.Action.canceled += ctx => { ActionReleased?.Invoke(); };
 
         // --- Special Action ---
-        inputActions.Player.SpecialAction.started += ctx => SpecialActionPressed?.Invoke();
-        inputActions.Player.SpecialAction.performed += ctx => SpecialActionHeld?.Invoke();
-        inputActions.Player.SpecialAction.canceled += ctx => SpecialActionReleased?.Invoke();
+        inputActions.Player.SpecialAction.started += ctx => { if (!inputsLocked) SpecialActionPressed?.Invoke(); };
+        inputActions.Player.SpecialAction.performed += ctx => { if (!inputsLocked) SpecialActionHeld?.Invoke(); };
+        inputActions.Player.SpecialAction.canceled += ctx => {  SpecialActionReleased?.Invoke(); };
     }
 
     private void OnDisable()
