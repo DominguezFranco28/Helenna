@@ -12,7 +12,10 @@ public class IdleState :  IState
 
     private void OnSpecialAction()
     {
-        _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
+        //_oldPlayerBehaviour.SwitchArmType(false);
+        _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo
+        _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
+        _oldPlayerBehaviour.SwitchArmType(true);
         _oldStateMachine.TransitionTo(_oldStateMachine.impulseState);
     }
     private void OnMove(Vector2 movement)
@@ -26,8 +29,10 @@ public class IdleState :  IState
     private void InteractPressed()
     {
         //TEST FUNCIONANMIENTO SWITCH MANO
-        _oldPlayerBehaviour.SwitchArmType(); //swithceamos el type del disparo del viejo (entre pull y push)
-        Debug.Log("Switched Arm Type to: " + _oldPlayerBehaviour.GetCurrentArmType());
+        _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo
+        _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
+        _oldPlayerBehaviour.SwitchArmType(false); //swithceamos el type del disparo del viejo (entre pull y push)
+        _oldStateMachine.TransitionTo(_oldStateMachine.impulseState);
     }
 
     //Constructor, because it does not inherit from monobehaviour

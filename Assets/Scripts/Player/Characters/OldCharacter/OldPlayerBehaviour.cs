@@ -32,29 +32,6 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
     public bool IsRecoiling{ get { return _isRecoiling; } set { _isRecoiling = value; } }
 
-    private bool interacting = false;
-    private void InteractPressed()
-    {
-        interacting = true;
-        Debug.Log("Interacting: " + interacting);
-        if (InputManager.Instance != null)
-            InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
-    }
-    private void OnEnable()
-    {
-        if (InputManager.Instance != null)
-        {
-            InputManager.Instance.InteractPressed += InteractPressed;
-        }
-
-    }
-    private void OnDisable()
-    {
-        if (InputManager.Instance != null)
-        {
-            InputManager.Instance.InteractPressed -= InteractPressed;
-        }
-    }
 
     void Start()
     {
@@ -88,9 +65,9 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         if (!IsInControll || !_canMove) return; 
         
             if (_movementInput.magnitude > 0.01f) // aca guardo el ulktimo input para anim de impulse
-                LastMovementInput = _movementInput;
+            LastMovementInput = input.normalized;
 
-            _movementInput = input.normalized;
+             _movementInput = input.normalized;
             _animator.SetFloat("Horizontal", _movementInput.x);
             _animator.SetFloat("Vertical", _movementInput.y);
             _animator.SetFloat("Speed", _movementInput.magnitude);
@@ -106,14 +83,14 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         }
         _movementInput = Vector2.zero;
         _rb2D.velocity = Vector2.zero;
-        //_animator.SetFloat("Horizontal", 0f);
-        //_animator.SetFloat("Vertical", 0f);
-        //_animator.SetFloat("Speed", 0f);
+        _animator.SetFloat("Horizontal", 0f);
+        _animator.SetFloat("Vertical", 0f);
+        _animator.SetFloat("Speed", 0f);
     }
-    public void SwitchArmType()
+    public void SwitchArmType(bool type)
     {
         if (!IsInControll) return;
-        _armImpulser.SwitchArmType();
+        _armImpulser.SwitchArmType(type);
     }
     public ImpulseType GetCurrentArmType()
     {
@@ -162,7 +139,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     }
     private void OnTriggerStay2D(Collider2D collision) //parche rapido par apuzzle 1. Integrar a state
     {
-        if (collision.CompareTag("Lever") && interacting)
+        if (collision.CompareTag("Lever") )
         {
             ActionLever activeable = collision.GetComponent<ActionLever>();
             if (activeable != null)

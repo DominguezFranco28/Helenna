@@ -22,25 +22,15 @@ public class ThrowState : IState
         _rexController = rex;
     }
 
-    private void OnMove(Vector2 movement)
-    {
-        _oldPlayerBehaviour.SetMovementInput(Vector2.zero);
-    }
 
     public void Enter()
     {
         Debug.Log("You entered the state:  GRAB");
-        _oldPlayerBehaviour.Animator.SetBool("IsSliding", true);
         Vector2 throwDir = _oldPlayerBehaviour.LastMovementInput;
         _oldPlayerBehaviour.StopMovement();
-        if (!subbed)
-        {
-            if (InputManager.Instance != null)
-            {
-                subbed = false;
-                InputManager.Instance.Move += OnMove;
-            }
-        }
+        _oldPlayerBehaviour.SetMovementEnabled(false);
+        _oldPlayerBehaviour.Animator.SetBool("IsSliding", true);
+        Debug.Log(throwDir);
         _throwTimer = 0f;
         _delayCompleted = false;
 
@@ -57,14 +47,6 @@ public class ThrowState : IState
     {
         _oldPlayerBehaviour.Animator.SetBool("IsSliding", false);
         Debug.Log("You exited the state:  GRAB");
-        if (subbed)
-        {
-            if (InputManager.Instance != null)
-            {
-                subbed = true;
-                InputManager.Instance.Move -= OnMove;
-            }
-        }
     }
 
     public void Update()

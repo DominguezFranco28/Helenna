@@ -54,7 +54,7 @@ public class GrabObject : MonoBehaviour
         if (collision.gameObject.CompareTag("Throwable"))
         {
             _canGrabDog = true;
-            Debug.Log("Can grab dog " + CanGrabDog);
+            //Debug.Log("Can grab dog " + CanGrabDog);
             _pickedRex = collision.gameObject;
         }
     }

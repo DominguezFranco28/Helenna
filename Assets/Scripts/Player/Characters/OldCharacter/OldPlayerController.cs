@@ -11,30 +11,6 @@ public class OldPlayerController : MonoBehaviour
     [SerializeField] private AgilePlayerController _rexController;
     private OldStateMachine _myStateMachine;
 
-    private bool interacting = false;
-    //private void InteractPressed()
-    //{
-    //    if (!_playerBehaviour.IsInControll) return;
-
-    //    interacting = true;
-    //    if (InputManager.Instance != null)
-    //        InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
-    //}
-    //private void OnEnable()
-    //{
-    //    if (InputManager.Instance != null)
-    //    {
-    //        InputManager.Instance.InteractPressed += InteractPressed;
-    //    }
-
-    //}
-    //private void OnDisable()
-    //{
-    //    if (InputManager.Instance != null)
-    //    {
-    //        InputManager.Instance.InteractPressed -= InteractPressed;
-    //    }
-    //}
 
     private void Start()
     {
@@ -49,10 +25,10 @@ public class OldPlayerController : MonoBehaviour
         {
         
             _myStateMachine?.Update();
-            if (_grabObject.PickedObject == null && _grabObject.InColision && interacting)
-            {
-                _myStateMachine.TransitionTo(_myStateMachine.holdItemState);
-            }
+            //if (_grabObject.PickedObject == null && _grabObject.InColision)
+            //{
+            //    _myStateMachine.TransitionTo(_myStateMachine.holdItemState);
+            //}
         }
 
     }

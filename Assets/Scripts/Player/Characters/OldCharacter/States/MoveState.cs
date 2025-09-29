@@ -20,18 +20,17 @@ public class MoveState :  IState
 
     private void OnSpecialAction()
     {
-        _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
-        _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
         _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo
+        _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
+        _oldPlayerBehaviour.SwitchArmType(true);
         _oldStateMachine.TransitionTo(_oldStateMachine.impulseState);
     }
-    private void OnSpecialActionHeld()
+    private void OnAction()
     {
-        _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
-        _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
-        _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo
-        _oldPlayerBehaviour.SwitchArmType(); //swithceamos el type del disparo del viejo (entre pull y push)
-        Debug.Log("Switched Arm Type to: " + _oldPlayerBehaviour.GetCurrentArmType());
+        if (_grabObject.CanGrabDog)
+        {
+            _oldStateMachine.TransitionTo(_oldStateMachine.throwState);
+        }
     }
 
     private void OnMove(Vector2 movement)
@@ -41,23 +40,23 @@ public class MoveState :  IState
         {
             _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
         }
-        if (_grabObject.CanGrabDog && interacting)
-        {
-            _oldStateMachine.TransitionTo(_oldStateMachine.throwState);
-        }
+ 
     }
     private void InteractPressed()
     {
-
+        Debug.Log("Interact MovementInput: " + _oldPlayerBehaviour.MovementInput);
         //TEST FUNCIONANMIENTO SWITCH MANO
         //_oldPlayerBehaviour.SwitchArmType(); //swithceamos el type del disparo del viejo (entre pull y push)
-        Debug.Log("Switched Arm Type to: " + _oldPlayerBehaviour.GetCurrentArmType());
+        //Debug.Log("Switched Arm Type to: " + _oldPlayerBehaviour.GetCurrentArmType());
+        //interacting = true;
+        //Debug.Log("Interacting: " + interacting);
+        //InputManager.Instance.InvokeAction(() => interacting = false, 0.5f);
+        _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo
+        _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
+        _oldPlayerBehaviour.SwitchArmType(false); //swithceamos el type del disparo del viejo (entre pull y push)
+        _oldStateMachine.TransitionTo(_oldStateMachine.impulseState);
 
 
-
-        interacting = true;
-        Debug.Log("Interacting: " + interacting);
-        InputManager.Instance.InvokeAction(() => interacting = false, 0.5f);
     }
 
 
@@ -73,6 +72,7 @@ public class MoveState :  IState
                 InputManager.Instance.SpecialActionPressed += OnSpecialAction;
                 InputManager.Instance.InteractPressed += InteractPressed;
                 InputManager.Instance.Move += OnMove;
+                InputManager.Instance.ActionPressed += OnAction;
             }
         }
         Debug.Log("You entered the state: OLD MOVE");

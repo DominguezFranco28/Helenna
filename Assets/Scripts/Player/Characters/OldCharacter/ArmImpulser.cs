@@ -190,9 +190,11 @@ public class ArmImpulser : MonoBehaviour
         }
     }
 
-    public void SwitchArmType()
+    public void SwitchArmType( bool type)
     {
-        _curretType = _curretType == ImpulseType.Push ? ImpulseType.Pull : ImpulseType.Push;
+        if (type) { _curretType = ImpulseType.Push; }
+        else { _curretType = ImpulseType.Pull; }
+
         //si estaba en pussh pasa a pull y vicveversa
         Debug.Log("Current Arm Type: " + _curretType);
     }
