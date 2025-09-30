@@ -29,6 +29,10 @@ public class OldPlayerController : MonoBehaviour
             //{
             //    _myStateMachine.TransitionTo(_myStateMachine.holdItemState);
             //}
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                CharacterManager.Instance.TeleportAllToCurrent();
+            }
         }
 
     }

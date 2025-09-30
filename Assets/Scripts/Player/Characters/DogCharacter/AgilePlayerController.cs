@@ -54,6 +54,11 @@ public class AgilePlayerController : MonoBehaviour
         if (_agileBehaviour.IsInControll || _isBeingThrown || _isBeingPulled) //quiero mantener activa la maquina de estados de rex si interactua con Harold
         {
             _agileStateMachine?.Update();
+            //HERRAMIENTA DEBUGEO, TP A TODOS LOS PERSONAJES A LA POSICION DEL ACTIVO
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                CharacterManager.Instance.TeleportAllToCurrent();
+            }
         }
 
     }

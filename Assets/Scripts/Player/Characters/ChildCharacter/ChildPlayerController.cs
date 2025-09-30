@@ -58,6 +58,11 @@ public class ChildPlayerController : MonoBehaviour
                 _childStateMachine.TransitionTo(_childStateMachine.actionState);
                 return;
             }
+            //HERRAMIENTA DEBUGEO, TP A TODOS LOS PERSONAJES A LA POSICION DEL ACTIVO
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                CharacterManager.Instance.TeleportAllToCurrent();
+            }
         }
     }
 }
