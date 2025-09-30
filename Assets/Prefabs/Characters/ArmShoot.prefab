@@ -137,7 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shotSpeed: 20
   _pushDistance: 5
-  _lifeTime: 1
+  _lifeTime: 0.5
   _armLinePrefab: {fileID: 1114109491228385230, guid: 7d54d9afaf3d1ca408f99eff9fbe5ded, type: 3}
 --- !u!50 &6790850590906612256
 Rigidbody2D:
