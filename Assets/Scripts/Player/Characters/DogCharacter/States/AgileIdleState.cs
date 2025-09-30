@@ -22,6 +22,15 @@ public class AgileIdleState : IState
             _agilePlayerBehaviour.SetMovementInput(movement);
         }
     }
+    private void OnAction()
+    {
+        Debug.Log("Action pressed in Move State DOG");
+        if (_agilePlayerBehaviour.CurrentHoleExit != null)
+        {
+            _agileStateMachine.TransitionTo(_agileStateMachine.digState);
+            return;
+        }
+    }
 
     public void Enter()
     {
@@ -32,6 +41,7 @@ public class AgileIdleState : IState
             {
                 subbed = true;
                 InputManager.Instance.Move += OnMove;
+                InputManager.Instance.ActionPressed += OnAction;
             }
         }
         
@@ -41,6 +51,15 @@ public class AgileIdleState : IState
     public void Exit()
     {
         Debug.Log("You left the state: AGILE IDLE");
+        if (subbed)
+        {
+            if (InputManager.Instance != null)
+            {
+                subbed = false;
+                InputManager.Instance.Move -= OnMove;
+                InputManager.Instance.ActionPressed -= OnAction;
+            }
+        }
     }
 
     public void Update()

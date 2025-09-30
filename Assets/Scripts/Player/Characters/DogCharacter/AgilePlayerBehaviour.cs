@@ -21,7 +21,6 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     private Vector2 _movementInput;
     private bool _canMove;
     private bool _canJump = false;
-    private bool _canDig = false;
     private bool _isInControll = false;
     //timer para cd salto
     private float _jumpTimer = 0;
@@ -29,12 +28,11 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     private bool _isGrounded;
     //Public properties para acceder desde los estados
     //muchos de ellos necesarios para hacer bien el salto
-
+  
     public bool DelayCompleted { get { return _delayCompleted; } }
     public bool IsGrounded { get { return _isGrounded; } }
     public bool IsInControll { get { return _isInControll; } }
     public bool CanJump { get { return _canJump; } set { _canJump = value; } }
-    public bool CanDig { get { return _canDig; } set { _canDig = value; } }
     public Vector2 MovementInput { get { return _movementInput; } }
     public Vector2 LastMovementInput { get; set; }
     public Collider2D PlayerCollider { get { return _collider2D; } set { _collider2D = value; } }
@@ -46,7 +44,17 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
     public Vector2 PendingThrowDirection { get; set; } //direccion que sera obtenida cuando harold lo lance
     public Vector2 PendingPulledDirection { get; set; } //direccion que sera obtenida cuando harold lo atraiga
+    public Transform CurrentHoleExit { get; private set; }
 
+    public void SetCurrentHole(Transform holeExit)
+    {
+        CurrentHoleExit = holeExit;
+    }
+
+    public void ClearCurrentHole()
+    {
+        CurrentHoleExit = null;
+    }
     void Awake()
     {
         Debug.Log("Z ANTES DEL NORMALIZE: " + transform.position.z);
@@ -56,6 +64,21 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
         _collider2D = GetComponent<Collider2D>();
         _mouthOriginalPos = _mouth.position;
         NormalizeZ(transform);
+    }
+    //PARAMETROS DE CONTROL Y MOVIMIENTO
+    public void SetControl(bool isActive)
+    {
+        _isInControll = isActive;
+        if (!isActive) StopMovement();
+    }
+    public bool GetControl()
+    {
+        return IsInControll;
+    }
+
+    public void SetMovementEnabled(bool isEnabled)
+    {
+        _canMove = isEnabled;
     }
  
 
@@ -182,18 +205,9 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 
     }
 
-    public void SetControl(bool isActive)
-    {
-        _isInControll = isActive;
-        if (!isActive) StopMovement();
-    }
 
-    public void SetMovementEnabled(bool isEnabled)
-    {
-        _canMove = isEnabled;
-    }
 
-    public  void NormalizeZ(Transform trans, float z = 0f) //metood apra normalizar z en todos los hijos del perro, me daban bugs algunos con la boca
+    public void NormalizeZ(Transform trans, float z = 0f) //metood apra normalizar z en todos los hijos del perro, me daban bugs algunos con la boca
     {
         Vector3 pos = trans.position;
         pos.z = z;
@@ -203,10 +217,9 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
             NormalizeZ(child, z);
         }
     }
-    public bool GetControl()
-    {
-        return IsInControll;
-    }
+
+
+
 
 }
 

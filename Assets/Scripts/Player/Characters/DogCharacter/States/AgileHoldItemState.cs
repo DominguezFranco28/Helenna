@@ -81,12 +81,12 @@ public class AgileHoldItemState : IState
                 
 
             }
-            if (_agilePlayerBehaviour.CanDig)
-            {
-                 _stateMachine.digState.Object(_grabObject.PickedObject);
-                _stateMachine.TransitionTo(_stateMachine.digState);
+            //if (_agilePlayerBehaviour.CanDig)
+            //{
+            //     _stateMachine.digState.Object(_grabObject.PickedObject);
+            //    _stateMachine.TransitionTo(_stateMachine.digState);
 
-            }
+            //}
         }
     }
 }

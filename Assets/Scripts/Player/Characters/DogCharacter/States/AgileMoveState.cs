@@ -7,16 +7,16 @@ public class AgileMoveState : IState
     private AgilePlayerBehaviour _agilePlayerBehaviour;
     private AgileStateMachine _agileStateMachine;
 
-    private bool doingAction = false;
-
     private bool subbed = false;
 
-    private void ActionPressed()
+    private void OnAction()
     {
-        Debug.Log("walking - dog action pressed");
-        doingAction = true;
-        if (InputManager.Instance != null)
-            InputManager.Instance.InvokeAction(() => doingAction = false, 0.1f);
+        Debug.Log("Action pressed in Move State DOG");
+        if (_agilePlayerBehaviour.CurrentHoleExit != null)
+        {
+            _agileStateMachine.TransitionTo(_agileStateMachine.digState);
+            return;
+        }
     }
     private void OnMove(Vector2 movement)
     {
@@ -36,13 +36,13 @@ public class AgileMoveState : IState
     }
     public void Enter()
     {
-        if (!subbed)
+       if (!subbed)
         {
             if (InputManager.Instance != null)
             {
                 subbed = true;
-                InputManager.Instance.ActionPressed += ActionPressed;
                 InputManager.Instance.Move += OnMove;
+                InputManager.Instance.ActionPressed += OnAction;
             }
         }
         
@@ -58,8 +58,8 @@ public class AgileMoveState : IState
         {
             if (InputManager.Instance != null)
             {
-                subbed = true;
-                InputManager.Instance.ActionPressed -= ActionPressed;
+                subbed = false;
+                InputManager.Instance.ActionPressed -= OnAction;
                 InputManager.Instance.Move -= OnMove;
             }
         }
@@ -74,12 +74,8 @@ public class AgileMoveState : IState
             _agileStateMachine.TransitionTo(_agileStateMachine.idleState);
             return; //return para evitar que siga evaluando el resto de condiciones.
         }*/
-        if (_agilePlayerBehaviour.CanDig == true)
-        {
-            _agileStateMachine.TransitionTo(_agileStateMachine.digState); 
-            return;
-        }
-        if (_agilePlayerBehaviour.CanJump && _agilePlayerBehaviour.DelayCompleted && doingAction)
+      
+        if (_agilePlayerBehaviour.CanJump && _agilePlayerBehaviour.DelayCompleted)
         {
 
             _agilePlayerBehaviour.StopMovement();
