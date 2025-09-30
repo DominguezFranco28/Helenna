@@ -3,37 +3,37 @@
     {
       "scene": "game-intro",
       "speaker": "Harold",
-      "lineId": 0,
+      "lineId": 1,
       "text": "Bah! Rex. Deja de ladrar tanto, que pasa?."
     },
     {
       "scene": "game-intro",
       "speaker": "Rex",
-      "lineId": 0,
+      "lineId": 1,
       "text": "GUAU! GUAU! GUAU!"
     },
     {
       "scene": "game-intro",
       "speaker": "Nina",
-      "lineId": 0,
+      "lineId": 1,
       "text": "Hola... que lindo su perro."
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
-      "lineId": 0,
+      "lineId": 2,
       "text": "Pero, quien sos? Como atravesaste mi sistema de seguridad!?"
     },
     {
       "scene": "game-intro",
       "speaker": "Nina",
-      "lineId": 0,
+      "lineId": 2,
       "text": "Seguridad? solo trepe por aqui."
     },
     {
       "scene": "game-intro",
       "speaker": "Rex",
-      "lineId": 0,
+      "lineId": 2,
       "text": "Guau!"
     }
   ]

@@ -141,6 +141,7 @@ public class PuzzleManagerLevel01 : MonoBehaviour
                     lever.canActivate = false;
 
                 puzzleDoneP1 = true;
+                CheckAllDone();
             }
         }
         
@@ -177,6 +178,7 @@ public class PuzzleManagerLevel01 : MonoBehaviour
                 }
                 
                 puzzleDoneP3 = true;
+                CheckAllDone();
             }
         }
         
@@ -197,6 +199,7 @@ public class PuzzleManagerLevel01 : MonoBehaviour
     {
         gateC.Toggle();
         puzzleDoneP2 = true;
+        CheckAllDone();
         foreach (CircuitLight light in lightsP2)
         {
             if (light.manualID == manualID)
