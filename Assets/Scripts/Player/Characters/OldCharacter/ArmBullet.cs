@@ -70,6 +70,8 @@ public class ArmBullet : MonoBehaviour
     private IEnumerator AutoDestroy()
     {
         yield return new WaitForSeconds(_lifeTime);
+        // Pull: inicia retracción visual, no destruye todavia 
+        StartRetract(_oldPlayerBehaviour.transform.position);
         if (!_isRetracting)
             Destroy(gameObject);
     }
@@ -90,8 +92,8 @@ public class ArmBullet : MonoBehaviour
         _oldPlayerBehaviour.ArmRelease = false;
         _parentMovable = null;
         _oldPlayerBehaviour.SetMovementEnabled(true); //habilito el movimiento del jugador cuando se destruye elb razo
+                                                      // Pull: inicia retracción visual, no destruye todavia 
         DestroyLine();
-
     }
 
     private void Update()
@@ -179,16 +181,8 @@ public class ArmBullet : MonoBehaviour
                              (isPush ? dir : -dir) * _pushDistance;
 
         collisionMove.MoveTo(pushTarget);
-        if (isPush)
-        {
-            // solo destruye para empuje
-            Destroy(gameObject);
-        }
-        else
-        {
-            // Pull: inicia retracción visual, no destruye todavia 
-            StartRetract(_oldPlayerBehaviour.transform.position);
-        }
+
+        StartRetract(_oldPlayerBehaviour.transform.position);
     }
     private void HandleDogPull(Transform dogTransform)
     {

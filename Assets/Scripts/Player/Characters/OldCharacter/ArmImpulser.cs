@@ -196,7 +196,7 @@ public class ArmImpulser : MonoBehaviour
         else { _curretType = ImpulseType.Pull; }
 
         //si estaba en pussh pasa a pull y vicveversa
-        Debug.Log("Current Arm Type: " + _curretType);
+      //  Debug.Log("Current Arm Type: " + _curretType);
     }
 }
 

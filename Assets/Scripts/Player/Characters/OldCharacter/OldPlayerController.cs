@@ -10,30 +10,30 @@ public class OldPlayerController : MonoBehaviour
     [SerializeField] private AnchorDetector _anchorDetector;
     [SerializeField] private AgilePlayerController _rexController;
     private OldStateMachine _myStateMachine;
-    private bool interacting = false;
-    private void OnEnable()
-    {
-        if (InputManager.Instance != null)
-        {
-            InputManager.Instance.InteractPressed += InteractPressed;
-        }
+    //private bool interacting = false;
+    //private void OnEnable()
+    //{
+    //    if (InputManager.Instance != null)
+    //    {
+    //        InputManager.Instance.InteractPressed += InteractPressed;
+    //    }
 
-    }
-    private void OnDisable()
-    {
-        if (InputManager.Instance != null)
-        {
-            InputManager.Instance.InteractPressed -= InteractPressed;
-        }
+    //}
+    //private void OnDisable()
+    //{
+    //    if (InputManager.Instance != null)
+    //    {
+    //        InputManager.Instance.InteractPressed -= InteractPressed;
+    //    }
 
-    }
-    private void InteractPressed()
-    {
-        if (!_playerBehaviour.IsInControll) return;
-        interacting = true;
-        if (InputManager.Instance != null)
-            InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
-    }
+    //}
+    //private void InteractPressed()
+    //{
+    //    if (!_playerBehaviour.IsInControll) return;
+    //    interacting = true;
+    //    if (InputManager.Instance != null)
+    //        InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
+    //}
 
     private void Start()
     {
@@ -52,11 +52,11 @@ public class OldPlayerController : MonoBehaviour
             //{
             //    _myStateMachine.TransitionTo(_myStateMachine.holdItemState);
             //}
-            if (_triggerDetector.CanActivate && interacting)
-            {
-                _myStateMachine.TransitionTo(_myStateMachine.actionState);
-                return;
-            }
+            //if (_triggerDetector.CanActivate && interacting)
+            //{
+            //    _myStateMachine.TransitionTo(_myStateMachine.actionState);
+            //    return;
+            //}
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 CharacterManager.Instance.TeleportAllToCurrent();
