@@ -10,25 +10,25 @@ public class HoldItemState : IState
 
     private bool subbed = false;
 
-    private void InteractPressed()
-    {
-        _oldPlayerBehaviour.StopMovement();
+    //private void InteractPressed()
+    //{
+    //    _oldPlayerBehaviour.StopMovement();
         
-        if (_grabObject.PickedObject != null) // modif el input
-        {
-            //Drop/use object
-            Debug.Log(_grabObject.PickedObject);
-            _oldPlayerBehaviour.LowSpeed(false);
-            _grabObject.DropItem();
-            _stateMachine.TransitionTo(_stateMachine.idleState);
+    //    if (_grabObject.PickedObject != null) // modif el input
+    //    {
+    //        //Drop/use object
+    //        Debug.Log(_grabObject.PickedObject);
+    //        _oldPlayerBehaviour.LowSpeed(false);
+    //        _grabObject.DropItem();
+    //        _stateMachine.TransitionTo(_stateMachine.idleState);
 
-        }
-        else
-        {
-            //Pickup
-            _grabObject.GrabItem();
-        }
-    }
+    //    }
+    //    else
+    //    {
+    //        //Pickup
+    //        _grabObject.GrabItem();
+    //    }
+    //}
     private void OnMove(Vector2 movement)
     {
         _oldPlayerBehaviour.SetMovementInput(movement);
@@ -47,7 +47,6 @@ public class HoldItemState : IState
         {
             if (InputManager.Instance != null)
             {
-                InputManager.Instance.InteractPressed += InteractPressed;
                 InputManager.Instance.Move += OnMove;
             }
         }

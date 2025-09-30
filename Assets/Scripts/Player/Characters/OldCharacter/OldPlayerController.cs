@@ -5,16 +5,39 @@ using UnityEngine;
 public class OldPlayerController : MonoBehaviour
 {
     [SerializeField] private OldPlayerBehaviour _playerBehaviour; //referencio la instancia de las clase, el jugador
-    [SerializeField] private JumpDetector _jumpDetector;
+    [SerializeField] private TriggerDetector _triggerDetector;
     [SerializeField] private GrabObject _grabObject;
     [SerializeField] private AnchorDetector _anchorDetector;
     [SerializeField] private AgilePlayerController _rexController;
     private OldStateMachine _myStateMachine;
+    private bool interacting = false;
+    private void OnEnable()
+    {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.InteractPressed += InteractPressed;
+        }
 
+    }
+    private void OnDisable()
+    {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.InteractPressed -= InteractPressed;
+        }
+
+    }
+    private void InteractPressed()
+    {
+        if (!_playerBehaviour.IsInControll) return;
+        interacting = true;
+        if (InputManager.Instance != null)
+            InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
+    }
 
     private void Start()
     {
-        _myStateMachine = new OldStateMachine(_playerBehaviour, _jumpDetector, _grabObject, _anchorDetector, _rexController); 
+        _myStateMachine = new OldStateMachine(_playerBehaviour, _triggerDetector, _grabObject, _anchorDetector, _rexController); 
         _myStateMachine.Initialize(_myStateMachine.idleState);
         //Remember, the StateMachine already has the states created in the constructor, no need to instantiate it again here
     }
@@ -29,10 +52,16 @@ public class OldPlayerController : MonoBehaviour
             //{
             //    _myStateMachine.TransitionTo(_myStateMachine.holdItemState);
             //}
+            if (_triggerDetector.CanActivate && interacting)
+            {
+                _myStateMachine.TransitionTo(_myStateMachine.actionState);
+                return;
+            }
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 CharacterManager.Instance.TeleportAllToCurrent();
             }
+            //TEST FUNCIONANMIENTO SWITCH MANO
         }
 
     }

@@ -11,11 +11,11 @@ public class ChildTriggerDetector : MonoBehaviour
 
     private bool _canActivateLever = false;
     private Collider2D _leverCollider;
+    public Collider2D LevelCollider { get { return _leverCollider; } }
+    public bool CanActivate { get { return _canActivateLever;} set { _canActivateLever = value; } }
     public bool CanClimb { get { return _canClimb; } }
     public bool CanUseZipline { get { return _canUseZipline; }set { _canUseZipline = value; } }
-    public bool CanActivate { get { return _canActivateLever;} set { _canActivateLever = value; } }
     public Collider2D Climbable { get { return _climbableCollider; } }
-    public Collider2D LevelCollider { get { return _leverCollider; } }
 
     
 
@@ -24,10 +24,10 @@ public class ChildTriggerDetector : MonoBehaviour
         
         if (collision.CompareTag("Lever"))
         {
-            Debug.Log("colisionaste con palanca");
+          //  Debug.Log("colisionaste con palanca");
             _canActivateLever = true;
             _leverCollider = collision;
-            Debug.Log("en colision");
+        //    Debug.Log("en colision");
 
         }
 
@@ -45,14 +45,14 @@ public class ChildTriggerDetector : MonoBehaviour
         
         if (collision.CompareTag("Lever"))
         {
-            Debug.Log("saliste de colision con palanca");
+          //  Debug.Log("saliste de colision con palanca");
             _canActivateLever = false;
             _leverCollider = null;
 
         }
         if (collision.CompareTag("Zipline"))
         {
-            Debug.Log("saliste de colision con tirolesa");
+            //Debug.Log("saliste de colision con tirolesa");
             _canUseZipline = false;
         }
     }

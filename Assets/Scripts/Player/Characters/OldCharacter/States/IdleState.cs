@@ -7,6 +7,7 @@ public class IdleState :  IState
 {
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
+    private TriggerDetector _triggerDetector;
 
     private bool subbed = false;
 
@@ -26,20 +27,13 @@ public class IdleState :  IState
             _oldPlayerBehaviour.SetMovementInput(movement);
         }
     }
-    private void InteractPressed()
-    {
-        //TEST FUNCIONANMIENTO SWITCH MANO
-        _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo
-        _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
-        _oldPlayerBehaviour.SwitchArmType(false); //swithceamos el type del disparo del viejo (entre pull y push)
-        _oldStateMachine.TransitionTo(_oldStateMachine.impulseState);
-    }
 
     //Constructor, because it does not inherit from monobehaviour
-    public IdleState(OldPlayerBehaviour oldPlayerBehaviour, OldStateMachine oldStateMachine) 
+    public IdleState(OldPlayerBehaviour oldPlayerBehaviour, OldStateMachine oldStateMachine, TriggerDetector triggerDetector) 
     {
         this._oldPlayerBehaviour = oldPlayerBehaviour;
         this._oldStateMachine = oldStateMachine;
+        this._triggerDetector = triggerDetector;
     }
     public void Enter()
     {
@@ -50,7 +44,6 @@ public class IdleState :  IState
                 subbed = true;
 
                 InputManager.Instance.SpecialActionPressed += OnSpecialAction;
-                InputManager.Instance.InteractPressed += InteractPressed; 
                 InputManager.Instance.Move += OnMove;
             }
         }
@@ -67,7 +60,6 @@ public class IdleState :  IState
         if (InputManager.Instance != null)
         {
             InputManager.Instance.SpecialActionPressed -= OnSpecialAction;
-            InputManager.Instance.InteractPressed -= InteractPressed;
             InputManager.Instance.Move -= OnMove;
             subbed = false;
         }

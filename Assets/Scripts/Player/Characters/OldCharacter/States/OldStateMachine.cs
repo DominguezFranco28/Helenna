@@ -26,17 +26,19 @@ public class OldStateMachine
     public ZiplineState ziplineState; 
     public HookPipe hookPipeState;
     public ThrowState throwState;
+    public ActionState actionState; 
     public IState CurrentState { get; private set; } //Read-only. External object can set the Initialize method to establish a default state
-    public OldStateMachine(OldPlayerBehaviour oldPlayer, JumpDetector jumpDetector, GrabObject grabObject, AnchorDetector anchorDetector, AgilePlayerController rexController)
+    public OldStateMachine(OldPlayerBehaviour oldPlayer, TriggerDetector triggerDetector, GrabObject grabObject, AnchorDetector anchorDetector, AgilePlayerController rexController)
     {
-        this.moveState = new MoveState(oldPlayer, this, jumpDetector, grabObject);
-        this.idleState = new IdleState(oldPlayer, this);
-        this.slideState = new SlideState(oldPlayer, this, jumpDetector);
+        this.moveState = new MoveState(oldPlayer, this, triggerDetector, grabObject);
+        this.idleState = new IdleState(oldPlayer, this, triggerDetector);
+        this.slideState = new SlideState(oldPlayer, this, triggerDetector);
         this.holdItemState = new HoldItemState(oldPlayer, this, grabObject);
         this.impulseState = new ImpulseState(oldPlayer, this, anchorDetector);
         this.ziplineState = new ZiplineState(oldPlayer, this, anchorDetector);
         this.hookPipeState = new HookPipe(oldPlayer, this, anchorDetector);
         this.throwState = new ThrowState(oldPlayer, this, rexController); //necesite pasarle por constructor el controlador del perro para activar su maquina de estados desde el lanzamiento de harold
+        this.actionState = new ActionState(oldPlayer, this, triggerDetector);
         //It was necessary to add the "this".
         //I pass this instantiation of the StateMachine class as
         //a parameter so that all states know the ONLY StateMachine of existing states,
@@ -80,7 +82,7 @@ public class OldStateMachine
     public void InitStates(IState startingState)
     {
         //cicla por  los estados para subscribir todos los inputs
-        IState[] states = {idleState, moveState, holdItemState};
+        IState[] states = {idleState, moveState};
         foreach(IState state in states)
         {
             TransitionTo(state);

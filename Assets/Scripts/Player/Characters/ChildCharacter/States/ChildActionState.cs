@@ -8,6 +8,7 @@ public class ChildActionState : IState
     private ChildStateMachine _childStateMachine;
     private ChildTriggerDetector _actionDetector;
     private Collider2D _collider2D;
+    private ActionLever lever;
     private float _actionDelay =1f;
     private float _actionTimer;
     private bool _delayCompleted;
@@ -23,7 +24,12 @@ public class ChildActionState : IState
     {
 
         Debug.Log("Accionaste una palanca");
+        lever = _actionDetector.LevelCollider.GetComponent<ActionLever>();
         _childPlayerBehaviour.Animator.SetBool("IsHolding", true);
+            _actionTimer = 0f;
+            _delayCompleted = false;
+            _childPlayerBehaviour.StopMovement();
+        _childPlayerBehaviour.SetMovementEnabled(false);
         ActivateLever();
     }
 
@@ -31,17 +37,15 @@ public class ChildActionState : IState
     {
         Debug.Log("Saliste del estado : ACTION");
         _childPlayerBehaviour.Animator.SetBool("IsHolding", false);
+        lever.ResetLever();
+        _actionDetector.CanActivate = true;
     }
     private void ActivateLever()
     {
         if (_actionDetector.LevelCollider)
         {
-            _actionTimer = 0f;
-            _delayCompleted = false;
-            _childPlayerBehaviour.StopMovement();
-            IActiveable activeable = _actionDetector.LevelCollider.GetComponent<IActiveable>();
-            activeable.Activate();
-            _actionDetector.CanActivate = false; 
+            lever.Activate();
+            _actionDetector.CanActivate = false;
 
         }
     }
@@ -55,8 +59,8 @@ public class ChildActionState : IState
             {
                 _delayCompleted = true;
                 Debug.Log("End of delay");
+                _childStateMachine.TransitionTo(_childStateMachine.idleState);
             }
-            _childStateMachine.TransitionTo(_childStateMachine.idleState);
         }
 
 

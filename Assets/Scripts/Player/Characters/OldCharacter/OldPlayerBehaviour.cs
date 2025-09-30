@@ -49,7 +49,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         {
             _rb2D.velocity = _movementInput * _normalSpeed;
         }
-    //    Debug.Log(_armPulled);
+
     }
     public void LowSpeed(bool change)
     {
@@ -135,17 +135,6 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         if (collision.CompareTag("HighGround"))
         {
             _isOnHighGround = false;
-        }
-    }
-    private void OnTriggerStay2D(Collider2D collision) //parche rapido par apuzzle 1. Integrar a state
-    {
-        if (collision.CompareTag("Lever") )
-        {
-            ActionLever activeable = collision.GetComponent<ActionLever>();
-            if (activeable != null)
-            {
-                activeable.Activate();
-            }
         }
     }
     public bool IsOnHighGround()

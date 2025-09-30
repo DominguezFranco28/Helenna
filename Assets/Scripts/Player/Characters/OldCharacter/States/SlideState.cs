@@ -6,11 +6,11 @@ public class SlideState : IState
 {
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private OldStateMachine _oldStateMachine;
-    private JumpDetector _jumpDetector;
+    private TriggerDetector _jumpDetector;
     private float _jumpDelay = 0.2f;
     private float _jumpTimer;
     private bool _delayCompleted;
-    public SlideState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine, JumpDetector jumpDetector)
+    public SlideState(OldPlayerBehaviour oldPlayer, OldStateMachine oldStateMachine, TriggerDetector jumpDetector)
     {
         _oldPlayerBehaviour = oldPlayer;
         _oldStateMachine = oldStateMachine;
