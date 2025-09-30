@@ -30,7 +30,7 @@ public class MoveState :  IState
 
     {
         _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput; //guardo el ultimo input
-        if (_grabObject.CanGrabDog)
+        if (_grabObject.CanGrabDog && _oldPlayerBehaviour.UnlockThrow)
         {
             _oldStateMachine.TransitionTo(_oldStateMachine.throwState);
         }
