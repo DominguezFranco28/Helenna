@@ -15,6 +15,7 @@ public class AnchorDetector : MonoBehaviour
     private ArmImpulser _armImpulser;
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private Transform _closestAnchor = null;
+    private Vector2 _defaultAnchorDirection = Vector2.right; // dirección por defecto si no hay input
 
     public Transform ClosestAnchor { get { return _closestAnchor; } }
     public AnchorType CurrentAnchor { get; private set; }
@@ -67,7 +68,16 @@ public class AnchorDetector : MonoBehaviour
     public Transform DetectClosestAnchor() //metodo para detectar los puntos de anclaje cercano, retorna el transform del punto de anclaje mas cercano
     {
         Vector2 direction = _oldPlayerBehaviour.LastMovementInput;
-
+        // Si no hay input, usamos la última dirección válida
+        if (direction.magnitude < 0.01f)
+        {
+            direction = _defaultAnchorDirection;
+        }
+        else
+        {
+            // actualizamos la dirección por defecto solo cuando hay input
+            _defaultAnchorDirection = direction.normalized;
+        }
         // tamano de caja y angulo
         Vector2 size = new Vector2(_lockOnDistance, _boxWidth);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -119,7 +129,7 @@ public class AnchorDetector : MonoBehaviour
         //todo ia papa este gizmo
         if (_oldPlayerBehaviour == null) return;
 
-        if (_oldPlayerBehaviour.LastMovementInput == Vector2.zero) return;
+       // if (_oldPlayerBehaviour.LastMovementInput == Vector2.zero) return;
 
         Vector2 direction = _oldPlayerBehaviour.LastMovementInput;
         Vector2 size = new Vector2(_lockOnDistance, _boxWidth);
