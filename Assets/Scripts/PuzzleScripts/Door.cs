@@ -6,6 +6,7 @@ public class Door : MonoBehaviour
 {
     private Collider2D barrier;
     private Animator animator;
+    private SpriteRenderer sprite;
 
     public bool door = false;
     public bool toggleDoor = false;
@@ -14,6 +15,7 @@ public class Door : MonoBehaviour
     {
         barrier = GetComponentInChildren<Collider2D>();
         animator = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
 
         if (door)
             DoorOpen();
@@ -26,8 +28,10 @@ public class Door : MonoBehaviour
         door = true;
         if(barrier)
             barrier.enabled = false;
-        if (animator) 
+        if (animator)
             animator.SetBool("IsOpen", true);
+        else
+            sprite.enabled = false;
     }
 
     public void DoorClose()
@@ -37,6 +41,8 @@ public class Door : MonoBehaviour
             barrier.enabled = true;
         if (animator)
             animator.SetBool("IsOpen", false);
+        else
+            sprite.enabled = true;
     }
 
     // Update is called once per frame
@@ -53,5 +59,14 @@ public class Door : MonoBehaviour
                 DoorClose();
         }
 
+    }
+
+    public void Toggle()
+    {
+        door = !door;
+        if (door)
+            DoorOpen();
+        else
+            DoorClose();
     }
 }

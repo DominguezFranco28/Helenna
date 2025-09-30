@@ -16,6 +16,7 @@ public class ButtonPopup : MonoBehaviour
     private Vector3 startPos;
 
     public string searchOnTag = "player";
+    public string excludeOnTag = "dog";
 
     private void Start()
     {
@@ -75,7 +76,7 @@ public class ButtonPopup : MonoBehaviour
     {
         if (other.GetComponent<IControllable>() != null)
         {
-            if (other.tag.ToLower().Contains(searchOnTag))
+            if (other.tag.ToLower().Contains(searchOnTag) && !other.tag.ToLower().Contains(excludeOnTag))
             {
                 if (other.GetComponent<IControllable>().GetControl())
                 {
@@ -90,7 +91,7 @@ public class ButtonPopup : MonoBehaviour
     {
         if (collision.GetComponent<IControllable>() != null)
         {
-            if (collision.tag.ToLower().Contains(searchOnTag))
+            if (collision.tag.ToLower().Contains(searchOnTag) && !collision.tag.ToLower().Contains(excludeOnTag))
             {
                 if (collision.GetComponent<IControllable>().GetControl())
                 {

@@ -8,21 +8,36 @@ public class CircuitLight : MonoBehaviour
     [SerializeField] private bool isOn = false;
     [SerializeField] private Color onColor;
     [SerializeField] private Color offColor;
+    public int manualID = 0;
+
+    private void Awake()
+    {
+        sprite = gameObject.GetComponent<SpriteRenderer>();
+        if(!sprite)
+            Debug.LogError("Sprite not found for light - manualID:" + manualID);
+    }
 
     private void Start()
     {
-        sprite = GetComponent<SpriteRenderer>();
-
         if (isOn) TurnOn();
         else TurnOff();
     }
 
     public void TurnOn()
     {
-        sprite.color = onColor;
+        if (sprite)
+            sprite.color = onColor;
     }
     public void TurnOff()
     {
-        sprite.color = offColor;
+        if(sprite)
+            sprite.color = offColor;
+    }
+    public void Toggle()
+    {
+        if (isOn) TurnOff();
+        else TurnOn();
+
+        isOn = !isOn;
     }
 }
