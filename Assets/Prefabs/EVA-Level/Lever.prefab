@@ -143,7 +143,7 @@ Animator:
   m_GameObject: {fileID: 1549045550020606857}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 798426ee9fdebfb419c10380a8f1f75a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _SFX: {fileID: 8300000, guid: bd451e1757382454d8226cc40bcb2331, type: 3}
+  isActive: 0
   manualID: 0
 --- !u!70 &1244401819231171217
 CapsuleCollider2D:
