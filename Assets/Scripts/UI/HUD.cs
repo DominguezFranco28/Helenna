@@ -13,6 +13,8 @@ public class HUD : MonoBehaviour
     [SerializeField] private Image Thumbnail;
     [SerializeField] private List<Sprite> thumbnails = new List<Sprite>();
 
+    private CharacterManager characterManager;
+
     private void Start()
     {
         SpriteRenderer[] s = GetComponentsInChildren<SpriteRenderer>();
@@ -20,16 +22,32 @@ public class HUD : MonoBehaviour
             sprites.Add(sprite);
         characterName = GetComponentInChildren<TextMeshProUGUI>();
 
-        SetCharacterThumbnail("nina");
+        characterManager = CharacterManager.Instance;
     }
 
-    private void Update()
+    private void OnEnable()
     {
-        
+        if (InputManager.Instance != null)
+            InputManager.Instance.ChangeCharacterPressed += UpdateHUD;
+        else
+            Debug.LogError("No InputManager found");
+    }
+
+    private void UpdateHUD()
+    {
+        StartCoroutine(DelayedUpdate());
+    }
+
+    private IEnumerator DelayedUpdate()
+    {
+        yield return new WaitForSeconds(0.25f);
+        SetCharacterThumbnail(GetCharacter());
     }
 
     public void ToggleHUD()
     {
+        SetCharacterThumbnail(GetCharacter());
+
         isEnabled = !isEnabled;
         foreach (SpriteRenderer sprite in sprites)
             sprite.enabled = isEnabled;
@@ -61,4 +79,20 @@ public class HUD : MonoBehaviour
         Thumbnail.sprite = thumbnails[speakerId];
     }
 
+    private string GetCharacter()
+    {
+        if (characterManager)
+        {
+            string charName = characterManager.GetActiveCharacter().Trim().ToLower();
+            if (charName.Contains("old"))
+                return "harold";
+            else if (charName.Contains("dog"))
+                return "rex";
+            else if (charName.Contains("child"))
+                return "nina";
+            else
+                return "";
+        }
+        return "";
+    }
 }
