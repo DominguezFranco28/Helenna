@@ -35,6 +35,12 @@
       "speaker": "Rex",
       "lineId": 2,
       "text": "Guau!"
+    },
+     {
+      "scene": "dialogo-1",
+      "speaker": "Rex",
+      "lineId": 1,
+      "text": "Test"
     }
   ]
 }

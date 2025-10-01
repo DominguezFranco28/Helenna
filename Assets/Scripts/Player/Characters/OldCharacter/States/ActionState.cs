@@ -37,7 +37,6 @@ public class ActionState : IState
     {
         Debug.Log("Saliste del estado : ACTION");
         _oldPlayerBehaviour.Animator.SetBool("IsHolding", false);
-        lever.ResetLever();
         _oldActionDetector.CanActivate = true;
     }
     private void ActivateLever()

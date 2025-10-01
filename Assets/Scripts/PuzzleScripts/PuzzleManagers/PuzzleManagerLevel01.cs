@@ -141,6 +141,7 @@ public class PuzzleManagerLevel01 : MonoBehaviour
                     lever.canActivate = false;
 
                 puzzleDoneP1 = true;
+                AdaptiveMusicLayering.Instance.PlayResolutionTone();
                 CheckAllDone();
             }
         }
@@ -178,6 +179,7 @@ public class PuzzleManagerLevel01 : MonoBehaviour
                 }
                 
                 puzzleDoneP3 = true;
+                AdaptiveMusicLayering.Instance.PlayResolutionTone();
                 CheckAllDone();
             }
         }
@@ -199,6 +201,7 @@ public class PuzzleManagerLevel01 : MonoBehaviour
     {
         gateC.Toggle();
         puzzleDoneP2 = true;
+        AdaptiveMusicLayering.Instance.PlayResolutionTone();
         CheckAllDone();
         foreach (CircuitLight light in lightsP2)
         {
