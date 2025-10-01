@@ -33,10 +33,15 @@ public class PuzzleManagerLevel01 : MonoBehaviour
     private bool hasPower = false;
     public bool puzzleDoneP3 = false;
 
+
+    [Header("Cinematica")]
+    public PlayCinematic playCinematic;
+
     private void CheckAllDone()
     {
         if(puzzleDoneP1 && puzzleDoneP2 && puzzleDoneP3)
         {
+            playCinematic.Play();
             Victory();
         }
     }

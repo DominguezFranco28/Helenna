@@ -8,7 +8,15 @@ public class CinematicController : MonoBehaviour
     public CameraZoom cameraZoom;
     public LetterboxUI letterboxUI;
     public GameObject cameraFollow;
+    public bool playOnStart = false;
 
+    private void Start()
+    {
+        if (playOnStart)
+        {
+            PlayCinematic();
+        }
+    }
     public void PlayCinematic()
     {
         cameraFollow.SetActive(true);

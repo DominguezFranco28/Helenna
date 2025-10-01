@@ -5,10 +5,14 @@ using UnityEngine;
 public class PlayCinematic : MonoBehaviour
 {
     [SerializeField] private CinematicController _cinematicController;
-    [SerializeField] private OldPlayerBehaviour _oldPlayerBehaviour;
+    private DialogueTrigger _dialogueTrigger;
+
+    private void Start()
+    {
+        _dialogueTrigger = GetComponent<DialogueTrigger>();
+    }
     public void Play()
     {
-        _oldPlayerBehaviour.StopMovement();
         _cinematicController.PlayCinematic();
         SFXManager.Instance.StopLoop();
  
