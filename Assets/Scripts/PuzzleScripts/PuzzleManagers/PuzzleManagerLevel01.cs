@@ -36,19 +36,17 @@ public class PuzzleManagerLevel01 : MonoBehaviour
 
     [Header("Cinematica")]
     public PlayCinematic playCinematic;
-
     private void CheckAllDone()
     {
         if(puzzleDoneP1 && puzzleDoneP2 && puzzleDoneP3)
         {
             playCinematic.Play();
-            Victory();
         }
     }
-    private void Victory()
+    public void Victory() //convertido en publico para llamarlo desde el cinematic controller cuando termina la cinematica
     {
         Debug.Log("VICTORY");
-        
+         
         if (endScreen)
         {
             endScreen.text = "VICTORY!\nYOU ESCAPED!";
