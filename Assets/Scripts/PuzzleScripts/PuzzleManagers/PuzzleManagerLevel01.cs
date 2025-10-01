@@ -22,7 +22,7 @@ public class PuzzleManagerLevel01 : MonoBehaviour
     public List<PressurePlate> pressurePlatesP2_B = new List<PressurePlate>();
     public List<Door> gatesB = new List<Door>();
     public List<CircuitLight> lightsP2 = new List<CircuitLight>();
-    public PressurePlate pressurePlateP2_C;
+    public List<PressurePlate> pressurePlatesP2_C = new List<PressurePlate>();
     public Door gateC;
     public bool puzzleDoneP2 = false;
     
@@ -69,7 +69,11 @@ public class PuzzleManagerLevel01 : MonoBehaviour
             plate.OnPadPressed += PadPressedGroupB;
             plate.OnPadReleased += PadPressedGroupB;
         }
-        pressurePlateP2_C.OnPadPressed += PadPressedGroupC;
+        foreach (PressurePlate plate in pressurePlatesP2_C)
+        {
+            plate.OnPadPressed += PadPressedGroupC;
+            plate.OnPadReleased += PadPressedGroupC;
+        }
 
         leverP3.OnLeverActioned += P3Lever;
         pressurePlateP3.OnPadPressed += P3Pad;
@@ -199,17 +203,21 @@ public class PuzzleManagerLevel01 : MonoBehaviour
     }
     private void PadPressedGroupC(int manualID)
     {
-        gateC.Toggle();
-        puzzleDoneP2 = true;
-        AdaptiveMusicLayering.Instance.PlayResolutionTone();
-        CheckAllDone();
-        foreach (CircuitLight light in lightsP2)
+        if(manualID <= 0)
+            gateC.Toggle();
+        else
         {
-            if (light.manualID == manualID)
+            puzzleDoneP2 = true;
+            CheckAllDone();
+            foreach (CircuitLight light in lightsP2)
             {
-                light.Toggle();
+                if (light.manualID == manualID)
+                {
+                    light.Toggle();
+                }
             }
         }
+        
     }
 
 }
