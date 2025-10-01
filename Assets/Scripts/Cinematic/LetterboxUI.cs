@@ -9,13 +9,17 @@ public class LetterboxUI : MonoBehaviour
 
     public void ShowBorders()
     {
-        topBorder.SetActive(true);
-        bottomBorder.SetActive(true);
+        if (topBorder)
+            topBorder.SetActive(true);
+        if (bottomBorder)
+            bottomBorder.SetActive(true);
     }
 
     public void HideBorders()
     {
-        topBorder.SetActive(false);
-        bottomBorder.SetActive(false);
+        if(topBorder)
+            topBorder.SetActive(false);
+        if(bottomBorder)
+            bottomBorder.SetActive(false);
     }
 }

@@ -57,10 +57,11 @@ public class OldPlayerController : MonoBehaviour
             //    _myStateMachine.TransitionTo(_myStateMachine.actionState);
             //    return;
             //}
+            /*
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 CharacterManager.Instance.TeleportAllToCurrent();
-            }
+            }*/
             //TEST FUNCIONANMIENTO SWITCH MANO
         }
 

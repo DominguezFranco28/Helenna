@@ -49,9 +49,9 @@ public class PuzzleManagerLevel01 : MonoBehaviour
          
         if (endScreen)
         {
-            endScreen.text = "VICTORY!\nYOU ESCAPED!";
+            endScreen.text = "";
             endScreen.gameObject.SetActive(true);
-            TransitionManager.Instance.LoadNextScene();
+            //TransitionManager.Instance.LoadNextScene();
         }
     }
 
@@ -148,7 +148,6 @@ public class PuzzleManagerLevel01 : MonoBehaviour
                     lever.canActivate = false;
 
                 puzzleDoneP1 = true;
-                AdaptiveMusicLayering.Instance.PlayResolutionTone();
                 CheckAllDone();
             }
         }
@@ -186,7 +185,6 @@ public class PuzzleManagerLevel01 : MonoBehaviour
                 }
                 
                 puzzleDoneP3 = true;
-                AdaptiveMusicLayering.Instance.PlayResolutionTone();
                 CheckAllDone();
             }
         }
