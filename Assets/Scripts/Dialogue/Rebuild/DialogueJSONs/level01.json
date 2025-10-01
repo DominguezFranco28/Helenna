@@ -52,7 +52,7 @@
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 9,
-      "text": "¿Tu mujer? Perfecto, entonces esta debe ser su casa. Dale, llamala que estoy apurada, mi viejo me está esperando qu—"
+      "text": "¿Tu mujer? Perfecto, entonces esta debe ser su casa. Dale, llamala que estoy apurada, necesito que me ayud-"
     },
     {
       "scene": "game-intro",
@@ -131,6 +131,176 @@
       "speaker": "Harold",
       "lineId": 22,
       "text": "No me interesa."
+    },
+
+    {
+      "scene": "P1",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "Bueno... ya entiendo que es la casa de una inventora y todo eso, pero ¿por qué están tiradas por acá todas estas máquinas?"
+    },
+    {
+      "scene": "P1",
+      "speaker": "Harold",
+      "lineId": 2,
+      "text": "Estos son mis diseños, nena. Mantienen mi casa inaccesible desde afuera. No me banco las intromisiones indeseadas."
+    },
+    {
+      "scene": "P1",
+      "speaker": "Nina",
+      "lineId": 3,
+      "text": "¡Mal! Yo tampoco me fumo a esa gente que no sabe darse cuenta de que solo molesta."
+    },
+    {
+      "scene": "P1",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "Ajá, sí... bueno. Vamos a tener que activar los tres mecanismos que sellan el acceso principal del norte. Va a ser más rápido que dar toda la vuelta hasta la estación."
+    },
+    {
+      "scene": "P1",
+      "speaker": "Harold",
+      "lineId": 5,
+      "text": "Dale vamos, ayudame con estas palancas primero."
+    },
+
+    {
+      "scene": "P3A",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Hmph, se me había olvidado."
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "¿El qué?"
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "Una de las últimas tormentas fuertes. Me voló algunas cosas que tenía afuera, como la escalera para acceder a ese interruptor. Dejame pensar…"
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Nina",
+      "lineId": 4,
+      "text": "No hay problema."
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Harold",
+      "lineId": 5,
+      "text": "¿?"
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Nina",
+      "lineId": 6,
+      "text": "Vos tranqui, viejo. Si pude llegar hasta acá arriba por la ladera, ¿te pensás que una colinita berreta como esta me va a detener?"
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Harold",
+      "lineId": 7,
+      "text": "Ahh, claro. Dale, colinita, te quiero ver entonces."
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Nina",
+      "lineId": 8,
+      "text": "Nina."
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Harold",
+      "lineId": 9,
+      "text": "¿Qué?"
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Nina",
+      "lineId": 10,
+      "text": "Mi nombre."
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Harold",
+      "lineId": 11,
+      "text": "Creo haberte dicho que no me interesaba."
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Nina",
+      "lineId": 12,
+      "text": "Cascarrabias."
+    },
+    {
+      "scene": "P3B",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Bueno, muchacho, te toca."
+    },
+    {
+      "scene": "P3B",
+      "speaker": "Rex",
+      "lineId": 2,
+      "text": "¡GUAU!"
+    },
+    {
+      "scene": "P3B",
+      "speaker": "Nina",
+      "lineId": 3,
+      "text": "¿Al perro? ¿Qué le toca?"
+    },
+    {
+      "scene": "P3B",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "Ayudarnos. Te sorprenderías de lo que este perro es capaz. Vamos, metete ahí."
+    },
+    {
+      "scene": "P3B",
+      "speaker": "Rex",
+      "lineId": 5,
+      "text": "¡GUAU!"
+    },
+     {
+      "scene": "P2",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Pff, ya ni recuerdo cómo se resolvía este. Teníamos que hacerlo los tres juntos."
+    },
+    {
+      "scene": "P2",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "¿Me podrías recordar por qué decidiste complicarte así tu existencia?"
+    },
+    {
+      "scene": "P2",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "Este lo diseñó Helenna. Lo veía como una forma “creativa” de poner a prueba sus capacidades mentales, y de paso poder pasar más tiempo conmigo y entrenar a Rex."
+    },
+    {
+      "scene": "P2",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "De verdad, esa mujer lo piensa en todo…"
+    },
+    {
+      "scene": "P2",
+      "speaker": "Nina",
+      "lineId": 5,
+      "text": "¿Acaso eso que oigo es una pizca de genuino afecto?"
+    },
+    {
+      "scene": "P2",
+      "speaker": "Harold",
+      "lineId": 6,
+      "text": "Callate."
     }
   ]
 }
