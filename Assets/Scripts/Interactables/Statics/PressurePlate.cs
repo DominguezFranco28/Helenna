@@ -91,5 +91,8 @@ public class PressurePlate : MonoBehaviour
         
     }
 
-
+    public bool IsPressed()
+    {
+        return isPressed;
+    }
 }
