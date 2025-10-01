@@ -815,6 +815,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4510332207050764021, guid: 38f828732ae94c145bf9e698ec4447b9, type: 3}
+      propertyPath: nextScene
+      value: MenuScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4510332207050764021, guid: 38f828732ae94c145bf9e698ec4447b9, type: 3}
       propertyPath: _transitionTime
       value: 6
       objectReference: {fileID: 0}
@@ -299360,9 +299364,9 @@ RectTransform:
   - {fileID: 1514226133}
   - {fileID: 642494797}
   - {fileID: 285085920}
-  - {fileID: 820201554}
-  - {fileID: 898475745}
   - {fileID: 3584200650456107868}
+  - {fileID: 898475745}
+  - {fileID: 820201554}
   m_Father: {fileID: 614554997}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

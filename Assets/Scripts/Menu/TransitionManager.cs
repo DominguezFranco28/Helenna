@@ -13,6 +13,8 @@ public class TransitionManager : MonoBehaviour
     [SerializeField] private float _transitionTime = 1f;
     private Animator _animator;
 
+    public string nextScene = "";
+
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -22,13 +24,19 @@ public class TransitionManager : MonoBehaviour
     public void LoadNextScene()
     {
         //is called from the next zone script
-        _animator.SetTrigger("StartTransition");
+        if (_animator)
+            _animator.SetTrigger("StartTransition");
+        
         int nextSceneIndex = SceneManager.GetActiveScene().buildIndex - 1; 
         StartCoroutine(SceneLoad(nextSceneIndex));        
     }
-    public void ChangeLevel(string name)
+    public void ChangeLevel()
     {
-        SceneManager.LoadScene(name);
+        if(nextScene.Length > 0)
+        {
+            _animator.SetTrigger("StartTransition");
+            SceneManager.LoadScene(nextScene);
+        }
     }
     public IEnumerator SceneLoad( int sceneIndex)
     {
@@ -38,11 +46,13 @@ public class TransitionManager : MonoBehaviour
     }
     public void FadeIn() //sobrecarga para que no me cambie de escena, solo quiero la pantalla en negro para los tps
     {
-        _animator.SetTrigger("StartTransition");
+        if(_animator)
+            _animator.SetTrigger("StartTransition");
     }
     public void PlayBlackScreen()
     {
-
-        _animator.Play("FadeInanim");
+        if (_animator)
+            _animator.Play("FadeInanim");
     }
+
 }

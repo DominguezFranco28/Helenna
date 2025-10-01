@@ -49,9 +49,9 @@ public class PuzzleManagerLevel01 : MonoBehaviour
          
         if (endScreen)
         {
-            endScreen.text = "";
+            endScreen.text = "Nivel 1 Terminado";
             endScreen.gameObject.SetActive(true);
-            //TransitionManager.Instance.LoadNextScene();
+            TransitionManager.Instance.ChangeLevel();
         }
     }
 
