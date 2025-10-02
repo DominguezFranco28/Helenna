@@ -252,13 +252,13 @@
       "scene": "P3B",
       "speaker": "Nina",
       "lineId": 3,
-      "text": "¿Al perro? ¿Qué le toca?"
+      "text": "¿Le estas hablando al perro?"
     },
     {
       "scene": "P3B",
       "speaker": "Harold",
       "lineId": 4,
-      "text": "Ayudarnos. Te sorprenderías de lo que este perro es capaz. Vamos, metete ahí."
+      "text": "Te sorprenderías de lo que este perro es capaz. Vamos, muchacho, como lo practicamos, metete ahí."
     },
     {
       "scene": "P3B",
@@ -288,19 +288,44 @@
       "scene": "P2",
       "speaker": "Harold",
       "lineId": 4,
-      "text": "De verdad, esa mujer lo piensa en todo…"
+      "text": "Aprovechamos también para poner a prueba mi brazo con esa caja, qué tan lejos podía estirarse y cuánto peso podría soportar..."
     },
     {
       "scene": "P2",
-      "speaker": "Nina",
+      "speaker": "Harold",
       "lineId": 5,
-      "text": "¿Acaso eso que oigo es una pizca de genuino afecto?"
+      "text": "Debo decir que fue bastante más útil de lo que esperaba, pude sacarle mucho provecho con este debilitado cuerpo."
     },
     {
       "scene": "P2",
       "speaker": "Harold",
       "lineId": 6,
-      "text": "Callate."
+      "text": "De verdad esa mujer piensa en todo…."
+    },
+    {
+      "scene": "P2",
+      "speaker": "Nina",
+      "lineId": 7,
+      "text": "¿Ella te hizo ese brazo? Qué bueno, necesito ver qué tan bien funciona, mi padre perdió una extremidad y me preguntaba si quizá--"
+    },
+    {
+      "scene": "P2",
+      "speaker": "Harold",
+      "lineId": 8,
+      "text": "Córrete."
+    },
+     {
+      "scene": "P2",
+      "speaker": "Nina",
+      "lineId": 8,
+      "text": "¿Podrías escucharme un segundo?"
+    },
+    {
+      "scene": "P2A",
+      "speaker": "Harold",
+      "lineId": 8,
+      "text": "Esta placa ya está muy oxidada, vamos a necesitar un peso extra aparte del nuestro para activarla."
     }
   ]
+ 
 }
