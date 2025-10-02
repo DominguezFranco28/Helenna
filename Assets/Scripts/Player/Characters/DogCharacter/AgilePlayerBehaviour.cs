@@ -44,16 +44,16 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
     public Vector2 PendingThrowDirection { get; set; } //direccion que sera obtenida cuando harold lo lance
     public Vector2 PendingPulledDirection { get; set; } //direccion que sera obtenida cuando harold lo atraiga
-    public Transform CurrentHoleExit { get; private set; }
+    public RexTPHole CurrentHole { get; private set; }
 
-    public void SetCurrentHole(Transform holeExit)
+    public void SetCurrentHole(RexTPHole hole)
     {
-        CurrentHoleExit = holeExit;
+        CurrentHole = hole;
     }
 
     public void ClearCurrentHole()
     {
-        CurrentHoleExit = null;
+        CurrentHole = null;
     }
     void Awake()
     {

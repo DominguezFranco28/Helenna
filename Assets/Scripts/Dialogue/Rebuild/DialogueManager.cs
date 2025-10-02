@@ -179,12 +179,11 @@ public class DialogueManager : MonoBehaviour
             body.text += c;
             yield return new WaitForSeconds(talkSpeed);
         }
-
+        /*
         writeLineCoroutine = null;
-
-        // Wait the end delay before continuing
         yield return new WaitForSeconds(endLineDelay);
         MakeClear();
+        */
     }
 
     private IEnumerator EndLine()
@@ -210,8 +209,10 @@ public class DialogueManager : MonoBehaviour
         if (writeLineCoroutine != null)
         {
             StopCoroutine(writeLineCoroutine);
-            body.text = GetLine(lastID.Item1, lastID.Item2, lastID.Item3);
-            StartCoroutine(EndLine());
+            if(body.text != GetLine(lastID.Item1, lastID.Item2, lastID.Item3))
+                body.text = GetLine(lastID.Item1, lastID.Item2, lastID.Item3);
+            else
+                StartCoroutine(EndLine());
         }
         
     }

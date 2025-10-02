@@ -25,7 +25,7 @@ public class AgileIdleState : IState
     private void OnAction()
     {
         Debug.Log("Action pressed in Move State DOG" + _agilePlayerBehaviour.IsInControll);
-        if (_agilePlayerBehaviour.CurrentHoleExit != null)
+        if (_agilePlayerBehaviour.CurrentHole != null)
         {
             _agileStateMachine.TransitionTo(_agileStateMachine.digState);
             return;

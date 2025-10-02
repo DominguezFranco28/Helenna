@@ -6,15 +6,28 @@ public class RexTPHole : MonoBehaviour
 {
     public GameObject exitHole;
     private GameObject dog = null;
+
+    public SpriteRenderer entrySprite;
+    public Color unusedColor;
+    public Color usedColor;
+    public SpriteRenderer exitSprite;
+
+    private bool used = false;
+
+    private void Start()
+    {
+        if(entrySprite)
+            entrySprite.color = unusedColor;
+        if(exitSprite)
+            exitSprite.enabled = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag.ToLower().Contains("dog"))
         {
-
             dog = collision.gameObject;
-            dog.GetComponent<AgilePlayerBehaviour>().SetCurrentHole(exitHole.transform);
-            Debug.Log("Rex entered hole, exit at: " + exitHole.transform.position);
-            //StartCoroutine(DigWait());
+            dog.GetComponent<AgilePlayerBehaviour>().SetCurrentHole(this);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -28,11 +41,16 @@ public class RexTPHole : MonoBehaviour
             }
         }
     }
-    //private IEnumerator DigWait()
-    //{
-    //    yield return new WaitForSeconds(1f);
-    //    dog.GetComponent<AgilePlayerBehaviour>().SetMovementEnabled(true);
-    //    dog.gameObject.transform.position = exitHole.transform.position;
-    //    dog = null;
-    //}
+
+    public void Use()
+    {
+        if (!used)
+        {
+            if(entrySprite)
+                entrySprite.color = usedColor;
+            if(exitSprite)
+                exitSprite.enabled = true;
+        }
+        
+    }
 }

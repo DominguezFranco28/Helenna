@@ -36,21 +36,29 @@ public class PuzzleManagerLevel01 : MonoBehaviour
 
     [Header("Cinematica")]
     public PlayCinematic playCinematic;
+
     private void CheckAllDone()
     {
-        if(puzzleDoneP1 && puzzleDoneP2 && puzzleDoneP3)
-        {
+        if (playCinematic)
             playCinematic.Play();
+
+        if (puzzleDoneP1 && puzzleDoneP2 && puzzleDoneP3)
+        {
+            StartCoroutine(Victory());
         }
     }
-    public void Victory() //convertido en publico para llamarlo desde el cinematic controller cuando termina la cinematica
+
+    private IEnumerator Victory()
     {
         Debug.Log("VICTORY");
-         
+        yield return new WaitForSeconds(1.5f);
+        
         if (endScreen)
         {
-            endScreen.text = "Nivel 1 Terminado";
+            endScreen.text = "Nivel 1 Terminado - Fin de Demo";
             endScreen.gameObject.SetActive(true);
+            
+            yield return new WaitForSeconds(5f);
             TransitionManager.Instance.ChangeLevel();
         }
     }

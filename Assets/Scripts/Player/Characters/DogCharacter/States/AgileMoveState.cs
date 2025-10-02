@@ -12,7 +12,7 @@ public class AgileMoveState : IState
     private void OnAction()
     {
         Debug.Log("Action pressed in Move State DOG");
-        if (_agilePlayerBehaviour.CurrentHoleExit != null)
+        if (_agilePlayerBehaviour.CurrentHole != null)
         {
             _agileStateMachine.TransitionTo(_agileStateMachine.digState);
             return;

@@ -9,7 +9,6 @@ public class CinematicController : MonoBehaviour
     public LetterboxUI letterboxUI;
     public GameObject cameraFollow;
     public bool playOnStart = false;
-    public PuzzleManagerLevel01 manager = null;
 
     private void Start()
     {
@@ -33,9 +32,6 @@ public class CinematicController : MonoBehaviour
         cameraZoom.ResetZoom();
         cameraFollow.SetActive(false);
         GameStateManager.Instance.SetState(GameState.Playing);
-        if ( manager != null)
-        {
-            manager.Victory();
-        }
+
     }
 }
