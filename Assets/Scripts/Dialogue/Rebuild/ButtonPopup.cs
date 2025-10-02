@@ -18,13 +18,20 @@ public class ButtonPopup : MonoBehaviour
     public string searchOnTag = "player";
     public string excludeOnTag = "dog";
 
+    public bool disableAfterFirst = false;
+
+    public string customText = "";
+
     private void Start()
     {
         popupText = GetComponentInChildren<TextMeshProUGUI>();
         if (popupText)
         {
-            popupText.text = GetBindingDisplayName();
-            
+            if (customText.Length <= 0)
+                popupText.text = GetBindingDisplayName();
+            else
+                popupText.text = customText;
+
             popupSprite.SetActive(false);
         }
     }
@@ -96,6 +103,9 @@ public class ButtonPopup : MonoBehaviour
                 if (collision.GetComponent<IControllable>().GetControl())
                 {
                     popupSprite.SetActive(false);
+
+                    if (disableAfterFirst)
+                        gameObject.SetActive(false);
                 }
             }
         }

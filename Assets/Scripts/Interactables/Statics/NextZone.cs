@@ -9,7 +9,7 @@ public class NextZone : PlayerDetector
     public override void Effect(Collider2D collision)
     {
         Debug.Log("saliendo de la zona");
-        TransitionManager.Instance.ChangeLevel(_changeLevel);
+        //TransitionManager.Instance.ChangeLevel(_changeLevel);
 
     }
 }

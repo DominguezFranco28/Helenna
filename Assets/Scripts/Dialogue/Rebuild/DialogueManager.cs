@@ -39,7 +39,7 @@ public class DialogueManager : MonoBehaviour
     private (string, string, int) lastID;
 
     private Color textColor = Color.white;
-    private Color backgroundColor = new Color(164f / 255f, 140f / 255f, 115f / 255f, 220f / 255f); ///new Color(171f / 255f, 109f / 255f, 44f / 255f, 220f / 255f);
+    private Color backgroundColor = new Color(140f / 255f, 124f / 255f, 110f / 255f, 100f / 255f); ///new Color(171f / 255f, 109f / 255f, 44f / 255f, 220f / 255f);
     private Color speakerBackgroundColor = new Color(0f, 0f, 0f, 200f / 255f);
 
     public TextAsset dialogueFile;

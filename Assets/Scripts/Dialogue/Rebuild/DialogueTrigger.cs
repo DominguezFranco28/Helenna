@@ -12,6 +12,8 @@ public class DialogueTrigger : MonoBehaviour
     private void Start()
     {
         dialogueManager = GameObject.FindFirstObjectByType<DialogueManager>();
+
+        if (GetComponent<SpriteRenderer>()) GetComponent<SpriteRenderer>().enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
