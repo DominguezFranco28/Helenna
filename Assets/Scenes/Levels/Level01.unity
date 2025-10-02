@@ -299,6 +299,10 @@ PrefabInstance:
       propertyPath: _triggerDetector
       value: 
       objectReference: {fileID: 24309899}
+    - target: {fileID: 7391976909620452916, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
+      propertyPath: _playerController
+      value: 
+      objectReference: {fileID: 24309907}
     - target: {fileID: 7779331290517866420, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: _UI
       value: 
@@ -403,6 +407,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00f1c8d160b435047835d9da5f68d201, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &24309907 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7208055977537637858, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
+  m_PrefabInstance: {fileID: 24309835}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24309836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b8f7ad089ff7c4782c440a7bc36765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &50151141

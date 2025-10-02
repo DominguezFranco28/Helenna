@@ -20,7 +20,7 @@ public class MoveState :  IState
 
     private void OnSpecialAction()
     {
-      
+        if (!_oldPlayerBehaviour.IsInControll) return;
         _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput; //guardo el ultimo input
         _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo
         _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
@@ -30,6 +30,7 @@ public class MoveState :  IState
     private void OnAction()
 
     {
+        if (!_oldPlayerBehaviour.IsInControll) return;
         _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput; //guardo el ultimo input
         if (_grabObject.CanGrabDog && _oldPlayerBehaviour.UnlockThrow)
         {
@@ -39,6 +40,7 @@ public class MoveState :  IState
 
     private void OnMove(Vector2 movement)
     {
+        if (!_oldPlayerBehaviour.IsInControll) return;
         _oldPlayerBehaviour.SetMovementInput(movement);
         if (movement.magnitude <= 0.01f)
         {
@@ -48,6 +50,7 @@ public class MoveState :  IState
     }
     private void InteractPressed()
     {
+        if (!_oldPlayerBehaviour.IsInControll) return;
         _oldPlayerBehaviour.LastMovementInput = _oldPlayerBehaviour.MovementInput;
         interacting = true;
         if (_triggerDetector.CanActivate && interacting)

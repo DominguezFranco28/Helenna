@@ -16,6 +16,7 @@ public class OldStateMachine
 // GetComponent cannot be used because it's a method inherited from MonoBehaviour.
 
 {
+
     private CharacterManager characterManager;
 
     public MoveState moveState;

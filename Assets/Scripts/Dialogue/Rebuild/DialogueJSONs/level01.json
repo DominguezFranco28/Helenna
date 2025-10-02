@@ -28,7 +28,7 @@
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 5,
-      "text": "Uf… bueno… creo que lo logré. A esa inventora sí que le gusta vivir escondida…"
+      "text": "Uf… bueno… creo que lo logré. Por que será que esa inventora vive tan escondida…"
     },
     {
       "scene": "game-intro",
@@ -40,13 +40,13 @@
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 7,
-      "text": "¿Seguridad? Trepé por este costado de la ladera… lo cual no fue nada fácil, debo decir. Sea como sea, calvito, ¿conocés a una tal Helenna? Necesito hablar con ella."
+      "text": "¿Seguridad? ¿Decis por ese laberinto que tenes armado del otro lado? Lo esquive trepando por este costado de la ladera, lo cual me costo lo suyo y... Da igual, calvito, ¿conocés a una tal Helenna? Necesito hablar con ella."
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 8,
-      "text": "Andate, nena. No sé qué asuntos pueda tener una mocosa maleducada como vos con mi mujer, pero no me gustan las visitas en mi casa."
+      "text": "Volvé por donde viniste. No sé qué asuntos pueda tener una mocosa maleducada como vos con mi mujer, pero no me gustan las visitas."
     },
     {
       "scene": "game-intro",
@@ -64,13 +64,13 @@
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 11,
-      "text": "Mirá, viejo cascarrabias, me demoré media tarde en llegar a tu “fortaleza” —a la que encima llamás hogar—. Si tu mujer está acá, y es aunque sea un mínimo porcentaje más simpática que vos, llamala, así resuelvo mis asuntos y me voy de una vez."
+      "text": "Escuchame una cosa, viejo cascarrabias, me demoré media tarde en llegar a tu “fortaleza” —a la que llamás hogar—. Si tu mujer está acá, y es aunque sea un POQUITO más simpática que vos, llamala, así resuelvo mis asuntos y me voy de una vez."
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 12,
-      "text": "…No está."
+      "text": "Ella…No está."
     },
     {
       "scene": "game-intro",
@@ -94,7 +94,7 @@
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 16,
-      "text": "Aún no volvió del trabajo, lo cual es raro. Ya debería haber llegado hace una hora. Ella nunca llega tarde."
+      "text": "Ella...Aún no volvió del trabajo. Es raro...Ya debería haber llegado hace unas horas."
     },
     {
       "scene": "game-intro",
@@ -118,7 +118,7 @@
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 20,
-      "text": "Vas a venir aunque te diga que no, ¿verdad? Bien… podés serme útil, pero procurá no estorbar, nena."
+      "text": "Vas a venir aunque te diga que no, ¿verdad? Ahhg, bien podés serme útil, pero procurá no estorbar, mocosa."
     },
     {
       "scene": "game-intro",
@@ -143,13 +143,13 @@
       "scene": "P1",
       "speaker": "Harold",
       "lineId": 2,
-      "text": "Estos son mis diseños, nena. Mantienen mi casa inaccesible desde afuera. No me banco las intromisiones indeseadas."
+      "text": "Estos son mis diseños. Mantienen mi casa inaccesible desde afuera. No me gustan las... intromisiones indeseadas."
     },
     {
       "scene": "P1",
       "speaker": "Nina",
       "lineId": 3,
-      "text": "¡Mal! Yo tampoco me fumo a esa gente que no sabe darse cuenta de que solo molesta."
+      "text": "¡Mal! Yo tampoco me banco a esa gente que no sabe darse cuenta de lo molesta que es."
     },
     {
       "scene": "P1",

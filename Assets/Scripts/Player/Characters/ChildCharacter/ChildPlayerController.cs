@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChildPlayerController : MonoBehaviour
+public class ChildPlayerController : MonoBehaviour , IHasStateMachine
 {
     [SerializeField] private ChildPlayerBehaviour _childBehaviour;
     [SerializeField] private ChildTriggerDetector _childTriggerDetector;
-    private ChildStateMachine _childStateMachine;
     
     private bool interacting = false;
+    public ChildStateMachine StateMachine { get; private set; }
+    public IState CurrentState => StateMachine.CurrentState;
+
     private void OnEnable()
     {
         if (InputManager.Instance != null)
@@ -35,8 +37,8 @@ public class ChildPlayerController : MonoBehaviour
 
     private void Start()
     {
-        _childStateMachine = new ChildStateMachine(_childBehaviour, _childTriggerDetector);
-        _childStateMachine.Initialize(_childStateMachine.idleState);
+        StateMachine = new ChildStateMachine(_childBehaviour, _childTriggerDetector);
+        StateMachine.Initialize(StateMachine.idleState);
     }
 
     private void Update()
@@ -44,18 +46,18 @@ public class ChildPlayerController : MonoBehaviour
         if (GameStateManager.Instance.IsGamePaused()) return;
         if (_childBehaviour.IsInControll)
         {
-            _childStateMachine.Update();
+            StateMachine.Update();
             // Detect enter to climb
             if (_childTriggerDetector.CanClimb)
             {
 
-                _childStateMachine.TransitionTo(_childStateMachine.climbState);
+                StateMachine.TransitionTo(StateMachine.climbState);
                 return;
             }
 
             if (_childTriggerDetector.CanActivate && interacting)
             {
-                _childStateMachine.TransitionTo(_childStateMachine.actionState);
+                StateMachine.TransitionTo(StateMachine.actionState);
                 return;
             }
            /* //HERRAMIENTA DEBUGEO, TP A TODOS LOS PERSONAJES A LA POSICION DEL ACTIVO

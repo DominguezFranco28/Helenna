@@ -4,11 +4,10 @@ using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
-public class AgilePlayerController : MonoBehaviour
+public class AgilePlayerController : MonoBehaviour , IHasStateMachine
 {
     [SerializeField] private AgilePlayerBehaviour _agileBehaviour;
     [SerializeField]private GrabObject _grabObject;
-    private AgileStateMachine _agileStateMachine;
     private Vector2 throwdirection = Vector2.zero;
     private bool isThrowed= false;
     private bool _isBeingThrown = false;
@@ -16,7 +15,10 @@ public class AgilePlayerController : MonoBehaviour
     public bool IsBeingThrown { get { return _isBeingThrown; } set { value = _isBeingThrown; }}
     public bool IsBeingPulled { get { return _isBeingThrown; } set { value = _isBeingPulled; }}
     //expongo la instancia de la maquina de estados para poder acceder a ella desde el detector de colisiones (detectar si esta en estado throw)
-    public AgileStateMachine StateMachine { get { return _agileStateMachine; } }
+
+    public AgileStateMachine StateMachine { get; private set; }
+    public IState CurrentState =>StateMachine.CurrentState;
+
     private bool interacting = false;
     private void OnEnable()
     {
@@ -44,8 +46,8 @@ public class AgilePlayerController : MonoBehaviour
 
     private void Start()
     {
-        _agileStateMachine = new AgileStateMachine(_agileBehaviour, _grabObject, this);
-        _agileStateMachine.Initialize(_agileStateMachine.idleState);
+        StateMachine = new AgileStateMachine(_agileBehaviour, _grabObject, this);
+        StateMachine.Initialize(StateMachine.idleState);
     }
 
     private void Update()
@@ -53,7 +55,7 @@ public class AgilePlayerController : MonoBehaviour
         if (GameStateManager.Instance.IsGamePaused()) return;
         if (_agileBehaviour.IsInControll || _isBeingThrown || _isBeingPulled) //quiero mantener activa la maquina de estados de rex si interactua con Harold
         {
-            _agileStateMachine?.Update();
+            StateMachine?.Update();
             /*//HERRAMIENTA DEBUGEO, TP A TODOS LOS PERSONAJES A LA POSICION DEL ACTIVO
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -68,7 +70,7 @@ public class AgilePlayerController : MonoBehaviour
                                //y si lo esta, llama al metodo fixedUpdate, no la update como en el caso normal de el resto de estados. Tener presente para futuras aplicaciones de fisica
     {
 
-        if (_agileStateMachine.CurrentState is IFixedUpdate fixedState && (_isBeingThrown || _isBeingPulled))
+        if (StateMachine.CurrentState is IFixedUpdate fixedState && (_isBeingThrown || _isBeingPulled))
         {
             fixedState.FixedUpdate();
         }
@@ -79,7 +81,7 @@ public class AgilePlayerController : MonoBehaviour
         if (_isBeingPulled) return;
         _isBeingThrown = true;
         _agileBehaviour.PendingThrowDirection = throwDir; //le paso la direccion al behaviour de rex
-        _agileStateMachine.TransitionTo(_agileStateMachine.thrownState, true);
+        StateMachine.TransitionTo(StateMachine.thrownState, true);
          //el true para forzar la transicion por mas que rex no este activa su maquina de estados.
 
        // Debug.Log("Throw direction set to: " + _agileBehaviour.PendingThrowDirection);
@@ -89,7 +91,7 @@ public class AgilePlayerController : MonoBehaviour
         if (_isBeingThrown) return; // si esta siendo lanzado no puede ser atraido
         _isBeingPulled = true;
         _agileBehaviour.PendingPulledDirection = pullDirection;
-        _agileStateMachine.TransitionTo(_agileStateMachine.pulledState, true);
+        StateMachine.TransitionTo(StateMachine.pulledState, true);
         //Debug.Log("Pull direction set to: " + _agileBehaviour.PendingPulledDirection);
     }
     
@@ -97,15 +99,15 @@ public class AgilePlayerController : MonoBehaviour
     {
         // llamado desde AgileThrownState 
         _isBeingThrown = false;
-       // Debug.Log("Finished being thrown.");
-        _agileStateMachine.TransitionTo(_agileStateMachine.idleState,true);
+        // Debug.Log("Finished being thrown.");
+        StateMachine.TransitionTo(StateMachine.idleState,true);
     }
     public void FinishPull()
     {
         // llamado desde AgilePulledState 
         _isBeingPulled = false;
-      //  Debug.Log("Finished being pulled.");
-        _agileStateMachine.TransitionTo(_agileStateMachine.idleState, true);
+        //  Debug.Log("Finished being pulled.");
+        StateMachine.TransitionTo(StateMachine.idleState, true);
     }
 }
 

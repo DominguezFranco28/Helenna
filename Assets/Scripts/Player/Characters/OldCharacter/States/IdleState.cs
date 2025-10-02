@@ -14,6 +14,7 @@ public class IdleState :  IState
 
     private void OnSpecialAction()
     {
+        if(!_oldPlayerBehaviour.IsInControll) return; 
         //_oldPlayerBehaviour.SwitchArmType(false);
         _oldPlayerBehaviour.SetMovementEnabled(false); //deshabilito el movimiento al tirar el brazo
         _oldPlayerBehaviour.StopMovement(); //freno el movimiento al tirar el brazo
@@ -22,6 +23,7 @@ public class IdleState :  IState
     }
     private void OnMove(Vector2 movement)
     {
+        if (!_oldPlayerBehaviour.IsInControll) return;
         if (movement.magnitude > 0.01f)
         {
             _oldStateMachine.TransitionTo(_oldStateMachine.moveState);
@@ -69,6 +71,7 @@ public class IdleState :  IState
 
     private void InteractPressed()
     {
+        if (!_oldPlayerBehaviour.IsInControll) return;
         interacting = true;
         if (_triggerDetector.CanActivate && interacting)
         {
