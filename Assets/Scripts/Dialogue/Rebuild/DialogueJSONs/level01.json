@@ -118,7 +118,7 @@
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 20,
-      "text": "Supongo que vas a venir aunque te diga que no, ¿no? Bien… podés serme útil, pero procurá no estorbar, nena."
+      "text": "Vas a venir aunque te diga que no, ¿verdad? Bien… podés serme útil, pero procurá no estorbar, nena."
     },
     {
       "scene": "game-intro",
@@ -228,7 +228,7 @@
       "scene": "P3A",
       "speaker": "Harold",
       "lineId": 11,
-      "text": "Creo haberte dicho que no me interesaba."
+      "text": "Hmph..."
     },
     {
       "scene": "P3A",
