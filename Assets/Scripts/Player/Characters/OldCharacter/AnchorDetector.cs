@@ -29,6 +29,9 @@ public class AnchorDetector : MonoBehaviour
     }
     private void Update()
     {
+        if (!_oldPlayerBehaviour.IsInControll)
+            SetAnchorUI(false); //si no estoy en control apago todo
+
         Transform detectedAnchor = DetectClosestAnchor();
 
         // reaccion solo al cambio de anclaje para no est aupdateando siempre la localizaicon

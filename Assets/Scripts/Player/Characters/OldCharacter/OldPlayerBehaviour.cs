@@ -17,7 +17,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
 
     private bool _isInControll;
     private bool _isRecoiling = false;
-    private bool _unlockThrow = false; //DESBLOQUEO DE HABILIDAD DE LANZAR
+    private bool _unlockThrow = true; //DESBLOQUEO DE HABILIDAD DE LANZAR
     private bool _armReleased = false; //para saber si el brazo fue liberado, para no repetir la animacion de recoil con el throw
     private bool _armPulled = false; //para saber si el brazo fue liberado, para no repetir la animacion de recoil con el throw
     private bool _isOnHighGround;
