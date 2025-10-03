@@ -12,7 +12,7 @@ public class ElevationSetter : MonoBehaviour
     {
         if (canTrigger)
         {
-            if (collision.tag.ToLower().Contains("childplayer"))
+            if (collision.tag.ToLower().Contains("player"))
             {
                 CharacterVerticalCollider character = collision.gameObject.GetComponent<CharacterVerticalCollider>();
                 if (character)
@@ -21,16 +21,6 @@ public class ElevationSetter : MonoBehaviour
                     character.toggle = true;
                 }
             }
-            if ( collision.tag.ToLower().Contains("dogplayer"))
-            {
-                CharacterVerticalCollider character = collision.gameObject.GetComponent<CharacterVerticalCollider>();
-                if (character)
-                {
-                    OnTriggered?.Invoke(this);
-                    character.toggle = true;
-                }
-            }
-
         }
 
 

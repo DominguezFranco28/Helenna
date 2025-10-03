@@ -55,7 +55,7 @@ public class PuzzleManagerLevel01 : MonoBehaviour
         
         if (endScreen)
         {
-            endScreen.text = "Nivel 1 Terminado - Fin de Demo";
+            endScreen.text = "Nivel 1 Terminado";
             endScreen.gameObject.SetActive(true);
             
             yield return new WaitForSeconds(5f);
