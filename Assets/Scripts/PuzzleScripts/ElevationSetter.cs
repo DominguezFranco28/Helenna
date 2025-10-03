@@ -42,6 +42,7 @@ public class ElevationSetter : MonoBehaviour
     {
         canTrigger = false;
     }
+
     public void EnableETrigger()
     {
         canTrigger = true;

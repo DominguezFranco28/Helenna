@@ -68,43 +68,63 @@ public class AnchorDetector : MonoBehaviour
             _cameraFollow.Follow = state ? _closestAnchor : null; //operador ternario (?), si state es true sigue al anchor, si no no sigue a nada
         }
     }
-    public Transform DetectClosestAnchor() //metodo para detectar los puntos de anclaje cercano, retorna el transform del punto de anclaje mas cercano
-    {
-        Vector2 direction = _oldPlayerBehaviour.LastMovementInput;
-        // Si no hay input, usamos la última dirección válida
-        if (direction.magnitude < 0.01f)
-        {
-            direction = _defaultAnchorDirection;
-        }
-        else
-        {
-            // actualizamos la dirección por defecto solo cuando hay input
-            _defaultAnchorDirection = direction.normalized;
-        }
-        // tamano de caja y angulo
-        Vector2 size = new Vector2(_lockOnDistance, _boxWidth);
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
+    private void GetBoxCastParams(out Vector2 origin, out Vector2 size, out float angle, out Vector2 direction)
+    {
+        // Get current input direction
+        Vector2 dir = _oldPlayerBehaviour.LastMovementInput;
+        if (dir.sqrMagnitude < 0.001f)
+            dir = _defaultAnchorDirection;
+        else
+            _defaultAnchorDirection = dir;
+        origin = transform.position;
+        size = new Vector2(_lockOnDistance, _boxWidth);
+        angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        direction = dir;
+    }
+
+    public Transform DetectClosestAnchor()
+    {
+        if (_oldPlayerBehaviour == null)
+            return null;
+
+        GetBoxCastParams(out Vector2 origin, out Vector2 size, out float angle, out Vector2 direction);
+
+        // Perform BoxCast
         RaycastHit2D hit = Physics2D.BoxCast(
-            transform.position,  // centro
-            size,                // tamaño
-            angle,               // rotacion
-            direction,           // direccion
-            _lockOnDistance,     // distancia
-            _anchorLayer         // capa de anclajes que quiero detectar
+            origin,
+            size,
+            angle,
+            direction,
+            _lockOnDistance,
+            _anchorLayer
         );
 
-        if (hit.collider != null) //si toca con un anclaje, devuelvo su transform
-        {
-            return hit.transform;
-        }
-
-        return null;
+        return hit.collider ? hit.transform : null;
     }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (_oldPlayerBehaviour == null)
+            return;
+
+        GetBoxCastParams(out Vector2 origin, out Vector2 size, out float angle, out Vector2 direction);
+        Vector3 castCenter = origin + (direction * _lockOnDistance * 0.5f);
+        Matrix4x4 rotationMatrix = Matrix4x4.TRS(castCenter, Quaternion.Euler(0, 0, angle), Vector3.one);
+        Gizmos.matrix = rotationMatrix;
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireCube(Vector3.zero, size);
+        Gizmos.matrix = Matrix4x4.identity;
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawLine(origin, origin + direction * _lockOnDistance);
+    }
+
+
     public void LockOnToAnchor(Transform anchor) //enfoca al punto de anclaje retornado
     {
-        if (anchor == null) return;   
-       // if (!_oldPlayerBehaviour.UnlockZipline) return; //si no tengo desbloqueada la habilidad de anclaje no hago nada
+        if (anchor == null) return;
+        // if (!_oldPlayerBehaviour.UnlockZipline) return; //si no tengo desbloqueada la habilidad de anclaje no hago nada
 
         switch (anchor.tag) //establezco el tipo de anclaje segun el tag del objeto
         //        Debug.Log("Locking on to anchor: " + anchor.name);
@@ -127,26 +147,5 @@ public class AnchorDetector : MonoBehaviour
 
         //AGREGAR bien la REF A UI para los pop ups
 
-    }
-    void OnDrawGizmosSelected()
-    {
-        //todo ia papa este gizmo
-        if (_oldPlayerBehaviour == null) return;
-
-       // if (_oldPlayerBehaviour.LastMovementInput == Vector2.zero) return;
-
-        Vector2 direction = _oldPlayerBehaviour.LastMovementInput;
-        Vector2 size = new Vector2(_lockOnDistance, _boxWidth);
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        Vector2 castCenter = (Vector2)transform.position + direction * (_lockOnDistance * 0.5f);
-
-        Gizmos.color = Color.cyan;
-        Matrix4x4 rotationMatrix = Matrix4x4.TRS(castCenter, Quaternion.Euler(0, 0, angle), Vector3.one);
-        Gizmos.matrix = rotationMatrix;
-
-        Gizmos.DrawWireCube(Vector3.zero, size);
-
-        Gizmos.matrix = Matrix4x4.identity;
     }
 }
