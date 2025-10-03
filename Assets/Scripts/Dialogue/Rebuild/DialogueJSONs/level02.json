@@ -1,17 +1,382 @@
 {
   "lines": [
     {
-      "scene": "P2A",
+      "scene": "Level-intro",
       "speaker": "Harold",
       "lineId": 1,
-      "text": "Esta placa ya está muy oxidada, vamos a necesitar un peso extra aparte del nuestro para activarla."
+      "text": "Ahhhg, se olvidaron de dejarlo levantado.",
+      "emotionToken": "harold-annoyed"
     },
-     {
-      "scene": "level-tip",
+    {
+      "scene": "Level-intro",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "¿Otro de tus mecanismos de seguridad?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "No exactamente. Al instalarnos en la zona empezamos a armar rutas de fácil acceso a la estación, para no tener que dar todo el rodeo.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "Pero al poco tiempo nos dimos cuenta de que este canal lo usaban algunos pescadores de la zona, así que, para no generarles quilombo, Helenna inventó un mecanismo de acceso público para que ellos pudieran abrirse paso si nosotros ya habíamos levantado el puente.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Nina",
+      "lineId": 5,
+      "text": "Qué considerado de tu parte, ¿no?",
+      "emotionToken": "nina-mocking"
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 6,
+      "text": "No salió de mí la idea.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Nina",
+      "lineId": 7,
+      "text": "No, claro que no…",
+      "emotionToken": "nina-mocking"
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 8,
+      "text": "Vamos a levantarlo. El interruptor está en esa vieja garita de pescadores.",
+      "emotionToken": "harold-demand"
+    },
+    {
+      "scene": "Bridge-trigger",
+      "speaker": "Harold",
+      "lineId": 9,
+      "text": "…",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Bridge-trigger",
+      "speaker": "Nina",
+      "lineId": 10,
+      "text": "¿Y si cruzamos nadando? Me vendría bien limpiarme un poco la mugre de la escalada.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Bridge-trigger",
+      "speaker": "Harold",
+      "lineId": 11,
+      "text": "No pienso tirarme al río.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "Bridge-trigger",
+      "speaker": "Nina",
+      "lineId": 12,
+      "text": "No, obvio… no sea cosa que se te vaya a limpiar la amargura.",
+      "emotionToken": "nina-mocking"
+    },
+    {
+      "scene": "Bridge-trigger",
+      "speaker": "Harold",
+      "lineId": 13,
+      "text": "Muy graciosa.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "Block-way",
       "speaker": "Harold",
       "lineId": 1,
-      "text": "Necesitamos prender las 3 maquinas para desactivar la cerradura."
+      "text": "Dios… mirá cómo tienen su garita, toda…",
+      "emotionToken": "harold-doubt"
+    },
+    {
+      "scene": "Block-way",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "¿Abandonada, no?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Block-way",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "Sí… no recordaba que estuviera tan destruida, la verdad. ¿Cómo harán para seguir entrando?",
+      "emotionToken": "harold-doubt"
+    },
+    {
+      "scene": "Block-way",
+      "speaker": "Nina",
+      "lineId": 4,
+      "text": "¿Cómo haremos nosotros para entrar?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Blocked-door",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Cómo no… la puerta principal está cerrada.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "Blocked-door",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "Y vos no vas a tener una llave para abrirla, ¿verdad?",
+      "emotionToken": "nina-mocking"
+    },
+    {
+      "scene": "Blocked-door",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "El mecanismo es parecido a la compuerta de mi patio, pero este funciona con temporizador.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Blocked-door",
+      "speaker": "Nina",
+      "lineId": 4,
+      "text": "¿O sea?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Blocked-door",
+      "speaker": "Harold",
+      "lineId": 5,
+      "text": "Tenemos que mantener la corriente activa en simultáneo, y atravesar la puerta rápido.",
+      "emotionToken": "harold-demand"
+    },
+    {
+      "scene": "Blocked-door",
+      "speaker": "Nina",
+      "lineId": 6,
+      "text": "De verdad… ¿por qué se complican así la vida vos y tu mujer?",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "Blocked-door",
+      "speaker": "Harold",
+      "lineId": 7,
+      "text": "Admito que se vuelve tedioso, pero ella lo disfruta. A los pescadores también les resultaba entretenido abrirse camino así… lo tomaban como un juego entre ellos.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Pressure-plate",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "Esperá… ¿entiendo que desde acá también se manda la corriente, correcto?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Pressure-plate",
+      "speaker": "Harold",
+      "lineId": 2,
+      "text": "Sí.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Pressure-plate",
+      "speaker": "Nina",
+      "lineId": 3,
+      "text": "¿Y tiene que enviarse en simultáneo?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Pressure-plate",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "Exactamente.",
+      "emotionToken": "harold-demand"
+    },
+    {
+      "scene": "Pressure-plate",
+      "speaker": "Nina",
+      "lineId": 5,
+      "text": "Entonces… ¿cómo hacemos para pasar los tres si tenemos que mantener la corriente en simultáneo? ¿Esta placa no requería de todo nuestro peso?",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "Pressure-plate",
+      "speaker": "Harold",
+      "lineId": 6,
+      "text": "Ya te lo dije, mocosa… el perro es de gran utilidad.",
+      "emotionToken": "harold-mocking"
+    },
+    {
+      "scene": "Pressure-plate",
+      "speaker": "Nina",
+      "lineId": 7,
+      "text": "¿?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Pressure-plate",
+      "speaker": "Rex",
+      "lineId": 8,
+      "text": "¡Guau!",
+      "emotionToken": "rex-barking"
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "¡Pero cómo vas a revolear así al perrito lunático!",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Harold",
+      "lineId": 2,
+      "text": "Rex.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Rex",
+      "lineId": 3,
+      "text": "¡Guau guau!",
+      "emotionToken": "rex-barking"
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "Impecable.",
+      "emotionToken": "harold-demand"
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Nina",
+      "lineId": 5,
+      "text": "Pe… ¿pero y si se lastimó o algo?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Harold",
+      "lineId": 6,
+      "text": "¿No viste sus patas? Al igual que mi brazo, Rex está modificado. Puede soportar mucho más peso que un perro normal.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Nina",
+      "lineId": 7,
+      "text": "O sea… ¿modificaron a su perro para poder jugar tranquilos en su laberíntica fortaleza? Bastante normal, sí.",
+      "emotionToken": "nina-mocking"
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Harold",
+      "lineId": 8,
+      "text": "Claro que n—bah, ni sé por qué me molesto. Dale, sigamos.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Veo que también se cayó este puente flotante… genial.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "¿Tenemos plan B?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "Dejame pensar…",
+      "emotionToken": "harold-doubt"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Nina",
+      "lineId": 4,
+      "text": "Hmm… ¿qué tanto peso soporta tu brazo?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Harold",
+      "lineId": 5,
+      "text": "Bastante. ¿Por qué?",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Nina",
+      "lineId": 6,
+      "text": "Tengo una idea. Intentá sujetar el anclaje que está en la otra colina, mantené el brazo así mientras yo cruzo.",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Harold",
+      "lineId": 7,
+      "text": "Estás loca.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Nina",
+      "lineId": 8,
+      "text": "¡En serio! Podría funcionar.",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Harold",
+      "lineId": 9,
+      "text": "Mirá… no es que me caigas especialmente bien, pero tampoco me entusiasma la idea de verte estampada contra el piso, mocosa.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Nina",
+      "lineId": 10,
+      "text": "Hombre de poca fe… haceme caso. ¿No estábamos apurados por encontrar a Helenna?",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Harold",
+      "lineId": 11,
+      "text": "…",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Rex",
+      "lineId": 12,
+      "text": "¡Guau guau!",
+      "emotionToken": "rex-barking"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Harold",
+      "lineId": 13,
+      "text": "Bueno, bueno… lo haré. Procurá agarrarte bien, ¿sí? No quiero tener que lidiar con tus viejos.",
+      "emotionToken": "harold-demand"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Nina",
+      "lineId": 14,
+      "text": "Mi papá no podría… agh, nada. Hagámoslo.",
+      "emotionToken": "nina-doubt"
     }
   ]
- 
 }

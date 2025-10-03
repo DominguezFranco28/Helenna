@@ -66,7 +66,8 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public void SetMovementInput(Vector2 input)
     {
         if (!IsInControll || !_canMove) return;
-
+        
+        _movementInput = new Vector2();
         _movementInput = input;
 
         if (_movementInput.magnitude > 0.01f)

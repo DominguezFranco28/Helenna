@@ -165,4 +165,10 @@ public class PuzzleManagerLevel02 : MonoBehaviour
             TransitionManager.Instance.ChangeLevel();
         }
     }
+
+    private void Start()
+    {
+        if (playCinematic)
+            playCinematic.Play();
+    }
 }
