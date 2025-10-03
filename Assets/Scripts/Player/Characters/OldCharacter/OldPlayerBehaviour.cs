@@ -17,11 +17,12 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
 
     private bool _isInControll;
     private bool _isRecoiling = false;
-    private bool _unlockThrow = true; //DESBLOQUEO DE HABILIDAD DE LANZAR
     private bool _armReleased = false; //para saber si el brazo fue liberado, para no repetir la animacion de recoil con el throw
     private bool _armPulled = false; //para saber si el brazo fue liberado, para no repetir la animacion de recoil con el throw
     private bool _isOnHighGround;
-
+    private bool _unlockZipline = false; //DESBLOQUEO DE HABILIDAD DE USAR TIROLESA
+    private bool _unlockThrow = true; //DESBLOQUEO DE HABILIDAD DE LANZAR
+    public bool UnlockZipline { get { return _unlockZipline; } set { _unlockZipline = value; } }
     public bool UnlockThrow{ get { return _unlockThrow; } set { _unlockThrow = value; } }
     public bool IsInControll{ get { return _isInControll; } } 
     public bool CanMove{ get { return _canMove; } } 
@@ -85,8 +86,8 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         }
         _movementInput = Vector2.zero;
         _rb2D.velocity = Vector2.zero;
-        _animator.SetFloat("Horizontal", 0f);
-        _animator.SetFloat("Vertical", 0f);
+        _animator.SetFloat("Horizontal", LastMovementInput.x);
+        _animator.SetFloat("Vertical", LastMovementInput.y);
         _animator.SetFloat("Speed", 0f);
     }
     public void SwitchArmType(bool type)

@@ -283595,6 +283595,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.5638943
       objectReference: {fileID: 0}
+    - target: {fileID: 2876425493308498721, guid: df007d906c9a2274db559b55d823517e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2960037410684160703, guid: df007d906c9a2274db559b55d823517e, type: 3}
       propertyPath: sceneToTrigger
       value: P3A
@@ -288064,6 +288068,14 @@ PrefabInstance:
     - target: {fileID: 5735983835319776521, guid: b075a72c29b867f4cb1caf460d740da0, type: 3}
       propertyPath: m_SortingOrder
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5859756563059810717, guid: b075a72c29b867f4cb1caf460d740da0, type: 3}
+      propertyPath: onlyStairs
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6580441838495411545, guid: b075a72c29b867f4cb1caf460d740da0, type: 3}
+      propertyPath: onlyStairs
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7408664164878291446, guid: b075a72c29b867f4cb1caf460d740da0, type: 3}
       propertyPath: m_Name

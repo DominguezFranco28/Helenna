@@ -104,6 +104,7 @@ public class AnchorDetector : MonoBehaviour
     public void LockOnToAnchor(Transform anchor) //enfoca al punto de anclaje retornado
     {
         if (anchor == null) return;   
+       // if (!_oldPlayerBehaviour.UnlockZipline) return; //si no tengo desbloqueada la habilidad de anclaje no hago nada
 
         switch (anchor.tag) //establezco el tipo de anclaje segun el tag del objeto
         //        Debug.Log("Locking on to anchor: " + anchor.name);

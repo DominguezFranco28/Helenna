@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class ElevationSetter : MonoBehaviour
 {
-
+    public bool onlyStairs = false;
     public bool canTrigger = true;
     public event System.Action<ElevationSetter> OnTriggered;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (canTrigger)
+        if (canTrigger && !onlyStairs)
         {
             if (collision.tag.ToLower().Contains("player"))
+            {
+                CharacterVerticalCollider character = collision.gameObject.GetComponent<CharacterVerticalCollider>();
+                if (character)
+                {
+                    OnTriggered?.Invoke(this);
+                    character.toggle = true;
+                }
+            }
+        }
+        else if (canTrigger && onlyStairs)
+        {
+            if (collision.tag.ToLower().Contains("child"))
             {
                 CharacterVerticalCollider character = collision.gameObject.GetComponent<CharacterVerticalCollider>();
                 if (character)

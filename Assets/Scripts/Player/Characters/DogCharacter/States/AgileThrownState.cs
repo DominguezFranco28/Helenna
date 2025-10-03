@@ -13,8 +13,8 @@ public class AgileThrownState : IState, IFixedUpdate
   private Vector2 _direction;
     private bool _throwCompleted = false;
 
-    public float throwSpeed = 20f;
-    public float maxThrowDistance = 6f;
+    public float throwSpeed = 30f;
+    public float maxThrowDistance = 10f;
 
     //HAROLD TIENE UNO EN SU THROW TAMB
     private float _throwDelay = 1f;

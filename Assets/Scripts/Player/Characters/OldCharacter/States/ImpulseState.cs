@@ -30,6 +30,16 @@ public class ImpulseState : IState
             switch (_anchorDetector.CurrentAnchor)
             {
                 case AnchorType.Zypline:
+                    if (!_oldPlayerBehaviour.UnlockZipline) //si no tengo desbloqueada la habilidad de anclaje no hago nada
+                    {
+                        //Si no es un punto de anclaje, que interactue como disparo normal del brazo 
+                        _oldPlayerBehaviour.Animator.SetTrigger("ReleaseArm");
+                        _oldPlayerBehaviour.ArmRelease = true;
+                        ImpulseType currentType = _oldPlayerBehaviour.GetCurrentArmType(); //paso por parametro el tipo de impulso que quiero obtenido desde la consulta en el player behaviour
+                        _oldPlayerBehaviour.PerformThrowArm(currentType);
+                        Debug.Log(currentType + lastInput.ToString());
+                        return;
+                    }
                     Debug.Log("Cambio a zypline ");
                    
                     _oldStateMachine.TransitionTo(_oldStateMachine.ziplineState);

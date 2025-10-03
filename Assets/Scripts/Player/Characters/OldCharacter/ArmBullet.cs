@@ -71,7 +71,7 @@ public class ArmBullet : MonoBehaviour
     {
         yield return new WaitForSeconds(_lifeTime);
         // Pull: inicia retracción visual, no destruye todavia 
-        StartRetract(_oldPlayerBehaviour.transform.position);
+        StartRetract();
         if (!_isRetracting)
             Destroy(gameObject);
     }
@@ -160,7 +160,7 @@ public class ArmBullet : MonoBehaviour
             {           
                 HandleDogPull(parentTransform);
             }
-            StartRetract(_oldPlayerBehaviour.transform.position); // bullet VUELVE  a harold
+            StartRetract(); // bullet VUELVE  a harold
         }
     }
     private void HandlePushableCollision(Collision2D collision, bool isPush)
@@ -182,7 +182,7 @@ public class ArmBullet : MonoBehaviour
 
         collisionMove.MoveTo(pushTarget);
 
-        StartRetract(_oldPlayerBehaviour.transform.position);
+        StartRetract();
     }
     private void HandleDogPull(Transform dogTransform)
     {
@@ -192,15 +192,18 @@ public class ArmBullet : MonoBehaviour
             AgileTriggerDetector triggerDetector = dogTransform.GetComponentInChildren<AgileTriggerDetector>();
         if (rb != null)
             {
-                controller.PullDirection(_oldPlayerBehaviour.transform.position); //la direccion de atraccion es hacia harold
+                controller.PullDirection(_startPoint.position); //la direccion de atraccion es hacia harold
             }
         //ojo aca, el bullet me devuelve rapido el control de harold y se me bugea un poco la pos pasada a rex
     }
-    private void StartRetract(Vector2 target)
+    private void StartRetract()
     {
-        _retractTarget = target;
-        _isRetracting = true;
-        _rb.velocity = Vector2.zero;
-        _rb.isKinematic = true; //Detener física para que no se atasque
+        if (_startPoint != null)
+        {
+            _retractTarget = _startPoint.position; // siempre hacia el origen
+            _isRetracting = true;
+            _rb.velocity = Vector2.zero;
+            _rb.isKinematic = true;
+        }
     }
 }

@@ -26,6 +26,7 @@ public class ArmImpulser : MonoBehaviour
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private AudioClip _dashSFX;
     [SerializeField] private AudioClip _throwSFX;
+    private Vector3 _armShootOffset;
     private ArmImpulser _impulser;
     private GameObject _currentArmBullet;
     private ImpulseType _curretType;
@@ -86,13 +87,54 @@ public class ArmImpulser : MonoBehaviour
             }
         }
     }
+    private void LateUpdate()
+    {
+        UpdateArmOrigin();
+    }
+    private void UpdateArmOrigin()
+    {
+        Vector2 direction = _movementBehaviour.LastMovementInput;
 
+        if (direction == Vector2.zero)
+            return;
 
-/*    private IEnumerator ApplyRecoil(Vector2 anchorPosition, ImpulseType type)*/ //pasar a maquina de estados
-    //{
-        //refactorizacion para que use sistemas de fisica (controla el fixed updte del behavour) para evitar bugs
-    //    if (type != ImpulseType.Pull)
-    //        yield break;
+        // offset base (posición del hombro respecto al centro del personaje)
+        _armShootOffset = new Vector3(0.62f, -0.03f, 0f); //medido
+        float angle = 0f;
+
+        if (direction.x > 0) // derecha
+        {
+            _armShootOffset += new Vector3(-0.05f, 0.05f, 0f);
+            angle = 0f;
+        }
+        else if (direction.x < 0) // izquierda
+        {
+            // offset = new Vector3(-offset.x, offset.y, offset.z); // espejo horizontal
+            _armShootOffset += new Vector3(-0.45f, -0.23f, 0f);
+            angle = 0f;
+        }
+        else if (direction.y > 0) // arriba
+        {
+            // fijo al brazo izquierdo
+            _armShootOffset = new Vector3(-0.62f, 0.25f, 0f); // X negativo = brazo izquierdo, Y ajustado arriba
+            angle = 90f;
+        }
+        else if (direction.y < 0) // abajo
+        {
+            _armShootOffset += new Vector3(0.05f, -0.22f, 0f);
+            angle = -90f;
+        }
+
+        // aplicar pos y rot
+        _spawnPoint.position = transform.position + _armShootOffset;
+        _spawnPoint.rotation = Quaternion.Euler(0f, 0f, angle);
+    }
+
+    /*    private IEnumerator ApplyRecoil(Vector2 anchorPosition, ImpulseType type)*/ //pasar a maquina de estados
+                                                                                      //{
+                                                                                      //refactorizacion para que use sistemas de fisica (controla el fixed updte del behavour) para evitar bugs
+                                                                                      //    if (type != ImpulseType.Pull)
+                                                                                      //        yield break;
 
     //    SFXManager.Instance.PlaySFX(_dashSFX);
     //    _movementBehaviour.IsRecoiling = true;
@@ -157,18 +199,18 @@ public class ArmImpulser : MonoBehaviour
         SFXManager.Instance.PlaySFX(_throwSFX);
 
         // ajuste de spawnpoint en base a la direccion 
-        Vector3 spawnOffset = Vector3.zero;
+        //Vector3 spawnOffset = Vector3.zero;
 
-        if (direction.x > 0) // mirando derecha
-            spawnOffset = new Vector3(0.5f, 0f, 0f);
-        else if (direction.x < 0) // mirando izquierda
-            spawnOffset = new Vector3(0f, -0.3f, 0f);
-        else if (direction.y > 0) // mirando arriba
-            spawnOffset = new Vector3(-0.3f, 0.2f, 0f);
-        else if (direction.y < 0) // mirando abajo
-            spawnOffset = new Vector3(0.3f, -0.2f, 0f);
+        //if (direction.x > 0) // mirando derecha
+        //    spawnOffset = new Vector3(0.5f, 0f, 0f);
+        //else if (direction.x < 0) // mirando izquierda
+        //    spawnOffset = new Vector3(0f, -0.3f, 0f);
+        //else if (direction.y > 0) // mirando arriba
+        //    spawnOffset = new Vector3(-0.3f, 0.2f, 0f);
+        //else if (direction.y < 0) // mirando abajo
+        //    spawnOffset = new Vector3(0.3f, -0.2f, 0f);
 
-        Vector3 finalSpawnPos = transform.position + spawnOffset;
+        Vector3 finalSpawnPos = transform.position + _armShootOffset;
 
    
         Quaternion rotation = Quaternion.Euler(0f, 0f, 0f);
