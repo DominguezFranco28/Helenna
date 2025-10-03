@@ -61,7 +61,7 @@ public class CharacterManager : MonoBehaviour
 
             IState current = stateHolder.CurrentState;
             string stateName = current.GetType().Name; //tuve que ponerle esto porque soy un navo e hice 3 idlestate con nombres dif en vez de una parametrizado fede si lees esto perdon :C
-            if (!stateName.Contains("IdleState") && !stateName.Contains("MoveState"))
+            if ( !stateName.Contains("IdleState") && !stateName.Contains("MoveState") && !stateName.Contains("Zipline"))
             {
                 Debug.Log("Cannot change character unless all characters are in Idle or Move state. Current character: " + character.name + " is in state: " + current.GetType().Name);
                 return; // bloquea cambio de personaje si no estan en idle o Move
