@@ -10,63 +10,159 @@ public class PuzzleManagerLevel02 : MonoBehaviour
 
     [Header("Puzzle 1")]
     public PressurePlate pressurePlateBig;
+    public PressurePlate pressurePlateMedium;
+    public List<CircuitLight> secondaryDoorLights = new List<CircuitLight>();
+    public CircuitLight mediumLight;
+    private int padsPressed = 0;
+
     public PressurePlate pressurePlateSmall;
     public Door doorBig;
+    private bool doorIsClosing = false;
     public Door doorSmall;
     public ActionLever lever;
-    public List<CircuitLight> lights = new List<CircuitLight>();
+
+    public List<CircuitLight> puzzleLights = new List<CircuitLight>();
+    public List<CircuitLight> doorLights = new List<CircuitLight>();
+
     public bool puzzleDoneP1 = false;
     public Bridge bridge;
-    
+
+    public float doorCloseTime = 0.3f;
+
     [Header("Cinematica")]
     public PlayCinematic playCinematic;
 
-    private void CheckAllDone()
+    private void OnEnable()
+    {
+        lever.OnLeverActioned += LeverActioned;
+
+        pressurePlateBig.OnPadPressed += PadPressed;
+        pressurePlateBig.OnPadReleased += PadReleased;
+
+        pressurePlateMedium.OnPadPressed += PadPressed;
+        pressurePlateMedium.OnPadReleased += PadReleased;
+
+        pressurePlateSmall.OnPadPressed += SmallPad;
+    }
+    private void OnDisable()
+    {
+        lever.OnLeverActioned -= LeverActioned;
+
+        pressurePlateBig.OnPadPressed -= PadPressed;
+        pressurePlateBig.OnPadReleased -= PadReleased;
+
+        pressurePlateMedium.OnPadPressed -= PadPressed;
+        pressurePlateMedium.OnPadReleased -= PadReleased;
+
+        pressurePlateSmall.OnPadPressed -= SmallPad;
+    }
+
+
+    private void PadPressed(int manualID)
+    {
+        if (!puzzleDoneP1)
+        {
+            foreach (CircuitLight light in secondaryDoorLights)
+            {
+                if(light.manualID == manualID)
+                    light.TurnOn();
+            }   
+
+            padsPressed += 1;
+            if (padsPressed > 2 || padsPressed < 0) padsPressed = 0;
+
+            if(padsPressed == 2)
+            {
+                if (!doorIsClosing)
+                {
+                    doorBig.DoorOpen();
+                    foreach (CircuitLight light in doorLights)
+                        light.TurnOn();
+                }
+                    
+            }
+
+        }
+        
+    }
+
+    private void PadReleased(int manualID)
+    {
+        if (!puzzleDoneP1)
+        {
+            foreach (CircuitLight light in secondaryDoorLights)
+            {
+                if (light.manualID == manualID)
+                    light.TurnOff();
+            }
+
+            padsPressed -= 1;
+            if (padsPressed > 2 || padsPressed < 0) padsPressed = 0;
+
+            if (padsPressed < 2)
+            {
+                if (!doorIsClosing)
+                {
+                    doorIsClosing = true;
+                    StartCoroutine(CloseDoorTimed());
+                }
+            }
+            
+            
+        }
+
+    }
+    private IEnumerator CloseDoorTimed()
+    {
+        foreach (CircuitLight light in doorLights)
+        {
+            yield return new WaitForSeconds(doorCloseTime/ doorLights.Count);
+            light.TurnOff();
+        }
+        doorBig.DoorClose();
+        doorIsClosing = false;
+    }
+
+    private void SmallPad(int manualID)
+    {
+        if (!puzzleDoneP1)
+            doorSmall.DoorOpen();
+    }
+
+    private void LeverActioned(int manualID)
+    {
+        lever.canActivate = false;
+
+        foreach (CircuitLight light in puzzleLights)
+            light.TurnOn();
+
+        puzzleDoneP1 = true;
+        StartCoroutine(OpenBridge());
+    }
+
+    private IEnumerator OpenBridge()
     {
         if (playCinematic)
             playCinematic.Play();
 
-        if (puzzleDoneP1)
-        {
-            StartCoroutine(Victory());
-        }
+        yield return new WaitForSeconds(0.01f);
+        bridge.BridgeOpen();
+
+        StartCoroutine(Victory());
     }
 
     private IEnumerator Victory()
     {
         Debug.Log("VICTORY");
         yield return new WaitForSeconds(1.5f);
-        
+
         if (endScreen)
         {
             endScreen.text = "Nivel 2 Terminado - Fin de Demo";
             endScreen.gameObject.SetActive(true);
-            
+
             yield return new WaitForSeconds(5f);
             TransitionManager.Instance.ChangeLevel();
         }
     }
-
-    private void OnEnable()
-    {
-        lever.OnLeverActioned += Puzzle01;
-        pressurePlateBig.OnPadPressed += Puzzle01;
-        pressurePlateBig.OnPadReleased += Puzzle01;
-        pressurePlateSmall.OnPadPressed += Puzzle01;
-        pressurePlateSmall.OnPadReleased += Puzzle01;
-    }
-
-
-    private void Puzzle01(int manualID)
-    {
-        if (!puzzleDoneP1)
-        {
-
-
-            puzzleDoneP1 = true;
-            CheckAllDone();
-        }
-        
-    }
-
 }

@@ -1,0 +1,17 @@
+{
+  "lines": [
+    {
+      "scene": "P2A",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Esta placa ya está muy oxidada, vamos a necesitar un peso extra aparte del nuestro para activarla."
+    },
+     {
+      "scene": "level-tip",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Necesitamos prender las 3 maquinas para desactivar la cerradura."
+    }
+  ]
+ 
+}

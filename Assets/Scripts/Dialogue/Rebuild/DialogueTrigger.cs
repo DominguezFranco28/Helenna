@@ -7,6 +7,7 @@ public class DialogueTrigger : MonoBehaviour
     private DialogueManager dialogueManager;
     private bool canBeTriggered = true;
     public string searchOnTag = "player";
+    public string excludeOnTag = "none";
     public string sceneToTrigger = "";
 
     private void Start()
@@ -20,7 +21,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (canBeTriggered)
         {
-            if (collision.tag.ToLower().Contains(searchOnTag))
+            if (collision.tag.ToLower().Contains(searchOnTag) && !collision.tag.ToLower().Contains(excludeOnTag))
             {
                 canBeTriggered = false;
                 dialogueManager.StartScene(sceneToTrigger);

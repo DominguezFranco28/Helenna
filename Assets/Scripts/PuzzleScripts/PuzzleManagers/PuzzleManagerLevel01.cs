@@ -89,6 +89,32 @@ public class PuzzleManagerLevel01 : MonoBehaviour
         leverP3.OnLeverActioned += P3Lever;
         pressurePlateP3.OnPadPressed += P3Pad;
     }
+    private void OnDisable()
+    {
+        foreach (ActionLever lever in leversP1)
+        {
+            lever.OnLeverActioned -= Puzzle01;
+        }
+
+        foreach (PressurePlate plate in pressurePlatesP2_A)
+        {
+            plate.OnPadPressed -= PadPressedGroupA;
+            plate.OnPadReleased -= PadPressedGroupA;
+        }
+        foreach (PressurePlate plate in pressurePlatesP2_B)
+        {
+            plate.OnPadPressed -= PadPressedGroupB;
+            plate.OnPadReleased -= PadPressedGroupB;
+        }
+        foreach (PressurePlate plate in pressurePlatesP2_C)
+        {
+            plate.OnPadPressed -= PadPressedGroupC;
+            plate.OnPadReleased -= PadPressedGroupC;
+        }
+
+        leverP3.OnLeverActioned -= P3Lever;
+        pressurePlateP3.OnPadPressed -= P3Pad;
+    }
 
 
     private void Puzzle01(int manualID)
