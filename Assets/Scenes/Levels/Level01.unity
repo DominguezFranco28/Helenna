@@ -17844,7 +17844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6611532685037830205, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
       propertyPath: disableAfterFirst
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7383796733464643918, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18218,7 +18218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6611532685037830205, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
       propertyPath: disableAfterFirst
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7383796733464643918, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
       propertyPath: m_LocalPosition.x
@@ -300314,6 +300314,130 @@ PrefabInstance:
       propertyPath: _loopSource
       value: 
       objectReference: {fileID: 2023396111}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.size
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 23ae1f7120307f54c844aa191a4e11f0, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6d823a1e627d7ec4b88bd618f84e7195, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 88d54295d26187149917794126720747, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[3].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 23ae1f7120307f54c844aa191a4e11f0, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 23ae1f7120307f54c844aa191a4e11f0, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 23ae1f7120307f54c844aa191a4e11f0, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: adccbb0b6d7e1a042991484a7ddc650a, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[7].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: acf56f5b1636fe64bbaeaf533545dcc0, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[8].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: acf56f5b1636fe64bbaeaf533545dcc0, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[9].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f63fe5c9cecde0b4eafe0c87812ed2c3, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[0].token
+      value: harold-annoyed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b4644274e13f0004d9dd507ac79725d2, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[11].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: c1500668d44bc41448110ded3a856087, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[12].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2063e381aed5dfe489be5ec9c1e6914b, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[13].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: c1500668d44bc41448110ded3a856087, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[14].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f63fe5c9cecde0b4eafe0c87812ed2c3, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[1].token
+      value: harold-doubt
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[2].token
+      value: harold-demand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[3].token
+      value: harold-mocking
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[4].token
+      value: harold-happy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[5].token
+      value: harold-sad
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[6].token
+      value: rex-barking
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[7].token
+      value: rex-growling
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[8].token
+      value: rex-whining
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[9].token
+      value: nina-annoyed
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[10].token
+      value: nina-doubt
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[11].token
+      value: nina-demand
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[12].token
+      value: nina-mocking
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[13].token
+      value: nina-happy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[14].token
+      value: nina-sad
+      objectReference: {fileID: 0}
     - target: {fileID: 8388024441617885730, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: m_Name
       value: SFXManager
@@ -301437,7 +301561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6611532685037830205, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
       propertyPath: disableAfterFirst
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7383796733464643918, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
       propertyPath: m_LocalPosition.x
@@ -304573,6 +304697,10 @@ PrefabInstance:
       propertyPath: talkSpeed
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 5140870897606305985, guid: c994801fb097bc14fbb8630bbf1e1cb6, type: 3}
+      propertyPath: typingSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: e4b5562ac05a5e3479bc21392f755f08, type: 3}
     - target: {fileID: 5140870897606305985, guid: c994801fb097bc14fbb8630bbf1e1cb6, type: 3}
       propertyPath: dialogueFile
       value: 

@@ -4,177 +4,204 @@
       "scene": "game-intro",
       "speaker": "Rex",
       "lineId": 1,
-      "text": "¡Guau, guau! ¡Grrrr!"
+      "text": "¡Guau, guau! ¡Grrrr!",
+      "emotionToken": "rex-barking"
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 2,
-      "text": "¡Bah! Rex, dejá de ladrar tanto. ¿Qué te pasa?"
+      "text": "¡Bah! Rex, dejá de ladrar tanto. ¿Qué te pasa?",
+      "emotionToken": ""
     },
     {
       "scene": "game-intro",
       "speaker": "Rex",
       "lineId": 3,
-      "text": "¡Grrrr! ¡Guau, guau!"
+      "text": "¡Grrrr! ¡Guau, guau!",
+      "emotionToken": "rex-barking"
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 4,
-      "text": "Momento… ¿Acaso…?"
+      "text": "Momento… ¿Acaso…?",
+      "emotionToken": "harold-doubt"
     },
     {
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 5,
-      "text": "Uf… bueno… creo que lo logré. Por que será que esa inventora vive tan escondida…"
+      "text": "Uf… bueno… creo que lo logré. Por que será que esa inventora vive tan escondida…",
+      "emotionToken": ""
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 6,
-      "text": "¡P-pero…! ¡Esto es… IMPOSIBLE! ¿¡Cómo atravesaste mi sistema de seguridad!?"
+      "text": "¡P-pero…! ¡Esto es… IMPOSIBLE! ¿¡Cómo atravesaste mi sistema de seguridad!?",
+      "emotionToken": "harold-annoyed"
     },
     {
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 7,
-      "text": "¿Seguridad? ¿Decis por ese laberinto que tenes armado del otro lado? Lo esquive trepando por este costado de la ladera, lo cual me costo lo suyo y... Da igual, calvito, ¿conocés a una tal Helenna? Necesito hablar con ella."
+      "text": "¿Seguridad? ¿Decis por ese laberinto que tenes armado del otro lado? Lo esquive trepando por este costado de la ladera, lo cual me costo lo suyo y... Da igual, calvito, ¿conocés a una tal Helenna? Necesito hablar con ella.",
+      "emotionToken": "nina-doubt"
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 8,
-      "text": "Volvé por donde viniste. No sé qué asuntos pueda tener una mocosa maleducada como vos con mi mujer, pero no me gustan las visitas."
+      "text": "Volvé por donde viniste. No sé qué asuntos pueda tener una mocosa maleducada como vos con mi mujer, pero no me gustan las visitas.",
+      "emotionToken": ""
     },
     {
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 9,
-      "text": "¿Tu mujer? Perfecto, entonces esta debe ser su casa. Dale, llamala que estoy apurada, necesito que me ayud-"
+      "text": "¿Tu mujer? Perfecto, entonces esta debe ser su casa. Dale, llamala que estoy apurada, necesito que me ayud-",
+      "emotionToken": ""
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 10,
-      "text": "¡Que te VAYAS, dije!"
+      "text": "¡Que te VAYAS, dije!",
+      "emotionToken": "harold-demand"
     },
     {
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 11,
-      "text": "Escuchame una cosa, viejo cascarrabias, me demoré media tarde en llegar a tu “fortaleza” —a la que llamás hogar—. Si tu mujer está acá, y es aunque sea un POQUITO más simpática que vos, llamala, así resuelvo mis asuntos y me voy de una vez."
+      "text": "Escuchame una cosa, viejo cascarrabias, me demoré media tarde en llegar a tu “fortaleza” —a la que llamás hogar—. Si tu mujer está acá, y es aunque sea un POQUITO más simpática que vos, llamala, así resuelvo mis asuntos y me voy de una vez.",
+      "emotionToken": "nina-demand"
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 12,
-      "text": "Ella…No está."
+      "text": "Ella…No está.",
+      "emotionToken": ""
     },
     {
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 13,
-      "text": "Mentiroso."
+      "text": "Mentiroso.",
+      "emotionToken": ""
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 14,
-      "text": "Te digo que no… No está… Ella…"
+      "text": "Te digo que no… No está… Ella…",
+      "emotionToken": ""
     },
     {
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 15,
-      "text": "¿…?"
+      "text": "¿…?",
+      "emotionToken": "nina-doubt"
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 16,
-      "text": "Ella...Aún no volvió del trabajo. Es raro...Ya debería haber llegado hace unas horas."
+      "text": "Ella...Aún no volvió del trabajo. Es raro...Ya debería haber llegado hace unas horas.",
+      "emotionToken": "harold-doubt"
     },
     {
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 17,
-      "text": "¿Tu mujer va al trabajo desde acá? ¡Con razón tarda! ¿Viste el laberinto que tenés armado en el fondo?"
+      "text": "¿Tu mujer va al trabajo desde acá? ¡Con razón tarda! ¿Viste el laberinto que tenés armado en el fondo?",
+      "emotionToken": ""
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 18,
-      "text": "¡No tiene que atravesarlo cada vez, tarada! Tenemos otra ruta hasta la estación, aunque es más larga y engorrosa. Tal vez debería ir a buscarla… capaz hubo alguna demora en la terminal."
+      "text": "¡No tiene que atravesarlo cada vez, tarada! Tenemos otra ruta hasta la estación, aunque es más larga y engorrosa. Tal vez debería ir a buscarla… capaz hubo alguna demora en la terminal.",
+      "emotionToken": "harold-annoyed"
     },
     {
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 19,
-      "text": "Bueno, ¿y qué esperamos? ¡Vamos a buscarla!"
+      "text": "Bueno, ¿y qué esperamos? ¡Vamos a buscarla!",
+      "emotionToken": "nina-demand"
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 20,
-      "text": "Vas a venir aunque te diga que no, ¿verdad? Ahhg, bien podés serme útil, pero procurá no estorbar, mocosa."
+      "text": "Vas a venir aunque te diga que no, ¿verdad? Ahhg, bien podés serme útil, pero procurá no estorbar, mocosa.",
+      "emotionToken": "harold-annoyed"
     },
     {
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 21,
-      "text": "Tengo nombre, ¿sabías?"
+      "text": "Tengo nombre, ¿sabías?",
+      "emotionToken": "nina-demand"
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 22,
-      "text": "No me interesa."
+      "text": "No me interesa.",
+      "emotionToken": ""
     },
-
     {
       "scene": "P1",
       "speaker": "Nina",
       "lineId": 1,
-      "text": "Bueno... ya entiendo que es la casa de una inventora y todo eso, pero ¿por qué están tiradas por acá todas estas máquinas?"
+      "text": "Bueno... ya entiendo que es la casa de una inventora y todo eso, pero ¿por qué están tiradas por acá todas estas máquinas?",
+      "emotionToken": "nina-doubt"
     },
     {
       "scene": "P1",
       "speaker": "Harold",
       "lineId": 2,
-      "text": "Estos son mis diseños. Mantienen mi casa inaccesible desde afuera. No me gustan las... intromisiones indeseadas."
+      "text": "Estos son mis diseños. Mantienen mi casa inaccesible desde afuera. No me gustan las... intromisiones indeseadas.",
+      "emotionToken": "harold-annoyed"
     },
     {
       "scene": "P1",
       "speaker": "Nina",
       "lineId": 3,
-      "text": "¡Mal! Yo tampoco me banco a esa gente que no sabe darse cuenta de lo molesta que es."
+      "text": "¡Mal! Yo tampoco me banco a esa gente que no sabe darse cuenta de lo molesta que es.",
+      "emotionToken": "nina-annoyed"
     },
     {
       "scene": "P1",
       "speaker": "Harold",
       "lineId": 4,
-      "text": "Ajá, sí... bueno. Vamos a tener que activar los tres mecanismos que sellan el acceso principal del norte. Va a ser más rápido que dar toda la vuelta hasta la estación."
+      "text": "Ajá, sí... bueno. Vamos a tener que activar los tres mecanismos que sellan el acceso principal del norte. Va a ser más rápido que dar toda la vuelta hasta la estación.",
+      "emotionToken": "harold-demand"
     },
     {
       "scene": "P1",
       "speaker": "Harold",
       "lineId": 5,
-      "text": "Dale vamos, ayudame con estas palancas primero."
+      "text": "Dale vamos, ayudame con estas palancas primero.",
+      "emotionToken": "harold-demand"
     },
-
     {
       "scene": "P3A",
       "speaker": "Harold",
       "lineId": 1,
-      "text": "Hmph, se me había olvidado."
+      "text": "Hmph, se me había olvidado.",
+      "emotionToken": "harold-doubt"
     },
     {
       "scene": "P3A",
       "speaker": "Nina",
       "lineId": 2,
-      "text": "¿El qué?"
+      "text": "¿El qué?",
+      "emotionToken": "nina-doubt"
     },
     {
       "scene": "P3A",
@@ -198,13 +225,15 @@
       "scene": "P3A",
       "speaker": "Nina",
       "lineId": 6,
-      "text": "Vos tranqui, viejo. Si pude llegar hasta acá arriba por la ladera, ¿te pensás que una colinita berreta como esta me va a detener?"
+      "text": "Vos tranqui, viejo. Si pude llegar hasta acá arriba por la ladera, ¿te pensás que una colinita berreta como esta me va a detener?",
+      "emotionToken": "nina-mocking"
     },
     {
       "scene": "P3A",
       "speaker": "Harold",
       "lineId": 7,
-      "text": "Ahh, claro. Dale, colinita, te quiero ver entonces."
+      "text": "Ahh, claro. Dale, colinita, te quiero ver entonces.",
+      "emotionToken": "harold-mocking"
     },
     {
       "scene": "P3A",
@@ -216,13 +245,15 @@
       "scene": "P3A",
       "speaker": "Harold",
       "lineId": 9,
-      "text": "¿Qué?"
+      "text": "¿Qué?",
+      "emotionToken": "harold-annoyed"
     },
     {
       "scene": "P3A",
       "speaker": "Nina",
       "lineId": 10,
-      "text": "Mi nombre."
+      "text": "Mi nombre.",
+      "emotionToken": "nina-demand"
     },
     {
       "scene": "P3A",
@@ -234,49 +265,57 @@
       "scene": "P3A",
       "speaker": "Nina",
       "lineId": 12,
-      "text": "Cascarrabias."
+      "text": "Cascarrabias.",
+      "emotionToken": "nina-annoyed"
     },
     {
       "scene": "P3B",
       "speaker": "Harold",
       "lineId": 1,
-      "text": "Bueno, muchacho, te toca."
+      "text": "Bueno, muchacho, te toca.",
+      "emotionToken": "harold-demand"
     },
     {
       "scene": "P3B",
       "speaker": "Rex",
       "lineId": 2,
-      "text": "¡GUAU!"
+      "text": "¡GUAU!",
+      "emotionToken": "rex-barking"
     },
     {
       "scene": "P3B",
       "speaker": "Nina",
       "lineId": 3,
-      "text": "¿Le estas hablando al perro?"
+      "text": "¿Le estas hablando al perro?",
+      "emotionToken": "nina-mocking"
     },
     {
       "scene": "P3B",
       "speaker": "Harold",
       "lineId": 4,
-      "text": "Te sorprenderías de lo que este perro es capaz. Vamos, muchacho, como lo practicamos, metete ahí."
+      "text": "Te sorprenderías de lo que este perro es capaz. Vamos, muchacho, como lo practicamos, metete ahí.",
+      "emotionToken": "harold-mocking"
     },
     {
       "scene": "P3B",
       "speaker": "Rex",
       "lineId": 5,
-      "text": "¡GUAU!"
+      "text": "¡GUAU!",
+      "emotionToken": "rex-barking"
     },
-     {
+    {
       "scene": "P2",
       "speaker": "Harold",
       "lineId": 1,
-      "text": "Pff, ya ni recuerdo cómo se resolvía este. Teníamos que hacerlo los tres juntos."
+      "text": "Pff, ya ni recuerdo cómo se resolvía este. Teníamos que hacerlo los tres juntos.",
+      "emotionToken": "harold-doubt"
     },
     {
       "scene": "P2",
       "speaker": "Nina",
       "lineId": 2,
-      "text": "¿Me podrías recordar por qué decidiste complicarte así tu existencia?"
+      "text": "¿Me podrías recordar por qué decidiste complicarte así tu existencia?",
+      "emotionToken": "nina-demand"
     },
     {
       "scene": "P2",
@@ -300,38 +339,43 @@
       "scene": "P2",
       "speaker": "Harold",
       "lineId": 6,
-      "text": "De verdad esa mujer piensa en todo…."
+      "text": "De verdad esa mujer piensa en todo….",
+      "emotionToken": "harold-doubt"
     },
     {
       "scene": "P2",
       "speaker": "Nina",
       "lineId": 7,
-      "text": "¿Ella te hizo ese brazo? Qué bueno, necesito ver qué tan bien funciona, mi padre perdió una extremidad y me preguntaba si quizá--"
+      "text": "¿Ella te hizo ese brazo? Qué bueno, necesito ver qué tan bien funciona, mi padre perdió una extremidad y me preguntaba si quizá--",
+      "emotionToken": "nina-demand"
     },
     {
       "scene": "P2",
       "speaker": "Harold",
       "lineId": 8,
-      "text": "Córrete."
+      "text": "Córrete.",
+      "emotionToken": "harold-demand"
     },
-     {
+    {
       "scene": "P2",
       "speaker": "Nina",
       "lineId": 8,
-      "text": "¿Podrías escucharme un segundo?"
+      "text": "¿Podrías escucharme un segundo?",
+      "emotionToken": "nina-demand"
     },
     {
       "scene": "P2A",
       "speaker": "Harold",
       "lineId": 8,
-      "text": "Esta placa ya está muy oxidada, vamos a necesitar un peso extra aparte del nuestro para activarla."
+      "text": "Esta placa ya está muy oxidada, vamos a necesitar un peso extra aparte del nuestro para activarla.",
+      "emotionToken": "harold-doubt"
     },
-     {
+    {
       "scene": "level-tip",
       "speaker": "Harold",
       "lineId": 1,
-      "text": "Necesitamos prender las 3 maquinas para desactivar la cerradura."
+      "text": "Necesitamos prender las 3 maquinas para desactivar la cerradura.",
+      "emotionToken": "harold-demand"
     }
   ]
- 
 }

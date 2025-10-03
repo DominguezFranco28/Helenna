@@ -1,0 +1,11 @@
+El uso de cada sfx de diálogo es bastante evidente por el nombre
+
+chat-typing: Sonido que resuena a medida que se escribe cada letra en pantalla. Es un sample de una máquina de escribir
+
+[personaje]-annoyed: Quejido que emite el personaje en una conversación cuando está fastidiado
+[personaje]-demand: Llamado de atención a otro personaje con el que conversan
+[personaje]-doubt: Sonido que emite el personaje al preguntar algo o tener una duda en general
+nina-mocking: Sonido que emite nina al reirse o burlarse de alguien
+rex-barking: Ladrido de Rex
+
+Nota: Hay más de un mismo tipo de sonido para un mismo personaje. Se puede elegir uno de preferencia o hacer que se alternen de ser necesario

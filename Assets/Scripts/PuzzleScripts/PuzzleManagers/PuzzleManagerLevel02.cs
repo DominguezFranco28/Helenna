@@ -145,7 +145,7 @@ public class PuzzleManagerLevel02 : MonoBehaviour
         if (playCinematic)
             playCinematic.Play();
 
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(5f);
         bridge.BridgeOpen();
 
         StartCoroutine(Victory());

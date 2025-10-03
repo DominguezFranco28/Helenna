@@ -12,6 +12,7 @@ public class ZiplineZoneDetector : MonoBehaviour
             if (character)
             {
                 character.UnlockZipline = true;
+                character.UnlockThrow = true;
             }
         }
     }

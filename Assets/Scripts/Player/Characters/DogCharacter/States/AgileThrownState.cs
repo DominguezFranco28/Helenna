@@ -13,13 +13,17 @@ public class AgileThrownState : IState, IFixedUpdate
   private Vector2 _direction;
     private bool _throwCompleted = false;
 
-    public float throwSpeed = 30f;
+    public float throwSpeed = 25f;
     public float maxThrowDistance = 10f;
 
     //HAROLD TIENE UNO EN SU THROW TAMB
     private float _throwDelay = 1f;
     private float _throwTimer;
     private bool _delayCompleted;
+    //Variables para forzar exit si colision male sal
+    private float _maxStateTime = 1.5f; //Ojo no hacer charcos muy alrgos
+    private float _stateTimer;
+
     public AgileThrownState(AgilePlayerBehaviour player, AgileStateMachine agileStateMachine, AgilePlayerController playerController)
     {
         this._agilePlayerBehaviour = player;
@@ -37,6 +41,7 @@ public class AgileThrownState : IState, IFixedUpdate
         _throwCompleted = false;
         _throwTimer = 0f;
         _delayCompleted = false;
+        _stateTimer = 0f; // inicializo el timer de estado como plan xara forzar exit si algo sale mal
         // LIMPIEZA DE VELOCIDAD PREVIA
         _agilePlayerBehaviour.Rigidbody2D.velocity = Vector2.zero;
 //        _agilePlayerBehaviour.Rigidbody2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -96,8 +101,18 @@ public class AgileThrownState : IState, IFixedUpdate
        
     }
     public void Update()
-    {
-     
+    {// aumentar timer de estado
+        _stateTimer += Time.deltaTime;
+
+        // forzar salida si se supera el tiempo máximo
+        if (_stateTimer >= _maxStateTime)
+        {
+            Debug.Log("AgileThrownState timeout reached. Exiting state.");
+            EndThrow(_agilePlayerBehaviour.Rigidbody2D);
+            _agileStateMachine.TransitionTo(_agileStateMachine.idleState); 
+            return;
+        }
+
         if (!_delayCompleted)
         {
             _throwTimer += Time.deltaTime;

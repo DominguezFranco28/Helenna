@@ -8,10 +8,13 @@ using TMPro;
 [System.Serializable]
 public class DialogueLine
 {
+
     public string scene;
     public string speaker;
     public int lineId;
     public string text;
+    [Header("Audio / Emotion")]
+    public string emotionToken; // ej: "happy", "sad", "angry"
 }
 
 [System.Serializable]
@@ -21,6 +24,7 @@ public class DialogueWrapper
 }
 
 public class DialogueManager : MonoBehaviour
+
 {
     [SerializeField] private Image speakerThumbnail;
     [SerializeField] private Image background;
@@ -31,8 +35,10 @@ public class DialogueManager : MonoBehaviour
     public float talkSpeed = 0.1f;
     public float endLineDelay = 1f;
     public bool canSkip = true;
-
     [SerializeField] private List<Sprite> thumbnails = new List<Sprite>();
+    //Audio
+    [SerializeField] private AudioClip typingSFX;
+    private bool isTypingSFXPlaying = false;
 
     private Coroutine writeLineCoroutine;
 
@@ -49,6 +55,7 @@ public class DialogueManager : MonoBehaviour
     [Header("DEBUG")]
     public string debugScene = "";
     public bool debugSpeak = false;
+
 
     private void Start()
     {
@@ -100,34 +107,68 @@ public class DialogueManager : MonoBehaviour
 
     public void Speak(DialogueLine line)
     {
+        //speakerThumbnail.sprite = GetSpeakerThumbnail(line.speaker);
+        //speakerName.text = line.speaker;
+        //string text = line.text;
+        //if (text.Length > 0)
+        //{
+        //    body.text = "";
+        //    lastID = (line.scene, line.speaker, line.lineId);
+
+        //    MakeVisible();
+
+        //    writeLineCoroutine = StartCoroutine(WriteLine(text));
+        //}
+        if (line == null) return;
+
         speakerThumbnail.sprite = GetSpeakerThumbnail(line.speaker);
         speakerName.text = line.speaker;
-        string text = line.text;
-        if (text.Length > 0)
-        {
-            body.text = "";
-            lastID = (line.scene, line.speaker, line.lineId);
 
-            MakeVisible();
+        body.text = "";
+        lastID = (line.scene, line.speaker, line.lineId);
 
-            writeLineCoroutine = StartCoroutine(WriteLine(text));
-        }
+        MakeVisible();
+
+        //audio token de emoción
+        if (!string.IsNullOrEmpty(line.emotionToken))
+            SFXManager.Instance.PlayEmotion(line.emotionToken);
+
+ 
+        writeLineCoroutine = StartCoroutine(WriteLine(line.text));
 
     }
 
     public void Speak(string scene, string speaker, int lineId)
     {
+        //speakerThumbnail.sprite = GetSpeakerThumbnail(speaker);
+        //string text = GetLine(scene, speaker, lineId);
+        //if (text.Length > 0)
+        //{
+        //    body.text = "";
+        //    lastID = (scene, speaker, lineId);
+
+        //    MakeVisible();
+
+        //    writeLineCoroutine = StartCoroutine(WriteLine(text));
+        //}
+        // Obtener el objeto completo
+        DialogueLine lineObj = GetLineObject(scene, speaker, lineId);
+        if (lineObj == null) return; 
+
+        // thumbnail y nombre
         speakerThumbnail.sprite = GetSpeakerThumbnail(speaker);
-        string text = GetLine(scene, speaker, lineId);
-        if (text.Length > 0)
-        {
-            body.text = "";
-            lastID = (scene, speaker, lineId);
+        speakerName.text = speaker;
 
-            MakeVisible();
+        // limpia texto y guardar ID
+        body.text = "";
+        lastID = (scene, speaker, lineId);
 
-            writeLineCoroutine = StartCoroutine(WriteLine(text));
-        }
+        MakeVisible();
+
+        //audio según token de emoción
+        if (!string.IsNullOrEmpty(lineObj.emotionToken))
+            SFXManager.Instance.PlayEmotion(lineObj.emotionToken);
+        writeLineCoroutine = StartCoroutine(WriteLine(lineObj.text));
 
     }
 
@@ -153,7 +194,19 @@ public class DialogueManager : MonoBehaviour
 
         return thumbnails[speakerId];
     }
-
+    private DialogueLine GetLineObject(string scene, string speaker, int lineId) //para obtener el objeto y ubicar la emocion
+    {
+        foreach (var line in data.lines)
+        {
+            if (line.scene.ToLower().Trim() == scene.ToLower().Trim() &&
+                line.speaker.ToLower().Trim() == speaker.ToLower().Trim() &&
+                line.lineId == lineId)
+            {
+                return line;
+            }
+        }
+        return null;
+    }
     private string GetLine(string scene, string speaker, int lineId)
     {
         if (data == null || data.lines == null)
@@ -173,11 +226,25 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator WriteLine(string line)
     {
         body.text = "";
-
+        if (isTypingSFXPlaying) //si habia sonido de tipeo lo detengo
+        {
+            SFXManager.Instance.StopLoop();
+            isTypingSFXPlaying = false;
+        }
+        if (typingSFX != null)
+        {
+            SFXManager.Instance.PlayLoop(typingSFX); // <-- suponiendo que tu SFXManager tiene un método PlayLoop(token)
+            isTypingSFXPlaying = true;
+        }
         foreach (char c in line)
         {
             body.text += c;
             yield return new WaitForSeconds(talkSpeed);
+        }
+        if (isTypingSFXPlaying) //freno el tipeo
+        {
+            SFXManager.Instance.StopLoop(); 
+            isTypingSFXPlaying = false;
         }
         /*
         writeLineCoroutine = null;
@@ -214,7 +281,12 @@ public class DialogueManager : MonoBehaviour
             else
                 StartCoroutine(EndLine());
         }
-        
+        if (isTypingSFXPlaying) //freno aca tambien xq sino se bugeaba
+        {
+            SFXManager.Instance.StopLoop();
+            isTypingSFXPlaying = false;
+        }
+
     }
 
     private void MakeVisible()

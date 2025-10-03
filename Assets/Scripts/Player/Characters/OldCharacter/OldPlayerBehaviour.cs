@@ -21,7 +21,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     private bool _armPulled = false; //para saber si el brazo fue liberado, para no repetir la animacion de recoil con el throw
     private bool _isOnHighGround;
     private bool _unlockZipline = false; //DESBLOQUEO DE HABILIDAD DE USAR TIROLESA
-    private bool _unlockThrow = true; //DESBLOQUEO DE HABILIDAD DE LANZAR
+    private bool _unlockThrow = false; //DESBLOQUEO DE HABILIDAD DE LANZAR
     public bool UnlockZipline { get { return _unlockZipline; } set { _unlockZipline = value; } }
     public bool UnlockThrow{ get { return _unlockThrow; } set { _unlockThrow = value; } }
     public bool IsInControll{ get { return _isInControll; } } 
