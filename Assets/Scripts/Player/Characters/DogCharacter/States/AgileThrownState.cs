@@ -46,6 +46,8 @@ public class AgileThrownState : IState, IFixedUpdate
         _agilePlayerBehaviour.Rigidbody2D.velocity = Vector2.zero;
 //        _agilePlayerBehaviour.Rigidbody2D.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         _agilePlayerBehaviour.Animator.SetTrigger("IsBeingPicked");
+        if (_agilePlayerBehaviour.PendingThrowDirection.x <-0.1f)       
+            _agilePlayerBehaviour.SpriteRenderer.flipX = true;
     }
 
     public void Exit()

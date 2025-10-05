@@ -18,6 +18,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     private Animator _animator;
     private Rigidbody2D _rb2D;
     private Collider2D _collider2D;
+    private SpriteRenderer _spriteRenderer;
     private Vector2 _movementInput;
     private bool _canMove;
     private bool _canJump = false;
@@ -36,6 +37,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public Vector2 MovementInput { get { return _movementInput; } }
     public Vector2 LastMovementInput { get; set; }
     public Collider2D PlayerCollider { get { return _collider2D; } set { _collider2D = value; } }
+    public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } set { _spriteRenderer = value; } }
     public Rigidbody2D Rigidbody2D { get { return _rb2D; } set { _rb2D = value; } }
     public AgileTriggerDetector TriggerDetector { get; private set; }
     public Animator Animator { get { return _animator; } }
@@ -63,6 +65,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
         TriggerDetector = GetComponentInChildren<AgileTriggerDetector>(); //rever esto, puedo integrarlo en el constructor del estado como el Jump
         _collider2D = GetComponent<Collider2D>();
         _mouthOriginalPos = _mouth.position;
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         NormalizeZ(transform);
     }
     //PARAMETROS DE CONTROL Y MOVIMIENTO

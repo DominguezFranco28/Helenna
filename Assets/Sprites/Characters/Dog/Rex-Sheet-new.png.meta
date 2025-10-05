@@ -1,0 +1,1757 @@
+fileFormatVersion: 2
+guid: e4ed0a7578ac1a74798affb5e2ea5717
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Rex-Sheet-new_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 896
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6ade0d3429c0643b8aeb5cae18ccd3
+      internalID: -296438504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 896
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54434f0675cc93f4f86cca890f294831
+      internalID: 678753517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_2
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 896
+        width: 42
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf6b89b314ac3f4ca6003c5352d4d87
+      internalID: 789482976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 896
+        width: 42
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8022477c7bd45408d266fa7d51ec82
+      internalID: 1666550749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_5
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 837
+        width: 42
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1e94370f90cd3f46b84658cd28019f9
+      internalID: 1974101824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_7
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 837
+        width: 40
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 676126b123ee0d5499d8b18a9490cd23
+      internalID: -1822035512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_8
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 837
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4752e40f9da0341ad460586104ed11
+      internalID: -1327694443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 837
+        width: 42
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9126bef27d7dcd4448326ec344cc069a
+      internalID: -2000640046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_10
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 775
+        width: 51
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b426efc8b4e4474393b6bd178defb56
+      internalID: -942186899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_11
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 775
+        width: 53
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02ca8a8f55c782429a47dc3ee4588d7
+      internalID: -1635459438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_12
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 775
+        width: 51
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa407d728c5ffba4fb12a69f77963ef3
+      internalID: 1960207399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_13
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 775
+        width: 50
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c40e2ed9580624a4894c3db3b5c85f88
+      internalID: 155380258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_14
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 716
+        width: 51
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbb91a50ad0e56d4b886f9dbfc9a7db0
+      internalID: 505109662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_15
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 716
+        width: 53
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e728c1b40e56844bac6db416642b15c
+      internalID: 1692446244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_16
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 716
+        width: 51
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1932bfb6d6bf21a4e8943f2710c91c6c
+      internalID: 456829031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_17
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 716
+        width: 50
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19eb039d41fda1c488c2572cf923d96c
+      internalID: -478471162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_18
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 660
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb4ddce2da535c249905c844736db885
+      internalID: -1821648215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_19
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 662
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea129dbd032b3914082d87856baa37d1
+      internalID: 2102978528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_20
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 660
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5a14d3e1dcb7844b1357cef5418e0d
+      internalID: -1371517113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_21
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 662
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296466044bd5fb545a716af815d5605b
+      internalID: -395820202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_22
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 600
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4626332b8d5c90f46894f9ba56e25ab8
+      internalID: 1548238199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_23
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 601
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13af5a92019c2847861205052596d6d
+      internalID: -246087560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_24
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 600
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da79de02a17b7a14aa098af75fed6bd7
+      internalID: -1735679476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_25
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 601
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 864ee1849376ff545a5549215777a668
+      internalID: -1779797811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_26
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 538
+        width: 47
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6eb83d5ec37da842b8f5b6ba1934615
+      internalID: -255034964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_27
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 536
+        width: 47
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f90db1c0cc7ba42bea134baa2fc7c5
+      internalID: 355311725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_28
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 537
+        width: 46
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779302dc6c7f209468fc181439c28465
+      internalID: -640598992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_29
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 537
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8ac7d339d783b43a8441970d8820dd
+      internalID: 1587590689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_30
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 537
+        width: 29
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820cb84db22082643b1f0424f05253fc
+      internalID: 345011307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_31
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 479
+        width: 47
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73c45e47fa6a91d47810fd30711ee2db
+      internalID: -1947326624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_32
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 477
+        width: 47
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 910ab79953974fc43a5e8ea0e217ac8b
+      internalID: -156381991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_33
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 478
+        width: 46
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: defed1f80625e8f45a04b764f6435bf8
+      internalID: -711983777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_34
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 478
+        width: 29
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b2ecdab68180434f943d0f8f439ddb1
+      internalID: -479571051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_35
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 478
+        width: 29
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0b57c8e4abe5a04e86b86653da0fe49
+      internalID: -1952398963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_36
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 424
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337eb84598a45d347991d1c254d0e368
+      internalID: -448228968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_37
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 423
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 427a77de3f32a14498853536077a0063
+      internalID: 2031444794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_39
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 420
+        width: 34
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075b023f1b1cb4748af58f4e93787165
+      internalID: 1988398936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_40
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 424
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dcbb154537561649811bec231ee2cd3
+      internalID: 1132642276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_41
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 424
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 969e723ec5a390343bf842bef1ca6dc1
+      internalID: -1669132015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_42
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 364
+        width: 47
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88811df8a0b87f94b9836fa7c0b57a3c
+      internalID: 1992706273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_43
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 364
+        width: 46
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe4bfdeca50cde42a6e6f7c8b007c4f
+      internalID: -2091324981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_44
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 378
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eeae6401594b7045876cfecae2b26fa
+      internalID: -825195823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_45
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 364
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23fedc001fc3ddf4096bd89d49f2ab1c
+      internalID: -1989989513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_46
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 364
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00774d51b240114b8e93f99104d2964
+      internalID: 702902033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_47
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 305
+        width: 47
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f62a13cd80c4db4f93a2f3ae69cf503
+      internalID: -307794105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_48
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 305
+        width: 46
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c641c6bbd299946ba29cf94cbc6404
+      internalID: 1292767043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_49
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 304
+        width: 45
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3515e45f238d20941b5521d51a224946
+      internalID: 175629457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_50
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 305
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb638f4937161fe408b294f56b889e59
+      internalID: 1458737249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_51
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 305
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ae4b9cb298d47e4eb46d6a47fa606da
+      internalID: -768338270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_52
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 246
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a20081c1c8097d46be18cb5308add64
+      internalID: -190529544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_53
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 247
+        width: 24
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c2653cb6ba36bd4582d8a28cde30e24
+      internalID: -951718557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_54
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 247
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e45b59811fa66bb41b6cae40342d0c96
+      internalID: 704265505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_55
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 247
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b63830cac5f8c24581f45667bce8cd1
+      internalID: 99207956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_56
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 247
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fce08961d4ce5514e98cf34816a7ce04
+      internalID: -942059991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_58
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 188
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2090bd0c25c7e842a1c1f5b658fd6f9
+      internalID: 604438779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_59
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 188
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb9d876ab057e1d46a0fc7373f09b89e
+      internalID: 1917790890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_60
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 188
+        width: 36
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b46810c1e82be44cb2ead8fb3c6c6fb
+      internalID: -1455932254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_61
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 188
+        width: 36
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6243ab2f79a96f4b89c82cb044ffe74
+      internalID: 337602097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_62
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 188
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e3ee9af8365574f93c22330123ad58
+      internalID: -147845362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_64
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 127
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a685dae4f74064247877e28a24c74308
+      internalID: -95599068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_65
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 126
+        width: 45
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f1f44e5d6eab84bac14d62af34310e
+      internalID: -579101496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_66
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 127
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e87ef881e7f48940ad129027d547928
+      internalID: -858161264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_67
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 128
+        width: 44
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b6b94477527f14e94112aafff88fb7
+      internalID: -646441013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_68
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 128
+        width: 44
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f174e118dc22c7845bae2fa3ffe12773
+      internalID: -1544680152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_69
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 60
+        width: 36
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2f3b9a321c9c44488d71493bdb0259
+      internalID: -1805235432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_70
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 60
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 824d0a032b02e9c4795298cc6421dda5
+      internalID: 798803047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_71
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 60
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78115fca71714c044b60eb49242949ed
+      internalID: -1376821494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_72
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 69
+        width: 30
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb05f7fd2fe8c14e85feb1fea9b0411
+      internalID: 1995694698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_76
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 11
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83beb2242cb7024fa157edfc4f0b233
+      internalID: -824214526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_77
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 11
+        width: 30
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e84a4bb59af5a843a495b9f216b6080
+      internalID: 1446745412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_78
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 11
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3fdc0aa1692d24b978477426e733e5
+      internalID: 40032887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_79
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 11
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6135055c1f6af1848a781d3f3b915aeb
+      internalID: 1802736316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rex-Sheet-new_80
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 11
+        width: 34
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d6666cb4de868042a41f65f7686cc29
+      internalID: 1192558483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Rex-Sheet-new_0: -296438504
+      Rex-Sheet-new_1: 678753517
+      Rex-Sheet-new_10: -942186899
+      Rex-Sheet-new_11: -1635459438
+      Rex-Sheet-new_12: 1960207399
+      Rex-Sheet-new_13: 155380258
+      Rex-Sheet-new_14: 505109662
+      Rex-Sheet-new_15: 1692446244
+      Rex-Sheet-new_16: 456829031
+      Rex-Sheet-new_17: -478471162
+      Rex-Sheet-new_18: -1821648215
+      Rex-Sheet-new_19: 2102978528
+      Rex-Sheet-new_2: 789482976
+      Rex-Sheet-new_20: -1371517113
+      Rex-Sheet-new_21: -395820202
+      Rex-Sheet-new_22: 1548238199
+      Rex-Sheet-new_23: -246087560
+      Rex-Sheet-new_24: -1735679476
+      Rex-Sheet-new_25: -1779797811
+      Rex-Sheet-new_26: -255034964
+      Rex-Sheet-new_27: 355311725
+      Rex-Sheet-new_28: -640598992
+      Rex-Sheet-new_29: 1587590689
+      Rex-Sheet-new_3: 1666550749
+      Rex-Sheet-new_30: 345011307
+      Rex-Sheet-new_31: -1947326624
+      Rex-Sheet-new_32: -156381991
+      Rex-Sheet-new_33: -711983777
+      Rex-Sheet-new_34: -479571051
+      Rex-Sheet-new_35: -1952398963
+      Rex-Sheet-new_36: -448228968
+      Rex-Sheet-new_37: 2031444794
+      Rex-Sheet-new_38: -965854486
+      Rex-Sheet-new_39: 1988398936
+      Rex-Sheet-new_4: 881210830
+      Rex-Sheet-new_40: 1132642276
+      Rex-Sheet-new_41: -1669132015
+      Rex-Sheet-new_42: 1992706273
+      Rex-Sheet-new_43: -2091324981
+      Rex-Sheet-new_44: -825195823
+      Rex-Sheet-new_45: -1989989513
+      Rex-Sheet-new_46: 702902033
+      Rex-Sheet-new_47: -307794105
+      Rex-Sheet-new_48: 1292767043
+      Rex-Sheet-new_49: 175629457
+      Rex-Sheet-new_5: 1974101824
+      Rex-Sheet-new_50: 1458737249
+      Rex-Sheet-new_51: -768338270
+      Rex-Sheet-new_52: -190529544
+      Rex-Sheet-new_53: -951718557
+      Rex-Sheet-new_54: 704265505
+      Rex-Sheet-new_55: 99207956
+      Rex-Sheet-new_56: -942059991
+      Rex-Sheet-new_57: -272753108
+      Rex-Sheet-new_58: 604438779
+      Rex-Sheet-new_59: 1917790890
+      Rex-Sheet-new_6: -36729737
+      Rex-Sheet-new_60: -1455932254
+      Rex-Sheet-new_61: 337602097
+      Rex-Sheet-new_62: -147845362
+      Rex-Sheet-new_63: 1273641187
+      Rex-Sheet-new_64: -95599068
+      Rex-Sheet-new_65: -579101496
+      Rex-Sheet-new_66: -858161264
+      Rex-Sheet-new_67: -646441013
+      Rex-Sheet-new_68: -1544680152
+      Rex-Sheet-new_69: -1805235432
+      Rex-Sheet-new_7: -1822035512
+      Rex-Sheet-new_70: 798803047
+      Rex-Sheet-new_71: -1376821494
+      Rex-Sheet-new_72: 1995694698
+      Rex-Sheet-new_73: -1346694383
+      Rex-Sheet-new_74: 1983084319
+      Rex-Sheet-new_75: 1903377084
+      Rex-Sheet-new_76: -824214526
+      Rex-Sheet-new_77: 1446745412
+      Rex-Sheet-new_78: 40032887
+      Rex-Sheet-new_79: 1802736316
+      Rex-Sheet-new_8: -1327694443
+      Rex-Sheet-new_80: 1192558483
+      Rex-Sheet-new_81: 368850193
+      Rex-Sheet-new_82: -1845597637
+      Rex-Sheet-new_83: 1758241445
+      Rex-Sheet-new_9: -2000640046
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
