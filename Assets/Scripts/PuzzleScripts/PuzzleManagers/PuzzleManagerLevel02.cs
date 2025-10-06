@@ -137,6 +137,9 @@ public class PuzzleManagerLevel02 : MonoBehaviour
             light.TurnOn();
 
         puzzleDoneP1 = true;
+        
+        doorBig.DoorOpen();
+
         StartCoroutine(OpenBridge());
     }
 
@@ -158,7 +161,7 @@ public class PuzzleManagerLevel02 : MonoBehaviour
 
         if (endScreen)
         {
-            endScreen.text = "Nivel 2 Terminado - Fin de Demo";
+            endScreen.text = "Nivel 2 Terminado";
             endScreen.gameObject.SetActive(true);
 
             yield return new WaitForSeconds(5f);
