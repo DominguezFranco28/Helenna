@@ -12,14 +12,17 @@ public class ChildStateMachine
     public ChildActionState actionState;
     public ChildZiplineState ziplineState;
     public IState CurrentState { get; private set; }
-    public ChildStateMachine(ChildPlayerBehaviour player, ChildTriggerDetector actionDetector)
+    public ChildStateMachine(ChildPlayerBehaviour player)
     {
-        this.moveState = new ChildMoveState(player, this, actionDetector);
+        this.moveState = new ChildMoveState(player, this);
         this.idleState = new ChildIdleState(player, this);
-        this.climbState = new ChildClimbState(player, this, actionDetector);
-        this.actionState = new ChildActionState (player, this, actionDetector);
-        this.ziplineState = new ChildZiplineState(player, this, actionDetector);
+        //Los detectores en nina los pase de forma diferente haciendo uso de un Enum para poder tener diferentes colliders para cada tipo de deteccionn deseada
+        //En el behaviour los asignna, recorriendo a sus GO hijos para cada tipo de detecteccionn deseada
+        this.climbState = new ChildClimbState(player, this, player.ClimbDetector);
+        this.actionState = new ChildActionState (player, this, player.LeverDetector);
+        this.ziplineState = new ChildZiplineState(player, this, player.ZiplineDetector);
     }
+
     public void Initialize(IState startingState)
     {
         InitStates(startingState);

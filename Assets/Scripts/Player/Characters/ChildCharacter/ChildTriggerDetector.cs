@@ -2,97 +2,115 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class ChildTriggerDetector : MonoBehaviour
 {
-    [SerializeField] private bool _canClimb = false;
-    [SerializeField] private bool _canUseZipline = false;
-    private Collider2D _climbableCollider;
+    public enum DetectorType { Climb, Zipline, Lever, Pushable }
 
-    private bool _canActivateLever = false;
-    private Collider2D _leverCollider;
-    public Collider2D LevelCollider { get { return _leverCollider; } }
-    public bool CanActivate { get { return _canActivateLever;} set { _canActivateLever = value; } }
-    public bool CanClimb { get { return _canClimb; } }
-    public bool CanUseZipline { get { return _canUseZipline; }set { _canUseZipline = value; } }
-    public Collider2D Climbable { get { return _climbableCollider; } }
+    [Header("Tipo de detector")]
+    [SerializeField] private DetectorType _detectorType;
+    public DetectorType Type => _detectorType; //expongo el tipo de detector para acceder desde el playerbehaviour y asigar el detector correspondiente a cada objeto
 
-    
+    private Collider2D _internalClimbableCollider;
+    private Collider2D _internalLeverCollider;
+    private bool _internalCanClimb = false;
+    private bool _internalCanUseZipline = false;
+    private bool _internalCanActivateLever = false;
 
-    public void OnTriggerEnter2D(Collider2D collision)
+
+    public Collider2D Climbable => _internalClimbableCollider;
+    public Collider2D LeverCollider => _internalLeverCollider;
+    public bool CanClimb => _internalCanClimb;
+    public bool CanUseZipline { get => _internalCanUseZipline; set => _internalCanUseZipline = value; }
+    public bool CanActivate { get => _internalCanActivateLever; set => _internalCanActivateLever = value; }
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-        if (collision.CompareTag("Lever"))
+        switch (_detectorType)
         {
-          //  Debug.Log("colisionaste con palanca");
-            _canActivateLever = true;
-            _leverCollider = collision;
-        //    Debug.Log("en colision");
+            case DetectorType.Climb:
+                if (collision.CompareTag("Climbable"))
+                {
+                    _internalCanClimb = true;
+                    _internalClimbableCollider = collision;
+                }
+                break;
 
+            case DetectorType.Lever:
+                if (collision.CompareTag("Lever"))
+                {
+                    _internalCanActivateLever = true;
+                    _internalLeverCollider = collision;
+                }
+                break;
+
+            case DetectorType.Zipline:
+                // zipline no se activa al entrar, solo en Stay
+                break;
+
+            case DetectorType.Pushable:
+                // logica pushable si se requiere a futuro? puede dar juego a alguos puzzles con Harold
+                break;
         }
-
     }
 
-
-
-    public void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Climbable") || collision.CompareTag("Pushable"))
+        switch (_detectorType)
         {
-            _canClimb = false;
-            _climbableCollider = null;
-        }
-        
-        if (collision.CompareTag("Lever"))
-        {
-          //  Debug.Log("saliste de colision con palanca");
-            _canActivateLever = false;
-            _leverCollider = null;
+            case DetectorType.Climb:
+                if (collision.CompareTag("Climbable"))
+                {
+                    _internalCanClimb = false;
+                    _internalClimbableCollider = null;
+                }
+                break;
 
-        }
-        if (collision.CompareTag("Zipline"))
-        {
-            //Debug.Log("saliste de colision con tirolesa");
-            _canUseZipline = false;
+            case DetectorType.Lever:
+                if (collision.CompareTag("Lever"))
+                {
+                    _internalCanActivateLever = false;
+                    _internalLeverCollider = null;
+                }
+                break;
+
+            case DetectorType.Zipline:
+                if (collision.CompareTag("Zipline"))
+                {
+                    ResetZipline();
+                }
+                break;
         }
     }
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Zipline"))
 
+    private void OnTriggerStay2D(Collider2D collision) //logica para ziplinen diferente al resto de colisiones, interactua mucho co el armlinecontroller de Harold
+    {
+        if (_detectorType == DetectorType.Zipline && collision.CompareTag("Zipline"))
         {
-            ArmLineController zipline = collision.gameObject.GetComponent<ArmLineController>();
+            ArmLineController zipline = collision.GetComponent<ArmLineController>();
             if (zipline == null) return;
 
             Collider2D edge = collision.GetComponent<Collider2D>();
-            //clossespoint para obtener el punto del collider mas cercano al jugador
-            Vector2 closest = edge.ClosestPoint(transform.position);
-            //closest es entonces la pos real mas cercana del collider al jugador
-            float distanceToStart = Vector2.Distance(closest, zipline.StartPoint);
-            //se mide la distancia entre el punto mas cercano del collider al pj y el punto de inicio de la zipline
-            // nos permite saber si el jugador esta suficientemente cerca del inicio para poder usarla
+            Vector2 closestPoint = edge.ClosestPoint(transform.position);
+            float distanceToStart = Vector2.Distance(closestPoint, zipline.StartPoint);
 
-            // Solo si el pj esta dentro de la tolerancia al rededor del starpoint se activa la zipline (cosa de no poder usarla desde el medio)
-            //evita que cualquier otra parte de la zipline active la accion
-            if (distanceToStart <= 1.5f) // tolerancia agregada para quye no sea un punto tan exacto de colission
-            {
-                // Solo si el pj esta dentro de la tolerancia al rededor del starpoint se activa la zipline (cosa de no poder usarla desde el medio)
-                //evita que cualquier otra parte de la zipline active la accion
-                OnUseZipline(); 
-            }
+            if (distanceToStart <= 1.5f)
+                OnUseZipline();
         }
-        if (collision.CompareTag("Climbable"))
+
+        if (_detectorType == DetectorType.Climb && collision.CompareTag("Climbable"))
         {
-            _canClimb = true;
-            _climbableCollider = collision;
+            _internalCanClimb = true;
+            _internalClimbableCollider = collision;
         }
     }
+
     public void OnUseZipline()
     {
-        _canUseZipline = true;
+        _internalCanUseZipline = true;
     }
+
     public void ResetZipline()
     {
-        _canUseZipline = false;
+        _internalCanUseZipline = false;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +28,9 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     public float ClimbSpeed { get { return _climbSpeed; } }
     public float ZiplineSpeed { get { return _ziplineSpeed; } }
     public Collider2D PlayerCollider { get { return _collider; } }
+    //Propiedades para acceder a los detectores de colision
+    public ChildTriggerDetector ZiplineDetector { get; private set; }
+    public ChildTriggerDetector LeverDetector { get; private set; }
     public ChildTriggerDetector ClimbDetector { get; private set; }
 
 
@@ -46,8 +50,6 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
         _animator = GetComponent<Animator>();
         _currentSpeed = _speed;
         _collider = GetComponent<Collider2D>();
-        ClimbDetector = GetComponentInChildren<ChildTriggerDetector>();
-        //Climbdetector in an child object
     }
 
     public void SetMovementInput(Vector2 input)
@@ -99,5 +101,28 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     public bool GetControl()
     {
         return IsInControll;
+    }
+
+    public void InitializeDetectors()
+    {
+        ChildTriggerDetector[] detectors = GetComponentsInChildren<ChildTriggerDetector>();
+        foreach (var det in detectors)
+        {
+            switch (det.Type)
+            {
+                case ChildTriggerDetector.DetectorType.Climb:
+                    ClimbDetector = det;
+                    break;
+                case ChildTriggerDetector.DetectorType.Zipline:
+                    ZiplineDetector = det;
+                    break;
+                case ChildTriggerDetector.DetectorType.Lever:
+                    LeverDetector = det;
+                    break;
+            }
+        }
+        if (ClimbDetector == null) Debug.LogError("ClimbDetector no encontrado!");
+        if (ZiplineDetector == null) Debug.LogError("ZiplineDetector no encontrado!");
+        if (LeverDetector == null) Debug.LogError("LeverDetector no encontrado!");
     }
 }

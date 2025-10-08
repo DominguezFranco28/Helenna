@@ -5,7 +5,6 @@ using UnityEngine;
 public class ChildPlayerController : MonoBehaviour , IHasStateMachine
 {
     [SerializeField] private ChildPlayerBehaviour _childBehaviour;
-    [SerializeField] private ChildTriggerDetector _childTriggerDetector;
     
     private bool interacting = false;
     public ChildStateMachine StateMachine { get; private set; }
@@ -34,10 +33,10 @@ public class ChildPlayerController : MonoBehaviour , IHasStateMachine
         if (InputManager.Instance != null)
             InputManager.Instance.InvokeAction(() => interacting = false, 0.1f);
     }
-
     private void Start()
     {
-        StateMachine = new ChildStateMachine(_childBehaviour, _childTriggerDetector);
+        _childBehaviour.InitializeDetectors(); //asignar los detectores antes de crear la statemachine y evitar  ref nulas    
+      StateMachine = new ChildStateMachine(_childBehaviour);
         StateMachine.Initialize(StateMachine.idleState);
     }
 
@@ -48,14 +47,14 @@ public class ChildPlayerController : MonoBehaviour , IHasStateMachine
         {
             StateMachine.Update();
             // Detect enter to climb
-            if (_childTriggerDetector.CanClimb)
+            if (_childBehaviour.ClimbDetector.CanClimb)
             {
 
                 StateMachine.TransitionTo(StateMachine.climbState);
                 return;
             }
 
-            if (_childTriggerDetector.CanActivate && interacting)
+            if (_childBehaviour.LeverDetector.CanActivate && interacting)
             {
                 StateMachine.TransitionTo(StateMachine.actionState);
                 return;

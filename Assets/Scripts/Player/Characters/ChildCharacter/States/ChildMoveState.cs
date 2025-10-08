@@ -6,20 +6,20 @@ public class ChildMoveState : IState
 {
     private ChildPlayerBehaviour _childPlayerBehaviour;
     private ChildStateMachine _childStateMachine;
-    private ChildTriggerDetector _climbDetector;
+
     private bool subbed = false;
-    public ChildMoveState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine, ChildTriggerDetector climbDetector)
+    public ChildMoveState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine)
     {
         this._childPlayerBehaviour = childPlayerBehaviour;
         this._childStateMachine = childStateMachine;
-        this._climbDetector = climbDetector;
+
     }
 
     private void OnMove(Vector2 movement)
     {
         _childPlayerBehaviour.SetMovementInput(movement);
 
-        if (movement.magnitude <= 0.01f && !_climbDetector.CanClimb)
+        if (movement.magnitude <= 0.01f && !_childPlayerBehaviour.ClimbDetector.CanClimb) //ACCEDO A LOS DETECTORES DIRECTAMENTE DESDE EL BEHAVIOUR
         {
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
         }
@@ -27,7 +27,7 @@ public class ChildMoveState : IState
     }
     private void OnAction()
     {
-        if (_climbDetector.CanUseZipline)
+        if (_childPlayerBehaviour.ZiplineDetector.CanUseZipline)
         {
             _childStateMachine.TransitionTo(_childStateMachine.ziplineState);
         }

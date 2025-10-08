@@ -24,7 +24,7 @@ public class ChildActionState : IState
     {
 
         Debug.Log("Accionaste una palanca");
-        lever = _actionDetector.LevelCollider.GetComponent<ActionLever>();
+        lever = _actionDetector.LeverCollider.GetComponent<ActionLever>();
         _childPlayerBehaviour.Animator.SetBool("IsHolding", true);
             _actionTimer = 0f;
             _delayCompleted = false;
@@ -42,7 +42,7 @@ public class ChildActionState : IState
     }
     private void ActivateLever()
     {
-        if (_actionDetector.LevelCollider)
+        if (_actionDetector.LeverCollider)
         {
             lever.Activate();
             _actionDetector.CanActivate = false;
