@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f274c4b1d5f68244c8a57fd8f6d07b1a
+guid: 7362992bbbe6276458261c0ff720d96e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nina-Final-Sheet_0
+      name: Nina-Final-Sheet-Facu_0
       rect:
         serializedVersion: 2
-        x: 14
-        y: 310
-        width: 32
-        height: 42
+        x: 5
+        y: 430
+        width: 23
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,250 +137,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c549478976e3f44495e1a169897ccb3
-      internalID: 120215711
+      spriteID: 263aa76ca313ad3479359fb600b5f7e4
+      internalID: -1382759701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nina-Final-Sheet_1
+      name: Nina-Final-Sheet-Facu_1
       rect:
         serializedVersion: 2
-        x: 74
-        y: 310
-        width: 32
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: af0f777ee66f5744aa735992fe948271
-      internalID: 1477932321
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 134
-        y: 310
-        width: 32
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 290f74bd67d5c9f4da0646aa8969db50
-      internalID: 1907832789
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 310
-        width: 32
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fed021e243033ca47a0cc9e54c20f4f2
-      internalID: -786670376
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 251
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f07cf3f5b3fe1e8479d354228e041a30
-      internalID: 842928939
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 251
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f1dc247c0418fe42b8c0d43f11a7d90
-      internalID: 14716947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 134
-        y: 251
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ca8a9dc45679cc94db0e89d5f607f5cc
-      internalID: 501638071
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 251
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82105fbde4cf8bc488ed3a3583f013bc
-      internalID: 2063061366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 190
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6915d30db613b54ea887e7bfce1f951
-      internalID: 1680489026
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 190
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df4b18e9481cb264f97a767a627ca8f8
-      internalID: -942598712
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 190
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a1f21ce5f6f42f46aaaee6e732f3da0
-      internalID: 998492984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 190
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b98799ae89af0e64a80f7bf6f281ad2b
-      internalID: 254101618
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 130
-        width: 25
+        x: 37
+        y: 430
+        width: 23
         height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -389,40 +158,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fe4368607a11bb4b9c9417fe9c0b7be
-      internalID: -554544556
+      spriteID: 7fb2adb8f77a5f048b4c3e7dd0a7c9cb
+      internalID: 603844769
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nina-Final-Sheet_13
+      name: Nina-Final-Sheet-Facu_2
       rect:
         serializedVersion: 2
-        x: 77
-        y: 130
-        width: 25
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3d77d486cb9bc80428e7929dc38ee2b2
-      internalID: 1153467413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 130
-        width: 25
+        x: 69
+        y: 430
+        width: 23
         height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -431,20 +179,377 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 196939f06686a1e469d9022846b4b590
-      internalID: -2018011215
+      spriteID: f7af32a04b15c2c439500dc242fd1231
+      internalID: -800583220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nina-Final-Sheet_15
+      name: Nina-Final-Sheet-Facu_3
       rect:
         serializedVersion: 2
-        x: 197
+        x: 101
+        y: 430
+        width: 23
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95da3b13176b300488eae545ac53c6fc
+      internalID: 1877437622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_4
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 370
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5e7e08fedd5c294e9be8117bd2393e9
+      internalID: 1044123573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_5
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 370
+        width: 23
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b84957eb2b42b4479aabdbf6f059838
+      internalID: 129692804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_6
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 370
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a657713c128a8724e9243d22d1c4a700
+      internalID: 1072224696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_7
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 370
+        width: 23
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 569f6b7698005934ebf4c0ba8846c4d1
+      internalID: -2043843914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 310
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 706a79598b5d62a45b699db70a2eba6a
+      internalID: 506778410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 310
+        width: 23
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff7eca739127bf42ae20f5fd6faabe1
+      internalID: 904504243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_10
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 310
+        width: 23
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40ffda54310f4149ad4e7ff17c0d0bb
+      internalID: 1517207663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 310
+        width: 23
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20d8fc6fbe2ffe499e8d9be42004d53
+      internalID: -1740243582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 250
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d37d76010cee3a409413b5ff30d5730
+      internalID: -1073484695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_13
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 250
+        width: 20
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8b5e98b8a795f43902a7ec9d695c33
+      internalID: 696632168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_14
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 250
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e2116ec258079943b9789f9e2a5bafc
+      internalID: 698483019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 250
+        width: 20
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00fbe3e30d52a83439ea14cec8eba67c
+      internalID: 1777845291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_16
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 190
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ed49c9acc372f44bc84241bcd8aa17
+      internalID: 1342789885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_17
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 190
+        width: 20
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a2c8ee8bb730994da89366caccf1761
+      internalID: -1337798472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_18
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 190
+        width: 22
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 898f8a5a808dbb740a12ca2d56ba2a29
+      internalID: 1813551477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_19
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 190
+        width: 20
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5703eb047e1e21944a2ae109777b208b
+      internalID: -1134950267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_20
+      rect:
+        serializedVersion: 2
+        x: 3
         y: 130
         width: 25
-        height: 40
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -452,19 +557,82 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deb09d1ade9cb4a4da16862fa26d6f64
-      internalID: 777859023
+      spriteID: a17d46ccfe31fc04d842911909dd241d
+      internalID: 155070228
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nina-Final-Sheet_16
+      name: Nina-Final-Sheet-Facu_21
       rect:
         serializedVersion: 2
-        x: 17
-        y: 70
+        x: 35
+        y: 130
         width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42930df7c63dced4ea0742c35482aaf3
+      internalID: -1384569541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_22
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 130
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52cc7ccee12c2814fa5f36aa0115ecff
+      internalID: -1648004676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_23
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 130
+        width: 26
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 295007690c394a64a8e1a48163a5f3a2
+      internalID: 1321421118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 72
+        width: 22
         height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -473,40 +641,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fc618f165740dd43992ff1980739653
-      internalID: 634621563
+      spriteID: 57251728bdc6a9840b6be3b538ed0288
+      internalID: 1276181865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nina-Final-Sheet_17
+      name: Nina-Final-Sheet-Facu_25
       rect:
         serializedVersion: 2
-        x: 77
-        y: 70
-        width: 26
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ea8c521e80ce5140a26949c11570f90
-      internalID: 667386188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nina-Final-Sheet_18
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 70
-        width: 26
+        x: 37
+        y: 72
+        width: 22
         height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -515,20 +662,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89536606f37d89d4a9836d70a42adf73
-      internalID: 322388231
+      spriteID: 47b15d8e2b29f9a4087b8b88447eca58
+      internalID: 1680213250
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nina-Final-Sheet_19
+      name: Nina-Final-Sheet-Facu_26
       rect:
         serializedVersion: 2
-        x: 197
-        y: 70
-        width: 26
-        height: 40
+        x: 69
+        y: 72
+        width: 22
+        height: 39
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -536,20 +683,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfd4a43351067f04e9cd2da1312c3b58
-      internalID: 1929810079
+      spriteID: 854a2167163181d4ab414d5d4e302a39
+      internalID: 585260567
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nina-Final-Sheet_20
+      name: Nina-Final-Sheet-Facu_27
       rect:
         serializedVersion: 2
-        x: 13
+        x: 101
+        y: 72
+        width: 22
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f8629ea028381945ba3548dc75931d7
+      internalID: 1594654254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Nina-Final-Sheet-Facu_28
+      rect:
+        serializedVersion: 2
+        x: 4
         y: 10
-        width: 32
-        height: 41
+        width: 23
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -557,20 +725,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9afb075a8c84bb04c99a7b074458d65e
-      internalID: 2034150949
+      spriteID: 041784a53691b0849a3c446bb5699ecc
+      internalID: -688193715
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nina-Final-Sheet_21
+      name: Nina-Final-Sheet-Facu_29
       rect:
         serializedVersion: 2
-        x: 74
+        x: 36
         y: 10
-        width: 32
-        height: 41
+        width: 23
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -578,20 +746,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1468b1f83efced14b9cd4e13fbe44927
-      internalID: 511362902
+      spriteID: c1df4e64db7399f42a82c4fdc867d8b0
+      internalID: -959084097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nina-Final-Sheet_22
+      name: Nina-Final-Sheet-Facu_30
       rect:
         serializedVersion: 2
-        x: 135
+        x: 68
         y: 10
-        width: 32
-        height: 41
+        width: 23
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -599,20 +767,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17e89e63199230344a7cf8b5abdc8f71
-      internalID: -1990647934
+      spriteID: 48a34e3aaea81ce46b03c2e6268587ff
+      internalID: 356005586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nina-Final-Sheet_23
+      name: Nina-Final-Sheet-Facu_31
       rect:
         serializedVersion: 2
-        x: 194
+        x: 100
         y: 10
-        width: 32
-        height: 41
+        width: 23
+        height: 38
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -620,8 +788,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cada5314ce0ce546b34e3e3d1e8136c
-      internalID: 2082785494
+      spriteID: 66373de2e45bfc34fb2408236cdf2f80
+      internalID: -722154347
       vertices: []
       indices: 
       edges: []
@@ -637,30 +805,38 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Nina-Final-Sheet_0: 120215711
-      Nina-Final-Sheet_1: 1477932321
-      Nina-Final-Sheet_10: 998492984
-      Nina-Final-Sheet_11: 254101618
-      Nina-Final-Sheet_12: -554544556
-      Nina-Final-Sheet_13: 1153467413
-      Nina-Final-Sheet_14: -2018011215
-      Nina-Final-Sheet_15: 777859023
-      Nina-Final-Sheet_16: 634621563
-      Nina-Final-Sheet_17: 667386188
-      Nina-Final-Sheet_18: 322388231
-      Nina-Final-Sheet_19: 1929810079
-      Nina-Final-Sheet_2: 1907832789
-      Nina-Final-Sheet_20: 2034150949
-      Nina-Final-Sheet_21: 511362902
-      Nina-Final-Sheet_22: -1990647934
-      Nina-Final-Sheet_23: 2082785494
-      Nina-Final-Sheet_3: -786670376
-      Nina-Final-Sheet_4: 842928939
-      Nina-Final-Sheet_5: 14716947
-      Nina-Final-Sheet_6: 501638071
-      Nina-Final-Sheet_7: 2063061366
-      Nina-Final-Sheet_8: 1680489026
-      Nina-Final-Sheet_9: -942598712
+      Nina-Final-Sheet-Facu_0: -1382759701
+      Nina-Final-Sheet-Facu_1: 603844769
+      Nina-Final-Sheet-Facu_10: 1517207663
+      Nina-Final-Sheet-Facu_11: -1740243582
+      Nina-Final-Sheet-Facu_12: -1073484695
+      Nina-Final-Sheet-Facu_13: 696632168
+      Nina-Final-Sheet-Facu_14: 698483019
+      Nina-Final-Sheet-Facu_15: 1777845291
+      Nina-Final-Sheet-Facu_16: 1342789885
+      Nina-Final-Sheet-Facu_17: -1337798472
+      Nina-Final-Sheet-Facu_18: 1813551477
+      Nina-Final-Sheet-Facu_19: -1134950267
+      Nina-Final-Sheet-Facu_2: -800583220
+      Nina-Final-Sheet-Facu_20: 155070228
+      Nina-Final-Sheet-Facu_21: -1384569541
+      Nina-Final-Sheet-Facu_22: -1648004676
+      Nina-Final-Sheet-Facu_23: 1321421118
+      Nina-Final-Sheet-Facu_24: 1276181865
+      Nina-Final-Sheet-Facu_25: 1680213250
+      Nina-Final-Sheet-Facu_26: 585260567
+      Nina-Final-Sheet-Facu_27: 1594654254
+      Nina-Final-Sheet-Facu_28: -688193715
+      Nina-Final-Sheet-Facu_29: -959084097
+      Nina-Final-Sheet-Facu_3: 1877437622
+      Nina-Final-Sheet-Facu_30: 356005586
+      Nina-Final-Sheet-Facu_31: -722154347
+      Nina-Final-Sheet-Facu_4: 1044123573
+      Nina-Final-Sheet-Facu_5: 129692804
+      Nina-Final-Sheet-Facu_6: 1072224696
+      Nina-Final-Sheet-Facu_7: -2043843914
+      Nina-Final-Sheet-Facu_8: 506778410
+      Nina-Final-Sheet-Facu_9: 904504243
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
