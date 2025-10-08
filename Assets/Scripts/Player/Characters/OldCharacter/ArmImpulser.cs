@@ -93,7 +93,7 @@ public class ArmImpulser : MonoBehaviour
     }
     private void UpdateArmOrigin()
     {
-        Vector2 direction = _movementBehaviour.LastMovementInput;
+        Vector2 direction = LimitDirectionToCardinal(_movementBehaviour.LastMovementInput); //evito diagonales
 
         if (direction == Vector2.zero)
             return;
@@ -191,7 +191,7 @@ public class ArmImpulser : MonoBehaviour
     }
     public IEnumerator SpawnArmBullet(ImpulseType type)
     {
-        Vector2 direction = _movementBehaviour.LastMovementInput;
+        Vector2 direction = LimitDirectionToCardinal(_movementBehaviour.LastMovementInput); //limito diagonalkes
         if (direction == Vector2.zero)
             direction = Vector2.down;
 
@@ -231,7 +231,17 @@ public class ArmImpulser : MonoBehaviour
             armScript.SetStartTransform(_spawnPoint);
         }
     }
+    private Vector2 LimitDirectionToCardinal(Vector2 input)
+    {
+        if (input == Vector2.zero)
+            return Vector2.zero;
 
+        // evalua si el eje X o Y domina mas
+        if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
+            return new Vector2(Mathf.Sign(input.x), 0f); // Horizontal
+        else
+            return new Vector2(0f, Mathf.Sign(input.y)); // Vertical
+    }
     public void SwitchArmType( bool type)
     {
         if (type) { _curretType = ImpulseType.Push; }

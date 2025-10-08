@@ -18,7 +18,7 @@ public class ImpulseState : IState
     {
         Debug.Log("You entered the state: IMPULSE");
 
-        Vector2 lastInput = _oldPlayerBehaviour.LastMovementInput;
+        Vector2 lastInput = _oldPlayerBehaviour.LastCardinalInput;
 
         _oldPlayerBehaviour.Animator.SetBool("IsImpulsing", true);
         _oldPlayerBehaviour.Animator.SetFloat("Horizontal", lastInput.x);

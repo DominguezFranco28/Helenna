@@ -32,6 +32,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public Rigidbody2D Rigidbody2D{ get { return _rb2D; } } 
     public Vector2 MovementInput { get { return _movementInput; } }
     public Vector2 LastMovementInput { get;  set; } //necesite guardar el ultimo input para la anim del impulse
+    public Vector2 LastCardinalInput { get; private set; }
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
     public bool IsRecoiling{ get { return _isRecoiling; } set { _isRecoiling = value; } }
 
@@ -66,18 +67,32 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public void SetMovementInput(Vector2 input)
     {
         if (!IsInControll || !_canMove) return;
-        
-        _movementInput = new Vector2();
+
+        // Guardamos el input real (para movimiento físico y diagonales)
         _movementInput = input;
 
-        if (_movementInput.magnitude > 0.01f)
-            LastMovementInput = _movementInput;
-            
-        _animator.SetFloat("Horizontal", _movementInput.x);
-        _animator.SetFloat("Vertical", _movementInput.y);
+        // --- Detección de input cardinal dominante ---
+        Vector2 cardinalInput = Vector2.zero;
+
+        if (input != Vector2.zero)
+        {
+            if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
+                cardinalInput = new Vector2(Mathf.Sign(input.x), 0f);
+            else
+                cardinalInput = new Vector2(0f, Mathf.Sign(input.y));
+
+            // Guardamos el último input cardinal (para animaciones y disparos)
+            LastCardinalInput = cardinalInput;
+            LastMovementInput = input.normalized; // si querés guardar también la diagonal real
+        }
+
+        // --- Animator ---
+        // Usa los valores cardinales para dirección (sin diagonales)
+        _animator.SetFloat("Horizontal", LastCardinalInput.x);
+        _animator.SetFloat("Vertical", LastCardinalInput.y);
+
+        // Usa la magnitud real para la velocidad (para transiciones suaves)
         _animator.SetFloat("Speed", _movementInput.magnitude);
-     
-        
     }
     public void StopMovement()
     {
