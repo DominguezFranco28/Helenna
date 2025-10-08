@@ -294,7 +294,7 @@ PrefabInstance:
     - target: {fileID: 7208055977537637858, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: _rexController
       value: 
-      objectReference: {fileID: 869192484}
+      objectReference: {fileID: 0}
     - target: {fileID: 7208055977537637858, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: _triggerDetector
       value: 
@@ -15443,15 +15443,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 345783047961574929, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 345783047961574929, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 345783047961574929, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 345783047961574929, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15520,10 +15520,6 @@ PrefabInstance:
     - target: {fileID: 6545512267830578618, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: m_SortingLayerID
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6545512267830578618, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -285096,21 +285092,17 @@ PrefabInstance:
       propertyPath: _speed
       value: 10
       objectReference: {fileID: 0}
-    - target: {fileID: 1757375530525956701, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4902075083233182869, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4902075083233182869, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4902075083233182869, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4902075083233182869, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -285171,17 +285163,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7585734139544317540, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
   m_PrefabInstance: {fileID: 869192481}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &869192484 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6150687024364697993, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
-  m_PrefabInstance: {fileID: 869192481}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869192483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d20a418004219249b50b75d7767bb64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &874261668
 GameObject:
   m_ObjectHideFlags: 0
@@ -293429,9 +293410,9 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_XDamping: 0
-  m_YDamping: 0
-  m_ZDamping: 0
+  m_XDamping: 1
+  m_YDamping: 1
+  m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
