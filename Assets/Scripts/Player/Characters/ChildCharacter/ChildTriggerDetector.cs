@@ -15,7 +15,7 @@ public class ChildTriggerDetector : MonoBehaviour
     private bool _internalCanClimb = false;
     private bool _internalCanUseZipline = false;
     private bool _internalCanActivateLever = false;
-
+    private bool _useStartPoint;
 
     public Collider2D Climbable => _internalClimbableCollider;
     public Collider2D LeverCollider => _internalLeverCollider;
@@ -23,6 +23,20 @@ public class ChildTriggerDetector : MonoBehaviour
     public bool CanUseZipline { get => _internalCanUseZipline; set => _internalCanUseZipline = value; }
     public bool CanActivate { get => _internalCanActivateLever; set => _internalCanActivateLever = value; }
 
+    public Vector2 GetEntryPoint(Vector2 playerPosition, ArmLineController zipline)
+    {
+        float distStart = Vector2.Distance(playerPosition, zipline.StartPoint);
+        float distEnd = Vector2.Distance(playerPosition, zipline.EndPoint);
+
+        // Si está más cerca del StartPoint, se mueve hacia EndPoint
+        _useStartPoint = distStart < distEnd;
+        return _useStartPoint ? zipline.StartPoint : zipline.EndPoint;
+    }
+
+    public Vector2 GetTargetPoint(ArmLineController zipline)
+    {
+        return _useStartPoint ? zipline.EndPoint : zipline.StartPoint;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (_detectorType)
@@ -91,10 +105,13 @@ public class ChildTriggerDetector : MonoBehaviour
 
             Collider2D edge = collision.GetComponent<Collider2D>();
             Vector2 closestPoint = edge.ClosestPoint(transform.position);
-            float distanceToStart = Vector2.Distance(closestPoint, zipline.StartPoint);
+            float distStart = Vector2.Distance(closestPoint, zipline.StartPoint);
+            float distEnd = Vector2.Distance(closestPoint, zipline.EndPoint);
 
-            if (distanceToStart <= 1.5f)
+            if (distStart <= 1.5f || distEnd <= 1.5f)
+            {
                 OnUseZipline();
+            }
         }
 
         if (_detectorType == DetectorType.Climb && collision.CompareTag("Climbable"))
@@ -103,6 +120,7 @@ public class ChildTriggerDetector : MonoBehaviour
             _internalClimbableCollider = collision;
         }
     }
+
 
     public void OnUseZipline()
     {
