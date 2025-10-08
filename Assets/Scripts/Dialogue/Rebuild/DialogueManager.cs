@@ -51,7 +51,8 @@ public class DialogueManager : MonoBehaviour
     public TextAsset dialogueFile;
     private DialogueWrapper data;
 
-    
+    public event System.Action<string> OnFinished;
+
     [Header("DEBUG")]
     public string debugScene = "";
     public bool debugSpeak = false;
@@ -87,6 +88,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         InputManager.Instance.UnlockInputs();
+        
+        OnFinished?.Invoke(scene);
     }
 
     private List<DialogueLine> GetLinesFromScene(string scene)

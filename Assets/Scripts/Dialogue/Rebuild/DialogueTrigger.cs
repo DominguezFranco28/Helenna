@@ -10,6 +10,8 @@ public class DialogueTrigger : MonoBehaviour
     public string excludeOnTag = "none";
     public string sceneToTrigger = "";
 
+    public event System.Action OnTriggered;
+
     private void Start()
     {
         dialogueManager = GameObject.FindFirstObjectByType<DialogueManager>();
@@ -24,6 +26,7 @@ public class DialogueTrigger : MonoBehaviour
             if (collision.tag.ToLower().Contains(searchOnTag) && !collision.tag.ToLower().Contains(excludeOnTag))
             {
                 canBeTriggered = false;
+                OnTriggered?.Invoke();
                 dialogueManager.StartScene(sceneToTrigger);
             }
         }

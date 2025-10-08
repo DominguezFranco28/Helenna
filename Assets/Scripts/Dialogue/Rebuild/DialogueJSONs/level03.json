@@ -1,0 +1,109 @@
+{
+  "lines": [
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Ahhhg, se olvidaron de dejarlo levantado.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "¿Otro de tus mecanismos de seguridad?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "No exactamente. Al instalarnos en la zona empezamos a armar rutas de fácil acceso a la estación, para no tener que dar todo el rodeo.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "Pero al poco tiempo nos dimos cuenta de que este canal lo usaban algunos pescadores de la zona, así que, para no generarles quilombo, Helenna inventó un mecanismo de acceso público para que ellos pudieran abrirse paso si nosotros ya habíamos levantado el puente.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Nina",
+      "lineId": 5,
+      "text": "Qué considerado de tu parte, ¿no?",
+      "emotionToken": "nina-mocking"
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 6,
+      "text": "No salió de mí la idea.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Nina",
+      "lineId": 7,
+      "text": "No, claro que no…",
+      "emotionToken": "nina-mocking"
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 8,
+      "text": "Vamos a levantarlo. El interruptor está en esa vieja garita de pescadores.",
+      "emotionToken": "harold-demand"
+    },
+    {
+      "scene": "Block-way",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Dios… mirá cómo tienen su garita, toda…",
+      "emotionToken": "harold-doubt"
+    },
+    {
+      "scene": "Block-way",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "¿Abandonada, no?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Block-way",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "Sí… no recordaba que estuviera tan destruida, la verdad. ¿Cómo harán para seguir entrando?",
+      "emotionToken": "harold-doubt"
+    },
+    {
+      "scene": "Block-way",
+      "speaker": "Nina",
+      "lineId": 4,
+      "text": "¿Cómo haremos nosotros para entrar?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Level-end",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "???",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Level-end",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "???",
+      "emotionToken": "harold-doubt"
+    },
+    {
+      "scene": "Level-end",
+      "speaker": "Rex",
+      "lineId": 1,
+      "text": "???",
+      "emotionToken": "rex-barking"
+    }
+  ]
+}
