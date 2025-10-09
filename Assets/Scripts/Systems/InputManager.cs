@@ -84,12 +84,12 @@ public class InputManager : MonoBehaviour
         inputActions.Player.Look.canceled += ctx => {  Look?.Invoke(Vector2.zero); };
 
         // --- Pause ---
-        inputActions.Player.Pause.started += ctx => { if (!inputsLocked) PausePressed?.Invoke(); };
-        inputActions.Player.Pause.canceled += ctx => {  PauseReleased?.Invoke(); };
+        inputActions.Player.Pause.started += ctx => PausePressed?.Invoke();
+        inputActions.Player.Pause.canceled += ctx => PauseReleased?.Invoke();
 
         // --- Skip Dialogue ---
-        inputActions.UI.Submit.started += ctx => SkipDialoguePressed?.Invoke();
-        inputActions.UI.Submit.performed += ctx => SkipDialogueHeld?.Invoke();
+        inputActions.UI.Submit.started += ctx => { if (!inputsLocked) SkipDialoguePressed?.Invoke(); };
+        inputActions.UI.Submit.performed += ctx => { if (!inputsLocked) SkipDialogueHeld?.Invoke(); };
         inputActions.UI.Submit.canceled += ctx => SkipDialogueReleased?.Invoke();
 
         // --- Interact ---
