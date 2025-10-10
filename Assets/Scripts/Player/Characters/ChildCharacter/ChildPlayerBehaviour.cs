@@ -13,6 +13,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     [SerializeField] private AudioClip _climbingLoopSFX; 
     [SerializeField] private AudioClip _footstepsSFX; 
     private Rigidbody2D _rb2D;
+    private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
     private Animator _animator;
     private Vector2 _movementInput;
@@ -32,6 +33,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     public ChildTriggerDetector ZiplineDetector { get; private set; }
     public ChildTriggerDetector LeverDetector { get; private set; }
     public ChildTriggerDetector ClimbDetector { get; private set; }
+    public ChildTriggerDetector PetDetector { get; private set; }
 
 
     public void SetSpeed(float newSpeed)
@@ -50,6 +52,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
         _animator = GetComponent<Animator>();
         _currentSpeed = _speed;
         _collider = GetComponent<Collider2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void SetMovementInput(Vector2 input)
@@ -118,6 +121,9 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
                     break;
                 case ChildTriggerDetector.DetectorType.Lever:
                     LeverDetector = det;
+                    break;
+                case ChildTriggerDetector.DetectorType.Character:
+                    PetDetector = det;
                     break;
             }
         }

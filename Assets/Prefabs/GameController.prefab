@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4424943665353482001}
   - component: {fileID: 3821911659973663193}
+  - component: {fileID: 2718018259765695801}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -47,4 +48,19 @@ MonoBehaviour:
   characters:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   _virtualCamera: {fileID: 0}
+  _changeSFX: {fileID: 8300000, guid: 7b156a78918563d49b1f1c4eb0a3d747, type: 3}
+  playCinematic: {fileID: 0}
+--- !u!114 &2718018259765695801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7191502616451256375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe49861f2d81c04cb295142b7e91d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

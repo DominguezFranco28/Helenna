@@ -14,7 +14,8 @@ public class CharacterManager : MonoBehaviour
 
     //Referencias a la zipline
     private ArmLineController _activeZipline = null; //referencia global a la zipline activa, para que el state de Nina pueda acceder a ella
-    public bool IsOnZipline { get; set; } = false; //para que el inputManager no permita cambiar de personaje si alguno esta en una zipline
+    public bool IsOnZipline { get; set; } = false; //para que el inputManager no permita cambiar de personaje si alguno esta en una zipline  [Header("Cinematica")]
+    public PlayCinematic playCinematic;
 
     void Awake()
     {
@@ -82,6 +83,7 @@ public class CharacterManager : MonoBehaviour
             {
                // Debug.Log("ActivateCharacter: " + characters[i].name);
                control.SetControl(i == index);
+               
               // control.SetMovementEnabled(i == index);
                 //This is equal to true, only for the character that is at the index in this for loop,
                 //all the others are set to false so they cannot move due to their Behavior
@@ -130,5 +132,42 @@ public class CharacterManager : MonoBehaviour
     public string GetActiveCharacter()
     {
         return characters[_currentIndex].name;
+    }
+    public Transform GetCharacterTransform(string characterName)
+    {
+        foreach (var character in characters)
+        {
+            if (character.name == characterName)
+                return character.transform;
+        }
+        Debug.LogWarning($"Character with name {characterName} not found in CharacterManager.");
+        return null;
+    }
+    public IEnumerator AlignCharacters(Transform nina, Transform rex, Vector2 offsetFromRex, float speed)
+    {
+      // GameStateManager.Instance.SetState(GameState.Paused);
+        Vector2 targetPos = (Vector2)rex.position + offsetFromRex;
+
+        while (Vector2.Distance(nina.position, targetPos) > 0.05f)
+        {
+            nina.position = Vector2.MoveTowards(nina.position, targetPos, speed * Time.deltaTime);
+            yield return null;
+        }
+        nina.position = targetPos; //se fuerza la pos final de nina
+        var ninaSprite = nina.GetComponentInChildren<SpriteRenderer>();
+        ninaSprite.sortingOrder = 6; //para que quede delante de rex
+        var rexSprite = rex.GetComponentInChildren<SpriteRenderer>();
+
+        // Alinear las direcciones que miran ambos personajes
+        Vector2 dir = rex.position - nina.position;
+        bool ninaShouldFaceRight = dir.x > 0;
+
+
+        if (ninaSprite != null) ninaSprite.flipX = !ninaShouldFaceRight;
+        if (rexSprite != null) rexSprite.flipX = !ninaShouldFaceRight;
+
+        // un pequeno delay antes de activar la cinematica
+        yield return new WaitForSeconds(0.2f);
+        playCinematic.Play();
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChildTriggerDetector : MonoBehaviour
 {
-    public enum DetectorType { Climb, Zipline, Lever, Pushable }
+    public enum DetectorType { Climb, Zipline, Lever, Character }
 
     [Header("Tipo de detector")]
     [SerializeField] private DetectorType _detectorType;
@@ -15,6 +15,7 @@ public class ChildTriggerDetector : MonoBehaviour
     private bool _internalCanClimb = false;
     private bool _internalCanUseZipline = false;
     private bool _internalCanActivateLever = false;
+    private bool _internalCanPet = false;
     private bool _useStartPoint;
 
     public Collider2D Climbable => _internalClimbableCollider;
@@ -22,6 +23,7 @@ public class ChildTriggerDetector : MonoBehaviour
     public bool CanClimb => _internalCanClimb;
     public bool CanUseZipline { get => _internalCanUseZipline; set => _internalCanUseZipline = value; }
     public bool CanActivate { get => _internalCanActivateLever; set => _internalCanActivateLever = value; }
+    public bool CanPet { get => _internalCanPet; set => _internalCanPet = value; }
 
     public Vector2 GetEntryPoint(Vector2 playerPosition, ArmLineController zipline)
     {
@@ -61,8 +63,13 @@ public class ChildTriggerDetector : MonoBehaviour
                 // zipline no se activa al entrar, solo en Stay
                 break;
 
-            case DetectorType.Pushable:
-                // logica pushable si se requiere a futuro? puede dar juego a alguos puzzles con Harold
+            case DetectorType.Character:
+                if (collision.CompareTag("DogPlayer"))
+                {
+                    _internalCanPet = true;
+                    Debug.Log("Child can pet the dog now.");
+
+                }
                 break;
         }
     }
@@ -92,6 +99,14 @@ public class ChildTriggerDetector : MonoBehaviour
                 {
                     ResetZipline();
                 }
+                break;
+
+            case DetectorType.Character:
+
+            if (collision.CompareTag("DogPlayer"))
+            {
+                _internalCanPet = false;
+            }
                 break;
         }
     }
