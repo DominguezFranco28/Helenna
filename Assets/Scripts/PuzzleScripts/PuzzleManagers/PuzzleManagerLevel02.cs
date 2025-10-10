@@ -32,6 +32,10 @@ public class PuzzleManagerLevel02 : MonoBehaviour
     [Header("Cinematica")]
     public PlayCinematic playCinematic;
 
+    public ParticleSystem p1aSteamVFX;
+    public ParticleSystem p1bSteamVFX;
+    public AudioClip steamSFX;
+
     private void OnEnable()
     {
         lever.OnLeverActioned += LeverActioned;
@@ -142,10 +146,20 @@ public class PuzzleManagerLevel02 : MonoBehaviour
 
     private IEnumerator OpenBridge()
     {
+        if (steamSFX)
+            SFXManager.Instance.PlaySFX(steamSFX);
+        if(p1aSteamVFX)
+            p1aSteamVFX.Play();
+
         if (playCinematic)
             playCinematic.Play();
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4.25f);
+        if(steamSFX)
+            SFXManager.Instance.PlaySFX(steamSFX);
+        if(p1bSteamVFX)
+            p1bSteamVFX.Play();
+        yield return new WaitForSeconds(0.25f);
         bridge.BridgeOpen();
 
         StartCoroutine(Victory());
@@ -158,7 +172,7 @@ public class PuzzleManagerLevel02 : MonoBehaviour
 
         if (endScreen)
         {
-            endScreen.text = "Nivel 2 Terminado - Fin de Demo";
+            endScreen.text = "Nivel 2 Terminado";
             endScreen.gameObject.SetActive(true);
 
             yield return new WaitForSeconds(5f);
