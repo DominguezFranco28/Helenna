@@ -39,7 +39,7 @@ public class PauseMenu : MonoBehaviour
 
         background = GetComponent<Image>();
 
-        HideMenu();
+        ContinueGame();
     }
 
     private void TogglePauseGame()
@@ -49,28 +49,40 @@ public class PauseMenu : MonoBehaviour
             canTogglePause = false;
             if (isPaused)
             {
-                ContinueGame();
+                StartCoroutine(ContinueGameRoutine());
             }
             else
             {
-                ShowMenu();
-                InputManager.Instance.LockInputs();
+                StartCoroutine(PauseGameRoutine());
             }
-            isPaused = !isPaused;
-            Invoke("AllowPauseToggle", 0.5f);
         }
-        
     }
 
-    private void AllowPauseToggle()
+    private IEnumerator PauseGameRoutine()
     {
+        ShowMenu();
+        InputManager.Instance.LockInputs();
+        InputManager.Instance.LockDialogueInputs();
+        isPaused = true;
+
+        yield return new WaitForSeconds(0.1f);
         canTogglePause = true;
     }
 
     private void ContinueGame()
     {
+        StartCoroutine(ContinueGameRoutine());
+    }
+
+    private IEnumerator ContinueGameRoutine()
+    {
         HideMenu();
         InputManager.Instance.UnlockInputs();
+        InputManager.Instance.UnlockDialogueInputs();
+        isPaused = false;
+
+        yield return new WaitForSeconds(0.1f);
+        canTogglePause = true;
     }
 
     private void ToMenu()

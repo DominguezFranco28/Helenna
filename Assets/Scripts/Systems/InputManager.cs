@@ -10,7 +10,7 @@ public class InputManager : MonoBehaviour
     private static InputManager _instance;
 
     private InputSystem_Actions inputActions;
-
+    
     // --- Events for gameplay code ---
     public event Action<Vector2> Move;
     public event Action<Vector2> Look;
@@ -38,6 +38,7 @@ public class InputManager : MonoBehaviour
     public event Action SkipDialogueHeld;
 
     private bool inputsLocked = false;
+    private bool dialogueInputsLocked = false;
 
     public void LockInputs()
     {
@@ -49,6 +50,16 @@ public class InputManager : MonoBehaviour
     public void UnlockInputs()
     {
         inputsLocked = false;
+    }
+
+    public void LockDialogueInputs()
+    {
+        dialogueInputsLocked = true;
+    }
+
+    public void UnlockDialogueInputs()
+    {
+        dialogueInputsLocked = false;
     }
 
     public bool AreInputsLocked()
@@ -88,8 +99,8 @@ public class InputManager : MonoBehaviour
         inputActions.Player.Pause.canceled += ctx => PauseReleased?.Invoke();
 
         // --- Skip Dialogue ---
-        inputActions.UI.Submit.started += ctx => { if (!inputsLocked) SkipDialoguePressed?.Invoke(); };
-        inputActions.UI.Submit.performed += ctx => { if (!inputsLocked) SkipDialogueHeld?.Invoke(); };
+        inputActions.UI.Submit.started += ctx => { if (!dialogueInputsLocked) SkipDialoguePressed?.Invoke(); };
+        inputActions.UI.Submit.performed += ctx => { if (!dialogueInputsLocked) SkipDialogueHeld?.Invoke(); };
         inputActions.UI.Submit.canceled += ctx => SkipDialogueReleased?.Invoke();
 
         // --- Interact ---
