@@ -38,20 +38,8 @@ public class InputManager : MonoBehaviour
     public event Action SkipDialogueHeld;
 
     private bool inputsLocked = false;
-    private void Update()
-    {
-        // block de inputs si el juego no esta en Playing
-        if (GameStateManager.Instance != null)
-        {
-            inputsLocked = GameStateManager.Instance.IsGamePaused();
-            if (inputsLocked)
-            {
-               
-                Move?.Invoke(Vector2.zero);
-                Look?.Invoke(Vector2.zero);
-            }
-        }
-    }
+
+    
     public void LockInputs()
     {
         inputsLocked = true;

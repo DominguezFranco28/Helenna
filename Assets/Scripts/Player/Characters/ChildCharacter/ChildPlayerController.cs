@@ -54,6 +54,8 @@ public class ChildPlayerController : MonoBehaviour, IHasStateMachine
             }
             if (_childBehaviour.PetDetector.CanPet && interacting) 
             {
+                //Alinear personajes antes de la animacion de pet
+                InputManager.Instance.LockInputs(); //lockeo inputs para que no se muevan durante la animacion
                 var nina = CharacterManager.Instance.GetCharacterTransform("ChildPlayer");
                 var rex = CharacterManager.Instance.GetCharacterTransform("DogPlayer");
                 if (nina != null && rex != null)

@@ -145,7 +145,7 @@ public class CharacterManager : MonoBehaviour
     }
     public IEnumerator AlignCharacters(Transform nina, Transform rex, Vector2 offsetFromRex, float speed)
     {
-      // GameStateManager.Instance.SetState(GameState.Paused);
+
         Vector2 targetPos = (Vector2)rex.position + offsetFromRex;
 
         while (Vector2.Distance(nina.position, targetPos) > 0.05f)

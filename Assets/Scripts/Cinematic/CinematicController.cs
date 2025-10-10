@@ -25,8 +25,9 @@ public class CinematicController : MonoBehaviour
             cameraFollow.SetActive(true);
         letterboxUI.ShowBorders();
         cameraZoom.StartZoom();
-        GameStateManager.Instance.SetState(GameState.Paused);
-        Debug.Log(GameStateManager.Instance.CurrentState);
+        InputManager.Instance.LockInputs();
+        //GameStateManager.Instance.SetState(GameState.Paused);
+        //Debug.Log(GameStateManager.Instance.CurrentState);
         // El Timeline se dispara desde CameraZoom cuando termina el zoom.
     }
 
@@ -38,8 +39,9 @@ public class CinematicController : MonoBehaviour
             cameraFollow.SetActive(false);
         if (character !=null)
             character.flipX = false; //reestablezco flip a nina
-        GameStateManager.Instance.SetState(GameState.Playing);
-        Debug.Log(GameStateManager.Instance.CurrentState);
+        InputManager.Instance.UnlockInputs();
+       // GameStateManager.Instance.SetState(GameState.Playing);
+        //Debug.Log(GameStateManager.Instance.CurrentState);
 
     }
 }
