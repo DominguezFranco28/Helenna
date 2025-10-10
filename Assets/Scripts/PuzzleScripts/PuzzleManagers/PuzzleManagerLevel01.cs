@@ -37,6 +37,12 @@ public class PuzzleManagerLevel01 : MonoBehaviour
     [Header("Cinematica")]
     public PlayCinematic playCinematic;
 
+
+    public ParticleSystem p1SteamVFX;
+    public ParticleSystem p2SteamVFX;
+    public ParticleSystem p3SteamVFX;
+    public AudioClip steamSFX;
+
     private void CheckAllDone()
     {
         if (playCinematic)
@@ -181,6 +187,10 @@ public class PuzzleManagerLevel01 : MonoBehaviour
                 foreach (ActionLever lever in leversP1)
                     lever.canActivate = false;
 
+                if(steamSFX)
+                    SFXManager.Instance.PlaySFX(steamSFX);
+                if(p1SteamVFX)
+                    p1SteamVFX.Play();
                 puzzleDoneP1 = true;
                 CheckAllDone();
             }
@@ -217,7 +227,10 @@ public class PuzzleManagerLevel01 : MonoBehaviour
                         light.Toggle();
                     }
                 }
-                
+                if(steamSFX)
+                    SFXManager.Instance.PlaySFX(steamSFX);
+                if(p3SteamVFX)
+                    p3SteamVFX.Play();
                 puzzleDoneP3 = true;
                 CheckAllDone();
             }
@@ -242,6 +255,10 @@ public class PuzzleManagerLevel01 : MonoBehaviour
             gateC.Toggle();
         else
         {
+            if(steamSFX)
+                SFXManager.Instance.PlaySFX(steamSFX);
+            if(p2SteamVFX)
+                p2SteamVFX.Play();
             puzzleDoneP2 = true;
             CheckAllDone();
             foreach (CircuitLight light in lightsP2)

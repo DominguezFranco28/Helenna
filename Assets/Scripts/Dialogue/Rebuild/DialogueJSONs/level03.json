@@ -1,0 +1,46 @@
+{
+  "lines": [
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Ahhhg, se olvidaron de dejarlo levantado.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "¿Otro de tus mecanismos de seguridad?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "No exactamente. Al instalarnos en la zona empezamos a armar rutas de fácil acceso a la estación, para no tener que dar todo el rodeo.",
+      "emotionToken": ""
+    },
+    {
+      "scene": "Block-way",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Dios… mirá cómo tienen su garita, toda…",
+      "emotionToken": "harold-doubt"
+    },
+    {
+      "scene": "Block-way",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "¿Abandonada, no?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Level-end",
+      "speaker": "Nina",
+      "lineId": 14,
+      "text": "Mi papá no podría… agh, nada. Hagámoslo.",
+      "emotionToken": "nina-doubt"
+    }
+  ]
+}
