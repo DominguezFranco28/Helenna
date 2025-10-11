@@ -63,6 +63,9 @@ public class ChildPlayerController : MonoBehaviour, IHasStateMachine
                     float direction = nina.transform.position.x < rex.transform.position.x ? -1f : 1f; //ajusto la direccion de la anim segun la pos en X de los personajes
                     Vector2 offset = new Vector2(direction, 0.4f); //0.4 para ajustar la altura en Y del pet, puede mejorarse
                     StartCoroutine(CharacterManager.Instance.AlignCharacters(nina, rex, offset, 0.05f)); //ojo ajustar el pivote para que quede bien alineado
+                    _childBehaviour.Animator.SetFloat("Horizontal", direction); //seteo la direccion de la animacion
+                    _childBehaviour.Animator.SetFloat("Speed", 0.05f); //seteo la direccion de la animacion
+                    StartCoroutine(ResetAnimator(1f)); //un delay antes de reestablecer los valores del animator
                     Debug.Log("Aligning characters");
                 }
                 else
@@ -83,5 +86,11 @@ public class ChildPlayerController : MonoBehaviour, IHasStateMachine
                     return;
                 }
         }
+    }
+    private IEnumerator ResetAnimator(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        _childBehaviour.Animator.SetFloat("Horizontal", 0f); //reseteo la direccion de la animacion
+        _childBehaviour.Animator.SetFloat("Speed", 0f); //reseteo la direccion de la animacion
     }
 }
