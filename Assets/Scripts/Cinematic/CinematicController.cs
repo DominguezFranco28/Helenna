@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CinematicController : MonoBehaviour
 {
+    public List<Transform> characters; //asignar los personajes en el inspector
     public CameraZoom cameraZoom;
     public LetterboxUI letterboxUI;
     public GameObject cameraFollow;
@@ -19,6 +20,26 @@ public class CinematicController : MonoBehaviour
             PlayCinematic();
         }
     }
+    public void AlignCharacters() //testeo alinear desde el inspector
+    {
+        Align(characters);
+    }
+    public void Align(List<Transform> characters, float spacing = 0.3f)
+    {
+        if (characters.Count < 3) return;
+
+        for (int i = 1; i < characters.Count; i++)
+        {
+            Vector3 targetPosition = new Vector3(
+                characters[0].localPosition.x + (i * spacing), // Espaciado progresivo
+                characters[i].localPosition.y,
+                characters[0].localPosition.z
+            );
+
+            characters[i].localPosition = targetPosition;
+        }
+    }
+
     public void PlayCinematic()
     {
         if (disableCamera)
@@ -44,4 +65,5 @@ public class CinematicController : MonoBehaviour
         //Debug.Log(GameStateManager.Instance.CurrentState);
 
     }
+
 }

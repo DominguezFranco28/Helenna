@@ -50,8 +50,9 @@ public class DialogueManager : MonoBehaviour
 
     public TextAsset dialogueFile;
     private DialogueWrapper data;
+    public event System.Action<DialogueLine> OnLineStarted; //agregado para cinematicas
 
-    
+
     [Header("DEBUG")]
     public string debugScene = "";
     public bool debugSpeak = false;
@@ -136,6 +137,8 @@ public class DialogueManager : MonoBehaviour
  
         writeLineCoroutine = StartCoroutine(WriteLine(line.text));
 
+        OnLineStarted?.Invoke(line);//evento para cinematicas
+
     }
 
     public void Speak(string scene, string speaker, int lineId)
@@ -169,6 +172,7 @@ public class DialogueManager : MonoBehaviour
         if (!string.IsNullOrEmpty(lineObj.emotionToken))
             SFXManager.Instance.PlayEmotion(lineObj.emotionToken);
         writeLineCoroutine = StartCoroutine(WriteLine(lineObj.text));
+        OnLineStarted?.Invoke(lineObj);
 
     }
 

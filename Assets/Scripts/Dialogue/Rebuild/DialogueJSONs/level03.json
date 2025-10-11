@@ -1,46 +1,116 @@
 {
   "lines": [
     {
-      "scene": "Level-intro",
+      "scene": "Entry-Dialogue",
       "speaker": "Harold",
       "lineId": 1,
-      "text": "Ahhhg, se olvidaron de dejarlo levantado.",
-      "emotionToken": "harold-annoyed"
+      "text": "Bueno, ya casi estamos... ahora solo...",
+      "emotionToken": "harold-neutral"
     },
     {
-      "scene": "Level-intro",
+      "scene": "Entry-Dialogue",
       "speaker": "Nina",
       "lineId": 2,
-      "text": "¿Otro de tus mecanismos de seguridad?",
+      "text": "¿Eh?",
       "emotionToken": "nina-doubt"
     },
     {
-      "scene": "Level-intro",
+      "scene": "Entry-Dialogue",
       "speaker": "Harold",
       "lineId": 3,
-      "text": "No exactamente. Al instalarnos en la zona empezamos a armar rutas de fácil acceso a la estación, para no tener que dar todo el rodeo.",
-      "emotionToken": ""
+      "text": "Qué raro...",
+      "emotionToken": "harold-confused"
     },
     {
-      "scene": "Block-way",
+      "scene": "Entry-Dialogue",
+      "speaker": "Nina",
+      "lineId": 4,
+      "text": "Ehhh... ¿y ahora? ¿Tenemos otro desvío?",
+      "emotionToken": "nina-curious"
+    },
+    {
+      "scene": "Entry-Dialogue",
       "speaker": "Harold",
+      "lineId": 5,
+      "text": "No… no debería. Es una línea recta hacia el norte para llegar a la estación.",
+      "emotionToken": "harold-thoughtful"
+    },
+    {
+      "scene": "Entry-Dialogue",
+      "speaker": "Nina",
+      "lineId": 6,
+      "text": "¿Y todos estos escombros?",
+      "emotionToken": "nina-surprised"
+    },
+    {
+      "scene": "Entry-Dialogue",
+      "speaker": "Harold",
+      "lineId": 7,
+      "text": "…",
+      "emotionToken": "harold-silent"
+    },
+    {
+      "scene": "Entry-Dialogue",
+      "speaker": "Nina",
+      "lineId": 8,
+      "text": "¡Capaz hay algún herido, viejo! ¿Y si le pasó algo a tu mujer? ¡Dale, vamos!",
+      "emotionToken": "nina-concerned"
+    },
+    {
+      "scene": "Entry-Dialogue",
+      "speaker": "Harold",
+      "lineId": 9,
+      "text": "…",
+      "emotionToken": "harold-worried"
+    },
+    {
+      "scene": "Inside-station",
+      "speaker": "Nina",
       "lineId": 1,
-      "text": "Dios… mirá cómo tienen su garita, toda…",
-      "emotionToken": "harold-doubt"
+      "text": "¡Pero esto está todo destruido! ¡Viejo, esto no es reciente! ¿Qué pasó acá?",
+      "emotionToken": "nina-shocked"
     },
     {
-      "scene": "Block-way",
-      "speaker": "Nina",
+      "scene": "Inside-station",
+      "speaker": "Harold",
       "lineId": 2,
-      "text": "¿Abandonada, no?",
+      "text": "No… no lo sé… Helenna lo usa todos los días...",
+      "emotionToken": "harold-confused"
+    },
+    {
+      "scene": "Inside-station",
+      "speaker": "Nina",
+      "lineId": 3,
+      "text": "¡Pero mirá el estado de esto! ¿Estás seguro que este es el tren que toma tu mujer?",
       "emotionToken": "nina-doubt"
     },
     {
-      "scene": "Level-end",
+      "scene": "Inside-station",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "...",
+      "emotionToken": "harold-silent"
+    },
+    {
+      "scene": "Inside-station",
       "speaker": "Nina",
-      "lineId": 14,
-      "text": "Mi papá no podría… agh, nada. Hagámoslo.",
-      "emotionToken": "nina-doubt"
+      "lineId": 5,
+      "text": "¡HAROLD!",
+      "emotionToken": "nina-angry"
+    },
+    {
+      "scene": "Inside-station",
+      "speaker": "Harold",
+      "lineId": 6,
+      "text": "Va… vayamos a pie. Tal vez averigüemos algo en la ciudad…",
+      "emotionToken": "harold-resigned"
+    },
+    {
+      "scene": "Inside-station",
+      "speaker": "Nina",
+      "lineId": 7,
+      "text": "¡Eh, viejo, esperá!",
+      "emotionToken": "nina-worried"
     }
   ]
 }
