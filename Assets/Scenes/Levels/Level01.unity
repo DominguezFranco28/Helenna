@@ -147721,7 +147721,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -8
+  m_SortingOrder: -7
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -283707,7 +283707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &614554997
 Transform:
   m_ObjectHideFlags: 0
@@ -287923,6 +287923,11 @@ MonoBehaviour:
   _timeLineTrigger: {fileID: 984656120}
   targetZoom: 15
   zoomSpeed: 1
+  shakeDuration: 0.5
+  shakeAmplitude: 2
+  shakeFrequency: 2
+  postProcessVolume: {fileID: 0}
+  cinematicController: {fileID: 0}
 --- !u!114 &984656122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287935,12 +287940,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c37e1f9071cef6429565aea0957ed51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLineTrigger: {fileID: 984656120}
   cameraZoom: {fileID: 984656121}
   letterboxUI: {fileID: 984656123}
   cameraFollow: {fileID: 1741860367}
   disableCamera: 1
   playOnStart: 0
   character: {fileID: 0}
+  characters: []
+  cinematicPoint: {fileID: 0}
 --- !u!114 &984656123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293422,6 +293430,11 @@ MonoBehaviour:
   _timeLineTrigger: {fileID: 1452748519}
   targetZoom: 15
   zoomSpeed: 1
+  shakeDuration: 0.5
+  shakeAmplitude: 2
+  shakeFrequency: 2
+  postProcessVolume: {fileID: 0}
+  cinematicController: {fileID: 0}
 --- !u!114 &1452748521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293434,12 +293447,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c37e1f9071cef6429565aea0957ed51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLineTrigger: {fileID: 1452748519}
   cameraZoom: {fileID: 1452748520}
   letterboxUI: {fileID: 1452748522}
   cameraFollow: {fileID: 1741860367}
   disableCamera: 1
   playOnStart: 1
   character: {fileID: 0}
+  characters: []
+  cinematicPoint: {fileID: 0}
 --- !u!114 &1452748522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301910,6 +301926,11 @@ MonoBehaviour:
   _timeLineTrigger: {fileID: 2024778152}
   targetZoom: 6
   zoomSpeed: 2
+  shakeDuration: 0.5
+  shakeAmplitude: 2
+  shakeFrequency: 2
+  postProcessVolume: {fileID: 0}
+  cinematicController: {fileID: 0}
 --- !u!114 &2024778154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301922,12 +301943,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c37e1f9071cef6429565aea0957ed51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLineTrigger: {fileID: 2024778152}
   cameraZoom: {fileID: 2024778153}
   letterboxUI: {fileID: 2024778155}
   cameraFollow: {fileID: 1099452463}
   disableCamera: 0
   playOnStart: 0
   character: {fileID: 101411718}
+  characters: []
+  cinematicPoint: {fileID: 0}
 --- !u!114 &2024778155
 MonoBehaviour:
   m_ObjectHideFlags: 0

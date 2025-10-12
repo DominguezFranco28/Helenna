@@ -17,4 +17,5 @@ public class PlayCinematic : MonoBehaviour
         SFXManager.Instance.StopLoop();
  
     }
+    
 }

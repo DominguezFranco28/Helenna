@@ -176645,6 +176645,11 @@ MonoBehaviour:
   _timeLineTrigger: {fileID: 984656120}
   targetZoom: 15
   zoomSpeed: 1
+  shakeDuration: 0.5
+  shakeAmplitude: 2
+  shakeFrequency: 2
+  postProcessVolume: {fileID: 0}
+  cinematicController: {fileID: 0}
 --- !u!114 &984656122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176657,12 +176662,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c37e1f9071cef6429565aea0957ed51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLineTrigger: {fileID: 984656120}
   cameraZoom: {fileID: 984656121}
   letterboxUI: {fileID: 984656123}
   cameraFollow: {fileID: 1741860367}
   disableCamera: 1
   playOnStart: 0
   character: {fileID: 0}
+  characters: []
+  cinematicPoint: {fileID: 0}
 --- !u!114 &984656123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182190,6 +182198,11 @@ MonoBehaviour:
   _timeLineTrigger: {fileID: 1542110276}
   targetZoom: 6
   zoomSpeed: 2
+  shakeDuration: 0.5
+  shakeAmplitude: 2
+  shakeFrequency: 2
+  postProcessVolume: {fileID: 0}
+  cinematicController: {fileID: 0}
 --- !u!114 &1542110278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182202,12 +182215,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c37e1f9071cef6429565aea0957ed51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLineTrigger: {fileID: 1542110276}
   cameraZoom: {fileID: 1542110277}
   letterboxUI: {fileID: 1542110279}
   cameraFollow: {fileID: 585519151}
   disableCamera: 0
   playOnStart: 0
   character: {fileID: 1393953480}
+  characters: []
+  cinematicPoint: {fileID: 0}
 --- !u!114 &1542110279
 MonoBehaviour:
   m_ObjectHideFlags: 0
