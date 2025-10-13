@@ -55,7 +55,7 @@ public class DialogueTrigger : MonoBehaviour
         // solo disparar si el trigger está configurado
         if (playCinematic == null || triggerLineIndex < 0)
             return;
-        Debug.Log($"Revisando línea {line.lineId} de {line.scene} (esperada: {triggerShakeLineIndex})");
+     //   Debug.Log($"Revisando línea {line.lineId} de {line.scene} (esperada: {triggerShakeLineIndex})");
 
         if (line.scene == sceneToTrigger && line.lineId == triggerShakeLineIndex)
         {
@@ -69,9 +69,8 @@ public class DialogueTrigger : MonoBehaviour
             {
                 cinematicStarted = true;
                 playCinematic.Play();
-                Debug.Log($"Cinemática disparada en línea {line.lineId} de {line.scene}");
+              //  Debug.Log($"Cinemática disparada en línea {line.lineId} de {line.scene}");
             }
-            //desuscribirse si solo querés disparar una vez
             dialogueManager.OnLineStarted -= CheckTriggerLine;
         }
     }

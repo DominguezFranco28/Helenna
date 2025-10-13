@@ -16,7 +16,7 @@ public class AdaptiveMusicLayering : MonoBehaviour
     [SerializeField] private float _fadeDuration = 1.5f;
     private Coroutine _activeFadeCoroutine;
     private AudioSource _currentMusicLayer;
-
+    private const float TARGET_VOLUME = 1.0f; //vol objetivo de la musica cuando ya arranco
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -45,13 +45,14 @@ public class AdaptiveMusicLayering : MonoBehaviour
         if (_layerOneSource != null)
         {
             // Inicializamos el volumen base
-            _layerOneSource.volume = 1f;
+            _layerOneSource.volume = 0f;
             if (!_layerOneSource.isPlaying)
             {
                 _layerOneSource.Play(); // Ambos empiezan a sonar (loop)
             }
             // La capa uno es la inicial
             _currentMusicLayer = _layerOneSource;
+            FadeCurrentMusicVolume(TARGET_VOLUME); //levamos el sonido a 1
         }
 
         if (_layerTwoSource != null)
@@ -64,6 +65,41 @@ public class AdaptiveMusicLayering : MonoBehaviour
             }
         }
     }
+
+    //  llamar antes de TransitionManager.LoadScene()
+    public void FadeOutMusicBeforeSceneChange()
+    {
+        // Detiene cualquier fade actual 
+        if (_activeFadeCoroutine != null)
+        {
+            StopCoroutine(_activeFadeCoroutine);
+        }
+
+        //  fade-out de la musica actual
+        _activeFadeCoroutine = StartCoroutine(FadeOutAndStop(_currentMusicLayer, _fadeDuration));
+    }
+
+    // corrutina para el fade-out final
+    private IEnumerator FadeOutAndStop(AudioSource audioSourceToFade, float duration)
+    {
+        float currentTime = 0;
+        float startingVolume = audioSourceToFade.volume;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            // Lerp de volumen actual a 0
+            audioSourceToFade.volume = Mathf.Lerp(startingVolume, 0f, currentTime / duration);
+            yield return null;
+        }
+
+        audioSourceToFade.volume = 0f;
+        // detenemos la música una vez que termina el fade-out
+      //  audioSourceToFade.Stop();
+        _activeFadeCoroutine = null;
+    }
+
+
 
     //  Method for reproducing a resolution tone
     public void PlayResolutionTone()
@@ -161,6 +197,11 @@ public class AdaptiveMusicLayering : MonoBehaviour
         fadeInSource.volume = 1f;
         fadeOutSource.volume = 0f;
         _activeFadeCoroutine = null;
+    }
+
+    public float GetFadeDuration()
+    {
+        return _fadeDuration;
     }
 }
 

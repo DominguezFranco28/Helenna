@@ -162245,7 +162245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &614554997
 Transform:
   m_ObjectHideFlags: 0
@@ -176648,7 +176648,9 @@ MonoBehaviour:
   shakeDuration: 0.5
   shakeAmplitude: 2
   shakeFrequency: 2
+  changeMusicLayer: 0
   postProcessVolume: {fileID: 0}
+  haroldBreakSound: {fileID: 0}
   cinematicController: {fileID: 0}
 --- !u!114 &984656122
 MonoBehaviour:
@@ -176669,6 +176671,7 @@ MonoBehaviour:
   disableCamera: 1
   playOnStart: 0
   character: {fileID: 0}
+  endLevel: 0
   characters: []
   cinematicPoint: {fileID: 0}
 --- !u!114 &984656123
@@ -182201,7 +182204,9 @@ MonoBehaviour:
   shakeDuration: 0.5
   shakeAmplitude: 2
   shakeFrequency: 2
+  changeMusicLayer: 0
   postProcessVolume: {fileID: 0}
+  haroldBreakSound: {fileID: 0}
   cinematicController: {fileID: 0}
 --- !u!114 &1542110278
 MonoBehaviour:
@@ -182222,6 +182227,7 @@ MonoBehaviour:
   disableCamera: 0
   playOnStart: 0
   character: {fileID: 1393953480}
+  endLevel: 0
   characters: []
   cinematicPoint: {fileID: 0}
 --- !u!114 &1542110279
@@ -215542,11 +215548,6 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 3460851769625804851, guid: f900f0a24bc39544db48905e26c09449, type: 3}
   m_PrefabInstance: {fileID: 2011538839}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &2011538842 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5064693074309249973, guid: f900f0a24bc39544db48905e26c09449, type: 3}
-  m_PrefabInstance: {fileID: 2011538839}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2011538843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215559,7 +215560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32851e36cbc1d6048ac809b5d526e17e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseLayerSource: {fileID: 2011538842}
+  _layerOneSource: {fileID: 0}
+  _layerTwoSource: {fileID: 0}
   _resolutionSFXSource: {fileID: 2011538841}
   _fadeDuration: 1.5
 --- !u!4 &2011538844 stripped
