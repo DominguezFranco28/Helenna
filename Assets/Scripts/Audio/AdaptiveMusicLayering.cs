@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class AdaptiveMusicLayering : MonoBehaviour
 {
-    
-    [SerializeField] private AudioSource _baseLayerSource; 
+
+    [Header("Audiosources para crossfade")]
+    [SerializeField] private AudioSource _layerOneSource; 
+    [SerializeField] private AudioSource _layerTwoSource;
+    [Header("Musica base con layering")]
     [SerializeField] private AudioSource _resolutionSFXSource;
     public static AdaptiveMusicLayering Instance { get; private set; }
     [Header("Fade parameters")]
     [Range(0.1f, 5.0f)]
     [SerializeField] private float _fadeDuration = 1.5f;
     private Coroutine _activeFadeCoroutine;
+    private AudioSource _currentMusicLayer;
 
     private void Awake()
     {
@@ -24,18 +28,40 @@ public class AdaptiveMusicLayering : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject); // Persist between scenes. 
 
-        if (_baseLayerSource == null)
+        if (_layerOneSource == null)
         {
             Debug.LogError("Se encesita un tema principal");
             enabled = false;
         }
+        if (_layerTwoSource == null)
+        {
+            Debug.LogWarning("_layerTwoSource no asignado. La transición de música no funcionará.");
+        }
     }
     void Start()
     {
-        // Play background music on startup (if playOnAwake is enabled)
-        if (_baseLayerSource != null && !_baseLayerSource.isPlaying && _baseLayerSource.playOnAwake)
+        // **MODIFICACIÓN:** Asegurarse de que ambos clips se inicialicen y el segundo esté silenciado.
+
+        if (_layerOneSource != null)
         {
-            _baseLayerSource.Play();
+            // Inicializamos el volumen base
+            _layerOneSource.volume = 1f;
+            if (!_layerOneSource.isPlaying)
+            {
+                _layerOneSource.Play(); // Ambos empiezan a sonar (loop)
+            }
+            // La capa uno es la inicial
+            _currentMusicLayer = _layerOneSource;
+        }
+
+        if (_layerTwoSource != null)
+        {
+            // La capa dos empieza silenciada
+            _layerTwoSource.volume = 0f;
+            if (!_layerTwoSource.isPlaying)
+            {
+                _layerTwoSource.Play(); // Ambos empiezan a sonar (loop)
+            }
         }
     }
 
@@ -53,16 +79,16 @@ public class AdaptiveMusicLayering : MonoBehaviour
     }
 
     // method to fade out the main music
-    public void FadeBaseMusicVolume(float targetVolume)
+    public void FadeCurrentMusicVolume(float targetVolume)
     {
-        if (_baseLayerSource == null) return;
+        if (_currentMusicLayer == null) return;
 
         if (_activeFadeCoroutine != null)
         {
             StopCoroutine(_activeFadeCoroutine);
         }
 
-        _activeFadeCoroutine = StartCoroutine(FadeAudioSourceVolume(_baseLayerSource, targetVolume, _fadeDuration));
+        _activeFadeCoroutine = StartCoroutine(FadeAudioSourceVolume(_currentMusicLayer, targetVolume, _fadeDuration));
     }
 
     //coroutine to change the volume smoothly
@@ -79,6 +105,61 @@ public class AdaptiveMusicLayering : MonoBehaviour
         }
 
         audioSourceToFade.volume = finalVolume;
+        _activeFadeCoroutine = null;
+    }
+    public void TransitionToLayerOne(bool toLayerOne)
+    {
+        // Si no tenemos las dos capas, salimos.
+        if (_layerOneSource == null || _layerTwoSource == null)
+        {
+            Debug.LogWarning("Faltan capas de música para realizar la transición.");
+            return;
+        }
+
+        // Determinar la capa que debe sonar y la que debe silenciarse
+        AudioSource fadeInSource = toLayerOne ? _layerOneSource : _layerTwoSource;
+        AudioSource fadeOutSource = toLayerOne ? _layerTwoSource : _layerOneSource;
+
+        // Si ya estamos en el estado deseado, salimos.
+        if (fadeInSource == _currentMusicLayer)       
+            return;
+        
+
+        // Si hay una transición en curso, la detenemos para iniciar la nueva.
+        if (_activeFadeCoroutine != null)
+        {
+            StopCoroutine(_activeFadeCoroutine);
+        }
+
+        // Iniciamos el crossfade
+        _activeFadeCoroutine = StartCoroutine(CrossfadeLayers(fadeInSource, fadeOutSource, _fadeDuration));
+    }
+    private IEnumerator CrossfadeLayers(AudioSource fadeInSource, AudioSource fadeOutSource, float duration)
+    {
+        _currentMusicLayer = fadeInSource; // Actualizamos la capa actual inmediatamente
+        float currentTime = 0;
+
+        // la capa que entra debe llegar a volumen 1 (o el volumen deseado si lo haces más complejo)
+        // y la que sale debe llegar a 0.
+        float startVolumeIn = fadeInSource.volume; // Debería ser 0
+        float startVolumeOut = fadeOutSource.volume; // Debería ser 1 (si estaba sonando)
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            float t = currentTime / duration;
+
+            // La capa que entra aumenta su volumen (0 -> 1)
+            fadeInSource.volume = Mathf.Lerp(startVolumeIn, 1f, t);
+            // La capa que sale disminuye su volumen (1 -> 0)
+            fadeOutSource.volume = Mathf.Lerp(startVolumeOut, 0f, t);
+
+            yield return null;
+        }
+
+        // volumenes finales
+        fadeInSource.volume = 1f;
+        fadeOutSource.volume = 0f;
         _activeFadeCoroutine = null;
     }
 }

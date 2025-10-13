@@ -20,6 +20,7 @@ public class CameraZoom : MonoBehaviour
     public float shakeDuration = 0.5f;
     public float shakeAmplitude = 2f;
     public float shakeFrequency = 2f;
+    public bool changeMusicLayer = false;
 
     [Header("Post Process")]
     public Volume postProcessVolume;
@@ -63,6 +64,9 @@ public class CameraZoom : MonoBehaviour
     private IEnumerator HaroldBreakRoutine()
     {
         haroldBreak = true;
+        if (changeMusicLayer)
+            AdaptiveMusicLayering.Instance.TransitionToLayerOne(false); // layerings
+        Debug.Log("Harold Break music in");
 
         // Variables para el loop
         float shakeTimer = 0f;

@@ -28,13 +28,13 @@ public class ActivationDoor : MonoBehaviour, IActiveable
         Destroy(_collider2D);
 
         //Handling music layers as a puzzle-solving method.
-        _musicLayering.FadeBaseMusicVolume(_targetVolume); 
+        _musicLayering.FadeCurrentMusicVolume(_targetVolume); 
         _musicLayering.PlayResolutionTone();
         StartCoroutine(RestoreMusicAfterDelay(_musicLayering, _musicFadeDelay)); //// call coroutine to restore music levels after a delay 
     }
     private IEnumerator RestoreMusicAfterDelay(AdaptiveMusicLayering layering, float delay)
     {
         yield return new WaitForSeconds(delay);
-        layering.FadeBaseMusicVolume(0.5f); // original value
+        layering.FadeCurrentMusicVolume(0.5f); // original value
     }
 }
