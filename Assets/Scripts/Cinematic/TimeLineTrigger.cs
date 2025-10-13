@@ -7,6 +7,7 @@ public class TimeLineTrigger : MonoBehaviour
 {
     [SerializeField] private PlayableDirector _director;
     [SerializeField] private CinematicController _cinematicController;
+    private bool _isEndingLevel = false; // ¡NUEVO FLAG!
     private void Start()
     {
         // esto es para suscribirse al evento cuando termina la timeline, sino no detecta el stopped
@@ -21,7 +22,11 @@ public class TimeLineTrigger : MonoBehaviour
     // Este metodo se llamna automatico cuando termine la timeline asignada
     private void OnTimelineStopped(PlayableDirector pd)
     {
-        RestoreValues();
+        // SOLO restaurar valores si no estamos en una transicion forzada de fin de nivel (boleana en cinematiccontroller)
+        if (!_isEndingLevel)
+        {
+            RestoreValues();
+        }
     }
     private void RestoreValues()
     {
@@ -30,7 +35,15 @@ public class TimeLineTrigger : MonoBehaviour
         Debug.Log("Timeline terminó. Restaurando valores originales...");
         _cinematicController.EndCinematic();
     }
-
+    public void StopTimelineForEndLevel() //Esto por si quiero cortar las cinnematicas en algun punto concreto, con fade out x ej NO USADO AUNN
+    {
+        if (_director != null && _director.state == PlayState.Playing)
+        {
+            _isEndingLevel = true; 
+            _director.enabled = false; 
+            Debug.Log("PlayableDirector detenido forzosamente.");
+        }
+    }
     private void OnDestroy()
     {
         // Limpia la suscripción para evitar errores si el objeto se destruye

@@ -283707,7 +283707,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &614554997
 Transform:
   m_ObjectHideFlags: 0
@@ -287927,6 +287927,7 @@ MonoBehaviour:
   shakeAmplitude: 2
   shakeFrequency: 2
   postProcessVolume: {fileID: 0}
+  haroldBreakSound: {fileID: 0}
   cinematicController: {fileID: 0}
 --- !u!114 &984656122
 MonoBehaviour:
@@ -287947,6 +287948,7 @@ MonoBehaviour:
   disableCamera: 1
   playOnStart: 0
   character: {fileID: 0}
+  endLevel: 0
   characters: []
   cinematicPoint: {fileID: 0}
 --- !u!114 &984656123
@@ -293434,6 +293436,7 @@ MonoBehaviour:
   shakeAmplitude: 2
   shakeFrequency: 2
   postProcessVolume: {fileID: 0}
+  haroldBreakSound: {fileID: 0}
   cinematicController: {fileID: 0}
 --- !u!114 &1452748521
 MonoBehaviour:
@@ -293454,6 +293457,7 @@ MonoBehaviour:
   disableCamera: 1
   playOnStart: 1
   character: {fileID: 0}
+  endLevel: 0
   characters: []
   cinematicPoint: {fileID: 0}
 --- !u!114 &1452748522
@@ -301930,6 +301934,7 @@ MonoBehaviour:
   shakeAmplitude: 2
   shakeFrequency: 2
   postProcessVolume: {fileID: 0}
+  haroldBreakSound: {fileID: 0}
   cinematicController: {fileID: 0}
 --- !u!114 &2024778154
 MonoBehaviour:
@@ -301950,6 +301955,7 @@ MonoBehaviour:
   disableCamera: 0
   playOnStart: 0
   character: {fileID: 101411718}
+  endLevel: 0
   characters: []
   cinematicPoint: {fileID: 0}
 --- !u!114 &2024778155

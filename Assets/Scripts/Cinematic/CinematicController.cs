@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System;
 
 public class CinematicController : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class CinematicController : MonoBehaviour
     public bool disableCamera= true; //esto lo agrege porque apra el pet the dog uso la main camera ya que sigue a nina, no quiero desabilitarla despues del pet
     public bool playOnStart = false;
     public SpriteRenderer character; //opcional, para reestablecer flip a nina a priori.
+    [Header("Fin de nivel")]
+    public bool endLevel;
+
+
+
     [Header("Pos Forzada de personajes")]
     public List<Transform> characters; //asignar los personajes en el inspector
     public Transform cinematicPoint; //punto donde se alinean los personajes
@@ -68,6 +74,12 @@ public class CinematicController : MonoBehaviour
 
     public void EndCinematic()
     {
+        //if (endLevel)
+        //{
+        //    TransitionManager.Instance.ChangeLevel();
+        //    return;
+        //}
+
         letterboxUI.HideBorders();
         cameraZoom.ResetZoom();
         if (disableCamera)
@@ -85,5 +97,6 @@ public class CinematicController : MonoBehaviour
             cameraFollow.SetActive(true); // activa cámara antes del zoom
         letterboxUI.ShowBorders();
     }
+
 
 }

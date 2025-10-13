@@ -83,6 +83,7 @@ public class CameraZoom : MonoBehaviour
         // loop en simultaneo de zoom y shake
         while (shakeTimer < shakeDuration)
         {
+                InputManager.Instance.LockDialogueInputs();
             // Zoom progresivo
             virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, targetZoom, Time.deltaTime * zoomSpeed);
 
@@ -105,6 +106,7 @@ public class CameraZoom : MonoBehaviour
     }
         
 
+         InputManager.Instance.UnlockDialogueInputs();
         // Resetear shake y aberración
         if (perlinNoise != null)
         {
