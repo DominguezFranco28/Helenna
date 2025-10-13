@@ -23,6 +23,7 @@ public class CameraZoom : MonoBehaviour
 
     [Header("Post Process")]
     public Volume postProcessVolume;
+    public AudioClip haroldBreakSound;
     private ChromaticAberration chromaticAberration;
     private CinemachineBasicMultiChannelPerlin perlinNoise;
 
@@ -65,8 +66,7 @@ public class CameraZoom : MonoBehaviour
 
         // Variables para el loop
         float shakeTimer = 0f;
-        float zoomTolerance = 0.05f;
-
+        float chromaIntensity = 0f;
         // Activar shake
         if (perlinNoise != null)
         {
@@ -76,17 +76,34 @@ public class CameraZoom : MonoBehaviour
         if (chromaticAberration != null)
             chromaticAberration.intensity.value = 1f;
 
+        // Sonido de Harold Break
+        if (haroldBreakSound != null)
+           SFXManager.Instance.PlaySFX(haroldBreakSound);
+
         // loop en simultaneo de zoom y shake
-        while (Mathf.Abs(virtualCamera.m_Lens.OrthographicSize - targetZoom) > zoomTolerance || shakeTimer < shakeDuration)
+        while (shakeTimer < shakeDuration)
         {
-            // Zoom
+            // Zoom progresivo
             virtualCamera.m_Lens.OrthographicSize = Mathf.Lerp(virtualCamera.m_Lens.OrthographicSize, targetZoom, Time.deltaTime * zoomSpeed);
 
             // Contador de shake
             shakeTimer += Time.deltaTime;
+        
 
-            yield return null;
-        }
+        if (chromaticAberration != null)
+        {
+                // Normalizar el tiempo (0 a 1)
+                float t = shakeTimer / shakeDuration;
+
+                // Curva de intensidad: sube suave, se mantiene, baja suave
+                // SmoothStep hace que el inicio y final sean progresivos
+                chromaIntensity = Mathf.SmoothStep(0f, 1f, t < 0.5f ? t * 2f : 2f - 2f * t);
+
+                chromaticAberration.intensity.value = chromaIntensity;
+            }
+        yield return null; 
+    }
+        
 
         // Resetear shake y aberración
         if (perlinNoise != null)
@@ -94,17 +111,17 @@ public class CameraZoom : MonoBehaviour
             perlinNoise.m_AmplitudeGain = 0f;
             perlinNoise.m_FrequencyGain = 0f;
         }
-        if (chromaticAberration != null)
-            chromaticAberration.intensity.value = 0f;
-
         // Asegurar zoom final
-        virtualCamera.m_Lens.OrthographicSize = targetZoom;
-
-        // Disparar cinematica
-        if (cinematicController != null)
-            cinematicController.PlayCinematic();
+       // virtualCamera.m_Lens.OrthographicSize = targetZoom;
 
         haroldBreak = false;
+        // Disparar cinematica
+        if (cinematicController != null)
+        {
+            yield return new WaitForSeconds(0.5f); // pequeño delay para que no corte el zoom
+            cinematicController.PlayCinematic();
+        }
+
     }
 
     void Update()
