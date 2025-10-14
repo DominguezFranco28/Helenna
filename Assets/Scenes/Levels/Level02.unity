@@ -161757,6 +161757,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4815042113039481549, guid: 0b0a6fb4296970e45a6a2f4b742dc760, type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 0.01134464
+      objectReference: {fileID: 0}
     - target: {fileID: 8523082013068232765, guid: 0b0a6fb4296970e45a6a2f4b742dc760, type: 3}
       propertyPath: m_Name
       value: SteamParticleVFX (1)
@@ -176856,7 +176860,7 @@ MonoBehaviour:
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 12
+    OrthographicSize: 13.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -179013,6 +179017,10 @@ PrefabInstance:
     - target: {fileID: 7779331290517866420, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: _lockOnRadius
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7779331290517866420, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
+      propertyPath: _anchorScreenY
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7779331290517866420, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: _lockOnDistance
@@ -181173,7 +181181,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1292130248}
   - component: {fileID: 1292130250}
-  - component: {fileID: 1292130249}
+  - component: {fileID: 1292130251}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -181196,7 +181204,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 991102758}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1292130249
+--- !u!114 &1292130250
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292130247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1292130251
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181215,7 +181235,7 @@ MonoBehaviour:
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
-  m_TargetMovementOnly: 0
+  m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_CameraDistance: 10
@@ -181239,18 +181259,6 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
---- !u!114 &1292130250
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292130247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1295223841
 GameObject:
   m_ObjectHideFlags: 3
@@ -215477,18 +215485,22 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3460851769625804851, guid: f900f0a24bc39544db48905e26c09449, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c870b8cebf30e5b46bee3043a4fc547e, type: 3}
     - target: {fileID: 5064693074309249973, guid: f900f0a24bc39544db48905e26c09449, type: 3}
       propertyPath: Priority
       value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 5064693074309249973, guid: f900f0a24bc39544db48905e26c09449, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5064693074309249973, guid: f900f0a24bc39544db48905e26c09449, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: af09176cc34a0b24c9802169032de2d0, type: 3}
+      objectReference: {fileID: 8300000, guid: e8f8506ebebeca342b97750ceabe512f, type: 3}
     - target: {fileID: 6652763881013046825, guid: f900f0a24bc39544db48905e26c09449, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

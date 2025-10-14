@@ -18388,6 +18388,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 68228384}
+    - target: {fileID: 4155064168348884016, guid: 70e801fcf4e65ce4ab255fe5e0669246, type: 3}
+      propertyPath: DialogueManager
+      value: 
+      objectReference: {fileID: 3584200650456107869}
     - target: {fileID: 8683637490037242599, guid: 70e801fcf4e65ce4ab255fe5e0669246, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -300475,15 +300479,15 @@ PrefabInstance:
     - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: emotionAudios.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 23ae1f7120307f54c844aa191a4e11f0, type: 3}
+      objectReference: {fileID: 8300000, guid: 26e1f8f081f04154eb4cbf5f9c209064, type: 3}
     - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: emotionAudios.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 6d823a1e627d7ec4b88bd618f84e7195, type: 3}
+      objectReference: {fileID: 8300000, guid: 80fc14c23c4881f4b8667850564c130e, type: 3}
     - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: emotionAudios.Array.data[2].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 88d54295d26187149917794126720747, type: 3}
+      objectReference: {fileID: 8300000, guid: b92b42d49d7bc0f4d90aba792a38c15c, type: 3}
     - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: emotionAudios.Array.data[3].clip
       value: 

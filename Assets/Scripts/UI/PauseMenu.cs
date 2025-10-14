@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] DialogueManager DialogueManager;
     public TransitionManager manager;
     public string menuLevel = "";
     public Button continueButton;
@@ -17,6 +18,7 @@ public class PauseMenu : MonoBehaviour
 
     private bool isPaused = false;
     private bool canTogglePause = true;
+
 
     private void OnEnable()
     {
@@ -77,7 +79,9 @@ public class PauseMenu : MonoBehaviour
     private IEnumerator ContinueGameRoutine()
     {
         HideMenu();
-        InputManager.Instance.UnlockInputs();
+        if (!DialogueManager.isSpeaking)
+            InputManager.Instance.UnlockInputs();
+
         InputManager.Instance.UnlockDialogueInputs();
         isPaused = false;
 

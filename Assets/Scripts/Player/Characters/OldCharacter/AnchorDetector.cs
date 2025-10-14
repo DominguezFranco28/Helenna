@@ -12,6 +12,7 @@ public class AnchorDetector : MonoBehaviour
     [SerializeField] private LayerMask _anchorLayer;
     [SerializeField] private GameObject _UI;
     [SerializeField] private CinemachineVirtualCamera _cameraFollow;
+    [SerializeField] private float _anchorScreenY = 0.35f;
     private ArmImpulser _armImpulser;
     private OldPlayerBehaviour _oldPlayerBehaviour;
     private Transform _closestAnchor = null;
@@ -67,6 +68,23 @@ public class AnchorDetector : MonoBehaviour
 
             _cameraFollow.Follow = state ? _closestAnchor : null; //operador ternario (?), si state es true sigue al anchor, si no no sigue a nada
         }
+        if (state) // Solo si estamos activando el seguimiento del anclaje
+        {
+            // en body de VC tiene que estar el framingntransposer seteado
+            var framingTransposer = _cameraFollow.GetCinemachineComponent<CinemachineFramingTransposer>();
+
+            if (framingTransposer != null)
+            {
+                // La propiedad m_ScreenY define la pos Y del target en la pantalla.
+                // Si el valor es MENOR que 0.5, el target se muestra en la parte inferior de la pantalla, creando efecto de la camara x debajo del anclaje
+                framingTransposer.m_ScreenY = _anchorScreenY;
+
+                // framingTransposer.m_DeadZoneHeight = 0.1f; 
+                // para que el anclaje no se mueva
+            }
+        }
+    
+        
     }
 
     private void GetBoxCastParams(out Vector2 origin, out Vector2 size, out float angle, out Vector2 direction)

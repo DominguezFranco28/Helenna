@@ -35,6 +35,7 @@ public class DialogueManager : MonoBehaviour
     public float talkSpeed = 0.1f;
     public float endLineDelay = 1f;
     public bool canSkip = true;
+    public bool isSpeaking = false;
     [SerializeField] private List<Sprite> thumbnails = new List<Sprite>();
     //Audio
     [SerializeField] private AudioClip typingSFX;
@@ -74,6 +75,7 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator PlaySceneCoroutine(string scene)
     {
         InputManager.Instance.LockInputs();
+        isSpeaking = true;
 
         List<DialogueLine> sceneLines = GetLinesFromScene(scene);
         if (sceneLines != null)
@@ -88,6 +90,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         InputManager.Instance.UnlockInputs();
+        isSpeaking = false;
     }
 
     private List<DialogueLine> GetLinesFromScene(string scene)
@@ -237,7 +240,7 @@ public class DialogueManager : MonoBehaviour
         }
         if (typingSFX != null)
         {
-            SFXManager.Instance.PlayLoop(typingSFX); // <-- suponiendo que tu SFXManager tiene un método PlayLoop(token)
+            SFXManager.Instance.PlayLoop(typingSFX);
             isTypingSFXPlaying = true;
         }
         foreach (char c in line)
