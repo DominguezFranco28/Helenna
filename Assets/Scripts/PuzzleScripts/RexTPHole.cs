@@ -14,12 +14,16 @@ public class RexTPHole : MonoBehaviour
 
     private bool used = false;
 
+    public ParticleSystem dirtParticles;
+
     private void Start()
     {
         if(entrySprite)
             entrySprite.color = unusedColor;
         if(exitSprite)
             exitSprite.enabled = false;
+
+        dirtParticles = GetComponentInChildren<ParticleSystem>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,6 +54,9 @@ public class RexTPHole : MonoBehaviour
                 entrySprite.color = usedColor;
             if(exitSprite)
                 exitSprite.enabled = true;
+
+            if(dirtParticles)
+                dirtParticles.Play();
         }
         
     }

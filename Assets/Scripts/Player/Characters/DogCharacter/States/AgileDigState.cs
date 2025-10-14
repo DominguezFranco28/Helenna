@@ -34,7 +34,8 @@ public class AgileDigState : IState
         _digTimer = 0f;
         _delayCompleted = false;
         SFXManager.Instance.PlaySFX(_agilePlayerBehaviour.DigSFXClip);
-
+        
+        _agilePlayerBehaviour.CurrentHole.Use();
     }
 
     public void Exit()
@@ -70,10 +71,11 @@ public class AgileDigState : IState
         // If we leave the gap we go to idle
         if (_agilePlayerBehaviour.CurrentHole != null)
         {
+            
             _agilePlayerBehaviour.transform.position = _agilePlayerBehaviour.CurrentHole.exitHole.transform.position;
             _agileStateMachine.TransitionTo(_agileStateMachine.idleState);
 
-            _agilePlayerBehaviour.CurrentHole.Use();
+            
 
             //logica vieja de agarrado de objetos 
             //if (_pickedObject != null) //si desde item state recibe el objeto como parametro del metodo Object, devuelve a ese estado para poder agarrar y soltar objetos luego del salto

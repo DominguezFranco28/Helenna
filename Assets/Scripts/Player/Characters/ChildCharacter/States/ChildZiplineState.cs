@@ -15,6 +15,9 @@ public class ChildZiplineState : IState
     private ArmLineController _activeZipline;
     private float _zipProgress = 0f; // progreso 0-1 a lo largo de la zipline, se mide con un lerp y parametros tomados del characterManager (tirolesa viva)
     private bool subbed = false;
+
+    private bool vfxPlayed = false;
+
     public ChildZiplineState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine, ChildTriggerDetector ziplineDetector)
     {
         this._childPlayerBehaviour = childPlayerBehaviour;
@@ -94,11 +97,30 @@ public class ChildZiplineState : IState
         // lerp para pegar la posicion a lo largo de la zipline
         _childPlayerBehaviour.transform.position = Vector3.Lerp(_startPoint, _endPoint, _zipProgress);
 
+        if (_zipProgress >= 0.1f) ZiplineVFX();
+
         // cuando llega al final de la linea, baja al suelo y cambia a estado de movimiento
         if (_zipProgress >= 1f)
         {
+            vfxPlayed = false;
+
             _childPlayerBehaviour.transform.position += Vector3.down * 2f; //modificable si es necesario hacer una animacion de bajada
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
         }
+    }
+
+    private void ZiplineVFX()
+    {
+        if (!vfxPlayed)
+        {
+            vfxPlayed = true;
+            
+            ParticleSystem vfx = _childPlayerBehaviour.gameObject.GetComponentInChildren<ParticleSystem>();
+            if (vfx)
+            {
+                vfx.Play();
+            }
+        }
+        
     }
 }
