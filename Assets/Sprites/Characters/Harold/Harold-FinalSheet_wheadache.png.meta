@@ -1,0 +1,1617 @@
+fileFormatVersion: 2
+guid: 9aedabe1165a9294eb768b8bce031e7f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1091
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad273e7e6155850498ccc64dc3bcb37c
+      internalID: -1875772635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1091
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa8ff198eb2067479a600665652deef
+      internalID: -2136618659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1091
+        width: 26
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da6fb97e25659c345b26bf63171eb559
+      internalID: -103543277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 1091
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6dd5dbd2597a8f48b2a153d3ed2fe51
+      internalID: 840848664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_4
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 1031
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 552df95382389b14a86aeca269d95827
+      internalID: 103966965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_5
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 1031
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dfb386177d7ec540844258fe5431a1b
+      internalID: 926395125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_6
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 1031
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 506e2f7a131b25c4a888d64fc3b93551
+      internalID: 445340494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_7
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 1031
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b703ad6dc4f86a340a56ddcbf3c0ab1f
+      internalID: 572847284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 971
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e25decee4f441b4b920264d6844a101
+      internalID: 232329458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_9
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 971
+        width: 32
+        height: 42
+      alignment: 9
+      pivot: {x: 0.4360054, y: 0.4999942}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ad18e6d8ea2284f8ea8e83ef44b48a
+      internalID: 748646193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_11
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 971
+        width: 38
+        height: 44
+      alignment: 9
+      pivot: {x: 0.3927291, y: 0.47386724}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76fe6b07cd746f64aaa9debfdda40e20
+      internalID: 1041860224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_13
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 971
+        width: 41
+        height: 49
+      alignment: 9
+      pivot: {x: 0.3373238, y: 0.42750394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1013e2b82eed444793e492df11be0f2
+      internalID: 88172286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_15
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 911
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604a004e940a3224793ccdeb58efa47a
+      internalID: 2067491673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_16
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 911
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62729f089fd361a40acd0d0a8e628cba
+      internalID: -2125767961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_17
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 911
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899e6daf3a8053942a43f18070fa4d06
+      internalID: -1868935714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_18
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 911
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f4beac24420804b94cf47e54975c75
+      internalID: 1047543141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_19
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 851
+        width: 27
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe82adaab0831f04b959ce4b03a774e1
+      internalID: 829331015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_20
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 851
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b13972bd4611c1b4f8d36644c6fd32ae
+      internalID: 4402140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_21
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 851
+        width: 25
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214d40af2a45ddf48aa02304c2e0321c
+      internalID: 849046060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_22
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 851
+        width: 25
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460d9b52a8b955645ab3b176e121a7bc
+      internalID: -1569959719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_23
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 791
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46fabb809b3d32c4eafb7030104107da
+      internalID: 712891450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_24
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 791
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ed248541e8b6845a06123967378892
+      internalID: 1699664278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_25
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 791
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69afd2d99a9adf64bbcf551b4d8e44b1
+      internalID: 537275620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_26
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 791
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba102e8a39db2124fa6c2a0a90ccc306
+      internalID: -454887858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_27
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 731
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f08783be25930ab489ab17167adbfc03
+      internalID: -1303611866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_28
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 731
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1192306661278fe49b67c9f583e51c6b
+      internalID: -1885683130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_29
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 731
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b301b7d4c68b1fa4890e7b0b165e2578
+      internalID: -492620862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_30
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 731
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57c4908bd2c2eac44ad1e8cd15225ee2
+      internalID: 164453433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_31
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 671
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb16cde68318cc54abb9265486d48a2a
+      internalID: 1132159557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_32
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 671
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 337c095f9fd77db4ea54ab53d67c5f3b
+      internalID: -411278027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_33
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 671
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c49994a3d2baa140b9c9bc11417c4e9
+      internalID: -843857790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_34
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 671
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0388f37f5a36b8429f2d04e626e480e
+      internalID: 295717052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_35
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 611
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23115c9dc66dce4e8096263f7feddc4
+      internalID: 197501622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_36
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 611
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f1f2b48ae966b34493cbee70bac4ec6
+      internalID: -1481900033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_37
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 611
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22a5643f122393479e7c2c7e8081951
+      internalID: 93193617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_38
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 611
+        width: 24
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9bd791a87b08246bf4006a67f07df5
+      internalID: -1610776277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_39
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 544
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dfa74f3dcd71744784d255265deceb9
+      internalID: -192750502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_40
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 544
+        width: 29
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363aa128dc773a042bca053c66f8d833
+      internalID: 1062118870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_41
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 544
+        width: 28
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 074a2fd4f4ce17f48ad262da62dbcd90
+      internalID: -627046983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_42
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 491
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c176a84b70c5ce044a212d50d7dd3821
+      internalID: 956557362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_43
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 491
+        width: 29
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea24493fa77f6840afd853da626e4a4
+      internalID: 721945186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_44
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 491
+        width: 29
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd0d280db4983d44b74d02e8247ea1b
+      internalID: 1587073309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_45
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 491
+        width: 29
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bb73ef0721901741985b293e622ddf4
+      internalID: 1591406812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_46
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 428
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c0c1a14fcf4c94bb0cb2323a143154
+      internalID: 1555813531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_47
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 428
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d667d62270efc1746b30f2ad7dc1474c
+      internalID: 2087383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_48
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 431
+        width: 27
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31289131f942c4b47a3b6a86bf2d5f56
+      internalID: 599844824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_49
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 431
+        width: 27
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be2ca29ae3a5f74eb6be8bbac77df42
+      internalID: -1628982900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_50
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 371
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eba0fda515a70a4a8f32d34caaee0cd
+      internalID: -2048927872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_51
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 371
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7490d48dee9494c8a11e912799ab5f
+      internalID: -1247662033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_52
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 371
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a14ef6549831f2449ad0be1f6fcf0003
+      internalID: 1927720520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_53
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 371
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8fb632679d16641b36ff9f1874ff41
+      internalID: 2090510984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_54
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 311
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c1cb571320f9ac438b20c02c8e54c37
+      internalID: -396964333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_55
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 311
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa119eac85a46d64faee5f0bb3cc7de0
+      internalID: -1889013333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_56
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 311
+        width: 24
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66fb044e4388dba47a9e1e7bc4ffa043
+      internalID: 1445564605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_57
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 311
+        width: 29
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 457f31a1d5aafc9419b480de1d246180
+      internalID: 529933973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_58
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 251
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2918ab9acd30bfa479dec88aac8bb3e2
+      internalID: -171049505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_59
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 251
+        width: 29
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 646982d5b14450141a7578ce97d5b06d
+      internalID: -2040377463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_60
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 251
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb862f8b9ec951a4882dc2d9ffcddea8
+      internalID: -1660947472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_61
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 251
+        width: 29
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71529657e88f6444f99f79c088827df6
+      internalID: -941359762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_62
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 198
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8023784b91a6a5b43a56b4541d7096b3
+      internalID: 896040151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_63
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 198
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 589d0648575e1154382d6a406843b305
+      internalID: 952229117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_64
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 139
+        width: 20
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea67e39e866446141ad89e995d964146
+      internalID: -1715581682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_65
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 139
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c130a131418c8ed4db11cf4a15c608ec
+      internalID: -37448528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_66
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 72
+        width: 13
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e6a53ee50876b4cac4bb4077459c03
+      internalID: 1283220304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_67
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 72
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5407208eedf1044f87fded2cf87027b
+      internalID: 91211431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_68
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 12
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c18a24b7a92fafb428f7420679c1691f
+      internalID: 1104128859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-FinalSheet_wheadache_69
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 12
+        width: 11
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37acc3adcc53dde439be6f766c0d08dd
+      internalID: 1404553882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Harold-FinalSheet_wheadache_0: -1875772635
+      Harold-FinalSheet_wheadache_1: -2136618659
+      Harold-FinalSheet_wheadache_10: 849003815
+      Harold-FinalSheet_wheadache_11: 1041860224
+      Harold-FinalSheet_wheadache_12: -1388728519
+      Harold-FinalSheet_wheadache_13: 88172286
+      Harold-FinalSheet_wheadache_14: 1221458219
+      Harold-FinalSheet_wheadache_15: 2067491673
+      Harold-FinalSheet_wheadache_16: -2125767961
+      Harold-FinalSheet_wheadache_17: -1868935714
+      Harold-FinalSheet_wheadache_18: 1047543141
+      Harold-FinalSheet_wheadache_19: 829331015
+      Harold-FinalSheet_wheadache_2: -103543277
+      Harold-FinalSheet_wheadache_20: 4402140
+      Harold-FinalSheet_wheadache_21: 849046060
+      Harold-FinalSheet_wheadache_22: -1569959719
+      Harold-FinalSheet_wheadache_23: 712891450
+      Harold-FinalSheet_wheadache_24: 1699664278
+      Harold-FinalSheet_wheadache_25: 537275620
+      Harold-FinalSheet_wheadache_26: -454887858
+      Harold-FinalSheet_wheadache_27: -1303611866
+      Harold-FinalSheet_wheadache_28: -1885683130
+      Harold-FinalSheet_wheadache_29: -492620862
+      Harold-FinalSheet_wheadache_3: 840848664
+      Harold-FinalSheet_wheadache_30: 164453433
+      Harold-FinalSheet_wheadache_31: 1132159557
+      Harold-FinalSheet_wheadache_32: -411278027
+      Harold-FinalSheet_wheadache_33: -843857790
+      Harold-FinalSheet_wheadache_34: 295717052
+      Harold-FinalSheet_wheadache_35: 197501622
+      Harold-FinalSheet_wheadache_36: -1481900033
+      Harold-FinalSheet_wheadache_37: 93193617
+      Harold-FinalSheet_wheadache_38: -1610776277
+      Harold-FinalSheet_wheadache_39: -192750502
+      Harold-FinalSheet_wheadache_4: 103966965
+      Harold-FinalSheet_wheadache_40: 1062118870
+      Harold-FinalSheet_wheadache_41: -627046983
+      Harold-FinalSheet_wheadache_42: 956557362
+      Harold-FinalSheet_wheadache_43: 721945186
+      Harold-FinalSheet_wheadache_44: 1587073309
+      Harold-FinalSheet_wheadache_45: 1591406812
+      Harold-FinalSheet_wheadache_46: 1555813531
+      Harold-FinalSheet_wheadache_47: 2087383
+      Harold-FinalSheet_wheadache_48: 599844824
+      Harold-FinalSheet_wheadache_49: -1628982900
+      Harold-FinalSheet_wheadache_5: 926395125
+      Harold-FinalSheet_wheadache_50: -2048927872
+      Harold-FinalSheet_wheadache_51: -1247662033
+      Harold-FinalSheet_wheadache_52: 1927720520
+      Harold-FinalSheet_wheadache_53: 2090510984
+      Harold-FinalSheet_wheadache_54: -396964333
+      Harold-FinalSheet_wheadache_55: -1889013333
+      Harold-FinalSheet_wheadache_56: 1445564605
+      Harold-FinalSheet_wheadache_57: 529933973
+      Harold-FinalSheet_wheadache_58: -171049505
+      Harold-FinalSheet_wheadache_59: -2040377463
+      Harold-FinalSheet_wheadache_6: 445340494
+      Harold-FinalSheet_wheadache_60: -1660947472
+      Harold-FinalSheet_wheadache_61: -941359762
+      Harold-FinalSheet_wheadache_62: 896040151
+      Harold-FinalSheet_wheadache_63: 952229117
+      Harold-FinalSheet_wheadache_64: -1715581682
+      Harold-FinalSheet_wheadache_65: -37448528
+      Harold-FinalSheet_wheadache_66: 1283220304
+      Harold-FinalSheet_wheadache_67: 91211431
+      Harold-FinalSheet_wheadache_68: 1104128859
+      Harold-FinalSheet_wheadache_69: 1404553882
+      Harold-FinalSheet_wheadache_7: 572847284
+      Harold-FinalSheet_wheadache_8: 232329458
+      Harold-FinalSheet_wheadache_9: 748646193
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

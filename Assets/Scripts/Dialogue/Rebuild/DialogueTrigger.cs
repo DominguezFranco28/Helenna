@@ -17,12 +17,12 @@ public class DialogueTrigger : MonoBehaviour
     public int triggerLineIndex = -1;
     public int triggerShakeLineIndex = -1;
 
-    [Header("Cinematic Trigger Settings")]
-    public bool doHaroldBrake = false;
+    [Header("Cinematic Trigger Settings (Opcional)")]
+    public OldPlayerBehaviour playerBehaviour; //para activar anim de harold
     public PlayCinematic playCinematic;
     private bool cinematicStarted = false;
 
-    [Header("Shake Settings")]
+    [Header("Shake Settings (Opcional)")]
     public CinematicController _cinematicController;
     public CameraZoom zoomShake;
 
@@ -62,6 +62,10 @@ public class DialogueTrigger : MonoBehaviour
             cinematicStarted = true;
             _cinematicController.PrepareCinematic(); // camara + letterbox
             zoomShake.TriggerHaroldBreak();
+            if (playerBehaviour != null)
+            {
+                playerBehaviour.Animator.SetTrigger("IsBreaking"); // activa anim de harold
+            }
         }
         if (line.scene == sceneToTrigger && line.lineId == triggerLineIndex)
         {
