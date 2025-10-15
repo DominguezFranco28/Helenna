@@ -30,7 +30,8 @@ public class PuzzleManagerLevel02 : MonoBehaviour
     public float doorCloseTime = 0.3f;
 
     [Header("Cinematica")]
-    public PlayCinematic playCinematic;
+    public PlayCinematic playCinematicInitial;
+    public PlayCinematic playCinematicFinal;
 
     public ParticleSystem p1aSteamVFX;
     public ParticleSystem p1bSteamVFX;
@@ -151,8 +152,8 @@ public class PuzzleManagerLevel02 : MonoBehaviour
         if(p1aSteamVFX)
             p1aSteamVFX.Play();
 
-        if (playCinematic)
-            playCinematic.Play();
+        if (playCinematicFinal)
+            playCinematicFinal.Play();
 
         yield return new WaitForSeconds(4.25f);
         if(steamSFX)
@@ -172,17 +173,17 @@ public class PuzzleManagerLevel02 : MonoBehaviour
 
         if (endScreen)
         {
-            endScreen.text = "Nivel 2 Terminado";
-            endScreen.gameObject.SetActive(true);
+            //endScreen.text = "Nivel 2 Terminado";
+            //endScreen.gameObject.SetActive(true);
 
-            yield return new WaitForSeconds(5f);
+           // yield return new WaitForSeconds(5f);
             TransitionManager.Instance.ChangeLevel();
         }
     }
 
     private void Start()
     {
-        if (playCinematic)
-            playCinematic.Play();
+        if (playCinematicInitial)
+            playCinematicInitial.Play();
     }
 }

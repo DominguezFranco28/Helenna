@@ -388,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4510332207050764021, guid: 38f828732ae94c145bf9e698ec4447b9, type: 3}
       propertyPath: _transitionTime
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8400168495743831484, guid: 38f828732ae94c145bf9e698ec4447b9, type: 3}
       propertyPath: m_Pivot.x
@@ -16924,6 +16924,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 984656119}
+  - {fileID: 1494670231}
   - {fileID: 396561102}
   - {fileID: 1542110274}
   m_Father: {fileID: 0}
@@ -161847,7 +161848,8 @@ MonoBehaviour:
   puzzleDoneP1: 0
   bridge: {fileID: 585506820}
   doorCloseTime: 0.6
-  playCinematic: {fileID: 984656125}
+  playCinematicInitial: {fileID: 1494670233}
+  playCinematicFinal: {fileID: 984656125}
   p1aSteamVFX: {fileID: 654908184}
   p1bSteamVFX: {fileID: 516552007}
   steamSFX: {fileID: 8300000, guid: 53c7926d5b9a47e44b282d82651db817, type: 3}
@@ -176603,6 +176605,7 @@ GameObject:
   - component: {fileID: 984656121}
   - component: {fileID: 984656120}
   - component: {fileID: 984656125}
+  - component: {fileID: 984656126}
   m_Layer: 0
   m_Name: Final Scene Director
   m_TagString: Untagged
@@ -176723,6 +176726,8 @@ PlayableDirector:
     value: {fileID: 1741860369}
   - key: {fileID: 2961754629821710342, guid: ba0a66afffc1ba44fa7e2e1e63db1ada, type: 2}
     value: {fileID: 1741860369}
+  - key: {fileID: 3735947057221521160, guid: ba0a66afffc1ba44fa7e2e1e63db1ada, type: 2}
+    value: {fileID: 984656126}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &984656125
@@ -176738,6 +176743,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cinematicController: {fileID: 984656122}
+--- !u!114 &984656126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984656118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 2d36d6fad5b74ad44bfadebe5eaeec91, type: 2}
+    - {fileID: 11400000, guid: 66606b9801a1bbc4096cc6a2c5b613a8, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 68228384}
+          m_TargetAssemblyTypeName: UnityEngine.MonoBehaviour, UnityEngine
+          m_MethodName: CancelInvoke
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 68228384}
+          m_TargetAssemblyTypeName: TransitionManager, Assembly-CSharp
+          m_MethodName: FadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &988036402
 GameObject:
   m_ObjectHideFlags: 0
@@ -181984,6 +182034,160 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50db6c5974c2ea44b9cc8307b83a1361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1494670230
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1494670231}
+  - component: {fileID: 1494670238}
+  - component: {fileID: 1494670237}
+  - component: {fileID: 1494670236}
+  - component: {fileID: 1494670235}
+  - component: {fileID: 1494670234}
+  - component: {fileID: 1494670233}
+  m_Layer: 0
+  m_Name: 'Initial Scene Director '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1494670231
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494670230}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.8, y: -8.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 420290962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1494670233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494670230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11729952297e72042964135de97f26b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cinematicController: {fileID: 1494670236}
+--- !u!114 &1494670234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494670230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d77d2a929cbc217448e5746535fe19f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _director: {fileID: 1494670238}
+  _cinematicController: {fileID: 1494670236}
+--- !u!114 &1494670235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494670230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9a2398ab7201e949be1c01dcf699ffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  virtualCamera: {fileID: 2004051739}
+  _timeLineTrigger: {fileID: 1494670234}
+  targetZoom: 15
+  zoomSpeed: 1
+  shakeDuration: 0.5
+  shakeAmplitude: 2
+  shakeFrequency: 2
+  changeMusicLayer: 0
+  postProcessVolume: {fileID: 0}
+  haroldBreakSound: {fileID: 0}
+  cinematicController: {fileID: 1494670236}
+--- !u!114 &1494670236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494670230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c37e1f9071cef6429565aea0957ed51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLineTrigger: {fileID: 1494670234}
+  cameraZoom: {fileID: 1494670235}
+  letterboxUI: {fileID: 1494670237}
+  cameraFollow: {fileID: 1741860367}
+  disableCamera: 1
+  playOnStart: 0
+  character: {fileID: 0}
+  endLevel: 0
+  characters: []
+  cinematicPoint: {fileID: 0}
+--- !u!114 &1494670237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494670230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 319c19ac1056fb94dbedeb63fa8d9b89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBorder: {fileID: 1514226132}
+  bottomBorder: {fileID: 642494796}
+--- !u!320 &1494670238
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494670230}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 6cdd4251eabb7ab4badd502a9a267e2a, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 0
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -2075508270581471350, guid: 0cdd7da8615d05743b45b57b2ed7d0a1, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4100354313867901636, guid: 0cdd7da8615d05743b45b57b2ed7d0a1, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3935065676869226426, guid: 28a6f7ae65acbe941b9271352cf03b9a, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -2967867395416234492, guid: e0f2fddabd0daa34d979f53aebee0f1f, type: 2}
+    value: {fileID: 1741860369}
+  - key: {fileID: 2961754629821710342, guid: ba0a66afffc1ba44fa7e2e1e63db1ada, type: 2}
+    value: {fileID: 1741860369}
+  - key: {fileID: 3735947057221521160, guid: ba0a66afffc1ba44fa7e2e1e63db1ada, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2961754629821710342, guid: 6cdd4251eabb7ab4badd502a9a267e2a, type: 2}
+    value: {fileID: 1741860369}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1506138673
 GameObject:
   m_ObjectHideFlags: 0
@@ -214813,15 +215017,15 @@ PrefabInstance:
     - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: emotionAudios.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 23ae1f7120307f54c844aa191a4e11f0, type: 3}
+      objectReference: {fileID: 8300000, guid: e4de74be963bd4c4984435cf04e7b665, type: 3}
     - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: emotionAudios.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 6d823a1e627d7ec4b88bd618f84e7195, type: 3}
+      objectReference: {fileID: 8300000, guid: 52a35b911b5138f48bb447a936f10a9b, type: 3}
     - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: emotionAudios.Array.data[2].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 88d54295d26187149917794126720747, type: 3}
+      objectReference: {fileID: 8300000, guid: b92b42d49d7bc0f4d90aba792a38c15c, type: 3}
     - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: emotionAudios.Array.data[6].clip
       value: 
@@ -214842,6 +215046,10 @@ PrefabInstance:
       propertyPath: emotionAudios.Array.data[11].clip
       value: 
       objectReference: {fileID: 8300000, guid: 048738185f9d5c44dbdc29d4ffeb60f3, type: 3}
+    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
+      propertyPath: emotionAudios.Array.data[12].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2063e381aed5dfe489be5ec9c1e6914b, type: 3}
     - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: emotionAudios.Array.data[1].token
       value: harold-doubt

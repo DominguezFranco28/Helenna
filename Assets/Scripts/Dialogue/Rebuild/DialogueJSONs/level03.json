@@ -4,78 +4,57 @@
       "scene": "Entry-Dialogue",
       "speaker": "Harold",
       "lineId": 1,
-      "text": "Bueno, ya casi estamos... ahora solo...",
-      "emotionToken": "harold-neutral"
+      "text": "Bueno, ya casi estamos, ahora solo...",
+      "emotionToken": null
     },
     {
       "scene": "Entry-Dialogue",
       "speaker": "Nina",
       "lineId": 2,
-      "text": "¿Eh?",
+      "text": "Ehhh, ¿y ahora? ¿Tenemos otro desvío?",
       "emotionToken": "nina-doubt"
     },
     {
       "scene": "Entry-Dialogue",
       "speaker": "Harold",
       "lineId": 3,
-      "text": "Qué raro...",
-      "emotionToken": "harold-confused"
+      "text": "No… No debería, es una línea recta hacia el norte para llegar a la estación.",
+      "emotionToken": null
     },
     {
       "scene": "Entry-Dialogue",
       "speaker": "Nina",
       "lineId": 4,
-      "text": "Ehhh... ¿y ahora? ¿Tenemos otro desvío?",
-      "emotionToken": "nina-curious"
+      "text": "¿Y todos estos escombros? ¿Siempre estuvieron acá?",
+      "emotionToken": null
     },
     {
       "scene": "Entry-Dialogue",
       "speaker": "Harold",
       "lineId": 5,
-      "text": "No… no debería. Es una línea recta hacia el norte para llegar a la estación.",
-      "emotionToken": "harold-thoughtful"
+      "text": "… Nno, no estaban.",
+      "emotionToken": null
     },
     {
       "scene": "Entry-Dialogue",
       "speaker": "Nina",
       "lineId": 6,
-      "text": "¿Y todos estos escombros?",
-      "emotionToken": "nina-surprised"
-    },
-    {
-      "scene": "Entry-Dialogue",
-      "speaker": "Harold",
-      "lineId": 7,
-      "text": "…",
-      "emotionToken": "harold-silent"
-    },
-    {
-      "scene": "Entry-Dialogue",
-      "speaker": "Nina",
-      "lineId": 8,
-      "text": "¡Capaz hay algún herido, viejo! ¿Y si le pasó algo a tu mujer? ¡Dale, vamos!",
-      "emotionToken": "nina-concerned"
-    },
-    {
-      "scene": "Entry-Dialogue",
-      "speaker": "Harold",
-      "lineId": 9,
-      "text": "…",
-      "emotionToken": "harold-worried"
+      "text": "¡Entonces pasó algo, viejo! ¡Dale, vamos, puede haber alguien herido en la estación!",
+      "emotionToken": "nina-demand"
     },
     {
       "scene": "Inside-station",
       "speaker": "Nina",
       "lineId": 1,
       "text": "¡Pero esto está todo destruido! ¡Viejo, esto no es reciente! ¿Qué pasó acá?",
-      "emotionToken": "nina-shocked"
+      "emotionToken": null
     },
     {
       "scene": "Inside-station",
       "speaker": "Harold",
       "lineId": 2,
-      "text": "No… no lo sé… Helenna lo usa todos los días...",
-      "emotionToken": "harold-confused"
+      "text": "No… No lo sé… Helenna lo usa todos los días...",
+      "emotionToken": null
     },
     {
       "scene": "Inside-station",
@@ -89,28 +68,29 @@
       "speaker": "Harold",
       "lineId": 4,
       "text": "...",
-      "emotionToken": "harold-silent"
-    },
-    {
-      "scene": "Inside-station",
-      "speaker": "Nina",
-      "lineId": 5,
-      "text": "¡HAROLD!",
-      "emotionToken": "nina-angry"
+      "emotionToken": null
     },
     {
       "scene": "Inside-station",
       "speaker": "Harold",
+      "lineId": 5,
+      "text": "Va… Vayamos a pie. Tal vez averigüemos algo en la ciudad…",
+      "emotionToken": null
+
+    },
+    {
+      "scene": "Inside-station",
+      "speaker": "Nina",
       "lineId": 6,
-      "text": "Va… vayamos a pie. Tal vez averigüemos algo en la ciudad…",
-      "emotionToken": "harold-resigned"
+      "text": "¡HAROLD!",
+      "emotionToken": "nina-demand"
     },
     {
       "scene": "Inside-station",
       "speaker": "Nina",
       "lineId": 7,
       "text": "¡Eh, viejo, esperá!",
-      "emotionToken": "nina-worried"
+      "emotionToken": null
     }
   ]
 }
