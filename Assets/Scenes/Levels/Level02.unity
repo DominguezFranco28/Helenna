@@ -17087,7 +17087,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6611532685037830205, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
       propertyPath: customText
-      value: Crea una tirolesa para Nina
+      value: 'Crea una tirolesa '
       objectReference: {fileID: 0}
     - target: {fileID: 6611532685037830205, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
       propertyPath: searchOnTag
@@ -176507,6 +176507,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8683637490037242599, guid: 70e801fcf4e65ce4ab255fe5e0669246, type: 3}
   m_PrefabInstance: {fileID: 954919696}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &978632741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3689332053066229778, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
+  m_PrefabInstance: {fileID: 1995147823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &979201116
 GameObject:
   m_ObjectHideFlags: 0
@@ -179005,7 +179010,7 @@ PrefabInstance:
     - target: {fileID: 7779331290517866420, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: _UI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 978632741}
     - target: {fileID: 7779331290517866420, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: _boxWidth
       value: 4
@@ -215154,9 +215159,17 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 4582669109663388974, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -1.3187
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582669109663388974, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -0.4011
+      objectReference: {fileID: 0}
     - target: {fileID: 6611532685037830205, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6611532685037830205, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
       propertyPath: searchOnTag
