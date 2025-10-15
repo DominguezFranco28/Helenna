@@ -1,0 +1,45 @@
+Notas acerca del modo de uso de cada sfx
+
+harold-arm-push-pull:
+- para cuando Harold empuja un objeto
+- para cuando Harold tira de un objeto hacia él
+
+harold-arm-stetch-out:
+- está pensado para usarse en el canal de loop
+- el sonido se repite hasta que el recorrido de ida y vuelta haya finalizado
+- se pretende usar acompañado del pressure-steam y del harold-hand-grab
+
+harold-hand-grab:
+- sonido que sirve de señal cuando la mano de harold logra sujetarse de algo
+- también se puede usar cuando (solo harold) recoge un objeto
+
+nina-climbing:
+- está pensado para usarse en el canal de loop
+- se usa cuando Nina está escalando palestra
+- se pretende que suene en bucle mientras se esté presionando tecla para subir o bajar
+
+nina-zip-line:
+- tal vez el sfx menos preferido o ideal, relativo a su acción, de todos los sonidos
+- para cuando Nina viaja de un punto a otro a través de una tirolesa armada con el brazo de harold
+
+pressure-steam:
+- vapor a presión
+- tal vez el sfx más versátil si contemplamos la adhesión de elementos nuevos a futuro
+- inicialmente pensado para usarlo tanto en el inicio del estiramiento del brazo de harold como cuando finaliza su retorno, con la intención de ser feedback auditivo e imitar una liberación de gases típicos del vapor industrial
+- seguramente se pueda usar en otros contextos o para otras máquinas a vapor
+- opcionalmente puede ser usado en remplazo a harold-arm-push-pull, cuando harold empuja un objeto al que él se encuentra pegado; por ejemplo, si harold tiene una distancia nula con respecto a un conteiner, al empujarlo, en lugar de sonar harold-arm-push-pull, sonará el vapor a presión porque el tiempo que tarda en estirar el brazo simulando un empuje es ínfimo frente el tiempo que dura el sonido harold-arm-push-pull. 
+
+rex-digging:
+- se puede o no usar en loop dependiendo del contexto
+- para cuando Rex se mete en la madriguera
+- para cuando Rex está excavando (loop)
+
+rex-grass-landing:
+- para cuando Rex aterriza en el cesped (normalmente después de ser arrojado por Harold)
+
+switch-character:
+- clic que hace de feedback auditivo para el cambio de personajes durante el gameplay
+
+throwing:
+- para cuando Rex es lanzado por harold
+- también puede ser usado para cualquier otro objeto que sea arrojado por Harold

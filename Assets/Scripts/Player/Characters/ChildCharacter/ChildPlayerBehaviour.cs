@@ -12,6 +12,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     private float _currentSpeed; 
     [SerializeField] private AudioClip _climbingLoopSFX; 
     [SerializeField] private AudioClip _footstepsSFX; 
+    [SerializeField] private AudioClip _ziplineLoopSFX; 
     private Rigidbody2D _rb2D;
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider;
@@ -24,6 +25,7 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     public bool IsInControll { get { return _isInControll; } }
     public Animator Animator { get { return _animator; }} 
     public AudioClip ClimbSFX  { get { return _climbingLoopSFX; }} 
+    public AudioClip ZiplineSFX  { get { return _ziplineLoopSFX; }} 
     public AudioClip StepsSFX { get { return _footstepsSFX; }} 
     public Vector2 MovementInput { get { return _movementInput; } }
     public float ClimbSpeed { get { return _climbSpeed; } }

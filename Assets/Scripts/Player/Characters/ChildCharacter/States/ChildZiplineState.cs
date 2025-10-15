@@ -59,7 +59,7 @@ public class ChildZiplineState : IState
         {
             _childPlayerBehaviour.PlayerCollider.isTrigger = true;//no se si le vamos a dar uso al final a esto,.. pero por las dudas lo dejo
             _childPlayerBehaviour.Animator.SetBool("isClimbing", true);
-            SFXManager.Instance.PlayLoop(_childPlayerBehaviour.ClimbSFX);
+            SFXManager.Instance.PlayLoop(_childPlayerBehaviour.ZiplineSFX);
             CharacterManager.Instance.IsOnZipline = true;
         }
     }

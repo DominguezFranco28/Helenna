@@ -134,10 +134,12 @@ public class ArmBullet : MonoBehaviour
                 {
                     case ImpulseType.Push:
                         HandlePushableCollision(collision, true);
+                        SFXManager.Instance.PlaySFX(_oldPlayerBehaviour.GrabSFX);
                         break;
 
                     case ImpulseType.Pull: //si viene cn typePUll el objeto se atrae
                         HandlePushableCollision(collision, false);
+                        SFXManager.Instance.PlaySFX(_oldPlayerBehaviour.GrabSFX);
                         break;
                 }
                 break;
@@ -159,6 +161,7 @@ public class ArmBullet : MonoBehaviour
             if (parentTransform != null)
             {           
                 HandleDogPull(parentTransform);
+                SFXManager.Instance.PlaySFX(_oldPlayerBehaviour.PullRexSFX);
             }
             StartRetract(); // bullet VUELVE  a harold
         }

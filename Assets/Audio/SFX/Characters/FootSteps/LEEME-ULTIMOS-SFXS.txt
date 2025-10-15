@@ -1,0 +1,17 @@
+dry-grass-foot-step: Distintas variantes de pisadas en cesped de modo tal que se sienta variado y no suene repetitivo (especialmente si cada una suena aleatoriamente)
+
+foot-step-on-concrete: Como lo indica el nombre, se trata de piasadas en materiales duros, secos, similares al de una piedra
+
+foot-step-on-gravel: Para las pisadas en gravilla o similares (escombro, trozos de piedra, tierra etc.)
+
+foot-step-on-metal: Sonido sugerido al pisar elementos metálicos como vigas, puentes de dicho material, andamios, etc.
+
+lever-chains: Para cadenas o hasta elementos mecánicos como engranajes
+
+mechanic-activation-sequence: Sugerido para elementos mecánicos medianos o pequeños
+
+metal-drop: Sonido que debería ejecutarse al soltar un objeto (idealmente metálico). Se le puede dar otro uso
+
+metal-take: Sonido que debería sonar al tomar un objeto (idealmente metálico). También se le puede dar otro uso
+
+sfx-dementia-transition: El que más me costó y no me deja del todo conforme. Pero sirve, supongo. Obviamente se trata del efecto de sonido que marca "el dolor mental de Harold", o intento de eso. Al menos pretende evocar suspenso. Pensado para sonar una sola vez (aunque no obligatoriamente)
