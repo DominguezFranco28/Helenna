@@ -29,6 +29,7 @@ public class ThrowState : IState
         _oldPlayerBehaviour.StopMovement();
         _oldPlayerBehaviour.SetMovementEnabled(false);
         _oldPlayerBehaviour.Animator.SetBool("IsSliding", true);
+        SFXManager.Instance.PlaySFX(_oldPlayerBehaviour.GrabSFX);
         Debug.Log(throwDir);
         _throwTimer = 0f;
         _delayCompleted = false;
@@ -45,6 +46,7 @@ public class ThrowState : IState
     public void Exit()
     {
         _oldPlayerBehaviour.Animator.SetBool("IsSliding", false);
+        SFXManager.Instance.PlaySFX(_oldPlayerBehaviour.ThrowSFX);
         Debug.Log("You exited the state:  GRAB");
     }
 

@@ -44,6 +44,7 @@ public class ZiplineState : IState
         _oldPlayerBehaviour.Animator.SetFloat("Speed", lastInput.magnitude);
         _oldPlayerBehaviour.SetMovementEnabled(false);
         _oldPlayerBehaviour.PerformArmToAnchor(_anchorDetector.ClosestAnchor, false);
+        SFXManager.Instance.PlaySFX(_oldPlayerBehaviour.ZiplineSFX);
         Debug.Log("You entered the state: ZIPLINE");
     }
 

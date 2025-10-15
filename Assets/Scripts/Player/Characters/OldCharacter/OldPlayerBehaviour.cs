@@ -8,6 +8,10 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     [SerializeField] private float _normalSpeed;
     [SerializeField] private float _lowSpeed;
     [SerializeField] private AudioClip _footstepsSFX;
+    [SerializeField] private AudioClip _grabSFX;
+    [SerializeField] private AudioClip _throwSFX;
+    [SerializeField] private AudioClip _pullRexSFX;
+    [SerializeField] private AudioClip _ziplineSFX;
     private float _auxSpeed;
     private bool _canMove; //manage from CharacterManager
     private Rigidbody2D _rb2D;
@@ -34,6 +38,10 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public Vector2 LastMovementInput { get;  set; } //necesite guardar el ultimo input para la anim del impulse
     public Vector2 LastCardinalInput { get; private set; }
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
+    public AudioClip GrabSFX { get { return _grabSFX; } }
+    public AudioClip ThrowSFX { get { return _throwSFX; } }
+    public AudioClip PullRexSFX { get { return _pullRexSFX; } }
+    public AudioClip ZiplineSFX { get { return _ziplineSFX; } }
     public bool IsRecoiling{ get { return _isRecoiling; } set { _isRecoiling = value; } }
 
 

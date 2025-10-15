@@ -300,6 +300,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 24309899}
     - target: {fileID: 7391976909620452916, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
+      propertyPath: _grabSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d3d7bed347d8ab4682d54ca5923de60, type: 3}
+    - target: {fileID: 7391976909620452916, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
+      propertyPath: _throwSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 212395dae5bfea94f8b3d57724c981cf, type: 3}
+    - target: {fileID: 7391976909620452916, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
+      propertyPath: _pullRexSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 489ef961261ebe4409037f084913d91a, type: 3}
+    - target: {fileID: 7391976909620452916, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
+      propertyPath: _footstepsSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: b5d4c7b4bcf6eed4fb96aa4df885457c, type: 3}
+    - target: {fileID: 7391976909620452916, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: _playerController
       value: 
       objectReference: {fileID: 24309907}
@@ -15493,6 +15509,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2540616221314238289, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: _footstepsSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 8874914b6a61ef4459b9d8e80973d608, type: 3}
     - target: {fileID: 4325059657574243158, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: m_Name
       value: ChildPlayer
@@ -285107,6 +285127,10 @@ PrefabInstance:
       propertyPath: _speed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1116637534219554859, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
+      propertyPath: _footstepsSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: aacca0d69dffd2f4aa5b2551a26d8aac, type: 3}
     - target: {fileID: 1176267540435981163, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.375
@@ -285133,11 +285157,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4902075083233182869, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.33
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 4902075083233182869, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.36
+      value: -0.89
       objectReference: {fileID: 0}
     - target: {fileID: 4902075083233182869, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -300280,150 +300304,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 92790403}
     m_Modifications:
-    - target: {fileID: 2711263906286127759, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: m_Volume
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2711263906286127759, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743567568611455087, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4743567568611455087, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: _loopSource
-      value: 
-      objectReference: {fileID: 2023396111}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.size
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: e4de74be963bd4c4984435cf04e7b665, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 52a35b911b5138f48bb447a936f10a9b, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[2].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: b92b42d49d7bc0f4d90aba792a38c15c, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[3].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 23ae1f7120307f54c844aa191a4e11f0, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 23ae1f7120307f54c844aa191a4e11f0, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 23ae1f7120307f54c844aa191a4e11f0, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: adccbb0b6d7e1a042991484a7ddc650a, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[7].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: acf56f5b1636fe64bbaeaf533545dcc0, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[8].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: acf56f5b1636fe64bbaeaf533545dcc0, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[9].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: f63fe5c9cecde0b4eafe0c87812ed2c3, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[0].token
-      value: harold-annoyed
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[10].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: b4644274e13f0004d9dd507ac79725d2, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[11].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: c1500668d44bc41448110ded3a856087, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[12].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 2063e381aed5dfe489be5ec9c1e6914b, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[13].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: c1500668d44bc41448110ded3a856087, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[14].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: f63fe5c9cecde0b4eafe0c87812ed2c3, type: 3}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[1].token
-      value: harold-doubt
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[2].token
-      value: harold-demand
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[3].token
-      value: harold-mocking
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[4].token
-      value: harold-happy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[5].token
-      value: harold-sad
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[6].token
-      value: rex-barking
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[7].token
-      value: rex-growling
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[8].token
-      value: rex-whining
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[9].token
-      value: nina-annoyed
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[10].token
-      value: nina-doubt
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[11].token
-      value: nina-demand
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[12].token
-      value: nina-mocking
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[13].token
-      value: nina-happy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-      propertyPath: emotionAudios.Array.data[14].token
-      value: nina-sad
-      objectReference: {fileID: 0}
     - target: {fileID: 8388024441617885730, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: m_Name
       value: SFXManager
@@ -301328,7 +301208,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3460851769625804851, guid: f900f0a24bc39544db48905e26c09449, type: 3}
       propertyPath: m_Pitch
-      value: 1.1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3460851769625804851, guid: f900f0a24bc39544db48905e26c09449, type: 3}
+      propertyPath: Priority
+      value: 148
       objectReference: {fileID: 0}
     - target: {fileID: 3460851769625804851, guid: f900f0a24bc39544db48905e26c09449, type: 3}
       propertyPath: m_Volume
@@ -301340,7 +301224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5064693074309249973, guid: f900f0a24bc39544db48905e26c09449, type: 3}
       propertyPath: m_Volume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5064693074309249973, guid: f900f0a24bc39544db48905e26c09449, type: 3}
       propertyPath: m_audioClip
@@ -301619,11 +301503,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7383796733464643918, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
   m_PrefabInstance: {fileID: 2017545602}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &2023396111 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2711263906286127759, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
-  m_PrefabInstance: {fileID: 1849889878}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2024015232
 GameObject:
