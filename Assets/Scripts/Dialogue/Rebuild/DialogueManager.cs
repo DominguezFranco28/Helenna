@@ -59,12 +59,16 @@ public class DialogueManager : MonoBehaviour
     public bool debugSpeak = false;
 
 
+    private PauseManager pauseManager;
+
     private void Start()
     {
         //Load dialogue file
         data = JsonUtility.FromJson<DialogueWrapper>(dialogueFile.text);
 
         MakeClear();
+
+        pauseManager = FindAnyObjectByType<PauseManager>();
     }
 
     public void StartScene(string scene)
@@ -76,6 +80,8 @@ public class DialogueManager : MonoBehaviour
     {
         InputManager.Instance.LockInputs();
         isSpeaking = true;
+        if (pauseManager)
+            pauseManager.SetIsSpeaking(isSpeaking);
 
         List<DialogueLine> sceneLines = GetLinesFromScene(scene);
         if (sceneLines != null)
@@ -89,8 +95,9 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        InputManager.Instance.UnlockInputs();
         isSpeaking = false;
+        if (pauseManager)
+            pauseManager.SetIsSpeaking(isSpeaking);
     }
 
     private List<DialogueLine> GetLinesFromScene(string scene)

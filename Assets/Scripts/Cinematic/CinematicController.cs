@@ -22,10 +22,12 @@ public class CinematicController : MonoBehaviour
     public List<Transform> characters; //asignar los personajes en el inspector
     public Transform cinematicPoint; //punto donde se alinean los personajes
 
-
+    private PauseManager pauseManager;
 
     private void Start()
     {
+        pauseManager = FindAnyObjectByType<PauseManager>();
+
         if (playOnStart)
         {
             PlayCinematic();
@@ -64,9 +66,10 @@ public class CinematicController : MonoBehaviour
             cameraFollow.SetActive(true);
         letterboxUI.ShowBorders();
         cameraZoom.StartZoom();
-        InputManager.Instance.LockInputs();
-        //GameStateManager.Instance.SetState(GameState.Paused);
-        //Debug.Log(GameStateManager.Instance.CurrentState);
+
+        if(pauseManager)
+            pauseManager.SetCutsceneRunning(true);
+
         if (timeLineTrigger != null)
             timeLineTrigger.PlayTimeline();
         // El Timeline ya no se dispara desde CameraZoom cuando termina el zoom, ver comentario
@@ -74,21 +77,15 @@ public class CinematicController : MonoBehaviour
 
     public void EndCinematic()
     {
-        //if (endLevel)
-        //{
-        //    TransitionManager.Instance.ChangeLevel();
-        //    return;
-        //}
-
         letterboxUI.HideBorders();
         cameraZoom.ResetZoom();
         if (disableCamera)
             cameraFollow.SetActive(false);
         if (character !=null)
             character.flipX = false; //reestablezco flip a nina
-        InputManager.Instance.UnlockInputs();
-       // GameStateManager.Instance.SetState(GameState.Playing);
-        //Debug.Log(GameStateManager.Instance.CurrentState);
+
+        if (pauseManager)
+            pauseManager.SetCutsceneRunning(false);
 
     }
     public void PrepareCinematic() //para los shakes de harold, sin necesidad de activar la cienmatica completa y romper todo con el timeline
