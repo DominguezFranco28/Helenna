@@ -283572,7 +283572,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &614554997
 Transform:
   m_ObjectHideFlags: 0
@@ -300313,11 +300313,11 @@ PrefabInstance:
     - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: emotionAudios.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 26e1f8f081f04154eb4cbf5f9c209064, type: 3}
+      objectReference: {fileID: 8300000, guid: e4de74be963bd4c4984435cf04e7b665, type: 3}
     - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: emotionAudios.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 80fc14c23c4881f4b8667850564c130e, type: 3}
+      objectReference: {fileID: 8300000, guid: 52a35b911b5138f48bb447a936f10a9b, type: 3}
     - target: {fileID: 6998095391590244672, guid: 9a850e56661b5e642ad5a9d6c5228b57, type: 3}
       propertyPath: emotionAudios.Array.data[2].clip
       value: 
