@@ -672,7 +672,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4510332207050764021, guid: 38f828732ae94c145bf9e698ec4447b9, type: 3}
       propertyPath: _transitionTime
-      value: 6
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8400168495743831484, guid: 38f828732ae94c145bf9e698ec4447b9, type: 3}
       propertyPath: m_Pivot.x
@@ -156850,6 +156850,7 @@ MonoBehaviour:
   - {fileID: 978498410}
   puzzleDoneP3: 0
   playCinematic: {fileID: 984656125}
+  playCinematicEnd: {fileID: 984656125}
   p1SteamVFX: {fileID: 5953969756327305916}
   p2SteamVFX: {fileID: 641808514}
   p3SteamVFX: {fileID: 1780789899}

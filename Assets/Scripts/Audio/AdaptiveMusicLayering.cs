@@ -30,7 +30,7 @@ public class AdaptiveMusicLayering : MonoBehaviour
 
         if (_layerOneSource == null)
         {
-            Debug.LogError("Se encesita un tema principal");
+           // Debug.LogError("Se encesita un tema principal");
             enabled = false;
         }
         if (_layerTwoSource == null)

@@ -36,6 +36,7 @@ public class PuzzleManagerLevel01 : MonoBehaviour
 
     [Header("Cinematica")]
     public PlayCinematic playCinematic;
+    public PlayCinematic playCinematicEnd;
 
 
     public ParticleSystem p1SteamVFX;
@@ -57,16 +58,17 @@ public class PuzzleManagerLevel01 : MonoBehaviour
     private IEnumerator Victory()
     {
         Debug.Log("VICTORY");
+        playCinematicEnd.Play();
         yield return new WaitForSeconds(1.5f);
+        TransitionManager.Instance.ChangeLevel();
         
-        if (endScreen)
-        {
-            endScreen.text = "Nivel 1 Terminado";
-            endScreen.gameObject.SetActive(true);
+        //if (endScreen)
+        //{
+        //    endScreen.text = "Nivel 1 Terminado";
+        //    endScreen.gameObject.SetActive(true);
             
-            yield return new WaitForSeconds(5f);
-            TransitionManager.Instance.ChangeLevel();
-        }
+        //    yield return new WaitForSeconds(5f);
+        
     }
 
     private void OnEnable()
