@@ -179535,7 +179535,7 @@ GameObject:
   - component: {fileID: 1240143758}
   - component: {fileID: 1240143757}
   - component: {fileID: 1240143759}
-  m_Layer: 18
+  m_Layer: 0
   m_Name: Paredes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
