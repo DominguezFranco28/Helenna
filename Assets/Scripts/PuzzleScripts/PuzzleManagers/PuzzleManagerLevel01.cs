@@ -51,15 +51,14 @@ public class PuzzleManagerLevel01 : MonoBehaviour
 
         if (puzzleDoneP1 && puzzleDoneP2 && puzzleDoneP3)
         {
-            StartCoroutine(Victory());
+            Victory();
         }
     }
 
-    private IEnumerator Victory()
+    private void Victory()
     {
         Debug.Log("VICTORY");
         playCinematicEnd.Play();
-        yield return new WaitForSeconds(1.5f);
         TransitionManager.Instance.ChangeLevel();
         
         //if (endScreen)
