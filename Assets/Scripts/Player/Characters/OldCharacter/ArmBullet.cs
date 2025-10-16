@@ -189,8 +189,10 @@ public class ArmBullet : MonoBehaviour
     }
     private void HandleDogPull(Transform dogTransform)
     {
-        //INTEGRAR ESTADO ACA///
-            Rigidbody2D rb = dogTransform.GetComponent<Rigidbody2D>();
+        if (!_oldPlayerBehaviour.UnlockPullRex)
+            return; //si no tiene el poder desbloqueado no puede atraer a rex
+                    //INTEGRAR ESTADO ACA///
+        Rigidbody2D rb = dogTransform.GetComponent<Rigidbody2D>();
             AgilePlayerController controller = dogTransform.GetComponent<AgilePlayerController>();
             AgileTriggerDetector triggerDetector = dogTransform.GetComponentInChildren<AgileTriggerDetector>();
         if (rb != null)

@@ -19,6 +19,7 @@ public class ButtonPopup : MonoBehaviour
     public string excludeOnTag = "dog";
 
     public bool disableAfterFirst = false;
+    public bool onlyShowIfZiplineActive = false;
 
     public string customText = "";
 
@@ -87,7 +88,22 @@ public class ButtonPopup : MonoBehaviour
             {
                 if (other.GetComponent<IControllable>().GetControl())
                 {
-                    popupSprite.SetActive(true);
+                    bool canShow = true;
+                    if (onlyShowIfZiplineActive)
+                    {
+                       
+                        if (CharacterManager.Instance != null)
+                        {
+
+                            if (CharacterManager.Instance.GetActiveZipline() == null)
+                                canShow = false;// no hay zipline activa
+                        }
+                    }
+
+                    if (canShow)
+                    {
+                        popupSprite.SetActive(true);
+                    }
                 }
             }
         }

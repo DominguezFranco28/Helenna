@@ -26,8 +26,10 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     private bool _isOnHighGround;
     private bool _unlockZipline = false; //DESBLOQUEO DE HABILIDAD DE USAR TIROLESA
     private bool _unlockThrow = false; //DESBLOQUEO DE HABILIDAD DE LANZAR
+    private bool _unlockPullRex = false; //DESBLOQUEO DE HABILIDAD DE LANZAR
     public bool UnlockZipline { get { return _unlockZipline; } set { _unlockZipline = value; } }
     public bool UnlockThrow{ get { return _unlockThrow; } set { _unlockThrow = value; } }
+    public bool UnlockPullRex{ get { return _unlockPullRex; } set { _unlockPullRex = value; } }
     public bool IsInControll{ get { return _isInControll; } } 
     public bool CanMove{ get { return _canMove; } } 
     public bool ArmPulled{ get { return _armPulled; } set { _armPulled = value; } } 

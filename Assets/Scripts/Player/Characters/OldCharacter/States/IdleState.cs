@@ -55,8 +55,8 @@ public class IdleState :  IState
         Debug.Log("You entered the state: OLD IDLE");
         if (_oldPlayerBehaviour)
         {
-            _oldPlayerBehaviour.SetMovementInput(Vector2.zero);
             _oldPlayerBehaviour.SetMovementEnabled(true);
+            _oldPlayerBehaviour.SetMovementInput(Vector2.zero);
         }
         
     }
