@@ -24,7 +24,7 @@ public class ThrowState : IState
 
     public void Enter()
     {
-        Debug.Log("You entered the state:  GRAB");
+        Debug.Log("You entered the state:  Throw-GRAB");
         Vector2 throwDir = _oldPlayerBehaviour.LastMovementInput;
         _oldPlayerBehaviour.StopMovement();
         _oldPlayerBehaviour.SetMovementEnabled(false);

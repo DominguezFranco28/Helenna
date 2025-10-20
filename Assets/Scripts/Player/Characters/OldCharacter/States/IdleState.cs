@@ -45,7 +45,7 @@ public class IdleState :  IState
             if (InputManager.Instance != null)
             {
                 subbed = true;
-
+                InputManager.Instance.ActionPressed += OnAction;
                 InputManager.Instance.SpecialActionPressed += OnSpecialAction;
                 InputManager.Instance.InteractPressed += InteractPressed;
                 InputManager.Instance.Move += OnMove;
@@ -66,6 +66,7 @@ public class IdleState :  IState
         //desuscripcion del estado move porque daba problema con el impulse.
         if (InputManager.Instance != null)
         {
+            InputManager.Instance.ActionPressed -= OnAction;
             InputManager.Instance.SpecialActionPressed -= OnSpecialAction;
             InputManager.Instance.InteractPressed -= InteractPressed;
             InputManager.Instance.Move -= OnMove;
@@ -97,6 +98,27 @@ public class IdleState :  IState
         //Debug.Log("Interacting: " + interacting);
         //InputManager.Instance.InvokeAction(() => interacting = false, 0.5f);
 
+    }
+    private void OnAction()
+
+    {
+        if (!_oldPlayerBehaviour.IsInControll) return;
+
+        // uso el LastCardinalInput porque guarda la ultima direc de movimiento (no diagonal),
+        // y evito que sea el vectorzero de stopmovoement
+        Vector2 throwDirection = _oldPlayerBehaviour.LastCardinalInput;
+
+        // Si LastCardinalInput es (0,0) (x ser el incio de juego o algun otro metodo-evento), usa una direc por defecto.
+        if (throwDirection == Vector2.zero)
+            throwDirection = Vector2.down;
+        
+
+        _oldPlayerBehaviour.LastMovementInput = throwDirection; // Guarda la dirección de lanzamiento
+
+        if (_triggerDetector.CanGrabDog && _oldPlayerBehaviour.UnlockThrow)
+        {
+            _oldStateMachine.TransitionTo(_oldStateMachine.throwState);
+        }
     }
     public void Update()
     {

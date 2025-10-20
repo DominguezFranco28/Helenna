@@ -77,11 +77,9 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public void SetMovementInput(Vector2 input)
     {
         if (!IsInControll || !_canMove) return;
-
-        // Guardamos el input real (para movimiento físico y diagonales)
         _movementInput = input;
 
-        // --- Detección de input cardinal dominante ---
+        //input cardinal dominante
         Vector2 cardinalInput = Vector2.zero;
 
         if (input != Vector2.zero)
@@ -93,11 +91,11 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
 
             // Guardamos el último input cardinal (para animaciones y disparos)
             LastCardinalInput = cardinalInput;
-            LastMovementInput = input.normalized; // si querés guardar también la diagonal real
+            LastMovementInput = input.normalized; // diaognal real
         }
 
         // --- Animator ---
-        // Usa los valores cardinales para dirección (sin diagonales)
+        // Usa los valores cardinales para direccion
         _animator.SetFloat("Horizontal", LastCardinalInput.x);
         _animator.SetFloat("Vertical", LastCardinalInput.y);
 
