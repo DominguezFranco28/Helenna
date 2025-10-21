@@ -18,16 +18,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/Level03.unity
     guid: baa6bd2b72cd16c4b92ccc2510d5941f
   - enabled: 0
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/Deprecated/MainScene.unity
     guid: f261fbf31d80f794aa17fec914144c99
   - enabled: 0
-    path: Assets/Scenes/TestingScene.unity
+    path: Assets/Scenes/Deprecated/TestingScene.unity
     guid: 1a39981d2a1153f44854aed61d32bb7b
   - enabled: 0
     path: Assets/Scenes/Prototype.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 0
-    path: Assets/Scenes/HaroldHome.unity
+    path: Assets/Scenes/Deprecated/HaroldHome.unity
     guid: 65c3f6b64928c3447abd5f3cf6c95ce3
   - enabled: 0
     path: Assets/Scenes/ExteriorProto.unity
