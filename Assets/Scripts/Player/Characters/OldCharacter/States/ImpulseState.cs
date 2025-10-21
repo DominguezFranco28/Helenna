@@ -37,7 +37,7 @@ public class ImpulseState : IState
                         _oldPlayerBehaviour.ArmRelease = true;
                         ImpulseType currentType = _oldPlayerBehaviour.GetCurrentArmType(); //paso por parametro el tipo de impulso que quiero obtenido desde la consulta en el player behaviour
                         _oldPlayerBehaviour.PerformThrowArm(currentType);
-                        Debug.Log(currentType + lastInput.ToString());
+                        //Debug.Log(currentType + lastInput.ToString());
                         return;
                     }
                     Debug.Log("Cambio a zypline ");

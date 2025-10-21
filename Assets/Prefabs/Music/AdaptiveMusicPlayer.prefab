@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6652763881013046825}
   - component: {fileID: 5064693074309249973}
   - component: {fileID: 3460851769625804851}
+  - component: {fileID: 2889730609749761147}
   m_Layer: 0
   m_Name: AdaptiveMusicPlayer
   m_TagString: Untagged
@@ -43,7 +44,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6486963958345432442, guid: c2c9b55a971e1a74e842dcc50643a2ab, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 6385c2f8342722a49b31bc4e0b455ff8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e8f8506ebebeca342b97750ceabe512f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -51,7 +52,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 148
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -139,15 +140,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6486963958345432442, guid: c2c9b55a971e1a74e842dcc50643a2ab, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 208c1d6e8b49dc34a918e9e22c9bd5c3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c870b8cebf30e5b46bee3043a4fc547e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 148
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -225,3 +226,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2889730609749761147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222511308539455504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32851e36cbc1d6048ac809b5d526e17e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerOneSource: {fileID: 5064693074309249973}
+  _layerTwoSource: {fileID: 3460851769625804851}
+  _resolutionSFXSource: {fileID: 3460851769625804851}
+  _fadeDuration: 1.5

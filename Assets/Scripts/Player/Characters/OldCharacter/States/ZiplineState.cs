@@ -20,6 +20,7 @@ public class ZiplineState : IState
 
     private void OnSpecialAction()
     {
+        if (!_oldPlayerBehaviour.IsInControll) return;
         _oldPlayerBehaviour.PerformArmToAnchor(_anchorDetector.ClosestAnchor, true);
         _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
     }

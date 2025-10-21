@@ -145,9 +145,10 @@ public class ArmBullet : MonoBehaviour
                 break;
 
              default:
-                //si colisiona con cualquier otra cosa, que se destruya.
-                Destroy(gameObject);
-                
+                //si colisiona con cualquier otra cosa, que vuelva a harold sin haceer nada.
+                StartRetract();
+
+
                 break;
         }
     }

@@ -11,7 +11,9 @@ public class TransitionManager : MonoBehaviour
     public static TransitionManager Instance { get; private set; }
 
     [SerializeField] private GameObject _transitionUI;
-    [SerializeField] private float _transitionTime = 1f;
+    //queda ligeramente inutilizado por elm fade de la musica en el singleton que hace lo mismo pero mejor,
+    //lo dejo igualmente por si a alguna escena le quiero poner una transicion visual que demore mas que el fade de la musica
+    [SerializeField] private float _transitionTime = 0f;  //dejar en 0 salvo que quiera una transicion mas tardia a drede
     private Animator _animator;
 
     public string nextScene = "";

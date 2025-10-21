@@ -388,7 +388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4510332207050764021, guid: 38f828732ae94c145bf9e698ec4447b9, type: 3}
       propertyPath: _transitionTime
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8400168495743831484, guid: 38f828732ae94c145bf9e698ec4447b9, type: 3}
       propertyPath: m_Pivot.x
@@ -215832,38 +215832,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 92790403}
     m_Modifications:
-    - target: {fileID: 3460851769625804851, guid: f900f0a24bc39544db48905e26c09449, type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3460851769625804851, guid: f900f0a24bc39544db48905e26c09449, type: 3}
-      propertyPath: m_Pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3460851769625804851, guid: f900f0a24bc39544db48905e26c09449, type: 3}
-      propertyPath: Priority
-      value: 148
-      objectReference: {fileID: 0}
-    - target: {fileID: 3460851769625804851, guid: f900f0a24bc39544db48905e26c09449, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3460851769625804851, guid: f900f0a24bc39544db48905e26c09449, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: c870b8cebf30e5b46bee3043a4fc547e, type: 3}
-    - target: {fileID: 5064693074309249973, guid: f900f0a24bc39544db48905e26c09449, type: 3}
-      propertyPath: Priority
-      value: 148
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064693074309249973, guid: f900f0a24bc39544db48905e26c09449, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5064693074309249973, guid: f900f0a24bc39544db48905e26c09449, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: e8f8506ebebeca342b97750ceabe512f, type: 3}
     - target: {fileID: 6652763881013046825, guid: f900f0a24bc39544db48905e26c09449, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -215911,37 +215879,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7222511308539455504, guid: f900f0a24bc39544db48905e26c09449, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2011538843}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f900f0a24bc39544db48905e26c09449, type: 3}
---- !u!1 &2011538840 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7222511308539455504, guid: f900f0a24bc39544db48905e26c09449, type: 3}
-  m_PrefabInstance: {fileID: 2011538839}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &2011538841 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 3460851769625804851, guid: f900f0a24bc39544db48905e26c09449, type: 3}
-  m_PrefabInstance: {fileID: 2011538839}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2011538843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2011538840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32851e36cbc1d6048ac809b5d526e17e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _layerOneSource: {fileID: 0}
-  _layerTwoSource: {fileID: 0}
-  _resolutionSFXSource: {fileID: 2011538841}
-  _fadeDuration: 1.5
 --- !u!4 &2011538844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6652763881013046825, guid: f900f0a24bc39544db48905e26c09449, type: 3}
@@ -216090,7 +216029,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6611532685037830205, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
       propertyPath: customText
-      value: '"W"+ "SPACE" para lanzar a Rex'
+      value: '"SPACE" para lanzar a Rex'
       objectReference: {fileID: 0}
     - target: {fileID: 6611532685037830205, guid: 7feb4f26beedad9488abf873dca86094, type: 3}
       propertyPath: searchOnTag

@@ -65,7 +65,7 @@ public class CharacterManager : MonoBehaviour
             if ( !stateName.Contains("IdleState") && !stateName.Contains("MoveState") && !stateName.Contains("Zipline"))
             {
                 Debug.Log("Cannot change character unless all characters are in Idle or Move state. Current character: " + character.name + " is in state: " + current.GetType().Name);
-                return; // bloquea cambio de personaje si no estan en idle o Move
+                return; // bloquea cambio de personaje si no estan en idle o Move, zipline
             }
         }
         SFXManager.Instance.PlaySFX(_changeSFX);

@@ -25,6 +25,7 @@ TagManager:
   - Pipe
   - WaterZone
   - Throwable
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -47,7 +48,7 @@ TagManager:
   - TowerWalls
   - BulletHigh
   - BulletGround
-  - Air Machine
+  - Wall
   - Air Filter
   - AnchorPoint
   - ElevatedFloor
