@@ -72,7 +72,7 @@ public class TransitionManager : MonoBehaviour
         // Espera la duración del Fade Out de la música para que termine de silenciarse.
         yield return new WaitForSeconds(musicFadeDuration);
 
-        // Espera el tiempo restante de la animacion o musica
+        // Espera el tiempo restante de la transicio o musica, lo que sea mayor, serialzado para ajustar desde inspector
         float requiredWaitTime = Mathf.Max(_transitionTime, musicFadeDuration);
 
 
