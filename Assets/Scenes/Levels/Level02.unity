@@ -179261,6 +179261,58 @@ PrefabInstance:
       propertyPath: _footstepsSFX
       value: 
       objectReference: {fileID: 8300000, guid: 8874914b6a61ef4459b9d8e80973d608, type: 3}
+    - target: {fileID: 3301073443021790062, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 37960985db40609498a4f4f1a9adea87, type: 2}
+    - target: {fileID: 3483386656762430944, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483386656762430944, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483386656762430944, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483386656762430944, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime1
+      value: 24094
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483386656762430944, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime2
+      value: 48766
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483386656762430944, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.ctime3
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483386656762430944, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483386656762430944, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483386656762430944, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].inSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483386656762430944, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483386656762430944, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[0].outSlope
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3483386656762430944, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: SizeModule.curve.maxCurve.m_Curve.Array.data[1].outSlope
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4325059657574243158, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: m_Name
       value: ChildPlayer
