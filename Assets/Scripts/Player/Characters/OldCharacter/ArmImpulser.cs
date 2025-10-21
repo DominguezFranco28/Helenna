@@ -33,6 +33,7 @@ public class ArmImpulser : MonoBehaviour
     private ArmLineController _currentArmLine;
     private Collider2D _playerCol;
 
+    private ParticleSystem steamVFX;
 
     //Variables to obtain components external to the arm.
     private OldPlayerBehaviour _movementBehaviour;
@@ -62,7 +63,10 @@ public class ArmImpulser : MonoBehaviour
         _movementBehaviour = GetComponent<OldPlayerBehaviour>();
         _impulser = this;
         _rb2D = GetComponent<Rigidbody2D>();
- 
+
+        steamVFX = GetComponentInChildren<ParticleSystem>();
+
+
     }
     private void FixedUpdate()
     {
@@ -111,7 +115,7 @@ public class ArmImpulser : MonoBehaviour
         {
             // offset = new Vector3(-offset.x, offset.y, offset.z); // espejo horizontal
             _armShootOffset += new Vector3(-0.45f, -0.23f, 0f);
-            angle = 0f;
+            angle = 180f;
         }
         else if (direction.y > 0) // arriba
         {
@@ -197,6 +201,9 @@ public class ArmImpulser : MonoBehaviour
 
         yield return new WaitForSeconds(_spawnTimer);
         SFXManager.Instance.PlaySFX(_throwSFX);
+        
+        if(steamVFX)
+            steamVFX.Play();
 
         // ajuste de spawnpoint en base a la direccion 
         //Vector3 spawnOffset = Vector3.zero;

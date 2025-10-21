@@ -94,13 +94,17 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
             LastMovementInput = input.normalized; // diaognal real
         }
 
-        // --- Animator ---
-        // Usa los valores cardinales para direccion
-        _animator.SetFloat("Horizontal", LastCardinalInput.x);
-        _animator.SetFloat("Vertical", LastCardinalInput.y);
+        if (_animator)
+        {
+            // --- Animator ---
+            // Usa los valores cardinales para direccion
+            _animator.SetFloat("Horizontal", LastCardinalInput.x);
+            _animator.SetFloat("Vertical", LastCardinalInput.y);
 
-        // Usa la magnitud real para la velocidad (para transiciones suaves)
-        _animator.SetFloat("Speed", _movementInput.magnitude);
+            // Usa la magnitud real para la velocidad (para transiciones suaves)
+            _animator.SetFloat("Speed", _movementInput.magnitude);
+        }
+        
     }
     public void StopMovement()
     {
