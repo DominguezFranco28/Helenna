@@ -28,23 +28,23 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     private bool _unlockThrow = false; //DESBLOQUEO DE HABILIDAD DE LANZAR
     private bool _unlockPullRex = false; //DESBLOQUEO DE HABILIDAD DE LANZAR
     public bool UnlockZipline { get { return _unlockZipline; } set { _unlockZipline = value; } }
-    public bool UnlockThrow{ get { return _unlockThrow; } set { _unlockThrow = value; } }
-    public bool UnlockPullRex{ get { return _unlockPullRex; } set { _unlockPullRex = value; } }
-    public bool IsInControll{ get { return _isInControll; } } 
-    public bool CanMove{ get { return _canMove; } } 
-    public bool ArmPulled{ get { return _armPulled; } set { _armPulled = value; } } 
-    public bool ArmRelease { get { return _armReleased; } set { _armReleased = value; } } 
+    public bool UnlockThrow { get { return _unlockThrow; } set { _unlockThrow = value; } }
+    public bool UnlockPullRex { get { return _unlockPullRex; } set { _unlockPullRex = value; } }
+    public bool IsInControll { get { return _isInControll; } }
+    public bool CanMove { get { return _canMove; } }
+    public bool ArmPulled { get { return _armPulled; } set { _armPulled = value; } }
+    public bool ArmRelease { get { return _armReleased; } set { _armReleased = value; } }
     public Animator Animator { get { return _animator; } }
-    public Rigidbody2D Rigidbody2D{ get { return _rb2D; } } 
+    public Rigidbody2D Rigidbody2D { get { return _rb2D; } }
     public Vector2 MovementInput { get { return _movementInput; } }
-    public Vector2 LastMovementInput { get;  set; } //necesite guardar el ultimo input para la anim del impulse
+    public Vector2 LastMovementInput { get; set; } //necesite guardar el ultimo input para la anim del impulse
     public Vector2 LastCardinalInput { get; private set; }
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
     public AudioClip GrabSFX { get { return _grabSFX; } }
     public AudioClip ThrowSFX { get { return _throwSFX; } }
     public AudioClip PullRexSFX { get { return _pullRexSFX; } }
     public AudioClip ZiplineSFX { get { return _ziplineSFX; } }
-    public bool IsRecoiling{ get { return _isRecoiling; } set { _isRecoiling = value; } }
+    public bool IsRecoiling { get { return _isRecoiling; } set { _isRecoiling = value; } }
 
 
     void Start()
@@ -104,7 +104,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
             // Usa la magnitud real para la velocidad (para transiciones suaves)
             _animator.SetFloat("Speed", _movementInput.magnitude);
         }
-        
+
     }
     public void StopMovement()
     {
@@ -139,7 +139,7 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
         if (!IsInControll) return;
         _armImpulser.GetArmToAnchor(closestAnchor, isHoldingAnchor);
 
-            //no puede impulsarse a un anclaje si esta sosteniendo un objeto
+        //no puede impulsarse a un anclaje si esta sosteniendo un objeto
     }
 
 
@@ -177,6 +177,10 @@ public class OldPlayerBehaviour : MonoBehaviour, IControllable
     public bool GetControl()
     {
         return IsInControll;
+    }
+    public Vector3 GetArmOffset() //para tener la posicion de spawn del brazo desde otros scripts, lo uso en el throwstate de harold para reposicionar a rex
+    {
+        return _armImpulser.ArmShootOffset;
     }
 }
 

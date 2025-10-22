@@ -34,6 +34,7 @@ public class AgileThrownState : IState, IFixedUpdate
 
     public void Enter()
     {
+
         Debug.Log("You entered the state: AGILE THROW");
         _startPosition = _agilePlayerBehaviour.transform.position;
         _direction = _agilePlayerBehaviour.PendingThrowDirection.normalized;

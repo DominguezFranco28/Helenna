@@ -155,12 +155,12 @@ public class CharacterManager : MonoBehaviour
         }
         nina.position = targetPos; //se fuerza la pos final de nina
         var ninaSprite = nina.GetComponentInChildren<SpriteRenderer>();
-        ninaSprite.sortingOrder = 6; //para que quede delante de rex
         var rexSprite = rex.GetComponentInChildren<SpriteRenderer>();
+        ninaSprite.sortingOrder = 6; //para que quede delante de rex
 
         // Alinear las direcciones que miran ambos personajes
         Vector2 dir = rex.position - nina.position;
-        bool ninaShouldFaceRight = dir.x > 0;
+        bool ninaShouldFaceRight = dir.x >= 0;
 
 
         if (ninaSprite != null) ninaSprite.flipX = !ninaShouldFaceRight;
@@ -169,5 +169,8 @@ public class CharacterManager : MonoBehaviour
         // un pequeno delay antes de activar la cinematica
         yield return new WaitForSeconds(0.2f);
         playCinematic.Play();
+        //restablecer sprite una vez terminada la cinematica
+        ninaSprite.sortingOrder = 5; //restablecer sorting order
+
     }
 }

@@ -38,6 +38,7 @@ public class ArmImpulser : MonoBehaviour
     //Variables to obtain components external to the arm.
     private OldPlayerBehaviour _movementBehaviour;
     public ImpulseType CurrentType => _curretType;
+    public Vector3 ArmShootOffset => _armShootOffset;
     //expongo el current type para poder acceder desde la maquina de estados y cambiar la accion segun el tipo de impulso
 
     //Public methods so that the methods of this main mechanic (private)
