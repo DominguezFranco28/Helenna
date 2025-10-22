@@ -18,7 +18,6 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     private Animator _animator;
     private Rigidbody2D _rb2D;
     private Collider2D _collider2D;
-    [SerializeField] private Collider2D _throwCollider2D;
     private SpriteRenderer _spriteRenderer;
     private Vector2 _movementInput;
     private bool _canMove;
@@ -38,7 +37,6 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public Vector2 MovementInput { get { return _movementInput; } }
     public Vector2 LastMovementInput { get; set; }
     public Collider2D PlayerCollider { get { return _collider2D; } set { _collider2D = value; } }
-    public Collider2D ThrowCollider { get { return _throwCollider2D; } set { _throwCollider2D = value; } }
     public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } set { _spriteRenderer = value; } }
     public Rigidbody2D Rigidbody2D { get { return _rb2D; } set { _rb2D = value; } }
     public AgileTriggerDetector TriggerDetector { get; private set; }

@@ -61,55 +61,40 @@ public class ThrowState : IState
     public void Update()
     {
         {
-            // Incrementamos ambos timers
+
             _throwTimer += Time.deltaTime;
 
-            // Si el tiempo de subida no ha terminado, movemos a Rex
+            // si no termino el timer de reposicion, seguimos mov a Rex
             if (_positionTimer < _positionDuration)
             {
                 _positionTimer+= Time.deltaTime;
 
-                // El factor 't' se basa ahora en la nueva duración corta
-                float t = Mathf.Clamp01(_positionTimer / _positionDuration); // Usamos Clamp01 para asegurar que t nunca sea > 1
+                // t' se basa ahora en la nueva duracion de reposicion
+                float t = Mathf.Clamp01(_positionTimer / _positionDuration); //  Clamp01 para asegurar que t nunca sea > 1
 
-                // 1. Calcular la posición base (hombro) de Harold en este frame
+                // calcular pa pos base del hombro en cada frame
                 Vector3 haroldWorldPosition = _oldPlayerBehaviour.transform.position;
                 Vector3 armOffset = _oldPlayerBehaviour.GetArmOffset();
                 Vector3 fixedYOffset = new Vector3(armOffset.x, 0.9f, 0); //
                 Vector3 currentTargetPosition = haroldWorldPosition + fixedYOffset;
-                // 3. Interpolación (movimiento suave)
+                //  movimiento suave
                 _rexController.transform.position = Vector3.Lerp(_startRexPosition, currentTargetPosition, t);
             }
             else
             {
-                // Una vez terminada la subida, Rex se queda pegado al hombro,
-                // siguiendo a Harold si se mueve (sin la interpolación Lerp)
 
-                // 1. Obtener la posición mundial de Harold
                 Vector3 haroldWorldPosition = _oldPlayerBehaviour.transform.position;
-
-                // 2. Obtener el offset del brazo de Harold (que tiene el X correcto)
                 Vector3 armOffset = _oldPlayerBehaviour.GetArmOffset();
-
-                // 3. Forzamos la Y a 1.6f (o el valor que decidas)
                 Vector3 fixedYOffset = new Vector3(armOffset.x, 0.9f, 0); 
 
                 _rexController.transform.position = haroldWorldPosition + fixedYOffset;
             }
 
-            // Comprobación para la transición de estado (usa el throwDelay largo)
             if (!_delayCompleted && _throwTimer >= _throwDelay)
             {
                 _delayCompleted = true;
-                // Ya no necesitamos asignar _throwTimer = _throwDelay, solo transicionamos
-                Debug.Log("End of delay, transitioning to Idle.");
-
-                // Al terminar el estado, el lanzamiento ocurre en la lógica de transición
                 _oldStateMachine.TransitionTo(_oldStateMachine.idleState);
             }
-
-            // Si la subida terminó, pero el throwDelay no, el Update sigue funcionando 
-            // y mantiene a Rex pegado al hombro (código del else de arriba).
         }
     }
 }
