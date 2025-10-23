@@ -6,7 +6,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: VoiceGroup
+  m_Name: Voice
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: d1349d60497d3664d9b51e85ac26830d
   m_Children: []
@@ -29,6 +29,42 @@ AudioMixerEffectController:
   m_EffectID: f92ba6b7301a8a2438e40f1583326c2f
   m_EffectName: Attenuation
   m_MixLevel: 2783e4d94f466c64fb08ee6354705d13
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-5325087939542419891
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SFX
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 9605cc2e78fd33140a3b2bffc8d839a2
+  m_Children:
+  - {fileID: 1836813282308664936}
+  - {fileID: 6722968730087926872}
+  - {fileID: -7875512355044243039}
+  m_Volume: 6f0b5c9a7013ca649845bf67d63a9089
+  m_Pitch: 7fd30829235bcf542a7637998b926a52
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -2762589665570810350}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-2762589665570810350
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 2a5fac0f0a3f54942b0a565f0e9846bf
+  m_EffectName: Attenuation
+  m_MixLevel: 5ab88a784bbc16c4f8c5e03c54715840
   m_Parameters: []
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
@@ -63,8 +99,10 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 0
   m_ExposedParameters:
-  - guid: 3e05d54c65612d148b7f8fc7d42c1f91
-    name: MyExposedParam
+  - guid: 1f8ce6fc7f377a240bad470801345119
+    name: Music
+  - guid: 6f0b5c9a7013ca649845bf67d63a9089
+    name: SFX
   m_AudioMixerGroupViews:
   - guids:
     - badaeb8a359905347a0e7c2ca8cf99db
@@ -72,6 +110,7 @@ AudioMixerController:
     - bccc5cdc5d57c534f92bd63ec369f63b
     - 486b3b46929537e439fb31f6d2449bca
     - d1349d60497d3664d9b51e85ac26830d
+    - 9605cc2e78fd33140a3b2bffc8d839a2
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -86,9 +125,7 @@ AudioMixerGroupController:
   m_GroupID: badaeb8a359905347a0e7c2ca8cf99db
   m_Children:
   - {fileID: 6486963958345432442}
-  - {fileID: 1836813282308664936}
-  - {fileID: 6722968730087926872}
-  - {fileID: -7875512355044243039}
+  - {fileID: -5325087939542419891}
   m_Volume: 2143c19dd4f607d40872ae39bd6a1d35
   m_Pitch: a9cadfb741df1944f82bd7a475a14b40
   m_Send: 00000000000000000000000000000000
@@ -123,10 +160,11 @@ AudioMixerSnapshotController:
   m_SnapshotID: a14eb88f27d76914f86a2c9c75d67611
   m_FloatValues:
     583621597d36b224db19957830b81842: -5.790864
+    6f0b5c9a7013ca649845bf67d63a9089: -6
     696dc4ba60fde4f4692ea05f4f73aab9: -0.3828261
     3e05d54c65612d148b7f8fc7d42c1f91: -2
-    1f8ce6fc7f377a240bad470801345119: -8
-    2143c19dd4f607d40872ae39bd6a1d35: -12.498478
+    1f8ce6fc7f377a240bad470801345119: -6
+    2143c19dd4f607d40872ae39bd6a1d35: 0.04171297
   m_TransitionOverrides: {}
 --- !u!244 &885221329351866357
 AudioMixerEffectController:
@@ -148,7 +186,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SFXGroup
+  m_Name: Effects
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: bccc5cdc5d57c534f92bd63ec369f63b
   m_Children: []
@@ -181,7 +219,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MusicGroup
+  m_Name: Music
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 49b56b9550aa8a34eaad1eb4f0d0b1ef
   m_Children: []
@@ -200,7 +238,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AmbienceGroup
+  m_Name: Ambience
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 486b3b46929537e439fb31f6d2449bca
   m_Children: []

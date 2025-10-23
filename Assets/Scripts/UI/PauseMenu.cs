@@ -20,6 +20,9 @@ public class PauseMenu : MonoBehaviour
 
     private PauseManager pauseManager;
 
+    private Slider sfxSlider;
+    private Slider musicSlider;
+
     private void OnEnable()
     {
         InputManager.Instance.PausePressed += TogglePauseGame;
@@ -43,7 +46,65 @@ public class PauseMenu : MonoBehaviour
 
         ContinueGame();
         pauseManager = FindAnyObjectByType<PauseManager>();
+
+        Slider[] sliders = GetComponentsInChildren<Slider>(true);
+        if(sliders.Length > 0)
+        {
+            foreach (Slider slider in sliders)
+            {
+                if (slider.name.ToLower().Trim().Contains("music"))
+                    musicSlider = slider;
+                else
+                    sfxSlider = slider;
+            }
+        }
+
+        InitAudioSliders();
     }
+
+    private void InitAudioSliders()
+    {
+        AudioManager audio = AudioManager.Instance;
+        if (audio)
+        {
+            if (sfxSlider)
+            {
+                sfxSlider.onValueChanged.AddListener(OnSFXSliderValueChanged);
+
+                float val = audio.GetMixerGroupVolume("SFX");
+                Debug.Log("Mixer: SFX="+val);
+                sfxSlider.value = val;
+            }
+            else
+                Debug.Log("Mixer: SFX slider not found");
+
+            if (musicSlider)
+            {
+                musicSlider.onValueChanged.AddListener(OnMusicSliderValueChanged);
+
+                float val = audio.GetMixerGroupVolume("Music");
+                Debug.Log("Mixer: Music=" + val);
+                musicSlider.value = val;
+            }
+            else
+                Debug.Log("Mixer: Music slider not found");
+        }
+    }
+
+    private void OnSFXSliderValueChanged(float value)
+    {
+        AudioManager audio = AudioManager.Instance;
+        if (audio)
+            audio.SetMixerGroupVolume("SFX", value);
+    }
+
+    private void OnMusicSliderValueChanged(float value)
+    {
+        AudioManager audio = AudioManager.Instance;
+        if (audio)
+            audio.SetMixerGroupVolume("Music", value);
+    }
+
 
     private void TogglePauseGame()
     {
