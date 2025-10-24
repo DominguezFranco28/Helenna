@@ -7,18 +7,17 @@ using UnityEngine.SceneManagement;
 
 public class TransitionManager : MonoBehaviour
 {
-    //Singleton 
     public static TransitionManager Instance { get; private set; }
 
     [SerializeField] private GameObject _transitionUI;
-    //queda ligeramente inutilizado por elm fade de la musica en el singleton que hace lo mismo pero mejor,
-    //lo dejo igualmente por si a alguna escena le quiero poner una transicion visual que demore mas que el fade de la musica
-    [SerializeField] private float _transitionTime = 0f;  //dejar en 0 salvo que quiera una transicion mas tardia a drede
+    [SerializeField] private float _transitionTime = 0f;  //dejar en 0 salvo que quiera una transicion mas tardia a drede, como en los creditos
     private Animator _animator;
 
     public string nextScene = "";
     private AdaptiveMusicLayering _musicManager;
-
+    [Header("Show Credits")]
+    public bool showCredits = false;
+    [SerializeField] private GameObject _creditsTxt;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -50,8 +49,17 @@ public class TransitionManager : MonoBehaviour
     }
     public void ChangeLevel() // UNICO QUE CAMBIE CON FADE DE MUSICA REVISAR O BORRAR EL RESTO DE METODOS
     {
-            _animator.SetTrigger("StartTransition");
+        _animator.SetTrigger("StartTransition");
         StartCoroutine(SceneLoadByNameWithMusicFade(nextScene));
+        StartCoroutine(CreditsShowDelay());
+    }
+    private IEnumerator CreditsShowDelay()
+    {
+        yield return new WaitForSeconds(2.5f);
+        if (showCredits && _creditsTxt != null)
+        {
+            _creditsTxt.SetActive(true);
+        }
     }
     public IEnumerator SceneLoad()
     {
@@ -69,8 +77,9 @@ public class TransitionManager : MonoBehaviour
             musicFadeDuration = _musicManager.GetFadeDuration();
         }
 
-        // Espera la duración del Fade Out de la música para que termine de silenciarse.
+
         yield return new WaitForSeconds(musicFadeDuration);
+        
 
         // Espera el tiempo restante de la transicio o musica, lo que sea mayor, serialzado para ajustar desde inspector
         float requiredWaitTime = Mathf.Max(_transitionTime, musicFadeDuration);
@@ -90,5 +99,4 @@ public class TransitionManager : MonoBehaviour
         if (_animator)
             _animator.Play("FadeInanim");
     }
-
 }
