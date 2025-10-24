@@ -11,6 +11,8 @@ public class HUD : MonoBehaviour
     private TextMeshProUGUI characterName;
     
     [SerializeField] private Image Thumbnail;
+    [SerializeField] private Image Thumbnail2;
+    [SerializeField] private Image Thumbnail3;
     [SerializeField] private List<Sprite> thumbnails = new List<Sprite>();
 
     private CharacterManager characterManager;
@@ -23,6 +25,7 @@ public class HUD : MonoBehaviour
         characterName = GetComponentInChildren<TextMeshProUGUI>();
 
         characterManager = CharacterManager.Instance;
+        ToggleHUD();
     }
 
     private void OnEnable()
@@ -56,7 +59,7 @@ public class HUD : MonoBehaviour
 
     private void SetCharacterThumbnail(string charName)
     {
-        int speakerId = 0;
+        int speakerId = 0; 
         string name = charName.ToLower().Trim();
         characterName.text = charName;
 
@@ -76,7 +79,13 @@ public class HUD : MonoBehaviour
                 break;
         }
 
-        Thumbnail.sprite = thumbnails[speakerId];
+        Thumbnail.sprite = thumbnails[speakerId]; //asigna el speaker ID del personaje activo
+        int nextId = (speakerId % 3) + 1; // residuo de la divicion del id entre 3 , sumado 1 ajusta el resultado para uqe este dentro de 1 y 3
+        int prevId = (speakerId == 1) ? 3 : speakerId - 1;
+        // si el ID es 1, el anterior es 3 etc y cicla las imagenes
+
+        Thumbnail2.sprite = thumbnails[prevId];
+        Thumbnail3.sprite = thumbnails[nextId]; 
     }
 
     private string GetCharacter()

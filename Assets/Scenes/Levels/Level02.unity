@@ -182060,11 +182060,11 @@ PrefabInstance:
     - target: {fileID: 3821911659973663193, guid: 5045893a5b4bbb848ac5e0290e640c7c, type: 3}
       propertyPath: characters.Array.data[1]
       value: 
-      objectReference: {fileID: 1948409240}
+      objectReference: {fileID: 1393953473}
     - target: {fileID: 3821911659973663193, guid: 5045893a5b4bbb848ac5e0290e640c7c, type: 3}
       propertyPath: characters.Array.data[2]
       value: 
-      objectReference: {fileID: 1393953473}
+      objectReference: {fileID: 1948409240}
     - target: {fileID: 4424943665353482001, guid: 5045893a5b4bbb848ac5e0290e640c7c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
