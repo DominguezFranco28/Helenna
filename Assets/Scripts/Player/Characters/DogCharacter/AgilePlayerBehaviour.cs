@@ -45,7 +45,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
 
     public Vector2 LastMovementInput { get; set; }
-    public Vector2 LastCardinalInput { get; private set; }
+    public Vector2 LastCardinalInput { get;  set; }
     public Vector2 PendingThrowDirection { get; set; } //direccion que sera obtenida cuando harold lo lance
     public Vector2 PendingPulledDirection { get; set; } //direccion que sera obtenida cuando harold lo atraiga
     public RexTPHole CurrentHole { get; private set; }
@@ -89,6 +89,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 
     public void SetMovementInput(Vector2 input)
     {
+
         //ask for control first
         if (!IsInControll || !_canMove) return;
         _movementInput = input;
@@ -108,16 +109,7 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
             LastMovementInput = input.normalized; // diaognal real
         }
 
-        if (_animator)
-        {
-            // --- Animator ---
-            // Usa los valores cardinales para direccion
-            _animator.SetFloat("Horizontal", LastCardinalInput.x);
-            _animator.SetFloat("Vertical", LastCardinalInput.y);
-
-            // Usa la magnitud real para la velocidad (para transiciones suaves)
-            _animator.SetFloat("Speed", _movementInput.magnitude);
-        }
+      
             UpdateMouthDirection(_movementInput); 
             //if (_delayCompleted) //revisar esto //;LOGICA VIEJA DE SALTO EN PIEDRAS
             //{
@@ -206,7 +198,16 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
         NormalizeZ(gameObject.transform);
         NormalizeZ(_triggerDetector);
         NormalizeZ(_mouth); //mantengo la z original de la boca para que no me de problemas con la animacion de esta
+        if (_animator)
+        {
+            // --- Animator ---
+            // Usa los valores cardinales para direccion
+            _animator.SetFloat("Horizontal", LastCardinalInput.x);
+            _animator.SetFloat("Vertical", LastCardinalInput.y);
 
+            // Usa la magnitud real para la velocidad (para transiciones suaves)
+            _animator.SetFloat("Speed", _movementInput.magnitude);
+        }
     }
     //public void RestartCooldown() //cd para salto. Lo llamo en cada entrada del jumpState
     //{

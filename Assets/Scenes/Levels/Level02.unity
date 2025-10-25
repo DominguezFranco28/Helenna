@@ -176604,8 +176604,6 @@ MonoBehaviour:
   playOnStart: 0
   character: {fileID: 0}
   endLevel: 0
-  characters: []
-  cinematicPoint: {fileID: 0}
 --- !u!114 &984656123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176645,8 +176643,6 @@ PlayableDirector:
     value: {fileID: 1741860369}
   - key: {fileID: 2961754629821710342, guid: ba0a66afffc1ba44fa7e2e1e63db1ada, type: 2}
     value: {fileID: 1741860369}
-  - key: {fileID: 3735947057221521160, guid: ba0a66afffc1ba44fa7e2e1e63db1ada, type: 2}
-    value: {fileID: 984656126}
   m_ExposedReferences:
     m_References: []
 --- !u!114 &984656125
@@ -181312,7 +181308,11 @@ PrefabInstance:
     - target: {fileID: 1757375530525956701, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -296438504, guid: e4ed0a7578ac1a74798affb5e2ea5717, type: 3}
+      objectReference: {fileID: 1159165698, guid: 61f48f0c57ca36b408f7209776a9000d, type: 3}
+    - target: {fileID: 1757375530525956701, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1775893618330331429, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -181331,15 +181331,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4902075083233182869, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4902075083233182869, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4902075083233182869, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4902075083233182869, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -182468,8 +182468,6 @@ MonoBehaviour:
   playOnStart: 0
   character: {fileID: 0}
   endLevel: 0
-  characters: []
-  cinematicPoint: {fileID: 0}
 --- !u!114 &1494670237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182509,7 +182507,7 @@ PlayableDirector:
     value: {fileID: 1741860369}
   - key: {fileID: 2961754629821710342, guid: ba0a66afffc1ba44fa7e2e1e63db1ada, type: 2}
     value: {fileID: 1741860369}
-  - key: {fileID: 3735947057221521160, guid: ba0a66afffc1ba44fa7e2e1e63db1ada, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: 2961754629821710342, guid: 6cdd4251eabb7ab4badd502a9a267e2a, type: 2}
     value: {fileID: 1741860369}
@@ -182776,8 +182774,6 @@ MonoBehaviour:
   playOnStart: 0
   character: {fileID: 1393953480}
   endLevel: 0
-  characters: []
-  cinematicPoint: {fileID: 0}
 --- !u!114 &1542110279
 MonoBehaviour:
   m_ObjectHideFlags: 0

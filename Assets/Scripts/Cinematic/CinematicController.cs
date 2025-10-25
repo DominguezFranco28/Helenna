@@ -17,11 +17,6 @@ public class CinematicController : MonoBehaviour
     public bool endLevel;
 
 
-
-    [Header("Pos Forzada de personajes")]
-    public List<Transform> characters; //asignar los personajes en el inspector
-    public Transform cinematicPoint; //punto donde se alinean los personajes
-
     private PauseManager pauseManager;
 
     private void Start()
@@ -33,10 +28,7 @@ public class CinematicController : MonoBehaviour
             PlayCinematic();
         }
     }
-    public void AlignCharacters() //testeo alinear desde el inspector
-    {
-        Align(characters, cinematicPoint);
-    }
+
     public void Align(List<Transform> characters, Transform target,float spacing = 0.3f)
     {
         if (characters.Count < 3) return;
