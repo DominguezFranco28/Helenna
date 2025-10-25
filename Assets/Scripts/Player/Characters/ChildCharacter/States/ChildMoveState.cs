@@ -21,6 +21,7 @@ public class ChildMoveState : IState
 
         if (movement.magnitude <= 0.01f && !_childPlayerBehaviour.ClimbDetector.CanClimb) //ACCEDO A LOS DETECTORES DIRECTAMENTE DESDE EL BEHAVIOUR
         {
+           
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
         }
 

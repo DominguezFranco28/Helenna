@@ -275,7 +275,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 505109662, guid: e4ed0a7578ac1a74798affb5e2ea5717, type: 3}
+  m_Sprite: {fileID: 864868085, guid: 61f48f0c57ca36b408f7209776a9000d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -322,7 +322,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.1875, y: 1.625}
+    oldSize: {x: 2.5625, y: 1.6875}
     newSize: {x: 2.5, y: 1.8125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -350,7 +350,6 @@ MonoBehaviour:
   _footstepsSFX: {fileID: 8300000, guid: cd93f9b000a076c3bbc056a005fe8358, type: 3}
   _digSFXClip: {fileID: 8300000, guid: 0388b8eae048a3d47a80a9f9f5f97308, type: 3}
   _jumpSFXClip: {fileID: 8300000, guid: 7d3f898257fb16e4f915e0c7ed6a3b6e, type: 3}
-  _throwCollider2D: {fileID: 1775893618330331429}
 --- !u!114 &6150687024364697993
 MonoBehaviour:
   m_ObjectHideFlags: 0

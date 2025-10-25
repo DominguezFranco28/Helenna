@@ -23,7 +23,7 @@ public class ChildClimbState : IState
         if (_climbDetector.CanClimb)
         { // Solo movimiento vertical
             float verticalInput = Mathf.Abs(movement.y) > 0.1f ? movement.y : 0f;
-            Vector2 climbVelocity = new Vector2(0f, verticalInput * _childPlayerBehaviour.ClimbSpeed);
+            Vector2 climbVelocity = new Vector2(0f, movement.y);
             _childPlayerBehaviour.SetMovementInput(climbVelocity);
         }
         else

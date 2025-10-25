@@ -35,7 +35,6 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public bool IsInControll { get { return _isInControll; } }
     public bool CanJump { get { return _canJump; } set { _canJump = value; } }
     public Vector2 MovementInput { get { return _movementInput; } }
-    public Vector2 LastMovementInput { get; set; }
     public Collider2D PlayerCollider { get { return _collider2D; } set { _collider2D = value; } }
     public SpriteRenderer SpriteRenderer { get { return _spriteRenderer; } set { _spriteRenderer = value; } }
     public Rigidbody2D Rigidbody2D { get { return _rb2D; } set { _rb2D = value; } }
@@ -44,6 +43,9 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
     public AudioClip DigSFXClip { get { return _digSFXClip; } }
     public AudioClip JumpSFXClip { get { return _jumpSFXClip; } }
     public AudioClip StepsSFX { get { return _footstepsSFX; } }
+
+    public Vector2 LastMovementInput { get; set; }
+    public Vector2 LastCardinalInput { get; private set; }
     public Vector2 PendingThrowDirection { get; set; } //direccion que sera obtenida cuando harold lo lance
     public Vector2 PendingPulledDirection { get; set; } //direccion que sera obtenida cuando harold lo atraiga
     public RexTPHole CurrentHole { get; private set; }
@@ -87,25 +89,44 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
 
     public void SetMovementInput(Vector2 input)
     {
+        //ask for control first
         if (!IsInControll || !_canMove) return;
-        {
+        _movementInput = input;
 
-            _movementInput = input.normalized;
-            if (_movementInput.magnitude > 0.01f) // aca guardo el ulktimo input para anim de impulse
-                LastMovementInput = _movementInput;
-            _animator.SetFloat("Horizontal", _movementInput.x);
-            _animator.SetFloat("Vertical", _movementInput.y);
-            _animator.SetFloat("Speed", _movementInput.magnitude);
-            UpdateMouthDirection(_movementInput); 
-            if (_delayCompleted) //revisar esto
-            {
-                _animator.SetBool("GoIdle", true);
-            }
+        //input cardinal dominante
+        Vector2 cardinalInput = Vector2.zero;
+
+        if (input != Vector2.zero)
+        {
+            if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
+                cardinalInput = new Vector2(Mathf.Sign(input.x), 0f);
             else
-            {
-                _animator.SetBool("GoIdle", false);
-            }
+                cardinalInput = new Vector2(0f, Mathf.Sign(input.y));
+
+            // Guardamos el último input cardinal (para animaciones y disparos)
+            LastCardinalInput = cardinalInput;
+            LastMovementInput = input.normalized; // diaognal real
         }
+
+        if (_animator)
+        {
+            // --- Animator ---
+            // Usa los valores cardinales para direccion
+            _animator.SetFloat("Horizontal", LastCardinalInput.x);
+            _animator.SetFloat("Vertical", LastCardinalInput.y);
+
+            // Usa la magnitud real para la velocidad (para transiciones suaves)
+            _animator.SetFloat("Speed", _movementInput.magnitude);
+        }
+            UpdateMouthDirection(_movementInput); 
+            //if (_delayCompleted) //revisar esto //;LOGICA VIEJA DE SALTO EN PIEDRAS
+            //{
+            //    _animator.SetBool("GoIdle", true);
+            //}
+            //else
+            //{
+            //    _animator.SetBool("GoIdle", false);
+            //}
     }
     private void UpdateMouthDirection(Vector2 dir) 
     {
@@ -187,11 +208,11 @@ public class AgilePlayerBehaviour : MonoBehaviour, IControllable
         NormalizeZ(_mouth); //mantengo la z original de la boca para que no me de problemas con la animacion de esta
 
     }
-    public void RestartCooldown() //cd para salto. Lo llamo en cada entrada del jumpState
-    {
-        _jumpTimer = 0;
-        _delayCompleted = false;
-    }
+    //public void RestartCooldown() //cd para salto. Lo llamo en cada entrada del jumpState
+    //{
+    //    _jumpTimer = 0;
+    //    _delayCompleted = false;
+    //}
     public void CheckGround()
     {
         if (_collider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))

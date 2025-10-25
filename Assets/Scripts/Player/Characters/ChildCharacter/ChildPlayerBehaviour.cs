@@ -31,6 +31,8 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     public float ClimbSpeed { get { return _climbSpeed; } }
     public float ZiplineSpeed { get { return _ziplineSpeed; } }
     public Collider2D PlayerCollider { get { return _collider; } }
+    public Vector2 LastMovementInput { get; set; } //necesite guardar el ultimo input para la anim del idle
+    public Vector2 LastCardinalInput { get; private set; }
     //Propiedades para acceder a los detectores de colision
     public ChildTriggerDetector ZiplineDetector { get; private set; }
     public ChildTriggerDetector LeverDetector { get; private set; }
@@ -60,14 +62,33 @@ public class ChildPlayerBehaviour : MonoBehaviour, IControllable
     public void SetMovementInput(Vector2 input)
     {
         //ask for control first
-        if (!_isInControll || !_canMove ) return;
+        if (!IsInControll || !_canMove) return;
+        _movementInput = input;
+
+        //input cardinal dominante
+        Vector2 cardinalInput = Vector2.zero;
+
+        if (input != Vector2.zero)
         {
-            _movementInput = input.normalized;
+            if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
+                cardinalInput = new Vector2(Mathf.Sign(input.x), 0f);
+            else
+                cardinalInput = new Vector2(0f, Mathf.Sign(input.y));
 
-            _animator.SetFloat("Horizontal", _movementInput.x);
-            _animator.SetFloat("Vertical", _movementInput.y);
+            // Guardamos el último input cardinal (para animaciones y disparos)
+            LastCardinalInput = cardinalInput;
+            LastMovementInput = input.normalized; // diaognal real
+        }
+
+        if (_animator)
+        {
+            // --- Animator ---
+            // Usa los valores cardinales para direccion
+            _animator.SetFloat("Horizontal", LastCardinalInput.x);
+            _animator.SetFloat("Vertical", LastCardinalInput.y);
+
+            // Usa la magnitud real para la velocidad (para transiciones suaves)
             _animator.SetFloat("Speed", _movementInput.magnitude);
-
         }
     }
 

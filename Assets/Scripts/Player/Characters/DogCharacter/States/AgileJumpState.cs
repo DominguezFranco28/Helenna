@@ -51,7 +51,7 @@ public class AgileJumpState : IState, IMovable, IFixedUpdate
         if (!_agilePlayerBehaviour.IsGrounded)
         {
         _agilePlayerBehaviour.Animator.SetBool("Jump", false);
-        _agilePlayerBehaviour.RestartCooldown(); //cada vez que sale del salto, resetea el delay y vuelve a correr (configurable desde el inspecto)
+      //  _agilePlayerBehaviour.RestartCooldown(); //cada vez que sale del salto, resetea el delay y vuelve a correr (configurable desde el inspecto)
 
         }
     }

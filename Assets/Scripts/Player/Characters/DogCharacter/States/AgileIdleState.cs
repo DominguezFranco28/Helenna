@@ -35,12 +35,6 @@ public class AgileIdleState : IState
     public void Enter()
     {
         Debug.Log("You entered the state: AGILE IDLE");
-        _agilePlayerBehaviour.Animator.SetFloat("Horizontal", _agilePlayerBehaviour.LastMovementInput.x);
-        _agilePlayerBehaviour.Animator.SetFloat("Vertical", _agilePlayerBehaviour.LastMovementInput.y);
-        if (_agilePlayerBehaviour.LastMovementInput.x < -0.1f) //para acomodar la pos final de idle
-            _agilePlayerBehaviour.SpriteRenderer.flipX = false;
-        else if (_agilePlayerBehaviour.LastMovementInput.x > 0.1f)
-            _agilePlayerBehaviour.SpriteRenderer.flipX = true;
 
         if (!subbed)
         {
@@ -57,7 +51,6 @@ public class AgileIdleState : IState
     }
     public void Exit()
     {
-        _agilePlayerBehaviour.SpriteRenderer.flipX = false;//SIEMPRE SALIR EN FALSO PARA NO ROMPER ANIM DE MOVE
         Debug.Log("You left the state: AGILE IDLE");
         if (subbed)
         {
