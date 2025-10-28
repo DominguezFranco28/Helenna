@@ -9,7 +9,7 @@ public class ActionState : IState
     private OldStateMachine _oldStateMachine;
     private TriggerDetector _oldActionDetector;
     private ActionLever lever;
-    private float _actionDelay = 1f;
+    private float _actionDelay = 0.5f;
     private float _actionTimer;
     private bool _delayCompleted;
 

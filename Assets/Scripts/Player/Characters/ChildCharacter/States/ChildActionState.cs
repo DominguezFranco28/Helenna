@@ -9,7 +9,7 @@ public class ChildActionState : IState
     private ChildTriggerDetector _actionDetector;
     private Collider2D _collider2D;
     private ActionLever lever;
-    private float _actionDelay =1f;
+    private float _actionDelay = 0.5f;
     private float _actionTimer;
     private bool _delayCompleted;
 

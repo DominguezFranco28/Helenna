@@ -131,7 +131,7 @@ TextureImporter:
         width: 23
         height: 37
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -152,7 +152,7 @@ TextureImporter:
         width: 24
         height: 37
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,27 +160,6 @@ TextureImporter:
       bones: []
       spriteID: 0e467081ff9ac9c4182f42328ba96746
       internalID: -1381104814
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 144
-        width: 25
-        height: 37
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bc990d04b32f124ca749908b05ef149
-      internalID: 1843740955
       vertices: []
       indices: 
       edges: []
@@ -194,7 +173,7 @@ TextureImporter:
         width: 26
         height: 43
       alignment: 9
-      pivot: {x: 0.4869285, y: 0.43011972}
+      pivot: {x: 0.5, y: 0.42}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,9 +192,9 @@ TextureImporter:
         x: 208
         y: 96
         width: 32
-        height: 40
+        height: 44
       alignment: 9
-      pivot: {x: 0.57663965, y: 0.46567383}
+      pivot: {x: 0.60927486, y: 0.42000008}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -236,7 +215,7 @@ TextureImporter:
         width: 25
         height: 44
       alignment: 9
-      pivot: {x: 0.5117433, y: 0.41801417}
+      pivot: {x: 0.5, y: 0.42}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,9 +234,9 @@ TextureImporter:
         x: 87
         y: 96
         width: 28
-        height: 40
+        height: 44
       alignment: 9
-      pivot: {x: 0.4608176, y: 0.46343002}
+      pivot: {x: 0.44787517, y: 0.4199996}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,9 +255,9 @@ TextureImporter:
         x: 151
         y: 96
         width: 26
-        height: 40
+        height: 44
       alignment: 9
-      pivot: {x: 0.4789018, y: 0.46343002}
+      pivot: {x: 0.4817581, y: 0.42}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -299,7 +278,7 @@ TextureImporter:
         width: 35
         height: 40
       alignment: 9
-      pivot: {x: 0.55614, y: 0.46549398}
+      pivot: {x: 0.55258286, y: 0.46240178}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -320,7 +299,7 @@ TextureImporter:
         width: 33
         height: 40
       alignment: 9
-      pivot: {x: 0.5936804, y: 0.46592006}
+      pivot: {x: 0.5844694, y: 0.4624016}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -341,35 +320,14 @@ TextureImporter:
         width: 33
         height: 40
       alignment: 9
-      pivot: {x: 0.5308218, y: 0.452318}
+      pivot: {x: 0.5564228, y: 0.46240157}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a8fadc066ab8ce46a1d0d599b40db66
+      spriteID: 6fa1f428d0de6e845b1b2aac28bff2b7
       internalID: 1305065322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 48
-        width: 32
-        height: 40
-      alignment: 9
-      pivot: {x: 0.58221865, y: 0.46992436}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b630b564072b4154aaa8e1ae3c70cfcb
-      internalID: 501592486
       vertices: []
       indices: 
       edges: []
@@ -383,13 +341,13 @@ TextureImporter:
         width: 28
         height: 38
       alignment: 9
-      pivot: {x: 0.44345215, y: 0.5091334}
+      pivot: {x: 0.4478752, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61e1222b66b03d0429a7f830e151f1d4
+      spriteID: b25bad7877175624baf090aa9b710d20
       internalID: -1975386084
       vertices: []
       indices: 
@@ -403,57 +361,57 @@ TextureImporter:
         y: 0
         width: 24
         height: 38
-      alignment: 9
-      pivot: {x: 0.52417785, y: 0.5329046}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 636daf276cbe08147afeff161839921b
+      spriteID: 819dbbbead55688458ec3c01ad510b1e
       internalID: 763100338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_0
+      name: Caricia_NINA-Sheet_3
       rect:
         serializedVersion: 2
         x: 151
         y: 144
         width: 25
         height: 37
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5504df00f49305141b05ee67aad1f7d2
-      internalID: -1240606192
+      spriteID: 3ab559e86a762c64183d7f8ac69119b7
+      internalID: 1843740955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_5
+      name: Caricia_NINA-Sheet_13
       rect:
         serializedVersion: 2
-        x: 151
-        y: 144
-        width: 25
-        height: 37
+        x: 207
+        y: 48
+        width: 33
+        height: 40
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.5844694, y: 0.4624016}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33a1388fc06aa6c4997063856d3e0770
-      internalID: -1852588887
+      spriteID: 7c3fe3f04c59d1440a69196fcff836a6
+      internalID: 552606924
       vertices: []
       indices: 
       edges: []
@@ -474,7 +432,7 @@ TextureImporter:
       Caricia_NINA-Sheet_10: 529283897
       Caricia_NINA-Sheet_11: -309532371
       Caricia_NINA-Sheet_12: 1305065322
-      Caricia_NINA-Sheet_13: 501592486
+      Caricia_NINA-Sheet_13: 552606924
       Caricia_NINA-Sheet_14: -1975386084
       Caricia_NINA-Sheet_15: 763100338
       Caricia_NINA-Sheet_2: -1381104814

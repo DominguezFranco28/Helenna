@@ -15474,6 +15474,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 447372214511955916, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: offsetY
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 2540616221314238289, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: _footstepsSFX
       value: 
