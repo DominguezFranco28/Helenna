@@ -48,7 +48,7 @@ public class ChildIdleState : IState
             }
         }
         
-       // _childPlayerBehaviour.StopMovement(); 
+        _childPlayerBehaviour.StopMovement(); 
         _childPlayerBehaviour.SetMovementEnabled(true);
     }
 

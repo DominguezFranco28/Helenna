@@ -58,7 +58,7 @@ public class ChildZiplineState : IState
         if (_ziplineDetector.CanUseZipline)
         {
             _childPlayerBehaviour.PlayerCollider.isTrigger = true;//no se si le vamos a dar uso al final a esto,.. pero por las dudas lo dejo
-            _childPlayerBehaviour.Animator.SetBool("isClimbing", true);
+            _childPlayerBehaviour.Animator.SetBool("IsOnZipline", true);
             SFXManager.Instance.PlayLoop(_childPlayerBehaviour.ZiplineSFX);
             CharacterManager.Instance.IsOnZipline = true;
         }
@@ -75,7 +75,7 @@ public class ChildZiplineState : IState
 
         // desactivo colisiones?
         _childPlayerBehaviour.PlayerCollider.isTrigger = false;
-        _childPlayerBehaviour.Animator.SetBool("isClimbing", false);
+        _childPlayerBehaviour.Animator.SetBool("IsOnZipline", false);
         _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.DefaultSpeed);
         SFXManager.Instance.StopLoop();
 
@@ -103,7 +103,7 @@ public class ChildZiplineState : IState
         if (_zipProgress >= 1f)
         {
             vfxPlayed = false;
-
+            _childPlayerBehaviour.SetMovementInput(Vector2.zero); //detener cualquier movimiento residual
             _childPlayerBehaviour.transform.position += Vector3.down * 2f; //modificable si es necesario hacer una animacion de bajada
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
         }

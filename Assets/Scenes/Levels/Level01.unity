@@ -287297,8 +287297,6 @@ MonoBehaviour:
   playOnStart: 0
   character: {fileID: 0}
   endLevel: 0
-  characters: []
-  cinematicPoint: {fileID: 0}
 --- !u!114 &984656123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292914,8 +292912,6 @@ MonoBehaviour:
   playOnStart: 1
   character: {fileID: 0}
   endLevel: 0
-  characters: []
-  cinematicPoint: {fileID: 0}
 --- !u!114 &1452748522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301272,8 +301268,6 @@ MonoBehaviour:
   playOnStart: 0
   character: {fileID: 101411718}
   endLevel: 0
-  characters: []
-  cinematicPoint: {fileID: 0}
 --- !u!114 &2024778155
 MonoBehaviour:
   m_ObjectHideFlags: 0
