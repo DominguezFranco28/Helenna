@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5f41aa928fc827c4d82612b92af5d3f9
+guid: 9b831145b15ecf34a85d546b1cd58d64
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,337 +123,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_1
+      name: Harold-Palanca-Sheet_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 144
-        width: 23
-        height: 37
+        x: 9
+        y: 160
+        width: 29
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0aec08644c5d9904b8762f75112a7f4f
-      internalID: 1441442050
+      spriteID: b038def4c59effa46bf7ff40be8a1930
+      internalID: 1256969062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_2
+      name: Harold-Palanca-Sheet_1
       rect:
         serializedVersion: 2
-        x: 87
-        y: 144
+        x: 50
+        y: 160
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07b8a497b1c5374499acff8e74f6903f
+      internalID: -1967059335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-Palanca-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 160
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba3249f7faa33cd429dd7b1c58d7717a
+      internalID: 904491375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-Palanca-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 112
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ef58bff7fdf3d42a366164d9b6bf2c
+      internalID: -417685121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-Palanca-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 112
+        width: 29
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0844377c0034e54409a5ba268e1fab5f
+      internalID: 1650123832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-Palanca-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 112
         width: 24
-        height: 37
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e467081ff9ac9c4182f42328ba96746
-      internalID: -1381104814
+      spriteID: 0612b34b10ab5684db057fcd6c6fad21
+      internalID: 1148861910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_3
+      name: Harold-Palanca-Sheet_6
       rect:
         serializedVersion: 2
-        x: 151
-        y: 144
-        width: 25
-        height: 37
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        x: 9
+        y: 64
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bc990d04b32f124ca749908b05ef149
-      internalID: 1843740955
+      spriteID: c283c280921ff2b49a3e59946e10d800
+      internalID: -914089666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_4
+      name: Harold-Palanca-Sheet_7
       rect:
         serializedVersion: 2
-        x: 215
-        y: 144
-        width: 26
+        x: 48
+        y: 64
+        width: 28
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 599aa61f159d0ec4483c87645b070b3b
+      internalID: 513899073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-Palanca-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 64
+        width: 24
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6837f2c45183ab44da23b2f75078789f
+      internalID: 590035855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Harold-Palanca-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 13
+        width: 27
         height: 43
-      alignment: 9
-      pivot: {x: 0.4869285, y: 0.43011972}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1c2ca600a8ed8b41b3c4f28fc28afbb
-      internalID: 1917107861
+      spriteID: 63a07041a632e06488e121cf8b5f0a5e
+      internalID: -370173852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_6
+      name: Harold-Palanca-Sheet_10
       rect:
         serializedVersion: 2
-        x: 208
-        y: 96
-        width: 32
-        height: 40
-      alignment: 9
-      pivot: {x: 0.57663965, y: 0.46567383}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6dac30e1d7b7dd4cb95f6537b2dec40
-      internalID: -715409463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 23
-        y: 96
-        width: 25
+        x: 50
+        y: 12
+        width: 27
         height: 44
-      alignment: 9
-      pivot: {x: 0.5117433, y: 0.41801417}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c079a137327ec7543b20b59c56e77824
-      internalID: 821616869
+      spriteID: 7fb872704d7ef4745a1f6b8326edbd2c
+      internalID: -656615524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_8
+      name: Harold-Palanca-Sheet_11
       rect:
         serializedVersion: 2
-        x: 87
-        y: 96
-        width: 28
-        height: 40
-      alignment: 9
-      pivot: {x: 0.4608176, y: 0.46343002}
+        x: 91
+        y: 12
+        width: 27
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 482ca8f235cd1734bbb9608bc89ab99a
-      internalID: -1526414324
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 96
-        width: 26
-        height: 40
-      alignment: 9
-      pivot: {x: 0.4789018, y: 0.46343002}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee51061a8828f4b4a89947d67ffc09ce
-      internalID: -2039342357
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 48
-        width: 35
-        height: 40
-      alignment: 9
-      pivot: {x: 0.55614, y: 0.46549398}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d2a758adf191f6742ab1be9257947839
-      internalID: 529283897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 48
-        width: 33
-        height: 40
-      alignment: 9
-      pivot: {x: 0.5936804, y: 0.46592006}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a5fe2a16dcea1d540a271651afc0de49
-      internalID: -309532371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 48
-        width: 33
-        height: 40
-      alignment: 9
-      pivot: {x: 0.5308218, y: 0.452318}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a8fadc066ab8ce46a1d0d599b40db66
-      internalID: 1305065322
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 48
-        width: 32
-        height: 40
-      alignment: 9
-      pivot: {x: 0.58221865, y: 0.46992436}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b630b564072b4154aaa8e1ae3c70cfcb
-      internalID: 501592486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 23
-        y: 0
-        width: 28
-        height: 38
-      alignment: 9
-      pivot: {x: 0.44345215, y: 0.5091334}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61e1222b66b03d0429a7f830e151f1d4
-      internalID: -1975386084
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_15
-      rect:
-        serializedVersion: 2
-        x: 87
-        y: 0
-        width: 24
-        height: 38
-      alignment: 9
-      pivot: {x: 0.52417785, y: 0.5329046}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 636daf276cbe08147afeff161839921b
-      internalID: 763100338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 144
-        width: 25
-        height: 37
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5504df00f49305141b05ee67aad1f7d2
-      internalID: -1240606192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 144
-        width: 25
-        height: 37
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33a1388fc06aa6c4997063856d3e0770
-      internalID: -1852588887
+      spriteID: 5537c2ca677313647990c785f7f0669a
+      internalID: 1981500931
       vertices: []
       indices: 
       edges: []
@@ -469,22 +385,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Caricia_NINA-Sheet_0: -1240606192
-      Caricia_NINA-Sheet_1: 1441442050
-      Caricia_NINA-Sheet_10: 529283897
-      Caricia_NINA-Sheet_11: -309532371
-      Caricia_NINA-Sheet_12: 1305065322
-      Caricia_NINA-Sheet_13: 501592486
-      Caricia_NINA-Sheet_14: -1975386084
-      Caricia_NINA-Sheet_15: 763100338
-      Caricia_NINA-Sheet_2: -1381104814
-      Caricia_NINA-Sheet_3: 1843740955
-      Caricia_NINA-Sheet_4: 1917107861
-      Caricia_NINA-Sheet_5: -1852588887
-      Caricia_NINA-Sheet_6: -715409463
-      Caricia_NINA-Sheet_7: 821616869
-      Caricia_NINA-Sheet_8: -1526414324
-      Caricia_NINA-Sheet_9: -2039342357
+      Harold-Palanca-Sheet_0: 1256969062
+      Harold-Palanca-Sheet_1: -1967059335
+      Harold-Palanca-Sheet_10: -656615524
+      Harold-Palanca-Sheet_11: 1981500931
+      Harold-Palanca-Sheet_2: 904491375
+      Harold-Palanca-Sheet_3: -417685121
+      Harold-Palanca-Sheet_4: 1650123832
+      Harold-Palanca-Sheet_5: 1148861910
+      Harold-Palanca-Sheet_6: -914089666
+      Harold-Palanca-Sheet_7: 513899073
+      Harold-Palanca-Sheet_8: 590035855
+      Harold-Palanca-Sheet_9: -370173852
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

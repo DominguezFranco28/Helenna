@@ -103,7 +103,7 @@ public class ChildZiplineState : IState
         if (_zipProgress >= 1f)
         {
             vfxPlayed = false;
-            _childPlayerBehaviour.SetMovementInput(Vector2.zero); //detener cualquier movimiento residual
+          
             _childPlayerBehaviour.transform.position += Vector3.down * 2f; //modificable si es necesario hacer una animacion de bajada
             _childStateMachine.TransitionTo(_childStateMachine.idleState);
         }

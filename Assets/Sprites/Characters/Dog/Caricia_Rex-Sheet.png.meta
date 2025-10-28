@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5f41aa928fc827c4d82612b92af5d3f9
+guid: 4f5e88d41579f9f48a87fbde87e3e288
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,337 +123,295 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_1
+      name: Caricia_Rex-Sheet_0
       rect:
         serializedVersion: 2
-        x: 22
+        x: 11
         y: 144
-        width: 23
-        height: 37
+        width: 39
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0aec08644c5d9904b8762f75112a7f4f
-      internalID: 1441442050
+      spriteID: e174cbb7b8b4c9146b942a59dabf6649
+      internalID: -2131670466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_2
+      name: Caricia_Rex-Sheet_1
       rect:
         serializedVersion: 2
-        x: 87
+        x: 75
         y: 144
-        width: 24
-        height: 37
+        width: 40
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e467081ff9ac9c4182f42328ba96746
-      internalID: -1381104814
+      spriteID: 612cf9aa9dd29d644a30073212b16042
+      internalID: -2044686190
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_3
+      name: Caricia_Rex-Sheet_2
       rect:
         serializedVersion: 2
-        x: 151
+        x: 138
         y: 144
-        width: 25
-        height: 37
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bc990d04b32f124ca749908b05ef149
-      internalID: 1843740955
+      spriteID: d872c3547f2ffa04eb0b996f395d4873
+      internalID: 14750603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_4
+      name: Caricia_Rex-Sheet_3
       rect:
         serializedVersion: 2
-        x: 215
+        x: 202
         y: 144
-        width: 26
-        height: 43
-      alignment: 9
-      pivot: {x: 0.4869285, y: 0.43011972}
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1c2ca600a8ed8b41b3c4f28fc28afbb
-      internalID: 1917107861
+      spriteID: def536ea81f1e214cba2bba76eeceac6
+      internalID: 511959947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_6
+      name: Caricia_Rex-Sheet_4
       rect:
         serializedVersion: 2
-        x: 208
+        x: 10
         y: 96
-        width: 32
-        height: 40
-      alignment: 9
-      pivot: {x: 0.57663965, y: 0.46567383}
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f6dac30e1d7b7dd4cb95f6537b2dec40
-      internalID: -715409463
+      spriteID: 2c3472a04ca0bfe459ad2930bb1aee2e
+      internalID: 1920996300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_7
+      name: Caricia_Rex-Sheet_5
       rect:
         serializedVersion: 2
-        x: 23
+        x: 74
         y: 96
-        width: 25
-        height: 44
-      alignment: 9
-      pivot: {x: 0.5117433, y: 0.41801417}
+        width: 41
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c079a137327ec7543b20b59c56e77824
-      internalID: 821616869
+      spriteID: ee9644584f494ce4da734b89fa6a090b
+      internalID: 1735304900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_8
+      name: Caricia_Rex-Sheet_6
       rect:
         serializedVersion: 2
-        x: 87
+        x: 137
         y: 96
-        width: 28
-        height: 40
-      alignment: 9
-      pivot: {x: 0.4608176, y: 0.46343002}
+        width: 45
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 482ca8f235cd1734bbb9608bc89ab99a
-      internalID: -1526414324
+      spriteID: ff199ad7b08c2d942aef7207852ce66c
+      internalID: -1913637334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_9
+      name: Caricia_Rex-Sheet_7
       rect:
         serializedVersion: 2
-        x: 151
+        x: 201
         y: 96
-        width: 26
-        height: 40
-      alignment: 9
-      pivot: {x: 0.4789018, y: 0.46343002}
+        width: 41
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee51061a8828f4b4a89947d67ffc09ce
-      internalID: -2039342357
+      spriteID: 3d60a5c6e6eb280499c093bcbca2d55c
+      internalID: -874641369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_10
+      name: Caricia_Rex-Sheet_8
       rect:
         serializedVersion: 2
-        x: 16
+        x: 6
         y: 48
-        width: 35
-        height: 40
-      alignment: 9
-      pivot: {x: 0.55614, y: 0.46549398}
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2a758adf191f6742ab1be9257947839
-      internalID: 529283897
+      spriteID: 1319e19f25062874bb778932e25ef5f3
+      internalID: 192932822
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_11
+      name: Caricia_Rex-Sheet_9
       rect:
         serializedVersion: 2
-        x: 79
+        x: 69
         y: 48
-        width: 33
-        height: 40
-      alignment: 9
-      pivot: {x: 0.5936804, y: 0.46592006}
+        width: 43
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5fe2a16dcea1d540a271651afc0de49
-      internalID: -309532371
+      spriteID: ba17588a274443c4fadf758c986d1d26
+      internalID: -194050793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_12
+      name: Caricia_Rex-Sheet_11
       rect:
         serializedVersion: 2
-        x: 146
+        x: 138
         y: 48
-        width: 33
-        height: 40
-      alignment: 9
-      pivot: {x: 0.5308218, y: 0.452318}
+        width: 41
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a8fadc066ab8ce46a1d0d599b40db66
-      internalID: 1305065322
+      spriteID: c917ff613e094344a977a520626f3e0a
+      internalID: 271213731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_13
+      name: Caricia_Rex-Sheet_12
       rect:
         serializedVersion: 2
-        x: 208
+        x: 203
         y: 48
-        width: 32
-        height: 40
+        width: 40
+        height: 34
       alignment: 9
-      pivot: {x: 0.58221865, y: 0.46992436}
+      pivot: {x: 0.5064785, y: 0.4733317}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b630b564072b4154aaa8e1ae3c70cfcb
-      internalID: 501592486
+      spriteID: 17a24ae2c4ebcf04aa6bfe18c78abdc4
+      internalID: -706062761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_14
+      name: Caricia_Rex-Sheet_15
       rect:
         serializedVersion: 2
-        x: 23
+        x: 11
         y: 0
-        width: 28
-        height: 38
+        width: 40
+        height: 35
       alignment: 9
-      pivot: {x: 0.44345215, y: 0.5091334}
+      pivot: {x: 0.50000006, y: 0.47618794}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61e1222b66b03d0429a7f830e151f1d4
-      internalID: -1975386084
+      spriteID: 89f3bd6858533c944b0865badc91841a
+      internalID: 1116567300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caricia_NINA-Sheet_15
+      name: Caricia_Rex-Sheet_16
       rect:
         serializedVersion: 2
-        x: 87
+        x: 74
         y: 0
-        width: 24
-        height: 38
+        width: 41
+        height: 35
       alignment: 9
-      pivot: {x: 0.52417785, y: 0.5329046}
+      pivot: {x: 0.5, y: 0.4749477}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 636daf276cbe08147afeff161839921b
-      internalID: 763100338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 144
-        width: 25
-        height: 37
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5504df00f49305141b05ee67aad1f7d2
-      internalID: -1240606192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Caricia_NINA-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 144
-        width: 25
-        height: 37
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33a1388fc06aa6c4997063856d3e0770
-      internalID: -1852588887
+      spriteID: a03b3ea957abe8e4bb2cbcb9e9f99e58
+      internalID: -1248839058
       vertices: []
       indices: 
       edges: []
@@ -469,22 +427,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Caricia_NINA-Sheet_0: -1240606192
-      Caricia_NINA-Sheet_1: 1441442050
-      Caricia_NINA-Sheet_10: 529283897
-      Caricia_NINA-Sheet_11: -309532371
-      Caricia_NINA-Sheet_12: 1305065322
-      Caricia_NINA-Sheet_13: 501592486
-      Caricia_NINA-Sheet_14: -1975386084
-      Caricia_NINA-Sheet_15: 763100338
-      Caricia_NINA-Sheet_2: -1381104814
-      Caricia_NINA-Sheet_3: 1843740955
-      Caricia_NINA-Sheet_4: 1917107861
-      Caricia_NINA-Sheet_5: -1852588887
-      Caricia_NINA-Sheet_6: -715409463
-      Caricia_NINA-Sheet_7: 821616869
-      Caricia_NINA-Sheet_8: -1526414324
-      Caricia_NINA-Sheet_9: -2039342357
+      Caricia_Rex-Sheet_0: -2131670466
+      Caricia_Rex-Sheet_1: -2044686190
+      Caricia_Rex-Sheet_10: -597131157
+      Caricia_Rex-Sheet_11: 271213731
+      Caricia_Rex-Sheet_12: -706062761
+      Caricia_Rex-Sheet_13: 1593862033
+      Caricia_Rex-Sheet_14: 1475426074
+      Caricia_Rex-Sheet_15: 1116567300
+      Caricia_Rex-Sheet_16: -1248839058
+      Caricia_Rex-Sheet_2: 14750603
+      Caricia_Rex-Sheet_3: 511959947
+      Caricia_Rex-Sheet_4: 1920996300
+      Caricia_Rex-Sheet_5: 1735304900
+      Caricia_Rex-Sheet_6: -1913637334
+      Caricia_Rex-Sheet_7: -874641369
+      Caricia_Rex-Sheet_8: 192932822
+      Caricia_Rex-Sheet_9: -194050793
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

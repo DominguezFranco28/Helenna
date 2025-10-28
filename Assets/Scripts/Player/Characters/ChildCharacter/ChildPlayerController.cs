@@ -5,6 +5,8 @@ using UnityEngine;
 public class ChildPlayerController : MonoBehaviour, IHasStateMachine
 {
     [SerializeField] private ChildPlayerBehaviour _childBehaviour;
+    [SerializeField] private float separationDistance= 1.5f;
+    [SerializeField] private float offsetY= 0.2f;
 
     private bool interacting = false;
     public ChildStateMachine StateMachine { get; private set; }
@@ -61,7 +63,9 @@ public class ChildPlayerController : MonoBehaviour, IHasStateMachine
                 if (nina != null && rex != null)
                 {
                     float direction = nina.transform.position.x < rex.transform.position.x ? -1f : 1f; //ajusto la direccion de la anim segun la pos en X de los personajes
-                    Vector2 offset = new Vector2(direction, 0.4f); //0.4 para ajustar la altura en Y del pet, puede mejorarse
+                    separationDistance = 1.5f; //los separo un poco xq se me juntaban mas de lo deseado con la anim de tomi
+
+                    Vector2 offset = new Vector2(direction * separationDistance, offsetY); //0.4 para ajustar la altura en Y del pet, puede mejorarse
                     StartCoroutine(CharacterManager.Instance.AlignCharacters(nina, rex, offset, 0.05f)); //ojo ajustar el pivote para que quede bien alineado
                     _childBehaviour.Animator.SetFloat("Horizontal", direction); //seteo la direccion de la animacion
                     _childBehaviour.Animator.SetFloat("Speed", 0.05f); //seteo la direccion de la animacion

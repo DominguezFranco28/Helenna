@@ -24,6 +24,7 @@ public class ActionState : IState
     {
 
         Debug.Log("Accionaste una palanca");
+        _oldPlayerBehaviour.Animator.SetTrigger("IsOnAction");
         //_oldPlayerBehaviour.Animator.SetBool("IsHolding", true);
         lever = _oldActionDetector.LevelCollider.GetComponent<ActionLever>();
         _actionTimer = 0f;
@@ -36,7 +37,7 @@ public class ActionState : IState
     public void Exit()
     {
         Debug.Log("Saliste del estado : ACTION");
-        _oldPlayerBehaviour.Animator.SetBool("IsHolding", false);
+      //  _oldPlayerBehaviour.Animator.SetBool("IsOnAction", false);
         _oldActionDetector.CanActivate = true;
     }
     private void ActivateLever()

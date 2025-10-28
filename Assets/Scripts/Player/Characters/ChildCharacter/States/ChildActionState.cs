@@ -25,7 +25,7 @@ public class ChildActionState : IState
 
         Debug.Log("Accionaste una palanca");
         lever = _actionDetector.LeverCollider.GetComponent<ActionLever>();
-        _childPlayerBehaviour.Animator.SetBool("IsHolding", true);
+        _childPlayerBehaviour.Animator.SetTrigger("IsOnAction");
             _actionTimer = 0f;
             _delayCompleted = false;
             _childPlayerBehaviour.StopMovement();
@@ -36,7 +36,7 @@ public class ChildActionState : IState
     public void Exit()
     {
         Debug.Log("Saliste del estado : ACTION");
-        _childPlayerBehaviour.Animator.SetBool("IsHolding", false);
+       // _childPlayerBehaviour.Animator.SetBool("IsHolding", false);
         //lever.ResetLever();
         _actionDetector.CanActivate = true;
     }

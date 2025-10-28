@@ -9,7 +9,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: IsHolding
+    m_ConditionEvent: IsOnAction
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -746462622606645507}
@@ -70,7 +70,7 @@ AnimatorStateMachine:
     m_Position: {x: 430, y: 240, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -746462622606645507}
-    m_Position: {x: 410, y: 110, z: 0}
+    m_Position: {x: 410, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4327715748476259348}
     m_Position: {x: -250, y: 250, z: 0}
@@ -117,8 +117,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Holding
-  m_Speed: 1
+  m_Name: Action
+  m_Speed: 0.4
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6141426506043202679}
@@ -170,14 +170,14 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: IsHolding
+  - m_Name: IsOnZipline
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: IsOnZipline
-    m_Type: 4
+  - m_Name: IsOnAction
+    m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
@@ -432,10 +432,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 2
-    m_ConditionEvent: IsHolding
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4332875878038031658}
   m_Solo: 0
