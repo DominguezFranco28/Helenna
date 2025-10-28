@@ -114,7 +114,7 @@ public class ArmBullet : MonoBehaviour
     private void FixedUpdate()
     {
         _rb.velocity = _direction * _shotSpeed;
-        
+
         _animator.SetTrigger("IsShooting");
         _animator.SetFloat("Horizontal", _direction.x);
         _animator.SetFloat("Vertical", _direction.y);

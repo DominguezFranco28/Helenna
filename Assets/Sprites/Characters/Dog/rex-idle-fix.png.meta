@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ae0b66fb09bd8674f8fd335e3fc6739c
+guid: 53a173801616cf747984a15dcb9d185b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,988 +123,1051 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Harold-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 791
-        width: 28
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f36fc5f5a1e4b8c4fa35e279c929021b
-      internalID: -899448082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 791
-        width: 28
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bb30102e734ea2d4580a93a8e99d5a20
-      internalID: -1640009769
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 791
-        width: 26
-        height: 42
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38f5a6891df55dc4bab506c1e50a7b92
-      internalID: -1179449585
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 791
-        width: 26
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 658f7d3fa52b1114c879a77e8b958551
-      internalID: 1512921824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 731
-        width: 27
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66497194e865c0e4aab9d7cb5aa3f41c
-      internalID: 36817831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 77
-        y: 731
-        width: 26
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be64d80885399de489b8d4dbe04d818a
-      internalID: 946937913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 731
-        width: 25
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c62c994532aac74cba60448ecda9dde
-      internalID: -3604030
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 731
-        width: 26
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3aaa0ffc01d8f04e9ce357cfe7465d5
-      internalID: 1023185655
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 671
-        width: 27
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b83e5d3dfda916d4d918091b7b6f45bc
-      internalID: -858660578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 671
-        width: 25
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8501883a52b856149819755189fb5d5f
-      internalID: -1661480600
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 138
-        y: 671
-        width: 25
-        height: 39
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1b11c22d734816347a6a2dfe8ecc3dac
-      internalID: 1960147785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 198
-        y: 671
-        width: 25
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70a35fd344423e041805f2276beab326
-      internalID: 1968074588
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 611
-        width: 24
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a2487234eaba38e45a5a29ad95d157c4
-      internalID: -1960178244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 611
-        width: 24
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82999a9d0de62bb4cb5e74ba51d2b423
-      internalID: -1199317407
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 138
-        y: 611
-        width: 24
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad9ea31e1f14c7e4b81a7eef523fc4e7
-      internalID: 783404857
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_15
-      rect:
-        serializedVersion: 2
-        x: 198
-        y: 611
-        width: 24
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d1593e07c0a8c7f41bd51e25b0d40c86
-      internalID: -627568821
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_16
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 551
-        width: 24
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 222db2bb7bb379f4689e719ada381209
-      internalID: 2072950990
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_17
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 551
-        width: 24
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5894f7d5d206544686d5ae8e761c0be
-      internalID: 1657860547
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_18
-      rect:
-        serializedVersion: 2
-        x: 138
-        y: 551
-        width: 24
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95501848d2f435b4f808fa984e15e0fe
-      internalID: 1845054143
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_19
-      rect:
-        serializedVersion: 2
-        x: 198
-        y: 551
-        width: 24
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a1c96c1d95e668443b8a069dfa4515c8
-      internalID: 1234028067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_20
-      rect:
-        serializedVersion: 2
-        x: 19
-        y: 491
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c147deafc724c3d499987443ccc6a8f4
-      internalID: -1954957831
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_21
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 491
-        width: 32
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f93997fade82ed04e83627760c2a291b
-      internalID: -1980612600
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_22
-      rect:
-        serializedVersion: 2
-        x: 136
-        y: 491
-        width: 24
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f010595aece32ef419fa2d6122895258
-      internalID: -825727494
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_23
-      rect:
-        serializedVersion: 2
-        x: 197
-        y: 491
-        width: 24
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9fde5f4d9668f54468a5275129512089
-      internalID: -1565136384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_24
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 431
-        width: 28
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e351574a7bb10f94b99aaf8048ed5f7b
-      internalID: -1080720118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_25
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 431
-        width: 28
-        height: 41
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b62e162dd53df3d4cb934af33e005a5f
-      internalID: 1405571037
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_26
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 431
-        width: 24
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 170ed32a396247b4882dec0ec87017b5
-      internalID: 1856259658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_27
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 431
-        width: 24
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36c63e45c2308a540ac0975757560c2a
-      internalID: -916526666
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_28
-      rect:
-        serializedVersion: 2
-        x: 20
-        y: 364
-        width: 28
-        height: 54
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 303da93ccf99ed948ae7865413bd6ea0
-      internalID: 2078333946
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_29
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 364
-        width: 29
-        height: 55
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 332764eac0beab24890540345ab3316e
-      internalID: -791572802
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_30
-      rect:
-        serializedVersion: 2
-        x: 140
-        y: 364
-        width: 28
-        height: 54
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ce3b0c4647fff8844bd292d5ea253704
-      internalID: 532400130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Harold-Sheet_31
+      name: rex-idle-fix_0
       rect:
         serializedVersion: 2
         x: 14
-        y: 311
-        width: 29
-        height: 41
+        y: 526
+        width: 41
+        height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4624b94fee2c9ba40a7c09b76be5ad6c
-      internalID: 541216348
+      spriteID: 325580554b250ab4187b392f58d5765e
+      internalID: -1011665189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_32
+      name: rex-idle-fix_1
       rect:
         serializedVersion: 2
-        x: 74
-        y: 311
-        width: 29
-        height: 39
+        x: 76
+        y: 526
+        width: 41
+        height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 814a70d34b35bce488ac0259d82025ed
-      internalID: -569778167
+      spriteID: 642142f3e85868248a5f0e9dc61dec7e
+      internalID: -1581248540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_33
+      name: rex-idle-fix_2
       rect:
         serializedVersion: 2
-        x: 134
-        y: 311
-        width: 29
-        height: 36
+        x: 138
+        y: 526
+        width: 41
+        height: 27
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 027a8567ffb319f4e909828333894786
-      internalID: 521243610
+      spriteID: f8b16a5a9ce937a4b8e92628ad354dc9
+      internalID: -1257788625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_34
+      name: rex-idle-fix_3
       rect:
         serializedVersion: 2
-        x: 194
-        y: 311
-        width: 29
-        height: 37
+        x: 201
+        y: 526
+        width: 40
+        height: 27
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8935a32fab48ba4e916b1ce70566e7b
-      internalID: 717673085
+      spriteID: 8eb1151a36a0d0b47852b6e64d45af01
+      internalID: 871141468
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_35
+      name: rex-idle-fix_4
       rect:
         serializedVersion: 2
         x: 17
-        y: 248
-        width: 27
-        height: 43
+        y: 484
+        width: 39
+        height: 27
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 117a486c0f99fb34088c9040569f3599
-      internalID: 1543007952
+      spriteID: d836872389b5d184c8cd91bbae7d1b42
+      internalID: -352302121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_36
+      name: rex-idle-fix_5
       rect:
         serializedVersion: 2
-        x: 77
-        y: 248
-        width: 27
+        x: 78
+        y: 484
+        width: 41
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cba9db1de288f949978f773fa2a40fa
+      internalID: 504444567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_6
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 484
+        width: 41
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76cdef9cfc9538a43b3979e13c5bef8e
+      internalID: 1499859240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_7
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 484
+        width: 41
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ab24d55b2329843861ceb51776a188
+      internalID: 1255437596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_8
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 447
+        width: 43
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e39f391293a42542a9d3f17e9c3838d
+      internalID: 761558626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_9
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 447
+        width: 45
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aa6d324ad8cac141a133acf530fc8e4
+      internalID: 1264957762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 447
+        width: 45
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50bd157d7ca48f24eb3310bef422b249
+      internalID: 753602687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_11
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 447
+        width: 44
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cffc2932386ddae4096678a0cd30e3d8
+      internalID: -46510165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 390
+        width: 44
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e046a5146fb19b42b6dc048438b3433
+      internalID: 931484164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_13
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 390
+        width: 46
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf6921167d757c46a6d772b943dd785
+      internalID: 1898555058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_14
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 390
+        width: 44
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7102e76f746a264a8e74744fe47a97a
+      internalID: -1733039508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 391
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2e024337a4baf4e8b531e4e6ecb2bb
+      internalID: 1371324223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_16
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 335
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b44235516588e6440ab74c6d85b1a81e
+      internalID: -1246490887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_17
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 336
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 717a5f8e98898ea4989662bd35889a97
+      internalID: -195971516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_18
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 335
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd9d4a87c859974a82a1eea584d27cb
+      internalID: -2100281937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_19
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 336
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db885e9deb97a20499d430f626c7ea7e
+      internalID: -1860978024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_20
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 287
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baeda6083f88d4547a898dda04403c85
+      internalID: 626138063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_21
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 288
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1008c406842cb3d49830bbbbfa65a721
+      internalID: -1178550841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_22
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 287
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5cb6506c8e0de341b73bea2edb68cb8
+      internalID: 219363920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_23
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 288
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a262dd936da1649b416c5ba04a6b71
+      internalID: 1796321284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_24
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 242
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50fa2c6af2c0aa645a01b3d166865566
+      internalID: 1470279921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_25
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 243
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347e1efcdeda44f498f790d0e1d6090d
+      internalID: -813385967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_26
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 242
+        width: 39
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8517ab566694a448f13a67c8d775bc
+      internalID: -1543732382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_27
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 243
+        width: 35
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af80c49be6d49a84bbfd4ae10c3357c8
+      internalID: -122722837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_28
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 183
+        width: 42
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc86df30f5b2e3341a377e64899c8f05
+      internalID: -377890127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_29
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 183
+        width: 43
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b9bb9a958e7a14b9908d9a8a9446d1
+      internalID: 963355407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_30
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 182
+        width: 42
         height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 215345900b18b0a4e90d83784786be09
-      internalID: -265679128
+      spriteID: c6b25e3adfdd69d43823d8ddbd8faf87
+      internalID: 1593476589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_37
+      name: rex-idle-fix_31
       rect:
         serializedVersion: 2
-        x: 137
-        y: 251
-        width: 27
-        height: 43
+        x: 199
+        y: 183
+        width: 41
+        height: 42
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0973b41fa0d71274c9ee0bb25793e831
-      internalID: 737473731
+      spriteID: 04d898c81641712458609ebce172a08b
+      internalID: -994760042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_38
+      name: rex-idle-fix_32
       rect:
         serializedVersion: 2
-        x: 197
-        y: 251
-        width: 27
-        height: 40
+        x: 262
+        y: 183
+        width: 41
+        height: 34
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b2103ebc11f10740a204a80e56edb0c
-      internalID: 1457958923
+      spriteID: 5198cd64a6a6f2a489a17af0aa39b8b6
+      internalID: 1896673105
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_39
+      name: rex-idle-fix_33
       rect:
         serializedVersion: 2
-        x: 23
-        y: 188
-        width: 20
-        height: 24
-      alignment: 9
-      pivot: {x: 0.024311924, y: 0.5663503}
+        x: 11
+        y: 125
+        width: 41
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a59cf95b1f40ab14a8be3f3d8f0dd5d4
-      internalID: -1544219951
+      spriteID: db950f398649839448ad35c6a066c68e
+      internalID: -407140369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_40
+      name: rex-idle-fix_34
       rect:
         serializedVersion: 2
-        x: 83
-        y: 188
-        width: 19
-        height: 23
-      alignment: 9
-      pivot: {x: 0.02312309, y: 0.5814541}
+        x: 74
+        y: 125
+        width: 41
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f5e8690fc3400bd4badedde1e59adb5b
-      internalID: -984726602
+      spriteID: 52b2cea4816c6b648b922af996d482fb
+      internalID: 1743341968
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_43
+      name: rex-idle-fix_35
       rect:
         serializedVersion: 2
-        x: 20
-        y: 128
-        width: 20
-        height: 25
-      alignment: 9
-      pivot: {x: 0.9809433, y: 0.58234805}
+        x: 132
+        y: 124
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a67af16ee4c44c49a594bea9546480a
-      internalID: -152036153
+      spriteID: c3685541b592931448afc88f7d84ec74
+      internalID: -1978042636
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_44
+      name: rex-idle-fix_36
       rect:
         serializedVersion: 2
-        x: 81
-        y: 128
-        width: 19
-        height: 25
-      alignment: 9
-      pivot: {x: 0.98799855, y: 0.58234805}
+        x: 192
+        y: 125
+        width: 40
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55b5c2e5e746ccb42a5be966e2af81ad
-      internalID: -403945117
+      spriteID: a13eb1ece937a6843a94edb9e20dff9b
+      internalID: 945743965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_47
+      name: rex-idle-fix_37
       rect:
         serializedVersion: 2
-        x: 27
+        x: 253
+        y: 125
+        width: 40
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f54ace5b12058684c81fe6f99e42b98b
+      internalID: -1123726745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_38
+      rect:
+        serializedVersion: 2
+        x: 16
         y: 68
-        width: 13
-        height: 25
-      alignment: 9
-      pivot: {x: 0.3854737, y: 0.16696534}
+        width: 27
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bd0a5b7f07dfcb4d878f4b1350fb29d
-      internalID: -12325560
+      spriteID: 1d241b4d912c270498fdef3c00f87605
+      internalID: -365715175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_48
+      name: rex-idle-fix_39
       rect:
         serializedVersion: 2
-        x: 88
-        y: 68
-        width: 10
-        height: 23
-      alignment: 9
-      pivot: {x: 0.4212227, y: 0.17355147}
+        x: 79
+        y: 69
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5757f8d601103448b3e840c78c4329a
-      internalID: 636553355
+      spriteID: 98ab8d36048ad9340a71cd6f19125656
+      internalID: -1282411956
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_49
+      name: rex-idle-fix_40
       rect:
         serializedVersion: 2
-        x: 26
-        y: 8
-        width: 12
-        height: 22
-      alignment: 9
-      pivot: {x: 0.4284854, y: 0.98482996}
+        x: 138
+        y: 75
+        width: 31
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06955e0e41d9f8e41806bd122d937ee0
-      internalID: 1084743923
+      spriteID: 0cdb9c38bd885e94a89868e9cabd83c4
+      internalID: 1926964861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Harold-Sheet_50
+      name: rex-idle-fix_41
       rect:
         serializedVersion: 2
-        x: 86
-        y: 8
-        width: 11
-        height: 22
-      alignment: 9
-      pivot: {x: 0.4330493, y: 0.99029297}
+        x: 195
+        y: 69
+        width: 40
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3804fafe5f02550488378eb627632066
-      internalID: -523191864
+      spriteID: 2e565967e4517bc4780dcc5a03df8d18
+      internalID: -1041085065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_42
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 69
+        width: 40
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a070b3a212e039c4ab7a1ff2576c1fdd
+      internalID: -1113142612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_43
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 69
+        width: 25
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c972698643c3b488790f34a751184b
+      internalID: -771888261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_44
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 11
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17f6297eac0659d4c82ef27974c0f77b
+      internalID: -1788687332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_45
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 11
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4c116047a99d541863cc663027797e
+      internalID: -186595478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_46
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 22
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a295e7f57611e419743575f4d12b97
+      internalID: 696239936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_47
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 11
+        width: 49
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b59d5cbb063a144985cd177ca1af1c
+      internalID: -1417523440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_48
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 11
+        width: 36
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7d09b719ef32847ab21e624ce63837
+      internalID: 463401278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rex-idle-fix_49
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 11
+        width: 27
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a537ad87689657e41814a85d5b50283a
+      internalID: 1077638388
       vertices: []
       indices: 
       edges: []
@@ -1120,57 +1183,56 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Harold-Sheet_0: -899448082
-      Harold-Sheet_1: -1640009769
-      Harold-Sheet_10: 1960147785
-      Harold-Sheet_11: 1968074588
-      Harold-Sheet_12: -1960178244
-      Harold-Sheet_13: -1199317407
-      Harold-Sheet_14: 783404857
-      Harold-Sheet_15: -627568821
-      Harold-Sheet_16: 2072950990
-      Harold-Sheet_17: 1657860547
-      Harold-Sheet_18: 1845054143
-      Harold-Sheet_19: 1234028067
-      Harold-Sheet_2: -1179449585
-      Harold-Sheet_20: -1954957831
-      Harold-Sheet_21: -1980612600
-      Harold-Sheet_22: -825727494
-      Harold-Sheet_23: -1565136384
-      Harold-Sheet_24: -1080720118
-      Harold-Sheet_25: 1405571037
-      Harold-Sheet_26: 1856259658
-      Harold-Sheet_27: -916526666
-      Harold-Sheet_28: 2078333946
-      Harold-Sheet_29: -791572802
-      Harold-Sheet_3: 1512921824
-      Harold-Sheet_30: 532400130
-      Harold-Sheet_31: 541216348
-      Harold-Sheet_32: -569778167
-      Harold-Sheet_33: 521243610
-      Harold-Sheet_34: 717673085
-      Harold-Sheet_35: 1543007952
-      Harold-Sheet_36: -265679128
-      Harold-Sheet_37: 737473731
-      Harold-Sheet_38: 1457958923
-      Harold-Sheet_39: -1544219951
-      Harold-Sheet_4: 36817831
-      Harold-Sheet_40: -984726602
-      Harold-Sheet_41: -130507269
-      Harold-Sheet_42: -572995671
-      Harold-Sheet_43: -152036153
-      Harold-Sheet_44: -403945117
-      Harold-Sheet_45: -620286598
-      Harold-Sheet_46: 2087411608
-      Harold-Sheet_47: -12325560
-      Harold-Sheet_48: 636553355
-      Harold-Sheet_49: 1084743923
-      Harold-Sheet_5: 946937913
-      Harold-Sheet_50: -523191864
-      Harold-Sheet_6: -3604030
-      Harold-Sheet_7: 1023185655
-      Harold-Sheet_8: -858660578
-      Harold-Sheet_9: -1661480600
+      rex-idle-fix_0: -1011665189
+      rex-idle-fix_1: -1581248540
+      rex-idle-fix_10: 753602687
+      rex-idle-fix_11: -46510165
+      rex-idle-fix_12: 931484164
+      rex-idle-fix_13: 1898555058
+      rex-idle-fix_14: -1733039508
+      rex-idle-fix_15: 1371324223
+      rex-idle-fix_16: -1246490887
+      rex-idle-fix_17: -195971516
+      rex-idle-fix_18: -2100281937
+      rex-idle-fix_19: -1860978024
+      rex-idle-fix_2: -1257788625
+      rex-idle-fix_20: 626138063
+      rex-idle-fix_21: -1178550841
+      rex-idle-fix_22: 219363920
+      rex-idle-fix_23: 1796321284
+      rex-idle-fix_24: 1470279921
+      rex-idle-fix_25: -813385967
+      rex-idle-fix_26: -1543732382
+      rex-idle-fix_27: -122722837
+      rex-idle-fix_28: -377890127
+      rex-idle-fix_29: 963355407
+      rex-idle-fix_3: 871141468
+      rex-idle-fix_30: 1593476589
+      rex-idle-fix_31: -994760042
+      rex-idle-fix_32: 1896673105
+      rex-idle-fix_33: -407140369
+      rex-idle-fix_34: 1743341968
+      rex-idle-fix_35: -1978042636
+      rex-idle-fix_36: 945743965
+      rex-idle-fix_37: -1123726745
+      rex-idle-fix_38: -365715175
+      rex-idle-fix_39: -1282411956
+      rex-idle-fix_4: -352302121
+      rex-idle-fix_40: 1926964861
+      rex-idle-fix_41: -1041085065
+      rex-idle-fix_42: -1113142612
+      rex-idle-fix_43: -771888261
+      rex-idle-fix_44: -1788687332
+      rex-idle-fix_45: -186595478
+      rex-idle-fix_46: 696239936
+      rex-idle-fix_47: -1417523440
+      rex-idle-fix_48: 463401278
+      rex-idle-fix_49: 1077638388
+      rex-idle-fix_5: 504444567
+      rex-idle-fix_6: 1499859240
+      rex-idle-fix_7: 1255437596
+      rex-idle-fix_8: 761558626
+      rex-idle-fix_9: 1264957762
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

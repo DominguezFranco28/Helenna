@@ -56,7 +56,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2e9a60a8dd9abf54d9233aa5e305a695, type: 2}
+  - {fileID: 2100000, guid: 8a335a5c8bb42bc4faecae6a7f7635be, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,7 +130,7 @@ LineRenderer:
       m_NumAlphaKeys: 2
     numCornerVertices: 0
     numCapVertices: 0
-    alignment: 0
+    alignment: 1
     textureMode: 1
     textureScale: {x: 1.5, y: 1}
     shadowBias: 0.5
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textures:
-  - {fileID: 2800000, guid: e5651f65e76393844b8b270152b8e821, type: 3}
+  - {fileID: 2800000, guid: f37296c3dab191348b5c996e4c029f39, type: 3}
   _endSpritePrefab: {fileID: 0}
   _offsetArm: 0
   _fps: 30

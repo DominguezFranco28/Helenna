@@ -37,6 +37,32 @@ public class ArmLineController : MonoBehaviour
         _target = newTarget; //se guarda el transform del punto de anclaje
         _lineRenderer.SetPosition(1, _target.position);
 
+        // flip del tilling en pos x si la linea va a la izquierda
+
+        Vector3 lineVector = _target.position - startPosition;
+        float directionX = lineVector.x;
+
+        // escala de textura actual del Line Renderer ((1.5, 1 dejo en default))
+        Vector2 currentScale = _lineRenderer.material.mainTextureScale;
+
+        if (directionX < 0)
+        {
+            // invertimos la escala X del tiling
+            //  Mathf.Abs para garantizar que la escala original (1.5) se use
+            _lineRenderer.material.mainTextureScale = new Vector2(
+                -Mathf.Abs(currentScale.x),
+                currentScale.y
+            );
+        }
+        else
+        {
+            _lineRenderer.material.mainTextureScale = new Vector2(
+                Mathf.Abs(currentScale.x),
+                currentScale.y
+            );
+        }
+
+       
         if (_endSpritePrefab != null)
         {
             Vector3 direction = (_target.position - startPosition).normalized;
