@@ -911,6 +911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isEnabled: 1
+  characterName: {fileID: 3528580538688940891}
   Thumbnail: {fileID: 8255484214587955855}
   Thumbnail2: {fileID: 1912422076303829000}
   Thumbnail3: {fileID: 3558134873016758015}

@@ -8,7 +8,7 @@ public class HUD : MonoBehaviour
 {
     public bool isEnabled = true;
     private List<SpriteRenderer> sprites = new List<SpriteRenderer>();
-    private TextMeshProUGUI characterName;
+    [SerializeField]private TextMeshProUGUI characterName;
     
     [SerializeField] private Image Thumbnail;
     [SerializeField] private Image Thumbnail2;
@@ -22,9 +22,11 @@ public class HUD : MonoBehaviour
         SpriteRenderer[] s = GetComponentsInChildren<SpriteRenderer>();
         foreach(SpriteRenderer sprite in s)
             sprites.Add(sprite);
-        characterName = GetComponentInChildren<TextMeshProUGUI>();
 
+      // characterName = GetComponentInChildren<TextMeshProUGUI>();
         characterManager = CharacterManager.Instance;
+
+
         ToggleHUD();
     }
 
@@ -51,9 +53,10 @@ public class HUD : MonoBehaviour
     {
         SetCharacterThumbnail(GetCharacter());
 
-        isEnabled = !isEnabled;
+        //isEnabled = !isEnabled;
         foreach (SpriteRenderer sprite in sprites)
             sprite.enabled = isEnabled;
+
         characterName.enabled = isEnabled;
     }
 
