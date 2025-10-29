@@ -59,15 +59,13 @@ public class PuzzleManagerLevel01 : MonoBehaviour
     {
         Debug.Log("VICTORY");
         playCinematicEnd.Play();
+        StartCoroutine(ChangeLevel());
+
+    }
+    private IEnumerator ChangeLevel()
+    {
+        yield return new WaitForSeconds(2f);
         TransitionManager.Instance.ChangeLevel();
-        
-        //if (endScreen)
-        //{
-        //    endScreen.text = "Nivel 1 Terminado";
-        //    endScreen.gameObject.SetActive(true);
-            
-        //    yield return new WaitForSeconds(5f);
-        
     }
 
     private void OnEnable()

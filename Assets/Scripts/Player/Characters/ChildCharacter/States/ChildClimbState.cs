@@ -66,11 +66,11 @@ public class ChildClimbState : IState
         if (_ignoredClimbable != null)
         {
             //move the player up a bit to give the sensation of jumping after climbing
-            _childPlayerBehaviour.transform.position += Vector3.up * 0.15f;
+          //  _childPlayerBehaviour.transform.position += Vector3.up * 0.15f;
         }
         _childPlayerBehaviour.Animator.SetBool("isClimbing", false);
         _childPlayerBehaviour.PlayerCollider.isTrigger = false;
-        _childPlayerBehaviour.StopMovement();
+        //_childPlayerBehaviour.StopMovement();
         _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.DefaultSpeed);
         SFXManager.Instance.StopLoop();
         if (subbed)
