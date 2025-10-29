@@ -133,7 +133,12 @@ public class PauseMenu : MonoBehaviour
         canTogglePause = true;
     }
 
-    private void ContinueGame()
+    public void PauseGame()
+    {
+        StartCoroutine(PauseGameRoutine());
+    }
+
+    public void ContinueGame()
     {
         StartCoroutine(ContinueGameRoutine());
     }

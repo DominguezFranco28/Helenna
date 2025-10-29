@@ -59,6 +59,7 @@ public class TransitionManager : MonoBehaviour
         if (showCredits && _creditsTxt != null)
         {
             _creditsTxt.SetActive(true);
+            GameObject.FindFirstObjectByType<PauseMenu>().PauseGame();
         }
     }
     public IEnumerator SceneLoad()
