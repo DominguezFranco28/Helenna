@@ -42,7 +42,7 @@ public class ActionLever : MonoBehaviour, IActiveable
     private IEnumerator ColliderBlip()
     {
         triggerCollider.enabled = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         triggerCollider.enabled = true;
         canActivate = true;
     }
