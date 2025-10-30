@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private Image speakerThumbnail;
     [SerializeField] private Image background;
+    [SerializeField] private Image thumbBackground;
     [SerializeField] private Image speakerBackground;
     [SerializeField] private TextMeshProUGUI speakerName;
     [SerializeField] private TextMeshProUGUI body;
@@ -47,6 +48,7 @@ public class DialogueManager : MonoBehaviour
 
     private Color textColor = Color.white;
     private Color backgroundColor = new Color(0f / 255f, 0f / 255f, 0f / 255f, 160f / 255f); ///new Color(171f / 255f, 109f / 255f, 44f / 255f, 220f / 255f);
+    private Color thumbBackgroundColor = new Color(60f / 255f, 40f / 255f, 60f / 255f, 170f / 255f); ///new Color(171f / 255f, 109f / 255f, 44f / 255f, 220f / 255f);
     private Color speakerBackgroundColor = new Color(0f, 0f, 0f, 220f / 255f);
 
     public TextAsset dialogueFile;
@@ -309,6 +311,7 @@ public class DialogueManager : MonoBehaviour
         body.color = textColor;
         speakerThumbnail.color = Color.white;
         background.color = backgroundColor;
+        thumbBackground.color = thumbBackgroundColor;
         speakerBackground.color = speakerBackgroundColor;
         skipTip.color = textColor;
     }
@@ -319,6 +322,7 @@ public class DialogueManager : MonoBehaviour
         body.color = Color.clear;
         speakerThumbnail.color = Color.clear;
         background.color = Color.clear;
+        thumbBackground.color = Color.clear;
         speakerBackground.color = Color.clear;
         skipTip.color = Color.clear;
     }

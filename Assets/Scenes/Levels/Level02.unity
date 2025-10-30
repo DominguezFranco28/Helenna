@@ -218164,6 +218164,10 @@ PrefabInstance:
       propertyPath: endLineDelay
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5140870897606305985, guid: c994801fb097bc14fbb8630bbf1e1cb6, type: 3}
+      propertyPath: thumbBackground
+      value: 
+      objectReference: {fileID: 2762934730235962482}
     - target: {fileID: 7203532268305377695, guid: c994801fb097bc14fbb8630bbf1e1cb6, type: 3}
       propertyPath: m_Name
       value: DialogueManager
@@ -218177,6 +218181,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c994801fb097bc14fbb8630bbf1e1cb6, type: 3}
+--- !u!114 &2762934730235962482 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4386114233364369821, guid: c994801fb097bc14fbb8630bbf1e1cb6, type: 3}
+  m_PrefabInstance: {fileID: 2762934730235962481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2816086253097600660
 Transform:
   m_ObjectHideFlags: 0

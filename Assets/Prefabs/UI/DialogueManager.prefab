@@ -1,5 +1,80 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &315994108113384540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5249164638560424268}
+  - component: {fileID: 7028976334814411973}
+  - component: {fileID: 4386114233364369821}
+  m_Layer: 5
+  m_Name: ThumbnailBackground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &5249164638560424268
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315994108113384540}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 394887945270001356}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -656.0001, y: -0.5}
+  m_SizeDelta: {x: -1344, y: -41}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7028976334814411973
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315994108113384540}
+  m_CullTransparentMesh: 1
+--- !u!114 &4386114233364369821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315994108113384540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.23529412, g: 0.15686275, b: 0.23529412, a: 0.6666667}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &573546646279293711
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,7 +109,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 16}
+  m_AnchoredPosition: {x: 0, y: 152}
   m_SizeDelta: {x: 0, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3699515493825574059
@@ -109,7 +184,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 16}
+  m_AnchoredPosition: {x: 0, y: 152}
   m_SizeDelta: {x: 0, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6904612834918132022
@@ -167,7 +242,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
+  m_fontSize: 23.15
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -298,7 +373,7 @@ GameObject:
   - component: {fileID: 6093050582611193127}
   - component: {fileID: 2688075744984001630}
   - component: {fileID: 5140870897606305985}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: DialogueManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,6 +392,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5249164638560424268}
   - {fileID: 4953300271803834796}
   - {fileID: 8875068876614981366}
   - {fileID: 8472940601472764578}
@@ -379,12 +455,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerThumbnail: {fileID: 6216002152472759715}
   background: {fileID: 2688075744984001630}
+  thumbBackground: {fileID: 0}
   speakerBackground: {fileID: 9015145166728934177}
   speakerName: {fileID: 8410960580327396689}
   body: {fileID: 6078354135629606906}
   skipTip: {fileID: 3692174917201780889}
-  talkSpeed: 0.05
-  endLineDelay: 1
+  talkSpeed: 0.005
+  endLineDelay: 0.1
   canSkip: 1
   isSpeaking: 0
   thumbnails:
@@ -392,8 +469,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b19a59bfde4d1e345a4ec8174b76ef3c, type: 3}
   - {fileID: 21300000, guid: f38de181a82b4b743907b7dd60870329, type: 3}
   - {fileID: 21300000, guid: 95cbebc2433fee04dbd56c3bbd1b11fe, type: 3}
-  typingSFX: {fileID: 0}
-  dialogueFile: {fileID: 4900000, guid: 92432064174bf7545b7e484ca419066f, type: 3}
+  typingSFX: {fileID: 8300000, guid: e4b5562ac05a5e3479bc21392f755f08, type: 3}
+  dialogueFile: {fileID: 4900000, guid: 56ace73d092477f41be2b3028b32fec3, type: 3}
   debugScene: 
   debugSpeak: 0
 --- !u!1 &7332203862730391879
