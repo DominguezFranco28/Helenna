@@ -16,6 +16,7 @@ public class CharacterManager : MonoBehaviour
     private ArmLineController _activeZipline = null; //referencia global a la zipline activa, para que el state de Nina pueda acceder a ella
     public bool IsOnZipline { get; set; } = false; //para que el inputManager no permita cambiar de personaje si alguno esta en una zipline  [Header("Cinematica")]
     public PlayCinematic playCinematic;
+    public bool cinematicPlaying = false;
 
     void Awake()
     {
@@ -139,6 +140,7 @@ public class CharacterManager : MonoBehaviour
         {
             if (character.name == characterName)
                 return character.transform;
+            
         }
         Debug.LogWarning($"Character with name {characterName} not found in CharacterManager.");
         return null;
@@ -154,23 +156,30 @@ public class CharacterManager : MonoBehaviour
             yield return null;
         }
         nina.position = targetPos; //se fuerza la pos final de nina
-        var ninaSprite = nina.GetComponentInChildren<SpriteRenderer>();
-        var rexSprite = rex.GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer ninaSprite = nina.GetComponentInChildren<SpriteRenderer>();
+        SpriteRenderer rexSprite = rex.GetComponentInChildren<SpriteRenderer>();
         ninaSprite.sortingOrder = -1; //para que quede detras de rex
 
+
+        // IMPLEMENTACION VIEJA, flipeaba sprites pero generaba problemas y rompia sprite de rex
+        //VOLVER A IMPLEMENTAR SOLO SI SE TIENEN ANIMACIONES DE AMBOS PERSONAJES YA CORREJIDAS EN AMBOS PERFILES
+
         // Alinear las direcciones que miran ambos personajes
-        Vector2 dir = rex.position - nina.position;
-        bool ninaShouldFaceRight = dir.x >= 0;
+        //Vector2 dir = rex.position - nina.position;
+        //bool ninaShouldFaceRight = dir.x >= 0;
 
+        //if (ninaSprite != null) 
+        //    ninaSprite.flipX = !ninaShouldFaceRight;
+        //if (rexSprite != null)
+        //    rexSprite.flipX = !ninaShouldFaceRight;
 
-        if (ninaSprite != null) ninaSprite.flipX = !ninaShouldFaceRight;
-        if (rexSprite != null) rexSprite.flipX = !ninaShouldFaceRight;
-
-        // un pequeno delay antes de activar la cinematica
-        yield return new WaitForSeconds(0.2f);
         playCinematic.Play();
-        //restablecer sprite una vez terminada la cinematica
-        ninaSprite.sortingOrder = 0; //restablecer sorting order
+        //restablecer valores previos post cinematica (VER TIEMPO EN PETTHEDOG TIMELINE)
+        yield return new WaitForSeconds(5.2f);
+        ninaSprite.sortingOrder = 0; 
+        //rexSprite.flipX = false;
+        //ninaSprite.flipX = false;
+        
 
     }
 }
