@@ -207,7 +207,7 @@ GameObject:
   - component: {fileID: 7462774226319391890}
   - component: {fileID: 3674315634678178750}
   m_Layer: 0
-  m_Name: Metales
+  m_Name: Metals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

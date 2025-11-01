@@ -10,35 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: Madera
+  m_Name: Mud_Dirt
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 319546424, guid: 4e6cffd23a700984e8e9aaae5f0eb717, type: 3}
+  m_DefaultSprite: {fileID: 2019037898, guid: dabc9d425fc1b2a42b43eb7f97ae6978, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules:
-  - m_Id: 1
-    m_Sprites:
-    - {fileID: -509677250, guid: 4e6cffd23a700984e8e9aaae5f0eb717, type: 3}
-    m_GameObject: {fileID: 0}
-    m_MinAnimationSpeed: 1
-    m_MaxAnimationSpeed: 1
-    m_PerlinScale: 0.206
-    m_Output: 1
-    m_ColliderType: 1
-    m_RandomTransform: 1
-    m_Neighbors: 0100000001000000
-    m_NeighborPositions:
-    - {x: 0, y: 1, z: 0}
-    - {x: 0, y: -1, z: 0}
-    m_RuleTransform: 0
   - m_Id: 0
     m_Sprites:
-    - {fileID: -509677250, guid: 4e6cffd23a700984e8e9aaae5f0eb717, type: 3}
+    - {fileID: 2019037898, guid: dabc9d425fc1b2a42b43eb7f97ae6978, type: 3}
+    - {fileID: 2019037898, guid: dabc9d425fc1b2a42b43eb7f97ae6978, type: 3}
+    - {fileID: -1291480027, guid: dabc9d425fc1b2a42b43eb7f97ae6978, type: 3}
     m_GameObject: {fileID: 0}
     m_MinAnimationSpeed: 1
     m_MaxAnimationSpeed: 1
-    m_PerlinScale: 0.5
-    m_Output: 0
+    m_PerlinScale: 0.806
+    m_Output: 1
     m_ColliderType: 1
     m_RandomTransform: 0
     m_Neighbors: 

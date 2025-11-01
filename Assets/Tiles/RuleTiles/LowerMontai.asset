@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
-  m_Name: "BajoMonta\xF1a"
+  m_Name: LowerMontai
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: -533671110, guid: 7a07369587c64ac4f9f60e45e3540349, type: 3}
   m_DefaultGameObject: {fileID: 0}
