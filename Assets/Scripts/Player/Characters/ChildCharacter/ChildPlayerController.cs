@@ -68,7 +68,7 @@ public class ChildPlayerController : MonoBehaviour, IHasStateMachine
                     //float direction = nina.transform.position.x < rex.transform.position.x ? -1f : 1f; //ajusto la direccion de la anim segun la pos en X de los personajes
                     float directionY = nina.transform.position.y < rex.transform.position.y ? 1f : -1f;
                     Vector2 offset = new Vector2(-1 * separationDistance, offsetY); //0.4 para ajustar la altura en Y del pet, puede mejorarse
-                    StartCoroutine(CharacterManager.Instance.AlignCharacters(nina, rex, offset, 0.10f)); //ojo ajustar el pivote para que quede bien alineado
+                    StartCoroutine(CharacterManager.Instance.AlignCharacters(nina, rex, offset, 0.5f)); //ojo ajustar el pivote para que quede bien alineado
                     _childBehaviour.Animator.SetFloat("Horizontal", -1f); 
                     _childBehaviour.Animator.SetFloat("Vertical", directionY); 
                     _childBehaviour.Animator.SetFloat("Speed", 0.5f); //seteo la direccion de la animacion
