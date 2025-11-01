@@ -288243,10 +288243,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Climbable
       objectReference: {fileID: 0}
-    - target: {fileID: 8972259709438127495, guid: b075a72c29b867f4cb1caf460d740da0, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.654
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
