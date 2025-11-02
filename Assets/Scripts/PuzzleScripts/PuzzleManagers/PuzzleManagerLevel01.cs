@@ -37,6 +37,7 @@ public class PuzzleManagerLevel01 : MonoBehaviour
     [Header("Cinematica")]
     public PlayCinematic playCinematic;
     public PlayCinematic playCinematicEnd;
+    public Animator animatorDoor;
 
 
     public ParticleSystem p1SteamVFX;
@@ -65,6 +66,8 @@ public class PuzzleManagerLevel01 : MonoBehaviour
     private IEnumerator ChangeLevel()
     {
         yield return new WaitForSeconds(2f);
+        if (animatorDoor)
+            animatorDoor.SetTrigger("OpenDoor");
         TransitionManager.Instance.ChangeLevel();
     }
 
