@@ -10,6 +10,7 @@ public class ActionLever : MonoBehaviour, IActiveable
     private CapsuleCollider2D triggerCollider;
 
     public int manualID;
+    public bool isInterruptor = false;
     public bool canActivate = true;
     public bool startActive = false;
     public bool isActive = false;
@@ -49,6 +50,10 @@ public class ActionLever : MonoBehaviour, IActiveable
 
     public void UpdateSprite()
     {
+        if (isInterruptor)
+        {
+            _animator.SetTrigger("Change");
+        }
         _animator.SetBool("Activated", isActive);
     }
 }

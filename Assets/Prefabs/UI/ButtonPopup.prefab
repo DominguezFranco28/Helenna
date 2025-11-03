@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2ddb38b3e3df6034e99f4356a571dd26, type: 2}
-  m_sharedMaterial: {fileID: -1910235572578984063, guid: 2ddb38b3e3df6034e99f4356a571dd26, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c4ce873306c81f344a11273ebdf9d974, type: 2}
+  m_sharedMaterial: {fileID: -6729890572869593634, guid: c4ce873306c81f344a11273ebdf9d974, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -98,13 +98,13 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 0.5
   m_fontSizeMax: 1.25
-  m_fontStyle: 33
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: -5
   m_wordSpacing: 0
-  m_lineSpacing: -10
+  m_lineSpacing: 45
   m_lineSpacingMax: -36.85
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -222,6 +222,7 @@ MonoBehaviour:
   searchOnTag: player
   excludeOnTag: dog
   disableAfterFirst: 0
+  onlyShowIfZiplineActive: 0
   customText: 
 --- !u!1 &4948688372126015398
 GameObject:

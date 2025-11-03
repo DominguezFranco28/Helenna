@@ -167,7 +167,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.15
+  m_fontSize: 8
   m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -465,8 +465,8 @@ MonoBehaviour:
     gravida est nec rhoncus tincidunt. Nulla varius suscipit magna, a porta nibh
     porta eu. Vivamus viverra nulla neque, ut pulvinar lorem rutrum sit amet.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f75636e3d5b99904b9e0cf984e185233, type: 2}
-  m_sharedMaterial: {fileID: -1910235572578984063, guid: f75636e3d5b99904b9e0cf984e185233, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c4ce873306c81f344a11273ebdf9d974, type: 2}
+  m_sharedMaterial: {fileID: -6729890572869593634, guid: c4ce873306c81f344a11273ebdf9d974, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -490,19 +490,19 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 30
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 23
-  m_fontSizeMax: 25
+  m_fontSizeMin: 30
+  m_fontSizeMax: 35
   m_fontStyle: 32
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 1
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 10
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -624,7 +624,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
+  m_fontSize: 23
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

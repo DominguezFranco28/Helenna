@@ -32,7 +32,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: InterruptorActive
+  m_Name: InterruptorOff
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -46,7 +46,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 79b5a90f9ee6bb14f966c2440ee2ed28, type: 2}
+  m_Motion: {fileID: 7400000, guid: c7d61a6dbd97b7b44bc6bea1972f3977, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -73,7 +73,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 54c847c7554061846966b20080a3d6a8, type: 2}
+  m_Motion: {fileID: 7400000, guid: 79b5a90f9ee6bb14f966c2440ee2ed28, type: 2}
   m_Tag: Active
   m_SpeedParameter: 
   m_MirrorParameter: 
