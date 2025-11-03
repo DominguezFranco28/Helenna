@@ -631,7 +631,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Climb
-  m_Speed: 0.3
+  m_Speed: 0.2
   m_CycleOffset: 1
   m_Transitions:
   - {fileID: -4402953583185294128}
