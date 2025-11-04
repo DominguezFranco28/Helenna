@@ -18,34 +18,27 @@
       "scene": "Level-intro",
       "speaker": "Harold",
       "lineId": 3,
-      "text": "No exactamente. Al instalarnos en la zona empezamos a armar rutas de fácil acceso a la estación, para no tener que dar todo el rodeo.",
+      "text": "No exactamente.\nAl instalarnos en la zona empezamos a armar rutas de fácil acceso a la estación, para no tener que dar todo el rodeo.",
       "emotionToken": null
     },
     {
       "scene": "Level-intro",
       "speaker": "Harold",
       "lineId": 4,
-      "text": "Pero al poco tiempo nos dimos cuenta de que este canal lo usaban algunos pescadores de la zona.",
-      "emotionToken": null
-    },
-    {
-      "scene": "Level-intro",
-      "speaker": "Harold",
-      "lineId": 5,
-      "text": "Helenna inventó un mecanismo de acceso público para que ellos pudieran abrirse paso si nosotros ya habíamos levantado el puente.",
+      "text": "Helenna inventó un mecanismo de acceso público para que los pescadores que usan este canal pudieran abrirse paso si nosotros ya habíamos levantado el puente.",
       "emotionToken": null
     },
     {
       "scene": "Level-intro",
       "speaker": "Nina",
-      "lineId": 6,
-      "text": "Qué considerados.",
+      "lineId": 5,
+      "text": "Que considerados.",
       "emotionToken": null
     },
     {
       "scene": "Level-intro",
       "speaker": "Harold",
-      "lineId": 7,
+      "lineId": 6,
       "text": "No salió de mí la idea. Vamos a levantarlo. El interruptor está en esa vieja garita de pescadores.",
       "emotionToken": "harold-annoyed"
     },
@@ -141,13 +134,6 @@
       "emotionToken": "nina-demand"
     },
     {
-      "scene": "Blocked-door",
-      "speaker": "Harold",
-      "lineId": 6,
-      "text": "Admito que se vuelve tedioso, pero ella lo disfruta. A los pescadores también les resultaba entretenido abrirse camino así… lo tomaban como un juego entre ellos.",
-      "emotionToken": null
-    },
-    {
       "scene": "Pressure-plate",
       "speaker": "Nina",
       "lineId": 1,
@@ -162,17 +148,10 @@
       "emotionToken": "harold-demand"
     },
     {
-      "scene": "Pressure-plate",
-      "speaker": "Rex",
-      "lineId": 3,
-      "text": "¡Guau!",
-      "emotionToken": "rex-barking"
-    },
-    {
       "scene": "Inside-house",
       "speaker": "Nina",
       "lineId": 1,
-      "text": "¡Que hacés, lunático!",
+      "text": "¡Que haces lunático!",
       "emotionToken": "nina-demand"
     },
     {
@@ -200,14 +179,14 @@
       "scene": "Inside-house",
       "speaker": "Harold",
       "lineId": 5,
-      "text": "¿No viste sus patas? Al igual que mi brazo, Rex está modificado. Puede soportar mucho más peso que un perro normal.",
+      "text": "¿No viste sus patas? Rex también está modificado. Puede soportar esa caída",
       "emotionToken": null
     },
     {
       "scene": "Inside-house",
       "speaker": "Nina",
       "lineId": 6,
-      "text": "O sea… ¿modificaron a su perro para poder jugar tranquilos en su laberíntica fortaleza? Bastante normal, sí.",
+      "text": "O sea… ¿modificaron a su perro para poder jugar tranquilos en su laberíntica fortaleza? Todo muy normal por suerte eh.",
       "emotionToken": "nina-annoyed"
     },
     {
@@ -228,78 +207,36 @@
       "scene": "Elevated-zone-trigger",
       "speaker": "Nina",
       "lineId": 2,
-      "text": "¿Tenemos plan B?",
-      "emotionToken": "nina-doubt"
-    },
-    {
-      "scene": "Elevated-zone-trigger",
-      "speaker": "Harold",
-      "lineId": 3,
-      "text": "Dejame pensar…",
-      "emotionToken": "harold-doubt"
-    },
-    {
-      "scene": "Elevated-zone-trigger",
-      "speaker": "Nina",
-      "lineId": 4,
-      "text": "Hmm… ¿qué tanto peso soporta tu brazo? Tengo una idea.",
+      "text": "Hmm… ¿qué tanto peso soporta tu brazo?",
       "emotionToken": null
     },
     {
       "scene": "Elevated-zone-trigger",
       "speaker": "Nina",
-      "lineId": 5,
-      "text": "Intentá sujetar ese anclaje que está en la otra colina, y mantené el brazo así mientras yo cruzo.",
+      "lineId": 3,
+      "text": "Tengo una idea. Intentá sujetar ese anclaje que está en la otra colina, y mantenelo mientras yo cruzo.",
       "emotionToken": "nina-demand"
     },
     {
       "scene": "Elevated-zone-trigger",
       "speaker": "Harold",
-      "lineId": 6,
+      "lineId": 4,
       "text": "Estás loca.",
       "emotionToken": null
     },
     {
       "scene": "Elevated-zone-trigger",
       "speaker": "Nina",
-      "lineId": 7,
+      "lineId": 5,
       "text": "¡En serio! Podría funcionar.",
       "emotionToken": "nina-demand"
     },
     {
       "scene": "Elevated-zone-trigger",
       "speaker": "Harold",
-      "lineId": 8,
-      "text": "Mirá… no es que me caigas especialmente bien, pero tampoco me entusiasma la idea de verte estampada contra el piso, mocosa.",
+      "lineId": 6,
+      "text": "Aghh, bueno, bueno… lo voy a hacer. Pero te agarras bien mocosa eh, no me entusiasma la idea de verte estampada contra el piso.",
       "emotionToken": "harold-annoyed"
-    },
-    {
-      "scene": "Elevated-zone-trigger",
-      "speaker": "Nina",
-      "lineId": 9,
-      "text": "Hombre de poca fe… haceme caso. ¿No estábamos apurados por encontrar a Helenna?",
-      "emotionToken": null
-    },
-    {
-      "scene": "Elevated-zone-trigger",
-      "speaker": "Rex",
-      "lineId": 10,
-      "text": "¡Guau guau!",
-      "emotionToken": "rex-barking"
-    },
-    {
-      "scene": "Elevated-zone-trigger",
-      "speaker": "Harold",
-      "lineId": 11,
-      "text": "Bueno, bueno… lo voy a hacer. Procurá agarrarte bien, ¿sí? No quiero tener que lidiar con tus viejos.",
-      "emotionToken": "harold-demand"
-    },
-    {
-      "scene": "Elevated-zone-trigger",
-      "speaker": "Nina",
-      "lineId": 12,
-      "text": "Mi papá no podría… agh, nada. Hagámoslo.",
-      "emotionToken": null
     }
   ]
 }

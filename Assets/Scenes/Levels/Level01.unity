@@ -362,7 +362,7 @@ PrefabInstance:
     - target: {fileID: 7391976909620452916, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: _footstepsSFX
       value: 
-      objectReference: {fileID: 8300000, guid: b5d4c7b4bcf6eed4fb96aa4df885457c, type: 3}
+      objectReference: {fileID: 8300000, guid: 07191eff079d2114a82d3103e4171ecf, type: 3}
     - target: {fileID: 7391976909620452916, guid: 35def2087b57eb443832914bf1ec3cd3, type: 3}
       propertyPath: _playerController
       value: 
@@ -15827,7 +15827,7 @@ PrefabInstance:
     - target: {fileID: 2540616221314238289, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: _footstepsSFX
       value: 
-      objectReference: {fileID: 8300000, guid: 8874914b6a61ef4459b9d8e80973d608, type: 3}
+      objectReference: {fileID: 8300000, guid: 034af1b8fc2dae94dac020664458bce0, type: 3}
     - target: {fileID: 4325059657574243158, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: m_Name
       value: ChildPlayer
@@ -284621,7 +284621,7 @@ PrefabInstance:
     - target: {fileID: 1116637534219554859, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: _footstepsSFX
       value: 
-      objectReference: {fileID: 8300000, guid: aacca0d69dffd2f4aa5b2551a26d8aac, type: 3}
+      objectReference: {fileID: 8300000, guid: 74725be38ac48194f869a690b4730a99, type: 3}
     - target: {fileID: 1176267540435981163, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1.375

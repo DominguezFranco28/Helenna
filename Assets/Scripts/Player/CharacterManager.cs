@@ -10,6 +10,7 @@ public class CharacterManager : MonoBehaviour
     [SerializeField] private GameObject[] characters;
     [SerializeField] private CinemachineVirtualCamera _virtualCamera;
     [SerializeField] private AudioClip _changeSFX;
+    [SerializeField] private AudioClip _petSFX;
     private int _currentIndex = 0;
 
     //Referencias a la zipline
@@ -174,6 +175,7 @@ public class CharacterManager : MonoBehaviour
         //    rexSprite.flipX = !ninaShouldFaceRight;
 
         playCinematic.Play();
+        SFXManager.Instance.PlayAmbience(_petSFX);
         //restablecer valores previos post cinematica (VER TIEMPO EN PETTHEDOG TIMELINE)
         yield return new WaitForSeconds(5.2f);
         ninaSprite.sortingOrder = 0; 

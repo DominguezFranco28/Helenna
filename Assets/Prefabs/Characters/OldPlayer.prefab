@@ -4919,7 +4919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _normalSpeed: 9
   _lowSpeed: 8
-  _footstepsSFX: {fileID: 8300000, guid: cd93f9b000a076c3bbc056a005fe8358, type: 3}
+  _footstepsSFX: {fileID: 8300000, guid: 07191eff079d2114a82d3103e4171ecf, type: 3}
   _grabSFX: {fileID: 0}
   _throwSFX: {fileID: 0}
   _pullRexSFX: {fileID: 0}

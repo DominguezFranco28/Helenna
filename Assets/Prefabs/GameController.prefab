@@ -51,7 +51,9 @@ MonoBehaviour:
   - {fileID: 0}
   _virtualCamera: {fileID: 0}
   _changeSFX: {fileID: 8300000, guid: 7b156a78918563d49b1f1c4eb0a3d747, type: 3}
+  _petSFX: {fileID: 8300000, guid: e6076af2012cc7a4d8dba9f6f72beef6, type: 3}
   playCinematic: {fileID: 0}
+  cinematicPlaying: 0
 --- !u!114 &2718018259765695801
 MonoBehaviour:
   m_ObjectHideFlags: 0

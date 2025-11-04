@@ -15,8 +15,12 @@ public class SFXManager : MonoBehaviour
     private Dictionary<string, AudioClip> _emotionDict;
     //Singleton
     public static SFXManager Instance { get; private set; }
+    [Header("Audio Sources")]
     [SerializeField] private AudioSource _loopSource;
     [SerializeField] private AudioSource _sfxSource;
+    [SerializeField] private AudioSource _ambienceSource;
+    [SerializeField] private AudioSource _voice;
+
 
     private void Awake()
     {
@@ -54,7 +58,18 @@ public class SFXManager : MonoBehaviour
                 _emotionDict[emotion.token.ToLower().Trim()] = emotion.clip;
         }
     }
-
+    public void PlayAmbience(AudioClip audioClip)
+    {
+       if (_ambienceSource != null && audioClip != null)
+        {
+            if (_ambienceSource.isPlaying)
+            {
+                _ambienceSource.Stop();
+            }
+            _ambienceSource.clip = audioClip;
+            _ambienceSource.Play();
+        }
+    }
     public void PlayEmotion(string token)
     {
         if (string.IsNullOrEmpty(token)) return;
@@ -62,7 +77,7 @@ public class SFXManager : MonoBehaviour
         token = token.ToLower().Trim();
         if (_emotionDict.TryGetValue(token, out AudioClip clip))
         {
-            _sfxSource.PlayOneShot(clip);
+            _voice.PlayOneShot(clip);
         }
         else
         {
