@@ -144,7 +144,7 @@
       "scene": "Pressure-plate",
       "speaker": "Harold",
       "lineId": 2,
-      "text": "Ya te lo dije, mocosa… el perro es de gran utilidad.",
+      "text": "Ya te lo dije, mocosa… Rex es de gran ayuda.",
       "emotionToken": "harold-demand"
     },
     {
@@ -179,21 +179,21 @@
       "scene": "Inside-house",
       "speaker": "Harold",
       "lineId": 5,
-      "text": "¿No viste sus patas? Rex también está modificado. Puede soportar esa caída",
+      "text": "Rex también está modificado, puede soportarlo",
       "emotionToken": null
     },
     {
       "scene": "Inside-house",
       "speaker": "Nina",
       "lineId": 6,
-      "text": "O sea… ¿modificaron a su perro para poder jugar tranquilos en su laberíntica fortaleza? Todo muy normal por suerte eh.",
+      "text": "¿Modificaron hasta el perro? Todo muy normal por suerte eh.",
       "emotionToken": "nina-annoyed"
     },
     {
       "scene": "Inside-house",
       "speaker": "Harold",
       "lineId": 7,
-      "text": "Claro que n—bah, ni sé por qué me molesto. Dale, sigamos.",
+      "text": "Es una larga historia, sigamos.",
       "emotionToken": null
     },
     {

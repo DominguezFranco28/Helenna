@@ -39,21 +39,21 @@
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 6,
-      "text": "Mirá, viejo choto, tardé media tarde en llegar a tu “hogar”. Si tu mujer está acá, y es aunque sea un POQUITO más simpática que vos, llámala, asi resuelvo mis cosas y me voy. Mi viejo me está esperando qu—",
+      "text": "Mirá, viejito, me tardé bastante en llegar a tu “hogar”. Si ella está acá, y es aunque sea un POQUITO más simpática que vos, llámala, asi resuelvo mis cosas y me voy. Mi viejo me está esperando qu—",
       "emotionToken": null
     },
     {
       "scene": "game-intro",
       "speaker": "Harold",
       "lineId": 7,
-      "text": "Ella…No está. Aún no volvió del trabajo. Es raro…. Ya debería haber llegado hace una hora. Ella nunca llega tarde…",
+      "text": "Ella… no está. Aún no volvió del trabajo. Es raro…. Ya debería haber llegado hace una hora. Ella nunca llega tarde…",
       "emotionToken": null
     },
     {
       "scene": "game-intro",
       "speaker": "Nina",
       "lineId": 8,
-      "text": "¿Tu mujer va al trabajo desde acá? ¡Con razón tarda! ¿Viste el laberinto que tenés armado en el fondo?",
+      "text": "¿Va al trabajo desde acá? ¡Con razón tarda! ¿Viste el laberinto que tenés armado en el fondo?",
       "emotionToken": null
     },
     {
@@ -109,14 +109,14 @@
       "scene": "P3A",
       "speaker": "Nina",
       "lineId": 2,
-      "text": "Vos tranqui, viejo. Si pude llegar hasta acá arriba por la ladera, ¿te pensás que una colinita berreta como esta me va a detener?",
+      "text": "Vos tranqui, viejito. Si pude llegar hasta acá arriba por la ladera, ¿te pensás que esto me va a detener?",
       "emotionToken": "nina-mocking"
     },
     {
       "scene": "P3A",
       "speaker": "Harold",
       "lineId": 3,
-      "text": "Ahh, claro. Dale, colinita, te quiero ver entonces.",
+      "text": "Ahh, dale, te quiero ver entonces. Mocosa.",
       "emotionToken": null
     },
     {
@@ -172,7 +172,7 @@
       "scene": "P3B",
       "speaker": "Harold",
       "lineId": 4,
-      "text": "Ayudarnos. Te sorprenderías de lo que este perro es capaz. La inteligencia y agilidad de Rex son lo único que compensa mis torpezas. Vamos muchacho, meteté en el hoyo.",
+      "text": "Ayudarnos. No sabes de lo que este perro es capaz. La inteligencia y agilidad de Rex son lo único que compensa mis torpezas. Vamos muchacho, al hoyo.",
       "emotionToken": null
     },
     {
@@ -186,21 +186,21 @@
       "scene": "P2",
       "speaker": "Harold",
       "lineId": 1,
-      "text": "Pff, ya ni recuerdo cómo se resolvía este. Teníamos que hacerlo los tres juntos.",
+      "text": "Pff, ya ni recuerdo cómo se resuelve esto. Tenemos que hacerlo los tres juntos.",
       "emotionToken": "harold-annoyed"
     },
     {
       "scene": "P2",
       "speaker": "Nina",
       "lineId": 2,
-      "text": "¿Y por qué decidieron complicarse así la existencia exactamente?",
+      "text": "¿Y por qué se complican así la existencia exactamente?",
       "emotionToken": null
     },
     {
       "scene": "P2",
       "speaker": "Harold",
       "lineId": 3,
-      "text": "Este lo diseñó Helenna. Lo veía como una forma “creativa” de poner a prueba sus capacidades mentales, y de paso poder pasar más tiempo conmigo y entrenar a Rex.",
+      "text": "Helenna. Lo ve como una forma “creativa” de poner a prueba sus capacidades mentales, y de paso poder pasar más tiempo conmigo y entrenar a Rex.",
       "emotionToken": null
     },
     {
@@ -214,7 +214,7 @@
       "scene": "P2",
       "speaker": "Nina",
       "lineId": 5,
-      "text": "¿Ella te hizo ese brazo? Qué bueno, necesito ver qué tan bien funciona, mí padre perdió una extremidad y me preguntaba si quiza--",
+      "text": "¿Ella te hizo ese brazo? Qué bueno, necesito ver qué tan bien funciona, mí padre --",
       "emotionToken": null
     },
     {
@@ -228,7 +228,7 @@
       "scene": "P2",
       "speaker": "Nina",
       "lineId": 7,
-      "text": "¿podrías escucharme un segundo?",
+      "text": "¿Podrías escucharme un segundo?",
       "emotionToken": "nina-demand"
     },
     {
