@@ -19,8 +19,8 @@ public class TouchScreenControls : MonoBehaviour
 
     void Start()
     {
-        if(InputManager.Instance)
-            onScreenButtonsEnabled = InputManager.Instance.onScreenButtonsEnabled;
+        if(OnScreenControlsManager.Instance)
+            onScreenButtonsEnabled = OnScreenControlsManager.Instance.onScreenButtonsEnabled;
 
         buttons.SetActive(onScreenButtonsEnabled);
 

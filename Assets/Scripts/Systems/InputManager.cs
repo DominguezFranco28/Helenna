@@ -40,8 +40,6 @@ public class InputManager : MonoBehaviour
     private bool inputsLocked = false;
     private bool dialogueInputsLocked = false;
 
-    public bool onScreenButtonsEnabled = false;
-
     public void LockInputs()
     {
         inputsLocked = true;

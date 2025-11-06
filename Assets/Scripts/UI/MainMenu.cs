@@ -73,7 +73,7 @@ public class MainMenu : MonoBehaviour
             quitButton.GetComponentInChildren<TextMeshProUGUI>().text = languageManager.GetUIText("main-menu", "quitButton");
             if (InputManager.Instance)
             {
-                if (InputManager.Instance.onScreenButtonsEnabled)
+                if (OnScreenControlsManager.Instance.onScreenButtonsEnabled)
                 {
                     touchModeButton.GetComponentInChildren<TextMeshProUGUI>().text = languageManager.GetUIText("main-menu", "touchMode-on");
                 }
@@ -102,10 +102,10 @@ public class MainMenu : MonoBehaviour
 
     public void ToggleTouchMode()
     {
-        if (InputManager.Instance)
+        if (OnScreenControlsManager.Instance)
         {
-            InputManager.Instance.onScreenButtonsEnabled = !InputManager.Instance.onScreenButtonsEnabled;
-            if (InputManager.Instance.onScreenButtonsEnabled)
+            OnScreenControlsManager.Instance.onScreenButtonsEnabled = !OnScreenControlsManager.Instance.onScreenButtonsEnabled;
+            if (OnScreenControlsManager.Instance.onScreenButtonsEnabled)
             {
                 touchModeButton.GetComponentInChildren<TextMeshProUGUI>().text = languageManager.GetUIText("main-menu", "touchMode-on");
             }
