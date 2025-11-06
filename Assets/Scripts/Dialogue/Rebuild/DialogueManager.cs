@@ -8,7 +8,6 @@ using TMPro;
 [System.Serializable]
 public class DialogueLine
 {
-
     public string scene;
     public string speaker;
     public int lineId;
@@ -48,7 +47,6 @@ public class DialogueManager : MonoBehaviour
 
     private Color textColor = Color.white;
     private Color backgroundColor = new Color(0f / 255f, 0f / 255f, 0f / 255f, 160f / 255f); ///new Color(171f / 255f, 109f / 255f, 44f / 255f, 220f / 255f);
-    private Color thumbBackgroundColor = new Color(60f / 255f, 40f / 255f, 60f / 255f, 170f / 255f); ///new Color(171f / 255f, 109f / 255f, 44f / 255f, 220f / 255f);
     private Color speakerBackgroundColor = new Color(0f, 0f, 0f, 220f / 255f);
 
     public TextAsset dialogueFile;
@@ -63,13 +61,36 @@ public class DialogueManager : MonoBehaviour
 
     private PauseManager pauseManager;
 
+    private LanguageManager languageManager;
+
     private void Start()
     {
         //Load dialogue file
-        data = JsonUtility.FromJson<DialogueWrapper>(dialogueFile.text);
+        languageManager = LanguageManager.Instance;
+        TextAsset jsonFile;
+
+        if (languageManager)
+        {
+            string filePath;
+
+            if (languageManager.currentLanguage == 0)
+                filePath = "JSON/ES/Dialogues/level" + languageManager.GetCurrentLevel();
+            else
+                filePath = "JSON/EN/Dialogues/level" + languageManager.GetCurrentLevel();
+
+            skipTip.text = languageManager.GetUIText("dialogue-box", "skipTip");
+
+            jsonFile = Resources.Load<TextAsset>(filePath);
+
+        }
+        else
+        {
+            jsonFile = dialogueFile;
+        }
+
+        data = JsonUtility.FromJson<DialogueWrapper>(jsonFile.text);
 
         MakeClear();
-
         pauseManager = FindAnyObjectByType<PauseManager>();
     }
 
@@ -120,18 +141,6 @@ public class DialogueManager : MonoBehaviour
 
     public void Speak(DialogueLine line)
     {
-        //speakerThumbnail.sprite = GetSpeakerThumbnail(line.speaker);
-        //speakerName.text = line.speaker;
-        //string text = line.text;
-        //if (text.Length > 0)
-        //{
-        //    body.text = "";
-        //    lastID = (line.scene, line.speaker, line.lineId);
-
-        //    MakeVisible();
-
-        //    writeLineCoroutine = StartCoroutine(WriteLine(text));
-        //}
         if (line == null) return;
 
         speakerThumbnail.sprite = GetSpeakerThumbnail(line.speaker);
@@ -155,18 +164,6 @@ public class DialogueManager : MonoBehaviour
 
     public void Speak(string scene, string speaker, int lineId)
     {
-        //speakerThumbnail.sprite = GetSpeakerThumbnail(speaker);
-        //string text = GetLine(scene, speaker, lineId);
-        //if (text.Length > 0)
-        //{
-        //    body.text = "";
-        //    lastID = (scene, speaker, lineId);
-
-        //    MakeVisible();
-
-        //    writeLineCoroutine = StartCoroutine(WriteLine(text));
-        //}
-        // Obtener el objeto completo
         DialogueLine lineObj = GetLineObject(scene, speaker, lineId);
         if (lineObj == null) return; 
 
@@ -236,13 +233,13 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        return null; // not found
+        return null;
     }
 
     private IEnumerator WriteLine(string line)
     {
         body.text = "";
-        if (isTypingSFXPlaying) //si habia sonido de tipeo lo detengo
+        if (isTypingSFXPlaying)
         {
             SFXManager.Instance.StopLoop();
             isTypingSFXPlaying = false;
@@ -257,16 +254,11 @@ public class DialogueManager : MonoBehaviour
             body.text += c;
             yield return new WaitForSeconds(talkSpeed);
         }
-        if (isTypingSFXPlaying) //freno el tipeo
+        if (isTypingSFXPlaying)
         {
             SFXManager.Instance.StopLoop(); 
             isTypingSFXPlaying = false;
         }
-        /*
-        writeLineCoroutine = null;
-        yield return new WaitForSeconds(endLineDelay);
-        MakeClear();
-        */
     }
 
     private IEnumerator EndLine()
@@ -297,7 +289,7 @@ public class DialogueManager : MonoBehaviour
             else
                 StartCoroutine(EndLine());
         }
-        if (isTypingSFXPlaying) //freno aca tambien xq sino se bugeaba
+        if (isTypingSFXPlaying)
         {
             SFXManager.Instance.StopLoop();
             isTypingSFXPlaying = false;
@@ -311,7 +303,6 @@ public class DialogueManager : MonoBehaviour
         body.color = textColor;
         speakerThumbnail.color = Color.white;
         background.color = backgroundColor;
-       // thumbBackground.color = thumbBackgroundColor;
         speakerBackground.color = speakerBackgroundColor;
         skipTip.color = textColor;
     }
@@ -322,7 +313,6 @@ public class DialogueManager : MonoBehaviour
         body.color = Color.clear;
         speakerThumbnail.color = Color.clear;
         background.color = Color.clear;
-       // thumbBackground.color = Color.clear;
         speakerBackground.color = Color.clear;
         skipTip.color = Color.clear;
     }

@@ -1,0 +1,59 @@
+{
+  "UItexts": [
+    {
+      "objectLocation": "main-menu",
+      "objectName": "playButton",
+      "text": "Play"
+    },
+    {
+      "objectLocation": "main-menu",
+      "objectName": "quitButton",
+      "text": "Quit"
+    },
+    {
+      "objectLocation": "pause-menu",
+      "objectName": "continueButton",
+      "text": "Continue"
+    },
+    {
+      "objectLocation": "pause-menu",
+      "objectName": "toMenuButton",
+      "text": "Go to Menu"
+    },
+    {
+      "objectLocation": "pause-menu",
+      "objectName": "quitButton",
+      "text": "Quit"
+    },
+    {
+      "objectLocation": "settings-menu",
+      "objectName": "title",
+      "text": "Audio Settings"
+    },
+    {
+      "objectLocation": "settings-menu",
+      "objectName": "sfxLabel",
+      "text": "SFX"
+    },
+    {
+      "objectLocation": "settings-menu",
+      "objectName": "musicLabel",
+      "text": "Music"
+    },
+    {
+      "objectLocation": "dialogue-box",
+      "objectName": "skipTip",
+      "text": "ENTER to Continue >>"
+    },
+    {
+      "objectLocation": "main-menu",
+      "objectName": "touchMode-off",
+      "text": "Touchscreen Mode: OFF"
+    },
+    {
+      "objectLocation": "main-menu",
+      "objectName": "touchMode-on",
+      "text": "Touchscreen Mode: ON"
+    }
+  ]
+}

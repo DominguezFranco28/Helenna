@@ -1,0 +1,96 @@
+{
+  "lines": [
+    {
+      "scene": "Entry-Dialogue",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Okay, almost there...",
+      "emotionToken": null
+    },
+    {
+      "scene": "Entry-Dialogue",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "Ehhh, now what? Another detour?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Entry-Dialogue",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "Shouldn't be, it's just a straight line to the station from here.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Entry-Dialogue",
+      "speaker": "Nina",
+      "lineId": 4,
+      "text": "Where all those rocks always in the way?",
+      "emotionToken": null
+    },
+    {
+      "scene": "Entry-Dialogue",
+      "speaker": "Harold",
+      "lineId": 5,
+      "text": "… Wha- what, no. Looks like a landslide",
+      "emotionToken": null
+    },
+    {
+      "scene": "Entry-Dialogue",
+      "speaker": "Nina",
+      "lineId": 6,
+      "text": "Something may have happened old man! Let's hurry to the station!",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "Inside-station",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "It's destroyed! But, this isn't recent, what's going on?",
+      "emotionToken": null
+    },
+    {
+      "scene": "Inside-station",
+      "speaker": "Harold",
+      "lineId": 2,
+      "text": "I'm not sure, she takes the train every day.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Inside-station",
+      "speaker": "Nina",
+      "lineId": 3,
+      "text": "Are you sure? Look at the state this place is in.",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Inside-station",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "...",
+      "emotionToken": null
+    },
+    {
+      "scene": "Inside-station",
+      "speaker": "Harold",
+      "lineId": 5,
+      "text": "Let's… follow the tracks on foot. Maybe in the city…",
+      "emotionToken": null
+
+    },
+    {
+      "scene": "Inside-station",
+      "speaker": "Nina",
+      "lineId": 6,
+      "text": "HAROLD!",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "Inside-station",
+      "speaker": "Nina",
+      "lineId": 7,
+      "text": "Wait up old man!",
+      "emotionToken": null
+    }
+  ]
+}

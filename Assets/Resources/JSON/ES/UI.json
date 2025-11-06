@@ -1,0 +1,59 @@
+{
+  "UItexts": [
+    {
+      "objectLocation": "main-menu",
+      "objectName": "playButton",
+      "text": "Jugar"
+    },
+    {
+      "objectLocation": "main-menu",
+      "objectName": "quitButton",
+      "text": "Salir"
+    },
+    {
+      "objectLocation": "pause-menu",
+      "objectName": "continueButton",
+      "text": "Continuar"
+    },
+    {
+      "objectLocation": "pause-menu",
+      "objectName": "toMenuButton",
+      "text": "Ir al Menu"
+    },
+    {
+      "objectLocation": "pause-menu",
+      "objectName": "quitButton",
+      "text": "Salir"
+    },
+    {
+      "objectLocation": "settings-menu",
+      "objectName": "title",
+      "text": "Ajustes de Sonido"
+    },
+    {
+      "objectLocation": "settings-menu",
+      "objectName": "sfxLabel",
+      "text": "SFX"
+    },
+    {
+      "objectLocation": "settings-menu",
+      "objectName": "musicLabel",
+      "text": "Musica"
+    },
+    {
+      "objectLocation": "dialogue-box",
+      "objectName": "skipTip",
+      "text": "ENTER para Continuar >>"
+    },
+    {
+      "objectLocation": "main-menu",
+      "objectName": "touchMode-off",
+      "text": "Modo Tactil: NO"
+    },
+    {
+      "objectLocation": "main-menu",
+      "objectName": "touchMode-on",
+      "text": "Modo Tactil: SI"
+    }
+  ]
+}

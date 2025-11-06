@@ -1,0 +1,256 @@
+{
+  "lines": [
+    {
+      "scene": "game-intro",
+      "speaker": "Rex",
+      "lineId": 1,
+      "text": "Grrrr! Woof, woof!",
+      "emotionToken": "rex-barking"
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Harold",
+      "lineId": 2,
+      "text": "Bah! Rex, stop barking! What's the matter?",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "Hu-How…! IMPOSSIBLE! How did you get through my security system!?",
+      "emotionToken": null
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Nina",
+      "lineId": 4,
+      "text": "Security system? I just climbed the side of the cliff… bah! anyways old man. Does Helenna live around here? Need to talk to that inventor.",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Harold",
+      "lineId": 5,
+      "text": "I don't know what business a scoundrel like you has with my wife, I don't like visits. Get back to where you came from.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Nina",
+      "lineId": 6,
+      "text": "Look old man, it took me while to get to your “home”. If she's here, and she's SLIGHTLY more charming than you, call her, I'll deal with my stuff and leave. My dad needs—",
+      "emotionToken": null
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Harold",
+      "lineId": 7,
+      "text": "She's… not here. Hasn't come back from work yet. It's strange…. She should've been back by now. She's never late…",
+      "emotionToken": null
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Nina",
+      "lineId": 8,
+      "text": "She goes to work from here? How does she get through the maze you've got there?",
+      "emotionToken": null
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Harold",
+      "lineId": 9,
+      "text": "She doesn't have to get through it fool, we have a passage, it just takes longer. But still I should go look for her… maybe there was an issue at the terminal. It's worrying…",
+      "emotionToken": null
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Nina",
+      "lineId": 10,
+      "text": "So, what are we waiting for? Let's go!",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "game-intro",
+      "speaker": "Harold",
+      "lineId": 11,
+      "text": "Guessing you'll follow me no matter what I say… At least be useful brat.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "P1",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "I know it's the house of a genius inventor and all that, but why just have machinery all over the place?",
+      "emotionToken": null
+    },
+    {
+      "scene": "P1",
+      "speaker": "Harold",
+      "lineId": 2,
+      "text": "They have a use. We'll need to activate the three mechanisms locking the main gate. It'll be quicker than taking the passage.",
+      "emotionToken": null
+    },
+    {
+      "scene": "P1",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "Help me with these levers first.",
+      "emotionToken": "harold-demand"
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Hmph, right, the ladder went missing. How can I reach the switch now?",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "Don't worry old man. I got all the way here climbing, remember?",
+      "emotionToken": "nina-mocking"
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "Oh, sure thing brat, let's see then.",
+      "emotionToken": null
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Nina",
+      "lineId": 4,
+      "text": "Nina.",
+      "emotionToken": null
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Harold",
+      "lineId": 5,
+      "text": "Huh?",
+      "emotionToken": "harold-doubt"
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Nina",
+      "lineId": 6,
+      "text": "My name.",
+      "emotionToken": null
+    },
+    {
+      "scene": "P3A",
+      "speaker": "Harold",
+      "lineId": 7,
+      "text": "…",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "P3B",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Okay, boy. Your turn.",
+      "emotionToken": null
+    },
+    {
+      "scene": "P3B",
+      "speaker": "Rex",
+      "lineId": 2,
+      "text": "WOOF!",
+      "emotionToken": "rex-barking"
+    },
+    {
+      "scene": "P3B",
+      "speaker": "Nina",
+      "lineId": 3,
+      "text": "His turn? For what?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "P3B",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "Helping. You have no clue what he's capable of. He's got even more brains and agility than me.",
+      "emotionToken": null
+    },
+    {
+      "scene": "P3B",
+      "speaker": "Nina",
+      "lineId": 5,
+      "text": "Who doesn't...",
+      "emotionToken": null
+    },
+    {
+      "scene": "P3B",
+      "speaker": "Rex",
+      "lineId": 6,
+      "text": "WOOF!",
+      "emotionToken": "rex-barking"
+    },
+    {
+      "scene": "P2",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Huh, I can't remember how to solve this. It was all 3 together somehow.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "P2",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "Why did you guys make your life so complicated again?",
+      "emotionToken": null
+    },
+    {
+      "scene": "P2",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "Helenna. She finds this as a “creative” way to train her brain, spend time with me and train Rex.",
+      "emotionToken": null
+    },
+    {
+      "scene": "P2",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "I'll have to use her arm for this one….",
+      "emotionToken": null
+    },
+    {
+      "scene": "P2",
+      "speaker": "Nina",
+      "lineId": 5,
+      "text": "She designed that? Nice, my dad --",
+      "emotionToken": null
+    },
+    {
+      "scene": "P2",
+      "speaker": "Harold",
+      "lineId": 6,
+      "text": "Move.",
+      "emotionToken": "harold-demand"
+    },
+    {
+      "scene": "P2",
+      "speaker": "Nina",
+      "lineId": 7,
+      "text": "Can't you listen a second?",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "P2A",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Hmph. This pad is rusted, we'll need something heavy",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "level-tip",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Need to turn all 3 machines on to unlock the gate.",
+      "emotionToken": "harold-demand"
+    }
+  ]
+}

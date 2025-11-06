@@ -22,6 +22,9 @@ public class PauseMenu : MonoBehaviour
 
     private Slider sfxSlider;
     private Slider musicSlider;
+    public TextMeshProUGUI settingsTitle;
+
+    private LanguageManager languageManager;
 
     private void OnEnable()
     {
@@ -35,6 +38,8 @@ public class PauseMenu : MonoBehaviour
 
     private void Start()
     {
+        languageManager = LanguageManager.Instance;
+
         if (continueButton)
             continueButton.onClick.AddListener(ContinueGame);
         if (toMenuButton)
@@ -60,6 +65,17 @@ public class PauseMenu : MonoBehaviour
         }
 
         InitAudioSliders();
+
+        if (languageManager)
+        {
+            continueButton.GetComponentInChildren<TextMeshProUGUI>().text = languageManager.GetUIText("pause-menu", "continueButton");
+            toMenuButton.GetComponentInChildren<TextMeshProUGUI>().text = languageManager.GetUIText("pause-menu", "toMenuButton");
+            quitButton.GetComponentInChildren<TextMeshProUGUI>().text = languageManager.GetUIText("pause-menu", "quitButton");
+
+            settingsTitle.GetComponentInChildren<TextMeshProUGUI>().text = languageManager.GetUIText("settings-menu", "title");
+            sfxSlider.GetComponentInChildren<TextMeshProUGUI>().text = languageManager.GetUIText("settings-menu", "sfxLabel");
+            musicSlider.GetComponentInChildren<TextMeshProUGUI>().text = languageManager.GetUIText("settings-menu", "musicLabel");
+        }
     }
 
     private void InitAudioSliders()

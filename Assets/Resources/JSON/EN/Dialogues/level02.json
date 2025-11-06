@@ -1,0 +1,242 @@
+{
+  "lines": [
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Ahhhg, they forgot to leave it raised.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "Another security system of yours?",
+      "emotionToken": null
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "Not really.\nWhen we moved in we started building better routes to the station.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "Helenna built a drawbridge so the fishermen could still get through.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Nina",
+      "lineId": 5,
+      "text": "How considerate.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Level-intro",
+      "speaker": "Harold",
+      "lineId": 6,
+      "text": "Not my idea. Let's raise it. The switch is in the storehouse.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "Bridge-trigger",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "…",
+      "emotionToken": null
+    },
+    {
+      "scene": "Bridge-trigger",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "How about swimming across? I could use the bath.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Bridge-trigger",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "I got no intention of jumping into a river.",
+      "emotionToken": "harold-demand"
+    },
+    {
+      "scene": "Bridge-trigger",
+      "speaker": "Nina",
+      "lineId": 4,
+      "text": "Right, wouldn't want to wash away the bitterness.",
+      "emotionToken": "nina-mocking"
+    },
+    {
+      "scene": "Bridge-trigger",
+      "speaker": "Harold",
+      "lineId": 5,
+      "text": "Very funny.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Block-way",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Huh… it's a bit…",
+      "emotionToken": null
+    },
+    {
+      "scene": "Block-way",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "Rundown?",
+      "emotionToken": null
+    },
+    {
+      "scene": "Block-way",
+      "speaker": "Harold",
+      "lineId": 3,
+      "text": "Yeah… I remember it being in a bit better condition.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Blocked-door",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "Of course… the gate is closed.",
+      "emotionToken": "nina-annoyed"
+    },
+    {
+      "scene": "Blocked-door",
+      "speaker": "Harold",
+      "lineId": 2,
+      "text": "It's a similar mechanism to my gate, but with a timer'.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Blocked-door",
+      "speaker": "Nina",
+      "lineId": 3,
+      "text": "Meaning?",
+      "emotionToken": null
+    },
+    {
+      "scene": "Blocked-door",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "We need to keep both power sources on and get through quickly.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Blocked-door",
+      "speaker": "Nina",
+      "lineId": 5,
+      "text": "Really? Why did you two make everything so complicated",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "Pressure-plate",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "So, now what?",
+      "emotionToken": "nina-doubt"
+    },
+    {
+      "scene": "Pressure-plate",
+      "speaker": "Harold",
+      "lineId": 2,
+      "text": "I told you, Rex can be great help.",
+      "emotionToken": "harold-demand"
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Nina",
+      "lineId": 1,
+      "text": "Are you crazy!?",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Harold",
+      "lineId": 2,
+      "text": "Rex.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Rex",
+      "lineId": 3,
+      "text": "Woof woof!",
+      "emotionToken": "rex-barking"
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Nina",
+      "lineId": 4,
+      "text": "But… he could have gotten hurt?",
+      "emotionToken": null
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Harold",
+      "lineId": 5,
+      "text": "Rex is also enhanced, he can take it",
+      "emotionToken": null
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Nina",
+      "lineId": 6,
+      "text": "Even the dog? a very normal couple you two.",
+      "emotionToken": "nina-annoyed"
+    },
+    {
+      "scene": "Inside-house",
+      "speaker": "Harold",
+      "lineId": 7,
+      "text": "It's a long story.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Harold",
+      "lineId": 1,
+      "text": "Great, the rope bridge broke down.",
+      "emotionToken": "harold-annoyed"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Nina",
+      "lineId": 2,
+      "text": "Hmm… how much weight can your arm take?",
+      "emotionToken": null
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Nina",
+      "lineId": 3,
+      "text": "I've got an idea. Just hold on to that anchor and I'll zipline across.",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Harold",
+      "lineId": 4,
+      "text": "Madness.",
+      "emotionToken": null
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Nina",
+      "lineId": 5,
+      "text": "I'm serious! It can work.",
+      "emotionToken": "nina-demand"
+    },
+    {
+      "scene": "Elevated-zone-trigger",
+      "speaker": "Harold",
+      "lineId": 6,
+      "text": "I'll do it, but be careful brat. Not excited to see you plummet to the ground.",
+      "emotionToken": "harold-annoyed"
+    }
+  ]
+}

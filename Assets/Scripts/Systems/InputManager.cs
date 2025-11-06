@@ -40,7 +40,8 @@ public class InputManager : MonoBehaviour
     private bool inputsLocked = false;
     private bool dialogueInputsLocked = false;
 
-    
+    public bool onScreenButtonsEnabled = false;
+
     public void LockInputs()
     {
         inputsLocked = true;
@@ -126,7 +127,8 @@ public class InputManager : MonoBehaviour
 
     private void OnDisable()
     {
-        inputActions.Disable();
+        if (inputActions != null)
+            inputActions.Disable();
     }
 
     public void InvokeAction(Action action, float delay)
@@ -143,5 +145,53 @@ public class InputManager : MonoBehaviour
     public InputSystem_Actions GetInputSystem()
     {
         return inputActions;
-}
+    }
+
+    // --- Manual Triggers for OnScreen Buttons ---
+    public void TriggerActionPressed()
+    {
+        if (!inputsLocked)
+            ActionPressed?.Invoke();
+    }
+
+    public void TriggerSpecialActionPressed()
+    {
+        if (!inputsLocked)
+            SpecialActionPressed?.Invoke();
+    }
+
+    public void TriggerInteractPressed()
+    {
+        if (!inputsLocked)
+            InteractPressed?.Invoke();
+    }
+
+    public void TriggerChangeCharacterPressed()
+    {
+        if (!inputsLocked)
+            ChangeCharacterPressed?.Invoke();
+    }
+
+    public void TriggerPausePressed()
+    {
+        PausePressed?.Invoke();
+    }
+
+    public void TriggerMove(Vector2 dir)
+    {
+        if (!inputsLocked)
+            Move?.Invoke(dir);
+    }
+
+    public void TriggerMoveCanceled()
+    {
+        if (!inputsLocked)
+            Move?.Invoke(Vector2.zero);
+    }
+
+    public void TriggerSkipDialogue()
+    {
+        if (!dialogueInputsLocked)
+            SkipDialoguePressed?.Invoke();
+    }
 }

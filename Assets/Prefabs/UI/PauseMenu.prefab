@@ -96,6 +96,7 @@ MonoBehaviour:
   quitButton: {fileID: 2608657486084463969}
   pauseMenu: {fileID: 709053486845697467}
   isPaused: 0
+  settingsTitle: {fileID: 9205030622120604577}
 --- !u!1 &709053486845697467
 GameObject:
   m_ObjectHideFlags: 0
