@@ -8,7 +8,7 @@ public class CharacterVerticalCollider : MonoBehaviour
     [SerializeField] private LayerMask elevatedLayers;
     [SerializeField] private BoxCollider2D boxCollider;
     public bool IsGrounded { get; private set; }
-
+    public bool IsElevated { get { return elevated; } }
     public bool toggle = false;
     private bool elevated = false;
 

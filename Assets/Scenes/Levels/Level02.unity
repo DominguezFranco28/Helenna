@@ -180084,6 +180084,14 @@ PrefabInstance:
       propertyPath: _footstepsSFX
       value: 
       objectReference: {fileID: 8300000, guid: 034af1b8fc2dae94dac020664458bce0, type: 3}
+    - target: {fileID: 3244750473299434462, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5813397
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244750473299434462, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.59
+      objectReference: {fileID: 0}
     - target: {fileID: 3301073443021790062, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -180140,6 +180148,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChildPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 8121322658859573715, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+      propertyPath: _isOnHighGround
+      value: 
+      objectReference: {fileID: 1393953487}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -183258,6 +183270,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4639656890127876935, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
   m_PrefabInstance: {fileID: 1222058003}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1393953487 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 742768736116781450, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
+  m_PrefabInstance: {fileID: 1222058003}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393953473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9537522279d42eb44a5a2a3e02e7eda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1404719680
 GameObject:
   m_ObjectHideFlags: 0
@@ -214983,6 +215006,7 @@ GameObject:
   - component: {fileID: 1945555832}
   - component: {fileID: 1945555834}
   - component: {fileID: 1945555833}
+  - component: {fileID: 1945555835}
   m_Layer: 7
   m_Name: ActivatableAnchor
   m_TagString: Activatable Anchor
@@ -215079,6 +215103,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1945555835
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945555831}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.94584334, y: -1.394167}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.9375, y: 3.375}
+    newSize: {x: 2.9375, y: 3.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0458133, y: 0.5866661}
+  m_EdgeRadius: 0
 --- !u!1 &1948409240 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7585734139544317540, guid: 0d5c94fce8046a3409a4ab8d3b0cf01e, type: 3}
