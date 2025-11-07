@@ -8,6 +8,7 @@ public class ChildTriggerDetector : MonoBehaviour
 
     [Header("Tipo de detector")]
     [SerializeField] private DetectorType _detectorType;
+    [SerializeField] private CharacterVerticalCollider _isOnHighGround;
     public DetectorType Type => _detectorType; //expongo el tipo de detector para acceder desde el playerbehaviour y asigar el detector correspondiente a cada objeto
 
     private Collider2D _internalClimbableCollider;
@@ -113,8 +114,9 @@ public class ChildTriggerDetector : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision) //logica para ziplinen diferente al resto de colisiones, interactua mucho co el armlinecontroller de Harold
     {
-        if (_detectorType == DetectorType.Zipline && collision.CompareTag("Zipline"))
+        if (_detectorType == DetectorType.Zipline && collision.CompareTag("Zipline") && _isOnHighGround.IsElevated)
         {
+            Debug.Log("Child is elevated ? " +  _isOnHighGround.IsElevated); //bug cornudo y la concha de tu madre
             ArmLineController zipline = collision.GetComponent<ArmLineController>();
             if (zipline == null) return;
 
