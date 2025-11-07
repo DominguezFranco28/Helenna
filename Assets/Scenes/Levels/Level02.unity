@@ -180086,11 +180086,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 034af1b8fc2dae94dac020664458bce0, type: 3}
     - target: {fileID: 3244750473299434462, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: m_Size.y
-      value: 1.5813397
+      value: 3.0072339
       objectReference: {fileID: 0}
     - target: {fileID: 3244750473299434462, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: m_Offset.y
-      value: 1.59
+      value: 0.8770529
       objectReference: {fileID: 0}
     - target: {fileID: 3301073443021790062, guid: 98f2eb7bbe5ac0249bf3b3accff68360, type: 3}
       propertyPath: m_Materials.Array.data[0]
