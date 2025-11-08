@@ -9,7 +9,7 @@ public class ChildClimbState : IState
     private ChildStateMachine _childStateMachine;
     private ChildTriggerDetector _climbDetector;
     private Collider2D _ignoredClimbable;
-    private bool subbed = false;
+    private Vector2 _climbDirection;
 
     public ChildClimbState(ChildPlayerBehaviour childPlayerBehaviour, ChildStateMachine childStateMachine, ChildTriggerDetector climbDetector)
     {
@@ -18,38 +18,28 @@ public class ChildClimbState : IState
         this._climbDetector = climbDetector;
     }
 
-    private void OnMove(Vector2 movement)
-    {
-        if (_climbDetector.CanClimb)
-        { // Solo movimiento vertical
-            float verticalInput = Mathf.Abs(movement.y) > 0.1f ? movement.y : 0f;
-            Vector2 climbVelocity = new Vector2(0f, movement.y);
-            _childPlayerBehaviour.SetMovementInput(climbVelocity);
-        }
-        else
-        {
-
-                _childStateMachine.TransitionTo(_childStateMachine.moveState);
-            
-                
-        }
-    }
 
     public void Enter()
     {
         Debug.Log("You entered the state:  CHILD CLIMB");
-        if (!subbed)
-        {
-            if (InputManager.Instance != null)
-            {
-                subbed = true;
-                InputManager.Instance.Move += OnMove;
-            }
-        }
         
         if (_climbDetector.Climbable != null)
         {
-            _childPlayerBehaviour.SetMovementInput(Vector2.zero);
+            float verticalInput = _childPlayerBehaviour.LastCardinalInput.y; //capturo el input vertical
+            if (verticalInput > 0)
+            {
+                _climbDirection = Vector2.up; 
+            }
+            else if (verticalInput < 0)
+            {
+                _climbDirection = Vector2.down; 
+            }
+            else
+            {
+                //direcion por defecto hacia aarriba por si algun vegano por X motivos se queda quieto sin inputs y bugea el trigger, lo saca  oibligado de la escalera asi.
+                _climbDirection = Vector2.up;
+            }
+            _childPlayerBehaviour.SetMovementInput(_climbDirection);
             _childPlayerBehaviour.PlayerCollider.isTrigger = true;
             _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.ClimbSpeed);
             _childPlayerBehaviour.Animator.SetBool("isClimbing", true);
@@ -73,19 +63,12 @@ public class ChildClimbState : IState
         //_childPlayerBehaviour.StopMovement();
         _childPlayerBehaviour.SetSpeed(_childPlayerBehaviour.DefaultSpeed);
         SFXManager.Instance.StopLoop();
-        if (subbed)
-        {
-            if (InputManager.Instance != null)
-            {
-                subbed = false;
-                InputManager.Instance.Move -= OnMove;
-            }
-        }
     }
 
 
     public void Update()
     {
+
 
         if (!_climbDetector.CanClimb)
         {
