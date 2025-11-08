@@ -147,6 +147,8 @@ public class PuzzleManagerLevel02 : MonoBehaviour
 
     private IEnumerator OpenBridge()
     {
+        doorBig.DoorOpen();
+
         if (steamSFX)
             SFXManager.Instance.PlaySFX(steamSFX);
         if(p1aSteamVFX)

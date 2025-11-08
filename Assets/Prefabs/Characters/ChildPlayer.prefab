@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _detectorType: 0
+  _isOnHighGround: {fileID: 0}
 --- !u!70 &2261743724300666297
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -127,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _detectorType: 2
+  _isOnHighGround: {fileID: 0}
 --- !u!70 &1346281179045001499
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -338,7 +340,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.009059906, y: -0.8408785}
+  m_Offset: {x: 0, y: -0.72}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -349,7 +351,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.81596637, y: 0.4655857}
+  m_Size: {x: 1.1, y: 0.75}
   m_EdgeRadius: 0
 --- !u!114 &2540616221314238289
 MonoBehaviour:
@@ -468,6 +470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _detectorType: 1
+  _isOnHighGround: {fileID: 0}
 --- !u!70 &3244750473299434462
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -584,6 +587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _detectorType: 3
+  _isOnHighGround: {fileID: 0}
 --- !u!1001 &1339043124930221050
 PrefabInstance:
   m_ObjectHideFlags: 0

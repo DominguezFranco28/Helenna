@@ -31,6 +31,7 @@ public class PuzzleManagerLevel01 : MonoBehaviour
     public ActionLever leverP3;
     public List<CircuitLight> lightsP3 = new List<CircuitLight>();
     private bool hasPower = false;
+    private bool padPressed = false;
     public bool puzzleDoneP3 = false;
 
 
@@ -95,7 +96,8 @@ public class PuzzleManagerLevel01 : MonoBehaviour
         }
 
         leverP3.OnLeverActioned += P3Lever;
-        pressurePlateP3.OnPadPressed += P3Pad;
+        pressurePlateP3.OnPadPressed += P3PadPress;
+        pressurePlateP3.OnPadReleased += P3PadRelease;
     }
     private void OnDisable()
     {
@@ -121,7 +123,8 @@ public class PuzzleManagerLevel01 : MonoBehaviour
         }
 
         leverP3.OnLeverActioned -= P3Lever;
-        pressurePlateP3.OnPadPressed -= P3Pad;
+        pressurePlateP3.OnPadPressed -= P3PadPress;
+        pressurePlateP3.OnPadReleased -= P3PadRelease;
     }
 
 
@@ -213,13 +216,20 @@ public class PuzzleManagerLevel01 : MonoBehaviour
                 }
             }
             hasPower = !hasPower;
+
+            if (padPressed)
+            {
+                P3PadPress(pressurePlateP3.manualID);
+            }
         }
         
     }
-    private void P3Pad(int manualID)
+    private void P3PadPress(int manualID)
     {
         if (!puzzleDoneP3)
         {
+            padPressed = true;
+
             if (hasPower)
             {
                 foreach (CircuitLight light in lightsP3)
@@ -239,6 +249,13 @@ public class PuzzleManagerLevel01 : MonoBehaviour
         }
         
         
+    }
+    private void P3PadRelease(int manualID)
+    {
+        if (!puzzleDoneP3)
+        {
+            padPressed = false;
+        }
     }
 
     private void PadPressedGroupA(int manualID)

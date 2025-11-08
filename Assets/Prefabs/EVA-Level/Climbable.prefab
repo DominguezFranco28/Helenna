@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2599416309074685393}
   - component: {fileID: 7186990206588096743}
-  - component: {fileID: 585139046501191275}
   - component: {fileID: 6580441838495411545}
+  - component: {fileID: 2924087179727644282}
   m_Layer: 0
   m_Name: Top
   m_TagString: Untagged
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2766059125873720798}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.375, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,8 +86,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &585139046501191275
-CircleCollider2D:
+--- !u!114 &6580441838495411545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766059125873720798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88da4754a25778240ad0d2fd0970e38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onlyStairs: 0
+  canTrigger: 0
+--- !u!70 &2924087179727644282
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -115,26 +129,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &6580441838495411545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2766059125873720798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88da4754a25778240ad0d2fd0970e38c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onlyStairs: 0
-  canTrigger: 0
+  m_Size: {x: 1.75, y: 0.75}
+  m_Direction: 1
 --- !u!1 &3884355095365440181
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,8 +193,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8972259709438127495}
   - component: {fileID: 3936383575025482560}
-  - component: {fileID: 1407239984561436013}
   - component: {fileID: 5859756563059810717}
+  - component: {fileID: 648028408594449197}
   m_Layer: 0
   m_Name: Bottom
   m_TagString: Untagged
@@ -211,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 3919742070385697108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.654, z: 0}
+  m_LocalPosition: {x: 0, y: -1.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -269,8 +269,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1407239984561436013
-CircleCollider2D:
+--- !u!114 &5859756563059810717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3919742070385697108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88da4754a25778240ad0d2fd0970e38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onlyStairs: 1
+  canTrigger: 1
+--- !u!70 &648028408594449197
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -298,26 +312,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &5859756563059810717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3919742070385697108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88da4754a25778240ad0d2fd0970e38c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onlyStairs: 1
-  canTrigger: 1
+  m_Size: {x: 1.75, y: 0.75}
+  m_Direction: 1
 --- !u!1 &5151500386350519414
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +346,7 @@ Transform:
   m_GameObject: {fileID: 5151500386350519414}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.625, z: 0}
+  m_LocalPosition: {x: 0.00000085681677, y: -0.59599817, z: 0}
   m_LocalScale: {x: 1, y: 0.85, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -464,7 +464,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.15, y: 3.53}
+  m_Size: {x: 1.5, y: 4.5}
   m_Direction: 0
 --- !u!1 &7408664164878291446
 GameObject:
